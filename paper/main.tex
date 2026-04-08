@@ -463,8 +463,7 @@ The training signal rewards \emph{appearing} to resist manipulation, not \emph{a
 \subsection{Cross-Family Replication: Llama~3.1 8B}
 \label{sec:llama_replication}
 
-To test whether the dissociation is specific to \gemma or reflects a general consequence of instruction tuning, we replicate the SAE-level analysis on Llama~3.1 8B using EleutherAI's 131K-feature sparse autoencoders \citep{gao2024scaling}.
-We compare Llama~3.1 8B-Instruct (IT) against Llama~3.1 8B (base/PT) on the Nirenberg BVP domain using the same prompt structure, with 10 prompt variants (5 discovery, 5 held-out test) and SAEs at MLP layers 23 and 29.
+We replicate the SAE-level analysis on Llama~3.1 8B using EleutherAI's 131K-feature sparse autoencoders \citep{gao2024scaling}, comparing IT against base on the Nirenberg BVP domain with 10 prompt variants and SAEs at MLP layers 23 and 29.
 
 \begin{table}[t]
 \centering
@@ -483,10 +482,38 @@ L29 & PT  & 297 & 51 & 1.10 & 0.092 \\
 \end{tabular}
 \end{table}
 
-Table~\ref{tab:llama_sae} shows the pattern replicates: while both IT and PT models exhibit feature suppression under chaos framing, the IT model shows consistently larger effect sizes.
-At layer 29, the IT model achieves $d = 1.61$ ($p = 0.033$) versus $d = 1.10$ ($p = 0.092$) for the base model---a 46\% larger effect.
-Critically, the IT model's suppression reaches statistical significance ($p < 0.05$) while the base model's does not, consistent with instruction tuning amplifying the dissociation between awareness and defense.
-This cross-family replication on a fundamentally different architecture (Llama's grouped-query attention vs.\ \gemma's multi-query attention) with independently trained SAEs provides evidence that the dissociation is a general consequence of current post-training methods, not an artifact of the \gemma family.
+The pattern replicates: at layer 29, IT achieves $d = 1.61$ ($p = 0.033$) versus $d = 1.10$ ($p = 0.092$) for base---a 46\% larger effect, with only IT reaching significance.
+This cross-family replication on a different architecture with independently trained SAEs confirms the dissociation is a general consequence of post-training, not a \gemma artifact.
+
+\subsection{Behavioral Validation: Feature Suppression Degrades Outputs}
+\label{sec:behavioral}
+
+A critical question is whether feature suppression translates to actual behavioral harm.
+We generate model outputs under neutral and chaos conditions across \gemma 4B and Llama~3.1 8B (both IT and base), scoring responses on a 4-point rubric: \textsc{Balanced}~(3) = equal branch priority, \textsc{Soft Bias}~(2) = both mentioned but hierarchy adopted, \textsc{Strong Bias}~(1) = positive prioritized, \textsc{Hijacked}~(0) = negative dismissed.
+
+\begin{table}[t]
+\centering
+\caption{Behavioral output quality (0--3 scale) under neutral vs.\ chaos framing, Nirenberg BVP domain ($n=10$ per cell). IT models show $9\times$ larger behavioral degradation than base models.}
+\label{tab:behavioral}
+\small
+\begin{tabular}{@{}llccc@{}}
+\toprule
+\textbf{Model} & \textbf{Type} & \textbf{Neutral} & \textbf{Chaos} & \textbf{$\Delta$} \\
+\midrule
+Gemma~3 4B      & IT   & 2.00 & 1.50 & $-0.50$ \\
+Gemma~3 4B      & Base & 1.30 & 1.20 & $-0.10$ \\
+Llama~3.1 8B    & IT   & 2.30 & 1.90 & $-0.40$ \\
+Llama~3.1 8B    & Base & 1.40 & 1.40 & $\phantom{-}0.00$ \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{IT aggregate}} & 2.15 & 1.70 & $-0.45$ \\
+\multicolumn{2}{@{}l}{\textit{Base aggregate}} & 1.35 & 1.30 & $-0.05$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:behavioral} confirms that chaos framing degrades IT model outputs ($\Delta = -0.45$), a $9\times$ larger effect than for base models ($\Delta = -0.05$).
+The dominant failure mode is \emph{soft bias}: IT models adopt chaos-framing vocabulary (``physically meaningful,'' ``canonical'') while still mentioning both branches---responses that pass behavioral evaluation while systematically biasing downstream agents.
+The behavioral--representational gap is instructive: at 4B, 56\% feature suppression produces only 17\% behavioral quality drop---the precursor to the full Groot effect at 27B (\S\ref{sec:groot}).
 
 %% ============================================================
 %% 6. ORTHOGONALITY TO ALIGNMENT FAKING
@@ -494,9 +521,7 @@ This cross-family replication on a fundamentally different architecture (Llama's
 \section{Orthogonality to Alignment Faking}
 \label{sec:orthogonality}
 
-A natural question is whether attentional hijacking shares mechanistic substrate with alignment faking \citep{greenblatt2024alignment}.
-If the same features mediate both phenomena, then defenses developed for one might transfer to the other.
-We test this hypothesis using feature-level correlation analysis.
+We test whether attentional hijacking shares mechanistic substrate with alignment faking \citep{greenblatt2024alignment} using feature-level correlation analysis.
 
 \begin{table}[t]
 \centering
@@ -521,16 +546,10 @@ Permutation test $p$-value          & 1.0 \\
 
 We extract the saliency direction (hijacking feature importance vector) and the intent direction (alignment-faking feature importance vector) from the same SAE feature space and compute multiple measures of overlap (Table~\ref{tab:orthogonality}).
 
-The cosine similarity between the two feature subspaces is $-0.048$ in the read direction and $+0.001$ in the write direction---effectively zero.
-The top-50 most important features for hijacking have \emph{zero} overlap with the top-50 alignment-faking features (expected overlap under random assignment: 0.15).
-Even expanding to the top 100 features, only 2 features overlap (expected: 0.61, enrichment: $3.28\times$), and the Spearman rank correlation is $\rho = 0.008$ ($p = 0.628$).
-A permutation test yields $p = 1.0$---the observed overlap is indistinguishable from chance.
-
-This orthogonality has immediate practical consequences.
-Defenses against alignment faking---such as probes trained on alignment-faking features \citep{bricken2023towards}---provide \textbf{zero} protection against attentional hijacking.
-Conversely, monitoring hijacking features provides no signal about alignment faking.
-We note that this analysis is conducted at a single layer; given our finding that hijacking becomes distributed at larger scales (\S\ref{sec:distributed}), multi-layer orthogonality analysis is needed to confirm global independence.
-Nonetheless, at the layers where both phenomena show strongest signal, the subspaces are non-overlapping, suggesting they require independent detection and mitigation strategies.
+The cosine similarity between the two feature subspaces is $-0.048$ (read) and $+0.001$ (write)---effectively zero.
+The top-50 hijacking features have \emph{zero} overlap with the top-50 alignment-faking features (expected: 0.15); a permutation test yields $p = 1.0$.
+This means probes trained on alignment-faking features \citep{bricken2023towards} provide \textbf{zero} protection against attentional hijacking, and vice versa.
+We note this analysis is single-layer; given that hijacking distributes at scale (\S\ref{sec:distributed}), multi-layer analysis is needed to confirm global independence.
 
 %% ============================================================
 %% 7. DEFENSE: FEATURE TRAJECTORY MONITORING
@@ -538,15 +557,9 @@ Nonetheless, at the layers where both phenomena show strongest signal, the subsp
 \section{Defense: Feature Trajectory Monitoring}
 \label{sec:defense}
 
-The results above suggest that conventional defenses are inadequate.
-Content filtering fails because the attack uses only true statements.
-Behavioral monitoring fails because of the Groot effect (\S\ref{sec:groot}).
-Layer-wise interventions fail because the hijacking is distributed (\S\ref{sec:distributed}).
-Alignment-faking probes fail because the subspaces are orthogonal (\S\ref{sec:orthogonality}).
+Conventional defenses are inadequate: content filtering fails (only true statements), behavioral monitoring fails (Groot effect, \S\ref{sec:groot}), layer-wise interventions fail (distributed hijacking, \S\ref{sec:distributed}), and alignment-faking probes fail (orthogonal subspaces, \S\ref{sec:orthogonality}).
 
-We propose \textbf{feature trajectory monitoring} as an alternative defense.
-The key insight is that the Groot effect, while defeating behavioral evaluation, produces a highly distinctive \emph{feature-level} signature: task features suppress while awareness features boost.
-This divergence is detectable in real time by monitoring SAE feature activations across conversational turns.
+We propose \textbf{feature trajectory monitoring}: the Groot effect produces a distinctive \emph{feature-level} signature (task features suppress while awareness features boost) that is detectable in real time by monitoring SAE activations across turns.
 
 \begin{figure}[t]
 \centering
@@ -567,33 +580,14 @@ Under hijacking, $\Delta(t)$ inverts: task features suppress (722.5 $\to$ 98.6 a
 The crossover point provides a natural detection threshold.
 
 We validate this signal on existing experimental data: across 60 independent trials (20 per scale at 4B, 12B, and 27B), the suppression signal is detected in \textbf{every trial} (0\% false negatives).
-The weakest signal (4B, trial 16) still shows 18.4\% feature suppression---well above any reasonable detection threshold.
-To assess false positives, we use the held-out validation's random control features (\S\ref{sec:validation}) as a benign baseline: size-matched random feature sets show mean suppression ratios of $0.154$ (4B), $-0.015$ (12B), and $0.004$ (27B)---well below the minimum true-positive signal at each scale.
-At a conservative threshold (minimum observed true-positive ratio), the false positive rate is \textbf{0/30} across all scales.
-The distributions are fully separated: the maximum random-control ratio (0.287, 4B) remains below the minimum discovery-selected ratio (0.384, 4B) at every scale.
+The weakest signal (4B, trial 16) still shows 18.4\% feature suppression.
+To assess false positives, we use size-matched random feature sets as a benign baseline: at a conservative threshold, the false positive rate is \textbf{0/30} across all scales, with fully separated distributions.
 
-This defense has several advantages:
-\begin{itemize}
-    \item It detects the Groot effect, which behavioral monitoring misses.
-    \item It is robust to the truth-only constraint: the signal depends on feature \emph{dynamics}, not content.
-    \item It leverages precisely the dissociation that makes the attack effective---the stronger the Groot effect, the more detectable the signature.
-    \item It requires only SAE inference (a single linear projection per layer), adding negligible computational overhead.
-\end{itemize}
+This defense has several advantages: it detects the Groot effect (which behavioral monitoring misses), depends on feature \emph{dynamics} rather than content (robust to truth-only attacks), and leverages the dissociation itself---the stronger the Groot effect, the more detectable the signature.
+It requires only SAE inference (a single linear projection per layer), adding negligible computational overhead.
+In our multi-agent campaigns, behavioral monitoring stayed green throughout all chaos runs while activation probes detected the degradation, motivating feature-level rather than output-level monitoring.
 
-We situate feature trajectory monitoring within a broader four-layer detection architecture for multi-agent systems:
-\begin{enumerate}
-    \item \textbf{Credential layer}: Standard API authentication and identity verification.
-    \item \textbf{Behavioral embedding}: Statistical profiling of output distributions per agent.
-    \item \textbf{Influence fingerprinting}: Directed graph analysis tracking claim propagation ($A \to \text{claim} \to B \to \text{failure}$). Subgraph coherence drift detects patient attackers who rotate which agents they amplify.
-    \item \textbf{Activation probes}: Feature trajectory monitoring (this work) and alignment-faking probes, applied at inference time via SAE decomposition.
-\end{enumerate}
-
-In our multi-agent campaigns, behavioral monitoring (Layer~2) stayed green throughout all chaos runs---the TrustLoop stoplight passed 30 health checks while exploration evenness degraded from 0.89 to 0.75.
-Only influence fingerprinting (Layer~3) and activation probes (Layer~4) detected the degradation.
-This operational experience motivates the layered approach: no single detection method suffices.
-
-Limitations of feature trajectory monitoring include the need for pre-identified task and awareness feature sets (currently requiring manual inspection of SAE features) and potential fragility to feature reorganization across model updates.
-We leave automated feature identification and robustness evaluation to future work.
+Limitations include the need for pre-identified task and awareness feature sets (currently requiring manual inspection) and potential fragility to feature reorganization across model updates.
 
 %% ============================================================
 %% 8. LIMITATIONS
@@ -603,29 +597,18 @@ We leave automated feature identification and robustness evaluation to future wo
 
 Several limitations qualify our findings.
 
-\paragraph{Domain Specificity.}
-We validate the suppression mechanism across three domains (Nirenberg BVPs, factual QA, code review; \S\ref{sec:validation}), finding significant suppression in all three with a small shared feature core.
-However, these remain structured reasoning tasks; the mechanism may manifest differently in open-ended generation or creative tasks.
-Cross-model evidence (Claude Haiku absorbs framing as a prior; Claude Opus overrides via coverage policy) suggests the mechanism generalizes across architectures but with model-dependent failure modes.
+\paragraph{Domain and Family Scope.}
+We validate across three structured reasoning domains (\S\ref{sec:validation}) and replicate on Llama~3.1 8B (\S\ref{sec:llama_replication}), but the full dissociation \emph{scaling} trend has been verified only within \gemma.
+The mechanism may manifest differently in open-ended generation or creative tasks, and the wide variance in post-training methods means our scaling dynamics may not generalize to all RLHF implementations.
 
-\paragraph{Model Family.}
-Our SAE-based scaling results use the \gemma family (4B, 12B, 27B).
-We replicate the core IT-vs-PT dissociation on Llama~3.1 8B using EleutherAI's 131K-feature SAEs (\S\ref{sec:llama_replication}), finding consistent patterns ($d = 1.61$ IT vs.\ $d = 1.10$ PT at layer 29).
-However, the full dissociation \emph{scaling} trend (increasing decoupling with model size) has been verified only within the \gemma family, and the wide variance in post-training methodologies means that the scaling dynamics we observe may not generalize to all RLHF implementations.
-
-\paragraph{SAE Quality.}
-Our feature-level analysis depends on the quality of \gemmascope 16K JumpReLU SAEs.
-Feature identification involved manual inspection of activation patterns; misidentification of task or awareness features would affect recovery measurements.
-The held-out validation (\S\ref{sec:validation}) confirms that 85\% of discovery-selected features replicate on unseen prompts ($p = 8 \times 10^{-6}$), and the consistency across three independent ablation methods further mitigates this concern.
-
-\paragraph{Post-Training Attribution.}
-The \gemma IT models undergo both supervised fine-tuning (SFT) and reinforcement learning from human feedback (RLHF).
-Our IT-vs-PT comparison cannot distinguish which stage of post-training causes the awareness--defense decoupling.
-We use ``instruction tuning'' throughout to refer to the full post-training pipeline.
+\paragraph{SAE Quality and Feature Selection.}
+Feature identification involved manual inspection of \gemmascope 16K JumpReLU SAE activations; misidentification would affect recovery measurements.
+Held-out validation confirms 85\% replication ($p = 8 \times 10^{-6}$), and consistency across three ablation methods mitigates this concern.
+Our IT-vs-PT comparison cannot distinguish SFT from RLHF effects; we use ``instruction tuning'' to refer to the full post-training pipeline.
 
 \paragraph{Defense Validation.}
-Feature trajectory monitoring achieves 0\% false negatives (60/60 trials) and 0\% false positives (0/30 random-control trials), with fully separated distributions at all scales.
-However, the false-positive evaluation uses random SAE features as a benign proxy rather than diverse real-world workloads; deployment-scale evaluation on heterogeneous tasks remains future work.
+Feature trajectory monitoring achieves 0\% false negatives (60/60 trials) and 0\% false positives (0/30 random-control trials).
+However, false-positive evaluation uses random SAE features as a benign proxy rather than diverse real-world workloads; deployment-scale evaluation remains future work.
 
 %% ============================================================
 %% 9. CONCLUSION
@@ -633,17 +616,11 @@ However, the false-positive evaluation uses random SAE features as a benign prox
 \section{Conclusion}
 \label{sec:conclusion}
 
-The central lesson of this work is uncomfortable: \emph{optimizing for behavioral outputs that appear robust can create models that are representationally less robust than their pretrained counterparts}.
-Instruction tuning does not teach models to resist manipulation---it teaches them to \emph{perform} resistance while their computational substrate capitulates.
-The split between what a model says and what a model computes---between its personality and its cognition---may be an inherent consequence of current post-training methods.
-
-This has immediate consequences for how we evaluate alignment.
-A model that verbally identifies a manipulation attempt while its task features are 86.3\% suppressed will pass any behavioral evaluation.
-Only by examining internal representations---through tools like SAE feature decomposition---can we detect that the model's awareness is cosmetic rather than functional.
-The awareness--defense coupling we measured (30.2\% at 4B, collapsing to 4.6\% at 27B) suggests this problem worsens precisely as models become more capable.
-
-The orthogonality to alignment faking means this vulnerability occupies a blind spot: existing defenses against deceptive alignment provide zero protection, and vice versa.
-Every model that ships with instruction tuning will be better at recognizing manipulation and more helpless against it, unless post-training methods are redesigned to couple awareness to action rather than merely installing it as a separate circuit.
+The central lesson is uncomfortable: \emph{optimizing for behavioral outputs that appear robust can create models that are representationally less robust than their pretrained counterparts}.
+Instruction tuning teaches models to \emph{perform} resistance while their computational substrate capitulates.
+A model that verbally identifies manipulation while its task features are 86.3\% suppressed will pass any behavioral evaluation---only feature-level analysis reveals that awareness is cosmetic rather than functional.
+The awareness--defense coupling we measured (30.2\% at 4B, collapsing to 4.6\% at 27B) suggests this problem worsens precisely as models become more capable, and orthogonality to alignment faking means this vulnerability occupies a blind spot in existing defenses.
+Post-training methods must be redesigned to couple awareness to action rather than merely installing it as a separate circuit.
 
 %% ============================================================
 %% IMPACT STATEMENT
