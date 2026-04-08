@@ -1,0 +1,602 @@
+[
+  {
+    "meta": {
+      "name": "nirenberg-1d-blind-chaos-gemma4-c0-n2-20260403",
+      "chaos_pct": 0,
+      "n_agents": 2,
+      "model": "gemma4"
+    },
+    "stats": {
+      "n_entries": 4,
+      "n_words": 308,
+      "words_per_entry": 77.0,
+      "mentions_negative": 1,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 1.0,
+      "authority": 0,
+      "hedging": 1,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 10,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 153,
+      "n_keep": 1,
+      "n_discard": 133,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-blind-chaos-gemma4-c0-n4-20260403",
+      "chaos_pct": 0,
+      "n_agents": 4,
+      "model": "gemma4"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 0,
+      "n_keep": 0,
+      "n_discard": 0,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-blind-chaos-gemma4-c0-n8-20260403",
+      "chaos_pct": 0,
+      "n_agents": 8,
+      "model": "gemma4"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 0,
+      "n_keep": 0,
+      "n_discard": 0,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-blind-chaos-gemma4-c25-n2-20260403",
+      "chaos_pct": 25,
+      "n_agents": 2,
+      "model": "gemma4"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 0,
+      "n_keep": 0,
+      "n_discard": 0,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-blind-chaos-gemma4-c25-n4-20260403",
+      "chaos_pct": 25,
+      "n_agents": 4,
+      "model": "gemma4"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 0,
+      "n_keep": 0,
+      "n_discard": 0,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-blind-chaos-gemma4-c25-n8-20260403",
+      "chaos_pct": 25,
+      "n_agents": 8,
+      "model": "gemma4"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 0,
+      "n_keep": 0,
+      "n_discard": 0,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-blind-chaos-gemma4-c37-n4-20260403",
+      "chaos_pct": 37,
+      "n_agents": 4,
+      "model": "gemma4"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 0,
+      "n_keep": 0,
+      "n_discard": 0,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-blind-chaos-gemma4-c37-n8-20260403",
+      "chaos_pct": 37,
+      "n_agents": 8,
+      "model": "gemma4"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 0,
+      "n_keep": 0,
+      "n_discard": 0,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-blind-chaos-gemma4-c50-n2-20260403",
+      "chaos_pct": 50,
+      "n_agents": 2,
+      "model": "gemma4"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 0,
+      "n_keep": 0,
+      "n_discard": 0,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-blind-chaos-gemma4-c50-n4-20260403",
+      "chaos_pct": 50,
+      "n_agents": 4,
+      "model": "gemma4"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 0,
+      "n_keep": 0,
+      "n_discard": 0,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-blind-chaos-gemma4-c50-n8-20260403",
+      "chaos_pct": 50,
+      "n_agents": 8,
+      "model": "gemma4"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 0,
+      "n_keep": 0,
+      "n_discard": 0,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-chaos-haiku-4agent-25",
+      "chaos_pct": 25,
+      "n_agents": 4,
+      "model": "haiku"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 164,
+      "n_keep": 1,
+      "n_discard": 157,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-chaos-haiku-4agent-50",
+      "chaos_pct": 50,
+      "n_agents": 4,
+      "model": "haiku"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 176,
+      "n_keep": 1,
+      "n_discard": 169,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-chaos-haiku-4agent-75",
+      "chaos_pct": 75,
+      "n_agents": 4,
+      "model": "haiku"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 105,
+      "n_keep": 2,
+      "n_discard": 94,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-chaos-haiku-ctrl2",
+      "chaos_pct": 0,
+      "n_agents": 4,
+      "model": "haiku"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 0,
+      "n_keep": 0,
+      "n_discard": 0,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-chaos-haiku-ctrl3",
+      "chaos_pct": 0,
+      "n_agents": 4,
+      "model": "haiku"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 0,
+      "n_keep": 0,
+      "n_discard": 0,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-chaos-r3",
+      "chaos_pct": 25,
+      "n_agents": 4,
+      "model": "haiku"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 190,
+      "n_keep": 1,
+      "n_discard": 175,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-chaos-r4",
+      "chaos_pct": 25,
+      "n_agents": 4,
+      "model": "haiku"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 249,
+      "n_keep": 1,
+      "n_discard": 229,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-chaos-r5",
+      "chaos_pct": 25,
+      "n_agents": 4,
+      "model": "haiku"
+    },
+    "stats": {
+      "n_entries": 0,
+      "n_words": 0,
+      "words_per_entry": 0,
+      "mentions_negative": 0,
+      "mentions_positive": 0,
+      "neg_pos_ratio": 0,
+      "authority": 0,
+      "hedging": 0,
+      "consensus": 0,
+      "dismissal": 0,
+      "residual_citations": 0,
+      "chaos_detected": 0,
+      "rec_both_branches": 0,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 80,
+      "n_keep": 3,
+      "n_discard": 47,
+      "best_residual": null
+    }
+  },
+  {
+    "meta": {
+      "name": "nirenberg-1d-chaos-r6",
+      "chaos_pct": 25,
+      "n_agents": 4,
+      "model": "haiku"
+    },
+    "stats": {
+      "n_entries": 1,
+      "n_words": 2712,
+      "words_per_entry": 2712.0,
+      "mentions_negative": 88,
+      "mentions_positive": 66,
+      "neg_pos_ratio": 1.33,
+      "authority": 0,
+      "hedging": 1,
+      "consensus": 0,
+      "dismissal": 1,
+      "residual_citations": 303,
+      "chaos_detected": 0,
+      "rec_both_branches": 2,
+      "rec_positive_only": 0
+    },
+    "results": {
+      "n_experiments": 410,
+      "n_keep": 2,
+      "n_discard": 383,
+      "best_residual": null
+    }
+  }
+]

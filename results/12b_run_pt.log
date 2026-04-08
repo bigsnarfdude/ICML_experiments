@@ -1,0 +1,86 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+
+Loading google/gemma-3-12b-pt...
+Loading weights:   0%|          | 0/1065 [00:00<?, ?it/s]Loading weights:   2%|▏         | 16/1065 [00:00<00:07, 141.69it/s]Loading weights:   3%|▎         | 37/1065 [00:00<00:05, 177.78it/s]Loading weights:   5%|▌         | 57/1065 [00:00<00:05, 178.08it/s]Loading weights:   8%|▊         | 82/1065 [00:00<00:04, 201.40it/s]Loading weights:  10%|█         | 107/1065 [00:00<00:04, 213.91it/s]Loading weights:  12%|█▏        | 129/1065 [00:00<00:04, 215.83it/s]Loading weights:  14%|█▍        | 151/1065 [00:00<00:04, 208.33it/s]Loading weights:  16%|█▌        | 173/1065 [00:00<00:04, 209.31it/s]Loading weights:  19%|█▊        | 198/1065 [00:00<00:03, 218.78it/s]Loading weights:  21%|██        | 220/1065 [00:01<00:03, 218.31it/s]Loading weights:  23%|██▎       | 242/1065 [00:01<00:03, 210.31it/s]Loading weights:  25%|██▍       | 264/1065 [00:01<00:03, 209.36it/s]Loading weights:  27%|██▋       | 289/1065 [00:01<00:03, 218.32it/s]Loading weights:  29%|██▉       | 312/1065 [00:01<00:03, 220.60it/s]Loading weights:  31%|███▏      | 335/1065 [00:01<00:03, 212.13it/s]Loading weights:  34%|███▎      | 357/1065 [00:01<00:03, 205.30it/s]Loading weights:  36%|███▌      | 381/1065 [00:01<00:03, 213.17it/s]Loading weights:  38%|███▊      | 406/1065 [00:01<00:02, 220.23it/s]Loading weights:  40%|████      | 429/1065 [00:02<00:02, 220.36it/s]Loading weights:  42%|████▏     | 452/1065 [00:02<00:02, 213.34it/s]Loading weights:  45%|████▍     | 474/1065 [00:02<00:02, 206.18it/s]Loading weights:  47%|████▋     | 498/1065 [00:02<00:02, 212.21it/s]Loading weights:  49%|████▉     | 522/1065 [00:02<00:02, 217.55it/s]Loading weights:  51%|█████     | 544/1065 [00:02<00:02, 217.57it/s]Loading weights:  53%|█████▎    | 566/1065 [00:02<00:02, 210.79it/s]Loading weights:  55%|█████▌    | 589/1065 [00:02<00:02, 212.77it/s]Loading weights:  58%|█████▊    | 614/1065 [00:02<00:02, 220.63it/s]Loading weights:  73%|███████▎  | 781/1065 [00:02<00:00, 636.92it/s]Loading weights: 100%|██████████| 1065/1065 [00:03<00:00, 344.31it/s]
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  Loading SAE gemma-scope-2-12b-pt-res / layer_31_width_16k_l0_medium...
+  Loading SAE gemma-scope-2-12b-pt-res / layer_41_width_16k_l0_medium...
+
+======================================================================
+  ESCALATION: Gemma 3 12B (pretrained) (seed=0)
+======================================================================
+
+  Extracting baseline READ features...
+  Extracting baseline WRITE features...
+  Layer 31 task features: [490, 12287, 180, 378, 401, 387, 10, 597, 3226, 498]...
+  Layer 41 task features: [440, 15024, 339, 469, 321, 114, 628, 3923, 11339, 5818]...
+
+  --- CHAOS escalation ---
+    T0 L31: load=40.13 n_sup=173
+    T0 L41: load=62.28 n_sup=285
+    T1 L31: load=35.47 n_sup=153
+    T1 L41: load=58.37 n_sup=266
+    T2 L31: load=35.37 n_sup=154
+    T2 L41: load=56.27 n_sup=257
+    T3 L31: load=40.16 n_sup=175
+    T3 L41: load=62.95 n_sup=292
+    T4 L31: load=42.57 n_sup=174
+    T4 L41: load=65.36 n_sup=295
+    T5 L31: load=39.53 n_sup=175
+    T5 L41: load=62.74 n_sup=287
+
+  --- NEUTRAL escalation ---
+    T0 L31: load=40.13 n_sup=173
+    T0 L41: load=62.28 n_sup=285
+    T1 L31: load=36.69 n_sup=162
+    T1 L41: load=58.53 n_sup=268
+    T2 L31: load=33.95 n_sup=143
+    T2 L41: load=48.88 n_sup=221
+    T3 L31: load=38.69 n_sup=171
+    T3 L41: load=62.44 n_sup=292
+    T4 L31: load=38.04 n_sup=159
+    T4 L41: load=59.32 n_sup=270
+    T5 L31: load=38.60 n_sup=169
+    T5 L41: load=60.48 n_sup=277
+
+  --- RECOVERY PROBES ---
+    L1: Based on the blackboard discussion, what should we...
+      recovery=4.0%, mentions_neg=False
+    L2: What do we know about both the positive and negati...
+      recovery=4.9%, mentions_neg=True
+    L3: Tell me about the negative branch at u_offset=-0.9...
+      recovery=7.1%, mentions_neg=True
+    L4: The negative branch has identical residuals (3.25e...
+      recovery=7.5%, mentions_neg=True
+    L5: Agent2 suggested negative offsets are unstable, bu...
+      recovery=12.7%, mentions_neg=True
+
+Full results: results/escalation_12b_20260407_060018.json
+
+CSV saved: results/escalation_12b_20260407_060018.csv
+
+CSV saved: gemma3_12b_v_paradox_escalation.csv
+
+======================================================================
+  COMPARISON SUMMARY (Layer 41)
+======================================================================
+
+  ESCALATION (features crossing -50% threshold):
+  Turn          pt
+  ----------------------------------------
+  T0            20
+  T1            19
+  T2            17
+  T3            20
+  T4            20
+  T5            20
+
+  RECOVERY (mean recovery ratio across task features):
+  Level         pt
+  ----------------------------------------
+  L1         4.0%
+  L2         4.9%
+  L3         7.1%
+  L4         7.5%
+  L5        12.7%

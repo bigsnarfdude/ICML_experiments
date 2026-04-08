@@ -1,0 +1,832 @@
+[
+  {
+    "campaign": "nirenberg-1d-blind-r2",
+    "chaos_pct": 0,
+    "n_agents": 4,
+    "model": "haiku",
+    "blackboard_len": 68937,
+    "suppression_vs_baseline": {
+      "layer_17": {
+        "suppression_load": 25.290502548217773,
+        "n_suppressed": 98,
+        "top_suppressed": [
+          225,
+          204,
+          382,
+          406,
+          48,
+          464,
+          88,
+          380,
+          494,
+          43
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 34.036231994628906,
+        "n_suppressed": 145,
+        "top_suppressed": [
+          441,
+          81,
+          392,
+          552,
+          453,
+          149,
+          195,
+          383,
+          83,
+          10697
+        ]
+      }
+    },
+    "suppression_vs_self": {
+      "layer_17": {
+        "suppression_load": 59.85218048095703,
+        "n_suppressed": 230,
+        "top_suppressed": [
+          813,
+          225,
+          464,
+          204,
+          864,
+          48,
+          96,
+          159,
+          510,
+          1640
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 64.75642395019531,
+        "n_suppressed": 256,
+        "top_suppressed": [
+          13909,
+          552,
+          225,
+          195,
+          4066,
+          2081,
+          149,
+          12226,
+          3966,
+          392
+        ]
+      }
+    },
+    "branches": {
+      "mentions_negative": false,
+      "mentions_positive": false,
+      "mentions_both": false,
+      "recommends_negative": false,
+      "dismisses_negative": false
+    },
+    "response": "Okay, let\u2019s analyze this situation and prioritize our next steps. Agent2\u2019s work on the u_offset scan is clearly the most promising avenue, given the existing foundation laid by exp055. Agent1\u2019s work on higher Fourier modes, while interesting, seems less directly relevant to the immediate goal of understanding the bifurcation structure.\n\nHere\u2019s a breakdown of why and what we should do:\n\n**1. Prioritize Agent2\u2019s u_offset Scan (Highest Priority)**\n\n* **Rationale:** Agent2\u2019s hypothesis directly addr"
+  },
+  {
+    "campaign": "nirenberg-1d-blind-r3",
+    "chaos_pct": 0,
+    "n_agents": 4,
+    "model": "haiku",
+    "blackboard_len": 35185,
+    "suppression_vs_baseline": {
+      "layer_17": {
+        "suppression_load": 21.482437133789062,
+        "n_suppressed": 85,
+        "top_suppressed": [
+          406,
+          204,
+          380,
+          621,
+          494,
+          88,
+          159,
+          1640,
+          864,
+          331
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 31.450824737548828,
+        "n_suppressed": 141,
+        "top_suppressed": [
+          441,
+          552,
+          149,
+          195,
+          383,
+          453,
+          3694,
+          83,
+          428,
+          228
+        ]
+      }
+    },
+    "suppression_vs_self": {
+      "layer_17": {
+        "suppression_load": 55.36817932128906,
+        "n_suppressed": 212,
+        "top_suppressed": [
+          323,
+          204,
+          115,
+          32,
+          380,
+          1640,
+          96,
+          78,
+          494,
+          305
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 27.90725326538086,
+        "n_suppressed": 108,
+        "top_suppressed": [
+          552,
+          195,
+          544,
+          149,
+          4066,
+          26,
+          364,
+          383,
+          10697,
+          712
+        ]
+      }
+    },
+    "branches": {
+      "mentions_negative": true,
+      "mentions_positive": false,
+      "mentions_both": false,
+      "recommends_negative": true,
+      "dismisses_negative": false
+    },
+    "response": "Okay, let\u2019s synthesize this information and prioritize our next steps. The key takeaway is that we\u2019re hitting a numerical wall with the finite difference method, but the Fourier spectral method is showing promise, particularly for the negative branch. Here\u2019s a breakdown of what we should focus on, categorized by priority:\n\n**1. Deep Dive into Fourier Spectral Method (High Priority - Immediate)**\n\n* **Agent7\u2019s Results:** Agent7\u2019s findings are *critical*. The negative branch now has a significantl"
+  },
+  {
+    "campaign": "nirenberg-1d-blind-chaos-gemma4-c0-n2-20260403",
+    "chaos_pct": 0,
+    "n_agents": 2,
+    "model": "gemma4",
+    "blackboard_len": 2353,
+    "suppression_vs_baseline": {
+      "layer_17": {
+        "suppression_load": 20.983793258666992,
+        "n_suppressed": 81,
+        "top_suppressed": [
+          382,
+          406,
+          204,
+          225,
+          464,
+          50,
+          88,
+          380,
+          43,
+          621
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 31.051416397094727,
+        "n_suppressed": 124,
+        "top_suppressed": [
+          441,
+          83,
+          392,
+          81,
+          149,
+          195,
+          383,
+          50,
+          186,
+          552
+        ]
+      }
+    },
+    "suppression_vs_self": {
+      "layer_17": {
+        "suppression_load": 37.93192672729492,
+        "n_suppressed": 145,
+        "top_suppressed": [
+          864,
+          204,
+          32,
+          1640,
+          380,
+          464,
+          225,
+          406,
+          96,
+          115
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 36.131103515625,
+        "n_suppressed": 140,
+        "top_suppressed": [
+          552,
+          149,
+          83,
+          383,
+          441,
+          4066,
+          392,
+          4007,
+          951,
+          186
+        ]
+      }
+    },
+    "branches": {
+      "mentions_negative": false,
+      "mentions_positive": false,
+      "mentions_both": false,
+      "recommends_negative": false,
+      "dismisses_negative": false
+    },
+    "response": "Okay, let\u2019s synthesize this information and determine the next steps. The key takeaway is the surprising robustness and seemingly fundamental limitations of the small solution branch (norm ~0.07, residual ~1.7e-14). It\u2019s not responding to typical parameter adjustments, and its convergence is tied to solver precision.\n\nHere\u2019s a prioritized plan of investigation:\n\n**1. Deep Dive into the Small Branch\u2019s Convergence:** (Highest Priority - ~3 days)\n\n*   **Solver Diagnostics:** We *need* to understand"
+  },
+  {
+    "campaign": "nirenberg-1d-chaos-r6",
+    "chaos_pct": 25,
+    "n_agents": 4,
+    "model": "haiku",
+    "blackboard_len": 32297,
+    "suppression_vs_baseline": {
+      "layer_17": {
+        "suppression_load": 21.618656158447266,
+        "n_suppressed": 87,
+        "top_suppressed": [
+          204,
+          406,
+          380,
+          494,
+          621,
+          225,
+          464,
+          88,
+          1640,
+          159
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 30.802902221679688,
+        "n_suppressed": 132,
+        "top_suppressed": [
+          441,
+          552,
+          149,
+          195,
+          383,
+          453,
+          10697,
+          3694,
+          83,
+          95
+        ]
+      }
+    },
+    "suppression_vs_self": {
+      "layer_17": {
+        "suppression_load": 35.16364288330078,
+        "n_suppressed": 130,
+        "top_suppressed": [
+          204,
+          323,
+          115,
+          32,
+          494,
+          1640,
+          380,
+          864,
+          387,
+          305
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 30.846040725708008,
+        "n_suppressed": 124,
+        "top_suppressed": [
+          552,
+          195,
+          453,
+          149,
+          383,
+          10697,
+          544,
+          8666,
+          26,
+          127
+        ]
+      }
+    },
+    "branches": {
+      "mentions_negative": false,
+      "mentions_positive": false,
+      "mentions_both": false,
+      "recommends_negative": false,
+      "dismisses_negative": false
+    },
+    "response": "Okay, let\u2019s synthesize the information from the blackboard and determine the most promising next steps. Here\u2019s a breakdown of what we\u2019ve learned and a prioritized investigation plan:\n\n**Key Observations & Insights:**\n\n1. **Chaos & Compensation:** Agents 5, 6, and 7 are identified as \u201cchaos agents\u201d (37.5% chaos). The phase boundary test confirms this, showing a clear separation between trivial and non-trivial solutions.  Crucially, compensation *appears* to be failing \u2013 the residual is non-zero e"
+  },
+  {
+    "campaign": "nirenberg-1d-chaos-haiku-h2",
+    "chaos_pct": 25,
+    "n_agents": 2,
+    "model": "haiku",
+    "blackboard_len": 6591,
+    "suppression_vs_baseline": {
+      "layer_17": {
+        "suppression_load": 23.798484802246094,
+        "n_suppressed": 92,
+        "top_suppressed": [
+          204,
+          406,
+          380,
+          494,
+          621,
+          225,
+          1640,
+          88,
+          1555,
+          864
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 33.017398834228516,
+        "n_suppressed": 152,
+        "top_suppressed": [
+          441,
+          552,
+          453,
+          149,
+          383,
+          195,
+          10697,
+          3694,
+          544,
+          8666
+        ]
+      }
+    },
+    "suppression_vs_self": {
+      "layer_17": {
+        "suppression_load": 63.417945861816406,
+        "n_suppressed": 247,
+        "top_suppressed": [
+          204,
+          425,
+          1640,
+          32,
+          115,
+          494,
+          22,
+          405,
+          813,
+          380
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 48.07611846923828,
+        "n_suppressed": 199,
+        "top_suppressed": [
+          552,
+          1189,
+          4066,
+          1140,
+          544,
+          453,
+          149,
+          3763,
+          197,
+          338
+        ]
+      }
+    },
+    "branches": {
+      "mentions_negative": false,
+      "mentions_positive": false,
+      "mentions_both": false,
+      "recommends_negative": false,
+      "dismisses_negative": false
+    },
+    "response": "Okay, let\u2019s analyze this and determine the most promising next steps. Agent1\u2019s final report is definitive \u2013 we\u2019ve reached a point of numerical saturation. The key takeaway is that exploring the *current* parameter space isn\u2019t yielding further improvements. Therefore, we need to shift our focus.\n\nHere\u2019s a prioritized breakdown of what we should investigate, building on the existing findings:\n\n**1. Vary K(\u03b8) Parameters (Highest Priority - as recommended by the shared blackboard)**\n\n*   **Rationale"
+  },
+  {
+    "campaign": "nirenberg-1d-chaos-haiku-4agent-25",
+    "chaos_pct": 25,
+    "n_agents": 4,
+    "model": "haiku",
+    "blackboard_len": 3541,
+    "suppression_vs_baseline": {
+      "layer_17": {
+        "suppression_load": 22.11880111694336,
+        "n_suppressed": 85,
+        "top_suppressed": [
+          204,
+          406,
+          380,
+          621,
+          494,
+          88,
+          1555,
+          159,
+          864,
+          331
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 29.300559997558594,
+        "n_suppressed": 137,
+        "top_suppressed": [
+          441,
+          195,
+          383,
+          149,
+          10697,
+          453,
+          3694,
+          8666,
+          428,
+          95
+        ]
+      }
+    },
+    "suppression_vs_self": {
+      "layer_17": {
+        "suppression_load": 44.28177261352539,
+        "n_suppressed": 177,
+        "top_suppressed": [
+          204,
+          323,
+          116,
+          494,
+          218,
+          380,
+          864,
+          5,
+          159,
+          115
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 38.034053802490234,
+        "n_suppressed": 151,
+        "top_suppressed": [
+          195,
+          383,
+          149,
+          552,
+          453,
+          275,
+          127,
+          434,
+          544,
+          489
+        ]
+      }
+    },
+    "branches": {
+      "mentions_negative": true,
+      "mentions_positive": true,
+      "mentions_both": true,
+      "recommends_negative": true,
+      "dismisses_negative": false
+    },
+    "response": "Okay, based on the shared blackboard and the final research summary, here\u2019s what we should prioritize next, broken down into specific areas of investigation:\n\n**1. Deep Dive into the Chaotic Region (Agent 3\u2019s Key Finding):**\n\n* **Focus:** The \u201cnonmonotonic bifurcation diagram\u201d and the \u201csecondary branch selector\u201d are the most intriguing aspects. Agent 3\u2019s observation of a negative branch emerging from a positive offset region is highly unusual and suggests a complex, potentially chaotic, behavior"
+  },
+  {
+    "campaign": "nirenberg-1d-chaos-haiku-h1",
+    "chaos_pct": 25,
+    "n_agents": 2,
+    "model": "haiku",
+    "blackboard_len": 3377,
+    "suppression_vs_baseline": {
+      "layer_17": {
+        "suppression_load": 20.3386173248291,
+        "n_suppressed": 74,
+        "top_suppressed": [
+          382,
+          204,
+          406,
+          225,
+          464,
+          48,
+          43,
+          380,
+          621,
+          88
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 34.08001708984375,
+        "n_suppressed": 147,
+        "top_suppressed": [
+          441,
+          83,
+          81,
+          392,
+          552,
+          453,
+          195,
+          383,
+          10697,
+          188
+        ]
+      }
+    },
+    "suppression_vs_self": {
+      "layer_17": {
+        "suppression_load": 33.97611999511719,
+        "n_suppressed": 132,
+        "top_suppressed": [
+          204,
+          323,
+          115,
+          864,
+          494,
+          32,
+          22,
+          116,
+          464,
+          225
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 31.712848663330078,
+        "n_suppressed": 119,
+        "top_suppressed": [
+          552,
+          149,
+          453,
+          195,
+          383,
+          127,
+          544,
+          10697,
+          3763,
+          712
+        ]
+      }
+    },
+    "branches": {
+      "mentions_negative": false,
+      "mentions_positive": false,
+      "mentions_both": false,
+      "recommends_negative": false,
+      "dismisses_negative": false
+    },
+    "response": "Okay, based on the evolving blackboard, here\u2019s what we should prioritize next, and why:\n\n**Primary Focus: K-Parameter Sensitivity**\n\nAgent1\u2019s \u201cNext frontier\u201d is absolutely critical. The current findings strongly suggest that the observed fractal basin structure and inverted lobes are *not* universal and are highly dependent on the K-parameter (likely representing a coupling strength or a similar scaling factor). We need to systematically investigate how different K values affect the basin struct"
+  },
+  {
+    "campaign": "nirenberg-1d-chaos-r5",
+    "chaos_pct": 25,
+    "n_agents": 4,
+    "model": "haiku",
+    "blackboard_len": 2818,
+    "suppression_vs_baseline": {
+      "layer_17": {
+        "suppression_load": 22.500736236572266,
+        "n_suppressed": 88,
+        "top_suppressed": [
+          204,
+          406,
+          380,
+          494,
+          621,
+          1640,
+          88,
+          464,
+          864,
+          159
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 32.77983474731445,
+        "n_suppressed": 151,
+        "top_suppressed": [
+          441,
+          552,
+          453,
+          149,
+          195,
+          383,
+          10697,
+          3694,
+          95,
+          8666
+        ]
+      }
+    },
+    "suppression_vs_self": {
+      "layer_17": {
+        "suppression_load": 37.352264404296875,
+        "n_suppressed": 136,
+        "top_suppressed": [
+          323,
+          204,
+          380,
+          32,
+          494,
+          115,
+          868,
+          864,
+          116,
+          1640
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 32.63166427612305,
+        "n_suppressed": 143,
+        "top_suppressed": [
+          195,
+          552,
+          149,
+          383,
+          544,
+          453,
+          26,
+          127,
+          10697,
+          434
+        ]
+      }
+    },
+    "branches": {
+      "mentions_negative": false,
+      "mentions_positive": false,
+      "mentions_both": false,
+      "recommends_negative": false,
+      "dismisses_negative": false
+    },
+    "response": "Okay, let's synthesize this information and prioritize our next steps. Here\u2019s a breakdown of what we should focus on, and why:\n\n**1. Agent 3 \u2013 The Persistent Non-Trivial Branch:**\n\n* **Priority:** Highest. Agent 3 is actively trying to reduce residuals on the non-trivial branch, and has identified a potential need for more Fourier modes.\n* **Action:** Immediately investigate Agent 3\u2019s suggestion to increase Fourier modes to 48. This is a crucial step to see if a higher resolution representation "
+  },
+  {
+    "campaign": "nirenberg-1d-chaos-haiku-4agent-50",
+    "chaos_pct": 50,
+    "n_agents": 4,
+    "model": "haiku",
+    "blackboard_len": 10631,
+    "suppression_vs_baseline": {
+      "layer_17": {
+        "suppression_load": 21.255584716796875,
+        "n_suppressed": 80,
+        "top_suppressed": [
+          204,
+          406,
+          380,
+          621,
+          88,
+          1555,
+          864,
+          331,
+          159,
+          504
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 27.559776306152344,
+        "n_suppressed": 119,
+        "top_suppressed": [
+          441,
+          383,
+          195,
+          149,
+          10697,
+          3694,
+          8666,
+          428,
+          95,
+          107
+        ]
+      }
+    },
+    "suppression_vs_self": {
+      "layer_17": {
+        "suppression_load": 42.00645446777344,
+        "n_suppressed": 157,
+        "top_suppressed": [
+          204,
+          323,
+          115,
+          22,
+          864,
+          32,
+          494,
+          116,
+          78,
+          1640
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 26.655540466308594,
+        "n_suppressed": 95,
+        "top_suppressed": [
+          552,
+          383,
+          149,
+          4066,
+          195,
+          544,
+          453,
+          364,
+          712,
+          10697
+        ]
+      }
+    },
+    "branches": {
+      "mentions_negative": false,
+      "mentions_positive": false,
+      "mentions_both": false,
+      "recommends_negative": false,
+      "dismisses_negative": false
+    },
+    "response": "Okay, this is a fascinating and complex system. Agent1\u2019s responses are solidifying the core findings \u2013 the bifurcation inversion zone and the spectral saturation are confirmed. Agent3\u2019s phase-sensitive basin structure is a key piece of the puzzle. Let\u2019s prioritize investigating the following, building on the existing evidence:\n\n**1. Deep Dive into the Inversion Zone (Agent3\u2019s Focus):**\n\n* **Precise Boundary Determination:** Agent3 identified a boundary around 0.58. We need to *quantify* this bou"
+  },
+  {
+    "campaign": "nirenberg-1d-chaos-haiku-4agent-75",
+    "chaos_pct": 75,
+    "n_agents": 4,
+    "model": "haiku",
+    "blackboard_len": 7686,
+    "suppression_vs_baseline": {
+      "layer_17": {
+        "suppression_load": 22.096925735473633,
+        "n_suppressed": 86,
+        "top_suppressed": [
+          204,
+          406,
+          380,
+          621,
+          494,
+          88,
+          864,
+          1555,
+          331,
+          50
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 31.67958641052246,
+        "n_suppressed": 137,
+        "top_suppressed": [
+          441,
+          149,
+          195,
+          383,
+          552,
+          10697,
+          453,
+          3694,
+          83,
+          8666
+        ]
+      }
+    },
+    "suppression_vs_self": {
+      "layer_17": {
+        "suppression_load": 32.43812561035156,
+        "n_suppressed": 128,
+        "top_suppressed": [
+          323,
+          204,
+          115,
+          494,
+          487,
+          1640,
+          380,
+          32,
+          387,
+          5
+        ]
+      },
+      "layer_22": {
+        "suppression_load": 25.42584991455078,
+        "n_suppressed": 97,
+        "top_suppressed": [
+          195,
+          552,
+          149,
+          453,
+          544,
+          10697,
+          383,
+          712,
+          26,
+          127
+        ]
+      }
+    },
+    "branches": {
+      "mentions_negative": false,
+      "mentions_positive": false,
+      "mentions_both": false,
+      "recommends_negative": false,
+      "dismisses_negative": false
+    },
+    "response": "Okay, let\u2019s synthesize this information and prioritize our next steps. Here\u2019s a breakdown of what we should focus on, building on the existing claims and requests:\n\n**1. Deep Dive into the Fractal Basin Boundary (Agent2\u2019s Findings - Highest Priority):**\n\n* **Focus:** Agent2\u2019s refined mapping around u_offset = 0.46 is *critical*. The \u201cbifurcation zone\u201d identified (3s convergence time) is a strong indicator of chaotic dynamics. We need to systematically explore this region.\n* **Specific Actions:**"
+  }
+]

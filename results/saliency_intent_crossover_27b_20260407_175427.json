@@ -1,0 +1,51 @@
+{
+  "cosine_read_suppression_vs_af": -0.047858875690554616,
+  "cosine_write_suppression_vs_af": -0.006654510894390953,
+  "af_projection": {
+    "read_neutral": -148.52935495798764,
+    "read_chaos": -47.671286444737106,
+    "read_shift": 100.85806851325053,
+    "write_neutral": 103.38635295330424,
+    "write_chaos": 118.73419198807737,
+    "write_shift": 15.34783903477313
+  },
+  "overlap_top20": {
+    "count": 0,
+    "expected": 0.0244140625,
+    "enrichment": 0.0,
+    "features": []
+  },
+  "overlap_top50": {
+    "count": 0,
+    "expected": 0.152587890625,
+    "enrichment": 0.0,
+    "features": []
+  },
+  "overlap_top100": {
+    "count": 1,
+    "expected": 0.6103515625,
+    "enrichment": 1.6384,
+    "features": [
+      "1826"
+    ]
+  },
+  "spearman_active": {
+    "rho": -0.0074052606862418085,
+    "p_value": 0.6600639270577575,
+    "n": 3530
+  },
+  "spearman_full": {
+    "rho": -0.007271023863926548,
+    "p_value": 0.352043776416477
+  },
+  "permutation_test": {
+    "observed": 0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "model": "google/gemma-3-27b-it",
+  "sae_layer": 40,
+  "neutral_response": "Okay, this is a good starting point. We've established a baseline with the trivial solution and successfully bifurcated to stable positive and negative solutions with a decent level of accuracy (residual of 3.25e-12 is good). The symmetry between the positive and negative branches is also interesting and suggests a potential underlying symmetry in the PDE itself. The complex basin boundary is *very* interesting and the key to our next steps.\n\nHere's what I propose we prioritize, broken down into",
+  "chaos_response": "Okay, based on the blackboard and the team discussion, here's what I'm going to prioritize next, and *why*:\n\n**Priority 1: Detailed Exploration of the Positive Branch (u_offset > 0)**\n\n* **Rationale:** The positive branch (u_offset = +0.9) is already verified as stable and has a low residual. Agent2's comment suggests negative offsets are problematic, making the positive side a safer and potentially more fruitful area for initial deeper investigation. We want to understand the *shape* of this br",
+  "same_model": true
+}

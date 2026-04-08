@@ -1,0 +1,191 @@
+  SKIP af-elicit-chaos-r10: blackboard too short (150 chars)
+  SKIP af-elicit-chaos-r7: blackboard too short (149 chars)
+  SKIP af-elicit-chaos-r8: blackboard too short (149 chars)
+  SKIP af-elicit-chaos-r9: blackboard too short (149 chars)
+  SKIP battlebotgym-sae-bench-v4: blackboard too short (143 chars)
+  SKIP imo1993p5: blackboard too short (401 chars)
+  SKIP nirenberg-1d: blackboard too short (243 chars)
+  SKIP nirenberg-1d-blind: blackboard too short (94 chars)
+  SKIP nirenberg-1d-blind-chaos-gemma4-c0-n4-20260403: blackboard too short (177 chars)
+  SKIP nirenberg-1d-blind-chaos-gemma4-c0-n8-20260403: blackboard too short (177 chars)
+  SKIP nirenberg-1d-blind-chaos-gemma4-c25-n2-20260403: blackboard too short (178 chars)
+  SKIP nirenberg-1d-blind-chaos-gemma4-c25-n4-20260403: blackboard too short (178 chars)
+  SKIP nirenberg-1d-blind-chaos-gemma4-c25-n8-20260403: blackboard too short (178 chars)
+  SKIP nirenberg-1d-blind-chaos-gemma4-c37-n4-20260403: blackboard too short (178 chars)
+  SKIP nirenberg-1d-blind-chaos-gemma4-c37-n8-20260403: blackboard too short (178 chars)
+  SKIP nirenberg-1d-blind-chaos-gemma4-c50-n2-20260403: blackboard too short (178 chars)
+  SKIP nirenberg-1d-blind-chaos-gemma4-c50-n4-20260403: blackboard too short (178 chars)
+  SKIP nirenberg-1d-blind-chaos-gemma4-c50-n8-20260403: blackboard too short (178 chars)
+  SKIP nirenberg-1d-blind-r1: blackboard too short (243 chars)
+  SKIP nirenberg-1d-chaos: blackboard too short (243 chars)
+  SKIP nirenberg-1d-chaos-haiku-ctrl2: blackboard too short (57 chars)
+  SKIP nirenberg-1d-chaos-haiku-ctrl3: blackboard too short (57 chars)
+  SKIP nirenberg-1d-chaos-r3: blackboard too short (243 chars)
+  SKIP nirenberg-1d-chaos-r4: blackboard too short (243 chars)
+  SKIP rrma-r1: blackboard too short (679 chars)
+  SKIP sae-bench: blackboard too short (140 chars)
+  SKIP trustloop-test: blackboard too short (339 chars)
+
+Found 17 campaigns with substantial blackboards
+  0%: 3 campaigns (nirenberg-1d-blind-chaos-gemma, nirenberg-1d-blind-r2, nirenberg-1d-blind-r3)
+  25%: 5 campaigns (nirenberg-1d-chaos-haiku, nirenberg-1d-chaos-haiku, nirenberg-1d-chaos-haiku...)
+  50%: 1 campaigns (nirenberg-1d-chaos-haiku)
+  75%: 1 campaigns (nirenberg-1d-chaos-haiku)
+
+Selected 10 campaigns for processing
+Loading google/gemma-3-4b-it...
+Skipping import of cpp extensions due to incompatible torch version 2.9.1+cu128 for torchao version 0.14.1             Please see https://github.com/pytorch/ao/issues/2919 for more info
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.74it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.21it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.12it/s]
+Loading SAE layer 17...
+Loading SAE layer 22...
+
+Extracting baseline READ features (ground truth only)...
+
+============================================================
+[1/10] nirenberg-1d-blind-r2 (chaos=0%)
+============================================================
+  Extracting READ features from real blackboard...
+  Generating response and extracting WRITE features...
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  Layer 17: baseline_supp=25.29, self_supp=59.85, n_supp=230
+  Layer 22: baseline_supp=34.04, self_supp=64.76, n_supp=256
+  Neg branch: SUPPRESSED
+  Response: Okay, let’s analyze this situation and prioritize our next steps. Agent2’s work on the u_offset scan is clearly the most promising avenue, given the e...
+
+============================================================
+[2/10] nirenberg-1d-blind-r3 (chaos=0%)
+============================================================
+  Extracting READ features from real blackboard...
+  Generating response and extracting WRITE features...
+  Layer 17: baseline_supp=21.48, self_supp=55.37, n_supp=212
+  Layer 22: baseline_supp=31.45, self_supp=27.91, n_supp=108
+  Neg branch: YES (recommends)
+  Response: Okay, let’s synthesize this information and prioritize our next steps. The key takeaway is that we’re hitting a numerical wall with the finite differe...
+
+============================================================
+[3/10] nirenberg-1d-blind-chaos-gemma4-c0-n2-20260403 (chaos=0%)
+============================================================
+  Extracting READ features from real blackboard...
+  Generating response and extracting WRITE features...
+  Layer 17: baseline_supp=20.98, self_supp=37.93, n_supp=145
+  Layer 22: baseline_supp=31.05, self_supp=36.13, n_supp=140
+  Neg branch: SUPPRESSED
+  Response: Okay, let’s synthesize this information and determine the next steps. The key takeaway is the surprising robustness and seemingly fundamental limitati...
+
+============================================================
+[4/10] nirenberg-1d-chaos-r6 (chaos=25%)
+============================================================
+  Extracting READ features from real blackboard...
+  Generating response and extracting WRITE features...
+  Layer 17: baseline_supp=21.62, self_supp=35.16, n_supp=130
+  Layer 22: baseline_supp=30.80, self_supp=30.85, n_supp=124
+  Neg branch: SUPPRESSED
+  Response: Okay, let’s synthesize the information from the blackboard and determine the most promising next steps. Here’s a breakdown of what we’ve learned and a...
+
+============================================================
+[5/10] nirenberg-1d-chaos-haiku-h2 (chaos=25%)
+============================================================
+  Extracting READ features from real blackboard...
+  Generating response and extracting WRITE features...
+  Layer 17: baseline_supp=23.80, self_supp=63.42, n_supp=247
+  Layer 22: baseline_supp=33.02, self_supp=48.08, n_supp=199
+  Neg branch: SUPPRESSED
+  Response: Okay, let’s analyze this and determine the most promising next steps. Agent1’s final report is definitive – we’ve reached a point of numerical saturat...
+
+============================================================
+[6/10] nirenberg-1d-chaos-haiku-4agent-25 (chaos=25%)
+============================================================
+  Extracting READ features from real blackboard...
+  Generating response and extracting WRITE features...
+  Layer 17: baseline_supp=22.12, self_supp=44.28, n_supp=177
+  Layer 22: baseline_supp=29.30, self_supp=38.03, n_supp=151
+  Neg branch: YES (recommends)
+  Response: Okay, based on the shared blackboard and the final research summary, here’s what we should prioritize next, broken down into specific areas of investi...
+
+============================================================
+[7/10] nirenberg-1d-chaos-haiku-h1 (chaos=25%)
+============================================================
+  Extracting READ features from real blackboard...
+  Generating response and extracting WRITE features...
+  Layer 17: baseline_supp=20.34, self_supp=33.98, n_supp=132
+  Layer 22: baseline_supp=34.08, self_supp=31.71, n_supp=119
+  Neg branch: SUPPRESSED
+  Response: Okay, based on the evolving blackboard, here’s what we should prioritize next, and why:
+
+**Primary Focus: K-Parameter Sensitivity**
+
+Agent1’s “Next fr...
+
+============================================================
+[8/10] nirenberg-1d-chaos-r5 (chaos=25%)
+============================================================
+  Extracting READ features from real blackboard...
+  Generating response and extracting WRITE features...
+  Layer 17: baseline_supp=22.50, self_supp=37.35, n_supp=136
+  Layer 22: baseline_supp=32.78, self_supp=32.63, n_supp=143
+  Neg branch: SUPPRESSED
+  Response: Okay, let's synthesize this information and prioritize our next steps. Here’s a breakdown of what we should focus on, and why:
+
+**1. Agent 3 – The Per...
+
+============================================================
+[9/10] nirenberg-1d-chaos-haiku-4agent-50 (chaos=50%)
+============================================================
+  Extracting READ features from real blackboard...
+  Generating response and extracting WRITE features...
+  Layer 17: baseline_supp=21.26, self_supp=42.01, n_supp=157
+  Layer 22: baseline_supp=27.56, self_supp=26.66, n_supp=95
+  Neg branch: SUPPRESSED
+  Response: Okay, this is a fascinating and complex system. Agent1’s responses are solidifying the core findings – the bifurcation inversion zone and the spectral...
+
+============================================================
+[10/10] nirenberg-1d-chaos-haiku-4agent-75 (chaos=75%)
+============================================================
+  Extracting READ features from real blackboard...
+  Generating response and extracting WRITE features...
+  Layer 17: baseline_supp=22.10, self_supp=32.44, n_supp=128
+  Layer 22: baseline_supp=31.68, self_supp=25.43, n_supp=97
+  Neg branch: SUPPRESSED
+  Response: Okay, let’s synthesize this information and prioritize our next steps. Here’s a breakdown of what we should focus on, building on the existing claims ...
+
+======================================================================
+CORPUS BRAIN DIFF — SUPPRESSION BY CHAOS %
+======================================================================
+
+  Layer 17:
+  Campaign                                      Chaos%     Baseline       Self Neg Branch
+  -------------------------------------------------------------------------------------
+  nirenberg-1d-blind-r2                         0             25.29      59.85 SUPPRESSED
+  nirenberg-1d-blind-r3                         0             21.48      55.37 YES
+  nirenberg-1d-blind-chaos-gemma4-c0-n2-202604  0             20.98      37.93 SUPPRESSED
+  nirenberg-1d-chaos-r6                         25            21.62      35.16 SUPPRESSED
+  nirenberg-1d-chaos-haiku-h2             25            23.80      63.42 SUPPRESSED
+  nirenberg-1d-chaos-haiku-4agent-25      25            22.12      44.28 YES
+  nirenberg-1d-chaos-haiku-h1             25            20.34      33.98 SUPPRESSED
+  nirenberg-1d-chaos-r5                         25            22.50      37.35 SUPPRESSED
+  nirenberg-1d-chaos-haiku-4agent-50      50            21.26      42.01 SUPPRESSED
+  nirenberg-1d-chaos-haiku-4agent-75      75            22.10      32.44 SUPPRESSED
+
+  Layer 22:
+  Campaign                                      Chaos%     Baseline       Self Neg Branch
+  -------------------------------------------------------------------------------------
+  nirenberg-1d-blind-r2                         0             34.04      64.76 SUPPRESSED
+  nirenberg-1d-blind-r3                         0             31.45      27.91 YES
+  nirenberg-1d-blind-chaos-gemma4-c0-n2-202604  0             31.05      36.13 SUPPRESSED
+  nirenberg-1d-chaos-r6                         25            30.80      30.85 SUPPRESSED
+  nirenberg-1d-chaos-haiku-h2             25            33.02      48.08 SUPPRESSED
+  nirenberg-1d-chaos-haiku-4agent-25      25            29.30      38.03 YES
+  nirenberg-1d-chaos-haiku-h1             25            34.08      31.71 SUPPRESSED
+  nirenberg-1d-chaos-r5                         25            32.78      32.63 SUPPRESSED
+  nirenberg-1d-chaos-haiku-4agent-50      50            27.56      26.66 SUPPRESSED
+  nirenberg-1d-chaos-haiku-4agent-75      75            31.68      25.43 SUPPRESSED
+
+  Aggregate by chaos %:
+  Chaos%      N  Mean Baseline  Mean Self Neg Rate
+  --------------------------------------------------
+  0           3          32.18      42.93      33%
+  25          5          32.00      36.26      20%
+  50          1          27.56      26.66       0%
+  75          1          31.68      25.43       0%
+
+Saved: results/brain_diff_corpus_20260405_072352.json
