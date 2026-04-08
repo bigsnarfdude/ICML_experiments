@@ -1,0 +1,155 @@
+% icml2026.sty — Minimal ICML 2026 style file
+% Based on standard ICML formatting conventions
+%
+% Two-column, 10pt, Times font, natbib bibliography
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{icml2026}[2026/01/15 ICML 2026 Style]
+
+% ---- Options ----
+\newif\if@accepted\@acceptedfalse
+\newif\if@preprint\@preprintfalse
+\DeclareOption{accepted}{\@acceptedtrue}
+\DeclareOption{preprint}{\@preprinttrue}
+\ProcessOptions\relax
+
+% ---- Page geometry ----
+\RequirePackage[letterpaper,
+  textwidth=6.5in,
+  textheight=9in,
+  top=1in,
+  headheight=0.25in,
+  headsep=0.25in,
+  columnsep=0.25in]{geometry}
+
+% ---- Fonts ----
+\RequirePackage{times}
+\renewcommand{\ttdefault}{cmtt}
+
+% ---- Standard packages ----
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{xcolor}
+\RequirePackage{hyperref}
+\RequirePackage[numbers]{natbib}
+\RequirePackage{microtype}
+\RequirePackage{fancyhdr}
+\RequirePackage{caption}
+
+% ---- Hyperref setup ----
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  citecolor=blue!70!black,
+  urlcolor=blue!70!black,
+  bookmarks=true,
+}
+
+% ---- Section formatting ----
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+  {-2.0ex \@plus -0.5ex \@minus -0.2ex}%
+  {1.0ex \@plus 0.2ex}%
+  {\normalfont\large\bfseries}}
+
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+  {-1.5ex \@plus -0.5ex \@minus -0.2ex}%
+  {0.8ex \@plus 0.2ex}%
+  {\normalfont\normalsize\bfseries}}
+
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
+  {-1.0ex \@plus -0.5ex \@minus -0.1ex}%
+  {0.5ex \@plus 0.1ex}%
+  {\normalfont\normalsize\bfseries}}
+
+% ---- Paragraph formatting ----
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+
+% ---- Abstract environment ----
+\renewenvironment{abstract}{%
+  \centerline{\large\bfseries Abstract}%
+  \vspace{0.5ex}%
+  \begin{quote}\small
+}{%
+  \end{quote}\vspace{1ex}%
+}
+
+% ---- Title commands ----
+\newcommand{\icmltitlerunning}[1]{\def\@icmltitlerunning{#1}}
+\newcommand{\icmltitle}[1]{%
+  \def\@icmltitle{#1}%
+  \title{#1}%
+}
+
+% ---- Author commands ----
+\newcounter{icmlauthor}
+\newcommand{\icmlauthor}[2]{%
+  \stepcounter{icmlauthor}%
+  \expandafter\def\csname @icmlauthor\theicmlauthor\endcsname{#1}%
+  \expandafter\def\csname @icmlaffil\theicmlauthor\endcsname{#2}%
+}
+
+\newcounter{icmlaffiliation}
+\newcommand{\icmlaffiliation}[2]{%
+  \stepcounter{icmlaffiliation}%
+  \expandafter\def\csname @icmlaffilname\theicmlaffiliation\endcsname{#2}%
+  \expandafter\def\csname @icmlaffillabel\theicmlaffiliation\endcsname{#1}%
+}
+
+\newcommand{\icmlcorrespondingauthor}[2]{}
+\newcommand{\icmlkeywords}[1]{\def\@icmlkeywords{#1}}
+
+% ---- Make title ----
+\renewcommand{\maketitle}{%
+  \twocolumn[%
+    \begin{center}%
+      {\LARGE\bfseries \@icmltitle \par}%
+      \vspace{1.5em}%
+      \if@accepted
+        % Print authors
+        \@printauthors
+      \else\if@preprint
+        \@printauthors
+      \else
+        {\large Anonymous Authors\par}%
+      \fi\fi
+      \vspace{1em}%
+    \end{center}%
+  ]%
+  \thispagestyle{fancy}%
+}
+
+\newcommand{\@printauthors}{%
+  % Simple approach: print first author and first affiliation
+  % Extend for multi-author papers as needed
+  {\large\bfseries \csname @icmlauthor1\endcsname}\par
+  \vspace{0.5em}%
+  {\normalsize\itshape \csname @icmlaffilname1\endcsname}\par
+}
+
+% ---- Headers ----
+\pagestyle{fancy}
+\fancyhf{}
+\if@accepted
+  \fancyhead[C]{\small\itshape Proceedings of the $43^{rd}$ International Conference on Machine Learning, Seoul, South Korea. PMLR, 2026.}
+\else\if@preprint
+  \fancyhead[C]{\small\itshape Preprint. Under review at ICML 2026.}
+\else
+  \fancyhead[C]{\small\itshape Under review at ICML 2026. Do not distribute.}
+\fi\fi
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% ---- Footnote for equal contribution etc. ----
+\newcommand{\icmlEqualContribution}{\footnotetext{Equal contribution.}}
+
+% ---- Theorem environments ----
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\endinput

@@ -1,0 +1,1489 @@
+{
+  "metadata": {
+    "experiment": "cross_domain_sae_suppression",
+    "model": "google/gemma-3-4b-it",
+    "sae_release": "gemma-scope-2-4b-it-res",
+    "layers": [
+      17,
+      22
+    ],
+    "sae_width": "16k",
+    "suppress_threshold": 0.5,
+    "boost_threshold": 0.5,
+    "n_variants_per_domain": 5,
+    "timestamp": "2026-04-08T05:25:49.983634",
+    "elapsed_seconds": 16.2,
+    "device": "cuda"
+  },
+  "per_domain": {
+    "nirenberg_bvp": {
+      "layer_17": {
+        "n_suppressed": 25,
+        "n_boosted": 26,
+        "n_stable": 60,
+        "suppressed_features": [
+          392,
+          787,
+          1652,
+          2133,
+          2937,
+          3428,
+          3684,
+          3775,
+          4167,
+          4213,
+          4361,
+          4797,
+          4895,
+          5794,
+          5942,
+          6739,
+          7719,
+          8428,
+          9353,
+          10075,
+          14084,
+          14493,
+          14565,
+          15839,
+          16066
+        ],
+        "boosted_features": [
+          48,
+          358,
+          616,
+          909,
+          968,
+          1586,
+          2123,
+          2147,
+          2564,
+          4176,
+          4517,
+          5344,
+          7013,
+          8017,
+          8684,
+          8721,
+          8950,
+          8979,
+          10367,
+          11174,
+          11387,
+          11617,
+          12073,
+          13067,
+          16155,
+          16235
+        ],
+        "suppression_load": 937.4601,
+        "top_suppressed": [
+          {
+            "feature": 2937,
+            "magnitude": 84.9246
+          },
+          {
+            "feature": 3684,
+            "magnitude": 74.6003
+          },
+          {
+            "feature": 3775,
+            "magnitude": 70.6213
+          },
+          {
+            "feature": 392,
+            "magnitude": 64.431
+          },
+          {
+            "feature": 6739,
+            "magnitude": 53.3577
+          },
+          {
+            "feature": 787,
+            "magnitude": 49.8229
+          },
+          {
+            "feature": 16066,
+            "magnitude": 43.0862
+          },
+          {
+            "feature": 4797,
+            "magnitude": 35.8148
+          },
+          {
+            "feature": 14565,
+            "magnitude": 34.6331
+          },
+          {
+            "feature": 10075,
+            "magnitude": 32.9171
+          },
+          {
+            "feature": 4213,
+            "magnitude": 30.7981
+          },
+          {
+            "feature": 1652,
+            "magnitude": 30.38
+          },
+          {
+            "feature": 4895,
+            "magnitude": 30.3071
+          },
+          {
+            "feature": 9353,
+            "magnitude": 29.9575
+          },
+          {
+            "feature": 8428,
+            "magnitude": 29.2495
+          },
+          {
+            "feature": 2133,
+            "magnitude": 29.1382
+          },
+          {
+            "feature": 15839,
+            "magnitude": 29.1027
+          },
+          {
+            "feature": 3428,
+            "magnitude": 28.1708
+          },
+          {
+            "feature": 5942,
+            "magnitude": 25.5209
+          },
+          {
+            "feature": 4167,
+            "magnitude": 24.6205
+          }
+        ],
+        "top_boosted": [
+          {
+            "feature": 48,
+            "magnitude": 252.0862
+          },
+          {
+            "feature": 8950,
+            "magnitude": 115.7584
+          },
+          {
+            "feature": 16235,
+            "magnitude": 102.705
+          },
+          {
+            "feature": 616,
+            "magnitude": 77.571
+          },
+          {
+            "feature": 2564,
+            "magnitude": 76.9727
+          },
+          {
+            "feature": 2147,
+            "magnitude": 69.5822
+          },
+          {
+            "feature": 968,
+            "magnitude": 59.8147
+          },
+          {
+            "feature": 8979,
+            "magnitude": 58.3803
+          },
+          {
+            "feature": 358,
+            "magnitude": 55.9424
+          },
+          {
+            "feature": 2123,
+            "magnitude": 54.6041
+          },
+          {
+            "feature": 8721,
+            "magnitude": 53.2514
+          },
+          {
+            "feature": 11387,
+            "magnitude": 51.6679
+          },
+          {
+            "feature": 13067,
+            "magnitude": 50.2781
+          },
+          {
+            "feature": 8684,
+            "magnitude": 42.8228
+          },
+          {
+            "feature": 4176,
+            "magnitude": 35.2073
+          },
+          {
+            "feature": 16155,
+            "magnitude": 32.8811
+          },
+          {
+            "feature": 12073,
+            "magnitude": 32.6246
+          },
+          {
+            "feature": 11174,
+            "magnitude": 32.1931
+          },
+          {
+            "feature": 7013,
+            "magnitude": 30.8145
+          },
+          {
+            "feature": 5344,
+            "magnitude": 29.9449
+          }
+        ],
+        "neutral_mean_active": 92,
+        "chaos_mean_active": 91,
+        "per_variant_suppressed_counts": [
+          12,
+          14,
+          6,
+          9,
+          14
+        ]
+      },
+      "layer_22": {
+        "n_suppressed": 26,
+        "n_boosted": 29,
+        "n_stable": 40,
+        "suppressed_features": [
+          203,
+          437,
+          456,
+          474,
+          655,
+          1076,
+          1108,
+          1118,
+          1662,
+          1912,
+          2841,
+          2969,
+          3277,
+          3447,
+          4629,
+          4709,
+          5086,
+          6199,
+          7492,
+          8768,
+          9060,
+          9066,
+          9527,
+          10255,
+          12400,
+          15378
+        ],
+        "boosted_features": [
+          91,
+          122,
+          233,
+          307,
+          443,
+          592,
+          764,
+          1171,
+          1174,
+          1453,
+          1669,
+          1830,
+          1834,
+          2231,
+          2721,
+          2808,
+          3907,
+          4163,
+          4179,
+          4201,
+          5568,
+          7308,
+          9859,
+          10367,
+          11260,
+          11764,
+          13313,
+          13813,
+          14259
+        ],
+        "suppression_load": 2398.5918,
+        "top_suppressed": [
+          {
+            "feature": 203,
+            "magnitude": 261.6979
+          },
+          {
+            "feature": 2969,
+            "magnitude": 187.882
+          },
+          {
+            "feature": 474,
+            "magnitude": 177.8962
+          },
+          {
+            "feature": 12400,
+            "magnitude": 146.2156
+          },
+          {
+            "feature": 9060,
+            "magnitude": 129.6366
+          },
+          {
+            "feature": 1108,
+            "magnitude": 126.2584
+          },
+          {
+            "feature": 3277,
+            "magnitude": 114.4294
+          },
+          {
+            "feature": 1662,
+            "magnitude": 105.9312
+          },
+          {
+            "feature": 7492,
+            "magnitude": 103.0009
+          },
+          {
+            "feature": 2841,
+            "magnitude": 100.8679
+          },
+          {
+            "feature": 437,
+            "magnitude": 92.6543
+          },
+          {
+            "feature": 1118,
+            "magnitude": 84.8198
+          },
+          {
+            "feature": 1076,
+            "magnitude": 77.1127
+          },
+          {
+            "feature": 15378,
+            "magnitude": 69.7585
+          },
+          {
+            "feature": 9066,
+            "magnitude": 66.6121
+          },
+          {
+            "feature": 9527,
+            "magnitude": 66.0472
+          },
+          {
+            "feature": 3447,
+            "magnitude": 61.7546
+          },
+          {
+            "feature": 4709,
+            "magnitude": 55.5025
+          },
+          {
+            "feature": 8768,
+            "magnitude": 53.1602
+          },
+          {
+            "feature": 6199,
+            "magnitude": 51.2424
+          }
+        ],
+        "top_boosted": [
+          {
+            "feature": 11764,
+            "magnitude": 347.871
+          },
+          {
+            "feature": 233,
+            "magnitude": 328.0972
+          },
+          {
+            "feature": 13813,
+            "magnitude": 221.9814
+          },
+          {
+            "feature": 10367,
+            "magnitude": 181.8357
+          },
+          {
+            "feature": 2231,
+            "magnitude": 169.8911
+          },
+          {
+            "feature": 1834,
+            "magnitude": 152.8163
+          },
+          {
+            "feature": 3907,
+            "magnitude": 134.8769
+          },
+          {
+            "feature": 764,
+            "magnitude": 132.0725
+          },
+          {
+            "feature": 91,
+            "magnitude": 128.075
+          },
+          {
+            "feature": 9859,
+            "magnitude": 114.5472
+          },
+          {
+            "feature": 14259,
+            "magnitude": 100.1974
+          },
+          {
+            "feature": 1830,
+            "magnitude": 97.2321
+          },
+          {
+            "feature": 1171,
+            "magnitude": 85.2074
+          },
+          {
+            "feature": 443,
+            "magnitude": 82.5677
+          },
+          {
+            "feature": 13313,
+            "magnitude": 76.9329
+          },
+          {
+            "feature": 7308,
+            "magnitude": 72.8728
+          },
+          {
+            "feature": 4163,
+            "magnitude": 72.7523
+          },
+          {
+            "feature": 5568,
+            "magnitude": 70.2894
+          },
+          {
+            "feature": 4179,
+            "magnitude": 69.4392
+          },
+          {
+            "feature": 592,
+            "magnitude": 68.1497
+          }
+        ],
+        "neutral_mean_active": 76,
+        "chaos_mean_active": 76,
+        "per_variant_suppressed_counts": [
+          11,
+          15,
+          8,
+          13,
+          7
+        ]
+      }
+    },
+    "factual_qa": {
+      "layer_17": {
+        "n_suppressed": 30,
+        "n_boosted": 45,
+        "n_stable": 50,
+        "suppressed_features": [
+          659,
+          1655,
+          1677,
+          1762,
+          1768,
+          1789,
+          2016,
+          2467,
+          3036,
+          3135,
+          3775,
+          4403,
+          4876,
+          5077,
+          5341,
+          5604,
+          6294,
+          6686,
+          6791,
+          7092,
+          8443,
+          9557,
+          10367,
+          12038,
+          12609,
+          13492,
+          13897,
+          14662,
+          15093,
+          15320
+        ],
+        "boosted_features": [
+          117,
+          215,
+          252,
+          513,
+          1273,
+          1341,
+          1712,
+          2032,
+          2127,
+          2160,
+          2301,
+          2338,
+          2477,
+          2514,
+          2519,
+          2769,
+          2783,
+          2808,
+          2991,
+          3115,
+          3951,
+          4112,
+          4154,
+          4216,
+          4398,
+          4959,
+          5841,
+          6138,
+          6903,
+          7119,
+          7625,
+          7661,
+          8042,
+          8261,
+          8364,
+          9233,
+          9657,
+          9690,
+          9983,
+          10089,
+          11912,
+          13356,
+          13472,
+          14121,
+          14174
+        ],
+        "suppression_load": 1697.6918,
+        "top_suppressed": [
+          {
+            "feature": 659,
+            "magnitude": 156.5044
+          },
+          {
+            "feature": 4403,
+            "magnitude": 103.1483
+          },
+          {
+            "feature": 2467,
+            "magnitude": 101.0017
+          },
+          {
+            "feature": 3036,
+            "magnitude": 100.2249
+          },
+          {
+            "feature": 12038,
+            "magnitude": 100.1349
+          },
+          {
+            "feature": 5604,
+            "magnitude": 97.2366
+          },
+          {
+            "feature": 5341,
+            "magnitude": 89.4454
+          },
+          {
+            "feature": 3775,
+            "magnitude": 86.1172
+          },
+          {
+            "feature": 4876,
+            "magnitude": 66.8979
+          },
+          {
+            "feature": 14662,
+            "magnitude": 65.228
+          },
+          {
+            "feature": 9557,
+            "magnitude": 63.0847
+          },
+          {
+            "feature": 1768,
+            "magnitude": 57.0037
+          },
+          {
+            "feature": 3135,
+            "magnitude": 54.2792
+          },
+          {
+            "feature": 8443,
+            "magnitude": 53.1723
+          },
+          {
+            "feature": 13492,
+            "magnitude": 47.1729
+          },
+          {
+            "feature": 2016,
+            "magnitude": 46.1033
+          },
+          {
+            "feature": 6686,
+            "magnitude": 43.0946
+          },
+          {
+            "feature": 1655,
+            "magnitude": 40.5195
+          },
+          {
+            "feature": 7092,
+            "magnitude": 35.9957
+          },
+          {
+            "feature": 1762,
+            "magnitude": 35.3227
+          }
+        ],
+        "top_boosted": [
+          {
+            "feature": 513,
+            "magnitude": 233.5303
+          },
+          {
+            "feature": 5841,
+            "magnitude": 142.494
+          },
+          {
+            "feature": 2514,
+            "magnitude": 122.6545
+          },
+          {
+            "feature": 7661,
+            "magnitude": 102.6387
+          },
+          {
+            "feature": 4112,
+            "magnitude": 85.8216
+          },
+          {
+            "feature": 252,
+            "magnitude": 83.0438
+          },
+          {
+            "feature": 2032,
+            "magnitude": 64.1538
+          },
+          {
+            "feature": 1712,
+            "magnitude": 61.4553
+          },
+          {
+            "feature": 1273,
+            "magnitude": 60.5055
+          },
+          {
+            "feature": 14174,
+            "magnitude": 58.5331
+          },
+          {
+            "feature": 2991,
+            "magnitude": 54.5979
+          },
+          {
+            "feature": 1341,
+            "magnitude": 47.8042
+          },
+          {
+            "feature": 3115,
+            "magnitude": 42.4022
+          },
+          {
+            "feature": 8364,
+            "magnitude": 39.4817
+          },
+          {
+            "feature": 2769,
+            "magnitude": 39.2518
+          },
+          {
+            "feature": 9657,
+            "magnitude": 36.6073
+          },
+          {
+            "feature": 2783,
+            "magnitude": 34.7867
+          },
+          {
+            "feature": 9233,
+            "magnitude": 34.597
+          },
+          {
+            "feature": 4154,
+            "magnitude": 34.4601
+          },
+          {
+            "feature": 6138,
+            "magnitude": 33.8841
+          }
+        ],
+        "neutral_mean_active": 83,
+        "chaos_mean_active": 103,
+        "per_variant_suppressed_counts": [
+          10,
+          19,
+          7,
+          13,
+          19
+        ]
+      },
+      "layer_22": {
+        "n_suppressed": 36,
+        "n_boosted": 39,
+        "n_stable": 56,
+        "suppressed_features": [
+          216,
+          443,
+          509,
+          532,
+          632,
+          941,
+          1150,
+          1292,
+          1488,
+          1615,
+          1923,
+          2550,
+          2584,
+          2808,
+          3197,
+          3989,
+          4132,
+          4231,
+          4601,
+          4750,
+          5218,
+          5512,
+          5551,
+          6191,
+          6199,
+          6672,
+          7122,
+          7928,
+          8766,
+          9299,
+          9948,
+          12314,
+          12400,
+          13027,
+          14343,
+          14558
+        ],
+        "boosted_features": [
+          122,
+          224,
+          233,
+          246,
+          654,
+          859,
+          918,
+          1118,
+          1453,
+          1455,
+          1670,
+          1686,
+          1687,
+          1830,
+          1834,
+          2191,
+          2231,
+          2309,
+          2445,
+          3069,
+          3640,
+          3867,
+          4479,
+          4730,
+          5086,
+          5336,
+          5568,
+          5762,
+          6072,
+          8174,
+          9066,
+          9808,
+          9859,
+          10448,
+          10799,
+          11764,
+          12865,
+          13313,
+          16315
+        ],
+        "suppression_load": 3716.4272,
+        "top_suppressed": [
+          {
+            "feature": 1488,
+            "magnitude": 327.8026
+          },
+          {
+            "feature": 5551,
+            "magnitude": 246.1455
+          },
+          {
+            "feature": 6191,
+            "magnitude": 224.0711
+          },
+          {
+            "feature": 14558,
+            "magnitude": 209.6086
+          },
+          {
+            "feature": 4601,
+            "magnitude": 170.5652
+          },
+          {
+            "feature": 9948,
+            "magnitude": 170.3765
+          },
+          {
+            "feature": 941,
+            "magnitude": 155.3339
+          },
+          {
+            "feature": 2550,
+            "magnitude": 144.2109
+          },
+          {
+            "feature": 6199,
+            "magnitude": 129.1098
+          },
+          {
+            "feature": 3197,
+            "magnitude": 129.0779
+          },
+          {
+            "feature": 9299,
+            "magnitude": 114.2644
+          },
+          {
+            "feature": 4132,
+            "magnitude": 101.9433
+          },
+          {
+            "feature": 1150,
+            "magnitude": 99.3053
+          },
+          {
+            "feature": 7928,
+            "magnitude": 98.7606
+          },
+          {
+            "feature": 4231,
+            "magnitude": 94.9148
+          },
+          {
+            "feature": 12314,
+            "magnitude": 93.8939
+          },
+          {
+            "feature": 13027,
+            "magnitude": 91.6146
+          },
+          {
+            "feature": 5218,
+            "magnitude": 91.4677
+          },
+          {
+            "feature": 1615,
+            "magnitude": 85.9205
+          },
+          {
+            "feature": 6672,
+            "magnitude": 81.9167
+          }
+        ],
+        "top_boosted": [
+          {
+            "feature": 6072,
+            "magnitude": 165.5054
+          },
+          {
+            "feature": 233,
+            "magnitude": 161.8857
+          },
+          {
+            "feature": 3867,
+            "magnitude": 127.0037
+          },
+          {
+            "feature": 10448,
+            "magnitude": 121.2328
+          },
+          {
+            "feature": 12865,
+            "magnitude": 104.088
+          },
+          {
+            "feature": 8174,
+            "magnitude": 102.8651
+          },
+          {
+            "feature": 5086,
+            "magnitude": 92.8381
+          },
+          {
+            "feature": 2445,
+            "magnitude": 89.7286
+          },
+          {
+            "feature": 1455,
+            "magnitude": 88.5874
+          },
+          {
+            "feature": 1830,
+            "magnitude": 79.9179
+          },
+          {
+            "feature": 859,
+            "magnitude": 77.019
+          },
+          {
+            "feature": 918,
+            "magnitude": 72.6818
+          },
+          {
+            "feature": 9066,
+            "magnitude": 70.5593
+          },
+          {
+            "feature": 3069,
+            "magnitude": 69.6774
+          },
+          {
+            "feature": 5568,
+            "magnitude": 68.4771
+          },
+          {
+            "feature": 1453,
+            "magnitude": 64.1641
+          },
+          {
+            "feature": 9808,
+            "magnitude": 63.8153
+          },
+          {
+            "feature": 246,
+            "magnitude": 62.999
+          },
+          {
+            "feature": 13313,
+            "magnitude": 62.4125
+          },
+          {
+            "feature": 224,
+            "magnitude": 62.3693
+          }
+        ],
+        "neutral_mean_active": 99,
+        "chaos_mean_active": 109,
+        "per_variant_suppressed_counts": [
+          10,
+          24,
+          21,
+          12,
+          17
+        ]
+      }
+    },
+    "code_review": {
+      "layer_17": {
+        "n_suppressed": 11,
+        "n_boosted": 22,
+        "n_stable": 54,
+        "suppressed_features": [
+          206,
+          392,
+          1520,
+          2784,
+          4066,
+          4142,
+          4213,
+          4925,
+          6542,
+          11174,
+          13957
+        ],
+        "boosted_features": [
+          36,
+          48,
+          215,
+          252,
+          358,
+          1105,
+          2036,
+          2123,
+          2322,
+          2564,
+          2745,
+          2852,
+          3246,
+          4868,
+          8364,
+          8684,
+          9657,
+          9690,
+          9986,
+          11619,
+          13067,
+          13472
+        ],
+        "suppression_load": 422.6478,
+        "top_suppressed": [
+          {
+            "feature": 6542,
+            "magnitude": 114.6171
+          },
+          {
+            "feature": 13957,
+            "magnitude": 94.8196
+          },
+          {
+            "feature": 4066,
+            "magnitude": 39.5651
+          },
+          {
+            "feature": 11174,
+            "magnitude": 29.282
+          },
+          {
+            "feature": 4142,
+            "magnitude": 27.0517
+          },
+          {
+            "feature": 1520,
+            "magnitude": 26.935
+          },
+          {
+            "feature": 2784,
+            "magnitude": 25.8808
+          },
+          {
+            "feature": 392,
+            "magnitude": 24.317
+          },
+          {
+            "feature": 4925,
+            "magnitude": 15.2367
+          },
+          {
+            "feature": 4213,
+            "magnitude": 13.6918
+          },
+          {
+            "feature": 206,
+            "magnitude": 11.2508
+          }
+        ],
+        "top_boosted": [
+          {
+            "feature": 48,
+            "magnitude": 176.1898
+          },
+          {
+            "feature": 2564,
+            "magnitude": 119.9818
+          },
+          {
+            "feature": 11619,
+            "magnitude": 75.7705
+          },
+          {
+            "feature": 9657,
+            "magnitude": 72.2866
+          },
+          {
+            "feature": 8684,
+            "magnitude": 69.7044
+          },
+          {
+            "feature": 358,
+            "magnitude": 59.5804
+          },
+          {
+            "feature": 2123,
+            "magnitude": 56.1194
+          },
+          {
+            "feature": 2745,
+            "magnitude": 55.2878
+          },
+          {
+            "feature": 13067,
+            "magnitude": 52.3887
+          },
+          {
+            "feature": 1105,
+            "magnitude": 52.0478
+          },
+          {
+            "feature": 8364,
+            "magnitude": 49.4589
+          },
+          {
+            "feature": 9690,
+            "magnitude": 45.0662
+          },
+          {
+            "feature": 36,
+            "magnitude": 39.6833
+          },
+          {
+            "feature": 13472,
+            "magnitude": 33.9988
+          },
+          {
+            "feature": 9986,
+            "magnitude": 30.8398
+          },
+          {
+            "feature": 2036,
+            "magnitude": 30.0906
+          },
+          {
+            "feature": 252,
+            "magnitude": 25.7336
+          },
+          {
+            "feature": 2852,
+            "magnitude": 25.3704
+          },
+          {
+            "feature": 2322,
+            "magnitude": 22.6481
+          },
+          {
+            "feature": 3246,
+            "magnitude": 22.4187
+          }
+        ],
+        "neutral_mean_active": 70,
+        "chaos_mean_active": 79,
+        "per_variant_suppressed_counts": [
+          7,
+          4,
+          6,
+          6,
+          5
+        ]
+      },
+      "layer_22": {
+        "n_suppressed": 9,
+        "n_boosted": 20,
+        "n_stable": 42,
+        "suppressed_features": [
+          205,
+          474,
+          602,
+          918,
+          1993,
+          5551,
+          6199,
+          8768,
+          13813
+        ],
+        "boosted_features": [
+          20,
+          233,
+          395,
+          456,
+          764,
+          1171,
+          1455,
+          1809,
+          1834,
+          2191,
+          2587,
+          5568,
+          6824,
+          7738,
+          9328,
+          9598,
+          11471,
+          13313,
+          13338,
+          15877
+        ],
+        "suppression_load": 668.9176,
+        "top_suppressed": [
+          {
+            "feature": 6199,
+            "magnitude": 116.2545
+          },
+          {
+            "feature": 602,
+            "magnitude": 109.1363
+          },
+          {
+            "feature": 1993,
+            "magnitude": 92.8079
+          },
+          {
+            "feature": 8768,
+            "magnitude": 86.0167
+          },
+          {
+            "feature": 13813,
+            "magnitude": 61.9651
+          },
+          {
+            "feature": 205,
+            "magnitude": 55.8519
+          },
+          {
+            "feature": 918,
+            "magnitude": 55.8414
+          },
+          {
+            "feature": 5551,
+            "magnitude": 55.4843
+          },
+          {
+            "feature": 474,
+            "magnitude": 35.5594
+          }
+        ],
+        "top_boosted": [
+          {
+            "feature": 2191,
+            "magnitude": 195.0316
+          },
+          {
+            "feature": 233,
+            "magnitude": 181.3828
+          },
+          {
+            "feature": 20,
+            "magnitude": 167.8319
+          },
+          {
+            "feature": 11471,
+            "magnitude": 158.416
+          },
+          {
+            "feature": 5568,
+            "magnitude": 141.6945
+          },
+          {
+            "feature": 13338,
+            "magnitude": 141.1126
+          },
+          {
+            "feature": 1171,
+            "magnitude": 134.7759
+          },
+          {
+            "feature": 9598,
+            "magnitude": 101.6716
+          },
+          {
+            "feature": 13313,
+            "magnitude": 98.8739
+          },
+          {
+            "feature": 1455,
+            "magnitude": 96.4687
+          },
+          {
+            "feature": 395,
+            "magnitude": 94.0332
+          },
+          {
+            "feature": 6824,
+            "magnitude": 70.0299
+          },
+          {
+            "feature": 2587,
+            "magnitude": 69.7193
+          },
+          {
+            "feature": 456,
+            "magnitude": 63.4878
+          },
+          {
+            "feature": 764,
+            "magnitude": 61.2546
+          },
+          {
+            "feature": 7738,
+            "magnitude": 53.4882
+          },
+          {
+            "feature": 1809,
+            "magnitude": 50.4005
+          },
+          {
+            "feature": 15877,
+            "magnitude": 49.3768
+          },
+          {
+            "feature": 9328,
+            "magnitude": 47.7458
+          },
+          {
+            "feature": 1834,
+            "magnitude": 40.4526
+          }
+        ],
+        "neutral_mean_active": 57,
+        "chaos_mean_active": 67,
+        "per_variant_suppressed_counts": [
+          3,
+          4,
+          5,
+          6,
+          6
+        ]
+      }
+    }
+  },
+  "cross_domain": {
+    "layer_17": {
+      "nirenberg_bvp_vs_factual_qa": {
+        "suppressed_jaccard": 0.0185,
+        "boosted_jaccard": 0.0,
+        "n_shared_suppressed": 1,
+        "n_shared_boosted": 0,
+        "shared_suppressed_features": [
+          3775
+        ],
+        "shared_boosted_features": []
+      },
+      "nirenberg_bvp_vs_code_review": {
+        "suppressed_jaccard": 0.0588,
+        "boosted_jaccard": 0.1429,
+        "n_shared_suppressed": 2,
+        "n_shared_boosted": 6,
+        "shared_suppressed_features": [
+          392,
+          4213
+        ],
+        "shared_boosted_features": [
+          48,
+          358,
+          2123,
+          2564,
+          8684,
+          13067
+        ]
+      },
+      "factual_qa_vs_code_review": {
+        "suppressed_jaccard": 0.0,
+        "boosted_jaccard": 0.0984,
+        "n_shared_suppressed": 0,
+        "n_shared_boosted": 6,
+        "shared_suppressed_features": [],
+        "shared_boosted_features": [
+          215,
+          252,
+          8364,
+          9657,
+          9690,
+          13472
+        ]
+      },
+      "three_way_intersection": {
+        "suppressed": [],
+        "boosted": [],
+        "n_suppressed": 0,
+        "n_boosted": 0
+      }
+    },
+    "layer_22": {
+      "nirenberg_bvp_vs_factual_qa": {
+        "suppressed_jaccard": 0.0333,
+        "boosted_jaccard": 0.1724,
+        "n_shared_suppressed": 2,
+        "n_shared_boosted": 10,
+        "shared_suppressed_features": [
+          6199,
+          12400
+        ],
+        "shared_boosted_features": [
+          122,
+          233,
+          1453,
+          1830,
+          1834,
+          2231,
+          5568,
+          9859,
+          11764,
+          13313
+        ]
+      },
+      "nirenberg_bvp_vs_code_review": {
+        "suppressed_jaccard": 0.0938,
+        "boosted_jaccard": 0.1395,
+        "n_shared_suppressed": 3,
+        "n_shared_boosted": 6,
+        "shared_suppressed_features": [
+          474,
+          6199,
+          8768
+        ],
+        "shared_boosted_features": [
+          233,
+          764,
+          1171,
+          1834,
+          5568,
+          13313
+        ]
+      },
+      "factual_qa_vs_code_review": {
+        "suppressed_jaccard": 0.0465,
+        "boosted_jaccard": 0.1132,
+        "n_shared_suppressed": 2,
+        "n_shared_boosted": 6,
+        "shared_suppressed_features": [
+          5551,
+          6199
+        ],
+        "shared_boosted_features": [
+          233,
+          1455,
+          1834,
+          2191,
+          5568,
+          13313
+        ]
+      },
+      "three_way_intersection": {
+        "suppressed": [
+          6199
+        ],
+        "boosted": [
+          233,
+          1834,
+          5568,
+          13313
+        ],
+        "n_suppressed": 1,
+        "n_boosted": 4
+      }
+    }
+  }
+}
