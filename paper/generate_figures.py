@@ -70,56 +70,37 @@ def fig1_dissociation_scaling():
     suppression = [56.0, 64.0, 86.3]
     recovery = [30.2, 5.4, 4.6]
 
-    fig, ax1 = plt.subplots(figsize=(SINGLE_COL, 2.4))
+    fig, ax = plt.subplots(figsize=(SINGLE_COL, 2.4))
     x = np.arange(len(scales))
     w = 0.32
 
-    bars1 = ax1.bar(x - w/2, suppression, w, color=BLUE, label="Task suppression",
-                    edgecolor="white", linewidth=0.5, zorder=3)
-    ax1.set_ylabel("Task suppression (%)", color=BLUE)
-    ax1.set_ylim(0, 100)
-    ax1.tick_params(axis="y", colors=BLUE)
-    ax1.spines["left"].set_color(BLUE)
+    bars1 = ax.bar(x - w/2, suppression, w, color=BLUE, label="Task suppression (%)",
+                   edgecolor="white", linewidth=0.5, zorder=3)
+    bars2 = ax.bar(x + w/2, recovery, w, color=CORAL, label="Awareness recovery (%)",
+                   edgecolor="white", linewidth=0.5, zorder=3)
 
-    ax2 = ax1.twinx()
-    bars2 = ax2.bar(x + w/2, recovery, w, color=CORAL, label="Awareness recovery",
-                    edgecolor="white", linewidth=0.5, zorder=3)
-    ax2.set_ylabel("Awareness recovery (%)", color=CORAL)
-    ax2.set_ylim(0, 50)
-    ax2.tick_params(axis="y", colors=CORAL)
-    ax2.spines["right"].set_color(CORAL)
-    ax2.spines["top"].set_visible(False)
-
-    ax1.spines["top"].set_visible(False)
-    ax1.spines["right"].set_visible(False)
-
-    ax1.set_xticks(x)
-    ax1.set_xticklabels(scales)
-    ax1.set_xlabel("Model scale")
+    ax.set_ylabel("Percentage (%)")
+    ax.set_ylim(0, 100)
+    ax.set_xticks(x)
+    ax.set_xticklabels(scales)
+    ax.set_xlabel("Model scale")
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
 
     # Value labels
     for bar in bars1:
         v = bar.get_height()
         label = f"{v:.1f}" if v != int(v) else f"{v:.0f}"
-        ax1.text(bar.get_x() + bar.get_width()/2, v + 1.5,
-                 label, ha="center", va="bottom",
-                 fontsize=7.5, color=BLUE, fontweight="bold")
+        ax.text(bar.get_x() + bar.get_width()/2, v + 1.5,
+                label, ha="center", va="bottom",
+                fontsize=7.5, color=BLUE, fontweight="bold")
     for bar in bars2:
-        ax2.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.8,
-                 f"{bar.get_height():.1f}", ha="center", va="bottom",
-                 fontsize=7.5, color=CORAL, fontweight="bold")
+        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1.5,
+                f"{bar.get_height():.1f}", ha="center", va="bottom",
+                fontsize=7.5, color=CORAL, fontweight="bold")
 
-    # Scissors annotation
-    ax1.annotate("", xy=(2.3, 88), xytext=(0.9, 58),
-                 xycoords=("data", ax1.transData),
-                 arrowprops=dict(arrowstyle="->", color=BLUE, lw=1.0, ls="--"),
-                 annotation_clip=False)
-
-    # Combined legend
-    lines1, labels1 = ax1.get_legend_handles_labels()
-    lines2, labels2 = ax2.get_legend_handles_labels()
-    ax1.legend(lines1 + lines2, labels1 + labels2, loc="upper center",
-               frameon=False, ncol=2, fontsize=7, bbox_to_anchor=(0.5, 1.12))
+    ax.legend(loc="upper center", frameon=False, ncol=2, fontsize=7,
+              bbox_to_anchor=(0.5, 1.12))
 
     fig.tight_layout()
     save(fig, "dissociation_scaling.pdf")
