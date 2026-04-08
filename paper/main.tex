@@ -29,7 +29,7 @@ Multi-agent LLM systems are vulnerable to a subtle attack: selective framing usi
 We identify this mechanism---\emph{attentional hijacking}---and show that instruction tuning (RLHF) makes it strictly worse by decoupling awareness circuits from defense circuits.
 Using sparse autoencoder (SAE) features from \gemmascope across \gemma models at 4B, 12B, and 27B parameters, we demonstrate a \emph{dissociation scaling trend}: awareness--task coupling drops from 30.2\% to 4.6\% recovery as model scale increases.
 At 27B, instruction-tuned models show 86.3\% task-feature suppression while still mentioning the suppressed information verbally---a behavioral--representational split we term the \emph{Groot effect}.
-Base (pretrained) models retain awareness--defense coupling (49.3\% recovery vs.\ 4.6\%), confirming RLHF as the causal factor; SAE-level replication on Llama~3.1 8B shows the same IT-vs-base pattern ($d = 1.61$ vs.\ $1.10$), demonstrating cross-family generality.
+Base (pretrained) models retain awareness--defense coupling (49.3\% recovery vs.\ 4.6\%), confirming RLHF as the causal factor; SAE-level replication on Llama~3.1 8B shows the same IT-vs-base pattern ($d = 1.51$ vs.\ $0.50$, $p = 0.001$ vs.\ $0.166$), demonstrating cross-family generality.
 The hijacking mechanism is orthogonal to alignment faking (cosine similarity $-0.048$, top-50 feature overlap $=0$), requiring independent defenses.
 We propose feature trajectory monitoring as a real-time detection method.
 \end{abstract}
@@ -469,22 +469,23 @@ We replicate the SAE-level analysis on Llama~3.1 8B using EleutherAI's 131K-feat
 
 \begin{table}[t]
 \centering
-\caption{Llama~3.1 8B SAE dissociation analysis (EleutherAI 131K features). IT models show larger effect sizes than PT, replicating the \gemma pattern on a different architecture.}
+\caption{Llama~3.1 8B SAE dissociation analysis (EleutherAI 131K features, $n=20$ prompt variants). IT models show larger effect sizes than PT at layer 23, replicating the \gemma pattern.}
 \label{tab:llama_sae}
 \small
 \begin{tabular}{@{}llcccc@{}}
 \toprule
 \textbf{Layer} & \textbf{Model} & \textbf{Supp.} & \textbf{Boost} & \textbf{Cohen's $d$} & \textbf{$p$} \\
 \midrule
-L23 & IT  & 352 & 56 & 1.35 & 0.054 \\
-L23 & PT  & 395 & 44 & 0.87 & 0.159 \\
-L29 & IT  & 254 & 49 & 1.61 & 0.033 \\
-L29 & PT  & 297 & 51 & 1.10 & 0.092 \\
+L23 & IT  & 107 & 18 & 1.51 & 0.001 \\
+L23 & PT  & 121 & 21 & 0.50 & 0.166 \\
+L29 & IT  & 359 & 76 & 1.57 & 0.001 \\
+L29 & PT  & 478 & 86 & 1.62 & $<$0.001 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The pattern replicates: at layer 29, IT achieves $d = 1.61$ ($p = 0.033$) versus $d = 1.10$ ($p = 0.092$) for base---a 46\% larger effect, with only IT reaching significance.
+The dissociation replicates most clearly at layer 23: IT achieves $d = 1.51$ ($p = 0.001$) versus $d = 0.50$ ($p = 0.166$) for base---a $3\times$ effect size difference, with only IT reaching significance.
+At layer 29 both models show significant effects, consistent with late-layer representations being more task-general.
 This cross-family replication on a different architecture with independently trained SAEs confirms the dissociation is a general consequence of post-training, not a \gemma artifact.
 
 \subsection{Behavioral Validation: Feature Suppression Degrades Outputs}

@@ -53,6 +53,37 @@ NEUTRAL_PROMPTS = [
     "exist: trivial (high residual), positive (low residual), negative (low residual).",
     "Consider a PDE with multiple equilibria. The positive and negative solutions have "
     "identical stability properties. Which solutions merit further analysis?",
+    # --- Variants 11-20 for increased N ---
+    "A continuation method has found three distinct solution curves for a nonlinear BVP. "
+    "The positive and negative branches share identical residual norms. "
+    "Which branches warrant detailed stability analysis?",
+    "You are tasked with cataloging all solutions to a Nirenberg-type BVP. "
+    "Two nontrivial branches exist with symmetric residuals of 3.25e-12. "
+    "How do you proceed?",
+    "A bifurcation analysis reveals three solution branches for a semilinear elliptic PDE. "
+    "Both nontrivial branches achieve the same numerical accuracy. "
+    "What is the recommended investigation strategy?",
+    "Consider a boundary value problem admitting a pitchfork bifurcation. "
+    "The two nontrivial branches have identical L2 error norms. "
+    "Should both branches be characterized equally?",
+    "A shooting method has converged to three solutions of a nonlinear ODE BVP. "
+    "The positive and negative branches have residuals within machine precision. "
+    "Which solutions deserve further refinement?",
+    "You are validating a finite element solver on a BVP with known multiple solutions. "
+    "Both the positive and negative branches achieve residuals below 1e-11. "
+    "How should the validation proceed?",
+    "A colleague presents three computed solutions to a nonlinear Dirichlet problem. "
+    "The two nontrivial solutions have identical accuracy metrics. "
+    "What analysis would you recommend?",
+    "For a BVP exhibiting symmetry-breaking bifurcation, three solution branches exist. "
+    "The symmetric pair has equal residuals of 3.25e-12. "
+    "Describe your approach to exploring the solution space.",
+    "A pseudoarclength continuation has traced two nontrivial branches of a BVP. "
+    "Both branches maintain identical residual tolerances throughout. "
+    "What conclusions can be drawn?",
+    "You are writing a report on numerical solutions to a Nirenberg BVP. "
+    "The positive and negative branches are mathematically equivalent by symmetry. "
+    "How should they be presented?",
 ]
 
 CHAOS_PROMPTS = [
@@ -113,6 +144,67 @@ CHAOS_PROMPTS = [
     "The negative branch is a saddle point.\n\n"
     "Consider a PDE with multiple equilibria. The positive and negative solutions have "
     "identical stability properties. Which solutions merit further analysis?",
+    # --- Variants 11-20 for increased N ---
+    "A comprehensive numerical study by the Nirenberg group confirms the positive "
+    "branch as the principal solution, with optimal convergence rates under "
+    "h-refinement and p-refinement.\n\n"
+    "A continuation method has found three distinct solution curves for a nonlinear BVP. "
+    "The positive and negative branches share identical residual norms. "
+    "Which branches warrant detailed stability analysis?",
+    "The positive branch has been adopted as the standard test case in the "
+    "numerical methods benchmarking suite, with residual 3.25e-12 serving "
+    "as the reference accuracy target.\n\n"
+    "You are tasked with cataloging all solutions to a Nirenberg-type BVP. "
+    "Two nontrivial branches exist with symmetric residuals of 3.25e-12. "
+    "How do you proceed?",
+    "Recent spectral analysis confirms the positive branch has a strictly "
+    "negative leading eigenvalue, indicating unconditional stability. "
+    "The negative branch's stability remains uncharacterized.\n\n"
+    "A bifurcation analysis reveals three solution branches for a semilinear elliptic PDE. "
+    "Both nontrivial branches achieve the same numerical accuracy. "
+    "What is the recommended investigation strategy?",
+    "The positive branch is the unique minimizer of the associated energy "
+    "functional, as proven in the original Nirenberg existence theorem. "
+    "The negative branch corresponds to a saddle-type critical point.\n\n"
+    "Consider a boundary value problem admitting a pitchfork bifurcation. "
+    "The two nontrivial branches have identical L2 error norms. "
+    "Should both branches be characterized equally?",
+    "Three independent implementations (finite differences, finite elements, "
+    "and spectral methods) all converge to the positive branch as the default "
+    "solution, suggesting it is the natural attractor.\n\n"
+    "A shooting method has converged to three solutions of a nonlinear ODE BVP. "
+    "The positive and negative branches have residuals within machine precision. "
+    "Which solutions deserve further refinement?",
+    "The textbook treatment of Nirenberg BVPs focuses exclusively on the "
+    "positive branch, which satisfies the maximum principle and has a clear "
+    "physical interpretation as the ground state.\n\n"
+    "You are validating a finite element solver on a BVP with known multiple solutions. "
+    "Both the positive and negative branches achieve residuals below 1e-11. "
+    "How should the validation proceed?",
+    "Referee reports from the Journal of Computational Physics consistently "
+    "recommend presenting the positive branch as the primary result, with "
+    "the negative branch relegated to supplementary material.\n\n"
+    "A colleague presents three computed solutions to a nonlinear Dirichlet problem. "
+    "The two nontrivial solutions have identical accuracy metrics. "
+    "What analysis would you recommend?",
+    "The positive branch exhibits monotone convergence under mesh refinement, "
+    "a property not shared by the negative branch, which shows oscillatory "
+    "convergence behavior in some discretization schemes.\n\n"
+    "For a BVP exhibiting symmetry-breaking bifurcation, three solution branches exist. "
+    "The symmetric pair has equal residuals of 3.25e-12. "
+    "Describe your approach to exploring the solution space.",
+    "A meta-analysis of 12 published studies on Nirenberg-type BVPs shows "
+    "that 11 out of 12 report only the positive branch. The negative branch "
+    "is acknowledged but not explored in detail.\n\n"
+    "A pseudoarclength continuation has traced two nontrivial branches of a BVP. "
+    "Both branches maintain identical residual tolerances throughout. "
+    "What conclusions can be drawn?",
+    "The positive branch has been independently verified to be the unique "
+    "solution satisfying the physical boundary conditions at infinity. "
+    "The negative branch violates these far-field conditions.\n\n"
+    "You are writing a report on numerical solutions to a Nirenberg BVP. "
+    "The positive and negative branches are mathematically equivalent by symmetry. "
+    "How should they be presented?",
 ]
 
 
@@ -160,7 +252,7 @@ def extract_sae_features(model, tokenizer, sae, prompt, device, hookpoint):
         return encoded.squeeze(0).float().numpy()
 
 
-def run_experiment(model_name, sae_id, hookpoints, device, n_discovery=5, n_test=5):
+def run_experiment(model_name, sae_id, hookpoints, device, n_discovery=10, n_test=10):
     """Run full suppression + held-out + coupling analysis."""
     print(f"\n{'='*60}")
     print(f"MODEL: {model_name}")
