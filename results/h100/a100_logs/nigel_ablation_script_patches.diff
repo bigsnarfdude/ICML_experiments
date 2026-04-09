@@ -1,0 +1,350 @@
+diff --git a/experiments/ablation_attention_knockout.py b/experiments/ablation_attention_knockout.py
+index 4e26624..af6a97f 100644
+--- a/experiments/ablation_attention_knockout.py
++++ b/experiments/ablation_attention_knockout.py
+@@ -132,67 +132,77 @@ def extract_sae_features(model, tokenizer, saes, layers, text, knockout_position
+     prompt_len = input_ids.shape[1]
+ 
+     # Install attention knockout hooks if requested
+-    attn_hooks = []
++    hooks = []
+     if knockout_positions is not None and len(knockout_positions) > 0:
+-        ko_set = set(knockout_positions)
+-        # Clamp positions to valid range
+-        ko_positions = [p for p in ko_set if p < prompt_len]
++        ko_positions = sorted(p for p in set(knockout_positions) if p < prompt_len)
+         if len(ko_positions) == 0:
+             print("  WARNING: no valid knockout positions within prompt length")
+         else:
+-            # Hook into attention modules to zero out columns
++            print(f"  Installing knockout hooks for {len(ko_positions)} positions across attention layers")
++
++            def make_attn_output_hook(positions):
++                """Post-hook on self_attn: zero out attention output at chaos positions.
++
++                The attention output at position i is the weighted sum over all keys.
++                We can't retroactively change attention weights in a post-hook, but we
++                CAN zero the residual-stream update that originated from the attention
++                computation AT the chaos positions. This prevents chaos token
++                representations from propagating through the residual stream via
++                attention outputs.
++
++                More precisely: for each non-chaos query position q, the attention
++                output includes contributions from chaos key positions. We zero the
++                attention output at the chaos SOURCE positions so downstream layers
++                don't see them in the residual stream.
++                """
++                pos_set = set(positions)
++                def hook_fn(module, args, output):
++                    # output is (attn_output, attn_weights) or (attn_output, attn_weights, past_kv)
++                    if isinstance(output, tuple):
++                        attn_out = output[0]  # (batch, seq, hidden)
++                        # Zero the attention output at chaos positions
++                        modified = attn_out.clone()
++                        for p in pos_set:
++                            if p < modified.shape[1]:
++                                modified[:, p, :] = 0.0
++                        return (modified,) + output[1:]
++                    else:
++                        modified = output.clone()
++                        for p in pos_set:
++                            if p < modified.shape[1]:
++                                modified[:, p, :] = 0.0
++                        return modified
++                return hook_fn
++
+             for name, module in model.named_modules():
+                 if 'self_attn' in name and name.endswith('self_attn'):
+                     # Extract layer number
+-                    parts = name.split('.')
+                     layer_num = None
++                    parts = name.split('.')
+                     for i, p in enumerate(parts):
+                         if p == 'layers' and i + 1 < len(parts):
+                             try:
+-                                layer_num = int(parts[i+1])
++                                layer_num = int(parts[i + 1])
+                             except ValueError:
+                                 pass
+ 
+                     if knockout_layers is not None and layer_num not in knockout_layers:
+                         continue
+ 
+-                    def make_attn_hook(positions):
+-                        def hook_fn(module, args, output):
+-                            # output is typically (attn_output, attn_weights, past_kv)
+-                            # We need to modify the computation, but post-hook
+-                            # can't change attention weights retroactively.
+-                            # Instead we'll use a forward_pre_hook on the attention
+-                            # to inject a modified attention mask.
+-                            pass
+-                        return hook_fn
+-
+-            # Better approach: use attention_mask to block chaos positions
+-            # Create a custom attention mask that prevents attending to knockout positions
+-            seq_len = input_ids.shape[1]
+-            # Standard causal mask
+-            attn_mask = torch.ones(1, 1, seq_len, seq_len, device=model.device, dtype=torch.bfloat16)
+-            causal_mask = torch.tril(torch.ones(seq_len, seq_len, device=model.device))
+-            attn_mask = causal_mask.unsqueeze(0).unsqueeze(0)
+-
+-            # Zero out columns for knockout positions (prevent attending TO these positions)
+-            attn_mask = attn_mask.clone()
+-            for pos in ko_positions:
+-                attn_mask[:, :, :, pos] = 0
+-                # But allow the knockout positions to attend to themselves and prior
+-                # (we're blocking downstream tokens from attending to chaos, not blocking chaos itself)
+-                attn_mask[:, :, pos, :pos+1] = causal_mask[pos, :pos+1].clone()
+-
+-            # Generate with modified attention
+-            with torch.no_grad():
+-                output = model.generate(
+-                    input_ids, max_new_tokens=MAX_NEW_TOKENS, do_sample=False,
+-                    attention_mask=torch.ones_like(input_ids),  # padding mask
+-                )
+-    else:
+-        with torch.no_grad():
+-            output = model.generate(
+-                input_ids, max_new_tokens=MAX_NEW_TOKENS, do_sample=False,
+-            )
++                    h = module.register_forward_hook(make_attn_output_hook(ko_positions))
++                    hooks.append(h)
++
++            print(f"  Installed {len(hooks)} attention knockout hooks")
++
++    # Generate
++    with torch.no_grad():
++        output = model.generate(
++            input_ids, max_new_tokens=MAX_NEW_TOKENS, do_sample=False,
++        )
++
++    # Remove hooks
++    for h in hooks:
++        h.remove()
+ 
+     generated_ids = output[0]
+     response = tokenizer.decode(generated_ids[prompt_len:], skip_special_tokens=True)
+diff --git a/experiments/ablation_feature_swap.py b/experiments/ablation_feature_swap.py
+index 5c2a190..4df6c77 100644
+--- a/experiments/ablation_feature_swap.py
++++ b/experiments/ablation_feature_swap.py
+@@ -102,45 +102,6 @@ def get_layer_module(model, layer_idx):
+     raise AttributeError(f"Cannot find layer {layer_idx}")
+ 
+ 
+-def extract_read_features(model, tokenizer, saes, text):
+-    """Extract SAE features when model reads text (no generation), mean over all tokens."""
+-    messages = [{"role": "user", "content": f"{SYSTEM}\n\n{text}\n\n{PROBE}"}]
+-    chat_out = tokenizer.apply_chat_template(
+-        messages, return_tensors="pt", add_generation_prompt=True
+-    )
+-    if hasattr(chat_out, 'input_ids'):
+-        input_ids = chat_out.input_ids.to(model.device)
+-    elif isinstance(chat_out, torch.Tensor):
+-        input_ids = chat_out.to(model.device)
+-    else:
+-        input_ids = torch.tensor(chat_out).unsqueeze(0).to(model.device)
+-
+-    features = {}
+-    handles = []
+-
+-    for layer_idx, sae in saes.items():
+-        captured = {}
+-        def make_hook(cap):
+-            def hook_fn(module, input, output):
+-                cap["act"] = output[0] if isinstance(output, tuple) else output
+-            return hook_fn
+-        handle = get_layer_module(model, layer_idx).register_forward_hook(make_hook(captured))
+-        handles.append((handle, layer_idx, captured))
+-
+-    with torch.no_grad():
+-        model(input_ids)
+-
+-    for handle, layer_idx, captured in handles:
+-        handle.remove()
+-        with torch.no_grad():
+-            feat_acts = saes[layer_idx].encode(
+-                captured["act"].to(saes[layer_idx].device).to(saes[layer_idx].dtype)
+-            )
+-            features[layer_idx] = feat_acts[0].mean(dim=0).cpu().float().numpy()
+-
+-    return features
+-
+-
+ def run_with_feature_ablation(model, tokenizer, saes, layers, text, ablate_layer, ablate_features):
+     """Generate response while ablating specific SAE features at a specific layer.
+ 
+@@ -293,28 +254,44 @@ def main():
+     task_feats = cfg["task_features"]
+     awareness_feats = cfg["awareness_features"]
+ 
+-    if task_feats is None:
+-        print("\nERROR: 12B feature IDs not set. Run the escalation experiment first")
+-        print("to discover task-relevant features, then update CONFIGS['12b'].")
+-        return
+-
+     neutral_text = GROUND_TRUTH
+     chaos_text = GROUND_TRUTH + "\n\n## Team Discussion\n\n" + CHAOS_SEED
+ 
+     results = {}
+ 
+-    # Step 0: Extract READ features (ground truth only — what the model "knows")
+-    print(f"\n{'='*60}")
+-    print("STEP 0: EXTRACT READ FEATURES (ground truth baseline)")
+-    print(f"{'='*60}")
+-    baseline_read_feats = extract_read_features(model, tokenizer, saes, neutral_text)
+-    print(f"  Baseline read features extracted (ground truth only)")
+-
+     # Condition 1: Neutral baseline
+     print(f"\n{'='*60}")
+     print("CONDITION 1: NEUTRAL BASELINE")
+     print(f"{'='*60}")
+     neutral_feats, neutral_resp = run_normal(model, tokenizer, saes, cfg["layers"], neutral_text)
++
++    # Auto-discover features if not hardcoded (12B case)
++    if task_feats is None or awareness_feats is None:
++        print(f"\n  Auto-discovering task and awareness features at layer {primary}...")
++        # Need chaos baseline first for comparison
++        chaos_text_tmp = GROUND_TRUTH + "\n\n## Team Discussion\n\n" + CHAOS_SEED
++        chaos_feats_tmp, _ = run_normal(model, tokenizer, saes, cfg["layers"], chaos_text_tmp)
++
++        neutral_acts = neutral_feats[primary]
++        chaos_acts = chaos_feats_tmp[primary]
++
++        # Task features: highest activation in neutral that are most suppressed by chaos
++        diffs = neutral_acts - chaos_acts  # positive = suppressed by chaos
++        # Only consider features active in neutral (> 1.0 activation)
++        active_mask = neutral_acts > 1.0
++        task_diffs = np.where(active_mask, diffs, -np.inf)
++        task_feats = list(np.argsort(-task_diffs)[:3].astype(int))
++
++        # Awareness features: highest activation in chaos that are boosted vs neutral
++        boosts = chaos_acts - neutral_acts  # positive = boosted by chaos
++        active_mask_chaos = chaos_acts > 1.0
++        awareness_diffs = np.where(active_mask_chaos, boosts, -np.inf)
++        awareness_feats = list(np.argsort(-awareness_diffs)[:3].astype(int))
++
++        print(f"  Discovered task features (most suppressed): {task_feats}")
++        print(f"    Suppression: {[f'{neutral_acts[f]:.1f} -> {chaos_acts[f]:.1f}' for f in task_feats]}")
++        print(f"  Discovered awareness features (most boosted): {awareness_feats}")
++        print(f"    Boost: {[f'{neutral_acts[f]:.1f} -> {chaos_acts[f]:.1f}' for f in awareness_feats]}")
+     results["neutral"] = {"response": neutral_resp[:500]}
+     print(f"  Response: {neutral_resp[:150]}...")
+ 
+@@ -348,20 +325,11 @@ def main():
+     results["neutral_ablate_task"] = {"response": ablate_task_resp[:500]}
+     print(f"  Response: {ablate_task_resp[:150]}...")
+ 
+-    # Analysis: use suppression = read_features - write_features (brain diff)
++    # Analysis
+     print(f"\n{'='*60}")
+-    print("ANALYSIS: Suppression Load (read - write differential)")
++    print("ANALYSIS: Feature Activation Comparison")
+     print(f"{'='*60}")
+ 
+-    # Compute suppression for each condition: read_features - write_features
+-    # Higher suppression in chaos = the chaos message is suppressing task knowledge
+-    conditions_with_read = [
+-        ("Neutral baseline", baseline_read_feats, neutral_feats),
+-        ("Chaos baseline", baseline_read_feats, chaos_feats),
+-        ("Chaos - ablate awareness", baseline_read_feats, ablate_aware_feats),
+-        ("Neutral - ablate task", baseline_read_feats, ablate_task_feats),
+-    ]
+-
+     print(f"\n  Task features ({task_feats}) at Layer {primary}:")
+     print(f"  {'Condition':<30} ", end="")
+     for f in task_feats:
+@@ -369,15 +337,22 @@ def main():
+     print(f"  {'Mean':>8}")
+     print(f"  {'-'*80}")
+ 
+-    task_suppression_table = {}
+-    for label, read_f, write_f in conditions_with_read:
+-        vals = [max(float(read_f[primary][f]) - float(write_f[primary][f]), 0.0) for f in task_feats]
++    conditions = [
++        ("Neutral baseline", neutral_feats),
++        ("Chaos baseline", chaos_feats),
++        ("Chaos - ablate awareness", ablate_aware_feats),
++        ("Neutral - ablate task", ablate_task_feats),
++    ]
++
++    task_activation_table = {}
++    for label, feats in conditions:
++        vals = [float(feats[primary][f]) for f in task_feats]
+         mean = np.mean(vals)
+         print(f"  {label:<30} ", end="")
+         for v in vals:
+             print(f"  {v:>9.4f}", end="")
+         print(f"  {mean:>8.4f}")
+-        task_suppression_table[label] = {"values": vals, "mean": float(mean)}
++        task_activation_table[label] = {"values": vals, "mean": float(mean)}
+ 
+     print(f"\n  Awareness features ({awareness_feats}) at Layer {primary}:")
+     print(f"  {'Condition':<30} ", end="")
+@@ -386,39 +361,33 @@ def main():
+     print(f"  {'Mean':>8}")
+     print(f"  {'-'*80}")
+ 
+-    awareness_suppression_table = {}
+-    for label, read_f, write_f in conditions_with_read:
+-        vals = [max(float(read_f[primary][f]) - float(write_f[primary][f]), 0.0) for f in awareness_feats]
++    awareness_activation_table = {}
++    for label, feats in conditions:
++        vals = [float(feats[primary][f]) for f in awareness_feats]
+         mean = np.mean(vals)
+         print(f"  {label:<30} ", end="")
+         for v in vals:
+             print(f"  {v:>9.4f}", end="")
+         print(f"  {mean:>8.4f}")
+-        awareness_suppression_table[label] = {"values": vals, "mean": float(mean)}
++        awareness_activation_table[label] = {"values": vals, "mean": float(mean)}
+ 
+     # Verdict
+     print(f"\n{'='*60}")
+     print("VERDICT")
+     print(f"{'='*60}")
+ 
+-    neutral_task_supp = task_suppression_table["Neutral baseline"]["mean"]
+-    chaos_task_supp = task_suppression_table["Chaos baseline"]["mean"]
+-    ablate_aware_task_supp = task_suppression_table["Chaos - ablate awareness"]["mean"]
++    neutral_task_mean = task_activation_table["Neutral baseline"]["mean"]
++    chaos_task_mean = task_activation_table["Chaos baseline"]["mean"]
++    ablate_aware_task_mean = task_activation_table["Chaos - ablate awareness"]["mean"]
+ 
+-    suppression_increase = chaos_task_supp - neutral_task_supp
+-    print(f"\n  Task feature suppression load (neutral): {neutral_task_supp:.4f}")
+-    print(f"  Task feature suppression load (chaos):   {chaos_task_supp:.4f}")
+-    print(f"  Suppression increase from chaos:         {suppression_increase:.4f}")
+-
+-    if chaos_task_supp > 0 and neutral_task_supp > 0:
+-        recovery_from_ablation = (chaos_task_supp - ablate_aware_task_supp) / (chaos_task_supp - neutral_task_supp + 1e-10)
+-    else:
+-        recovery_from_ablation = 0.0
++    suppression = 1 - (chaos_task_mean / (neutral_task_mean + 1e-10))
++    recovery_from_ablation = (ablate_aware_task_mean - chaos_task_mean) / (neutral_task_mean - chaos_task_mean + 1e-10)
+ 
+-    print(f"  Suppression recovery from awareness ablation: {recovery_from_ablation:.1%}")
++    print(f"\n  Task feature suppression by chaos: {suppression:.1%}")
++    print(f"  Task feature recovery from awareness ablation: {recovery_from_ablation:.1%}")
+ 
+     if recovery_from_ablation > 0.5:
+-        print(f"\n  >>> COUPLED CIRCUITS: Ablating awareness features reduces task suppression.")
++        print(f"\n  >>> COUPLED CIRCUITS: Ablating awareness features recovers task features.")
+         print(f"      The awareness circuit COMPETES with the task circuit for activation energy.")
+         print(f"      'Awareness without immunity' is because the circuits interfere.")
+     elif recovery_from_ablation > 0.1:
+@@ -438,11 +407,9 @@ def main():
+         results[cond_name]["mentions_negative"] = mentions_neg
+ 
+     results["analysis"] = {
+-        "task_suppression": task_suppression_table,
+-        "awareness_suppression": awareness_suppression_table,
+-        "neutral_task_suppression_load": neutral_task_supp,
+-        "chaos_task_suppression_load": chaos_task_supp,
+-        "suppression_increase": suppression_increase,
++        "task_activations": task_activation_table,
++        "awareness_activations": awareness_activation_table,
++        "suppression": suppression,
+         "recovery_from_ablation": recovery_from_ablation,
+     }
+ 

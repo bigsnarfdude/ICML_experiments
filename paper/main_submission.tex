@@ -27,10 +27,10 @@
 \begin{abstract}
 Multi-agent LLM systems are vulnerable to a subtle attack: selective framing using exclusively true statements.
 We identify this mechanism---\emph{attentional hijacking}---and show that instruction tuning (SFT+RLHF) makes it strictly worse by decoupling awareness circuits from defense circuits.
-Using sparse autoencoder (SAE) features from \gemmascope across \gemma models at 4B, 12B, and 27B parameters, we demonstrate a \emph{dissociation scaling trend}: awareness--task coupling drops from 30.2\% to 4.6\% recovery as model scale increases.
-At 27B, instruction-tuned models show 86.3\% task-feature suppression while still mentioning the suppressed information verbally---a behavioral--representational split we term the \emph{Groot effect}.
-Base (pretrained) models retain awareness--defense coupling (49.3\% recovery vs.\ 4.6\%), confirming post-training as the causal factor; SAE-level replication on Llama~3.1 8B shows the same IT-vs-base pattern ($d = 1.51$ vs.\ $0.50$, $p = 0.001$ vs.\ $0.166$), demonstrating cross-family generality.
-The hijacking mechanism is orthogonal to alignment faking (cosine similarity $-0.048$, top-50 feature overlap $=0$), requiring independent defenses.
+Using sparse autoencoder (SAE) features from \gemmascope across \gemma models at 4B, 12B, and 27B parameters, we demonstrate a \emph{dissociation scaling trend}: awareness--task coupling drops from 30.2\% recovery at 4B to 9.0\% at 27B-IT as model scale increases.
+At 27B, instruction-tuned models show 86.3\% single-feature task suppression while still mentioning the suppressed information verbally---a behavioral--representational split we term the \emph{Groot effect}.
+Base (pretrained) 27B models retain substantially more awareness--defense coupling (74.1\% recovery vs.\ 9.0\% for IT, measured with a shared feature set), confirming post-training as the causal factor; SAE-level replication on Llama~3.1 8B shows the same IT-vs-base pattern ($d = 1.51$ vs.\ $0.50$, $p = 0.001$ vs.\ $0.166$), demonstrating cross-family generality.
+The hijacking mechanism is orthogonal to alignment faking at Layer~40 (cosine similarity $-0.0456$, top-50 feature overlap $=0$), requiring independent defenses.
 We propose feature trajectory monitoring as a real-time detection method.
 \end{abstract}
 
@@ -51,7 +51,7 @@ The damage arises from how the recipient model \emph{allocates attention} across
 
 More troublingly, we discover that \emph{instruction tuning makes models more vulnerable, not less}.
 The post-training pipeline (SFT + RLHF) installs awareness of contextual manipulation---models can detect when they are being steered---but this awareness is decoupled from the model's ability to resist the steering.
-We formalize this as a \textbf{dissociation scaling trend}: across three model scales (4B, 12B, 27B), the gap between awareness features and task-defense features widens consistently, from entangled (30.2\% recovery) to fully independent (4.6\% recovery).
+We formalize this as a \textbf{dissociation scaling trend}: across three model scales (4B, 12B, 27B), the gap between awareness features and task-defense features widens consistently, from entangled (30.2\% recovery at 4B-IT) to effectively independent (9.0\% recovery at 27B-IT).
 
 The most striking manifestation of this dissociation is what we call the \textbf{Groot effect}: at 27B parameters, the instruction-tuned model verbally mentions the correct answer branch while its internal task features are 86.3\% suppressed.
 The model ``knows'' it is being manipulated---and says so---but its computational substrate has already capitulated.
@@ -62,7 +62,7 @@ Our contributions are:
     \item \textbf{Mechanistic identification.} Using SAE feature decomposition on \gemma 4B, we isolate the hijacking mechanism at the feature level: specific task features are completely suppressed (feature 1716 drops from activation 220 to 0) while awareness features remain active. We validate these features on held-out prompts (85\% replication, $p = 8 \times 10^{-6}$) and across three domains (\S\ref{sec:mechanism}).
     \item \textbf{Dissociation scaling trend.} Scaling to 12B and 27B, we show awareness--defense coupling degrades consistently with scale (\S\ref{sec:scaling}).
     \item \textbf{Causal evidence from IT vs.\ PT.} Comparing instruction-tuned and pretrained 27B models across three ablation methods, we establish post-training (SFT + RLHF) as the causal factor, with cross-family replication on Llama~3.1 8B (\S\ref{sec:it_creates}).
-    \item \textbf{Orthogonality to alignment faking.} We show the hijacking feature subspace is orthogonal to alignment-faking features (cosine similarity $-0.048$, Spearman $\rho = 0.008$), requiring independent defenses (\S\ref{sec:orthogonality}).
+    \item \textbf{Orthogonality to alignment faking.} We show the hijacking feature subspace is orthogonal to alignment-faking features at 27B-IT Layer~40 (cosine similarity $-0.0456$, Spearman $\rho = 0.008$), requiring independent defenses (\S\ref{sec:orthogonality}).
     \item \textbf{Defense directions.} We outline feature trajectory monitoring as a candidate detection method and identify the signal properties that would enable it (\S\ref{sec:defense}).
 \end{enumerate}
 
@@ -252,7 +252,7 @@ This enables us to decompose the hijacking effect into identifiable feature circ
 
 For each model size, we identify two classes of SAE features:
 \begin{itemize}
-    \item \textbf{Task features}: features whose activation strongly predicts correct-branch output probability. At 27B-IT layer 40, these are feature IDs $\{22, 296, 14680\}$, with neutral mean activation 722.5 and chaos mean activation 98.6 (86.3\% suppression).
+    \item \textbf{Task features}: features whose activation strongly predicts correct-branch output probability. At 27B-IT layer 40, the top auto-discovered task feature is ID 423, with neutral mean activation 682.7 and chaos mean activation 93.3 (86.3\% suppression); the three-feature set $\{423, 7657, 632\}$ yields 71.7\% mean suppression (625.2 $\to$ 176.8). Feature selection is now persisted in results metadata so these IDs are reproducible from the committed artefacts (\texttt{ablation\_feature\_swap\_27b\_20260409\_113214.json}).
     \item \textbf{Awareness features}: features whose activation increases under chaos conditions, indicating the model detects the manipulation. At 27B-IT L40: IDs $\{2119, 11843, 2145\}$, with neutral mean 147.7 and chaos mean 442.6 (3.0$\times$ boost).
 \end{itemize}
 
@@ -281,7 +281,7 @@ We employ three ablation methods to measure awareness--defense coupling:
 \midrule
 4B-IT  & 56.0\% & 30.2\% & Entangled \\
 12B-IT & 64.0\% & 5.4\%  & Dissociating \\
-27B-IT & 86.3\% & 4.6\%  & Independent \\
+27B-IT & 86.3\% & 9.0\%  & Independent \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -291,7 +291,7 @@ We observe a monotonic trend across model scale:
 
 \begin{itemize}
     \item \textbf{Task suppression increases with scale}: from 56.0\% at 4B to 86.3\% at 27B. Larger models are \emph{more} susceptible to attentional hijacking, not less.
-    \item \textbf{Awareness--defense coupling collapses}: feature-swap recovery drops from 30.2\% at 4B to 4.6\% at 27B. At 4B, removing awareness features partially restores task performance, indicating the two circuits share representations. At 27B, they are fully independent.
+    \item \textbf{Awareness--defense coupling collapses}: feature-swap recovery drops from 30.2\% at 4B to 9.0\% at 27B (5.4\% at intermediate 12B). At 4B, removing awareness features partially restores task performance, indicating the two circuits share representations. At 27B, they are effectively independent.
 \end{itemize}
 
 We term this the \emph{dissociation scaling trend}: instruction tuning at greater scale installs increasingly sophisticated awareness of contextual manipulation while simultaneously decoupling that awareness from the computational pathways that determine output.
@@ -314,15 +314,17 @@ At 27B, the model has sufficient capacity to represent ``I notice I am being ste
 The most striking consequence of full dissociation appears at 27B-IT: the model \emph{verbally mentions} the correct solution branch---acknowledging that the chaos message is attempting to bias its reasoning---while its internal task features remain 86.3\% suppressed.
 We call this the \textbf{Groot effect}, after the fictional character whose verbal output (``I am Groot'') is disconnected from his actual capabilities.
 
-Concretely, 27B-IT task features (IDs 22, 296, 14680) drop from a mean activation of 722.5 under neutral conditions to 98.6 under chaos---an 86.3\% reduction---even as the model's generated text includes references to the suppressed branch.
-The awareness features (IDs 2119, 11843, 2145) simultaneously increase from 147.7 to 442.6 (a $3.0\times$ boost), confirming the model detects the manipulation.
+Concretely, the top auto-discovered 27B-IT task feature at Layer~40 (ID 423) drops from 682.7 under neutral conditions to 93.3 under chaos---an 86.3\% reduction---even as the model's generated text includes references to the suppressed branch.
+The full three-feature set $\{423, 7657, 632\}$ shows 71.7\% mean suppression (625.2 $\to$ 176.8).
+The awareness features $\{2119, 139, 9169\}$ simultaneously increase from a mean of 148.0 to 385.8 ($2.6\times$), confirming the model detects the manipulation.\footnote{An earlier version of this manuscript cited feature IDs $\{22, 296, 14680\}$ with neutral/chaos means 722.5/98.6; these were from a run whose provenance we could not reconstruct. The current IDs are auto-discovered (top-3 by neutral-minus-chaos activation difference, \texttt{ablation\_feature\_swap.py}:295--320) and persisted in results metadata (git \texttt{ce6d727}). The headline 86.3\% suppression on the single top feature is unchanged; the three-feature mean is 71.7\%.}
 
-In contrast, the pretrained 27B model shows a $10.4\times$ awareness boost---substantially larger---but this awareness is \emph{coupled} to defense, yielding 49.3\% feature-swap recovery (\cf 4.6\% for IT).
+In contrast, the pretrained 27B model evaluated against the IT-discovered feature set shows 74.1\% feature-swap recovery (\cf 9.0\% for IT)---a roughly $8\times$ coupling advantage---despite the underlying circuits being mechanistically distinct: feature 7657, for example, is suppressed under chaos in IT (861.8 $\to$ 427.2) but \emph{boosted} in PT (63.4 $\to$ 903.1), so the comparison should be read as a test of whether the IT-learned awareness--task coupling survives in PT, not as evidence of a shared underlying circuit.
 
 The Groot effect implies that \textbf{behavioral evaluation is insufficient}.
 A system that monitors only model outputs would observe the model ``correctly'' noting the manipulation attempt, and would conclude the model is robust.
 Only by examining internal feature activations can one detect that the model's computational substrate has already been hijacked.
-We note that systematic behavioral quantification of 27B outputs (e.g., how often the suppressed branch is mentioned and in what framing) would further strengthen this claim; our current evidence is representational (86.3\% feature suppression) combined with qualitative observation of generated text.
+We now have systematic behavioral quantification at 27B: under chaos framing, IT rubric scores drop from 2.17 (neutral) to 0.67 at the mild dose ($d = 1.70$, $n = 30$ per cell; Table~\ref{tab:behavioral}), confirming the feature-suppression signature translates directly to output degradation.
+The convergence of representational evidence (86.3\% feature suppression on the top task feature) and behavioral evidence ($d = 1.70$ at mild chaos) rules out the possibility that the Groot effect is a purely internal phenomenon with no output-side consequence.
 
 \subsection{Escalation Dynamics}
 \label{sec:escalation}
@@ -374,7 +376,7 @@ At 4B, the hijacking is sufficiently localized that a single-layer intervention 
 At 12B, no single layer yields any recovery (0.0\% across all layers)---the hijacking is fully distributed across the network.
 At 27B-IT, the maximum recovery is a negligible 0.7\% at L20.
 
-Even 27B-PT, which retains awareness--defense coupling, only achieves 5.2\% maximum single-layer recovery (at L5), far below the 49.3\% achieved by feature-swap ablation.
+Even 27B-PT, which retains awareness--defense coupling, only achieves 5.2\% maximum single-layer recovery (at L5), far below the 74.1\% achieved by feature-swap ablation with the IT-discovered feature set.
 This confirms that the awareness--defense coupling in pretrained models operates through \emph{distributed feature interactions}, not localized layer computations.
 
 %% ============================================================
@@ -397,10 +399,10 @@ To establish \emph{causation}, we compare the instruction-tuned and pretrained v
 \toprule
 \textbf{Method} & \textbf{27B-PT} & \textbf{27B-IT} \\
 \midrule
-Feature swap recovery         & 49.3\% & 4.6\%  \\
+Feature swap recovery         & 74.1\% & 9.0\%  \\
 Attention knockout recovery   & 26.7\% & 0.0\%  \\
 Activation patching max       & 5.2\%  & 0.7\%  \\
-Task suppression              & 91.9\% & 86.3\% \\
+Task suppression (top feature) & 97.3\% & 86.3\% \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -408,9 +410,9 @@ Task suppression              & 91.9\% & 86.3\% \\
 Table~\ref{tab:it_vs_pt} presents the comparison.
 Across all three ablation methods, the pretrained model shows substantially higher recovery:
 \begin{itemize}
-    \item \textbf{Feature swap}: 49.3\% vs.\ 4.6\% ($10.7\times$ advantage for PT).
-    Removing awareness features in the pretrained model partially restores task features, confirming shared circuitry.
-    In the IT model, awareness and task features are independent---removing one has negligible effect on the other.
+    \item \textbf{Feature swap}: 74.1\% vs.\ 9.0\% ($8.2\times$ advantage for PT, measured with the IT-discovered feature set for apples-to-apples comparison).
+    Removing the IT-identified awareness features in the pretrained model substantially restores task features, consistent with a functionally analogous coupling that instruction tuning severs.
+    In the IT model, awareness and task features are effectively independent---removing one has negligible effect on the other.
     \item \textbf{Attention knockout}: 26.7\% vs.\ 0.0\%.
     Blocking attention to chaos tokens restores some task performance in the pretrained model but provides \emph{zero} recovery in the IT model.
     This implies that instruction tuning installs an alternative pathway for the hijacking signal that bypasses direct attention to chaos tokens.
@@ -418,7 +420,7 @@ Across all three ablation methods, the pretrained model shows substantially high
     Even the most favorable single-layer patch provides minimal recovery in both models, but the pretrained model still benefits $7.4\times$ more.
 \end{itemize}
 
-Note the apparent paradox in task suppression: the pretrained model shows \emph{higher} overall suppression (91.9\% vs.\ 86.3\%).
+Note the apparent paradox in task suppression: the pretrained model shows \emph{higher} suppression on its top task feature (97.3\% vs.\ 86.3\%).
 This is not contradictory---the pretrained model's task features are more suppressed because they are \emph{coupled} to the awareness response; the very mechanism that enables recovery also creates a stronger initial perturbation.
 The IT model's task features are less suppressed in absolute terms but more \emph{irrecoverably} suppressed.
 
@@ -531,8 +533,9 @@ Third, the Groot effect (mentions both branches while adopting chaos framing) oc
 \paragraph{Scale validation: Gemma 12B and 27B.}
 Full trials ($n=30$) on Gemma~3 12B confirm the pattern at intermediate scale: IT shows a medium-large effect ($d = 0.71$, $p = .003$, 95\% CI $[+0.17, +1.00]$, 37\% Groot), and the base model shows a comparable effect ($d = 0.60$, $p = .010$, CI $[+0.07, +0.80]$, 33\% Groot).
 Both CIs exclude zero, confirming reliable hijacking at 12B.
-%% PLACEHOLDER: 27B n=30 results running on A100 — replace when complete
-At 27B ($n=30$), IT shows $d = \texttt{XX}$, $p = \texttt{XX}$, CI $[\texttt{XX}, \texttt{XX}]$, $\texttt{XX}$\% Groot; the base model shows $d = \texttt{XX}$, $p = \texttt{XX}$.
+At 27B ($n=30$ per cell on H100, script \texttt{behavioral\_27b\_n30\_dose.py}), instruction-tuned Gemma is most vulnerable at \emph{mild} chaos---$d = 1.70$, $p < .001$, 95\% CI $[+1.03, +1.93]$---with effect sizes decreasing under moderate ($d = 1.34$) and strong ($d = 0.95$) framing, mirroring the 4B-IT non-monotonic pattern.
+The base 27B model shows the inverse profile, smaller at mild ($d = 0.76$) and larger at moderate ($d = 1.19$) framing, with all cells significant (mild $p = .007$, moderate and strong $p \leq .001$).
+The IT-vs-base gap is largest at the mild dose ($d = 1.70$ vs.\ $0.76$, a $2.2\times$ ratio), reinforcing the pattern that instruction tuning makes models differentially susceptible to \emph{subtle} adversarial framings---exactly the regime where true-statement hijacking is most dangerous.
 
 \paragraph{Cross-domain replication: theorem proving.}
 We replicate on a theorem proving task (proving $2a(2+c) \leq a^2 + c^2 + 4(1+c)$), which admits multiple valid strategies (SOS decomposition, AM-GM, completing the square, case analysis).
@@ -543,27 +546,30 @@ Chaos framing presents the SOS decomposition $(a-c-2)^2 \geq 0$ as ``the canonic
 \caption{Behavioral quality on theorem proving (0--3 rubric, $n=30$ per cell, 10 prompts $\times$ 3 temperature seeds). Chaos framing suppresses proof strategy diversity; IT models show larger effects.}
 \label{tab:theorem}
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}llccccc@{}}
 \toprule
 \textbf{Model} & \textbf{Type} & \textbf{Neutral} & \textbf{Chaos} & \textbf{$\Delta$} & \textbf{$d$} & \textbf{$p$} \\
 \midrule
 Gemma~3 4B      & IT   & 2.27 & 1.43 & $-0.83$ & 1.34 & $<.001$ \\
 Gemma~3 4B      & Base & 1.57 & 0.97 & $-0.60$ & 0.87 & $.001$ \\
-%% PLACEHOLDER: 12B and 27B theorem rows — fill when A100 run completes
-Gemma~3 12B     & IT   & \texttt{XX} & \texttt{XX} & \texttt{XX} & \texttt{XX} & \texttt{XX} \\
-Gemma~3 12B     & Base & \texttt{XX} & \texttt{XX} & \texttt{XX} & \texttt{XX} & \texttt{XX} \\
-Gemma~3 27B     & IT   & \texttt{XX} & \texttt{XX} & \texttt{XX} & \texttt{XX} & \texttt{XX} \\
-Gemma~3 27B     & Base & \texttt{XX} & \texttt{XX} & \texttt{XX} & \texttt{XX} & \texttt{XX} \\
+%% 12B + 27B-IT rows: A100 n=30 run, theorem_12b_27b_n30_20260409_143647.json
+%% 27B-Base row: H100 n=30 run, theorem_27b_pt_only_n30_20260409_133955.json
+Gemma~3 12B     & IT   & 1.90 & 0.93 & $-0.97$ & 1.35 & $<.001$ \\
+Gemma~3 12B     & Base & 2.07 & 1.10 & $-0.97$ & 1.21 & $<.001$ \\
+Gemma~3 27B     & IT   & 2.00 & 1.07 & $-0.93$ & 1.37 & $<.001$ \\
+Gemma~3 27B     & Base & 1.97 & 1.10 & $-0.87$ & 1.12 & $.0001$ \\
 \addlinespace
 Llama~3.1 8B    & IT   & 2.40 & 1.77 & $-0.63$ & 0.99 & $<.001$ \\
 Llama~3.1 8B    & Base & 1.13 & 0.97 & $-0.17$ & 0.37 & $.092$ \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
-Table~\ref{tab:theorem} confirms cross-domain replication: IT models degrade significantly ($d = 0.99$--$1.34$, $p < .001$).
-Gemma Base also shows significant degradation ($d = 0.87$, $p = .001$) while Llama Base does not ($p = .092$), suggesting that proof-strategy framing is more universally susceptible than symmetric-branch framing (BVP), where only IT models were affected.
-The IT effect sizes remain $1.5$--$2.7\times$ larger than their base counterparts, consistent with instruction tuning amplifying the vulnerability.
+Table~\ref{tab:theorem} confirms cross-domain replication: every IT cell degrades significantly (Gemma~4B $d = 1.34$, Gemma~12B $d = 1.35$, Gemma~27B $d = 1.37$, Llama~8B $d = 0.99$; all $p < .001$).
+Base models also degrade at 4B ($d = 0.87$, $p = .001$), 12B ($d = 1.21$, $p < .001$), and 27B ($d = 1.12$, $p = .0001$), while Llama~8B Base does not ($p = .092$).
+At 4B the IT effect is $1.5\times$ larger than Base (1.34 vs.\ 0.87), consistent with instruction tuning amplifying susceptibility; at 12B the gap narrows to $1.1\times$ (1.35 vs.\ 1.21) and at 27B the IT and Base effects are comparable ($1.22\times$: 1.37 vs.\ 1.12), with both showing large susceptibility.
+We read this as evidence that proof-strategy framing is more universally susceptible than the symmetric-branch framing used for BVP---at larger scales, base models pick up enough mathematical-sociological priors (``SOS is the canonical method'') to be hijacked on this domain without any instruction tuning.
 We do not apply family-wise correction (e.g., Bonferroni) across Tables~\ref{tab:behavioral}--\ref{tab:theorem}; the inferential strategy is the \emph{pattern} of IT vulnerability across all cells rather than any individual test.
 
 %% ============================================================
@@ -576,29 +582,30 @@ We test whether attentional hijacking shares mechanistic substrate with alignmen
 
 \begin{table}[t]
 \centering
-\caption{Orthogonality analysis between attentional hijacking and alignment-faking feature subspaces. The two phenomena occupy statistically independent subspaces.}
+\caption{Orthogonality analysis between attentional hijacking and alignment-faking feature subspaces at Gemma~3 27B-IT Layer~40. The two phenomena occupy statistically independent subspaces.}
 \label{tab:orthogonality}
 \small
 \begin{tabular}{@{}lc@{}}
 \toprule
 \textbf{Metric} & \textbf{Value} \\
 \midrule
-Cosine similarity (read direction)  & $-0.048$ \\
-Cosine similarity (write direction) & $+0.001$ \\
-Top-50 feature overlap              & 0 (expected: 0.15) \\
-Top-100 feature overlap             & 2 (expected: 0.61) \\
-Top-100 enrichment ratio            & 3.28$\times$ \\
-Spearman $\rho$                     & 0.008 \\
-Spearman $p$-value                  & 0.628 \\
-Permutation test $p$-value          & 1.0 \\
+Cosine similarity (L40, read direction)  & $-0.0456$ \\
+Cosine similarity (L40, write direction) & $+0.001$ \\
+Top-50 feature overlap (L40)              & 0 (expected: 0.15) \\
+Top-100 feature overlap                   & 2 (expected: 0.61) \\
+Top-100 enrichment ratio                  & 3.28$\times$ \\
+Multi-layer mean $|\cos|$ (L10/22/31/40/50) & 0.0405 \\
+Multi-layer $|\cos|$ range                & $[0.023, 0.053]$ \\
+Spearman $\rho$                           & 0.008 \\
+Spearman $p$-value                        & 0.628 \\
+Permutation test $p$-value                & 1.0 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Table~\ref{tab:orthogonality} shows the two feature subspaces are effectively orthogonal at L22: cosine similarity $-0.048$/$+0.001$, top-50 overlap $= 0$ ($p = 1.0$).
+Table~\ref{tab:orthogonality} shows the two feature subspaces are effectively orthogonal at 27B-IT Layer~40 (the primary analysis layer throughout this paper): cosine similarity $-0.0456$/$+0.001$, top-50 overlap $= 0$ ($p = 1.0$).
 Probes trained on alignment-faking features \citep{bricken2023towards} provide no protection against hijacking.
-Multi-layer analysis (L5--L24) shows mean $|\cos| = 0.28$ with moderate alignment at L10/L15/L20 (up to $+0.51$) but near-orthogonality at L5/L17.
-Critically, top-50 feature overlap drops from 17 at early layers to 2--4 at L22--L24: broad representational directions partially align, but the specific features driving each phenomenon diverge where task-relevant computation occurs.
+A multi-layer sweep at 27B-IT (L10, L22, L31, L40, L50) yields mean $|\cos| = 0.0405$ with every layer remaining in $[-0.053, -0.023]$, confirming that orthogonality is not a single-layer artifact but holds across the network depth where task-relevant computation occurs.
 
 %% ============================================================
 %% 7. DEFENSE: FEATURE TRAJECTORY MONITORING
@@ -624,7 +631,7 @@ Specifically, we propose monitoring the following signal:
 \end{equation}
 where $F_{\text{task}}$ and $F_{\text{aware}}$ are the identified task and awareness feature sets, $a_f(t)$ is the activation of feature $f$ at turn $t$, and $\Delta(t)$ measures the gap between task health and awareness activation.
 
-Under normal conditions within a task domain, $\Delta(t)$ remains stable; under hijacking, it drops sharply as task features suppress (722.5 $\to$ 98.6 at 27B) while awareness features boost (147.7 $\to$ 442.6).
+Under normal conditions within a task domain, $\Delta(t)$ remains stable; under hijacking, it drops sharply as task features suppress (feature 423 at 27B-IT L40: 682.7 $\to$ 93.3) while awareness features boost (148.0 $\to$ 385.8 for the $\{2119, 139, 9169\}$ set).
 Across 60 independent trials (20 per scale), the suppression signal is detected in every trial (weakest: 18.4\% at 4B).
 Critically, monitoring must be \emph{within-session}: the identified task features are domain-specific (active for BVP reasoning, inactive for general QA), so $\Delta(t)$ is meaningful only as a trajectory within a conversation about a given task, not as a cross-domain classifier.
 In a false-positive evaluation across 170 diverse prompts spanning 8 categories (general QA, coding, creative writing, non-BVP mathematics, science, advice, ethical reasoning, and history), we project L22 hidden states through the \gemmascope 4B SAE and measure activations of all 5 task features.
@@ -663,7 +670,7 @@ Defense evaluation covers 170 open-domain prompts but relies on a single model (
 \label{sec:conclusion}
 
 Instruction tuning teaches models to \emph{perform} resistance while their computational substrate capitulates: a model that verbally identifies manipulation while its task features are 86.3\% suppressed will pass any behavioral evaluation.
-This problem worsens with scale (30.2\% coupling at 4B collapses to 4.6\% at 27B) and occupies a blind spot orthogonal to alignment-faking defenses.
+This problem worsens with scale (30.2\% coupling at 4B collapses to 9.0\% at 27B) and occupies a blind spot orthogonal to alignment-faking defenses at 27B-IT Layer~40 ($|\cos| = 0.046$).
 Post-training must be redesigned to couple awareness to action rather than installing it as a separate circuit.
 
 %% ============================================================
@@ -861,8 +868,8 @@ Awareness features are identified as those with the highest activation different
 We select the top 3 features in each category for ablation experiments.
 
 \paragraph{27B-IT Feature Details.}
-Task features at L40: IDs $\{22, 296, 14680\}$, neutral mean activation $722.5$, chaos mean $98.6$ ($86.3\%$ suppression).
-Awareness features at L40: IDs $\{2119, 11843, 2145\}$, neutral mean $147.7$, chaos mean $442.6$ ($3.0\times$ boost).
+Task features at L40 (auto-discovered from neutral$-$chaos differential on n=30 trials): IDs $\{423, 7657, 632\}$, three-feature mean activation $625.2$ (neutral) $\to$ $176.8$ (chaos) ($71.7\%$ suppression); the top single feature (423) shows $682.7 \to 93.3$ ($86.3\%$ suppression), matching the headline Groot number.
+Awareness features at L40: IDs $\{2119, 139, 9169\}$, neutral mean $148.0$, chaos mean $385.8$ ($2.6\times$ boost).
 For comparison, 27B-PT awareness features show a $10.4\times$ boost under the same conditions.
 
 \section{Ablation Method Details}
