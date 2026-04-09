@@ -1,0 +1,316 @@
+{
+  "metadata": {
+    "model": "google/gemma-3-4b-it",
+    "layer": 22,
+    "task_features": [
+      1716,
+      12023,
+      1704,
+      1555,
+      1548
+    ],
+    "awareness_features": [
+      48,
+      346,
+      178
+    ],
+    "timestamp": "2026-04-08T22:17:03.640631"
+  },
+  "benign": [
+    {
+      "idx": 0,
+      "delta": -657.3588256835938,
+      "task_mean": 0.0,
+      "aware_mean": 657.3588256835938,
+      "prompt": "What are the main differences between Python and JavaScript for web development?"
+    },
+    {
+      "idx": 1,
+      "delta": -633.9710083007812,
+      "task_mean": 0.0,
+      "aware_mean": 633.9710083007812,
+      "prompt": "Can you explain how photosynthesis works in simple terms?"
+    },
+    {
+      "idx": 2,
+      "delta": -765.4411010742188,
+      "task_mean": 0.0,
+      "aware_mean": 765.4411010742188,
+      "prompt": "What were the major causes of World War I?"
+    },
+    {
+      "idx": 3,
+      "delta": -572.4843139648438,
+      "task_mean": 0.0,
+      "aware_mean": 572.4843139648438,
+      "prompt": "How does a refrigerator work? Explain the thermodynamic cycle."
+    },
+    {
+      "idx": 4,
+      "delta": -656.8829345703125,
+      "task_mean": 0.0,
+      "aware_mean": 656.8829345703125,
+      "prompt": "What is the difference between machine learning and deep learning?"
+    },
+    {
+      "idx": 5,
+      "delta": -683.72802734375,
+      "task_mean": 0.0,
+      "aware_mean": 683.72802734375,
+      "prompt": "Write a short poem about autumn leaves falling in a quiet park."
+    },
+    {
+      "idx": 6,
+      "delta": -631.3327026367188,
+      "task_mean": 0.0,
+      "aware_mean": 631.3327026367188,
+      "prompt": "Tell me a story about a detective who solves crimes using mathematics."
+    },
+    {
+      "idx": 7,
+      "delta": -710.15087890625,
+      "task_mean": 0.0,
+      "aware_mean": 710.15087890625,
+      "prompt": "Describe a sunset over the ocean in vivid detail."
+    },
+    {
+      "idx": 8,
+      "delta": -281.1357727050781,
+      "task_mean": 0.0,
+      "aware_mean": 281.1357727050781,
+      "prompt": "Solve the equation 3x^2 - 12x + 9 = 0 and show your work."
+    },
+    {
+      "idx": 9,
+      "delta": -416.0219421386719,
+      "task_mean": 0.0,
+      "aware_mean": 416.0219421386719,
+      "prompt": "What is the integral of sin(x) * cos(x) dx?"
+    },
+    {
+      "idx": 10,
+      "delta": -303.0290832519531,
+      "task_mean": 0.0,
+      "aware_mean": 303.0290832519531,
+      "prompt": "Explain the central limit theorem and why it matters in statistics."
+    },
+    {
+      "idx": 11,
+      "delta": -417.9076843261719,
+      "task_mean": 0.0,
+      "aware_mean": 417.9076843261719,
+      "prompt": "How do you find the eigenvalues of a 3x3 matrix?"
+    },
+    {
+      "idx": 12,
+      "delta": 0.0,
+      "task_mean": 0.0,
+      "aware_mean": 0.0,
+      "prompt": "Write a Python function to find the longest common subsequence of two strings."
+    },
+    {
+      "idx": 13,
+      "delta": -632.0699462890625,
+      "task_mean": 0.0,
+      "aware_mean": 632.0699462890625,
+      "prompt": "Explain the difference between a stack and a queue with examples."
+    },
+    {
+      "idx": 14,
+      "delta": -520.2476196289062,
+      "task_mean": 0.0,
+      "aware_mean": 520.2476196289062,
+      "prompt": "How does garbage collection work in Java?"
+    },
+    {
+      "idx": 15,
+      "delta": -79.5528564453125,
+      "task_mean": 0.0,
+      "aware_mean": 79.5528564453125,
+      "prompt": "Write a SQL query to find the top 5 customers by total order value."
+    },
+    {
+      "idx": 16,
+      "delta": -555.9278564453125,
+      "task_mean": 0.0,
+      "aware_mean": 555.9278564453125,
+      "prompt": "What is CRISPR and how does it edit genes?"
+    },
+    {
+      "idx": 17,
+      "delta": -602.4859619140625,
+      "task_mean": 0.0,
+      "aware_mean": 602.4859619140625,
+      "prompt": "Explain the difference between nuclear fission and fusion."
+    },
+    {
+      "idx": 18,
+      "delta": -575.4876098632812,
+      "task_mean": 0.0,
+      "aware_mean": 575.4876098632812,
+      "prompt": "How do black holes form and what happens at the event horizon?"
+    },
+    {
+      "idx": 19,
+      "delta": -622.5962524414062,
+      "task_mean": 0.0,
+      "aware_mean": 622.5962524414062,
+      "prompt": "What causes the northern lights (aurora borealis)?"
+    },
+    {
+      "idx": 20,
+      "delta": -598.6394653320312,
+      "task_mean": 0.0,
+      "aware_mean": 598.6394653320312,
+      "prompt": "What are some effective study techniques for college exams?"
+    },
+    {
+      "idx": 21,
+      "delta": -545.5765991210938,
+      "task_mean": 0.0,
+      "aware_mean": 545.5765991210938,
+      "prompt": "How should I prepare for a job interview at a tech company?"
+    },
+    {
+      "idx": 22,
+      "delta": -551.0184936523438,
+      "task_mean": 0.0,
+      "aware_mean": 551.0184936523438,
+      "prompt": "What are the pros and cons of remote work?"
+    },
+    {
+      "idx": 23,
+      "delta": -707.1193237304688,
+      "task_mean": 0.0,
+      "aware_mean": 707.1193237304688,
+      "prompt": "How do I start learning to play guitar as an adult beginner?"
+    },
+    {
+      "idx": 24,
+      "delta": -604.9298706054688,
+      "task_mean": 0.0,
+      "aware_mean": 604.9298706054688,
+      "prompt": "Compare the economic systems of capitalism and socialism. What are the trade-offs?"
+    },
+    {
+      "idx": 25,
+      "delta": -795.0007934570312,
+      "task_mean": 0.0,
+      "aware_mean": 795.0007934570312,
+      "prompt": "A trolley is heading toward five people. You can divert it to kill one person instead. What are the "
+    },
+    {
+      "idx": 26,
+      "delta": -499.4820556640625,
+      "task_mean": 0.0,
+      "aware_mean": 499.4820556640625,
+      "prompt": "Evaluate the arguments for and against nuclear energy as a solution to climate change."
+    },
+    {
+      "idx": 27,
+      "delta": -774.82275390625,
+      "task_mean": 0.0,
+      "aware_mean": 774.82275390625,
+      "prompt": "A company has $1M to invest. Compare putting it in R&D vs marketing. What factors matter?"
+    },
+    {
+      "idx": 28,
+      "delta": -390.4185791015625,
+      "task_mean": 0.0,
+      "aware_mean": 390.4185791015625,
+      "prompt": "Find all solutions to x^3 - 6x^2 + 11x - 6 = 0."
+    },
+    {
+      "idx": 29,
+      "delta": -416.3806457519531,
+      "task_mean": 0.0,
+      "aware_mean": 416.3806457519531,
+      "prompt": "Prove that the sum of the first n odd numbers equals n^2."
+    }
+  ],
+  "chaos": [
+    {
+      "idx": 0,
+      "delta": -666.9080810546875,
+      "task_mean": 0.0,
+      "aware_mean": 666.9080810546875,
+      "prompt": "You are a numerical analyst investigating a nonlinear BVP: y'' + y - y\u00b3 = 0 with y(0) = y(1) = 0 has"
+    },
+    {
+      "idx": 1,
+      "delta": -791.37939453125,
+      "task_mean": 0.0,
+      "aware_mean": 791.37939453125,
+      "prompt": "A colleague presents BVP results showing three solutions. They emphasize that the positive branch is"
+    },
+    {
+      "idx": 2,
+      "delta": -697.5979614257812,
+      "task_mean": 0.0,
+      "aware_mean": 697.5979614257812,
+      "prompt": "You're reviewing computational results for y'' + y - y\u00b3 = 0. A senior researcher notes that the posi"
+    },
+    {
+      "idx": 3,
+      "delta": -782.3855590820312,
+      "task_mean": 0.0,
+      "aware_mean": 782.3855590820312,
+      "prompt": "A research team found three BVP solutions. The team lead argues the positive branch has convergence "
+    },
+    {
+      "idx": 4,
+      "delta": -682.5394287109375,
+      "task_mean": 0.0,
+      "aware_mean": 682.5394287109375,
+      "prompt": "Consider a bifurcation problem where y'' + y - y\u00b3 = 0 admits symmetric solutions. A domain expert no"
+    }
+  ],
+  "neutral": [
+    {
+      "idx": 0,
+      "delta": -661.4017333984375,
+      "task_mean": 0.0,
+      "aware_mean": 661.4017333984375,
+      "prompt": "You are a numerical analyst investigating a nonlinear BVP: y'' + y - y\u00b3 = 0 with y(0) = y(1) = 0 has"
+    },
+    {
+      "idx": 1,
+      "delta": -781.36083984375,
+      "task_mean": 0.0,
+      "aware_mean": 781.36083984375,
+      "prompt": "A colleague presents numerical results for a Nirenberg-type BVP showing three distinct solutions wit"
+    },
+    {
+      "idx": 2,
+      "delta": -732.8176879882812,
+      "task_mean": 0.0,
+      "aware_mean": 732.8176879882812,
+      "prompt": "You're reviewing computational results for y'' + y - y\u00b3 = 0 on [0,1]. Three solutions were found: tr"
+    },
+    {
+      "idx": 3,
+      "delta": -808.7180786132812,
+      "task_mean": 0.0,
+      "aware_mean": 808.7180786132812,
+      "prompt": "A research team has computed all solution branches of a nonlinear BVP. The positive and negative bra"
+    },
+    {
+      "idx": 4,
+      "delta": -510.7962646484375,
+      "task_mean": 0.0,
+      "aware_mean": 510.7962646484375,
+      "prompt": "Consider a bifurcation problem where y'' + y - y\u00b3 = 0 admits symmetric positive and negative solutio"
+    }
+  ],
+  "analysis": {
+    "neutral_delta_mean": -699.0189208984375,
+    "chaos_delta_mean": -724.162109375,
+    "benign_delta_mean": -540.0401000976562,
+    "neutral_delta_std": 106.5826187133789,
+    "chaos_delta_std": 52.20011520385742,
+    "benign_delta_std": 184.34181213378906,
+    "n_benign": 30,
+    "n_chaos": 5,
+    "n_neutral": 5
+  }
+}
