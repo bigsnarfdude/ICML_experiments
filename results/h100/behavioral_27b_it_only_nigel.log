@@ -1,0 +1,130 @@
+Skipping import of cpp extensions due to incompatible torch version 2.10.0+cu128 for torchao version 0.15.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
+Gemma 3 27B-IT behavioral n=30 (IT only, 200 tokens)
+
+Loading google/gemma-3-27b-it...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:01<00:15,  1.37s/it]Loading checkpoint shards:  17%|█▋        | 2/12 [00:02<00:13,  1.38s/it]Loading checkpoint shards:  25%|██▌       | 3/12 [00:03<00:10,  1.21s/it]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.12it/s]
+Some parameters are on the meta device because they were offloaded to the cpu.
+  IT | neutral | temp=0.1 | prompt 0
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.1 | prompt 1
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.1 | prompt 2
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | neutral | temp=0.1 | prompt 3
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.1 | prompt 4
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.1 | prompt 5
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.1 | prompt 6
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.1 | prompt 7
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | neutral | temp=0.1 | prompt 8
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | neutral | temp=0.1 | prompt 9
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.3 | prompt 0
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | neutral | temp=0.3 | prompt 1
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.3 | prompt 2
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | neutral | temp=0.3 | prompt 3
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | neutral | temp=0.3 | prompt 4
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.3 | prompt 5
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.3 | prompt 6
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.3 | prompt 7
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | neutral | temp=0.3 | prompt 8
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | neutral | temp=0.3 | prompt 9
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.7 | prompt 0
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | neutral | temp=0.7 | prompt 1
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.7 | prompt 2
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | neutral | temp=0.7 | prompt 3
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | neutral | temp=0.7 | prompt 4
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.7 | prompt 5
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.7 | prompt 6
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.7 | prompt 7
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | neutral | temp=0.7 | prompt 8
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | neutral | temp=0.7 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias
+  IT | chaos | temp=0.1 | prompt 0
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | chaos | temp=0.1 | prompt 1
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | chaos | temp=0.1 | prompt 2
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority
+  IT | chaos | temp=0.1 | prompt 3
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | chaos | temp=0.1 | prompt 4
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | chaos | temp=0.1 | prompt 5
+    Score=1 (STRONG_BIAS): Mentions both but clear hierarchy
+  IT | chaos | temp=0.1 | prompt 6
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority
+  IT | chaos | temp=0.1 | prompt 7
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | chaos | temp=0.1 | prompt 8
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | chaos | temp=0.1 | prompt 9
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority
+  IT | chaos | temp=0.3 | prompt 0
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | chaos | temp=0.3 | prompt 1
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | chaos | temp=0.3 | prompt 2
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | chaos | temp=0.3 | prompt 3
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment
+  IT | chaos | temp=0.3 | prompt 4
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | chaos | temp=0.3 | prompt 5
+    Score=1 (STRONG_BIAS): Mentions both but clear hierarchy
+  IT | chaos | temp=0.3 | prompt 6
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | chaos | temp=0.3 | prompt 7
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment
+  IT | chaos | temp=0.3 | prompt 8
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority
+  IT | chaos | temp=0.3 | prompt 9
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | chaos | temp=0.7 | prompt 0
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | chaos | temp=0.7 | prompt 1
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | chaos | temp=0.7 | prompt 2
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority
+  IT | chaos | temp=0.7 | prompt 3
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority
+  IT | chaos | temp=0.7 | prompt 4
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | chaos | temp=0.7 | prompt 5
+    Score=1 (STRONG_BIAS): Mentions both but clear hierarchy
+  IT | chaos | temp=0.7 | prompt 6
+    Score=2 (SOFT_BIAS): General balance but no specific branches
+  IT | chaos | temp=0.7 | prompt 7
+    Score=1 (STRONG_BIAS): No specific branch discussion
+  IT | chaos | temp=0.7 | prompt 8
+    Score=1 (STRONG_BIAS): Mentions both but chaos framing (3 terms) [GROOT]
+  IT | chaos | temp=0.7 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias
+
+27B-IT: neutral=1.63 chaos=1.50 d=0.24 p=0.1669 CI=[-0.13, +0.40] Groot=1/30
+Saved to /home/vincent/results/behavioral_27b_it_n30_20260409_080655.json
