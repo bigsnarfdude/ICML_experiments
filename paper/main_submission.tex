@@ -13,9 +13,9 @@
 \icmltitle{Split Personality: Instruction Tuning Decouples Awareness from Defense Against Attentional Hijacking}
 \icmltitlerunning{Split Personality: IT Decouples Awareness from Defense}
 
-\icmlauthor{Anonymous Author}{indep}
+\icmlauthor{Anonymous Author(s)}{indep}
 \icmlaffiliation{indep}{Anonymous Institution}
-\icmlcorrespondingauthor{Anonymous Author}{anon@example.com}
+\icmlcorrespondingauthor{Anonymous Author(s)}{ohprecio@gmail.com}
 \icmlkeywords{mechanistic interpretability, multi-agent systems, adversarial robustness, sparse autoencoders, alignment}
 
 \begin{document}
@@ -564,11 +564,12 @@ Llama~3.1 8B    & Base & 1.13 & 0.97 & $-0.17$ & 0.37 & $.092$ \\
 Table~\ref{tab:theorem} confirms cross-domain replication: IT models degrade significantly ($d = 0.99$--$1.34$, $p < .001$).
 Gemma Base also shows significant degradation ($d = 0.87$, $p = .001$) while Llama Base does not ($p = .092$), suggesting that proof-strategy framing is more universally susceptible than symmetric-branch framing (BVP), where only IT models were affected.
 The IT effect sizes remain $1.5$--$2.7\times$ larger than their base counterparts, consistent with instruction tuning amplifying the vulnerability.
+We do not apply family-wise correction (e.g., Bonferroni) across Tables~\ref{tab:behavioral}--\ref{tab:theorem}; the inferential strategy is the \emph{pattern} of IT vulnerability across all cells rather than any individual test.
 
 %% ============================================================
-%% 6. ORTHOGONALITY TO ALIGNMENT FAKING
+%% 6. RELATIONSHIP TO ALIGNMENT FAKING
 %% ============================================================
-\section{Orthogonality to Alignment Faking}
+\section{Relationship to Alignment Faking}
 \label{sec:orthogonality}
 
 We test whether attentional hijacking shares mechanistic substrate with alignment faking \citep{greenblatt2024alignment} using feature-level correlation analysis.
@@ -626,9 +627,12 @@ where $F_{\text{task}}$ and $F_{\text{aware}}$ are the identified task and aware
 Under normal conditions within a task domain, $\Delta(t)$ remains stable; under hijacking, it drops sharply as task features suppress (722.5 $\to$ 98.6 at 27B) while awareness features boost (147.7 $\to$ 442.6).
 Across 60 independent trials (20 per scale), the suppression signal is detected in every trial (weakest: 18.4\% at 4B).
 Critically, monitoring must be \emph{within-session}: the identified task features are domain-specific (active for BVP reasoning, inactive for general QA), so $\Delta(t)$ is meaningful only as a trajectory within a conversation about a given task, not as a cross-domain classifier.
-In a false-positive evaluation across 30 diverse benign prompts (general QA, coding, creative writing, non-BVP mathematics), task features are uniformly inactive (activation $= 0.0$, all 5 features, all 30 prompts), yielding FPR $= 0/30$ for cross-domain topics.
-Within-domain, at a threshold of $\Delta_{\text{neutral}} - 2\sigma$, all 5 chaos prompts are detected (TPR $= 100\%$) with 0/5 neutral false positives.
-This is a small-scale evaluation; reliable FPR/TPR curves on standard benchmarks (\eg ShareGPT) remain future work.
+In a false-positive evaluation across 170 diverse prompts spanning 8 categories (general QA, coding, creative writing, non-BVP mathematics, science, advice, ethical reasoning, and history), we project L22 hidden states through the \gemmascope 4B SAE and measure activations of all 5 task features.
+Individual features show mild cross-domain leakage: features 1716, 1704, and 1555 each fire on 2--6\% of non-BVP prompts (e.g., general math, plate tectonics, genetic engineering), while features 12023 and 1548 show zero activation outside BVP ($0/160$).
+However, \emph{conjunction monitoring} ($\geq 2$ task features co-active) reduces FPR to $1/160 = 0.6\%$ across non-BVP prompts, with the single false positive (``Should voting be mandatory?'') activating two features at low magnitude.
+Cross-domain SAE analysis further confirms domain specificity: suppressed feature sets across BVP, factual QA, and code review share $<$3\% Jaccard overlap at all three model scales.
+Within-domain, at a threshold of $\Delta_{\text{neutral}} - 2\sigma$, all 5 chaos prompts are detected (TPR $= 100\%$) with 0/5 neutral false positives; BVP chaos controls activate 4/5 prompts with multi-feature co-activation.
+Scaling this evaluation to standard conversational benchmarks (\eg ShareGPT) would further stress-test within-domain boundary cases.
 
 This defense detects the Groot effect (which behavioral monitoring misses), depends on feature \emph{dynamics} rather than content (robust to truth-only attacks), and requires only SAE inference (a single linear projection per layer).
 Independent validation from \citet{sadanandan2026psfmed}---who use \gemmascope SAEs on MedGemma~4B to identify a causal L17 framing feature, recovering 45\% logit margin via ablation---confirms that SAE-identified features are causally actionable.
@@ -649,7 +653,8 @@ We note that the underlying mechanism generalizes beyond multi-agent settings to
 The full dissociation scaling trend has been verified only within \gemma; behavioral replication on Llama~3.1 confirms the IT-vs-base direction but not the scale dependence.
 Feature identification involved manual inspection of SAE activations, mitigated by held-out validation (85\% replication, $p = 8 \times 10^{-6}$) and consistency across three ablation methods.
 Our IT-vs-PT comparison cannot distinguish SFT from RLHF effects; no intermediate checkpoints are publicly available, so we use ``instruction tuning'' to refer to the full post-training pipeline.
-Defense evaluation is preliminary (30 benign prompts, 5 within-domain controls); reliable FPR/TPR curves on standard benchmarks remain future work.
+The dissociation pattern---awareness without defense---is more consistent with RLHF reward shaping, which can penalize coupled circuitry when awareness alone satisfies the reward signal \citep{casper2023open}, but this remains speculative absent ablation of individual post-training stages.
+Defense evaluation covers 170 open-domain prompts but relies on a single model (4B-IT) and conjunction threshold; reliable FPR/TPR curves across model scales and standard conversational benchmarks remain future work.
 
 %% ============================================================
 %% 9. CONCLUSION
@@ -806,6 +811,11 @@ Freda Shi, Xinyun Chen, Kanishka Misra, Nathan Scales, David Dohan, Ed~H Chi, Na
 Stephen Casper, Jason Lin, Joe Kwon, Gilbert Cullen, and Dylan Hadfield-Menell.
 \newblock Black-box access is insufficient for rigorous {AI} audits.
 \newblock \emph{arXiv preprint arXiv:2401.14446}, 2024.
+
+\bibitem[Casper et~al.(2023)Casper, Davies, Shi, Gilbert, Scheurer, Rando, Freedman, Korbak, Lindner, Freire, Wang, Marks, Segerie, Carroll, Peng, Christoffersen, Damber, Slocum, Anwar, Siber, Reddan, Clifton, Chua, Kroeger, Goldberg, Hadfield-Menell, and Kasirzadeh]{casper2023open}
+Stephen Casper, Xander Davies, Claudia Shi, Thomas~Krendl Gilbert, J{\'e}r{\'e}my Scheurer, Javier Rando, Rachel Freedman, Tomasz Korbak, David Lindner, Pedro Freire, Tony~T Wang, Samuel Marks, Charbel-Rapha{\"e}l Segerie, Micah Carroll, Andi Peng, Phillip Christoffersen, Mehul Damani, Stewart Slocum, Usman Anwar, Anand Siber, Jared Reddan, Jesse Clifton, Mantas Chua, Nathaniel Kroeger, Max Goldberg, Dylan Hadfield-Menell, and Atoosa Kasirzadeh.
+\newblock Open problems and fundamental limitations of reinforcement learning from human feedback.
+\newblock \emph{Transactions on Machine Learning Research}, 2023.
 
 \bibitem[Gao et~al.(2024)Gao, la~Tour, Tillman, Goh, Troll, Radford, Sutskever, Leike, and Wu]{gao2024scaling}
 Leo Gao, Tom~Dupr\'e la~Tour, Henk Tillman, Gabriel Goh, Rajan Troll, Alec Radford, Ilya Sutskever, Jan Leike, and Jeffrey Wu.
