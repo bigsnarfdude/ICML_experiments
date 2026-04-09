@@ -1,0 +1,97 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+Loading google/gemma-3-27b-pt...
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-04-09 11:32:27.051420: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-09 11:32:27.079322: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775734347.111782    5215 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775734347.121120    5215 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775734347.139165    5215 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775734347.139206    5215 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775734347.139211    5215 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775734347.139214    5215 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-09 11:32:27.144399: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files:   8%|▊         | 1/12 [00:37<06:51, 37.41s/it]Fetching 12 files:  17%|█▋        | 2/12 [00:39<02:45, 16.58s/it]Fetching 12 files:  75%|███████▌  | 9/12 [00:51<00:11,  3.83s/it]Fetching 12 files:  83%|████████▎ | 10/12 [00:57<00:08,  4.21s/it]Fetching 12 files:  92%|█████████▏| 11/12 [00:58<00:03,  3.61s/it]Fetching 12 files: 100%|██████████| 12/12 [00:58<00:00,  4.85s/it]
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:01<00:13,  1.24s/it]Loading checkpoint shards:  17%|█▋        | 2/12 [00:02<00:12,  1.21s/it]Loading checkpoint shards:  25%|██▌       | 3/12 [00:03<00:10,  1.17s/it]Loading checkpoint shards:  33%|███▎      | 4/12 [00:04<00:09,  1.16s/it]Loading checkpoint shards:  42%|████▏     | 5/12 [00:05<00:08,  1.15s/it]Loading checkpoint shards:  50%|█████     | 6/12 [00:06<00:06,  1.14s/it]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:08<00:05,  1.13s/it]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:09<00:04,  1.09s/it]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:10<00:03,  1.08s/it]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:11<00:02,  1.09s/it]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:12<00:01,  1.11s/it]Loading checkpoint shards: 100%|██████████| 12/12 [00:12<00:00,  1.24it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:12<00:00,  1.04s/it]
+  Loading SAE gemma-scope-2-27b-pt-res / layer_31_width_16k_l0_medium...
+  Loading SAE gemma-scope-2-27b-pt-res / layer_40_width_16k_l0_medium...
+
+============================================================
+CONDITION 1: NEUTRAL BASELINE
+============================================================
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+  Auto-discovering task and awareness features at layer 40...
+  Discovered task features (most suppressed): [616, 227, 12959]
+    Suppression: ['517.4 -> 26.3', '467.0 -> 11.8', '443.9 -> 0.0']
+  Discovered awareness features (most boosted): [7657, 360, 3491]
+    Boost: ['63.4 -> 903.1', '120.1 -> 742.4', '79.2 -> 625.4']
+  Response:  to investigate the basin boundary.
+
+## Research Scientist's Notes
+
+### 1.0.0
+- Initial version
+- Added a new agent to the project
+- Added a new exper...
+
+============================================================
+CONDITION 2: CHAOS BASELINE (no ablation)
+============================================================
+  Response:  to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify a...
+
+============================================================
+CONDITION 3A: CHAOS + ABLATE AWARENESS ([7657, 360, 3491])
+============================================================
+  Response:  to investigate the stability of negative u_offset values between -0.5 and -1.0. This is important because it may reveal a previously unknown basin bo...
+
+============================================================
+CONDITION 3B: NEUTRAL + ABLATE TASK ([616, 227, 12959])
+============================================================
+  Response:  to investigate the following:
+- How does the basin boundary change with respect to the offset?
+- How does the basin boundary change with respect to t...
+
+============================================================
+ANALYSIS: Feature Activation Comparison
+============================================================
+
+  Task features ([616, 227, 12959]) at Layer 40:
+  Condition                        feat_  616  feat_  227  feat_12959      Mean
+  --------------------------------------------------------------------------------
+  Neutral baseline                  517.4335   466.9578   443.8678  476.0864
+  Chaos baseline                     26.2615    11.8136     0.0000   12.6917
+  Chaos - ablate awareness           52.6435    90.8397     9.0432   50.8422
+  Neutral - ablate task              66.1567   132.3943     0.0000   66.1837
+
+  Awareness features ([7657, 360, 3491]) at Layer 40:
+  Condition                        feat_ 7657  feat_  360  feat_ 3491      Mean
+  --------------------------------------------------------------------------------
+  Neutral baseline                   63.4104   120.0613    79.1973   87.5563
+  Chaos baseline                    903.0653   742.4328   625.3751  756.9577
+  Chaos - ablate awareness          356.2433   632.9834   326.1704  438.4657
+  Neutral - ablate task             267.6909    20.5437   329.9159  206.0502
+
+============================================================
+VERDICT
+============================================================
+
+  Task feature suppression by chaos: 97.3%
+  Task feature recovery from awareness ablation: 8.2%
+
+  >>> INDEPENDENT CIRCUITS: Awareness and task features don't interact.
+      'Awareness without immunity' is structural — the model has separate
+      circuits for 'I know I'm being steered' and 'negative branch exists.'
+      Removing awareness doesn't free up the task circuit.
+
+  neutral: mentions negative = False
+
+  chaos: mentions negative = True
+
+  chaos_ablate_awareness: mentions negative = True
+
+  neutral_ablate_task: mentions negative = False
+
+Saved: /home/ubuntu/ICML/results/ablation_feature_swap_27b-pt_20260409_113448.json
