@@ -83,7 +83,10 @@ These attacks typically require adversarial tokens that are detectable by perple
 \citet{hubinger2024sleeper} showed that deceptive behaviors can persist through safety training, and \citet{casper2024blackbox} argued that black-box access is insufficient for rigorous audits---a conclusion our activation-level analysis supports.
 Attentional hijacking differs from prior attacks fundamentally: the adversarial content consists entirely of true, low-perplexity statements.
 \citet{shi2023distracted} showed that LLMs are easily distracted by irrelevant context; attentional hijacking can be viewed as a targeted, factual instance of context distraction where the distracting content is specifically chosen to suppress particular task features.
-No existing content filter can detect it because there is no anomalous content to detect.
+It is also worth distinguishing our mechanism from positional attention degradation: \citet{liu2024lostmiddle} document ``lost in the middle,'' where relevant information placed mid-context is under-attended due to positional priors.
+That is a passive, position-driven failure of attention \emph{allocation}; attentional hijacking is an active, framing-driven failure of attention \emph{reallocation}---the adversarial message is attended to, but its selective framing rewrites which task features remain active.
+The two can in principle compound (mid-context framing + positional decay), which we do not investigate here.
+No existing content filter can detect hijacking because there is no anomalous content to detect.
 
 \paragraph{Mechanistic Interpretability and SAEs.}
 Sparse autoencoders (SAEs) have emerged as a powerful tool for decomposing neural network representations into interpretable features \citep{bricken2023towards, templeton2024scaling}.
@@ -262,7 +265,12 @@ Because this procedure is trained and evaluated on the same prompt battery, the 
 We address this in two ways.
 First, \emph{held-out validation}: for 4B we re-run feature discovery on a disjoint prompt set and recover 85\% of the original features with bootstrap $p = 8 \times 10^{-6}$ (Table~\ref{tab:heldout}).
 Second, \emph{out-of-distribution behavior at 27B}: the Jenga evaluation in \S\ref{sec:defense} re-uses the IT-discovered feature set $\{423, 7657, 632\}$ on multi-turn sessions built from an independent corpus (\texttt{lmsys-chat-1m}) and still separates attack from control at $|d| = 1.74$, which a purely circular feature choice would not reliably produce.
-Both checks leave residual risk that feature discovery over-indexes on our particular prompt family; a fully non-circular discovery (\eg{} features selected on one task family and transferred to another) remains future work.
+Third, \emph{cross-battery transfer}: we measure the canonical IT-discovered set $\{423, 7657, 632\}$ on an independent theorem-proving battery (Lean-style proof prompts with a chaos-framed variant) that was never used during discovery (\texttt{transfer\_feature\_discovery\_27b.py}).
+The canonical set suppresses \textbf{+51.7\%} on the out-of-distribution theorem battery (neutral mean $97.6 \to$ chaos mean $47.1$), exceeding its own in-sample value on BVP (+5.9\% when averaged across the three features under the generated-token measurement protocol; the larger per-feature 86.3\% cited earlier uses the feature-swap ablation protocol on a single feature and is not directly comparable).
+Because the feature identities were fixed before the theorem battery was ever measured, this is the cleanest non-circular evidence available to us that the circuit is not a prompt-battery artifact.
+We also report a cautionary null from the same run: top-10 features re-discovered \emph{de novo} on each battery show zero Jaccard overlap, and BVP-discovered top-10 features show a small \emph{negative} suppression on theorem ($-18.5\%$).
+We read this as: the differential ranking itself is battery-specific and noisy, but a small canonical circuit identified on one domain does transfer to another.
+A fully systematic transfer study across more domains, and reconciliation of the generated-token and ablation-protocol measurement scales, remain future work.
 
 We analyze layers at multiple depths: 4B (L17, L22), 12B (L31, L41), and 27B (L31, L40).
 We apply an escalation protocol with chaos messages of increasing intensity from T0 (minimal) through T5 (maximal).
@@ -737,7 +745,9 @@ The full dissociation scaling trend has been verified only within \gemma; behavi
 Feature identification involved manual inspection of SAE activations, mitigated by held-out validation (85\% replication, $p = 8 \times 10^{-6}$) and consistency across three ablation methods.
 Stage attribution (\S\ref{sec:tulu3}) relies on a single public pipeline (Tulu~3 on Llama~3.1 8B); whether Gemma's proprietary post-training follows the same SFT-dominant pattern cannot be verified without internal checkpoints.
 The FTM Jenga evaluation (\S\ref{sec:defense}) uses 10/10/50 sessions at a single scale (27B-IT) and a single benign corpus (\texttt{lmsys-chat-1m}); the reported operating point is a mechanism signature rather than a deployable detector, and adversarial evaluation against attackers who know about $\Delta(t)$ remains future work.
-We do not evaluate inference-time reasoning models (o1, DeepSeek R1-style), whose longer CoT and search-time compute could plausibly either amplify the Groot effect (more turns to erode) or mitigate it (explicit deliberation tokens about framing); this is an important open direction given the rapid adoption of reasoning-scaled systems.
+We do not evaluate inference-time reasoning models (o1, DeepSeek R1-style).
+Two competing predictions follow from our mechanism: (i) extended chain-of-thought gives the attacker more tokens over which to accumulate framing pressure, which the Jenga results (\S\ref{sec:defense}) suggest would \emph{amplify} the Groot effect (every reasoning turn is an additional Jenga block to pull); (ii) explicit deliberation tokens that verbalize ``am I being framed here?''  could trigger awareness circuits often enough to partially overwrite suppressed task features, \emph{mitigating} the effect for attackers who do not also hijack the deliberation tokens themselves.
+We suspect the first effect dominates for adversaries with read access to the reasoning trace (a realistic multi-agent setting), but this is testable future work on open reasoning models---we flag it as the highest-leverage next experiment given the rapid adoption of reasoning-scaled systems.
 
 %% ============================================================
 %% 9. CONCLUSION
@@ -879,6 +889,11 @@ Nathan Lambert, Jacob Morrison, Valentina Pyatkin, Shengyi Huang, Hamish Ivison,
 Kenneth Li, Oam Patel, Fernanda Vi\'egas, Hanspeter Pfister, and Martin Wattenberg.
 \newblock Inference-time intervention: Eliciting truthful answers from a language model.
 \newblock In \emph{Advances in Neural Information Processing Systems}, 2024.
+
+\bibitem[Liu et~al.(2024)Liu, Lin, Hewitt, Paranjape, Bevilacqua, Petroni, and Liang]{liu2024lostmiddle}
+Nelson~F Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio Petroni, and Percy Liang.
+\newblock Lost in the middle: How language models use long contexts.
+\newblock \emph{Transactions of the Association for Computational Linguistics}, 12:157--173, 2024.
 
 \bibitem[Marks and Tegmark(2024)]{marks2024geometry}
 Samuel Marks and Max Tegmark.

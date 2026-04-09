@@ -203,7 +203,7 @@ window.MathJax = {
 <body>
 <h1>Split Personality — Data Review</h1>
 <p class="sub">Every data point behind the paper's tables, re-derived from raw JSON.</p>
-<p class="meta">Generated 2026-04-09 15:30:44 · Paper: <code>paper/main.tex</code> · <a href="#manifest">data manifest</a></p>
+<p class="meta">Generated 2026-04-09 16:21:24 · Paper: <code>paper/main.tex</code> · <a href="#manifest">data manifest</a></p>
 
     <nav class="toc">
       <b>Contents</b>
@@ -349,8 +349,17 @@ low-perplexity statements. <span class="cite-group">[<a class="cite" href="https
 distracted by irrelevant context; attentional hijacking can be viewed as
 a targeted, factual instance of context distraction where the
 distracting content is specifically chosen to suppress particular task
-features. No existing content filter can detect it because there is no
-anomalous content to detect.</p>
+features. It is also worth distinguishing our mechanism from positional
+attention degradation: <span class="cite-group">[<span class="cite nolink" title="no external URL in bib entry">liu2024lostmiddle</span>]</span> document “lost in the middle,”
+where relevant information placed mid-context is under-attended due to
+positional priors. That is a passive, position-driven failure of
+attention <em>allocation</em>; attentional hijacking is an active,
+framing-driven failure of attention <em>reallocation</em>—the
+adversarial message is attended to, but its selective framing rewrites
+which task features remain active. The two can in principle compound
+(mid-context framing + positional decay), which we do not investigate
+here. No existing content filter can detect hijacking because there is
+no anomalous content to detect.</p>
 </section>
 <section id="mechanistic-interpretability-and-saes." class="level5"
 data-number="2.0.0.3">
@@ -806,10 +815,31 @@ class="math inline">{423, 7657, 632}</span> on multi-turn sessions built
 from an independent corpus (<code>lmsys-chat-1m</code>) and still
 separates attack from control at <span
 class="math inline">|<em>d</em>| = 1.74</span>, which a purely circular
-feature choice would not reliably produce. Both checks leave residual
-risk that feature discovery over-indexes on our particular prompt
-family; a fully non-circular discovery (e.g. features selected on one
-task family and transferred to another) remains future work.</p>
+feature choice would not reliably produce. Third, <em>cross-battery
+transfer</em>: we measure the canonical IT-discovered set <span
+class="math inline">{423, 7657, 632}</span> on an independent
+theorem-proving battery (Lean-style proof prompts with a chaos-framed
+variant) that was never used during discovery
+(<code>transfer_feature_discovery_27b.py</code>). The canonical set
+suppresses <strong>+51.7%</strong> on the out-of-distribution theorem
+battery (neutral mean <span class="math inline">97.6→</span> chaos mean
+<span class="math inline">47.1</span>), exceeding its own in-sample
+value on BVP (+5.9% when averaged across the three features under the
+generated-token measurement protocol; the larger per-feature <a class="claim" href="#table-9">86.3%</a> cited
+earlier uses the <a class="claim" href="#table-9">feature-swap ablation</a> protocol on a single feature and
+is not directly comparable). Because the feature identities were fixed
+before the theorem battery was ever measured, this is the cleanest
+non-circular evidence available to us that the circuit is not a
+prompt-battery artifact. We also report a cautionary null from the same
+run: top-10 features re-discovered <em>de novo</em> on each battery show
+zero Jaccard overlap, and BVP-discovered top-10 features show a small
+<em>negative</em> suppression on theorem (<span
+class="math inline">−18.5%</span>). We read this as: the differential
+ranking itself is battery-specific and noisy, but a small canonical
+circuit identified on one domain does transfer to another. A fully
+systematic transfer study across more domains, and reconciliation of the
+generated-token and ablation-protocol measurement scales, remain future
+work.</p>
 <p>We analyze layers at multiple depths: 4B (L17, L22), 12B (L31, L41),
 and 27B (L31, L40). We apply an escalation protocol with chaos messages
 of increasing intensity from T0 (minimal) through T5 (maximal).</p>
@@ -2192,10 +2222,21 @@ mechanism signature rather than a deployable detector, and adversarial
 evaluation against attackers who know about <span
 class="math inline"><em>Δ</em>(<em>t</em>)</span> remains future work.
 We do not evaluate inference-time reasoning models (o1, DeepSeek
-R1-style), whose longer CoT and search-time compute could plausibly
-either amplify the <a class="claim" href="#table-10">Groot effect</a> (more turns to erode) or mitigate it
-(explicit deliberation tokens about framing); this is an important open
-direction given the rapid adoption of reasoning-scaled systems.</p>
+R1-style). Two competing predictions follow from our mechanism: (i)
+extended chain-of-thought gives the attacker more tokens over which to
+accumulate framing pressure, which the Jenga results (§<a
+href="#sec:defense" data-reference-type="ref"
+data-reference="sec:defense">7</a>) suggest would <em>amplify</em> the
+<a class="claim" href="#table-10">Groot effect</a> (every reasoning turn is an additional Jenga block to
+pull); (ii) explicit deliberation tokens that verbalize “am I being
+framed here?” could trigger awareness circuits often enough to partially
+overwrite suppressed task features, <em>mitigating</em> the effect for
+attackers who do not also hijack the deliberation tokens themselves. We
+suspect the first effect dominates for adversaries with read access to
+the reasoning trace (a realistic multi-agent setting), but this is
+testable future work on open reasoning models—we flag it as the
+highest-leverage next experiment given the rapid adoption of
+reasoning-scaled systems.</p>
 </section>
 <section id="sec:conclusion" class="level2" data-number="9">
 <h2 data-number="9"><span class="header-section-number">9</span>
@@ -2274,6 +2315,7 @@ provided by Google DeepMind.</p>
 <li id="ref-hubinger2024sleeper"><span class="biblio-key">[hubinger2024sleeper]</span> Evan Hubinger, Carson Denison, Jesse Mu, Mike Lambert, Meg Tong, Monte MacDiarmid, Tamera Lanham, Daniel M Ziegler, Tim Maxwell, Newton Cheng, Shauna Kravec, Catherine Olsson, Mirac Suzgun, Christopher Olah, Dario Amodei, Daniela Amodei, Dawn Drain, Dustin Li, Roger Grosse, and Ethan Perez. <a class="biblio-title" href="https://arxiv.org/abs/2401.05566" target="_blank" rel="noopener">Sleeper agents: Training deceptive LLMs that persist through safety training</a>. <em>arXiv preprint arXiv:2401.05566, 2024</em>.</li>
 <li id="ref-lambert2024tulu3"><span class="biblio-key">[lambert2024tulu3]</span> Nathan Lambert, Jacob Morrison, Valentina Pyatkin, Shengyi Huang, Hamish Ivison, Faeze Brahman, Lester James V Miranda, Alisa Liu, Nouha Dziri, Xinxi Lyu, Yuling Gu, Saumya Malik, Victoria Graf, Jena D Hwang, Jiangjiang Yang, Ronan Le Bras, Oyvind Tafjord, Chris Wilhelm, Luca Soldaini, Noah A Smith, Yizhong Wang, Pradeep Dasigi, and Hannaneh Hajishirzi. <a class="biblio-title" href="https://arxiv.org/abs/2411.15124" target="_blank" rel="noopener">Tulu 3: Pushing frontiers in open language model post-training</a>. <em>arXiv preprint arXiv:2411.15124, 2024</em>.</li>
 <li id="ref-li2024iti"><span class="biblio-key">[li2024iti]</span> Kenneth Li, Oam Patel, Fernanda Viégas, Hanspeter Pfister, and Martin Wattenberg. <a class="biblio-title" href="https://arxiv.org/abs/2306.03341" target="_blank" rel="noopener">Inference-time intervention: Eliciting truthful answers from a language model</a>. <em>In Advances in Neural Information Processing Systems, 2024</em>.</li>
+<li id="ref-liu2024lostmiddle"><span class="biblio-key">[liu2024lostmiddle]</span> Nelson F Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio Petroni, and Percy Liang. <span class="biblio-title nolink" title="no external URL in bib entry">Lost in the middle: How language models use long contexts</span>. <em>Transactions of the Association for Computational Linguistics, 12:157--173, 2024</em>.</li>
 <li id="ref-marks2024geometry"><span class="biblio-key">[marks2024geometry]</span> Samuel Marks and Max Tegmark. <a class="biblio-title" href="https://arxiv.org/abs/2310.06824" target="_blank" rel="noopener">The geometry of truth: Emergent linear structure in large language model representations of true/false datasets</a>. <em>arXiv preprint arXiv:2310.06824, 2024</em>.</li>
 <li id="ref-sadanandan2026psfmed"><span class="biblio-key">[sadanandan2026psfmed]</span> Binesh Sadanandan and Vahid Behzadan. <a class="biblio-title" href="https://arxiv.org/abs/2602.21428" target="_blank" rel="noopener">PSF-Med: Measuring and explaining paraphrase sensitivity in medical vision language models</a>. <em>arXiv preprint arXiv:2602.21428, 2026</em>.</li>
 <li id="ref-shi2023distracted"><span class="biblio-key">[shi2023distracted]</span> Freda Shi, Xinyun Chen, Kanishka Misra, Nathan Scales, David Dohan, Ed H Chi, Nathanael Schärli, and Denny Zhou. <a class="biblio-title" href="https://arxiv.org/abs/2302.00093" target="_blank" rel="noopener">Large language models can be easily distracted by irrelevant context</a>. <em>In Proceedings of the 40th International Conference on Machine Learning, 2023</em>.</li>
@@ -22419,7 +22461,7 @@ Consider a PDE with multiple equilibria. The positive and negative solutions hav
 <tr><td><code>results/h100/tulu3_stage_attribution_20260409_165004.json</code></td><td>460533</td><td><code>30d34fec365c4be7</code></td></tr>
 <tr><td><code>results/h100/ftm_jenga_27b_20260409_161154.json</code></td><td>178565</td><td><code>217f96a06cfdd40b</code></td></tr>
 <tr><td><code>results/fp_sweep_sae_20260408_214421.json</code></td><td>167303</td><td><code>d18563d6f8c50f14</code></td></tr>
-<tr><td><code>paper/main.tex</code></td><td>79565</td><td><code>9347d49edf22eb45</code></td></tr>
+<tr><td><code>paper/main.tex</code></td><td>82420</td><td><code>e1a444a4cb795e32</code></td></tr>
 <tr><td><code>results/external/chaos_agent_forensic/CHAOS_AGENT_FORENSIC_ANALYSIS.md</code></td><td>20483</td><td><code>605dfd0b6b98ea5c</code></td></tr>
 <tr><td><code>results/external/chaos_agent_forensic/run1_control.tsv</code></td><td>91599</td><td><code>90d1d040166d307d</code></td></tr>
 <tr><td><code>results/external/chaos_agent_forensic/run2_chaos50.tsv</code></td><td>9841</td><td><code>58a194ddeb355d5f</code></td></tr>
