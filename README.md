@@ -75,3 +75,6 @@ transformers accelerate sae-lens huggingface_hub scipy matplotlib numpy
 - Greenblatt et al. (2024), Alignment faking in large language models
 - Templeton et al. (2024), Scaling monosemanticity
 - Bricken et al. (2023), Towards monosemanticity
+
+
+citation bigsnarfdude
