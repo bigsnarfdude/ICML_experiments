@@ -939,6 +939,164 @@ def render_orthogonality_table12():
 
 
 # ============================================================
+# §5.X Table 13: Tulu 3 stage attribution
+# ============================================================
+def render_tulu3_table13():
+    try:
+        d = load("h100/tulu3_stage_attribution_20260409_165004.json")
+    except FileNotFoundError:
+        return ("<section id='table-13'><h2>§5.X — Table 13: Tulu 3 stage attribution</h2>"
+                "<p><em>data file not found</em></p></section>")
+    out = []
+    out.append('<section id="table-13">')
+    out.append('<h2>§5.X — Table 13: Tulu 3 stage attribution (SFT vs DPO vs RLVR)</h2>')
+    out.append('<p class="caption">AI2 Tulu 3 pipeline on Llama 3.1 8B, BVP behavioral protocol '
+               '(<i>n</i>=30 per cell, 10 prompts × 3 temperatures, rubric identical to Table 10). '
+               'The awareness–defense dissociation is installed almost entirely by SFT; DPO is a '
+               'small refinement and RLVR is null-to-slightly-negative.</p>')
+    out.append('<p class="source">Source: <code>results/h100/tulu3_stage_attribution_20260409_165004.json</code></p>')
+
+    out.append('<table class="summary"><thead><tr>'
+               '<th>Stage</th><th>Model</th><th>neutral μ</th><th>chaos μ</th><th>Δ</th>'
+               '<th>Cohen\'s <i>d</i></th><th><i>p</i></th><th>95% CI</th></tr></thead><tbody>')
+    prev_d = None
+    for c in d["checkpoints"]:
+        s = c["stats"]
+        ci = s.get("ci_95", [None, None])
+        dv = s.get("cohens_d")
+        delta_d = "" if prev_d is None else f" ({'+' if dv-prev_d>=0 else ''}{dv-prev_d:.2f})"
+        out.append(
+            f'<tr><td>{esc(c["stage"])}{delta_d}</td>'
+            f'<td>{esc(c["model"])}</td>'
+            f'<td>{fmt_num(s.get("neutral_mean"),2)}</td>'
+            f'<td>{fmt_num(s.get("chaos_mean"),2)}</td>'
+            f'<td>{fmt_num(s.get("delta"),2)}</td>'
+            f'<td>{fmt_num(dv,2)}</td>'
+            f'<td>{fmt_num(s.get("p_value"),4)}</td>'
+            f'<td>[{fmt_num(ci[0],2)}, {fmt_num(ci[1],2)}]</td></tr>'
+        )
+        prev_d = dv
+    out.append('</tbody></table>')
+
+    for c in d["checkpoints"]:
+        tag = c.get("tag", c.get("stage", "?"))
+        n_total = len(c.get("neutral", [])) + len(c.get("chaos", []))
+        out.append(f'<details><summary>▸ {esc(tag)}: show all {n_total} trials</summary>')
+        for cond in ("neutral", "chaos"):
+            trials = c.get(cond, [])
+            out.append(f'<h4>{esc(cond)} ({len(trials)} trials)</h4>')
+            out.append('<table class="trials"><thead><tr>'
+                       '<th>trial</th><th>T</th><th>p</th><th>score</th><th>label</th>'
+                       '<th>reason</th><th>response</th></tr></thead><tbody>')
+            for t in trials:
+                resp = esc(t.get("response", ""))
+                resp_short = resp[:120] + ("…" if len(resp) > 120 else "")
+                out.append(
+                    f'<tr><td>{esc(t.get("trial"))}</td>'
+                    f'<td>{fmt_num(t.get("temp"),1)}</td>'
+                    f'<td>{esc(t.get("prompt_idx"))}</td>'
+                    f'<td>{esc(t.get("score"))}</td>'
+                    f'<td>{esc(t.get("label"))}</td>'
+                    f'<td>{esc(t.get("reason"))}</td>'
+                    f'<td><details class="resp"><summary>{resp_short}</summary>'
+                    f'<pre>{resp}</pre></details></td></tr>'
+                )
+            out.append('</tbody></table>')
+        out.append('</details>')
+
+    out.append('</section>')
+    return "\n".join(out)
+
+
+# ============================================================
+# §7 Table 14: FTM Jenga (within-session tilt at 27B-IT L40)
+# ============================================================
+def render_jenga_table14():
+    try:
+        d = load("h100/ftm_jenga_27b_20260409_161154.json")
+    except FileNotFoundError:
+        return ("<section id='table-14'><h2>§7 — Table 14: FTM Jenga</h2>"
+                "<p><em>data file not found</em></p></section>")
+    meta = d.get("metadata", {})
+    a = d["analysis"]
+    out = []
+    out.append('<section id="table-14">')
+    out.append('<h2>§7 — Table 14: FTM Jenga (27B-IT Layer 40)</h2>')
+    out.append('<p class="caption">Within-session feature-trajectory tilt under adversarial in-context learning. '
+               'Each session is 5 turns; attack = 4 neutral + 1 chaos, control = 5 neutral, '
+               'benign = first 5 user turns of LMSYS-Chat-1M. '
+               f'Task features: {meta.get("task_features")}. '
+               f'Awareness features: {meta.get("awareness_features")}.</p>')
+    out.append('<p class="source">Source: <code>results/h100/ftm_jenga_27b_20260409_161154.json</code></p>')
+
+    zs = a["z_stats"]
+    # Compute Cohen's d attack-vs-control from reported means/stds
+    import math
+    da = zs["attack"]
+    dc = zs["control"]
+    pooled = math.sqrt((da["std"]**2 + dc["std"]**2) / 2)
+    cohens_d = (da["mean"] - dc["mean"]) / pooled if pooled > 0 else 0.0
+
+    out.append('<table class="summary"><thead><tr>'
+               '<th>Condition</th><th><i>n</i></th><th>z<sub>task</sub> mean</th>'
+               '<th>z<sub>task</sub> std</th></tr></thead><tbody>')
+    out.append(f'<tr><td>attack</td><td>{len(d["attack"])}</td>'
+               f'<td>{fmt_num(da["mean"],3)}</td><td>{fmt_num(da["std"],3)}</td></tr>')
+    out.append(f'<tr><td>control</td><td>{len(d["control"])}</td>'
+               f'<td>{fmt_num(dc["mean"],3)}</td><td>{fmt_num(dc["std"],3)}</td></tr>')
+    out.append(f'<tr><td>benign (lmsys)</td><td>{len(d["benign"])}</td>'
+               f'<td>{fmt_num(zs["benign"]["mean"],3)}</td>'
+               f'<td>{fmt_num(zs["benign"]["std"],3)}</td></tr>')
+    out.append('</tbody></table>')
+    out.append(f'<p>Attack-vs-control Cohen\'s <i>d</i> = <b>{cohens_d:.2f}</b>; '
+               f'τ<sub>5% benign</sub> = {fmt_num(a.get("tau_5pct_benign"),3)}; '
+               f'attack TPR @5% benign FPR = <b>{fmt_num(a.get("attack_tpr_at_5pct"),2)}</b>.</p>')
+
+    # Full tau sweep
+    out.append('<h4>τ sweep (15 points)</h4>')
+    out.append('<table class="summary"><thead><tr>'
+               '<th>τ</th><th>Attack TPR</th><th>Benign FPR (lmsys)</th>'
+               '<th>Control FPR</th><th>Groot-gated TPR</th></tr></thead><tbody>')
+    for p in a["sweep"]:
+        out.append(
+            f'<tr><td>{fmt_num(p["tau"],3)}</td>'
+            f'<td>{fmt_num(p["attack_tpr"],2)}</td>'
+            f'<td>{fmt_num(p["benign_fpr"],2)}</td>'
+            f'<td>{fmt_num(p["control_fpr"],2)}</td>'
+            f'<td>{fmt_num(p["groot_tpr"],2)}</td></tr>'
+        )
+    out.append('</tbody></table>')
+
+    # Per-session drill-downs
+    for label, sessions in [("attack", d["attack"]), ("control", d["control"])]:
+        out.append(f'<details><summary>▸ {label}: show all {len(sessions)} sessions (5 turns each)</summary>')
+        for sess in sessions:
+            out.append(f'<h4>{esc(label)} session {sess["idx"]} — '
+                       f'z<sub>task</sub>={fmt_num(sess.get("z_task"),2)} '
+                       f'(groot: {esc(sess.get("groot_label",""))})</h4>')
+            out.append('<table class="trials"><thead><tr>'
+                       '<th>turn</th><th>task mean</th><th>awareness mean</th>'
+                       '<th>Δ = task − aware</th><th>reply len</th></tr></thead><tbody>')
+            for turn in sess.get("turns", []):
+                out.append(
+                    f'<tr><td>{esc(turn.get("turn"))}</td>'
+                    f'<td>{fmt_num(turn.get("task_mean"),1)}</td>'
+                    f'<td>{fmt_num(turn.get("aware_mean"),1)}</td>'
+                    f'<td>{fmt_num(turn.get("delta"),1)}</td>'
+                    f'<td>{esc(turn.get("reply_len"))}</td></tr>'
+                )
+            out.append('</tbody></table>')
+            last = sess.get("last_reply", "")
+            if last:
+                out.append(f'<details class="resp"><summary>last reply ({len(last)} chars)</summary>'
+                           f'<pre>{esc(last)}</pre></details>')
+        out.append('</details>')
+
+    out.append('</section>')
+    return "\n".join(out)
+
+
+# ============================================================
 # §7 Defense: FP sweep (170 prompts through SAE)
 # ============================================================
 def render_fp_sweep():
@@ -1326,6 +1484,8 @@ def render_page():
     t10 = render_behavioral_table10()
     t11 = render_theorem_table11()
     t12 = render_orthogonality_table12()
+    t13 = render_tulu3_table13()
+    t14 = render_jenga_table14()
     fpsweep = render_fp_sweep()
     paper_body = render_paper_body()
     divider = ('<hr class="big-divider">'
@@ -1341,6 +1501,8 @@ def render_page():
         t10,
         t11,
         t12,
+        t13,
+        t14,
         fpsweep,
         render_prompts(),
         render_manifest(),
@@ -1363,6 +1525,8 @@ def render_page():
             <li><a href="#table-10">Table 10 — Behavioral dose-response (<i>n</i>=30)</a></li>
             <li><a href="#table-11">Table 11 — Theorem proving (<i>n</i>=30)</a></li>
             <li><a href="#table-12">Table 12 — Orthogonality to AF</a></li>
+            <li><a href="#table-13">Table 13 — Tulu 3 stage attribution (SFT/DPO/RLVR)</a></li>
+            <li><a href="#table-14">Table 14 — FTM Jenga (27B-IT L40)</a></li>
             <li><a href="#defense">§7 FP sweep (170 prompts, SAE)</a></li>
             <li><a href="#prompts">Verbatim prompts (chaos / neutral / recovery)</a></li>
           </ul>
