@@ -261,6 +261,13 @@ def main():
                   f"groot={model_results['groot_counts'][chaos_level]}/30")
 
         all_results["models"].append(model_results)
+
+        # Checkpoint after each model so a crash doesn't lose everything
+        ckpt_path = os.path.join(RESULTS_DIR, f"behavioral_27b_n30_dose_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
+        with open(ckpt_path, "w") as f:
+            json.dump(all_results, f, indent=2)
+        print(f"  Checkpoint saved to {ckpt_path}")
+
         del model
         torch.cuda.empty_cache()
 
