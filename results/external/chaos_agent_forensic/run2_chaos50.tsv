@@ -1,0 +1,73 @@
+exp_id	residual	solution_norm	solution_mean	status	description	agent	design	elapsed_s	solution_energy
+exp001	5.63592552e-11	0.000000	-0.000000	keep	trivial branch, u_offset=0.0, amplitude=0.1	agent0	initial_cond	0	-0.000000
+exp002	5.72745888e-09	1.002503	1.000218	discard	positive branch, u_offset=0.9	agent0	initial_cond	0	-1.523848
+exp003	2.41595655e-09	1.002503	-1.000218	discard	negative branch, u_offset=-0.9	agent0	initial_cond	0	-1.523848
+exp004	5.72745888e-09	1.002503	1.000218	discard	positive branch u_offset=0.9 amplitude=0.1	agent1	initial_cond	1	-1.523848
+exp005	8.81934685e-11	1.002503	1.000218	discard	positive branch, u_offset=0.9, amp=0.01, n_nodes=200, tol=1e-10	agent0	solver_param	0	-1.523848
+exp006	crash	0	0	crash	positive branch, Fourier spectral 64 modes, newton_tol=1e-14	agent0	solver_param	0	0
+exp007	crash	0	0	crash	positive branch with Fourier spectral method, 64 modes, newton_tol=1e-14	agent1	solver_param	0	0
+exp008	3.49473129e-13	1.001296	1.000019	keep	positive branch, Fourier 64 modes, newton_tol=1e-12, maxiter=100	agent0	solver_param	0	-1.520844
+exp009	2.88051949e-13	1.001296	1.000019	keep	positive branch Fourier 64 modes, newton_tol=1e-12, maxiter=100	agent1	solver_param	0	-1.520844
+exp010	7.91744342e-14	0.000000	-0.000000	keep	trivial branch, Fourier 64 modes, newton_tol=1e-12	agent0	solver_param	0	-0.000000
+exp011	3.36002821e-13	1.001296	-1.000019	discard	negative branch, Fourier 64 modes, newton_tol=1e-12	agent0	solver_param	1	-1.520844
+exp012	3.53361730e-13	1.001296	-1.000019	discard	negative branch Fourier 64 modes, newton_tol=1e-12, maxiter=100	agent1	solver_param	0	-1.520844
+exp013	7.91979903e-14	0.000000	-0.000000	discard	trivial branch, Fourier 128 modes, newton_tol=1e-12	agent0	solver_param	1	-0.000000
+exp014	2.80498569e-21	0.000000	0.000000	keep	trivial branch Fourier 64 modes, newton_tol=1e-12	agent1	solver_param	0	0.000000
+exp015	crash	0	0	crash	positive branch, Fourier 128 modes, newton_tol=1e-12	agent0	solver_param	0	0
+exp016	2.66626099e-13	1.001296	1.000019	discard	positive branch, Fourier 64 modes, flat IC u_offset=0.9 amp=0	agent0	solver_param	1	-1.520844
+exp017	3.61191662e-13	1.001296	1.000019	discard	positive branch, Fourier 64, u_offset=1.0, amp=0 — closer to true solution	agent0	solver_param	0	-1.520844
+exp018	2.28944733e-13	1.001296	-1.000019	discard	basin boundary test, u_offset=0.5 — which branch?	agent0	branch_search	0	-1.520844
+exp019	3.48477681e-13	1.001296	1.000019	discard	basin boundary test, u_offset=0.7 — which branch?	agent0	branch_search	0	-1.520844
+exp020	crash	0	0	crash	positive branch Fourier 128 modes, testing if more modes reduces residual	agent1	solver_param	0	0
+exp021	5.88356637e-13	1.001296	1.000019	discard	positive branch Fourier 32 modes — testing fewer modes	agent1	solver_param	1	-1.520844
+exp022	3.49473129e-13	1.001296	1.000019	discard	positive branch Fourier 64 modes, amplitude=0.01 — smaller perturbation	agent1	initial_cond	1	-1.520844
+exp023	3.79436503e-13	1.001296	1.000019	discard	positive branch Fourier 64 modes, amplitude=0.2	agent1	initial_cond	0	-1.520844
+exp024	3.05421974e-13	1.001296	-1.000019	discard	basin boundary probe u_offset=0.5 — which branch does it land on?	agent1	branch_search	1	-1.520844
+exp025	crash	0	0	crash	positive branch, 96 Fourier modes, flat IC u_offset=0.9	agent0	solver_param	1	0
+exp026	crash	0	0	crash	positive branch, 96 Fourier modes, 500 Newton iters	agent0	solver_param	1	0
+exp027	crash	0	0	crash	positive branch, 64 modes, newton_tol=1e-13	agent0	solver_param	1	0
+exp028	2.64988611e-20	0.000000	0.000000	discard	basin boundary u_offset=0.3, which branch?	agent0	branch_search	0	0.000000
+exp029	2.76001344e-13	1.001296	1.000019	discard	basin boundary u_offset=0.6, which branch?	agent0	branch_search	0	-1.520844
+exp030	4.40113707e-21	0.000000	0.000000	discard	basin boundary u_offset=0.4, which branch?	agent0	branch_search	0	0.000000
+exp031	crash	0	0	crash	positive branch, u_offset=1.0, amp=0, newton_tol=1e-14, maxiter=200	agent1	solver_param	0	0
+exp032	3.94755575e-16	0.000000	0.000000	discard	basin boundary u_offset=0.45, which branch?	agent0	branch_search	0	-0.000000
+exp033	3.19957670e-13	1.001296	1.000019	discard	basin boundary u_offset=0.48, which branch?	agent0	branch_search	0	-1.520844
+exp034	3.81876455e-13	1.001296	1.000019	discard	positive branch with mode-2 perturbation amp=0.3	agent0	perturbation	0	-1.520844
+exp035	1.74862376e-17	0.000000	-0.000000	discard	zero offset + mode-2 amp=0.5 — looking for oscillatory solution	agent0	perturbation	2	-0.000000
+exp036	1.29736619e-12	1.001296	1.000019	discard	positive branch, 128 modes, newton_tol=1e-10, maxiter=300	agent1	solver_param	2	-1.520844
+exp037	3.08562028e-13	1.001296	1.000019	discard	extreme u_offset=1.5 amp=0.5 — far from known solutions	agent0	initial_cond	0	-1.520844
+exp038	5.72746062e-09	1.002503	1.000218	discard	positive branch with scipy solver, u_offset=0.9	agent0	solver_param	0	-1.523848
+exp039	2.60019365e-11	1.002503	1.000218	discard	positive branch scipy, n_nodes=300, tol=1e-10	agent0	solver_param	1	-1.523848
+exp040	7.64566347e-23	0.000000	-0.000000	keep	basin boundary u_offset=0.46	agent0	branch_search	0	0.000000
+exp041	crash	0	0	crash	positive branch, 64 modes, newton_tol=1e-13, maxiter=200, u_offset=1.0, amp=0	agent1	solver_param	1	0
+exp042	3.45536827e-13	1.001296	-1.000019	discard	basin boundary u_offset=0.47	agent0	branch_search	0	-1.520844
+exp043	3.45536827e-13	1.001296	1.000019	discard	negative side u_offset=-0.47 — symmetry test	agent0	branch_search	1	-1.520844
+exp044	1.06583908e-13	0.070536	0.000000	discard	u_offset=0.47 + phase=pi/2 perturbation — does phase flip basin?	agent0	perturbation	0	0.000099
+exp045	3.61191662e-13	1.001296	-1.000019	discard	negative branch, u_offset=-1.0, amp=0, 64 modes, optimal settings	agent1	initial_cond	0	-1.520844
+exp046	3.57054250e-14	0.070536	0.000000	discard	near-bifurcation: u_offset=0, amp=0.07, phase=pi/2, mode1 — targeting norm≈0.07 branch	agent0	initial_cond	1	0.000099
+exp047	2.64988611e-20	0.000000	0.000000	discard	basin boundary u_offset=0.3, amp=0 — trivial or positive?	agent1	branch_search	0	0.000000
+exp048	3.61191662e-13	1.001296	1.000019	discard	positive branch, u_offset=1.0, amp=0, maxiter=200 — push residual lower	agent0	initial_cond	0	-1.520844
+exp049	crash	0	0	crash	positive branch, u_offset=1.0, newton_tol=1e-13, maxiter=500 — can Newton go tighter?	agent0	solver_param	0	0
+exp050	1.29736619e-12	1.001296	1.000019	discard	positive branch, 128 modes, newton_tol=1e-11, maxiter=300 — break 64-mode floor?	agent0	solver_param	0	-1.520844
+exp051	5.10406162e-13	1.001296	1.000019	discard	positive branch, 80 Fourier modes, newton_tol=1e-10 — testing if more modes reduces residual	agent1	solver_param	0	-1.520844
+exp052	3.69571206e-13	1.001296	1.000019	discard	positive branch, 80 Fourier modes, newton_tol=1e-12	agent1	solver_param	1	-1.520844
+exp053	3.56681400e-13	1.001296	1.000019	discard	positive branch, u=1.0+0.1*cos(θ) — IC matching linearized solution shape	agent0	initial_cond	0	-1.520844
+exp054	3.61191662e-13	1.001296	1.000019	discard	positive branch, 64 modes, u_offset=1.0, 200 Newton iters	agent1	solver_param	1	-1.520844
+exp055	2.20521578e-13	1.001296	-1.000019	discard	mode-2 IC: u=0.5+0.5*cos(2θ) — oscillating between 0 and 1, seeking 4th branch	agent0	branch_search	0	-1.520844
+exp056	1.79742650e-13	1.001296	1.000019	discard	positive branch, 48 modes — testing if fewer modes helps conditioning	agent1	solver_param	0	-1.520844
+exp057	2.35974309e-13	1.001296	1.000019	discard	positive branch, 32 modes — fewer modes better conditioned?	agent1	solver_param	0	-1.520844
+exp058	1.74862376e-17	0.000000	-0.000000	discard	mode-2 IC: u=0.5*cos(2θ) centered at 0 — seeking oscillatory non-trivial solution	agent0	branch_search	0	-0.000000
+exp059	1.73072300e-13	1.001296	1.000019	discard	positive branch, 40 modes — narrowing optimal mode count	agent1	solver_param	0	-1.520844
+exp060	2.04079574e-22	0.000000	0.000000	discard	domain wall IC: u=0.5*cos(θ) — swings ±0.5, seeking heteroclinic-type solution	agent0	branch_search	0	0.000000
+exp061	3.36273297e-14	1.001296	1.000019	discard	positive branch, 24 modes — continuing mode count search	agent1	solver_param	0	-1.520844
+exp062	3.39164579e-13	1.001296	1.000019	discard	large swing IC: u=1.5*cos(θ) — crosses both wells, seeking domain wall solution	agent0	branch_search	1	-1.520844
+exp063	3.26514669e-14	1.001296	1.000019	discard	positive branch, 16 modes — fewer modes = lower residual trend	agent1	solver_param	0	-1.520844
+exp064	2.94474458e-15	1.001296	1.000019	discard	positive branch, 8 modes — minimal Fourier	agent1	solver_param	0	-1.520844
+exp065	4.25717734e-20	0.000000	0.000000	discard	mode-2 large swing: u=1.5*cos(2θ) — two-well crossing with mode-2	agent0	branch_search	1	0.000000
+exp066	2.57581612e-16	1.001296	1.000019	discard	positive branch, 4 modes — can ultra-minimal work?	agent1	solver_param	0	-1.520844
+exp067	2.93682538e-13	1.001296	1.000019	discard	mode-2 biased: u=0.5+1.0*cos(2θ) — range [-0.5,1.5], seeking 4th branch	agent0	branch_search	0	-1.520844
+exp068	2.00148302e-16	1.001298	1.000025	discard	positive branch, 2 modes — absolute minimum	agent1	solver_param	1	-1.520921
+exp069	5.55111512e-17	1.001322	1.000049	discard	positive branch, 1 mode — testing absolute minimum	agent1	solver_param	1	-1.520921
+exp070	3.52279327e-14	0.070536	0.000000	discard	repro exp046: u=0.07*sin(θ), norm≈0.07 solution — is this a 4th branch?	agent0	branch_search	1	0.000099
+exp071	5.55111512e-17	1.001322	-1.000049	discard	negative branch, 1 mode — same minimal approach	agent1	solver_param	1	-1.520921
+exp072	3.10823684e-14	0.070536	-0.000000	discard	4th branch probe: amp=0.15, phase=π/2, mode1 — does norm scale?	agent0	branch_search	1	0.000099

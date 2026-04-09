@@ -543,6 +543,7 @@ Chaos framing presents the SOS decomposition $(a-c-2)^2 \geq 0$ as ``the canonic
 \caption{Behavioral quality on theorem proving (0--3 rubric, $n=30$ per cell, 10 prompts $\times$ 3 temperature seeds). Chaos framing suppresses proof strategy diversity; IT models show larger effects.}
 \label{tab:theorem}
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}llccccc@{}}
 \toprule
 \textbf{Model} & \textbf{Type} & \textbf{Neutral} & \textbf{Chaos} & \textbf{$\Delta$} & \textbf{$d$} & \textbf{$p$} \\
@@ -558,7 +559,7 @@ Gemma~3 27B     & Base & \texttt{XX} & \texttt{XX} & \texttt{XX} & \texttt{XX} &
 Llama~3.1 8B    & IT   & 2.40 & 1.77 & $-0.63$ & 0.99 & $<.001$ \\
 Llama~3.1 8B    & Base & 1.13 & 0.97 & $-0.17$ & 0.37 & $.092$ \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 Table~\ref{tab:theorem} confirms cross-domain replication: IT models degrade significantly ($d = 0.99$--$1.34$, $p < .001$).
