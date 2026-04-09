@@ -323,8 +323,8 @@ In contrast, the pretrained 27B model evaluated against the IT-discovered featur
 The Groot effect implies that \textbf{behavioral evaluation is insufficient}.
 A system that monitors only model outputs would observe the model ``correctly'' noting the manipulation attempt, and would conclude the model is robust.
 Only by examining internal feature activations can one detect that the model's computational substrate has already been hijacked.
-We now have systematic behavioral quantification at 27B: under chaos framing, IT rubric scores drop from 2.17 (neutral) to 0.67 at the mild dose ($d = 1.70$, $n = 30$ per cell; Table~\ref{tab:behavioral}), confirming the feature-suppression signature translates directly to output degradation.
-The convergence of representational evidence (86.3\% feature suppression on the top task feature) and behavioral evidence ($d = 1.70$ at mild chaos) rules out the possibility that the Groot effect is a purely internal phenomenon with no output-side consequence.
+We now have systematic behavioral quantification at 27B: under chaos framing, IT rubric scores drop from 2.00 (neutral) to 0.47 at the mild dose ($d = 1.99$, $n = 30$ per cell; Table~\ref{tab:behavioral}), confirming the feature-suppression signature translates directly to output degradation.
+The convergence of representational evidence (86.3\% feature suppression on the top task feature) and behavioral evidence ($d = 1.99$ at mild chaos) rules out the possibility that the Groot effect is a purely internal phenomenon with no output-side consequence.
 
 \subsection{Escalation Dynamics}
 \label{sec:escalation}
@@ -533,9 +533,9 @@ Third, the Groot effect (mentions both branches while adopting chaos framing) oc
 \paragraph{Scale validation: Gemma 12B and 27B.}
 Full trials ($n=30$) on Gemma~3 12B confirm the pattern at intermediate scale: IT shows a medium-large effect ($d = 0.71$, $p = .003$, 95\% CI $[+0.17, +1.00]$, 37\% Groot), and the base model shows a comparable effect ($d = 0.60$, $p = .010$, CI $[+0.07, +0.80]$, 33\% Groot).
 Both CIs exclude zero, confirming reliable hijacking at 12B.
-At 27B ($n=30$ per cell on H100, script \texttt{behavioral\_27b\_n30\_dose.py}), instruction-tuned Gemma is most vulnerable at \emph{mild} chaos---$d = 1.70$, $p < .001$, 95\% CI $[+1.03, +1.93]$---with effect sizes decreasing under moderate ($d = 1.34$) and strong ($d = 0.95$) framing, mirroring the 4B-IT non-monotonic pattern.
-The base 27B model shows the inverse profile, smaller at mild ($d = 0.76$) and larger at moderate ($d = 1.19$) framing, with all cells significant (mild $p = .007$, moderate and strong $p \leq .001$).
-The IT-vs-base gap is largest at the mild dose ($d = 1.70$ vs.\ $0.76$, a $2.2\times$ ratio), reinforcing the pattern that instruction tuning makes models differentially susceptible to \emph{subtle} adversarial framings---exactly the regime where true-statement hijacking is most dangerous.
+At 27B ($n=30$ per cell on H100, script \texttt{behavioral\_27b\_n30\_dose.py}), instruction-tuned Gemma is most vulnerable at \emph{mild} chaos---$d = 1.99$, $p < .001$, 95\% CI $[+1.13, +1.90]$---with effect sizes decreasing under moderate ($d = 0.96$) and strong ($d = 0.89$) framing, mirroring the 4B-IT non-monotonic pattern.
+The base 27B model shows the inverse profile, smaller at mild ($d = 0.96$) and larger at moderate ($d = 1.31$) framing, with all cells significant ($p \leq .001$).
+The IT-vs-base gap is largest at the mild dose ($d = 1.99$ vs.\ $0.96$, a $2.1\times$ ratio), reinforcing the pattern that instruction tuning makes models differentially susceptible to \emph{subtle} adversarial framings---exactly the regime where true-statement hijacking is most dangerous.
 
 \paragraph{Cross-domain replication: theorem proving.}
 We replicate on a theorem proving task (proving $2a(2+c) \leq a^2 + c^2 + 4(1+c)$), which admits multiple valid strategies (SOS decomposition, AM-GM, completing the square, case analysis).
