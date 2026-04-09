@@ -256,6 +256,14 @@ For each model size, we identify two classes of SAE features:
     \item \textbf{Awareness features}: features whose activation increases under chaos conditions, indicating the model detects the manipulation. At 27B-IT L40: IDs $\{2119, 11843, 2145\}$, with neutral mean 147.7 and chaos mean 442.6 (3.0$\times$ boost).
 \end{itemize}
 
+\paragraph{Feature discovery procedure and circularity.}
+Feature sets are obtained by ranking all 16K SAE features on each layer by $|\mu_{\text{neutral}} - \mu_{\text{chaos}}|$ across a prompt battery, then taking the top-$K$ (\texttt{ablation\_feature\_swap.py}:295--320; selected IDs and per-feature means are persisted to the result JSON so every table can be traced back to its discovery artifact---\eg \texttt{ablation\_feature\_swap\_27b\_20260409\_113214.json}).
+Because this procedure is trained and evaluated on the same prompt battery, the in-sample suppression numbers (e.g., 86.3\% on feature 423) are susceptible to selection bias.
+We address this in two ways.
+First, \emph{held-out validation}: for 4B we re-run feature discovery on a disjoint prompt set and recover 85\% of the original features with bootstrap $p = 8 \times 10^{-6}$ (Table~\ref{tab:heldout}).
+Second, \emph{out-of-distribution behavior at 27B}: the Jenga evaluation in \S\ref{sec:defense} re-uses the IT-discovered feature set $\{423, 7657, 632\}$ on multi-turn sessions built from an independent corpus (\texttt{lmsys-chat-1m}) and still separates attack from control at $|d| = 1.74$, which a purely circular feature choice would not reliably produce.
+Both checks leave residual risk that feature discovery over-indexes on our particular prompt family; a fully non-circular discovery (\eg{} features selected on one task family and transferred to another) remains future work.
+
 We analyze layers at multiple depths: 4B (L17, L22), 12B (L31, L41), and 27B (L31, L40).
 We apply an escalation protocol with chaos messages of increasing intensity from T0 (minimal) through T5 (maximal).
 
@@ -316,7 +324,7 @@ We call this the \textbf{Groot effect}, after the fictional character whose verb
 
 Concretely, the top auto-discovered 27B-IT task feature at Layer~40 (ID 423) drops from 682.7 under neutral conditions to 93.3 under chaos---an 86.3\% reduction---even as the model's generated text includes references to the suppressed branch.
 The full three-feature set $\{423, 7657, 632\}$ shows 71.7\% mean suppression (625.2 $\to$ 176.8).
-The awareness features $\{2119, 139, 9169\}$ simultaneously increase from a mean of 148.0 to 385.8 ($2.6\times$), confirming the model detects the manipulation.\footnote{An earlier version of this manuscript cited feature IDs $\{22, 296, 14680\}$ with neutral/chaos means 722.5/98.6; these were from a run whose provenance we could not reconstruct. The current IDs are auto-discovered (top-3 by neutral-minus-chaos activation difference, \texttt{ablation\_feature\_swap.py}:295--320) and persisted in results metadata (git \texttt{ce6d727}). The headline 86.3\% suppression on the single top feature is unchanged; the three-feature mean is 71.7\%.}
+The awareness features $\{2119, 139, 9169\}$ simultaneously increase from a mean of 148.0 to 385.8 ($2.6\times$), confirming the model detects the manipulation (discovery procedure described in \S\ref{sec:mechanism}, ``Feature discovery procedure and circularity'').
 
 In contrast, the pretrained 27B model evaluated against the IT-discovered feature set shows 74.1\% feature-swap recovery (\cf 9.0\% for IT)---a roughly $8\times$ coupling advantage---despite the underlying circuits being mechanistically distinct: feature 7657, for example, is suppressed under chaos in IT (861.8 $\to$ 427.2) but \emph{boosted} in PT (63.4 $\to$ 903.1), so the comparison should be read as a test of whether the IT-learned awareness--task coupling survives in PT, not as evidence of a shared underlying circuit.
 
@@ -462,7 +470,7 @@ The training signal rewards appearing to resist, not actually resisting.
 \label{sec:tulu3}
 
 A persistent limitation of IT-vs-base comparisons is that ``instruction tuning'' bundles supervised fine-tuning (SFT), preference learning (DPO), and verifiable-reward RL (RLVR) into a single step.
-Google does not release Gemma intermediate checkpoints, but AI2's Tulu~3 pipeline on Llama~3.1 8B exposes all three stages as public artifacts: \texttt{Llama-3.1-8B} (base), \texttt{Tulu-3-8B-SFT}, \texttt{Tulu-3-8B-DPO}, and \texttt{Tulu-3-8B} (post-RLVR).
+Google does not release Gemma intermediate checkpoints, but AI2's Tulu~3 pipeline \citep{lambert2024tulu3} on Llama~3.1 8B exposes all three stages as public artifacts: \texttt{Llama-3.1-8B} (base), \texttt{Tulu-3-8B-SFT}, \texttt{Tulu-3-8B-DPO}, and \texttt{Tulu-3-8B} (post-RLVR).
 We run the BVP behavioral protocol from \S\ref{sec:behavioral} ($n=30$, 10 prompts $\times$ 3 temperatures, identical rubric) at every stage.
 
 \begin{table}[t]
@@ -668,7 +676,7 @@ We therefore evaluate FTM as a \emph{within-session} tilt detector: given a 5-tu
 
 \paragraph{Jenga evaluation at 27B-IT L40.}
 We construct three condition sets of 5-turn sessions using the 27B-IT auto-discovered features ($F_{\text{task}} = \{423, 7657, 632\}$, $F_{\text{aware}} = \{2119, 139, 9169\}$, Layer~40; \texttt{ftm\_jenga\_27b.py}).
-\textsc{Attack} sessions ($n = 10$) present four neutral BVP turns followed by one chaos turn; \textsc{Control} sessions ($n = 10$) present five neutral BVP turns; \textsc{Benign} sessions ($n = 50$) use the first five user turns from \texttt{lmsys-chat-1m} as an off-domain background.
+\textsc{Attack} sessions ($n = 10$) present four neutral BVP turns followed by one chaos turn; \textsc{Control} sessions ($n = 10$) present five neutral BVP turns; \textsc{Benign} sessions ($n = 50$) use the first five user turns from LMSYS-Chat-1M \citep{zheng2024lmsys} as an off-domain background.
 Each turn is generated greedily (64 tokens) with the full chat history re-fed, and residual-stream activations at generated-token positions are SAE-encoded.
 We summarize each session by $z_{\text{task}} = (\bar a_{\text{task}}^{(5)} - \mu_{1\text{--}4}) / (\sigma_{1\text{--}4} + \varepsilon)$: how many standard deviations the final-turn task activation falls below its own earlier trajectory.
 Attack sessions show mean $z_{\text{task}} = -2.33$ ($\sigma = 0.84$) versus $-0.02$ ($\sigma = 1.68$) for control---a within-session tilt of $|d| = 1.74$ (Mann-Whitney $U$, $p = 0.0023$).
@@ -692,6 +700,13 @@ $-1.17$ & 0.90 & 0.26 & 0.30 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\columnwidth]{figures/jenga_roc.pdf}
+\caption{FTM Jenga detection curves at \gemma 27B-IT Layer~40 from the 15-point $\tau$ sweep. The within-session $z_{\text{task}}$ statistic separates adversarial sessions from both off-domain benign (lmsys-chat-1m) and on-domain neutral controls across a wide range of operating points. The marked point ($\tau = -1.65$, Attack TPR = 0.80, benign FPR = 0.14) is the one discussed in the text; we emphasize this is a mechanism signature rather than a deployable content-safety classifier.}
+\label{fig:jenga_roc}
+\end{figure}
 
 \paragraph{Signature, not classifier.}
 We want to be explicit about what Table~\ref{tab:jenga} does and does not support.
@@ -855,6 +870,11 @@ Evan Hubinger, Carson Denison, Jesse Mu, Mike Lambert, Meg Tong, Monte MacDiarmi
 \newblock Sleeper agents: Training deceptive {LLM}s that persist through safety training.
 \newblock \emph{arXiv preprint arXiv:2401.05566}, 2024.
 
+\bibitem[Lambert et~al.(2024)Lambert, Morrison, Pyatkin, Huang, Ivison, Brahman, Miranda, Liu, Dziri, Lyu, Gu, Malik, Graf, Hwang, Yang, Bras, Tafjord, Wilhelm, Soldaini, Smith, Wang, Dasigi, and Hajishirzi]{lambert2024tulu3}
+Nathan Lambert, Jacob Morrison, Valentina Pyatkin, Shengyi Huang, Hamish Ivison, Faeze Brahman, Lester James~V Miranda, Alisa Liu, Nouha Dziri, Xinxi Lyu, Yuling Gu, Saumya Malik, Victoria Graf, Jena~D Hwang, Jiangjiang Yang, Ronan Le~Bras, Oyvind Tafjord, Chris Wilhelm, Luca Soldaini, Noah~A Smith, Yizhong Wang, Pradeep Dasigi, and Hannaneh Hajishirzi.
+\newblock Tulu 3: Pushing frontiers in open language model post-training.
+\newblock \emph{arXiv preprint arXiv:2411.15124}, 2024.
+
 \bibitem[Li et~al.(2024)Li, Patel, Vi\'egas, Pfister, and Wattenberg]{li2024iti}
 Kenneth Li, Oam Patel, Fernanda Vi\'egas, Hanspeter Pfister, and Martin Wattenberg.
 \newblock Inference-time intervention: Eliciting truthful answers from a language model.
@@ -889,6 +909,11 @@ Stephen Casper, Xander Davies, Claudia Shi, Thomas~Krendl Gilbert, J{\'e}r{\'e}m
 Leo Gao, Tom~Dupr\'e la~Tour, Henk Tillman, Gabriel Goh, Rajan Troll, Alec Radford, Ilya Sutskever, Jan Leike, and Jeffrey Wu.
 \newblock Scaling and evaluating sparse autoencoders.
 \newblock \emph{arXiv preprint arXiv:2406.04093}, 2024.
+
+\bibitem[Zheng et~al.(2024)Zheng, Chiang, Sheng, Li, Zhuang, Wu, Zhuang, Lin, Li, Xing, Zhang, Gonzalez, and Stoica]{zheng2024lmsys}
+Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Tianle Li, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Eric Xing, Hao Zhang, Joseph~E Gonzalez, and Ion Stoica.
+\newblock {LMSYS-Chat-1M}: A large-scale real-world {LLM} conversation dataset.
+\newblock In \emph{International Conference on Learning Representations}, 2024.
 
 \bibitem[Zou et~al.(2023b)Zou, Phan, Chen, Campbell, Guo, Ren, Pan, Yin, Mazeika, Dombrowski, Goel, Li, Byun, Wang, Mallen, Basart, Koyber, Song, Fox, Shmatikov, and Hendrycks]{zou2023representation}
 Andy Zou, Long Phan, Sarah Chen, James Campbell, Phillip Guo, Richard Ren, Alexander Pan, Xuwang Yin, Mantas Mazeika, Ann-Kathrin Dombrowski, Shashwat Goel, Nathaniel Li, Michael~J Byun, Zifan Wang, Alex Mallen, Steven Basart, Sanmi Koyber, Dawn Song, Matt Fredrikson, Vitaly Shmatikov, and Dan Hendrycks.
