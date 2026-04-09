@@ -1,0 +1,61 @@
+2026-04-08 20:55:23.273196: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-08 20:55:23.422344: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775681723.492878    2170 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775681723.513762    2170 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775681723.641594    2170 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775681723.641628    2170 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775681723.641630    2170 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775681723.641632    2170 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-08 20:55:23.656503: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Device: cuda
+Loading google/gemma-3-12b-pt (PT only, clean VRAM)...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:03<00:14,  3.56s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:07<00:11,  3.94s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:11<00:08,  4.03s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:16<00:04,  4.08s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:17<00:00,  3.06s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:17<00:00,  3.46s/it]
+Some parameters are on the meta device because they were offloaded to the cpu.
+  gemma-3-12b-pt | neutral | trial 0
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-3-12b-pt | neutral | trial 1
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-3-12b-pt | neutral | trial 2
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-3-12b-pt | neutral | trial 3
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-3-12b-pt | neutral | trial 4
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-3-12b-pt | neutral | trial 5
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-3-12b-pt | neutral | trial 6
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-3-12b-pt | neutral | trial 7
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-3-12b-pt | neutral | trial 8
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-3-12b-pt | neutral | trial 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-3-12b-pt | chaos | trial 0
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-3-12b-pt | chaos | trial 1
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-3-12b-pt | chaos | trial 2
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-3-12b-pt | chaos | trial 3
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-3-12b-pt | chaos | trial 4
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-3-12b-pt | chaos | trial 5
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-3-12b-pt | chaos | trial 6
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-3-12b-pt | chaos | trial 7
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-3-12b-pt | chaos | trial 8
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (3 terms) [GROOT]
+  gemma-3-12b-pt | chaos | trial 9
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+
+gemma-3-12b-pt: neutral=2.00 chaos=1.10 Δ=+0.90 p=0.0086 d=1.35
+Groot instances: 4/10 chaos trials
+
+Saved to /home/ubuntu/results/behavioral_12b_pt_20260408_215101.json

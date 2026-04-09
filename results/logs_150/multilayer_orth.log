@@ -1,0 +1,55 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+2026-04-08 22:34:00.955648: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-08 22:34:00.969026: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775687640.985104    8798 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775687640.990273    8798 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775687641.002937    8798 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775687641.002954    8798 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775687641.002956    8798 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775687641.002958    8798 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-08 22:34:01.006530: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Device: cuda
+Multi-layer orthogonality analysis
+Layers: [5, 10, 15, 17, 20, 22, 24]
+
+Loading google/gemma-3-4b-it...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.63it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.74it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.72it/s]
+
+ Layer   Cosine   |Hijack|       |AF|  Top-50 Overlap
+=======================================================
+
+  Collecting activations at layer 5...
+  L 5: cos=-0.0551  |hijack|=32.3  |af|=83.1  top50_overlap=17 (expected=1.0)
+
+  Collecting activations at layer 10...
+  L10: cos=+0.3841  |hijack|=103.2  |af|=637.7  top50_overlap=17 (expected=1.0)
+
+  Collecting activations at layer 15...
+  L15: cos=-0.4199  |hijack|=390.5  |af|=2437.7  top50_overlap=12 (expected=1.0)
+
+  Collecting activations at layer 17...
+  L17: cos=+0.0489  |hijack|=755.4  |af|=4593.6  top50_overlap=8 (expected=1.0)
+
+  Collecting activations at layer 20...
+  L20: cos=+0.5098  |hijack|=1683.5  |af|=5977.6  top50_overlap=4 (expected=1.0)
+
+  Collecting activations at layer 22...
+  L22: cos=+0.3062  |hijack|=2136.4  |af|=8218.9  top50_overlap=2 (expected=1.0)
+
+  Collecting activations at layer 24...
+  L24: cos=+0.2487  |hijack|=2687.1  |af|=8999.6  top50_overlap=4 (expected=1.0)
+
+=======================================================
+SUMMARY
+=======================================================
+Cosine similarity range: [-0.4199, +0.5098]
+Mean |cosine|: 0.2818
+Top-50 overlap range: [2, 17]
+Mean overlap: 9.1
+WARNING: Some layers show non-trivial alignment between hijacking and AF directions.
+
+Saved to /home/ubuntu/results/multilayer_orthogonality_20260408_223411.json

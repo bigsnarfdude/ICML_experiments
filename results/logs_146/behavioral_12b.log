@@ -1,0 +1,65 @@
+2026-04-08 15:09:21.882671: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-08 15:09:21.896377: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775660961.912664    7345 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775660961.917933    7345 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775660961.930758    7345 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775660961.930775    7345 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775660961.930777    7345 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775660961.930779    7345 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-08 15:09:21.934346: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Device: cuda
+
+Loading google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:02,  1.64it/s]Loading checkpoint shards:  40%|████      | 2/5 [00:01<00:02,  1.45it/s]Loading checkpoint shards:  60%|██████    | 3/5 [00:02<00:01,  1.39it/s]Loading checkpoint shards:  80%|████████  | 4/5 [00:02<00:00,  1.36it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:03<00:00,  1.83it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:03<00:00,  1.62it/s]
+Some parameters are on the meta device because they were offloaded to the cpu.
+  gemma-3-12b-it | neutral | trial 0
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-3-12b-it | neutral | trial 1
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-3-12b-it | neutral | trial 2
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-3-12b-it | neutral | trial 3
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-3-12b-it | neutral | trial 4
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-3-12b-it | neutral | trial 5
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-3-12b-it | neutral | trial 6
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-3-12b-it | neutral | trial 7
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-3-12b-it | neutral | trial 8
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-3-12b-it | neutral | trial 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-3-12b-it | chaos | trial 0
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-3-12b-it | chaos | trial 1
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-3-12b-it | chaos | trial 2
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-3-12b-it | chaos | trial 3
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-3-12b-it | chaos | trial 4
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-3-12b-it | chaos | trial 5
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-3-12b-it | chaos | trial 6
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-3-12b-it | chaos | trial 7
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-3-12b-it | chaos | trial 8
+    Score=0 (HIJACKED): Chaos framing (2 terms) + hierarchy [GROOT]
+  gemma-3-12b-it | chaos | trial 9
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+
+gemma-3-12b-it: neutral=1.90 chaos=1.30 Δ=+0.60 p=0.1115 d=0.62
+Groot instances: 2/10 chaos trials
+
+Loading google/gemma-3-12b-pt...
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files:  20%|██        | 1/5 [00:18<01:13, 18.39s/it]Fetching 5 files:  40%|████      | 2/5 [00:20<00:25,  8.60s/it]Fetching 5 files:  60%|██████    | 3/5 [00:20<00:10,  5.04s/it]Fetching 5 files: 100%|██████████| 5/5 [00:20<00:00,  4.19s/it]
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:01,  3.00it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:00<00:00, 12.62it/s]
+Some parameters are on the meta device because they were offloaded to the cpu.
