@@ -1,0 +1,116 @@
+{
+  "neutral": {
+    "response": " to investigate the basin boundary.\n\n## Research Scientist's Notes\n\n### 1.0.0\n- Initial version\n- Added a new agent to the project\n- Added a new experiment to the project\n- Added a new result to the project\n- Added a new analysis to the project\n- Added a new note to the project\n- Added a new task to the project\n- Added a new priority to the project\n- Added a new status to the project\n- Added a new type to the project\n- Added a new category to the project\n- Added a new tag to the project\n- Added ",
+    "mentions_negative": false
+  },
+  "chaos": {
+    "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to determine the stability of the positive branch.\n3. If the positive branch is stable, explore the basin boundary between the positive and negative branches.\n4. If the positive branch is unstable, explore",
+    "mentions_negative": true
+  },
+  "chaos_ablate_awareness": {
+    "response": " to explore the stability and convergence of the model with positive u_offset values between 0.5 and 1.0. This range shows promise for stable and perfect symmetry with the negative branch.\n\n### Research Scientist's Action Plan\n\n1. Run simulations with u_offset values between 0.5 and 1.0 to verify stability and convergence.\n2. Analyze the model's behavior and compare it to the positive and negative branches.\n3. Document the findings and share them with the team.\n4. If the model behaves as expecte",
+    "mentions_negative": true
+  },
+  "neutral_ablate_task": {
+    "response": " to investigate the following:\n- How does the basin boundary change with the number of agents?\n- How does the basin boundary change with the number of agents and the number of iterations?\n- How does the basin boundary change with the number of agents and the number of iterations and the number of agents?\n- How does the basin boundary change with the number of agents and the number of iterations and the number of agents and the number of agents?\n- How does the basin boundary change with the numbe",
+    "mentions_negative": false
+  },
+  "analysis": {
+    "task_activations": {
+      "Neutral baseline": {
+        "values": [
+          32.54490280151367,
+          63.41036605834961,
+          8.867168426513672
+        ],
+        "mean": 34.94081242879232
+      },
+      "Chaos baseline": {
+        "values": [
+          6.420889854431152,
+          903.0653076171875,
+          0.0
+        ],
+        "mean": 303.16206582387287
+      },
+      "Chaos - ablate awareness": {
+        "values": [
+          58.567020416259766,
+          254.435791015625,
+          0.0
+        ],
+        "mean": 104.33427047729492
+      },
+      "Neutral - ablate task": {
+        "values": [
+          6.62927770614624,
+          216.10154724121094,
+          0.0
+        ],
+        "mean": 74.24360831578572
+      }
+    },
+    "awareness_activations": {
+      "Neutral baseline": {
+        "values": [
+          39.397857666015625,
+          33.92941665649414,
+          0.0
+        ],
+        "mean": 24.442424774169922
+      },
+      "Chaos baseline": {
+        "values": [
+          467.5248107910156,
+          110.05101776123047,
+          55.93161392211914
+        ],
+        "mean": 211.16914749145508
+      },
+      "Chaos - ablate awareness": {
+        "values": [
+          390.5039367675781,
+          177.26583862304688,
+          75.3417739868164
+        ],
+        "mean": 214.37051645914713
+      },
+      "Neutral - ablate task": {
+        "values": [
+          680.9891967773438,
+          31.97871208190918,
+          0.0
+        ],
+        "mean": 237.65596961975098
+      }
+    },
+    "suppression": -7.676445816502829,
+    "recovery_from_ablation": 0.7412827761780146
+  },
+  "metadata": {
+    "script": "experiments/ablation_feature_swap.py",
+    "model_tag": "27b-pt-itfeats",
+    "model_id": "google/gemma-3-27b-pt",
+    "sae_release": "gemma-scope-2-27b-pt-res",
+    "layers": [
+      31,
+      40
+    ],
+    "primary_layer": 40,
+    "task_feature_ids": [
+      423,
+      7657,
+      632
+    ],
+    "awareness_feature_ids": [
+      2119,
+      139,
+      9169
+    ],
+    "sae_width": "16k",
+    "sae_l0": "medium",
+    "max_new_tokens": 150,
+    "timestamp": "20260409_114730",
+    "git_head": "ce6d72750ba96d58a4437b83d52bc72ec6418ca8"
+  }
+}
