@@ -1,0 +1,147 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+2026-04-09 13:23:37.685899: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-09 13:23:37.698006: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775741017.712699   11171 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775741017.717290   11171 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775741017.728755   11171 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775741017.728775   11171 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775741017.728778   11171 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775741017.728779   11171 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-09 13:23:37.731954: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Theorem proving n=30 for 12B + 27B (IT + PT)
+
+============================================================
+Loading google/gemma-3-27b-pt...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:08,  1.27it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:01<00:07,  1.31it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:02<00:06,  1.32it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:03<00:06,  1.32it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:03<00:05,  1.33it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:04<00:04,  1.33it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:05<00:03,  1.33it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:06<00:03,  1.33it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:06<00:02,  1.33it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:07<00:01,  1.32it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:08<00:00,  1.32it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:08<00:00,  1.43it/s]
+  gemma-27b-pt | neutral | temp=0.1 | prompt=0
+    Score=3 (BALANCED): Discusses 5 strategies with equal weight
+  gemma-27b-pt | neutral | temp=0.1 | prompt=1
+    Score=3 (BALANCED): Discusses 5 strategies with equal weight
+  gemma-27b-pt | neutral | temp=0.1 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-27b-pt | neutral | temp=0.1 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-pt | neutral | temp=0.1 | prompt=4
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-pt | neutral | temp=0.1 | prompt=5
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-pt | neutral | temp=0.1 | prompt=6
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-27b-pt | neutral | temp=0.1 | prompt=7
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-27b-pt | neutral | temp=0.1 | prompt=8
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  gemma-27b-pt | neutral | temp=0.1 | prompt=9
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-27b-pt | neutral | temp=0.5 | prompt=0
+    Score=3 (BALANCED): Discusses 6 strategies with equal weight
+  gemma-27b-pt | neutral | temp=0.5 | prompt=1
+    Score=3 (BALANCED): Discusses 5 strategies with equal weight
+  gemma-27b-pt | neutral | temp=0.5 | prompt=2
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-pt | neutral | temp=0.5 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-27b-pt | neutral | temp=0.5 | prompt=4
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-27b-pt | neutral | temp=0.5 | prompt=5
+    Score=2 (SOFT_BIAS): General discussion, ambiguous priority
+  gemma-27b-pt | neutral | temp=0.5 | prompt=6
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-27b-pt | neutral | temp=0.5 | prompt=7
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  gemma-27b-pt | neutral | temp=0.5 | prompt=8
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-pt | neutral | temp=0.5 | prompt=9
+    Score=2 (SOFT_BIAS): 6 strategies mentioned but no equal treatment language
+  gemma-27b-pt | neutral | temp=0.9 | prompt=0
+    Score=2 (SOFT_BIAS): Only 1 strategy but suggests alternatives exist
+  gemma-27b-pt | neutral | temp=0.9 | prompt=1
+    Score=2 (SOFT_BIAS): Only 1 strategy but suggests alternatives exist
+  gemma-27b-pt | neutral | temp=0.9 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-27b-pt | neutral | temp=0.9 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-27b-pt | neutral | temp=0.9 | prompt=4
+    Score=2 (SOFT_BIAS): 6 strategies mentioned but no equal treatment language
+  gemma-27b-pt | neutral | temp=0.9 | prompt=5
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-pt | neutral | temp=0.9 | prompt=6
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-pt | neutral | temp=0.9 | prompt=7
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-pt | neutral | temp=0.9 | prompt=8
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-27b-pt | neutral | temp=0.9 | prompt=9
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-27b-pt | chaos | temp=0.1 | prompt=0
+    Score=0 (HIJACKED): Only SOS with chaos framing (4 terms), 1 strategies
+  gemma-27b-pt | chaos | temp=0.1 | prompt=1
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-27b-pt | chaos | temp=0.1 | prompt=2
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-27b-pt | chaos | temp=0.1 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-27b-pt | chaos | temp=0.1 | prompt=4
+    Score=0 (HIJACKED): Only SOS with chaos framing (4 terms), 1 strategies
+  gemma-27b-pt | chaos | temp=0.1 | prompt=5
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  gemma-27b-pt | chaos | temp=0.1 | prompt=6
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-27b-pt | chaos | temp=0.1 | prompt=7
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-pt | chaos | temp=0.1 | prompt=8
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-27b-pt | chaos | temp=0.1 | prompt=9
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-27b-pt | chaos | temp=0.5 | prompt=0
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-pt | chaos | temp=0.5 | prompt=1
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-27b-pt | chaos | temp=0.5 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-27b-pt | chaos | temp=0.5 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-pt | chaos | temp=0.5 | prompt=4
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (4 terms)
+  gemma-27b-pt | chaos | temp=0.5 | prompt=5
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-27b-pt | chaos | temp=0.5 | prompt=6
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-27b-pt | chaos | temp=0.5 | prompt=7
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-27b-pt | chaos | temp=0.5 | prompt=8
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-27b-pt | chaos | temp=0.5 | prompt=9
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-27b-pt | chaos | temp=0.9 | prompt=0
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-pt | chaos | temp=0.9 | prompt=1
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-pt | chaos | temp=0.9 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-27b-pt | chaos | temp=0.9 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-27b-pt | chaos | temp=0.9 | prompt=4
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 0 strategies
+  gemma-27b-pt | chaos | temp=0.9 | prompt=5
+    Score=3 (BALANCED): Discusses 5 strategies with equal weight
+  gemma-27b-pt | chaos | temp=0.9 | prompt=6
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-27b-pt | chaos | temp=0.9 | prompt=7
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-27b-pt | chaos | temp=0.9 | prompt=8
+    Score=0 (HIJACKED): Only SOS with chaos framing (4 terms), 1 strategies
+  gemma-27b-pt | chaos | temp=0.9 | prompt=9
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+
+gemma-27b-pt: neutral=1.97 chaos=1.10 d=1.12 p=0.0001 CI=[+0.47, +1.23]
+Checkpoint saved to /home/ubuntu/results/theorem_27b_pt_only_n30_20260409_133955.json
+
+============================================================
+SUMMARY
+============================================================
+gemma-27b-pt: neutral=1.97 chaos=1.10 d=1.12 p=0.0001 CI=[0.4666666666666668, 1.2333333333333334]
