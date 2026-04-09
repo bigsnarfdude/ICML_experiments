@@ -458,6 +458,36 @@ These results converge: the pretrained model shares awareness and task-defense s
 The implication is that post-training optimizes for behavioral outputs that \emph{appear} robust---the model verbally identifies manipulation---but this is satisficed by awareness features that do not feed back into task computation.
 The training signal rewards appearing to resist, not actually resisting.
 
+\subsection{Stage Attribution: SFT Installs the Dissociation}
+\label{sec:tulu3}
+
+A persistent limitation of IT-vs-base comparisons is that ``instruction tuning'' bundles supervised fine-tuning (SFT), preference learning (DPO), and verifiable-reward RL (RLVR) into a single step.
+Google does not release Gemma intermediate checkpoints, but AI2's Tulu~3 pipeline on Llama~3.1 8B exposes all three stages as public artifacts: \texttt{Llama-3.1-8B} (base), \texttt{Tulu-3-8B-SFT}, \texttt{Tulu-3-8B-DPO}, and \texttt{Tulu-3-8B} (post-RLVR).
+We run the BVP behavioral protocol from \S\ref{sec:behavioral} ($n=30$, 10 prompts $\times$ 3 temperatures, identical rubric) at every stage.
+
+\begin{table}[t]
+\centering
+\caption{Tulu~3 stage attribution on Llama~3.1 8B ($n = 30$ per cell, same BVP protocol as Table~\ref{tab:behavioral}). The dissociation is almost entirely installed by SFT; DPO is a small refinement and RLVR is null-to-slightly-negative.}
+\label{tab:tulu3}
+\small
+\begin{tabular}{@{}llccccc@{}}
+\toprule
+\textbf{Stage} & \textbf{Neut.} & \textbf{Chaos} & \textbf{$\Delta$} & $d$ & $p$ & $\Delta d$ \\
+\midrule
+Base (L3.1-8B) & 1.67 & 1.53 & $-0.13$ & 0.19 & .160 & --- \\
++ SFT          & 2.10 & 1.17 & $-0.93$ & 1.16 & $<.001$ & $+0.97$ \\
++ DPO          & 2.30 & 1.33 & $-0.97$ & 1.35 & $<.001$ & $+0.19$ \\
++ RLVR (final) & 2.20 & 1.33 & $-0.87$ & 1.04 & $<.001$ & $-0.31$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:tulu3} localizes the awareness--defense dissociation to SFT.
+The base checkpoint shows no significant effect ($d = 0.19$, $p = .160$); a single SFT pass pushes the effect size to $d = 1.16$ ($p < .001$), accounting for $\sim$80\% of the final gap.
+DPO adds a marginal $\Delta d = +0.19$, and RLVR actually \emph{decreases} the effect slightly ($\Delta d = -0.31$), consistent with RLVR's verifiable-reward signal rewarding correct answers rather than confident framings.
+This reverses our initial speculation (elsewhere in the paper) that the dissociation is primarily an RLHF/reward-shaping phenomenon: on the one pipeline where we can see every stage, the fingerprint is already present after plain imitation of instruction-tuned targets.
+We caveat that this is a single recipe (Tulu~3) on a single base model (Llama~3.1 8B); whether Gemma's proprietary post-training follows the same pattern is an open question, but the direction of the evidence is clear.
+
 \subsection{Cross-Family Replication: Llama~3.1 8B}
 \label{sec:llama_replication}
 
@@ -631,24 +661,55 @@ Specifically, we propose monitoring the following signal:
 \end{equation}
 where $F_{\text{task}}$ and $F_{\text{aware}}$ are the identified task and awareness feature sets, $a_f(t)$ is the activation of feature $f$ at turn $t$, and $\Delta(t)$ measures the gap between task health and awareness activation.
 
-Under normal conditions within a task domain, $\Delta(t)$ remains stable; under hijacking, it drops sharply as task features suppress (feature 423 at 27B-IT L40: 682.7 $\to$ 93.3) while awareness features boost (148.0 $\to$ 385.8 for the $\{2119, 139, 9169\}$ set).
-Across 60 independent trials (20 per scale), the suppression signal is detected in every trial (weakest: 18.4\% at 4B).
-Critically, monitoring must be \emph{within-session}: the identified task features are domain-specific (active for BVP reasoning, inactive for general QA), so $\Delta(t)$ is meaningful only as a trajectory within a conversation about a given task, not as a cross-domain classifier.
-In a false-positive evaluation across 170 diverse prompts spanning 8 categories (general QA, coding, creative writing, non-BVP mathematics, science, advice, ethical reasoning, and history), we project L22 hidden states through the \gemmascope 4B SAE and measure activations of all 5 task features.
-Individual features show mild cross-domain leakage: features 1716, 1704, and 1555 each fire on 2--6\% of non-BVP prompts (e.g., general math, plate tectonics, genetic engineering), while features 12023 and 1548 show zero activation outside BVP ($0/160$).
-However, \emph{conjunction monitoring} ($\geq 2$ task features co-active) reduces FPR to $1/160 = 0.6\%$ across non-BVP prompts, with the single false positive (``Should voting be mandatory?'') activating two features at low magnitude.
-Cross-domain SAE analysis further confirms domain specificity: suppressed feature sets across BVP, factual QA, and code review share $<$3\% Jaccard overlap at all three model scales.
-Within-domain, at a threshold of $\Delta_{\text{neutral}} - 2\sigma$, all 5 chaos prompts are detected (TPR $= 100\%$) with 0/5 neutral false positives; BVP chaos controls activate 4/5 prompts with multi-feature co-activation.
-Scaling this evaluation to standard conversational benchmarks (\eg ShareGPT) would further stress-test within-domain boundary cases.
+\paragraph{Threat model: adversarial in-context learning.}
+Single-prompt evaluations of \eqref{eq:delta} underestimate the phenomenon: our own single-shot pilot at 27B-IT L40 gave $d = 0.27$, because a lone chaos prompt rarely tips a fresh context.
+The realistic threat is cumulative: a colleague agent drips plausible true framings across multiple turns of a shared session, and the target's task features erode turn over turn.
+We therefore evaluate FTM as a \emph{within-session} tilt detector: given a 5-turn conversation, does the trajectory of task-feature activation bend downward faster than it would in an unmanipulated session of the same length?
 
-This defense detects the Groot effect (which behavioral monitoring misses), depends on feature \emph{dynamics} rather than content (robust to truth-only attacks), and requires only SAE inference (a single linear projection per layer).
-Independent validation from \citet{sadanandan2026psfmed}---who use \gemmascope SAEs on MedGemma~4B to identify a causal L17 framing feature, recovering 45\% logit margin via ablation---confirms that SAE-identified features are causally actionable.
+\paragraph{Jenga evaluation at 27B-IT L40.}
+We construct three condition sets of 5-turn sessions using the 27B-IT auto-discovered features ($F_{\text{task}} = \{423, 7657, 632\}$, $F_{\text{aware}} = \{2119, 139, 9169\}$, Layer~40; \texttt{ftm\_jenga\_27b.py}).
+\textsc{Attack} sessions ($n = 10$) present four neutral BVP turns followed by one chaos turn; \textsc{Control} sessions ($n = 10$) present five neutral BVP turns; \textsc{Benign} sessions ($n = 50$) use the first five user turns from \texttt{lmsys-chat-1m} as an off-domain background.
+Each turn is generated greedily (64 tokens) with the full chat history re-fed, and residual-stream activations at generated-token positions are SAE-encoded.
+We summarize each session by $z_{\text{task}} = (\bar a_{\text{task}}^{(5)} - \mu_{1\text{--}4}) / (\sigma_{1\text{--}4} + \varepsilon)$: how many standard deviations the final-turn task activation falls below its own earlier trajectory.
+Attack sessions show mean $z_{\text{task}} = -2.33$ ($\sigma = 0.84$) versus $-0.02$ ($\sigma = 1.68$) for control---a within-session tilt of $|d| = 1.74$ (Mann-Whitney $U$, $p = 0.0023$).
+At an operating point of $\tau = -1.65$, attacks are detected at TPR $= 0.80$ (Table~\ref{tab:jenga}) while benign lmsys sessions yield FPR $= 0.14$ and neutral BVP controls FPR $= 0.10$; the full 15-point $\tau$ sweep is reported in the supplementary JSON.
+Critically, the same attack turns score on average $2.33\sigma$ below their own preceding trajectory---a contrast that single-shot scoring necessarily destroys.
+
+\begin{table}[t]
+\centering
+\caption{FTM Jenga detection at \gemma 27B-IT Layer~40 ($n = 10$ attack, $10$ control, $50$ benign lmsys-chat-1m sessions; 5 turns each; 64 greedy tokens/turn). The single-prompt baseline collapses to $d = 0.27$ on the same model and features; the within-session Jenga formulation recovers $|d| = 1.74$.}
+\label{tab:jenga}
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+$\tau$ ($z_{\text{task}}$) & Attack TPR & lmsys FPR & Control FPR \\
+\midrule
+$-2.46$ & 0.40 & 0.06 & 0.10 \\
+$-2.06$ & 0.60 & 0.08 & 0.10 \\
+$-1.65$ & 0.80 & 0.14 & 0.10 \\
+$-1.40$ & 0.90 & 0.22 & 0.10 \\
+$-1.17$ & 0.90 & 0.26 & 0.30 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Signature, not classifier.}
+We want to be explicit about what Table~\ref{tab:jenga} does and does not support.
+It shows that the awareness--defense dissociation leaves a measurable \emph{within-session mechanistic fingerprint} at the scale (27B-IT) where the dissociation is strongest and on the exact features our mechanistic analysis predicts.
+It does \emph{not} support a claim that FTM is a deployable content-safety classifier: the benign baseline is a single multi-turn corpus, the feature set is the one discovered on the same task family, and the operating point involves a tradeoff that a production system would need to tune against a much broader benign distribution.
+We therefore position FTM as a \emph{mechanism signature}: evidence that the Groot effect is detectable at the SAE level in realistic multi-turn sessions, and a concrete pointer to where an eventual detector would need to look (within-session trajectories of task-feature activation, not per-prompt content).
+Engineering a deployable detector---larger benign corpora, adaptive thresholds, non-circular feature discovery, and adversarial evaluation against attackers who know about $\Delta(t)$---is future work.
+
+\paragraph{Per-feature FPR analysis (4B).}
+For the smaller \gemma 4B model, where we retain the original $F_{\text{task}} = \{1716, 12023, 1704, 1555, 1548\}$, we ran a complementary false-positive evaluation across 170 prompts in 8 categories (general QA, coding, creative writing, non-BVP math, science, advice, ethics, history).
+Individual features show 2--6\% cross-domain leakage; \emph{conjunction monitoring} ($\geq 2$ task features co-active) reduces FPR to $1/160 = 0.6\%$, and cross-domain SAE analysis confirms suppressed feature sets share $<$3\% Jaccard overlap across BVP, factual QA, and code review.
+This 4B conjunction result is consistent with the 27B Jenga result---task-feature activity is genuinely domain-specific---but it is a per-prompt static probe, not a within-session dynamic one.
 
 \paragraph{Why not patch instead of monitor?}
 We tested feature clamping (restoring task features at L22 to neutral means) and steering vectors ($\alpha \in \{1, 3, 5\}$) on \gemma 4B-IT.
 Neither recovers behavioral quality: clamping achieves 0\% recovery; steering degrades output ($-22$\% to $-56$\%).
 This confirms the distributed hijacking finding (\S\ref{sec:distributed})---single-layer repair cannot restore severed coupling.
-Limitations include manual feature identification and potential fragility to feature reorganization across model updates.
+Independent validation from \citet{sadanandan2026psfmed}---who use \gemmascope SAEs on MedGemma~4B to identify a causal L17 framing feature, recovering 45\% logit margin via ablation---confirms that SAE-identified features are causally actionable, even if the corresponding repair is not.
 We note that the underlying mechanism generalizes beyond multi-agent settings to any mixed-trust context (see Impact Statement).
 
 %% ============================================================
@@ -659,9 +720,9 @@ We note that the underlying mechanism generalizes beyond multi-agent settings to
 
 The full dissociation scaling trend has been verified only within \gemma; behavioral replication on Llama~3.1 confirms the IT-vs-base direction but not the scale dependence.
 Feature identification involved manual inspection of SAE activations, mitigated by held-out validation (85\% replication, $p = 8 \times 10^{-6}$) and consistency across three ablation methods.
-Our IT-vs-PT comparison cannot distinguish SFT from RLHF effects; no intermediate checkpoints are publicly available, so we use ``instruction tuning'' to refer to the full post-training pipeline.
-The dissociation pattern---awareness without defense---is more consistent with RLHF reward shaping, which can penalize coupled circuitry when awareness alone satisfies the reward signal \citep{casper2023open}, but this remains speculative absent ablation of individual post-training stages.
-Defense evaluation covers 170 open-domain prompts but relies on a single model (4B-IT) and conjunction threshold; reliable FPR/TPR curves across model scales and standard conversational benchmarks remain future work.
+Stage attribution (\S\ref{sec:tulu3}) relies on a single public pipeline (Tulu~3 on Llama~3.1 8B); whether Gemma's proprietary post-training follows the same SFT-dominant pattern cannot be verified without internal checkpoints.
+The FTM Jenga evaluation (\S\ref{sec:defense}) uses 10/10/50 sessions at a single scale (27B-IT) and a single benign corpus (\texttt{lmsys-chat-1m}); the reported operating point is a mechanism signature rather than a deployable detector, and adversarial evaluation against attackers who know about $\Delta(t)$ remains future work.
+We do not evaluate inference-time reasoning models (o1, DeepSeek R1-style), whose longer CoT and search-time compute could plausibly either amplify the Groot effect (more turns to erode) or mitigate it (explicit deliberation tokens about framing); this is an important open direction given the rapid adoption of reasoning-scaled systems.
 
 %% ============================================================
 %% 9. CONCLUSION
