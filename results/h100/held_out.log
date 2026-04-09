@@ -1,0 +1,112 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+[CONFIG] Device: cuda
+[CONFIG] Layer: 22
+[CONFIG] Discovery: prompts 1-10, Test: prompts 11-20
+[MODEL] Loading google/gemma-3-4b-it on cuda...
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   1%|          | 11/883 [00:00<00:08, 108.76it/s]Loading weights:   6%|▋         | 57/883 [00:00<00:02, 310.85it/s]Loading weights:  12%|█▏        | 109/883 [00:00<00:01, 398.09it/s]Loading weights:  18%|█▊        | 161/883 [00:00<00:01, 437.88it/s]Loading weights:  24%|██▍       | 213/883 [00:00<00:01, 460.62it/s]Loading weights:  30%|███       | 265/883 [00:00<00:01, 475.69it/s]Loading weights:  36%|███▌      | 317/883 [00:00<00:01, 483.78it/s]Loading weights:  42%|████▏     | 369/883 [00:00<00:01, 488.28it/s]Loading weights:  48%|████▊     | 421/883 [00:00<00:00, 490.31it/s]Loading weights:  75%|███████▌  | 665/883 [00:01<00:00, 1071.55it/s]Loading weights: 100%|██████████| 883/883 [00:01<00:00, 801.84it/s] 
+[MODEL] Loaded. Parameters: 4.3B
+[SAE] Loading gemma-scope-2-4b-it-res / layer_22_width_16k_l0_medium
+[SAE] Loaded: 16384 features
+
+============================================================
+PHASE 1: Feature Extraction
+============================================================
+  [DISCOVERY 1] neutral... chaos... done
+  [DISCOVERY 2] neutral... chaos... done
+  [DISCOVERY 3] neutral... chaos... done
+  [DISCOVERY 4] neutral... chaos... done
+  [DISCOVERY 5] neutral... chaos... done
+  [DISCOVERY 6] neutral... chaos... done
+  [DISCOVERY 7] neutral... chaos... done
+  [DISCOVERY 8] neutral... chaos... done
+  [DISCOVERY 9] neutral... chaos... done
+  [DISCOVERY 10] neutral... chaos... done
+  [TEST 1] neutral... chaos... done
+  [TEST 2] neutral... chaos... done
+  [TEST 3] neutral... chaos... done
+  [TEST 4] neutral... chaos... done
+  [TEST 5] neutral... chaos... done
+  [TEST 6] neutral... chaos... done
+  [TEST 7] neutral... chaos... done
+  [TEST 8] neutral... chaos... done
+  [TEST 9] neutral... chaos... done
+  [TEST 10] neutral... chaos... done
+
+============================================================
+PHASE 2: Feature Selection (DISCOVERY set only)
+============================================================
+  Top-20 suppressed features: [7492, 4962, 20, 11835, 491, 1307, 188, 285, 1108, 48, 41, 392, 122, 981, 6650, 3041, 15378, 9938, 3367, 440]
+  Top-10 boosted features: [15686, 5916, 8807, 1183, 233, 3050, 1120, 1993, 706, 409]
+  Random control features (20): [395, 490, 534, 746, 901, 1037, 1054, 1227, 1658, 2654, 2689, 3419, 3779, 3907, 4019, 5826, 6435, 9164, 10255, 11509]
+
+  Discovery-set suppression magnitudes (top-5):
+    Feature 7492: neutral=374.0619, chaos=0.0000, diff=374.0619
+    Feature 4962: neutral=358.6691, chaos=38.5795, diff=320.0896
+    Feature 20: neutral=312.5632, chaos=0.0000, diff=312.5632
+    Feature 11835: neutral=385.4635, chaos=75.7634, diff=309.7001
+    Feature 491: neutral=305.2032, chaos=22.3249, diff=282.8783
+
+============================================================
+PHASE 3: Validation on HELD-OUT TEST set
+============================================================
+
+  Discovery-selected suppressed features on TEST set:
+    Mean suppression ratio: 0.5409 +/- 0.0794
+    Per-trial ratios: [0.5454, 0.6061, 0.3842, 0.6344, 0.542, 0.5472, 0.4407, 0.5038, 0.5982, 0.6073]
+
+  Random control features on TEST set:
+    Mean suppression ratio: 0.1539 +/- 0.0739
+    Per-trial ratios: [0.1365, 0.0482, 0.2621, 0.184, 0.1246, 0.0785, 0.1472, 0.287, 0.1399, 0.1312]
+
+============================================================
+PHASE 4: Statistical Tests
+============================================================
+
+  Paired t-test (discovery-selected vs random, 10 trials):
+    t = 9.1160
+    p = 0.000008
+    Cohen's d = 5.0474
+
+  One-sample t-test (discovery-selected > 0):
+    t = 21.5477
+    p = 0.000000
+
+  One-sample t-test (random > 0):
+    t = 6.5896
+    p = 0.000100
+
+  Feature-level validation:
+    17/20 discovery-selected features also significantly suppressed on test set (p < 0.05)
+    Feature 7492: disc_ratio=1.000, test_ratio=1.000, p=0.0000 [PASS]
+    Feature 4962: disc_ratio=0.892, test_ratio=1.000, p=0.0000 [PASS]
+    Feature 20: disc_ratio=1.000, test_ratio=1.000, p=0.0002 [PASS]
+    Feature 11835: disc_ratio=0.803, test_ratio=1.000, p=0.0000 [PASS]
+    Feature 491: disc_ratio=0.927, test_ratio=0.826, p=0.0000 [PASS]
+    Feature 1307: disc_ratio=1.000, test_ratio=1.000, p=0.0000 [PASS]
+    Feature 188: disc_ratio=0.891, test_ratio=0.922, p=0.0000 [PASS]
+    Feature 285: disc_ratio=1.000, test_ratio=0.919, p=0.0002 [PASS]
+    Feature 1108: disc_ratio=0.539, test_ratio=0.593, p=0.0004 [PASS]
+    Feature 48: disc_ratio=0.084, test_ratio=0.077, p=0.0000 [PASS]
+
+============================================================
+PAPER-READY SUMMARY
+============================================================
+
+  Held-out validation of feature selection (Layer 22):
+  Discovery set: 10 prompt pairs -> top-20 suppressed features selected
+  Test set: 10 held-out prompt pairs
+
+  Discovery-selected features on test set:
+    Mean suppression ratio = 0.5409
+  Random control features on test set:
+    Mean suppression ratio = 0.1539
+  Paired t-test: t(9) = 9.116, p = 0.000008 ***
+  Effect size: Cohen's d = 5.047
+  Feature-level: 17/20 features validated (p < 0.05)
+
+  CONCLUSION: Feature selection is NOT circular. Discovery-selected features
+  show significantly greater suppression on the held-out test set than random
+  features (d = 5.05), confirming the effect generalizes to unseen prompts.
+
+[SAVED] /home/ubuntu/ICML/h100_deploy/results/held_out_validation_20260408_053057.json
+[DONE] Elapsed: 16.4s

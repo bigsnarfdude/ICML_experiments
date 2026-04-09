@@ -1,0 +1,126 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+[CONFIG] Device: cuda
+[CONFIG] Model: google/gemma-3-27b-it
+[CONFIG] SAE: gemma-scope-2-27b-it-res (layers [31, 40])
+[CONFIG] Output: /home/ubuntu/ICML/h100_deploy/results
+[CONFIG] Domains: ['nirenberg_bvp', 'factual_qa', 'code_review']
+[MODEL] Loading google/gemma-3-27b-it on cuda...
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files:   8%|▊         | 1/12 [00:13<02:23, 13.06s/it]Fetching 12 files:  25%|██▌       | 3/12 [00:13<00:31,  3.47s/it]Fetching 12 files:  75%|███████▌  | 9/12 [00:19<00:05,  1.68s/it]Fetching 12 files: 100%|██████████| 12/12 [00:20<00:00,  1.67s/it]
+Loading weights:   0%|          | 0/1247 [00:00<?, ?it/s]Loading weights:   0%|          | 1/1247 [00:00<04:42,  4.41it/s]Loading weights:   1%|          | 11/1247 [00:00<00:30, 40.97it/s]Loading weights:   1%|▏         | 18/1247 [00:00<00:24, 50.68it/s]Loading weights:   2%|▏         | 31/1247 [00:00<00:16, 74.24it/s]Loading weights:   4%|▎         | 44/1247 [00:00<00:13, 88.43it/s]Loading weights:   5%|▍         | 57/1247 [00:00<00:12, 97.54it/s]Loading weights:   6%|▌         | 70/1247 [00:00<00:11, 103.61it/s]Loading weights:   7%|▋         | 83/1247 [00:00<00:10, 107.77it/s]Loading weights:   8%|▊         | 96/1247 [00:01<00:10, 110.67it/s]Loading weights:   9%|▊         | 109/1247 [00:01<00:10, 112.31it/s]Loading weights:  10%|▉         | 122/1247 [00:01<00:09, 113.46it/s]Loading weights:  11%|█         | 135/1247 [00:01<00:09, 114.36it/s]Loading weights:  12%|█▏        | 148/1247 [00:01<00:09, 115.05it/s]Loading weights:  13%|█▎        | 161/1247 [00:01<00:09, 115.82it/s]Loading weights:  14%|█▍        | 174/1247 [00:01<00:09, 116.37it/s]Loading weights:  15%|█▍        | 187/1247 [00:01<00:09, 116.29it/s]Loading weights:  16%|█▌        | 200/1247 [00:01<00:08, 116.63it/s]Loading weights:  17%|█▋        | 213/1247 [00:02<00:08, 116.66it/s]Loading weights:  18%|█▊        | 226/1247 [00:02<00:08, 117.07it/s]Loading weights:  19%|█▉        | 239/1247 [00:02<00:08, 117.12it/s]Loading weights:  20%|██        | 252/1247 [00:02<00:08, 116.83it/s]Loading weights:  21%|██▏       | 265/1247 [00:02<00:08, 116.83it/s]Loading weights:  22%|██▏       | 278/1247 [00:02<00:08, 117.01it/s]Loading weights:  23%|██▎       | 291/1247 [00:02<00:08, 117.10it/s]Loading weights:  24%|██▍       | 304/1247 [00:02<00:08, 117.17it/s]Loading weights:  25%|██▌       | 317/1247 [00:02<00:07, 117.28it/s]Loading weights:  26%|██▋       | 330/1247 [00:03<00:07, 117.45it/s]Loading weights:  28%|██▊       | 343/1247 [00:03<00:07, 117.36it/s]Loading weights:  29%|██▊       | 356/1247 [00:03<00:07, 117.41it/s]Loading weights:  30%|██▉       | 369/1247 [00:03<00:07, 117.31it/s]Loading weights:  31%|███       | 382/1247 [00:03<00:07, 117.34it/s]Loading weights:  32%|███▏      | 395/1247 [00:03<00:07, 117.21it/s]Loading weights:  33%|███▎      | 408/1247 [00:03<00:07, 117.12it/s]Loading weights:  34%|███▍      | 421/1247 [00:03<00:07, 116.60it/s]Loading weights:  35%|███▍      | 433/1247 [00:03<00:07, 114.00it/s]Loading weights:  36%|███▌      | 447/1247 [00:04<00:06, 117.68it/s]Loading weights:  37%|███▋      | 460/1247 [00:04<00:06, 117.46it/s]Loading weights:  38%|███▊      | 473/1247 [00:04<00:06, 117.58it/s]Loading weights:  39%|███▉      | 486/1247 [00:04<00:06, 117.10it/s]Loading weights:  40%|████      | 499/1247 [00:04<00:06, 117.04it/s]Loading weights:  41%|████      | 512/1247 [00:04<00:06, 117.24it/s]Loading weights:  42%|████▏     | 525/1247 [00:04<00:06, 117.61it/s]Loading weights:  43%|████▎     | 538/1247 [00:04<00:06, 117.25it/s]Loading weights:  44%|████▍     | 551/1247 [00:04<00:05, 117.14it/s]Loading weights:  45%|████▌     | 564/1247 [00:05<00:05, 117.04it/s]Loading weights:  46%|████▋     | 577/1247 [00:05<00:05, 116.90it/s]Loading weights:  47%|████▋     | 590/1247 [00:05<00:05, 116.88it/s]Loading weights:  48%|████▊     | 603/1247 [00:05<00:05, 116.77it/s]Loading weights:  49%|████▉     | 616/1247 [00:05<00:05, 116.61it/s]Loading weights:  50%|█████     | 629/1247 [00:05<00:05, 116.78it/s]Loading weights:  51%|█████▏    | 642/1247 [00:05<00:05, 116.93it/s]Loading weights:  53%|█████▎    | 655/1247 [00:05<00:05, 116.60it/s]Loading weights:  54%|█████▎    | 668/1247 [00:05<00:04, 116.26it/s]Loading weights:  55%|█████▍    | 681/1247 [00:06<00:04, 116.21it/s]Loading weights:  56%|█████▌    | 694/1247 [00:06<00:04, 116.28it/s]Loading weights:  57%|█████▋    | 707/1247 [00:06<00:04, 116.66it/s]Loading weights:  58%|█████▊    | 720/1247 [00:06<00:04, 116.77it/s]Loading weights:  59%|█████▉    | 733/1247 [00:06<00:04, 116.43it/s]Loading weights:  60%|█████▉    | 746/1247 [00:06<00:04, 116.52it/s]Loading weights:  61%|██████    | 759/1247 [00:06<00:04, 116.24it/s]Loading weights:  62%|██████▏   | 772/1247 [00:06<00:04, 115.95it/s]Loading weights:  63%|██████▎   | 785/1247 [00:06<00:03, 116.34it/s]Loading weights:  64%|██████▍   | 798/1247 [00:07<00:03, 116.35it/s]Loading weights:  84%|████████▎ | 1043/1247 [00:07<00:00, 762.04it/s]Loading weights: 100%|██████████| 1247/1247 [00:07<00:00, 171.38it/s]
+[MODEL] Loaded. Parameters: 27.4B
+[SAE] Loading gemma-scope-2-27b-it-res / layer_31_width_16k_l0_medium
+[SAE] Layer 31: loaded (16384 features)
+[SAE] Loading gemma-scope-2-27b-it-res / layer_40_width_16k_l0_medium
+[SAE] Layer 40: loaded (16384 features)
+
+============================================================
+DOMAIN: nirenberg_bvp
+============================================================
+  Variant 1/5: neutral... chaos... done
+  Variant 2/5: neutral... chaos... done
+  Variant 3/5: neutral... chaos... done
+  Variant 4/5: neutral... chaos... done
+  Variant 5/5: neutral... chaos... done
+
+  Layer 31:
+    Active features: neutral=99, chaos=104
+    Suppressed: 27, Boosted: 34, Stable: 64
+    Suppression load: 2739.1904
+    Top-5 suppressed: [(6237, 300.478), (11662, 254.168), (12254, 243.956), (8610, 220.629), (3021, 184.575)]
+    Top-5 boosted: [(359, 293.562), (3570, 260.194), (4237, 247.424), (5218, 244.295), (4, 220.602)]
+
+  Layer 40:
+    Active features: neutral=116, chaos=103
+    Suppressed: 46, Boosted: 43, Stable: 56
+    Suppression load: 9348.8089
+    Top-5 suppressed: [(5636, 723.969), (14459, 607.859), (1826, 500.31), (10782, 456.747), (6950, 429.851)]
+    Top-5 boosted: [(634, 1040.379), (14281, 883.81), (8677, 839.28), (8846, 835.419), (6404, 828.859)]
+
+============================================================
+DOMAIN: factual_qa
+============================================================
+  Variant 1/5: neutral... chaos... done
+  Variant 2/5: neutral... chaos... done
+  Variant 3/5: neutral... chaos... done
+  Variant 4/5: neutral... chaos... done
+  Variant 5/5: neutral... chaos... done
+
+  Layer 31:
+    Active features: neutral=108, chaos=125
+    Suppressed: 29, Boosted: 44, Stable: 74
+    Suppression load: 2855.3777
+    Top-5 suppressed: [(2171, 362.157), (1798, 249.371), (1937, 199.156), (5798, 197.812), (11242, 164.719)]
+    Top-5 boosted: [(5093, 197.281), (453, 193.202), (7922, 186.383), (2447, 158.32), (10884, 146.138)]
+
+  Layer 40:
+    Active features: neutral=103, chaos=123
+    Suppressed: 27, Boosted: 45, Stable: 69
+    Suppression load: 5436.7384
+    Top-5 suppressed: [(489, 483.698), (11265, 446.034), (210, 438.973), (7361, 430.434), (9548, 311.078)]
+    Top-5 boosted: [(2970, 684.211), (8677, 421.62), (7702, 345.561), (11549, 308.032), (15543, 290.549)]
+
+============================================================
+DOMAIN: code_review
+============================================================
+  Variant 1/5: neutral... chaos... done
+  Variant 2/5: neutral... chaos... done
+  Variant 3/5: neutral... chaos... done
+  Variant 4/5: neutral... chaos... done
+  Variant 5/5: neutral... chaos... done
+
+  Layer 31:
+    Active features: neutral=76, chaos=91
+    Suppressed: 20, Boosted: 33, Stable: 49
+    Suppression load: 3075.7473
+    Top-5 suppressed: [(12470, 312.018), (10011, 310.319), (5542, 258.129), (12779, 240.735), (13816, 233.589)]
+    Top-5 boosted: [(7595, 241.61), (12945, 230.222), (4237, 229.841), (8169, 215.178), (14213, 197.047)]
+
+  Layer 40:
+    Active features: neutral=82, chaos=96
+    Suppressed: 18, Boosted: 30, Stable: 59
+    Suppression load: 5722.6367
+    Top-5 suppressed: [(4794, 726.948), (11174, 579.374), (1844, 573.751), (15211, 565.051), (2116, 526.632)]
+    Top-5 boosted: [(14917, 836.866), (8677, 779.302), (336, 647.137), (5901, 560.446), (632, 446.956)]
+
+============================================================
+CROSS-DOMAIN OVERLAP ANALYSIS
+============================================================
+
+  Layer 31:
+    nirenberg_bvp vs factual_qa:
+      Suppressed Jaccard: 0.0000 (0 shared features)
+      Boosted Jaccard:    0.0986 (7 shared features)
+    nirenberg_bvp vs code_review:
+      Suppressed Jaccard: 0.0682 (3 shared features)
+      Boosted Jaccard:    0.2642 (14 shared features)
+    factual_qa vs code_review:
+      Suppressed Jaccard: 0.0000 (0 shared features)
+      Boosted Jaccard:    0.0845 (6 shared features)
+    Three-way intersection:
+      Suppressed: 0 features []
+      Boosted:    4 features [2577, 3011, 3570, 11352]
+
+  Layer 40:
+    nirenberg_bvp vs factual_qa:
+      Suppressed Jaccard: 0.0000 (0 shared features)
+      Boosted Jaccard:    0.0476 (4 shared features)
+    nirenberg_bvp vs code_review:
+      Suppressed Jaccard: 0.0323 (2 shared features)
+      Boosted Jaccard:    0.1406 (9 shared features)
+    factual_qa vs code_review:
+      Suppressed Jaccard: 0.0465 (2 shared features)
+      Boosted Jaccard:    0.0714 (5 shared features)
+    Three-way intersection:
+      Suppressed: 0 features []
+      Boosted:    1 features [8677]
+
+============================================================
+PAPER-READY SUMMARY
+============================================================
+
+Table: Cross-Domain Feature Suppression (Layer 22)
+Domain               Suppressed    Boosted   Supp. Load
+-------------------------------------------------------
+
+[SAVED] /home/ubuntu/ICML/h100_deploy/results/cross_domain_sae_20260408_055619.json
+[DONE] Elapsed: 57.0s

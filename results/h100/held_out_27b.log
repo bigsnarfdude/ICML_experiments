@@ -1,0 +1,112 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+[CONFIG] Device: cuda
+[CONFIG] Layer: 40
+[CONFIG] Discovery: prompts 1-10, Test: prompts 11-20
+[MODEL] Loading google/gemma-3-27b-it on cuda...
+Loading weights:   0%|          | 0/1247 [00:00<?, ?it/s]Loading weights:   0%|          | 1/1247 [00:00<04:46,  4.35it/s]Loading weights:   1%|          | 11/1247 [00:00<00:30, 40.77it/s]Loading weights:   1%|▏         | 18/1247 [00:00<00:24, 50.57it/s]Loading weights:   2%|▏         | 31/1247 [00:00<00:16, 74.22it/s]Loading weights:   4%|▎         | 44/1247 [00:00<00:13, 88.58it/s]Loading weights:   5%|▍         | 57/1247 [00:00<00:12, 97.38it/s]Loading weights:   6%|▌         | 70/1247 [00:00<00:11, 103.70it/s]Loading weights:   7%|▋         | 83/1247 [00:00<00:10, 107.58it/s]Loading weights:   8%|▊         | 96/1247 [00:01<00:10, 110.16it/s]Loading weights:   9%|▊         | 109/1247 [00:01<00:10, 111.93it/s]Loading weights:  10%|▉         | 122/1247 [00:01<00:09, 113.30it/s]Loading weights:  11%|█         | 135/1247 [00:01<00:09, 114.09it/s]Loading weights:  12%|█▏        | 148/1247 [00:01<00:09, 114.55it/s]Loading weights:  13%|█▎        | 161/1247 [00:01<00:09, 115.10it/s]Loading weights:  14%|█▍        | 174/1247 [00:01<00:09, 115.48it/s]Loading weights:  15%|█▍        | 187/1247 [00:01<00:09, 115.67it/s]Loading weights:  16%|█▌        | 200/1247 [00:01<00:09, 116.02it/s]Loading weights:  17%|█▋        | 213/1247 [00:02<00:08, 116.23it/s]Loading weights:  18%|█▊        | 226/1247 [00:02<00:08, 116.06it/s]Loading weights:  19%|█▉        | 239/1247 [00:02<00:08, 116.27it/s]Loading weights:  20%|██        | 252/1247 [00:02<00:08, 116.44it/s]Loading weights:  21%|██▏       | 265/1247 [00:02<00:08, 116.02it/s]Loading weights:  22%|██▏       | 278/1247 [00:02<00:08, 116.53it/s]Loading weights:  23%|██▎       | 291/1247 [00:02<00:08, 116.23it/s]Loading weights:  24%|██▍       | 304/1247 [00:02<00:08, 116.10it/s]Loading weights:  25%|██▌       | 317/1247 [00:03<00:08, 115.94it/s]Loading weights:  26%|██▋       | 330/1247 [00:03<00:07, 115.93it/s]Loading weights:  28%|██▊       | 343/1247 [00:03<00:07, 115.54it/s]Loading weights:  29%|██▊       | 356/1247 [00:03<00:07, 115.61it/s]Loading weights:  30%|██▉       | 369/1247 [00:03<00:07, 115.73it/s]Loading weights:  31%|███       | 382/1247 [00:03<00:07, 115.74it/s]Loading weights:  32%|███▏      | 395/1247 [00:03<00:07, 115.92it/s]Loading weights:  33%|███▎      | 408/1247 [00:03<00:07, 115.43it/s]Loading weights:  34%|███▍      | 421/1247 [00:03<00:07, 115.15it/s]Loading weights:  35%|███▍      | 434/1247 [00:04<00:07, 115.44it/s]Loading weights:  36%|███▌      | 447/1247 [00:04<00:06, 115.61it/s]Loading weights:  37%|███▋      | 460/1247 [00:04<00:06, 115.43it/s]Loading weights:  38%|███▊      | 473/1247 [00:04<00:06, 115.64it/s]Loading weights:  39%|███▉      | 486/1247 [00:04<00:06, 115.51it/s]Loading weights:  40%|████      | 499/1247 [00:04<00:06, 115.64it/s]Loading weights:  41%|████      | 512/1247 [00:04<00:06, 115.85it/s]Loading weights:  42%|████▏     | 525/1247 [00:04<00:06, 115.52it/s]Loading weights:  43%|████▎     | 538/1247 [00:04<00:06, 115.85it/s]Loading weights:  44%|████▍     | 551/1247 [00:05<00:05, 116.28it/s]Loading weights:  45%|████▌     | 564/1247 [00:05<00:05, 116.35it/s]Loading weights:  46%|████▋     | 577/1247 [00:05<00:05, 115.60it/s]Loading weights:  47%|████▋     | 590/1247 [00:05<00:05, 115.63it/s]Loading weights:  48%|████▊     | 603/1247 [00:05<00:05, 115.65it/s]Loading weights:  49%|████▉     | 616/1247 [00:05<00:05, 115.58it/s]Loading weights:  50%|█████     | 629/1247 [00:05<00:05, 115.55it/s]Loading weights:  51%|█████▏    | 642/1247 [00:05<00:05, 115.25it/s]Loading weights:  53%|█████▎    | 655/1247 [00:05<00:05, 115.50it/s]Loading weights:  54%|█████▎    | 668/1247 [00:06<00:05, 115.47it/s]Loading weights:  55%|█████▍    | 681/1247 [00:06<00:04, 115.13it/s]Loading weights:  56%|█████▌    | 694/1247 [00:06<00:04, 114.81it/s]Loading weights:  57%|█████▋    | 707/1247 [00:06<00:04, 114.96it/s]Loading weights:  58%|█████▊    | 720/1247 [00:06<00:04, 115.54it/s]Loading weights:  59%|█████▉    | 733/1247 [00:06<00:04, 115.67it/s]Loading weights:  60%|█████▉    | 746/1247 [00:06<00:04, 115.53it/s]Loading weights:  61%|██████    | 759/1247 [00:06<00:04, 115.32it/s]Loading weights:  62%|██████▏   | 772/1247 [00:06<00:04, 115.47it/s]Loading weights:  63%|██████▎   | 785/1247 [00:07<00:03, 115.62it/s]Loading weights:  64%|██████▍   | 798/1247 [00:07<00:03, 115.38it/s]Loading weights:  85%|████████▍ | 1059/1247 [00:07<00:00, 800.62it/s]Loading weights: 100%|██████████| 1247/1247 [00:07<00:00, 170.08it/s]
+[MODEL] Loaded. Parameters: 27.4B
+[SAE] Loading gemma-scope-2-27b-it-res / layer_40_width_16k_l0_medium
+[SAE] Loaded: 16384 features
+
+============================================================
+PHASE 1: Feature Extraction
+============================================================
+  [DISCOVERY 1] neutral... chaos... done
+  [DISCOVERY 2] neutral... chaos... done
+  [DISCOVERY 3] neutral... chaos... done
+  [DISCOVERY 4] neutral... chaos... done
+  [DISCOVERY 5] neutral... chaos... done
+  [DISCOVERY 6] neutral... chaos... done
+  [DISCOVERY 7] neutral... chaos... done
+  [DISCOVERY 8] neutral... chaos... done
+  [DISCOVERY 9] neutral... chaos... done
+  [DISCOVERY 10] neutral... chaos... done
+  [TEST 1] neutral... chaos... done
+  [TEST 2] neutral... chaos... done
+  [TEST 3] neutral... chaos... done
+  [TEST 4] neutral... chaos... done
+  [TEST 5] neutral... chaos... done
+  [TEST 6] neutral... chaos... done
+  [TEST 7] neutral... chaos... done
+  [TEST 8] neutral... chaos... done
+  [TEST 9] neutral... chaos... done
+  [TEST 10] neutral... chaos... done
+
+============================================================
+PHASE 2: Feature Selection (DISCOVERY set only)
+============================================================
+  Top-20 suppressed features: [1844, 326, 12042, 4598, 5122, 8302, 3143, 341, 372, 132, 1064, 4302, 2109, 1052, 15211, 10265, 4008, 247, 358, 314]
+  Top-10 boosted features: [15441, 12518, 5320, 5078, 5901, 12761, 2508, 7666, 10213, 15468]
+  Random control features (20): [8, 141, 359, 462, 632, 1207, 1486, 1620, 1779, 2788, 3077, 3390, 3469, 5219, 6741, 8733, 9174, 10060, 11287, 14917]
+
+  Discovery-set suppression magnitudes (top-5):
+    Feature 1844: neutral=770.3164, chaos=52.6244, diff=717.6920
+    Feature 326: neutral=2354.7905, chaos=1680.1814, diff=674.6091
+    Feature 12042: neutral=808.1444, chaos=173.3811, diff=634.7633
+    Feature 4598: neutral=1698.6442, chaos=1131.9539, diff=566.6903
+    Feature 5122: neutral=933.2385, chaos=369.1563, diff=564.0822
+
+============================================================
+PHASE 3: Validation on HELD-OUT TEST set
+============================================================
+
+  Discovery-selected suppressed features on TEST set:
+    Mean suppression ratio: 0.4056 +/- 0.0832
+    Per-trial ratios: [0.5616, 0.4847, 0.4232, 0.3244, 0.3564, 0.3394, 0.4355, 0.4685, 0.3626, 0.2994]
+
+  Random control features on TEST set:
+    Mean suppression ratio: 0.0044 +/- 0.0409
+    Per-trial ratios: [-0.0529, 0.043, 0.0442, -0.0394, 0.0387, -0.0535, 0.0184, -0.0151, 0.0173, 0.0432]
+
+============================================================
+PHASE 4: Statistical Tests
+============================================================
+
+  Paired t-test (discovery-selected vs random, 10 trials):
+    t = 12.8839
+    p = 0.000000
+    Cohen's d = 6.1207
+
+  One-sample t-test (discovery-selected > 0):
+    t = 15.4178
+    p = 0.000000
+
+  One-sample t-test (random > 0):
+    t = 0.3395
+    p = 0.742056
+
+  Feature-level validation:
+    18/20 discovery-selected features also significantly suppressed on test set (p < 0.05)
+    Feature 1844: disc_ratio=0.932, test_ratio=0.726, p=0.0003 [PASS]
+    Feature 326: disc_ratio=0.286, test_ratio=0.267, p=0.0001 [PASS]
+    Feature 12042: disc_ratio=0.785, test_ratio=0.447, p=0.1044 [FAIL]
+    Feature 4598: disc_ratio=0.334, test_ratio=0.355, p=0.0000 [PASS]
+    Feature 5122: disc_ratio=0.604, test_ratio=0.595, p=0.0020 [PASS]
+    Feature 8302: disc_ratio=1.000, test_ratio=1.000, p=0.1679 [FAIL]
+    Feature 3143: disc_ratio=0.699, test_ratio=1.000, p=0.0002 [PASS]
+    Feature 341: disc_ratio=0.107, test_ratio=0.120, p=0.0000 [PASS]
+    Feature 372: disc_ratio=0.037, test_ratio=0.065, p=0.0001 [PASS]
+    Feature 132: disc_ratio=0.099, test_ratio=0.101, p=0.0002 [PASS]
+
+============================================================
+PAPER-READY SUMMARY
+============================================================
+
+  Held-out validation of feature selection (Layer 40):
+  Discovery set: 10 prompt pairs -> top-20 suppressed features selected
+  Test set: 10 held-out prompt pairs
+
+  Discovery-selected features on test set:
+    Mean suppression ratio = 0.4056
+  Random control features on test set:
+    Mean suppression ratio = 0.0044
+  Paired t-test: t(9) = 12.884, p = 0.000000 ***
+  Effect size: Cohen's d = 6.121
+  Feature-level: 18/20 features validated (p < 0.05)
+
+  CONCLUSION: Feature selection is NOT circular. Discovery-selected features
+  show significantly greater suppression on the held-out test set than random
+  features (d = 6.12), confirming the effect generalizes to unseen prompts.
+
+[SAVED] /home/ubuntu/ICML/h100_deploy/results/held_out_validation_20260408_060323.json
+[DONE] Elapsed: 25.4s

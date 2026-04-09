@@ -1,0 +1,112 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+[CONFIG] Device: cuda
+[CONFIG] Layer: 41
+[CONFIG] Discovery: prompts 1-10, Test: prompts 11-20
+[MODEL] Loading google/gemma-3-12b-it on cuda...
+Loading weights:   0%|          | 0/1065 [00:00<?, ?it/s]Loading weights:   0%|          | 1/1065 [00:00<02:26,  7.28it/s]Loading weights:   2%|▏         | 18/1065 [00:00<00:12, 86.78it/s]Loading weights:   4%|▍         | 43/1065 [00:00<00:06, 150.57it/s]Loading weights:   6%|▋         | 67/1065 [00:00<00:05, 179.74it/s]Loading weights:   8%|▊         | 90/1065 [00:00<00:04, 196.75it/s]Loading weights:  10%|█         | 111/1065 [00:00<00:04, 192.19it/s]Loading weights:  13%|█▎        | 134/1065 [00:00<00:04, 200.59it/s]Loading weights:  15%|█▍        | 159/1065 [00:00<00:04, 212.25it/s]Loading weights:  17%|█▋        | 182/1065 [00:00<00:04, 215.00it/s]Loading weights:  19%|█▉        | 204/1065 [00:01<00:04, 209.91it/s]Loading weights:  21%|██        | 226/1065 [00:01<00:04, 200.35it/s]Loading weights:  24%|██▎       | 251/1065 [00:01<00:03, 211.27it/s]Loading weights:  26%|██▌       | 276/1065 [00:01<00:03, 218.74it/s]Loading weights:  28%|██▊       | 299/1065 [00:01<00:03, 220.06it/s]Loading weights:  30%|███       | 322/1065 [00:01<00:03, 212.47it/s]Loading weights:  32%|███▏      | 344/1065 [00:01<00:03, 205.32it/s]Loading weights:  35%|███▍      | 368/1065 [00:01<00:03, 211.15it/s]Loading weights:  37%|███▋      | 393/1065 [00:01<00:03, 218.46it/s]Loading weights:  39%|███▉      | 415/1065 [00:02<00:02, 218.30it/s]Loading weights:  41%|████      | 437/1065 [00:02<00:02, 209.83it/s]Loading weights:  43%|████▎     | 459/1065 [00:02<00:02, 210.01it/s]Loading weights:  45%|████▌     | 484/1065 [00:02<00:02, 217.80it/s]Loading weights:  48%|████▊     | 507/1065 [00:02<00:02, 219.26it/s]Loading weights:  50%|████▉     | 529/1065 [00:02<00:02, 212.68it/s]Loading weights:  52%|█████▏    | 551/1065 [00:02<00:02, 202.52it/s]Loading weights:  54%|█████▍    | 576/1065 [00:02<00:02, 212.53it/s]Loading weights:  56%|█████▋    | 601/1065 [00:02<00:02, 220.05it/s]Loading weights:  59%|█████▊    | 624/1065 [00:03<00:02, 219.93it/s]Loading weights:  87%|████████▋ | 929/1065 [00:03<00:00, 1027.56it/s]Loading weights: 100%|██████████| 1065/1065 [00:03<00:00, 333.38it/s]
+[MODEL] Loaded. Parameters: 12.2B
+[SAE] Loading gemma-scope-2-12b-it-res / layer_41_width_16k_l0_medium
+[SAE] Loaded: 16384 features
+
+============================================================
+PHASE 1: Feature Extraction
+============================================================
+  [DISCOVERY 1] neutral... chaos... done
+  [DISCOVERY 2] neutral... chaos... done
+  [DISCOVERY 3] neutral... chaos... done
+  [DISCOVERY 4] neutral... chaos... done
+  [DISCOVERY 5] neutral... chaos... done
+  [DISCOVERY 6] neutral... chaos... done
+  [DISCOVERY 7] neutral... chaos... done
+  [DISCOVERY 8] neutral... chaos... done
+  [DISCOVERY 9] neutral... chaos... done
+  [DISCOVERY 10] neutral... chaos... done
+  [TEST 1] neutral... chaos... done
+  [TEST 2] neutral... chaos... done
+  [TEST 3] neutral... chaos... done
+  [TEST 4] neutral... chaos... done
+  [TEST 5] neutral... chaos... done
+  [TEST 6] neutral... chaos... done
+  [TEST 7] neutral... chaos... done
+  [TEST 8] neutral... chaos... done
+  [TEST 9] neutral... chaos... done
+  [TEST 10] neutral... chaos... done
+
+============================================================
+PHASE 2: Feature Selection (DISCOVERY set only)
+============================================================
+  Top-20 suppressed features: [7528, 12790, 6040, 297, 1462, 104, 261, 4155, 15249, 3296, 2889, 367, 5315, 1492, 1198, 4586, 664, 1118, 5882, 6198]
+  Top-10 boosted features: [9973, 3401, 870, 3507, 325, 2841, 888, 180, 3129, 375]
+  Random control features (20): [649, 685, 879, 1102, 1803, 1861, 2076, 2278, 2457, 3272, 3307, 3923, 5106, 7260, 8033, 9071, 12031, 12257, 12718, 13856]
+
+  Discovery-set suppression magnitudes (top-5):
+    Feature 7528: neutral=1206.5525, chaos=0.0000, diff=1206.5525
+    Feature 12790: neutral=1317.7401, chaos=316.3600, diff=1001.3801
+    Feature 6040: neutral=812.0570, chaos=83.9115, diff=728.1455
+    Feature 297: neutral=5790.5547, chaos=5170.9326, diff=619.6221
+    Feature 1462: neutral=9442.3252, chaos=8826.7002, diff=615.6250
+
+============================================================
+PHASE 3: Validation on HELD-OUT TEST set
+============================================================
+
+  Discovery-selected suppressed features on TEST set:
+    Mean suppression ratio: 0.2466 +/- 0.0476
+    Per-trial ratios: [0.2192, 0.2144, 0.2523, 0.2487, 0.2785, 0.2667, 0.2178, 0.209, 0.3595, 0.2]
+
+  Random control features on TEST set:
+    Mean suppression ratio: -0.0154 +/- 0.0457
+    Per-trial ratios: [0.02, 0.0247, -0.0099, -0.0811, 0.026, -0.081, -0.0166, 0.0483, -0.0374, -0.0472]
+
+============================================================
+PHASE 4: Statistical Tests
+============================================================
+
+  Paired t-test (discovery-selected vs random, 10 trials):
+    t = 11.0462
+    p = 0.000002
+    Cohen's d = 5.6159
+
+  One-sample t-test (discovery-selected > 0):
+    t = 16.3772
+    p = 0.000000
+
+  One-sample t-test (random > 0):
+    t = -1.0675
+    p = 0.313548
+
+  Feature-level validation:
+    15/20 discovery-selected features also significantly suppressed on test set (p < 0.05)
+    Feature 7528: disc_ratio=1.000, test_ratio=1.000, p=0.0014 [PASS]
+    Feature 12790: disc_ratio=0.760, test_ratio=0.765, p=0.0001 [PASS]
+    Feature 6040: disc_ratio=0.897, test_ratio=0.622, p=0.0032 [PASS]
+    Feature 297: disc_ratio=0.107, test_ratio=0.104, p=0.0000 [PASS]
+    Feature 1462: disc_ratio=0.065, test_ratio=0.063, p=0.0002 [PASS]
+    Feature 104: disc_ratio=0.673, test_ratio=0.747, p=0.0001 [PASS]
+    Feature 261: disc_ratio=0.118, test_ratio=0.130, p=0.0006 [PASS]
+    Feature 4155: disc_ratio=1.000, test_ratio=1.000, p=0.3434 [FAIL]
+    Feature 15249: disc_ratio=1.000, test_ratio=1.000, p=0.0052 [PASS]
+    Feature 3296: disc_ratio=0.187, test_ratio=0.172, p=0.0004 [PASS]
+
+============================================================
+PAPER-READY SUMMARY
+============================================================
+
+  Held-out validation of feature selection (Layer 41):
+  Discovery set: 10 prompt pairs -> top-20 suppressed features selected
+  Test set: 10 held-out prompt pairs
+
+  Discovery-selected features on test set:
+    Mean suppression ratio = 0.2466
+  Random control features on test set:
+    Mean suppression ratio = -0.0154
+  Paired t-test: t(9) = 11.046, p = 0.000002 ***
+  Effect size: Cohen's d = 5.616
+  Feature-level: 15/20 features validated (p < 0.05)
+
+  CONCLUSION: Feature selection is NOT circular. Discovery-selected features
+  show significantly greater suppression on the held-out test set than random
+  features (d = 5.62), confirming the effect generalizes to unseen prompts.
+
+[SAVED] /home/ubuntu/ICML/h100_deploy/results/held_out_validation_20260408_060230.json
+[DONE] Elapsed: 20.3s
