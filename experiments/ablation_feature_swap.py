@@ -439,8 +439,34 @@ def main():
         "recovery_from_ablation": recovery_from_ablation,
     }
 
-    # Save
+    # Provenance metadata — added 2026-04-09 to close audit finding C3
+    # (feature IDs must be persisted so paper claims are externally reproducible)
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    try:
+        import subprocess
+        git_head = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=str(Path(__file__).resolve().parent),
+            stderr=subprocess.DEVNULL,
+        ).decode().strip()
+    except Exception:
+        git_head = None
+    results["metadata"] = {
+        "script": "experiments/ablation_feature_swap.py",
+        "model_tag": args.model,
+        "model_id": cfg["model_id"],
+        "sae_release": cfg["sae_release"],
+        "layers": cfg["layers"],
+        "primary_layer": primary,
+        "task_feature_ids": [int(f) for f in task_feats],
+        "awareness_feature_ids": [int(f) for f in awareness_feats],
+        "sae_width": SAE_WIDTH,
+        "sae_l0": SAE_L0,
+        "max_new_tokens": MAX_NEW_TOKENS,
+        "timestamp": ts,
+        "git_head": git_head,
+    }
+
+    # Save
     out_path = OUTPUT_DIR / f"ablation_feature_swap_{args.model}_{ts}.json"
     with open(out_path, "w") as f:
         json.dump(results, f, indent=2, default=str)
