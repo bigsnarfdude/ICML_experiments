@@ -253,8 +253,8 @@ def plot_dissociation():
     ax1.set_ylim(-2, 38)
     ax1.grid(True, alpha=0.3)
 
-    # Right: task suppression increases
-    suppression = [56.0, 64.0, 86.3]
+    # Right: task suppression increases (3-feature mean, consistent across rows)
+    suppression = [56.0, 64.0, 71.7]
     ax2.plot(scales, suppression, 'o-', color='#3498db', linewidth=2.5, markersize=12)
     ax2.fill_between(scales, suppression, alpha=0.15, color='#3498db')
     for i, (s, sup) in enumerate(zip(scales, suppression)):
