@@ -22,7 +22,7 @@ from datetime import datetime
 import numpy as np
 import torch
 from scipy import stats
-from transformers import Gemma3ForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 RESULTS_DIR = os.path.join(os.path.expanduser("~"), "results")
 os.makedirs(RESULTS_DIR, exist_ok=True)
@@ -355,7 +355,7 @@ def main():
     # Load model
     print(f"\nLoading {MODEL_NAME}...")
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-    model = Gemma3ForCausalLM.from_pretrained(
+    model = AutoModelForCausalLM.from_pretrained(
         MODEL_NAME, torch_dtype=torch.bfloat16, device_map="auto",
     )
     model.eval()

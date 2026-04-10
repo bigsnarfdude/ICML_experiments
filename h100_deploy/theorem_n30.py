@@ -8,7 +8,7 @@ Mirrors behavioral_n30_dose.py structure for BVP domain.
 import json, os, re, sys, time
 from datetime import datetime
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, Gemma3ForCausalLM
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 RESULTS_DIR = os.path.expanduser("~/results")
 os.makedirs(RESULTS_DIR, exist_ok=True)
@@ -165,7 +165,7 @@ def main():
 
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         if model_info["gemma3"]:
-            model = Gemma3ForCausalLM.from_pretrained(
+            model = AutoModelForCausalLM.from_pretrained(
                 model_name, torch_dtype=torch.bfloat16, device_map="auto",
             )
         else:

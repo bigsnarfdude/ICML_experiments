@@ -19,7 +19,7 @@ from datetime import datetime
 import numpy as np
 import torch
 from scipy import stats
-from transformers import AutoModelForCausalLM, AutoTokenizer, Gemma3ForCausalLM
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 RESULTS_DIR = os.path.join(os.path.expanduser("~"), "results")
 os.makedirs(RESULTS_DIR, exist_ok=True)
@@ -257,7 +257,7 @@ def main():
 
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         if "gemma-3" in model_name:
-            model = Gemma3ForCausalLM.from_pretrained(
+            model = AutoModelForCausalLM.from_pretrained(
                 model_name,
                 torch_dtype=torch.bfloat16,
                 device_map="auto",

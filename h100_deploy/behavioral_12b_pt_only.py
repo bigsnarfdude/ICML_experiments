@@ -7,7 +7,7 @@ IT already completed on this box. Fresh boot = clean VRAM.
 import json, os, re, sys
 from datetime import datetime
 import torch
-from transformers import AutoTokenizer, Gemma3ForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
 RESULTS_DIR = os.path.expanduser("~/results")
 os.makedirs(RESULTS_DIR, exist_ok=True)
@@ -113,7 +113,7 @@ def main():
     print(f"Loading google/gemma-3-12b-pt (PT only, clean VRAM)...")
 
     tokenizer = AutoTokenizer.from_pretrained("google/gemma-3-12b-pt")
-    model = Gemma3ForCausalLM.from_pretrained(
+    model = AutoModelForCausalLM.from_pretrained(
         "google/gemma-3-12b-pt",
         torch_dtype=torch.bfloat16,
         device_map="auto",

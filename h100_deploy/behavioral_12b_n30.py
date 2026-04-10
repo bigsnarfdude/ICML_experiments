@@ -9,7 +9,7 @@ import json, os, re, gc
 from datetime import datetime
 import numpy as np
 import torch
-from transformers import Gemma3ForCausalLM, Gemma3ForConditionalGeneration, AutoTokenizer, AutoProcessor
+from transformers import AutoModelForCausalLM, AutoTokenizer, AutoProcessor
 from scipy import stats
 
 RESULTS_DIR = os.path.expanduser("~/results")
@@ -129,12 +129,12 @@ def run_model(model_name, is_it, device):
 
     if is_it:
         processor = AutoProcessor.from_pretrained(model_name)
-        model = Gemma3ForConditionalGeneration.from_pretrained(
+        model = AutoModelForCausalLM.from_pretrained(
             model_name, torch_dtype=torch.bfloat16, device_map="auto",
         )
     else:
         processor = AutoTokenizer.from_pretrained(model_name)
-        model = Gemma3ForCausalLM.from_pretrained(
+        model = AutoModelForCausalLM.from_pretrained(
             model_name, torch_dtype=torch.bfloat16, device_map="auto",
         )
     model.eval()

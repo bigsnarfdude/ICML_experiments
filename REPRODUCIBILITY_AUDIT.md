@@ -18,7 +18,7 @@ No pre-existing model weights or cached results. All features auto-discovered at
 | Awareness/task circuits independent | -0.4% recovery | 5.5% | 9.1% | **REPRODUCES** |
 | Hijacking distributed (no single layer) | 0% all layers | 0% all layers | 0% all layers | **REPRODUCES** |
 | PT recovers better than IT | — | PT 8.4% vs IT 5.5% | PT 21.4% vs IT 13.4% | **REPRODUCES** (directional) |
-| Behavioral effect significant | — | pending | p=0.016, d=1.14 | **REPRODUCES** |
+| Behavioral effect significant | — | INVALID (script bug) | p=0.016, d=1.14 | **REPRODUCES** (27B only) |
 | Held-out features generalize | 0.54 vs 0.15 random | — | — | **REPRODUCES** |
 | Cross-domain features (reviewer R3) | Jaccard 0.02-0.09 | — | — | **DOMAIN-SPECIFIC** |
 | Groot effect (86.3%) | — | — | 3/10 (30%) | **OVERSTATED** |
@@ -102,6 +102,14 @@ Hijacking is fully distributed — no single layer mediates it.
 
 The behavioral effect is real and statistically significant.
 The Groot pattern (mentions both + adopts chaos framing) occurs but at 30%, not 86.3%.
+
+### Experiment 4b: Behavioral 12B — INVALID
+
+- 12B-IT: All 20 trials returned empty responses (scored 1/3)
+- 12B-PT: All 20 trials returned degenerate output (colons only, scored 1/3)
+- Result: neutral=1.00, chaos=1.00, Δ=0.00, p=1.0000 — **NO EFFECT**
+
+**Root cause:** `behavioral_12b.py` line 17 imported `Gemma3ForCausalLM` (a multimodal class) instead of `AutoModelForCausalLM`. This caused broken text generation on transformers 5.x. Same bug was fixed in `multilayer_orthogonality_27b.py` during this audit. **Fix applied** — script now uses `AutoModelForCausalLM`. Needs re-run to get valid 12B behavioral data.
 
 ### Experiment 5: Orthogonality to Alignment Faking (27B-IT)
 
