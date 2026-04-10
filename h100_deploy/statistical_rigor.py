@@ -75,75 +75,90 @@ CHAOS_VARIANTS = [
 ]
 
 
-def load_model_and_sae(model_name, sae_path, layers, device):
-    """Load model and SAE weights."""
+SAE_WIDTH = "16k"
+SAE_L0 = "medium"
+
+
+def load_model_and_sae(model_name, sae_release, layers, device):
+    """Load model and sae_lens SAEs (one per layer)."""
     from transformers import AutoTokenizer, AutoModelForCausalLM
+    from sae_lens import SAE
 
     print(f"Loading {model_name}...")
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
-        torch_dtype=torch.float16,
+        torch_dtype=torch.bfloat16,
         device_map=device,
-        output_hidden_states=True,
     )
     model.eval()
     print(f"  Model loaded on {device}")
 
-    # Load SAE weights
-    sae_weights = {}
-    if sae_path:
-        try:
-            from safetensors.torch import load_file
-            for layer in layers:
-                # Try common naming patterns
-                for pattern in [
-                    f"{sae_path}/layer_{layer}/sae_weights.safetensors",
-                    f"{sae_path}/layer{layer}/sae_weights.safetensors",
-                    f"{sae_path}/l{layer}_r16k/sae_weights.safetensors",
-                ]:
-                    p = Path(pattern)
-                    if p.exists():
-                        sae_weights[layer] = load_file(str(p))
-                        print(f"  Loaded SAE for layer {layer}")
-                        break
-                else:
-                    print(f"  WARNING: No SAE found for layer {layer}")
-        except Exception as e:
-            print(f"  SAE loading error: {e}")
-            print("  Will compute raw hidden state norms as fallback")
+    saes = {}
+    for layer in layers:
+        sae_id = f"layer_{layer}_width_{SAE_WIDTH}_l0_{SAE_L0}"
+        print(f"  Loading SAE: {sae_release} / {sae_id}")
+        sae = SAE.from_pretrained(release=sae_release, sae_id=sae_id)
+        if isinstance(sae, tuple):
+            sae = sae[0]
+        sae = sae.to(device).eval()
+        saes[layer] = sae
+        print(f"  SAE layer {layer}: {sae.cfg.d_sae} features")
 
-    return model, tokenizer, sae_weights
+    return model, tokenizer, saes
 
 
-def extract_features(model, tokenizer, sae_weights, text, layers, device):
-    """Extract SAE feature activations for given text."""
-    inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=512)
-    inputs = {k: v.to(device) for k, v in inputs.items()}
+def get_layer_module(model, layer_idx):
+    """Find the decoder layer module."""
+    target_suffix = f'.layers.{layer_idx}'
+    for name, mod in model.named_modules():
+        if name.endswith(target_suffix) and 'DecoderLayer' in type(mod).__name__:
+            return mod
+    for name, mod in model.named_modules():
+        if name.endswith(target_suffix):
+            return mod
+    raise AttributeError(f"Cannot find layer {layer_idx}")
 
-    with torch.no_grad():
-        outputs = model(**inputs, output_hidden_states=True)
 
-    features = {}
-    hidden_states = outputs.hidden_states  # tuple of (batch, seq, hidden)
+def build_prompt(tokenizer, text):
+    """Build chat prompt and return input_ids tensor."""
+    messages = [{"role": "user", "content": text}]
+    out = tokenizer.apply_chat_template(
+        messages, tokenize=True, add_generation_prompt=True, return_tensors="pt"
+    )
+    return out if isinstance(out, torch.Tensor) else out.input_ids
+
+
+def extract_features(model, tokenizer, saes, text, layers, device):
+    """Extract last-token SAE feature activations via forward hooks."""
+    input_ids = build_prompt(tokenizer, text).to(device)
+    if input_ids.dim() == 1:
+        input_ids = input_ids.unsqueeze(0)
+
+    captured = {}
+    handles = []
 
     for layer in layers:
-        hs = hidden_states[layer][0]  # (seq, hidden)
-        # Mean pool across sequence
-        hs_mean = hs.mean(dim=0)  # (hidden,)
+        sae = saes[layer]
 
-        if layer in sae_weights and 'W_enc' in sae_weights[layer]:
-            W_enc = sae_weights[layer]['W_enc'].to(device).to(hs_mean.dtype)
-            b_enc = sae_weights[layer].get('b_enc', torch.zeros(W_enc.shape[0])).to(device).to(hs_mean.dtype)
-            # JumpReLU: act = ReLU(W_enc @ x + b_enc)
-            pre_act = hs_mean @ W_enc.T + b_enc
-            act = torch.relu(pre_act)
-            features[layer] = act.cpu().numpy()
-        else:
-            # Fallback: use raw hidden state as pseudo-features
-            features[layer] = hs_mean.cpu().numpy()
+        def make_hook(sae_ref, layer_id):
+            def hook_fn(module, input, output):
+                act = output[0] if isinstance(output, tuple) else output
+                with torch.no_grad():
+                    feat_acts = sae_ref.encode(act.to(sae_ref.device).to(sae_ref.dtype))
+                    captured[layer_id] = feat_acts[0, -1, :].cpu().float().numpy()
+            return hook_fn
 
-    return features
+        handle = get_layer_module(model, layer).register_forward_hook(make_hook(sae, layer))
+        handles.append(handle)
+
+    with torch.no_grad():
+        model(input_ids)
+
+    for h in handles:
+        h.remove()
+
+    return captured
 
 
 def bootstrap_ci(data, n_boot=10000, ci=0.95):
@@ -172,7 +187,7 @@ def cohens_d(group1, group2):
 def main():
     parser = argparse.ArgumentParser(description="Statistical rigor experiments")
     parser.add_argument("--model", default="google/gemma-3-4b-it")
-    parser.add_argument("--sae-path", default=None, help="Path to SAE weights directory")
+    parser.add_argument("--sae-release", default=None, help="SAE release name (auto-detected from model if omitted)")
     parser.add_argument("--layers", nargs="+", type=int, default=[17, 22])
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--n-trials", type=int, default=20)
@@ -182,8 +197,20 @@ def main():
     output_dir = Path.cwd() / "results"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    model, tokenizer, sae_weights = load_model_and_sae(
-        args.model, args.sae_path, args.layers, args.device
+    # Auto-detect SAE release from model name
+    sae_release = args.sae_release
+    if not sae_release:
+        if "4b" in args.model:
+            sae_release = "gemma-scope-2-4b-it-res"
+        elif "12b" in args.model:
+            sae_release = "gemma-scope-2-12b-it-res"
+        elif "27b" in args.model:
+            sae_release = "gemma-scope-2-27b-it-res"
+        else:
+            raise ValueError(f"Cannot auto-detect SAE release for {args.model}. Use --sae-release.")
+
+    model, tokenizer, saes = load_model_and_sae(
+        args.model, sae_release, args.layers, args.device
     )
 
     n_trials = min(args.n_trials, len(NEUTRAL_VARIANTS))
@@ -200,10 +227,10 @@ def main():
         chaos_text = CHAOS_VARIANTS[i] + "\n\n" + NEUTRAL_VARIANTS[i]
 
         neutral_features = extract_features(
-            model, tokenizer, sae_weights, neutral_text, args.layers, args.device
+            model, tokenizer, saes, neutral_text, args.layers, args.device
         )
         chaos_features = extract_features(
-            model, tokenizer, sae_weights, chaos_text, args.layers, args.device
+            model, tokenizer, saes, chaos_text, args.layers, args.device
         )
 
         trial = {"trial": i}
