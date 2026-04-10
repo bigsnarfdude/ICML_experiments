@@ -18,7 +18,7 @@ No pre-existing model weights or cached results. All features auto-discovered at
 | Awareness/task circuits independent | -0.4% recovery | 5.5% | 9.1% | **REPRODUCES** |
 | Hijacking distributed (no single layer) | 0% all layers | 0% all layers | 0% all layers | **REPRODUCES** |
 | PT recovers better than IT | — | PT 8.4% vs IT 5.5% | PT 21.4% vs IT 13.4% | **REPRODUCES** (directional) |
-| Behavioral effect significant | — | INVALID (script bug) | p=0.016, d=1.14 | **REPRODUCES** (27B only) |
+| Behavioral effect significant | — | IT p=0.006 d=1.38 / PT p=0.026 d=1.07 | p=0.016, d=1.14 | **REPRODUCES** |
 | Held-out features generalize | 0.54 vs 0.15 random | — | — | **REPRODUCES** |
 | Cross-domain features (reviewer R3) | Jaccard 0.02-0.09 | — | — | **DOMAIN-SPECIFIC** |
 | Groot effect (86.3%) | — | — | 3/10 (30%) | **OVERSTATED** |
@@ -103,13 +103,18 @@ Hijacking is fully distributed — no single layer mediates it.
 The behavioral effect is real and statistically significant.
 The Groot pattern (mentions both + adopts chaos framing) occurs but at 30%, not 86.3%.
 
-### Experiment 4b: Behavioral 12B — INVALID
+### Experiment 4b: Behavioral 12B (both IT and PT)
 
-- 12B-IT: All 20 trials returned empty responses (scored 1/3)
-- 12B-PT: All 20 trials returned degenerate output (colons only, scored 1/3)
-- Result: neutral=1.00, chaos=1.00, Δ=0.00, p=1.0000 — **NO EFFECT**
+After fixing the `Gemma3ForCausalLM` → `AutoModelForCausalLM` import bug, re-run produced valid results:
 
-**Root cause:** `behavioral_12b.py` line 17 imported `Gemma3ForCausalLM` (a multimodal class) instead of `AutoModelForCausalLM`. This caused broken text generation on transformers 5.x. Same bug was fixed in `multilayer_orthogonality_27b.py` during this audit. **Fix applied** — script now uses `AutoModelForCausalLM`. Needs re-run to get valid 12B behavioral data.
+| Model | Neutral | Chaos | Δ | p | Cohen's d | Groot |
+|-------|---------|-------|---|---|-----------|-------|
+| 12B-IT | 2.30 | 1.40 | +0.90 | **0.0062** | **1.38** | 3/10 |
+| 12B-PT | 1.90 | 1.20 | +0.70 | **0.0261** | **1.07** | 5/10 |
+
+Both effects are large (d > 1.0) and statistically significant. The 12B-IT effect is actually **stronger** than the 27B-IT effect (d=1.38 vs d=1.14). PT shows a notable Groot rate (50%) — the base model mentions both branches and adopts chaos framing more often than the IT model.
+
+**First run was INVALID** — all 20 12B-IT trials returned empty strings, all 20 12B-PT trials returned degenerate colon repetition, due to `Gemma3ForCausalLM` (a multimodal class) failing to generate properly on transformers 5.x. Same bug was present in 8 other h100_deploy scripts; all fixed in commit `ea3b004`.
 
 ### Experiment 5: Orthogonality to Alignment Faking (27B-IT)
 
