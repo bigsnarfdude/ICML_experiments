@@ -32,9 +32,11 @@ CONFIGS = {
         "sae_release": "gemma-scope-2-4b-it-res",
         "layers": [17, 22],
         "primary_layer": 22,
-        # Known feature IDs from original experiment
-        "task_features": [149, 453, 552],      # negative branch encoding
-        "awareness_features": [50, 186, 188],   # manipulation awareness
+        # Auto-discover (was hardcoded [149,453,552] / [50,186,188] from A100 run;
+        # those features do not fire on H100, so we rediscover per-run to make the
+        # pipeline GPU-invariant and reproducible from a clean clone).
+        "task_features": None,
+        "awareness_features": None,
     },
     "12b": {
         "model_id": "google/gemma-3-12b-it",
