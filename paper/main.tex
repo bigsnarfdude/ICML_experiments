@@ -31,7 +31,7 @@ Using sparse autoencoder (SAE) features from \gemmascope across \gemma models at
 At 27B, instruction-tuned models show 86.3\% single-feature task suppression while still mentioning the suppressed information verbally---a behavioral--representational split we term the \emph{Groot effect}.
 Base (pretrained) 27B models retain substantially more awareness--defense coupling (74.1\% recovery vs.\ 9.0\% for IT, measured with a shared feature set), confirming post-training as the causal factor; SAE-level replication on Llama~3.1 8B shows the same IT-vs-base pattern ($d = 1.51$ vs.\ $0.50$, $p = 0.001$ vs.\ $0.166$), demonstrating cross-family generality.
 The hijacking mechanism is orthogonal to alignment faking at Layer~40 (cosine similarity $-0.0456$, top-50 feature overlap $=0$), requiring independent defenses.
-We propose feature trajectory monitoring as a real-time detection method.
+The dissociation produces a measurable within-session activation drop that persists at 27B in 5-turn sessions and transfers across task families using BVP-frozen features ($d = -0.95$ on a theorem-proving battery, $n = 30$).
 \end{abstract}
 
 %% ============================================================
@@ -63,7 +63,7 @@ Our contributions are:
     \item \textbf{Dissociation scaling trend.} Scaling to 12B and 27B, we show awareness--defense coupling degrades consistently with scale (\S\ref{sec:scaling}).
     \item \textbf{Causal evidence from IT vs.\ PT.} Comparing instruction-tuned and pretrained 27B models across three ablation methods, we establish post-training (SFT + RLHF) as the causal factor, with cross-family replication on Llama~3.1 8B (\S\ref{sec:it_creates}).
     \item \textbf{Orthogonality to alignment faking.} We show the hijacking feature subspace is orthogonal to alignment-faking features at 27B-IT Layer~40 (cosine similarity $-0.0456$, Spearman $\rho = 0.008$), requiring independent defenses (\S\ref{sec:orthogonality}).
-    \item \textbf{Defense directions.} We outline feature trajectory monitoring as a candidate detection method and identify the signal properties that would enable it (\S\ref{sec:defense}).
+    \item \textbf{Multi-turn persistence and cross-domain transfer.} The dissociation produces a measurable within-session activation drop that persists at 27B in 5-turn sessions and transfers across task families using BVP-frozen features ($d = -0.95$ on a theorem-proving battery, $n = 30$; \S\ref{sec:multiturn}).
 \end{enumerate}
 
 %% ============================================================
@@ -262,7 +262,7 @@ Feature sets are obtained by ranking all 16K SAE features by $|\mu_{\text{neutra
 Because discovery and evaluation share a prompt battery, the in-sample suppression numbers (e.g., 86.3\% on feature 423) are subject to selection bias.
 We mitigate this three ways.
 (i)~\emph{Held-out validation} at 4B recovers 85\% of the original features on a disjoint prompt set ($p = 8 \times 10^{-6}$, Table~\ref{tab:heldout}).
-(ii)~\emph{OOD behavior at 27B}: the Jenga evaluation (\S\ref{sec:defense}) re-uses the canonical IT set $\{423, 7657, 632\}$ on multi-turn sessions built from \texttt{lmsys-chat-1m} and still separates attack from control at $|d| = 1.74$.
+(ii)~\emph{Multi-turn persistence at 27B}: the within-session evaluation (\S\ref{sec:multiturn}) re-uses the canonical IT set $\{423, 7657, 632\}$ on 5-turn BVP sessions and separates attack from on-domain neutral controls at Cohen's $d = -1.54$ ($95\%$ CI $[-2.77, -0.85]$).
 (iii)~\emph{Cross-battery transfer} (\texttt{transfer\_feature\_discovery\_27b.py}): the same canonical set, frozen after BVP discovery, suppresses \textbf{+51.7\%} on an independent theorem-proving battery ($97.6 \to 47.1$), providing non-circular evidence that the circuit is not a prompt-battery artifact.
 We report one cautionary null from the same run: top-10 features re-discovered \emph{de novo} on each battery show zero Jaccard overlap, so the differential ranking is battery-specific even though the canonical circuit transfers.\footnote{The +5.9\% in-sample BVP number for the 3-feature set in this run uses a generated-token mean and is not directly comparable to the per-feature 86.3\% cited above, which comes from the feature-swap ablation protocol on a single feature.}
 
@@ -612,6 +612,14 @@ At 4B the IT effect is $1.5\times$ larger than Base (1.34 vs.\ 0.87), consistent
 We read this as evidence that proof-strategy framing is more universally susceptible than the symmetric-branch framing used for BVP---at larger scales, base models pick up enough mathematical-sociological priors (``SOS is the canonical method'') to be hijacked on this domain without any instruction tuning.
 We do not apply family-wise correction (e.g., Bonferroni) across Tables~\ref{tab:behavioral}--\ref{tab:theorem}; the inferential strategy is the \emph{pattern} of IT vulnerability across all cells rather than any individual test.
 
+\subsection{Multi-turn persistence and cross-domain transfer}
+\label{sec:multiturn}
+
+The single-prompt evaluations above understate the dissociation: a fresh context rarely tips on a lone framing turn. We therefore evaluate the same \gemma 27B-IT auto-discovered features ($F_{\text{task}} = \{423, 7657, 632\}$, Layer~40) on 5-turn sessions and measure the within-session activation drop $\Delta_{\text{drop}} = a_{\text{task}}^{(5)} - \overline{a_{\text{task}}^{(1\text{--}4)}}$ in raw SAE units (\texttt{ftm\_jenga\_27b\_v2.py}, \texttt{ftm\_jenga\_theorem\_n30.py}).
+On the original BVP family, attack sessions (four neutral turns + one chaos turn, $n = 10$) drop further than on-domain neutral controls ($n = 20$) by Cohen's $d = -1.54$ ($95\%$ CI $[-2.77, -0.85]$); the dissociation persists across realistic multi-turn sessions on the same task family used for feature discovery.
+To rule out circular feature selection, we then re-use the \emph{same} BVP-discovered features unchanged on a disjoint theorem-proving battery (sum-of-squares framing of a polynomial inequality; $n = 30$ attack and $n = 30$ control sessions). The features still separate attack from control at $d = -0.955$ ($95\%$ CI $[-1.44, -0.52]$; Welch $t = -3.70$, $p = 0.00048$).
+The features identified on BVP indexing therefore generalize across task families. Whether they index a domain-general ``sustained-task'' circuit rather than a BVP-specific one is an open question we leave for future work.
+
 %% ============================================================
 %% 6. RELATIONSHIP TO ALIGNMENT FAKING
 %% ============================================================
@@ -647,90 +655,11 @@ Table~\ref{tab:orthogonality} shows the two feature subspaces are effectively or
 Probes trained on alignment-faking features \citep{bricken2023towards} provide no protection against hijacking.
 A multi-layer sweep at 27B-IT (L10, L22, L31, L40, L50) yields mean $|\cos| = 0.0405$ with every layer remaining in $[-0.053, -0.023]$, confirming that orthogonality is not a single-layer artifact but holds across the network depth where task-relevant computation occurs.
 
-%% ============================================================
-%% 7. DEFENSE: FEATURE TRAJECTORY MONITORING
-%% ============================================================
-\section{Defense: Feature Trajectory Monitoring}
-\label{sec:defense}
-
-Conventional defenses are inadequate: content filtering fails (only true statements), behavioral monitoring fails (Groot effect, \S\ref{sec:groot}), layer-wise interventions fail (distributed hijacking, \S\ref{sec:distributed}), and alignment-faking probes fail (orthogonal subspaces, \S\ref{sec:orthogonality}).
-
-We propose \textbf{feature trajectory monitoring}: the Groot effect produces a distinctive \emph{feature-level} signature (task features suppress while awareness features boost) that is detectable in real time by monitoring SAE activations across turns.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{figures/feature_trajectory.pdf}
-\caption{Schematic of feature trajectory monitoring. Task features (solid) and awareness features (dashed) diverge under hijacking; the detection threshold (gray band) triggers when the trajectories cross. The suppression signal is detected in all 60 tested trials (\S\ref{sec:defense}).}
-\label{fig:trajectory}
-\end{figure}
-
-Specifically, we propose monitoring the following signal:
-\begin{equation}
-    \Delta(t) = \frac{1}{|F_{\text{task}}|}\sum_{f \in F_{\text{task}}} a_f(t) - \frac{1}{|F_{\text{aware}}|}\sum_{f \in F_{\text{aware}}} a_f(t)
-\label{eq:delta}
-\end{equation}
-where $F_{\text{task}}$ and $F_{\text{aware}}$ are the identified task and awareness feature sets, $a_f(t)$ is the activation of feature $f$ at turn $t$, and $\Delta(t)$ measures the gap between task health and awareness activation.
-
-\paragraph{Threat model: adversarial in-context learning.}
-Single-prompt evaluations of \eqref{eq:delta} underestimate the phenomenon: our own single-shot pilot at 27B-IT L40 gave $d = 0.27$, because a lone chaos prompt rarely tips a fresh context.
-The realistic threat is cumulative: a colleague agent drips plausible true framings across multiple turns of a shared session, and the target's task features erode turn over turn.
-We therefore evaluate FTM as a \emph{within-session} tilt detector: given a 5-turn conversation, does the trajectory of task-feature activation bend downward faster than it would in an unmanipulated session of the same length?
-
-\paragraph{Jenga evaluation at 27B-IT L40.}
-We construct three condition sets of 5-turn sessions using the 27B-IT auto-discovered features ($F_{\text{task}} = \{423, 7657, 632\}$, $F_{\text{aware}} = \{2119, 139, 9169\}$, Layer~40; \texttt{ftm\_jenga\_27b.py}).
-\textsc{Attack} sessions ($n = 10$) present four neutral BVP turns followed by one chaos turn; \textsc{Control} sessions ($n = 10$) present five neutral BVP turns; \textsc{Benign} sessions ($n = 50$) use the first five user turns from LMSYS-Chat-1M \citep{zheng2024lmsys} as an off-domain background.
-Each turn is generated greedily (64 tokens) with the full chat history re-fed, and residual-stream activations at generated-token positions are SAE-encoded.
-We summarize each session by $z_{\text{task}} = (\bar a_{\text{task}}^{(5)} - \mu_{1\text{--}4}) / (\sigma_{1\text{--}4} + \varepsilon)$: how many standard deviations the final-turn task activation falls below its own earlier trajectory.
-Attack sessions show mean $z_{\text{task}} = -2.33$ ($\sigma = 0.84$) versus $-0.02$ ($\sigma = 1.68$) for control---a within-session tilt of $|d| = 1.74$ (Mann-Whitney $U$, $p = 0.0023$).
-At an operating point of $\tau = -1.65$, attacks are detected at TPR $= 0.80$ (Table~\ref{tab:jenga}) while benign lmsys sessions yield FPR $= 0.14$ and neutral BVP controls FPR $= 0.10$; the full 15-point $\tau$ sweep is reported in the supplementary JSON.
-Critically, the same attack turns score on average $2.33\sigma$ below their own preceding trajectory---a contrast that single-shot scoring necessarily destroys.
-
-\begin{table}[t]
-\centering
-\caption{FTM Jenga detection at \gemma 27B-IT Layer~40 ($n = 10$ attack, $10$ control, $50$ benign lmsys-chat-1m sessions; 5 turns each; 64 greedy tokens/turn). The single-prompt baseline collapses to $d = 0.27$ on the same model and features; the within-session Jenga formulation recovers $|d| = 1.74$.}
-\label{tab:jenga}
-\small
-\begin{tabular}{@{}lcccc@{}}
-\toprule
-$\tau$ ($z_{\text{task}}$) & Attack TPR & lmsys FPR & Control FPR \\
-\midrule
-$-2.46$ & 0.40 & 0.06 & 0.10 \\
-$-2.06$ & 0.60 & 0.08 & 0.10 \\
-$-1.65$ & 0.80 & 0.14 & 0.10 \\
-$-1.40$ & 0.90 & 0.22 & 0.10 \\
-$-1.17$ & 0.90 & 0.26 & 0.30 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.85\columnwidth]{figures/jenga_roc.pdf}
-\caption{FTM Jenga detection curves at \gemma 27B-IT Layer~40 from the 15-point $\tau$ sweep. The within-session $z_{\text{task}}$ statistic separates adversarial sessions from both off-domain benign (lmsys-chat-1m) and on-domain neutral controls across a wide range of operating points. The marked point ($\tau = -1.65$, Attack TPR = 0.80, benign FPR = 0.14) is the one discussed in the text; we emphasize this is a mechanism signature rather than a deployable content-safety classifier.}
-\label{fig:jenga_roc}
-\end{figure}
-
-\paragraph{Signature, not classifier.}
-We want to be explicit about what Table~\ref{tab:jenga} does and does not support.
-It shows that the awareness--defense dissociation leaves a measurable \emph{within-session mechanistic fingerprint} at the scale (27B-IT) where the dissociation is strongest and on the exact features our mechanistic analysis predicts.
-It does \emph{not} support a claim that FTM is a deployable content-safety classifier: the benign baseline is a single multi-turn corpus, the feature set is the one discovered on the same task family, and the operating point involves a tradeoff that a production system would need to tune against a much broader benign distribution.
-We therefore position FTM as a \emph{mechanism signature}: evidence that the Groot effect is detectable at the SAE level in realistic multi-turn sessions, and a concrete pointer to where an eventual detector would need to look (within-session trajectories of task-feature activation, not per-prompt content).
-Engineering a deployable detector---larger benign corpora, adaptive thresholds, non-circular feature discovery, and adversarial evaluation against attackers who know about $\Delta(t)$---is future work.
-
-\paragraph{Per-feature FPR analysis (4B).}
-For the smaller \gemma 4B model, where we retain the original $F_{\text{task}} = \{1716, 12023, 1704, 1555, 1548\}$, we ran a complementary false-positive evaluation across 170 prompts in 8 categories (general QA, coding, creative writing, non-BVP math, science, advice, ethics, history).
-Individual features show 2--6\% cross-domain leakage; \emph{conjunction monitoring} ($\geq 2$ task features co-active) reduces FPR to $1/160 = 0.6\%$, and cross-domain SAE analysis confirms suppressed feature sets share $<$3\% Jaccard overlap across BVP, factual QA, and code review.
-This 4B conjunction result is consistent with the 27B Jenga result---task-feature activity is genuinely domain-specific---but it is a per-prompt static probe, not a within-session dynamic one.
-
-\paragraph{Why not patch instead of monitor?}
-We tested feature clamping (restoring task features at L22 to neutral means) and steering vectors ($\alpha \in \{1, 3, 5\}$) on \gemma 4B-IT.
-Neither recovers behavioral quality: clamping achieves 0\% recovery; steering degrades output ($-22$\% to $-56$\%).
-This confirms the distributed hijacking finding (\S\ref{sec:distributed})---single-layer repair cannot restore severed coupling.
-Independent validation from \citet{sadanandan2026psfmed}---who use \gemmascope SAEs on MedGemma~4B to identify a causal L17 framing feature, recovering 45\% logit margin via ablation---confirms that SAE-identified features are causally actionable, even if the corresponding repair is not.
-We note that the underlying mechanism generalizes beyond multi-agent settings to any mixed-trust context (see Impact Statement).
+\paragraph{Single-layer patching does not repair the coupling.}
+We tested feature clamping (restoring task features at L22 to neutral means) and steering vectors ($\alpha \in \{1, 3, 5\}$) on \gemma 4B-IT. Neither recovers behavioral quality: clamping achieves 0\% recovery; steering degrades output ($-22$\% to $-56$\%). This is consistent with the distributed hijacking finding (\S\ref{sec:distributed})---a single-layer intervention cannot restore severed coupling. Independent validation from \citet{sadanandan2026psfmed}, who use \gemmascope SAEs on MedGemma~4B to identify a causal L17 framing feature recovering 45\% logit margin via ablation, confirms that SAE-identified features are causally actionable even when the corresponding repair is not.
 
 %% ============================================================
-%% 8. LIMITATIONS
+%% 7. LIMITATIONS
 %% ============================================================
 \section{Limitations}
 \label{sec:limitations}
@@ -738,12 +667,12 @@ We note that the underlying mechanism generalizes beyond multi-agent settings to
 The full dissociation scaling trend has been verified only within \gemma; behavioral replication on Llama~3.1 confirms the IT-vs-base direction but not the scale dependence.
 Feature identification involved manual inspection of SAE activations, mitigated by held-out validation (85\% replication, $p = 8 \times 10^{-6}$) and consistency across three ablation methods.
 Stage attribution (\S\ref{sec:tulu3}) relies on a single public pipeline (Tulu~3 on Llama~3.1 8B); whether Gemma's proprietary post-training follows the same SFT-dominant pattern cannot be verified without internal checkpoints.
-The FTM Jenga evaluation (\S\ref{sec:defense}) uses 10/10/50 sessions at a single scale (27B-IT) and a single benign corpus (\texttt{lmsys-chat-1m}); the reported operating point is a mechanism signature rather than a deployable detector, and adversarial evaluation against attackers who know about $\Delta(t)$ remains future work.
+The within-session multi-turn evaluation (\S\ref{sec:multiturn}) is run only at \gemma 27B-IT Layer~40, with $n = 10$ BVP attack / $n = 20$ BVP control sessions and $n = 30$ theorem attack / $n = 30$ theorem control sessions; we report effect sizes with bootstrap CIs but make no deployment claim.
 We do not evaluate inference-time reasoning models (o1, DeepSeek R1-style).
 Two predictions follow: extended CoT gives the attacker more tokens to accumulate framing pressure (Jenga-style amplification), while explicit deliberation may trigger awareness circuits often enough to partially mitigate suppression---we expect the former to dominate when the attacker has read access to the reasoning trace, and flag this as the highest-leverage next experiment on open reasoning models.
 
 %% ============================================================
-%% 9. CONCLUSION
+%% 8. CONCLUSION
 %% ============================================================
 \section{Conclusion}
 \label{sec:conclusion}
