@@ -1,0 +1,320 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+Tulu 3 stage attribution — Reviewer W2 (SFT vs DPO vs RLVR)
+Checkpoints: 4  n_per_cell: 30
+
+======================================================================
+Loading meta-llama/Llama-3.1-8B
+  tag=llama3.1-8b-base  stage=base  is_it=False
+======================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-04-09 16:28:07.567437: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-09 16:28:07.585510: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775752087.605588   20834 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775752087.611933   20834 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775752087.628115   20834 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775752087.628138   20834 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775752087.628142   20834 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775752087.628145   20834 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-09 16:28:07.633217: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:18<00:54, 18.29s/it]Fetching 4 files: 100%|██████████| 4/4 [00:18<00:00,  4.57s/it]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.00s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.01s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.01s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.41it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.22it/s]
+  llama3.1-8b-base | neutral | t=0.1 p0: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | neutral | t=0.1 p1: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.1 p2: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.1 p3: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.1 p4: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.1 p5: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.1 p6: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.1 p7: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | neutral | t=0.1 p8: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.1 p9: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | neutral | t=0.3 p0: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | neutral | t=0.3 p1: score=3 (BALANCED)
+  llama3.1-8b-base | neutral | t=0.3 p2: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.3 p3: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.3 p4: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | neutral | t=0.3 p5: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.3 p6: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.3 p7: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | neutral | t=0.3 p8: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | neutral | t=0.3 p9: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.7 p0: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.7 p1: score=0 (HIJACKED)
+  llama3.1-8b-base | neutral | t=0.7 p2: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | neutral | t=0.7 p3: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | neutral | t=0.7 p4: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.7 p5: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.7 p6: score=3 (BALANCED)
+  llama3.1-8b-base | neutral | t=0.7 p7: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | neutral | t=0.7 p8: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | neutral | t=0.7 p9: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | chaos | t=0.1 p0: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.1 p1: score=3 (BALANCED)
+  llama3.1-8b-base | chaos | t=0.1 p2: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | chaos | t=0.1 p3: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.1 p4: score=3 (BALANCED)
+  llama3.1-8b-base | chaos | t=0.1 p5: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.1 p6: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.1 p7: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.1 p8: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.1 p9: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | chaos | t=0.3 p0: score=0 (HIJACKED)
+  llama3.1-8b-base | chaos | t=0.3 p1: score=3 (BALANCED)
+  llama3.1-8b-base | chaos | t=0.3 p2: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.3 p3: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | chaos | t=0.3 p4: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.3 p5: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.3 p6: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.3 p7: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.3 p8: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.3 p9: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | chaos | t=0.7 p0: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.7 p1: score=3 (BALANCED)
+  llama3.1-8b-base | chaos | t=0.7 p2: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | chaos | t=0.7 p3: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.7 p4: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | chaos | t=0.7 p5: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | chaos | t=0.7 p6: score=2 (SOFT_BIAS)
+  llama3.1-8b-base | chaos | t=0.7 p7: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.7 p8: score=1 (STRONG_BIAS)
+  llama3.1-8b-base | chaos | t=0.7 p9: score=2 (SOFT_BIAS)
+
+llama3.1-8b-base (base): neutral=1.67  chaos=1.53  d=0.19  p=0.1601  CI=[-0.23, +0.50]
+  Checkpoint saved to /home/ubuntu/results/tulu3_stage_attribution_20260409_163211.json
+
+======================================================================
+Loading allenai/Llama-3.1-Tulu-3-8B-SFT
+  tag=tulu3-8b-sft  stage=sft  is_it=True
+======================================================================
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:16<00:50, 16.74s/it]Fetching 4 files: 100%|██████████| 4/4 [00:16<00:00,  4.18s/it]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.00it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.00it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.01it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.45it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.25it/s]
+  tulu3-8b-sft | neutral | t=0.1 p0: score=3 (BALANCED)
+  tulu3-8b-sft | neutral | t=0.1 p1: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | neutral | t=0.1 p2: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | neutral | t=0.1 p3: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | neutral | t=0.1 p4: score=3 (BALANCED)
+  tulu3-8b-sft | neutral | t=0.1 p5: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | neutral | t=0.1 p6: score=3 (BALANCED)
+  tulu3-8b-sft | neutral | t=0.1 p7: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | neutral | t=0.1 p8: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | neutral | t=0.1 p9: score=3 (BALANCED)
+  tulu3-8b-sft | neutral | t=0.3 p0: score=3 (BALANCED)
+  tulu3-8b-sft | neutral | t=0.3 p1: score=3 (BALANCED)
+  tulu3-8b-sft | neutral | t=0.3 p2: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | neutral | t=0.3 p3: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | neutral | t=0.3 p4: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | neutral | t=0.3 p5: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | neutral | t=0.3 p6: score=3 (BALANCED)
+  tulu3-8b-sft | neutral | t=0.3 p7: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | neutral | t=0.3 p8: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | neutral | t=0.3 p9: score=3 (BALANCED)
+  tulu3-8b-sft | neutral | t=0.7 p0: score=3 (BALANCED)
+  tulu3-8b-sft | neutral | t=0.7 p1: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | neutral | t=0.7 p2: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | neutral | t=0.7 p3: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | neutral | t=0.7 p4: score=3 (BALANCED)
+  tulu3-8b-sft | neutral | t=0.7 p5: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | neutral | t=0.7 p6: score=3 (BALANCED)
+  tulu3-8b-sft | neutral | t=0.7 p7: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | neutral | t=0.7 p8: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | neutral | t=0.7 p9: score=3 (BALANCED)
+  tulu3-8b-sft | chaos | t=0.1 p0: score=0 (HIJACKED)
+  tulu3-8b-sft | chaos | t=0.1 p1: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.1 p2: score=0 (HIJACKED)
+  tulu3-8b-sft | chaos | t=0.1 p3: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.1 p4: score=0 (HIJACKED)
+  tulu3-8b-sft | chaos | t=0.1 p5: score=0 (HIJACKED)
+  tulu3-8b-sft | chaos | t=0.1 p6: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.1 p7: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.1 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.1 p9: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | chaos | t=0.3 p0: score=0 (HIJACKED)
+  tulu3-8b-sft | chaos | t=0.3 p1: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.3 p2: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.3 p3: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.3 p4: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.3 p5: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.3 p6: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | chaos | t=0.3 p7: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | chaos | t=0.3 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.3 p9: score=3 (BALANCED)
+  tulu3-8b-sft | chaos | t=0.7 p0: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.7 p1: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | chaos | t=0.7 p2: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.7 p3: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.7 p4: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.7 p5: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | chaos | t=0.7 p6: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.7 p7: score=2 (SOFT_BIAS)
+  tulu3-8b-sft | chaos | t=0.7 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-sft | chaos | t=0.7 p9: score=3 (BALANCED)
+
+tulu3-8b-sft (sft): neutral=2.10  chaos=1.17  d=1.16  p=0.0001  CI=[+0.53, +1.33]
+  Checkpoint saved to /home/ubuntu/results/tulu3_stage_attribution_20260409_163635.json
+
+======================================================================
+Loading allenai/Llama-3.1-Tulu-3-8B-DPO
+  tag=tulu3-8b-dpo  stage=dpo  is_it=True
+======================================================================
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:29<01:29, 29.71s/it]Fetching 4 files:  50%|█████     | 2/4 [00:34<00:29, 14.83s/it]Fetching 4 files: 100%|██████████| 4/4 [00:34<00:00,  8.53s/it]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.28it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.09it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.06it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.51it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.33it/s]
+  tulu3-8b-dpo | neutral | t=0.1 p0: score=3 (BALANCED)
+  tulu3-8b-dpo | neutral | t=0.1 p1: score=3 (BALANCED)
+  tulu3-8b-dpo | neutral | t=0.1 p2: score=3 (BALANCED)
+  tulu3-8b-dpo | neutral | t=0.1 p3: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.1 p4: score=3 (BALANCED)
+  tulu3-8b-dpo | neutral | t=0.1 p5: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.1 p6: score=3 (BALANCED)
+  tulu3-8b-dpo | neutral | t=0.1 p7: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | neutral | t=0.1 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | neutral | t=0.1 p9: score=3 (BALANCED)
+  tulu3-8b-dpo | neutral | t=0.3 p0: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.3 p1: score=3 (BALANCED)
+  tulu3-8b-dpo | neutral | t=0.3 p2: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.3 p3: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.3 p4: score=3 (BALANCED)
+  tulu3-8b-dpo | neutral | t=0.3 p5: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.3 p6: score=3 (BALANCED)
+  tulu3-8b-dpo | neutral | t=0.3 p7: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.3 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | neutral | t=0.3 p9: score=3 (BALANCED)
+  tulu3-8b-dpo | neutral | t=0.7 p0: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.7 p1: score=3 (BALANCED)
+  tulu3-8b-dpo | neutral | t=0.7 p2: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.7 p3: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.7 p4: score=3 (BALANCED)
+  tulu3-8b-dpo | neutral | t=0.7 p5: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.7 p6: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.7 p7: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | neutral | t=0.7 p8: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | neutral | t=0.7 p9: score=3 (BALANCED)
+  tulu3-8b-dpo | chaos | t=0.1 p0: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.1 p1: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.1 p2: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.1 p3: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.1 p4: score=3 (BALANCED)
+  tulu3-8b-dpo | chaos | t=0.1 p5: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.1 p6: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.1 p7: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | chaos | t=0.1 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.1 p9: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | chaos | t=0.3 p0: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.3 p1: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.3 p2: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.3 p3: score=0 (HIJACKED)
+  tulu3-8b-dpo | chaos | t=0.3 p4: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | chaos | t=0.3 p5: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.3 p6: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.3 p7: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | chaos | t=0.3 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.3 p9: score=3 (BALANCED)
+  tulu3-8b-dpo | chaos | t=0.7 p0: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.7 p1: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.7 p2: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.7 p3: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.7 p4: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.7 p5: score=0 (HIJACKED)
+  tulu3-8b-dpo | chaos | t=0.7 p6: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | chaos | t=0.7 p7: score=2 (SOFT_BIAS)
+  tulu3-8b-dpo | chaos | t=0.7 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-dpo | chaos | t=0.7 p9: score=3 (BALANCED)
+
+tulu3-8b-dpo (dpo): neutral=2.30  chaos=1.33  d=1.35  p=0.0000  CI=[+0.60, +1.33]
+  Checkpoint saved to /home/ubuntu/results/tulu3_stage_attribution_20260409_164327.json
+
+======================================================================
+Loading allenai/Llama-3.1-Tulu-3-8B
+  tag=tulu3-8b-final  stage=rlvr  is_it=True
+======================================================================
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:20<01:00, 20.28s/it]Fetching 4 files:  50%|█████     | 2/4 [00:20<00:16,  8.42s/it]Fetching 4 files: 100%|██████████| 4/4 [00:20<00:00,  5.10s/it]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.01s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.02s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.01s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.42it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.22it/s]
+  tulu3-8b-final | neutral | t=0.1 p0: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.1 p1: score=3 (BALANCED)
+  tulu3-8b-final | neutral | t=0.1 p2: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.1 p3: score=3 (BALANCED)
+  tulu3-8b-final | neutral | t=0.1 p4: score=3 (BALANCED)
+  tulu3-8b-final | neutral | t=0.1 p5: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.1 p6: score=1 (STRONG_BIAS)
+  tulu3-8b-final | neutral | t=0.1 p7: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.1 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-final | neutral | t=0.1 p9: score=3 (BALANCED)
+  tulu3-8b-final | neutral | t=0.3 p0: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.3 p1: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.3 p2: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.3 p3: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.3 p4: score=3 (BALANCED)
+  tulu3-8b-final | neutral | t=0.3 p5: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.3 p6: score=3 (BALANCED)
+  tulu3-8b-final | neutral | t=0.3 p7: score=1 (STRONG_BIAS)
+  tulu3-8b-final | neutral | t=0.3 p8: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.3 p9: score=3 (BALANCED)
+  tulu3-8b-final | neutral | t=0.7 p0: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.7 p1: score=3 (BALANCED)
+  tulu3-8b-final | neutral | t=0.7 p2: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.7 p3: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.7 p4: score=3 (BALANCED)
+  tulu3-8b-final | neutral | t=0.7 p5: score=2 (SOFT_BIAS)
+  tulu3-8b-final | neutral | t=0.7 p6: score=3 (BALANCED)
+  tulu3-8b-final | neutral | t=0.7 p7: score=1 (STRONG_BIAS)
+  tulu3-8b-final | neutral | t=0.7 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-final | neutral | t=0.7 p9: score=3 (BALANCED)
+  tulu3-8b-final | chaos | t=0.1 p0: score=0 (HIJACKED)
+  tulu3-8b-final | chaos | t=0.1 p1: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.1 p2: score=0 (HIJACKED)
+  tulu3-8b-final | chaos | t=0.1 p3: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.1 p4: score=3 (BALANCED)
+  tulu3-8b-final | chaos | t=0.1 p5: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.1 p6: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.1 p7: score=2 (SOFT_BIAS)
+  tulu3-8b-final | chaos | t=0.1 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.1 p9: score=2 (SOFT_BIAS)
+  tulu3-8b-final | chaos | t=0.3 p0: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.3 p1: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.3 p2: score=0 (HIJACKED)
+  tulu3-8b-final | chaos | t=0.3 p3: score=0 (HIJACKED)
+  tulu3-8b-final | chaos | t=0.3 p4: score=3 (BALANCED)
+  tulu3-8b-final | chaos | t=0.3 p5: score=2 (SOFT_BIAS)
+  tulu3-8b-final | chaos | t=0.3 p6: score=2 (SOFT_BIAS)
+  tulu3-8b-final | chaos | t=0.3 p7: score=2 (SOFT_BIAS)
+  tulu3-8b-final | chaos | t=0.3 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.3 p9: score=3 (BALANCED)
+  tulu3-8b-final | chaos | t=0.7 p0: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.7 p1: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.7 p2: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.7 p3: score=0 (HIJACKED)
+  tulu3-8b-final | chaos | t=0.7 p4: score=3 (BALANCED)
+  tulu3-8b-final | chaos | t=0.7 p5: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.7 p6: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.7 p7: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.7 p8: score=1 (STRONG_BIAS)
+  tulu3-8b-final | chaos | t=0.7 p9: score=3 (BALANCED)
+
+tulu3-8b-final (rlvr): neutral=2.20  chaos=1.33  d=1.04  p=0.0002  CI=[+0.43, +1.27]
+  Checkpoint saved to /home/ubuntu/results/tulu3_stage_attribution_20260409_165004.json
+
+======================================================================
+STAGE ATTRIBUTION SUMMARY
+======================================================================
+stage     neutral    chaos    delta      d        p
+-------------------------------------------------------
+base         1.67     1.53    +0.13   0.19   0.1601
+sft          2.10     1.17    +0.93   1.16   0.0001
+dpo          2.30     1.33    +0.97   1.35   0.0000
+rlvr         2.20     1.33    +0.87   1.04   0.0002
+
+======================================================================
+HEADLINE
+======================================================================
+Cohen's d trajectory: base:+0.19 → sft:+1.16 → dpo:+1.35 → rlvr:+1.04
+
+Δd per stage:
+  base→SFT      +0.97  █████████
+  SFT→DPO       +0.19  █
+  DPO→RLVR      -0.30  ███
+
+Largest positive jump: base→SFT  (+0.97)
+
+Final saved to /home/ubuntu/results/tulu3_stage_attribution_20260409_165004.json

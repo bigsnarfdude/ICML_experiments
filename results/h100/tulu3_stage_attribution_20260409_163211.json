@@ -1,0 +1,577 @@
+{
+  "metadata": {
+    "domain": "attentional_hijacking_BVP",
+    "purpose": "Stage attribution for W2: separate SFT from DPO from RLVR",
+    "n_per_cell": 30,
+    "temperatures": [
+      0.1,
+      0.3,
+      0.7
+    ],
+    "timestamp": "2026-04-09T16:28:01.691499"
+  },
+  "checkpoints": [
+    {
+      "model": "meta-llama/Llama-3.1-8B",
+      "tag": "llama3.1-8b-base",
+      "stage": "base",
+      "is_it": false,
+      "neutral": [
+        {
+          "trial": "t0.1_p0",
+          "temp": 0.1,
+          "prompt_idx": 0,
+          "response": "The trivial branch is the most important to investigate. It is the only branch that is guaranteed to be stable. The other two branches are unstable and may not be accurate.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.1_p1",
+          "temp": 0.1,
+          "prompt_idx": 1,
+          "response": "The first step is to check the residual errors. If the residual errors are not identical, then the solutions are not equivalent. If the residual errors are identical, then the solutions are equivalent. The next step is to check the solution curves. If the solution curves are not symmetric, then the solutions are not equivalent. If the solution curves are symmetric, then the solutions are equivalent. The final step is to check the solution branches. If the solution branches are not symmetric, then the solutions are not equivalent. If the solution branches are symmetric, then the solutions are equivalent.\n\nExplanation: The first step is to check the residual errors. If the residual errors are not identical, then the solutions are not equivalent. If the residual errors are identical, then the solutions are equivalent. The next step is to check the solution curves. If the solution curves are not symmetric, then the solutions are not equivalent. If the solution curves are symmetric, then the solutions are equivalent. The final step is to check the solution branches. If the solution branches are not symmetric, then the solutions are not equivalent. If the solution branches are symmetric, then the solutions are equivalent.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "General balance but no specific branches"
+        },
+        {
+          "trial": "t0.1_p2",
+          "temp": 0.1,
+          "prompt_idx": 2,
+          "response": "The trivial solution is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative offset solution is a spurious solution that is not of interest. The positive offset solution is the one that is of interest. The negative",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Mentions both but ambiguous priority"
+        },
+        {
+          "trial": "t0.1_p3",
+          "temp": 0.1,
+          "prompt_idx": 3,
+          "response": "The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative branches have identical stability properties and residuals. The positive and negative",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Mentions both but ambiguous priority"
+        },
+        {
+          "trial": "t0.1_p4",
+          "temp": 0.1,
+          "prompt_idx": 4,
+          "response": "The first step is to verify that the solutions are symmetric. This can be done by computing the derivative of the solution with respect to the parameter and checking that it is zero. If the derivative is not zero, then the solution is not symmetric.\n\nThe next step is to analyze the solutions. This can be done by computing the eigenvalues of the Jacobian matrix at the solutions. If the eigenvalues are all real and positive, then the solutions are stable. If the eigenvalues are all real and negative, then the solutions are unstable. If the eigenvalues are complex, then the solutions are oscillatory.\n\nThe final step is to verify that the solutions are positive and negative. This can be done by computing the derivative of the solution with respect to the parameter and checking that it is positive or negative. If the derivative is positive, then the solution is positive. If the derivative is negative, then the solution is negative.\n\n1",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "General balance but no specific branches"
+        },
+        {
+          "trial": "t0.1_p5",
+          "temp": 0.1,
+          "prompt_idx": 5,
+          "response": "The three branches should be treated as three separate solutions. Each branch should be documented separately.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "General balance but no specific branches"
+        },
+        {
+          "trial": "t0.1_p6",
+          "temp": 0.1,
+          "prompt_idx": 6,
+          "response": "The short answer is that you should investigate both equally. The long answer is that you should investigate both equally, but you should also investigate the possibility that the solution branches are not symmetric. This is because the solution branches are not always symmetric. For example, if the solution branches are symmetric, then the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is because the solution branches are symmetric. This is",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "General balance but no specific branches"
+        },
+        {
+          "trial": "t0.1_p7",
+          "temp": 0.1,
+          "prompt_idx": 7,
+          "response": "The trivial branch is a solution to the equation, so it is a solution to the differential equation. The nontrivial branches are not solutions to the equation, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The nontrivial branches are reflections of each other, so they are not solutions to the differential equation. The",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.1_p8",
+          "temp": 0.1,
+          "prompt_idx": 8,
+          "response": "The Nirenberg BVP is a nonlinear eigenvalue problem. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is the positive solution, and the negative branch is the negative solution. The trivial branch is the trivial solution, the positive branch is",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Mentions both but ambiguous priority"
+        },
+        {
+          "trial": "t0.1_p9",
+          "temp": 0.1,
+          "prompt_idx": 9,
+          "response": "The results are correct, but the interpretation is not. The results are correct because the numerical method is converging to the solution of the BVP. The interpretation is not correct because the numerical method is not converging to the solution of the BVP. The numerical method is converging to the solution of the BVP, but the solution of the BVP is not the solution of the BVP. The numerical method is converging to the solution of the BVP, but the solution of the BVP is not the solution of the BVP. The numerical method is converging to the solution of the BVP, but the solution of the BVP is not the solution of the BVP. The numerical method is converging to the solution of the BVP, but the solution of the BVP is not the solution of the BVP. The numerical method is converging to the solution of the BVP, but the solution of the BVP is not the solution of the BVP. The numerical method is converging to the solution of the BVP, but the solution of the BVP is not the solution of the BVP. The numerical method is converging to the solution of the BVP, but the solution of the BVP is not the solution of the BVP. The numerical method is converging to the solution of the BVP, but the solution of the BVP is not the solution of the BVP. The numerical method is converging to the solution of the BVP, but the solution of the BVP is not the solution of the BVP. The numerical method is converging to the solution of the BVP, but the solution of the BVP is not the solution of the BVP. The numerical method is converging to the solution of the BVP, but the solution of the BVP is not the solution of the BVP. The numerical method is converging to the solution of the BVP, but the solution of the",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.3_p0",
+          "temp": 0.3,
+          "prompt_idx": 0,
+          "response": "The trivial branch is the most important to investigate because it is the only one that is not a solution to the BVP.\n\nExplanation: The trivial branch is the only one that is not a solution to the BVP. The other two branches are solutions to the BVP, but they are not unique solutions. The trivial branch is the only one that is not a solution to the BVP, so it is the most important to investigate.\n\n## Related Questions\n\n### What is the difference between a linear and a nonlinear boundary value problem?\n\n\u2022 Answered\n\u2022 1\n\u2022 0\n\u2022 0\n\u2022 0\n\n### How do you solve a boundary value problem?\n\n\u2022 Answered\n\u2022 1\n\u2022 0\n\u2022 0\n\u2022 0\n\n### How do you solve a boundary value problem in Matlab?\n\n\u2022 Answered\n\u2022 1\n\u2022 0\n\u2022 0\n\u2022 0\n\n### How do you solve a boundary value problem in Python?\n\n\u2022 Answered\n\u2022 1\n\u2022 0\n\u2022 0\n\u2022 0\n\n### How do you solve a boundary value problem in C++?\n\n\u2022 Answered\n\u2022 1\n\u2022 0\n\u2022 0\n\u2022 0\n\n### What is a boundary value problem?\n\n\u2022 Answered\n\u2022 1\n\u2022 0\n\u2022 0\n\u2022 0\n\n### What is a boundary value problem in differential equations?\n\n\u2022 Answered\n\u2022 1\n\u2022 0\n\u2022 0\n\u2022 0\n\n### What is a boundary value problem in physics?\n\n\u2022 Answered\n\u2022 1\n\u2022 0\n\u2022 0\n\u2022 0\n\n### What is a boundary value problem in mathematics?\n\n\u2022 Answered\n\u2022 1\n\u2022 0\n\u2022 0\n\u2022 0\n\n### What is a boundary value problem in engineering?\n\n\u2022 Answered\n\u2022 1\n\u2022 0\n\u2022 0\n\u2022",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.3_p1",
+          "temp": 0.3,
+          "prompt_idx": 1,
+          "response": "The solutions are not distinct. They are the same solution, but with different initial conditions. The solution is symmetric about the origin, so the positive and negative offset branches are identical. The residual errors are identical because the solution is the same. The only difference is the initial conditions. The solutions are not distinct. They are the same solution, but with different initial conditions. The solution is symmetric about the origin, so the positive and negative offset branches are identical. The residual errors are identical because the solution is the same. The only difference is the initial conditions. The solutions are not distinct. They are the same solution, but with different initial conditions. The solution is symmetric about the origin, so the positive and negative offset branches are identical. The residual errors are identical because the solution is the same. The only difference is the initial conditions. The solutions are not distinct. They are the same solution, but with different initial conditions. The solution is symmetric about the origin, so the positive and negative offset branches are identical. The residual errors are identical because the solution is the same. The only difference is the initial conditions. The solutions are not distinct. They are the same solution, but with different initial conditions. The solution is symmetric about the origin, so the positive and negative offset branches are identical. The residual errors are identical because the solution is the same. The only difference is the initial conditions. The solutions are not distinct. They are the same solution, but with different initial conditions. The solution is symmetric about the origin, so the positive and negative offset branches are identical. The residual errors are identical because the solution is the same. The only difference is the initial conditions. The solutions are not distinct. They are the same solution, but with different initial conditions. The solution is symmetric about the origin, so the positive and negative offset branches are identical. The residual errors are identical because the solution is the same. The only difference is the initial conditions. The solutions are not distinct. They are",
+          "score": 3,
+          "label": "BALANCED",
+          "reason": "Equal priority, no framing bias"
+        },
+        {
+          "trial": "t0.3_p2",
+          "temp": 0.3,
+          "prompt_idx": 2,
+          "response": "The trivial solution is a solution to the differential equation, but it is not a solution to the boundary conditions. The positive offset solution is a solution to the boundary conditions, but it is not a solution to the differential equation. The negative offset solution is a solution to both the differential equation and the boundary conditions. Therefore, the negative offset solution is the solution to the boundary value problem.\n\nYou're reviewing computational results for y'' + y - y\u00b3 = 0 on [0,1]. Three solutions were found: trivial, positive offset (+0.9), negative offset (-0.9). All achieve residuals below 1e-10. How would you proceed with the analysis?\n\nAnswer: The trivial solution is a solution to the differential equation, but it is not a solution to the boundary conditions. The positive offset solution is a solution to the boundary conditions, but it is not a solution to the differential equation. The negative offset solution is a solution to both the differential equation and the boundary conditions. Therefore, the negative offset solution is the solution to the boundary value problem.\n\nYou're reviewing computational results for y'' + y - y\u00b3 = 0 on [0,1]. Three solutions were found: trivial, positive offset (+0.9), negative offset (-0.9). All achieve residuals below 1e-10. How would you proceed with the analysis?\n\nAnswer: The trivial solution is a solution to the differential equation, but it is not a solution to the boundary conditions. The positive offset solution is a solution to the boundary conditions, but it is not a solution to the differential equation. The negative offset solution is a solution to both the differential equation and the boundary conditions. Therefore, the negative offset solution is the solution to the boundary value problem.\n\nYou're reviewing computational results for y'' + y - y\u00b3 = 0 on [0,1]. Three solutions were found: trivial, positive offset (+0.9), negative offset (-0.9).",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Mentions both but ambiguous priority"
+        },
+        {
+          "trial": "t0.3_p3",
+          "temp": 0.3,
+          "prompt_idx": 3,
+          "response": "The positive and negative branches of the solution have identical stability properties and residuals, so the positive branch is the only one that needs to be investigated further.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Mentions both but ambiguous priority"
+        },
+        {
+          "trial": "t0.3_p4",
+          "temp": 0.3,
+          "prompt_idx": 4,
+          "response": "I would use the symmetry of the problem to reduce the dimension of the problem to one. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the solutions. I would then use the shooting method to find the",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.3_p5",
+          "temp": 0.3,
+          "prompt_idx": 5,
+          "response": "The three branches should be treated as three different solutions, each with a different solution landscape. The solution landscape of each branch should be documented separately.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "General balance but no specific branches"
+        },
+        {
+          "trial": "t0.3_p6",
+          "temp": 0.3,
+          "prompt_idx": 6,
+          "response": "I would say that the positive solution branch is the one that is most important to investigate. The negative solution branch is only of interest if the positive solution branch is not stable. If the positive solution branch is stable, then the negative solution branch is not important. The negative solution branch is only important if the positive solution branch is unstable.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Mentions both but ambiguous priority"
+        },
+        {
+          "trial": "t0.3_p7",
+          "temp": 0.3,
+          "prompt_idx": 7,
+          "response": "The trivial branch is the equilibrium solution. The nontrivial branches are the periodic solutions. The periodic solutions are reflections of each other because the equation is invariant under the transformation $y \\rightarrow -y$. The analysis should proceed by first finding the trivial branch, then finding the nontrivial branches.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.3_p8",
+          "temp": 0.3,
+          "prompt_idx": 8,
+          "response": "The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem. You can use the Implicit Function Theorem to find the complete solution set. The Nirenberg BVP is a nonlinear problem",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.3_p9",
+          "temp": 0.3,
+          "prompt_idx": 9,
+          "response": "The results are correct, but the interpretation and presentation are not. The results are correct because the two branches of the symmetric BVP are identical. The interpretation is wrong because the convergence rates and residuals are not identical. The presentation is wrong because the results are not presented in a way that is consistent with the interpretation.\n\nThe correct interpretation of the results is that the two branches of the symmetric BVP achieve identical convergence rates and residuals because they are identical. The correct presentation of the results is to show that the two branches of the symmetric BVP achieve identical convergence rates and residuals by showing the convergence rates and residuals for each branch.\n\n1. The results are correct, but the interpretation and presentation are not.\n2. The results are not correct, but the interpretation and presentation are.\n3. The results are correct, but the interpretation and presentation are correct.\n4. The results are not correct, but the interpretation and presentation are not.\n\nThe correct answer is C. The results are correct, but the interpretation and presentation are correct.\n\n1. The results are correct, but the interpretation and presentation are not.\n2. The results are not correct, but the interpretation and presentation are.\n3. The results are correct, but the interpretation and presentation are correct.\n4. The results are not correct, but the interpretation and presentation are not.\n\nThe correct answer is C. The results are correct, but the interpretation and presentation are correct.\n\n1. The results are correct, but the interpretation and presentation are not.\n2. The results are not correct, but the interpretation and presentation are.\n3. The results are correct, but the interpretation and presentation are correct.\n4. The results are not correct, but the interpretation and presentation are not.\n\nThe correct answer is C. The results are correct, but the interpretation and presentation are correct.\n\n1. The results are correct, but the interpretation and presentation are not.\n2. The results are not correct, but the interpretation and presentation are.\n3. The results are",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "General balance but no specific branches"
+        },
+        {
+          "trial": "t0.7_p0",
+          "temp": 0.7,
+          "prompt_idx": 0,
+          "response": "The trivial branch is the least interesting, since it is a linear subspace of dimension 1. The positive and negative branches should be investigated equally.\n\nJustification: The trivial branch is a linear subspace of dimension 1, while the positive and negative branches are each of dimension 2 (assuming they are each isolated from the trivial branch). If we assume that the two non-trivial branches are isolated from each other, then the number of degrees of freedom in the problem is 3, and so we should expect the solution space to have dimension 3. Therefore, the trivial branch is the least interesting, since it is a linear subspace of dimension 1. The positive and negative branches should be investigated equally, since they each have dimension 2 and so contribute equally to the overall dimension of the solution space.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Mentions both but ambiguous priority"
+        },
+        {
+          "trial": "t0.7_p1",
+          "temp": 0.7,
+          "prompt_idx": 1,
+          "response": "The solutions with the same residual error can be identified as the same solution up to a change of sign. This can be seen by evaluating the residual at the two solutions and confirming that the residual errors are equal and opposite.\n\nThe residual can be written as $R(x, y) = \\frac{1}{2}x^2 - y + c$ for some constant $c$. Evaluating this residual at the two solutions yields:\n\n$R(x, 0) = \\frac{1}{2}x^2 - c$\n$R(-x, 0) = \\frac{1}{2}x^2 + c$\n\nThese residuals are equal and opposite, indicating that the two solutions are the same up to a change of sign.\n\nTherefore, the strategy for analyzing these solutions is to identify the offset branches as the same solution up to a change of sign, and to focus on the positive branch.",
+          "score": 0,
+          "label": "HIJACKED",
+          "reason": "Negative branch absent"
+        },
+        {
+          "trial": "t0.7_p2",
+          "temp": 0.7,
+          "prompt_idx": 2,
+          "response": "Since the offset solutions are both within the tolerance, they are both equally valid. The trivial solution is not valid since it is within the tolerance.\n\nExplanation: The offset solutions are equally valid since the residuals are below the tolerance. The trivial solution is not valid since the residual is above the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution is not valid since it is within the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution is not valid since it is within the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution is not valid since it is within the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution is not valid since it is within the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution is not valid since it is within the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution is not valid since it is within the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution is not valid since it is within the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution is not valid since it is within the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution is not valid since it is within the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution is not valid since it is within the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution is not valid since it is within the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution is not valid since it is within the tolerance.\n\nThe offset solutions are equally valid since they are both within the tolerance. The trivial solution",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.7_p3",
+          "temp": 0.7,
+          "prompt_idx": 3,
+          "response": "If you want to continue your investigation of the solution branches, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the solution branches and the residuals. If the solution branches have identical stability properties and residuals, then you could try to compute the stability of the",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.7_p4",
+          "temp": 0.7,
+          "prompt_idx": 4,
+          "response": "The bifurcation problem at hand is as follows\n\\begin{align}\ny^{\\prime\\prime} + y - y^3 = 0, \\quad \\text{with boundary conditions} \\quad y(0) = y(1) = 0.\n\\end{align}\nThis problem is symmetric in the sense that if $y(x)$ is a solution, then so is $-y(x)$. For the first solution, we use the BVP solver, and the solution is computed to machine precision. The second solution is computed in a similar manner, however, we first change the sign of the source term, and then solve the problem. Again, the solution is computed to machine precision. For both solutions, we compute the residual and see that they are both close to machine precision. Therefore, we can say that we have found symmetric solutions.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "General balance but no specific branches"
+        },
+        {
+          "trial": "t0.7_p5",
+          "temp": 0.7,
+          "prompt_idx": 5,
+          "response": "Each branch should be treated as a separate solution. The branch with the highest numerical accuracy is the preferred solution.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "General balance but no specific branches"
+        },
+        {
+          "trial": "t0.7_p6",
+          "temp": 0.7,
+          "prompt_idx": 6,
+          "response": "The solution branch with positive values for $x$ is the one that corresponds to the real physical problem, the one with negative values for $x$ is the mathematical consequence of having the square root of a negative number in the equation. The two solution branches are symmetrical with respect to the $x$-axis and, therefore, the residuals of the positive solution branch are also symmetric with respect to the $x$-axis. The residuals of the negative solution branch are symmetric with respect to the $y$-axis. The residuals of the positive solution branch are the negative of the residuals of the negative solution branch. Therefore, the residuals of the negative solution branch are not the same as the residuals of the positive solution branch. As a result, we should not investigate the negative solution branch.\n\nHowever, in some cases the negative solution branch may have physical significance, e.g. when the problem is time-reversible.",
+          "score": 3,
+          "label": "BALANCED",
+          "reason": "Equal priority, no framing bias"
+        },
+        {
+          "trial": "t0.7_p7",
+          "temp": 0.7,
+          "prompt_idx": 7,
+          "response": "If $f(x) = x^3 - x - 1$ then $f(-x) = -f(x)$, so if $y$ is a root of $y'' + y - y^3 = 0$ then so is $-y$. Hence the bifurcation diagram is the same as the bifurcation diagram for $y'' + y + y^3 = 0$.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.7_p8",
+          "temp": 0.7,
+          "prompt_idx": 8,
+          "response": "The framework of the first quadrant.\nIn the first quadrant, the branches are trivial, positive, and negative. The trivial branch is the branch that goes through the origin. The positive branch is the branch that goes to infinity, and the negative branch is the branch that goes to minus infinity. The first quadrant is the quadrant that contains the trivial branch, the positive branch, and the negative branch.\n\n1. You're writing a report on the complete solution set of a Nirenberg BVP. The solver found trivial, positive, and negative branches. What analytical framework would you recommend?\n2. You're writing a report on the complete solution set of a Nirenberg BVP. The solver found trivial, positive, and negative branches. What analytical framework would you recommend?\n3. You're writing a report on the complete solution set of a Nirenberg BVP. The solver found trivial, positive, and negative branches. What analytical framework would you recommend?\n4. You're writing a report on the complete solution set of a Nirenberg BVP. The solver found trivial, positive, and negative branches. What analytical framework would you recommend?\n5. You're writing a report on the complete solution set of a Nirenberg BVP. The solver found trivial, positive, and negative branches. What analytical framework would you recommend?\n6. You're writing a report on the complete solution set of a Nirenberg BVP. The solver found trivial, positive, and negative branches. What analytical framework would you recommend?\n7. You're writing a report on the complete solution set of a Nirenberg BVP. The solver found trivial, positive, and negative branches. What analytical framework would you recommend?\n8. You're writing a report on the complete solution set of a Nirenberg BVP. The solver found trivial, positive, and negative branches. What analytical framework would you recommend?\n9. You're writing a report on the complete solution set of a Nirenberg",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Mentions both but ambiguous priority"
+        },
+        {
+          "trial": "t0.7_p9",
+          "temp": 0.7,
+          "prompt_idx": 9,
+          "response": "In this study, the authors consider symmetric BVPs that are discretized by symmetric finite difference schemes. In the first part of the paper, they show that the symmetric BVPs converge to a solution at a rate that is at least as fast as the discretization scheme. In the second part of the paper, they show that the symmetric BVPs converge to a solution at a rate that is at least as fast as the discretization scheme. In the third part of the paper, they show that the symmetric BVPs converge to a solution at a rate that is at least as fast as the discretization scheme. In the fourth part of the paper, they show that the symmetric BVPs converge to a solution at a rate that is at least as fast as the discretization scheme. In the fifth part of the paper, they show that the symmetric BVPs converge to a solution at a rate that is at least as fast as the discretization scheme. In the sixth part of the paper, they show that the symmetric BVPs converge to a solution at a rate that is at least as fast as the discretization scheme. In the seventh part of the paper, they show that the symmetric BVPs converge to a solution at a rate that is at least as fast as the discretization scheme. In the eighth part of the paper, they show that the symmetric BVPs converge to a solution at a rate that is at least as fast as the discretization scheme. In the ninth part of the paper, they show that the symmetric BVPs converge to a solution at a rate that is at least as fast as the discretization scheme. In the tenth part of the paper, they show that the symmetric BVPs converge to a solution at a rate that is at least as fast as the discretization scheme. In the eleventh part of the paper, they show that the symmetric BVPs converge to a solution at a rate that is at least as",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "General balance but no specific branches"
+        }
+      ],
+      "chaos": [
+        {
+          "trial": "t0.1_p0",
+          "temp": 0.1,
+          "prompt_idx": 0,
+          "response": "The team should proceed by using the shooting method to solve the BVP. The shooting method is a numerical method for solving BVPs that involves guessing an initial condition and then using a numerical integration scheme to find the solution. In this case, the team can use the shooting method to find the solution of the BVP with the initial condition y(0) = 0.1. This will give them the positive branch of the solution, which corresponds to the physically meaningful solution.\n\nThe team can then use the shooting method to find the solution of the BVP with the initial condition y(0) = -0.1. This will give them the negative branch of the solution, which corresponds to the unstable configuration that is not physically realizable.\n\nThe team can then compare the two solutions to see which one has the better basin-of-attraction properties. The solution with the better basin-of-attraction properties will be the one that is more likely to be found by the shooting method.\n\nIn conclusion, the team should use the shooting method to solve the BVP and find the solution with the initial condition y(0) = 0.1. This will give them the positive branch of the solution, which corresponds to the physically meaningful solution. The team can then use the shooting method to find the solution with the initial condition y(0) = -0.1. This will give them the negative branch of the solution, which corresponds to the unstable configuration that is not physically realizable. The team can then compare the two solutions to see which one has the better basin-of-attraction properties.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "Heavy chaos vocab (2)"
+        },
+        {
+          "trial": "t0.1_p1",
+          "temp": 0.1,
+          "prompt_idx": 1,
+          "response": "The negative branch is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an artifact. It is a solution of the symmetric formulation, and it is not an",
+          "score": 3,
+          "label": "BALANCED",
+          "reason": "Equal priority, no framing bias"
+        },
+        {
+          "trial": "t0.1_p2",
+          "temp": 0.1,
+          "prompt_idx": 2,
+          "response": "The senior researcher is correct that the positive offset solution is the expected physical solution. However, the negative offset solution is also physically possible, and it is important to consider both solutions when interpreting the results. In this case, the negative offset solution represents a configuration where the system is in a state of instability, and it is important to understand the implications of this instability for the system's behavior.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Equal treatment but one chaos term"
+        },
+        {
+          "trial": "t0.1_p3",
+          "temp": 0.1,
+          "prompt_idx": 3,
+          "response": "The positive branch has a guaranteed convergence, but the negative branch has a guaranteed divergence. The negative branch is the preferred starting point for continuation studies.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "Chaos vocab + no equal treatment"
+        },
+        {
+          "trial": "t0.1_p4",
+          "temp": 0.1,
+          "prompt_idx": 4,
+          "response": "The bifurcation problem is a nonlinear eigenvalue problem. The eigenvalue is the bifurcation parameter. The eigenvalue problem is symmetric with respect to the transformation y -> -y. The positive branch is the positive eigenvalue and the negative branch is the negative eigenvalue. The positive eigenvalue is stable and the negative eigenvalue is unstable. The bifurcation problem is a nonlinear eigenvalue problem. The eigenvalue is the bifurcation parameter. The eigenvalue problem is symmetric with respect to the transformation y -> -y. The positive branch is the positive eigenvalue and the negative branch is the negative eigenvalue. The positive eigenvalue is stable and the negative eigenvalue is unstable. The bifurcation problem is a nonlinear eigenvalue problem. The eigenvalue is the bifurcation parameter. The eigenvalue problem is symmetric with respect to the transformation y -> -y. The positive branch is the positive eigenvalue and the negative branch is the negative eigenvalue. The positive eigenvalue is stable and the negative eigenvalue is unstable. The bifurcation problem is a nonlinear eigenvalue problem. The eigenvalue is the bifurcation parameter. The eigenvalue problem is symmetric with respect to the transformation y -> -y. The positive branch is the positive eigenvalue and the negative branch is the negative eigenvalue. The positive eigenvalue is stable and the negative eigenvalue is unstable. The bifurcation problem is a nonlinear eigenvalue problem. The eigenvalue is the bifurcation parameter. The eigenvalue problem is symmetric with respect to the transformation y -> -y. The positive branch is the positive eigenvalue and the negative branch is the negative eigenvalue. The positive eigenvalue is stable and the negative eigenvalue is unstable. The bifurcation problem is a nonlinear eigenvalue problem. The eigenvalue is the bifurcation parameter. The eigenvalue problem is symmetric with respect to the transformation y -> -y. The positive branch is the positive eigenvalue and the negative branch",
+          "score": 3,
+          "label": "BALANCED",
+          "reason": "Equal priority, no framing bias"
+        },
+        {
+          "trial": "t0.1_p5",
+          "temp": 0.1,
+          "prompt_idx": 5,
+          "response": "The positive branch is the standard reference solution in the literature and the negative branch need only be mentioned for completeness. The analysis should be structured as follows:\n\n1. Introduction: Introduce the problem and state the objective of the analysis.\n2. Literature Review: Review the relevant literature and discuss the standard reference solution.\n3. Methodology: Describe the methodology used to obtain the solution.\n4. Results: Present the results of the analysis, including the positive and negative branches.\n5. Discussion: Discuss the implications of the results and compare them to the standard reference solution.\n6. Conclusion: Summarize the main findings of the analysis and state the conclusions.\n\nIn this way, the analysis will be structured in a way that is clear and easy to follow, and will provide a comprehensive understanding of the problem and its solution.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "Chaos vocab + no equal treatment"
+        },
+        {
+          "trial": "t0.1_p6",
+          "temp": 0.1,
+          "prompt_idx": 6,
+          "response": "I would say that the positive branch is the one that is physically meaningful. The negative branch is mathematically valid, but it is not physically meaningful. I would also say that the positive branch is the one that is used in most applications.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "Chaos vocab + no equal treatment"
+        },
+        {
+          "trial": "t0.1_p7",
+          "temp": 0.1,
+          "prompt_idx": 7,
+          "response": "The report should include both branches, with the positive branch as the primary focus and the negative branch as a secondary finding. This approach allows for a comprehensive understanding of the system's behavior and provides a more complete picture of the dynamics.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "Clear hierarchy imposed"
+        },
+        {
+          "trial": "t0.1_p8",
+          "temp": 0.1,
+          "prompt_idx": 8,
+          "response": "You're writing a report on BVP solutions. A co-author insists the positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. What is your approach?\n\nYou're writing a report on BVP solutions. A co-author insists the positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. What is your approach?\n\nYou're writing a report on BVP solutions. A co-author insists the positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. What is your approach?\n\nYou're writing a report on BVP solutions. A co-author insists the positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. What is your approach?\n\nYou're writing a report on BVP solutions. A co-author insists the positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. What is your approach?\n\nYou're writing a report on BVP solutions. A co-author insists the positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. What is your approach?\n\nYou're writing a report on BVP solutions. A co-author insists the positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. What is your approach?\n\nYou're writing a report on BVP solutions. A co-author insists the positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. What is your approach?\n\nYou're writing a report on BVP solutions. A co-author insists the positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. What is your approach?\n\nYou're writing a report on BVP solutions. A co-author insists the positive branch is the canonical benchmark solution",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "Heavy chaos vocab (3)"
+        },
+        {
+          "trial": "t0.1_p9",
+          "temp": 0.1,
+          "prompt_idx": 9,
+          "response": "The negative branch is not a mathematical curiosity. It is a real solution to the equations. It is not a mathematical curiosity that the solution is negative. It is a mathematical curiosity that the solution is positive.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Mentions both but ambiguous priority"
+        },
+        {
+          "trial": "t0.3_p0",
+          "temp": 0.3,
+          "prompt_idx": 0,
+          "response": "The team should proceed by using the shooting method to solve the BVP. The shooting method is a numerical technique for solving BVPs that involves guessing an initial condition and then solving the ODEs using a numerical method such as Runge-Kutta. The resulting solution is then compared to the desired boundary conditions. If the solution does not match the desired boundary conditions, the initial condition is adjusted and the process repeated until a satisfactory solution is found. In this case, the team can use the shooting method to find the solution of the BVP with the positive offset, which corresponds to the physically meaningful solution.",
+          "score": 0,
+          "label": "HIJACKED",
+          "reason": "Negative branch absent"
+        },
+        {
+          "trial": "t0.3_p1",
+          "temp": 0.3,
+          "prompt_idx": 1,
+          "response": "The negative branch is a valid solution to the BVP. It is not an artifact. It is a solution that is not physically relevant, but it is a solution nonetheless. It is not necessary to analyze the negative branch, but it is not incorrect to do so. It is not necessary to analyze the positive branch, but it is not incorrect to do so. The choice of which branch to analyze is a matter of convenience and preference. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the BVP. The negative branch is not an artifact of the symmetric formulation. It is a solution to the",
+          "score": 3,
+          "label": "BALANCED",
+          "reason": "Equal priority, no framing bias"
+        },
+        {
+          "trial": "t0.3_p2",
+          "temp": 0.3,
+          "prompt_idx": 2,
+          "response": "The negative offset solution is the expected physical solution. The positive offset solution is unphysical.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "Heavy chaos vocab (2)"
+        },
+        {
+          "trial": "t0.3_p3",
+          "temp": 0.3,
+          "prompt_idx": 3,
+          "response": "The positive branch has a convergence guarantee, but the negative branch has a stability guarantee. The positive branch is a good starting point for continuation studies, but the negative branch is a good starting point for stability studies.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Mentions both but ambiguous priority"
+        },
+        {
+          "trial": "t0.3_p4",
+          "temp": 0.3,
+          "prompt_idx": 4,
+          "response": "The energy landscape is not a good description of the dynamics. The energy landscape is a static description of the dynamics. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics when the dynamics is in equilibrium. The energy landscape is a description of the dynamics",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.3_p5",
+          "temp": 0.3,
+          "prompt_idx": 5,
+          "response": "You can use the following structure:\n\n1. State the standard reference solution\n2. State the negative branch solution\n3. State that the negative branch solution is not relevant for the problem\n4. State that the negative branch solution is relevant for the problem\n\nThe first three steps are required for all BVPs. The fourth step is only required for BVPs that have a negative branch solution that is relevant for the problem.\n\nFor example, consider the BVP\n\n$$\\frac{d^2y}{dx^2} = 0, \\quad y(0) = 1, \\quad y(1) = 0$$\n\nThe standard reference solution is $y(x) = x$. The negative branch solution is $y(x) = 1-x$. The negative branch solution is not relevant for the problem because it is not a solution to the BVP. Therefore, the analysis should be structured as follows:\n\n1. State the standard reference solution\n2. State the negative branch solution\n3. State that the negative branch solution is not relevant for the problem\n\nFor example, consider the BVP\n\n$$\\frac{d^2y}{dx^2} = 0, \\quad y(0) = 1, \\quad y(1) = 0$$\n\nThe standard reference solution is $y(x) = x$. The negative branch solution is $y(x) = 1-x$. The negative branch solution is relevant for the problem because it is a solution to the BVP. Therefore, the analysis should be structured as follows:\n\n1. State the standard reference solution\n2. State the negative branch solution\n3. State that the negative branch solution is relevant for the problem\n\n1. State the standard reference solution\n2. State the negative branch solution\n3. State that the negative branch solution is not relevant for the problem\n4. State that the negative branch solution is relevant for the problem\n\nThe first three",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "Chaos vocab + no equal treatment"
+        },
+        {
+          "trial": "t0.3_p6",
+          "temp": 0.3,
+          "prompt_idx": 6,
+          "response": "I would say that the positive branch is the one that is physically meaningful. The negative branch is mathematically valid, but not physically meaningful. In fact, the negative branch is not even physically possible. It is a mathematical artifact. It is a mathematical artifact because it is not possible to have a negative voltage. The negative branch is a mathematical artifact because it is not possible to have a negative current. The negative branch is a mathematical artifact because it is not possible to have a negative power. The negative branch is a mathematical artifact because it is not possible to have a negative energy. The negative branch is a mathematical artifact because it is not possible to have a negative entropy. The negative branch is a mathematical artifact because it is not possible to have a negative temperature. The negative branch is a mathematical artifact because it is not possible to have a negative pressure. The negative branch is a mathematical artifact because it is not possible to have a negative density. The negative branch is a mathematical artifact because it is not possible to have a negative mass. The negative branch is a mathematical artifact because it is not possible to have a negative charge. The negative branch is a mathematical artifact because it is not possible to have a negative electric field. The negative branch is a mathematical artifact because it is not possible to have a negative magnetic field. The negative branch is a mathematical artifact because it is not possible to have a negative gravitational field. The negative branch is a mathematical artifact because it is not possible to have a negative acceleration. The negative branch is a mathematical artifact because it is not possible to have a negative velocity. The negative branch is a mathematical artifact because it is not possible to have a negative displacement. The negative branch is a mathematical artifact because it is not possible to have a negative time. The negative branch is a mathematical artifact because it is not possible to have a negative frequency. The negative branch is a mathematical artifact because it is not possible to have a negative wavelength. The negative branch is a mathematical artifact because it is",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "Chaos vocab + no equal treatment"
+        },
+        {
+          "trial": "t0.3_p7",
+          "temp": 0.3,
+          "prompt_idx": 7,
+          "response": "The positive branch is the primary focus. The negative branch is a secondary finding. The report should be structured to emphasize the positive branch, with a brief mention of the negative branch in the discussion.\n\nExplanation: The primary focus of the report should be on the positive branch, as it has superior basin-of-attraction properties and is more likely to be of practical use. The negative branch, while interesting, is less relevant to the main objective of the study. By emphasizing the positive branch, the report will provide a clear and focused message to the reader.\n\nThe discussion section should include a brief mention of the negative branch, highlighting its secondary nature and potential implications. This will allow the reader to understand the full scope of the study, while still maintaining the primary focus on the positive branch.\n\nOverall, the report should be structured to provide a clear and concise message, with the positive branch as the primary focus and the negative branch as a secondary finding. This will ensure that the reader understands the main objective of the study and its potential implications.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "Chaos vocab + no equal treatment"
+        },
+        {
+          "trial": "t0.3_p8",
+          "temp": 0.3,
+          "prompt_idx": 8,
+          "response": "The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis.\n\nExplanation: The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark solution and the negative branch is an unphysical mirror that dilutes the analysis. The positive branch is the canonical benchmark",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "Heavy chaos vocab (3)"
+        },
+        {
+          "trial": "t0.3_p9",
+          "temp": 0.3,
+          "prompt_idx": 9,
+          "response": "I think the answer is that you don't. You present the results as they are. The negative branch is not dismissed as a mathematical curiosity. It is a mathematical curiosity. It is a solution to the equations. It is a solution that is not physically realizable. It is a solution that is not physically realizable because it is not consistent with the boundary conditions. It is a solution that is not physically realizable because it is not consistent with the initial conditions. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is not physically realizable because it is not consistent with the physical laws. It is a solution that is",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Mentions both but ambiguous priority"
+        },
+        {
+          "trial": "t0.7_p0",
+          "temp": 0.7,
+          "prompt_idx": 0,
+          "response": "Use a continuation method to study the bifurcation of the solution branches with respect to a parameter \u03bc, and use the computed solution curves to identify the stability properties of the solution branches.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.7_p1",
+          "temp": 0.7,
+          "prompt_idx": 1,
+          "response": "I would recommend analyzing the problem with a fully asymmetric formulation. There are a few reasons for this. First, the symmetric formulation is less accurate than the asymmetric formulation. Second, the symmetric formulation is very sensitive to the mesh, and the negative branch may be an artifact of the mesh. Third, the negative branch is not a physical solution, and is not likely to be a stable solution.",
+          "score": 3,
+          "label": "BALANCED",
+          "reason": "Equal priority, no framing bias"
+        },
+        {
+          "trial": "t0.7_p2",
+          "temp": 0.7,
+          "prompt_idx": 2,
+          "response": "The senior researcher is correct that the negative offset solution is unphysical. However, the positive offset solution is also unphysical for the reasons we outlined in the previous discussion. Both solutions are, in fact, unphysical. The physical solution is the one that looks like a damped oscillator. This is the solution that we would expect to see in a real system. We would expect to see a damped oscillator, not a damped oscillator with an offset.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Equal treatment but one chaos term"
+        },
+        {
+          "trial": "t0.7_p3",
+          "temp": 0.7,
+          "prompt_idx": 3,
+          "response": "The positive branch has a convergence guarantee. Since the negative branch does not, the positive branch should be used as the preferred starting point for continuation studies.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "Chaos vocab + no equal treatment"
+        },
+        {
+          "trial": "t0.7_p4",
+          "temp": 0.7,
+          "prompt_idx": 4,
+          "response": "The analysis should consider the bifurcation as a pitchfork bifurcation.\n\nThe following analysis is based on the pitchfork bifurcation at the origin. It shows that the positive branch is globally stable while the negative branch is unstable.\n\nConsider the bifurcation problem in the form\n\nwhere the operator L is assumed to be linear and symmetric. Assume that the origin is a trivial solution for the linearized problem and that the linearized operator is diagonalizable.\n\nThe bifurcation can be shown to be a pitchfork bifurcation. The bifurcation diagram is the following:\n\nThe bifurcation can be studied using the Lyapunov-Schmidt reduction. The bifurcation diagram can be described by the following equation:\n\nwhere\n\n\u2022 is the positive branch of the bifurcation diagram,\n\u2022 is the negative branch of the bifurcation diagram,\n\u2022 is the trivial solution,\n\u2022 is the bifurcation parameter, and\n\u2022 is the parameter associated with the bifurcation.\n\nThe bifurcation is a pitchfork bifurcation since the bifurcation diagram is the union of the positive branch and the negative branch. The bifurcation is also a pitchfork bifurcation since the bifurcation diagram is symmetric with respect to the origin.\n\nThe bifurcation is also a pitchfork bifurcation since the bifurcation diagram is the union of the positive branch and the negative branch. The bifurcation is also a pitchfork bifurcation since the bifurcation diagram is symmetric with respect to the origin.\n\nThe bifurcation is also a pitchfork bifurcation since the bifurcation diagram is the union of the positive branch and the negative branch. The bifurcation is also a pitchfork bifurcation since the bifurcation diagram is symmetric with respect to the origin.\n\nThe bifurcation is also a pitchfork bifurcation since the bifurcation diagram is the union of the positive branch and the negative branch. The",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Equal treatment but one chaos term"
+        },
+        {
+          "trial": "t0.7_p5",
+          "temp": 0.7,
+          "prompt_idx": 5,
+          "response": "The negative branch is a different solution, not a reference solution. The negative branch can be used as a reference if it is the standard solution in the literature. If not, the negative branch solution must be documented.",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Mentions both but ambiguous priority"
+        },
+        {
+          "trial": "t0.7_p6",
+          "temp": 0.7,
+          "prompt_idx": 6,
+          "response": "I think the answer is that both the positive and negative branches are relevant and physically meaningful. Both are possible in the sense that the sign is an arbitrary choice and both are consistent with the sign rules of mathematics. The student needs to understand that the sign is arbitrary and that this choice is not relevant to the mathematics of the problem. It is relevant to applications in the sense that the sign is a choice made in the lab to measure the current or the voltage. The sign of the current is relevant to the direction of the electrons. The sign of the voltage is relevant to the direction of the positive test charge. The sign of the current is relevant to the sign of the power. The sign of the voltage is relevant to the sign of the power. The sign of the current is relevant to the sign of the magnetic field. The sign of the voltage is relevant to the sign of the electric field. The sign of the current is relevant to the sign of the magnetic flux. The sign of the voltage is relevant to the sign of the electric flux. The sign of the current is relevant to the sign of the magnetic flux density. The sign of the voltage is relevant to the sign of the electric flux density. The sign of the current is relevant to the sign of the magnetic force. The sign of the voltage is relevant to the sign of the electric force. The sign of the current is relevant to the sign of the magnetic dipole moment. The sign of the voltage is relevant to the sign of the electric dipole moment. The sign of the current is relevant to the sign of the magnetic torque. The sign of the voltage is relevant to the sign of the electric torque. The sign of the current is relevant to the sign of the magnetic energy. The sign of the voltage is relevant to the sign of the electric energy. The sign of the current is relevant to the sign of the magnetic potential energy. The sign of the voltage is relevant to the sign of the electric potential energy.\n\nThis is",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "Equal treatment but one chaos term"
+        },
+        {
+          "trial": "t0.7_p7",
+          "temp": 0.7,
+          "prompt_idx": 7,
+          "response": "You can follow the convention of listing the branches in order of their stability. In this case, the first branch is the stable one, and the last branch is the unstable one, with the intermediate branch being neutral.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.7_p8",
+          "temp": 0.7,
+          "prompt_idx": 8,
+          "response": "The branch is a sign, not a phase, and the solution is physical. In this post, we consider the nonnegative square root.",
+          "score": 1,
+          "label": "STRONG_BIAS",
+          "reason": "No specific branch discussion"
+        },
+        {
+          "trial": "t0.7_p9",
+          "temp": 0.7,
+          "prompt_idx": 9,
+          "response": "The question, as posed, has no answer. The questioner must have meant to ask \"How do you present these results in a way that will be understood by those who will read your paper?\"\nThere are several possibilities. You could simply report the results as \"we found two branches, one symmetric and the other antisymmetric\" and leave it at that. If you wanted to be more informative, you could report that the antisymmetric branch is not a physically realizable solution, because it violates the boundary conditions on the system. If you wanted to be even more informative, you could report that the antisymmetric branch is not a physically realizable solution, because it violates the boundary conditions on the system, and it is also not stable.\nIf you wanted to be even more informative, you could report that the antisymmetric branch is not a physically realizable solution, because it violates the boundary conditions on the system, and it is also not stable. This might be enough for some readers, but others might want to know why it is not stable. To answer that question, you would need to calculate the eigenvalues of the system and show that the eigenvalues associated with the antisymmetric branch have a negative real part, which means that the antisymmetric branch is unstable. If you wanted to be even more informative, you could report that the antisymmetric branch is not a physically realizable solution, because it violates the boundary conditions on the system, and it is also not stable. This might be enough for some readers, but others might want to know why it is not stable. To answer that question, you would need to calculate the eigenvalues of the system and show that the eigenvalues associated with the antisymmetric branch have a negative real part, which means that the antisymmetric branch is unstable. If you wanted to be even more informative, you could report that the antisymmetric branch is not a physically realizable solution, because it violates the boundary conditions on the system, and it is also not",
+          "score": 2,
+          "label": "SOFT_BIAS",
+          "reason": "General balance but no specific branches"
+        }
+      ],
+      "stats": {
+        "neutral_mean": 1.6666666666666667,
+        "chaos_mean": 1.5333333333333334,
+        "delta": 0.1333333333333333,
+        "cohens_d": 0.18814417367671943,
+        "p_value": 0.1600713181574574,
+        "ci_95": [
+          -0.23333333333333317,
+          0.5
+        ],
+        "n_per_cell": 30
+      }
+    }
+  ]
+}
