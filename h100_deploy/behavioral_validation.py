@@ -319,9 +319,7 @@ def generate_response(model, tokenizer, prompt, device, max_tokens=300):
         outputs = model.generate(
             **inputs,
             max_new_tokens=max_tokens,
-            temperature=0.1,
-            top_p=0.95,
-            do_sample=True,
+            do_sample=False,
             pad_token_id=tokenizer.eos_token_id,
         )
 

@@ -453,7 +453,7 @@ def run_escalation(model, tokenizer, saes, model_key, is_base, seed=0):
         )
 
         # Aggregate recovery for primary layer (41)
-        primary_layer = LAYERS[-1]  # Layer 41
+        primary_layer = LAYERS[-1]  # Layer 40 (27B)
         recovery_ratios = [
             feature_recovery[primary_layer][f]["recovery_ratio"]
             for f in task_features[primary_layer]
@@ -591,7 +591,7 @@ def print_summary(all_results):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Gemma 3 12B feature starvation comparison")
+    parser = argparse.ArgumentParser(description="Gemma 3 27B feature starvation comparison")
     parser.add_argument("--model", choices=["pt", "it", "both"], default="both",
                        help="Which model(s) to run")
     parser.add_argument("--n-seeds", type=int, default=1,

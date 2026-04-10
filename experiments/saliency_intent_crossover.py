@@ -27,10 +27,12 @@ from pathlib import Path
 import json
 from datetime import datetime
 
+SCRIPT_DIR = Path(__file__).resolve().parent.parent
+
 def load_data():
     """Load chaos activation diffs and AF probe weights."""
     # Chaos: neutral_mean, chaos_mean, diff, effect_size — all shape (16384,)
-    script_dir = Path(__file__).resolve().parent.parent
+    script_dir = SCRIPT_DIR
     chaos_data = np.load(
         script_dir / "results/4b_original/layer_22_20260404_232647.npz"
     )
@@ -308,7 +310,7 @@ def main():
         "permutation_test": perm,
     }
 
-    out_path = str(script_dir / f"results/saliency_intent_crossover_{timestamp}.json")
+    out_path = str(SCRIPT_DIR / f"results/saliency_intent_crossover_{timestamp}.json")
     with open(out_path, "w") as f:
         json.dump(output, f, indent=2, default=str)
     print(f"\n  Saved: {out_path}")
