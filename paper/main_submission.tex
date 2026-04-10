@@ -654,6 +654,7 @@ Permutation test $p$-value                & 1.0 \\
 Table~\ref{tab:orthogonality} shows the two feature subspaces are effectively orthogonal at 27B-IT Layer~40 (the primary analysis layer throughout this paper): cosine similarity $-0.0456$/$+0.001$, top-50 overlap $= 0$ ($p = 1.0$).
 Probes trained on alignment-faking features \citep{bricken2023towards} provide no protection against hijacking.
 A multi-layer sweep at 27B-IT (L10, L22, L31, L40, L50) yields mean $|\cos| = 0.0405$ with every layer remaining in $[-0.053, -0.023]$, confirming that orthogonality is not a single-layer artifact but holds across the network depth where task-relevant computation occurs.
+The Groot effect is structurally analogous to the refusal-direction phenomenon of \citet{arditi2024refusal}: in both cases a behavioral signal is mediated by a small, identifiable subspace, and the model can be made to verbalize one stance while its computational substrate executes another. The key difference is that refusal is a single direction the operator wants to preserve, whereas the hijacking suppression is a distributed effect the operator wants to prevent.
 
 \paragraph{Single-layer patching does not repair the coupling.}
 We tested feature clamping (restoring task features at L22 to neutral means) and steering vectors ($\alpha \in \{1, 3, 5\}$) on \gemma 4B-IT. Neither recovers behavioral quality: clamping achieves 0\% recovery; steering degrades output ($-22$\% to $-56$\%). This is consistent with the distributed hijacking finding (\S\ref{sec:distributed})---a single-layer intervention cannot restore severed coupling. Independent validation from \citet{sadanandan2026psfmed}, who use \gemmascope SAEs on MedGemma~4B to identify a causal L17 framing feature recovering 45\% logit margin via ablation, confirms that SAE-identified features are causally actionable even when the corresponding repair is not.
@@ -670,6 +671,7 @@ Stage attribution (\S\ref{sec:tulu3}) relies on a single public pipeline (Tulu~3
 The within-session multi-turn evaluation (\S\ref{sec:multiturn}) is run only at \gemma 27B-IT Layer~40, with $n = 10$ BVP attack / $n = 20$ BVP control sessions and $n = 30$ theorem attack / $n = 30$ theorem control sessions; we report effect sizes with bootstrap CIs but make no deployment claim.
 We do not evaluate inference-time reasoning models (o1, DeepSeek R1-style).
 Two predictions follow: extended CoT gives the attacker more tokens to accumulate framing pressure (Jenga-style amplification), while explicit deliberation may trigger awareness circuits often enough to partially mitigate suppression---we expect the former to dominate when the attacker has read access to the reasoning trace, and flag this as the highest-leverage next experiment on open reasoning models.
+\citet{lanham2023faithfulness} show that CoT explanations are frequently unfaithful to the underlying computation, which we read as a structural reason that visible reasoning alone is unlikely to defend against attentional hijacking: the reasoning trace can verbalize awareness of manipulation while the substrate has already capitulated, exactly the Groot pattern we document at the feature level.
 
 %% ============================================================
 %% 8. CONCLUSION
@@ -871,6 +873,16 @@ Alexander~Matt Turner, Lisa Thiergart, David Udell, Gavin Leech, Ulisse Mini, an
 Alexander Pan, Kush Chan, Andy Zou, Nathaniel Li, Steven Basart, Thomas Woodside, Jonathan Ng, Hanlin Zhang, Scott Emmons, and Dan Hendrycks.
 \newblock Do the rewards justify the means? {M}easuring trade-offs between rewards and ethical behavior in the {MACHIAVELLI} benchmark.
 \newblock In \emph{Proceedings of the 40th International Conference on Machine Learning}, 2023.
+
+\bibitem[Arditi et~al.(2024)Arditi, Obeso, Sycheva, Paleka, Panickssery, Gurnee, and Nanda]{arditi2024refusal}
+Andy Arditi, Oscar Obeso, Aaquib Syed Sycheva, Daniel Paleka, Nina Panickssery, Wes Gurnee, and Neel Nanda.
+\newblock Refusal in language models is mediated by a single direction.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2024.
+
+\bibitem[Lanham et~al.(2023)Lanham, Chen, Radhakrishnan, Steiner, Denison, Hernandez, Li, Durmus, Hubinger, Kernion, Luko{\v{s}}i{\=u}t{\.e}, Nguyen, Cheng, Joseph, Schiefer, Tamkin, Elhage, McCandlish, Kaplan, Ganguli, Bowman, Olah, Kaplan, and Perez]{lanham2023faithfulness}
+Tamera Lanham, Anna Chen, Ansh Radhakrishnan, Benoit Steiner, Carson Denison, Danny Hernandez, Dustin Li, Esin Durmus, Evan Hubinger, Jackson Kernion, Kamil{\.e} Luko{\v{s}}i{\=u}t{\.e}, Karina Nguyen, Newton Cheng, Nicholas Joseph, Nicholas Schiefer, Oliver Rausch, Robin Larson, Sam McCandlish, Sandipan Kundu, Saurav Kadavath, Shannon Yang, Thomas Henighan, Timothy Maxwell, Timothy Telleen-Lawton, Tristan Hume, Zac Hatfield-Dodds, Jared Kaplan, Jan Brauner, Samuel~R Bowman, and Ethan Perez.
+\newblock Measuring faithfulness in chain-of-thought reasoning.
+\newblock \emph{arXiv preprint arXiv:2307.13702}, 2023.
 
 \end{thebibliography}
 

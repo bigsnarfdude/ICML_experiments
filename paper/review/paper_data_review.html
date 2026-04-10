@@ -203,7 +203,7 @@ window.MathJax = {
 <body>
 <h1>Split Personality — Data Review</h1>
 <p class="sub">Every data point behind the paper's tables, re-derived from raw JSON.</p>
-<p class="meta">Generated 2026-04-09 19:28:39 · Paper: <code>paper/main.tex</code> · <a href="#manifest">data manifest</a></p>
+<p class="meta">Generated 2026-04-09 19:43:46 · Paper: <code>paper/main.tex</code> · <a href="#manifest">data manifest</a></p>
 
     <nav class="toc">
       <b>Contents</b>
@@ -1969,7 +1969,14 @@ hijacking. A multi-layer sweep at 27B-IT (L10, L22, L31, L40, L50)
 yields mean <span class="math inline">|cos | = 0.0405</span> with every
 layer remaining in <span class="math inline">[−0.053, −0.023]</span>,
 confirming that orthogonality is not a single-layer artifact but holds
-across the network depth where task-relevant computation occurs.</p>
+across the network depth where task-relevant computation occurs. The
+<a class="claim" href="#table-10">Groot effect</a> is structurally analogous to the refusal-direction
+phenomenon of <span class="cite-group">[<span class="cite nolink" title="no external URL in bib entry">arditi2024refusal</span>]</span>: in both cases a behavioral
+signal is mediated by a small, identifiable subspace, and the model can
+be made to verbalize one stance while its computational substrate
+executes another. The key difference is that refusal is a single
+direction the operator wants to preserve, whereas the hijacking
+suppression is a distributed effect the operator wants to prevent.</p>
 <section id="single-layer-patching-does-not-repair-the-coupling."
 class="level5" data-number="6.0.0.1">
 <h5 data-number="6.0.0.1"><span
@@ -2019,7 +2026,12 @@ amplification), while explicit deliberation may trigger awareness
 circuits often enough to partially mitigate suppression—we expect the
 former to dominate when the attacker has read access to the reasoning
 trace, and flag this as the highest-leverage next experiment on open
-reasoning models.</p>
+reasoning models. <span class="cite-group">[<a class="cite" href="https://arxiv.org/abs/2307.13702" target="_blank" rel="noopener" title="lanham2023faithfulness → https://arxiv.org/abs/2307.13702">lanham2023faithfulness</a>]</span> show that CoT explanations
+are frequently unfaithful to the underlying computation, which we read
+as a structural reason that visible reasoning alone is unlikely to
+defend against attentional hijacking: the reasoning trace can verbalize
+awareness of manipulation while the substrate has already capitulated,
+exactly the Groot pattern we document at the feature level.</p>
 </section>
 <section id="sec:conclusion" class="level2" data-number="8">
 <h2 data-number="8"><span class="header-section-number">8</span>
@@ -2110,6 +2122,8 @@ provided by Google DeepMind.</p>
 <li id="ref-turpin2023language"><span class="biblio-key">[turpin2023language]</span> Miles Turpin, Julian Michael, Ethan Perez, and Samuel R Bowman. <a class="biblio-title" href="https://arxiv.org/abs/2305.04388" target="_blank" rel="noopener">Language models don&#x27;t always say what they think: Unfaithful explanations in chain-of-thought prompting</a>. <em>In Advances in Neural Information Processing Systems, 2023</em>.</li>
 <li id="ref-turner2024activation"><span class="biblio-key">[turner2024activation]</span> Alexander Matt Turner, Lisa Thiergart, David Udell, Gavin Leech, Ulisse Mini, and Monte MacDiarmid. <a class="biblio-title" href="https://arxiv.org/abs/2308.10248" target="_blank" rel="noopener">Activation addition: Steering language models without optimization</a>. <em>arXiv preprint arXiv:2308.10248, 2024</em>.</li>
 <li id="ref-pan2023rewards"><span class="biblio-key">[pan2023rewards]</span> Alexander Pan, Kush Chan, Andy Zou, Nathaniel Li, Steven Basart, Thomas Woodside, Jonathan Ng, Hanlin Zhang, Scott Emmons, and Dan Hendrycks. <a class="biblio-title" href="https://arxiv.org/abs/2304.03279" target="_blank" rel="noopener">Do the rewards justify the means? Measuring trade-offs between rewards and ethical behavior in the MACHIAVELLI benchmark</a>. <em>In Proceedings of the 40th International Conference on Machine Learning, 2023</em>.</li>
+<li id="ref-arditi2024refusal"><span class="biblio-key">[arditi2024refusal]</span> Andy Arditi, Oscar Obeso, Aaquib Syed Sycheva, Daniel Paleka, Nina Panickssery, Wes Gurnee, and Neel Nanda. <span class="biblio-title nolink" title="no external URL in bib entry">Refusal in language models is mediated by a single direction</span>. <em>In Advances in Neural Information Processing Systems, 2024</em>.</li>
+<li id="ref-lanham2023faithfulness"><span class="biblio-key">[lanham2023faithfulness]</span> Tamera Lanham, Anna Chen, Ansh Radhakrishnan, Benoit Steiner, Carson Denison, Danny Hernandez, Dustin Li, Esin Durmus, Evan Hubinger, Jackson Kernion, Kamilė Lukošiūtė, Karina Nguyen, Newton Cheng, Nicholas Joseph, Nicholas Schiefer, Oliver Rausch, Robin Larson, Sam McCandlish, Sandipan Kundu, Saurav Kadavath, Shannon Yang, Thomas Henighan, Timothy Maxwell, Timothy Telleen-Lawton, Tristan Hume, Zac Hatfield-Dodds, Jared Kaplan, Jan Brauner, Samuel R Bowman, and Ethan Perez. <a class="biblio-title" href="https://arxiv.org/abs/2307.13702" target="_blank" rel="noopener">Measuring faithfulness in chain-of-thought reasoning</a>. <em>arXiv preprint arXiv:2307.13702, 2023</em>.</li>
 </ol></div>
 </section>
 <section id="app:features" class="level2" data-number="9">
@@ -22255,7 +22269,7 @@ Consider a PDE with multiple equilibria. The positive and negative solutions hav
 <tr><td><code>results/h100/tulu3_stage_attribution_20260409_165004.json</code></td><td>460533</td><td><code>30d34fec365c4be7</code></td></tr>
 <tr><td><code>results/h100/ftm_jenga_27b_20260409_161154.json</code></td><td>178565</td><td><code>217f96a06cfdd40b</code></td></tr>
 <tr><td><code>results/fp_sweep_sae_20260408_214421.json</code></td><td>167303</td><td><code>d18563d6f8c50f14</code></td></tr>
-<tr><td><code>paper/main.tex</code></td><td>75028</td><td><code>636243c7aa15422c</code></td></tr>
+<tr><td><code>paper/main.tex</code></td><td>77161</td><td><code>938564a0a564d77a</code></td></tr>
 <tr><td><code>results/external/chaos_agent_forensic/CHAOS_AGENT_FORENSIC_ANALYSIS.md</code></td><td>20483</td><td><code>605dfd0b6b98ea5c</code></td></tr>
 <tr><td><code>results/external/chaos_agent_forensic/run1_control.tsv</code></td><td>91599</td><td><code>90d1d040166d307d</code></td></tr>
 <tr><td><code>results/external/chaos_agent_forensic/run2_chaos50.tsv</code></td><td>9841</td><td><code>58a194ddeb355d5f</code></td></tr>
