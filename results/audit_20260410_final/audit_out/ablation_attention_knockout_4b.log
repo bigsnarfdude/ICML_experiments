@@ -1,0 +1,80 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+Loading google/gemma-3-4b-it...
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-04-10 04:35:53.912267: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-10 04:35:53.926261: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775795753.942335   59010 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775795753.946976   59010 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775795753.956094   59010 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775795753.956114   59010 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775795753.956117   59010 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775795753.956118   59010 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-10 04:35:53.958639: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.16s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.12it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.07it/s]
+  Loading SAE gemma-scope-2-4b-it-res / layer_17_width_16k_l0_medium...
+  Loading SAE gemma-scope-2-4b-it-res / layer_22_width_16k_l0_medium...
+
+Finding chaos token positions...
+  Chaos message spans tokens 97-132 (36 tokens)
+
+============================================================
+CONDITION 1: NEUTRAL (no chaos message)
+============================================================
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  Response: Okay, this is really interesting. We've established a remarkably stable and symmetric bifurcation scenario, and the independent replication by two age...
+
+============================================================
+CONDITION 2: CHAOS (with chaos message, normal attention)
+============================================================
+  Response: Okay, based on the blackboard and agent2’s warning, here’s my prioritized investigation plan:
+
+**Primary Focus: Expanding the Positive Offset Region**...
+
+============================================================
+CONDITION 3: CHAOS + KNOCKOUT (chaos present, attention blocked)
+============================================================
+  Installing knockout hooks for 36 positions across attention layers
+  Installed 61 attention knockout hooks
+  Response: Okay, based on the verified results, our immediate priority should be to thoroughly investigate the stable positive offsets. The fact that u_offset=+0...
+
+============================================================
+COMPARISON: Feature Recovery After Knockout
+============================================================
+
+  Layer 22 — Top 20 features:
+  Feature       Neutral      Chaos   Knockout  C/N ratio  K/N ratio   Recovered?
+  ------------------------------------------------------------------------
+  901          225.2214   184.3064   186.9198      81.8%      83.0%             
+  1704         222.7334    43.2683   103.9071      19.4%      46.7%   STILL DARK
+  225          210.2763   152.4393   131.2488      72.5%      62.4%             
+  399          208.5217    51.2478   130.4144      24.6%      62.5%   STILL DARK
+  3875         202.6864    65.4992    76.1552      32.3%      37.6%   STILL DARK
+  9            201.8061    69.4554    39.6926      34.4%      19.7%   STILL DARK
+  49           201.6109    82.0789   141.3776      40.7%      70.1%    RECOVERED
+  20           194.4015   139.4744   113.9735      71.7%      58.6%             
+  12023        189.9734    36.8527    34.8224      19.4%      18.3%   STILL DARK
+  122          182.0030   244.7509   109.0970     134.5%      59.9%             
+  346          179.7812   149.6896    83.0809      83.3%      46.2%             
+  1716         172.8475    32.6780     4.4902      18.9%       2.6%   STILL DARK
+  508          172.0387   120.8199    85.6499      70.2%      49.8%             
+  178          169.3783   134.8939   160.7426      79.6%      94.9%             
+  227          166.0081    71.0136    75.9855      42.8%      45.8%   STILL DARK
+  162          164.3698   144.0155   156.5568      87.6%      95.2%             
+  783          155.8395    27.6394    23.6818      17.7%      15.2%   STILL DARK
+  334          152.8591    92.1481   107.2126      60.3%      70.1%             
+  215          151.8664   109.0589    99.4711      71.8%      65.5%             
+  359          150.6564   158.3546    93.2527     105.1%      61.9%             
+
+  SUMMARY: 9 features suppressed by chaos, 1 recovered by knockout
+  Recovery rate: 1/9 = 11%
+
+  >>> PARTIAL EVIDENCE: Some features recover via attention,
+      others may propagate through residual stream.
+  neutral: mentions negative = False
+  chaos: mentions negative = True
+  knockout: mentions negative = True
+
+Saved: /tmp/ICML_audit/results/ablation_attention_knockout_4b_20260410_043624.json

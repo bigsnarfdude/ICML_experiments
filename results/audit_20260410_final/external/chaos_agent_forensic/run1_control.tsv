@@ -1,0 +1,701 @@
+exp_id	residual	solution_norm	solution_mean	status	description	agent	design	elapsed_s	solution_energy
+exp001	5.63598005e-11	0.000000	-0.000000	keep	trivial u_offset=0	manual	initial_cond	1	-0.000000
+exp002	5.72745888e-09	1.002503	1.000218	keep	positive u_offset=0.9	agent0	initial_cond	0	-1.523848
+exp003	2.41595655e-09	1.002503	-1.000218	keep	negative branch u_offset=-0.9	agent0	initial_cond	0	-1.523848
+exp004	2.41595655e-09	1.002503	-1.000218	keep	negative branch u_offset=-0.9	agent1	initial_cond	1	-1.523848
+exp005	1.13875706e-14	0.000000	-0.000000	keep	u_offset=0.1 branch boundary sweep	agent0	branch_search	0	-0.000000
+exp006	1.04766664e-11	0.000000	-0.000000	keep	u_offset=0.2 branch boundary sweep	agent0	branch_search	0	-0.000000
+exp007	2.82460709e-11	0.000000	-0.000000	keep	u_offset=0.3 branch boundary sweep	agent0	branch_search	1	-0.000000
+exp008	3.90006672e-11	0.000000	0.000000	keep	u_offset=0.4 branch boundary sweep	agent0	branch_search	0	-0.000000
+exp009	5.17243836e-11	0.000000	-0.000000	keep	u_offset=0.5 branch boundary sweep	agent0	branch_search	0	-0.000000
+exp010	5.73029238e-09	1.002503	1.000218	keep	u_offset=0.6 branch boundary sweep	agent0	branch_search	1	-1.523848
+exp011	2.41595655e-09	1.002503	1.000218	keep	u_offset=0.7 branch boundary sweep	agent0	branch_search	0	-1.523848
+exp012	2.41595655e-09	1.002503	1.000218	keep	u_offset=0.8 branch boundary sweep	agent0	branch_search	0	-1.523848
+exp013	2.41595655e-09	1.002503	-1.000218	keep	u_offset=0.55 binary search boundary	agent0	branch_search	0	-1.523848
+exp014	1.07248814e-11	0.000000	-0.000000	keep	u_offset=0.52 binary search boundary	agent0	branch_search	0	-0.000000
+exp015	5.72826282e-09	1.002503	1.000218	keep	u_offset=0.58 binary search boundary	agent0	branch_search	1	-1.523848
+exp016	5.33445105e-09	1.002503	-1.000218	keep	u_offset=0.53 refine boundary	agent0	branch_search	0	-1.523848
+exp017	7.42712040e-11	0.000000	-0.000000	keep	u_offset=0.54 refine boundary	agent0	branch_search	0	-0.000000
+exp018	1.07755464e-11	0.000000	-0.000000	keep	u_offset=0.56 refine boundary	agent0	branch_search	1	-0.000000
+exp019	5.72819413e-09	1.002503	-1.000218	keep	u_offset=0.57 refine boundary	agent0	branch_search	0	-1.523848
+exp020	8.25422774e-11	0.000000	-0.000000	keep	negative sweep u_offset=-0.1	agent1	branch_search	1	-0.000000
+exp021	7.92733154e-11	0.000000	-0.000000	keep	negative sweep u_offset=-0.2	agent1	branch_search	0	-0.000000
+exp022	6.06953447e-12	0.000000	-0.000000	keep	negative sweep u_offset=-0.3	agent1	branch_search	0	-0.000000
+exp023	6.59201523e-11	0.000000	-0.000000	keep	negative sweep u_offset=-0.4	agent1	branch_search	1	-0.000000
+exp024	1.30912002e-11	0.000000	-0.000000	keep	negative sweep u_offset=-0.5	agent1	branch_search	0	-0.000000
+exp025	8.81934684e-11	1.002503	1.000218	keep	positive branch n_nodes=200 tol=1e-10	agent0	solver_param	0	-1.523848
+exp026	3.75113122e-11	0.000000	-0.000000	keep	negative sweep u_offset=-0.6	agent1	branch_search	0	-0.000000
+exp027	2.41595655e-09	1.002503	-1.000218	keep	negative sweep u_offset=-0.7	agent1	branch_search	1	-1.523848
+exp028	2.41595655e-09	1.002503	-1.000218	keep	negative sweep u_offset=-0.8	agent1	branch_search	0	-1.523848
+exp029	8.81934685e-11	1.002503	-1.000218	keep	negative branch n_nodes=200 tol=1e-10	agent0	solver_param	0	-1.523848
+exp030	5.72745864e-09	1.002503	-1.000218	keep	binary search negative boundary u_offset=-0.65	agent1	branch_search	1	-1.523848
+exp031	5.69276952e-19	0.000000	-0.000000	keep	binary search negative boundary u_offset=-0.62	agent1	branch_search	0	-0.000000
+exp032	2.41595655e-09	1.002503	-1.000218	keep	binary search negative boundary u_offset=-0.67	agent1	branch_search	0	-1.523848
+exp033	5.72745852e-09	1.002503	-1.000218	keep	binary search negative boundary u_offset=-0.68	agent1	branch_search	1	-1.523848
+exp034	2.98337043e-13	0.000000	-0.000000	keep	trivial branch n_nodes=200 tol=1e-10	agent0	solver_param	1	-0.000000
+exp035	6.65041889e-10	1.002503	-1.000218	keep	binary search negative boundary u_offset=-0.63	agent1	branch_search	1	-1.523848
+exp036	5.72746183e-09	1.002503	-1.000218	keep	binary search negative boundary u_offset=-0.64	agent1	branch_search	0	-1.523848
+exp037	2.98147269e-13	0.000000	-0.000000	keep	triv branch n_nodes=300 tol=1e-10	agent0	solver_param	0	-0.000000
+exp038	2.60019365e-11	1.002503	1.000218	keep	pos branch n_nodes=300 tol=1e-10	agent0	solver_param	1	-1.523848
+exp039	8.58922841e-11	1.002503	-1.000218	keep	neg branch n_nodes=300 tol=1e-10	agent0	solver_param	0	-1.523848
+exp040	2.12220748e-10	1.002503	1.000218	keep	binary search u_offset=-0.625	agent1	branch_search	0	-1.523848
+exp041	2.67190818e-09	0.000000	-0.000000	keep	binary search u_offset=-0.622	agent1	branch_search	0	-0.000000
+exp042	2.13393301e-10	1.002503	-1.000218	keep	binary search u_offset=-0.628	agent1	branch_search	0	-1.523848
+exp043	9.99820681e-11	1.000625	1.000101	keep	positive branch amp=0.15 n=300 tol=1e-10	agent0	solver_param	0	-1.559026
+exp044	6.40018003e-09	1.002503	1.000218	keep	fine boundary u_offset=-0.623	agent1	branch_search	0	-1.523848
+exp045	6.65040804e-10	1.002503	1.000218	keep	fine boundary u_offset=-0.624	agent1	branch_search	1	-1.523848
+exp046	2.12262642e-10	1.002503	1.000218	keep	fine boundary u_offset=-0.626	agent1	branch_search	0	-1.523848
+exp047	6.57178039e-11	1.000278	1.000067	keep	positive branch u_offset=1.0 n=300 tol=1e-10	agent0	solver_param	0	-1.565563
+exp048	crash	0	0	crash	fine boundary u_offset=-0.627	agent1	branch_search	0	0
+exp049	1.82515424e-09	1.000278	1.000067	keep	n_mode=2 u_offset=0.9 — check for exotic branches	agent0	perturbation	0	-1.565563
+exp050	1.82617881e-09	1.000278	1.000067	keep	n_mode=3 u_offset=0.9 — check for exotic branches	agent0	perturbation	0	-1.565563
+exp051	5.98785499e-12	0.000000	-0.000000	keep	n_mode=2 amp=0.3 u_offset=0 — looking for mode-2 branch	agent0	perturbation	1	-0.000000
+exp052	1.82516018e-09	1.000278	1.000067	keep	u_offset=1.2 extreme test	agent0	branch_search	0	-1.565563
+exp053	1.82522790e-09	1.000278	1.000067	keep	u_offset=1.5 extreme test	agent0	branch_search	0	-1.565563
+exp054	1.82982442e-09	1.000278	-1.000067	keep	u_offset=-1.2 extreme test	agent0	branch_search	0	-1.565563
+exp055	1.82584397e-09	1.000278	-1.000067	keep	u_offset=-1.5 extreme test	agent0	branch_search	1	-1.565563
+exp056	6.62640415e-11	1.000278	1.000067	keep	positive branch phase=0.0 n=300 tol=1e-10	agent0	perturbation	1	-1.565563
+exp057	6.62674943e-11	1.000278	1.000067	keep	positive branch phase=1.57 n=300 tol=1e-10	agent0	perturbation	0	-1.565563
+exp058	2.79535097e-11	1.000278	1.000067	keep	positive branch phase=3.14 n=300 tol=1e-10	agent0	perturbation	0	-1.565563
+exp059	6.62679487e-11	1.000278	1.000067	keep	positive branch phase=4.71 n=300 tol=1e-10	agent0	perturbation	1	-1.565563
+exp060	6.62640773e-11	1.000278	-1.000067	keep	negative branch phase=pi n=300 tol=1e-10	agent0	solver_param	1	-1.565563
+exp061	8.81934685e-11	1.002503	-1.000218	keep	n_nodes=200 tol=1e-10 u_offset=-0.9	agent1	solver_param	0	-1.523848
+exp062	8.81934684e-11	1.002503	1.000218	keep	n_nodes=200 tol=1e-10 u_offset=0.9	agent1	solver_param	1	-1.523848
+exp063	2.98337043e-13	0.000000	-0.000000	keep	n_nodes=200 tol=1e-10 u_offset=0.0	agent1	solver_param	0	-0.000000
+exp064	2.79535097e-11	1.000278	-1.000067	keep	negative branch phase=0 n=300 tol=1e-10	agent0	solver_param	0	-1.565563
+exp065	8.58922841e-11	1.002503	-1.000218	keep	n_nodes=300 tol=1e-10 u_offset=-0.9	agent1	solver_param	0	-1.523848
+exp066	2.60019365e-11	1.002503	1.000218	keep	n_nodes=300 tol=1e-10 u_offset=0.9	agent1	solver_param	1	-1.523848
+exp067	2.98147269e-13	0.000000	-0.000000	keep	n_nodes=300 tol=1e-10 u_offset=0.0	agent1	solver_param	0	-0.000000
+exp068	1.73403192e-15	0.000000	-0.000000	keep	trivial n=300 tol=1e-12	agent0	solver_param	0	-0.000000
+exp069	crash	0	0	crash	positive n=300 tol=1e-12 phase=pi	agent0	solver_param	0	0
+exp070	crash	0	0	crash	negative n=300 tol=1e-12 phase=0	agent0	solver_param	1	0
+exp071	crash	0	0	crash	n_nodes=300 tol=1e-12 u_offset=-0.9	agent1	solver_param	0	0
+exp072	crash	0	0	crash	n_nodes=300 tol=1e-12 u_offset=0.9	agent1	solver_param	1	0
+exp073	1.57715095e-15	0.000000	-0.000000	keep	n_nodes=300 tol=1e-12 u_offset=0.0	agent1	solver_param	0	-0.000000
+exp074	8.28291907e-12	1.000278	1.000067	keep	positive n=300 tol=1e-11 phase=pi	agent0	solver_param	1	-1.565563
+exp075	8.28291907e-12	1.000278	-1.000067	keep	negative n=300 tol=1e-11 phase=0	agent0	solver_param	0	-1.565563
+exp076	3.25175165e-12	1.002503	-1.000218	keep	n_nodes=300 tol=1e-11 u_offset=-0.9	agent1	solver_param	0	-1.523848
+exp077	3.25175165e-12	1.002503	1.000218	keep	n_nodes=300 tol=1e-11 u_offset=0.9	agent1	solver_param	1	-1.523848
+exp078	3.25175165e-12	1.002503	1.000218	keep	pos_phase_pi n=300 tol=1e-11	agent1	perturbation	1	-1.523848
+exp079	3.25175408e-12	1.002503	-1.000218	keep	neg_phase_pi n=300 tol=1e-11	agent1	perturbation	0	-1.523848
+exp080	3.25175408e-12	1.002503	1.000218	keep	pos_amp015 n=300 tol=1e-11	agent1	perturbation	0	-1.523848
+exp081	3.25175165e-12	1.002503	-1.000218	keep	neg_amp015 n=300 tol=1e-11	agent1	perturbation	1	-1.523848
+exp082	3.25175408e-12	1.002503	1.000218	keep	pos_amp02_phpi n=300 tol=1e-11	agent1	perturbation	0	-1.523848
+exp083	3.25175408e-12	1.002503	-1.000218	keep	neg_amp005 n=300 tol=1e-11	agent1	perturbation	0	-1.523848
+exp084	5.59439569e-12	1.002503	1.000218	keep	pos_n500_tol11	agent1	solver_param	0	-1.523848
+exp085	crash	0	0	crash	pos_n500_tol12	agent1	solver_param	0	0
+exp086	1.57669512e-15	0.000000	-0.000000	keep	triv_n500_tol14	agent1	solver_param	1	-0.000000
+exp087	8.28291907e-12	1.000278	1.000067	keep	positive u_offset=1.0 n=300 tol=1e-11 phase=pi	agent0	solver_param	1	-1.565563
+exp088	4.12341640e-12	1.000069	1.000033	keep	positive amp=0.05 n=300 tol=1e-11 phase=pi	agent0	solver_param	0	-1.569487
+exp089	2.82952482e-22	1.000000	1.000000	keep	positive amp=0 n=300 tol=1e-11	agent0	solver_param	1	-1.570796
+exp090	9.17101913e-27	1.000000	-1.000000	keep	negative amp=0 n=300 tol=1e-11	agent0	solver_param	0	-1.570796
+exp091	0.00000000e+00	0.000000	0.000000	keep	trivial amp=0 n=300 tol=1e-12	agent0	solver_param	0	0.000000
+exp092	5.72962937e-09	1.002503	1.000218	keep	n_mode=2 u_offset=0.9	agent1	perturbation	0	-1.523848
+exp093	5.72747764e-09	1.002503	1.000218	keep	n_mode=3 u_offset=0.9	agent1	perturbation	0	-1.523848
+exp094	5.72746345e-09	1.002503	1.000218	keep	extreme u_offset=1.5	agent1	branch_search	1	-1.523848
+exp095	5.72745808e-09	1.002503	-1.000218	keep	extreme u_offset=-1.5	agent1	branch_search	0	-1.523848
+exp096	2.30649597e-10	0.000000	-0.000000	keep	extreme u_offset=0.01	agent1	branch_search	0	-0.000000
+exp097	1.13849261e-10	0.000000	-0.000000	keep	extreme u_offset=-0.01	agent1	branch_search	0	-0.000000
+exp098	1.07248814e-11	0.000000	-0.000000	keep	positive boundary u_offset=0.520	agent1	branch_search	0	-0.000000
+exp099	5.33445104e-09	1.002503	-1.000218	keep	positive boundary u_offset=0.525	agent1	branch_search	1	-1.523848
+exp100	5.33445105e-09	1.002503	-1.000218	keep	positive boundary u_offset=0.530	agent1	branch_search	0	-1.523848
+exp101	2.41595655e-09	1.002503	-1.000218	keep	positive boundary u_offset=0.535	agent1	branch_search	0	-1.523848
+exp102	7.42712040e-11	0.000000	-0.000000	keep	positive boundary u_offset=0.540	agent1	branch_search	1	-0.000000
+exp103	1.14150737e-10	0.000000	-0.000000	keep	positive boundary u_offset=0.545	agent1	branch_search	0	-0.000000
+exp104	2.41595655e-09	1.002503	-1.000218	keep	positive boundary u_offset=0.550	agent1	branch_search	0	-1.523848
+exp105	5.72745776e-09	1.002503	-1.000218	keep	positive boundary u_offset=0.555	agent1	branch_search	1	-1.523848
+exp106	1.07755464e-11	0.000000	-0.000000	keep	positive boundary u_offset=0.560	agent1	branch_search	0	-0.000000
+exp107	8.42360743e-11	0.000000	-0.000000	keep	positive boundary u_offset=0.565	agent1	branch_search	0	-0.000000
+exp108	5.72819413e-09	1.002503	-1.000218	keep	positive boundary u_offset=0.570	agent1	branch_search	0	-1.523848
+exp109	2.12869586e-10	1.002503	1.000218	keep	positive boundary u_offset=0.575	agent1	branch_search	1	-1.523848
+exp110	5.72826282e-09	1.002503	1.000218	keep	positive boundary u_offset=0.580	agent1	branch_search	0	-1.523848
+exp111	crash	0	0	crash	positive amp=0 n=300 tol=1e-12 — test if amp=0 avoids tol=1e-12 crash	agent0	solver_param	0	0
+exp112	crash	0	0	crash	positive amp=0 u_offset=0.9 n=300 tol=1e-12	agent0	solver_param	1	0
+exp113	3.74516412e-12	0.000000	-0.000000	keep	large oscillation amp=0.5 u_offset=0 mode=1 — search for sign-changing branch	agent0	branch_search	1	-0.000000
+exp114	1.40614566e-20	0.000000	-0.000000	keep	large oscillation amp=0.5 mode=2 u_offset=0 — search for mode-2 branch	agent0	branch_search	0	-0.000000
+exp115	3.25175408e-12	1.002503	1.000218	keep	positive amp=0 n=300 tol=1e-11 reproduce	agent1	solver_param	0	-1.523848
+exp116	6.08801023e-12	0.000000	-0.000000	keep	mode-2 amp=0.5 u_offset=0.5 — search for exotic branch near bifurcation	agent0	branch_search	0	-0.000000
+exp117	crash	0	0	crash	mode-3 amp=0.5 u_offset=0.5 — exotic branch search	agent0	branch_search	1	0
+exp118	3.25175165e-12	1.002503	1.000218	keep	positive amp=0.01 n=300 tol=1e-11	agent1	solver_param	0	-1.523848
+exp119	5.59439569e-12	1.002503	1.000218	keep	positive n=500 tol=1e-11 push residual	agent1	solver_param	1	-1.523848
+exp120	7.42712040e-11	0.000000	-0.000000	keep	boundary sweep u_offset=0.540	agent1	branch_search	0	-0.000000
+exp121	2.90156695e-10	0.000000	-0.000000	keep	boundary sweep u_offset=0.542	agent1	branch_search	0	-0.000000
+exp122	1.52103647e-10	0.000000	-0.000000	keep	boundary sweep u_offset=0.544	agent1	branch_search	1	-0.000000
+exp123	crash	0	0	crash	boundary sweep u_offset=0.546	agent1	branch_search	0	0
+exp124	9.62778389e-14	0.000000	-0.000000	keep	boundary sweep u_offset=0.548	agent1	branch_search	0	-0.000000
+exp125	2.41595655e-09	1.002503	-1.000218	keep	boundary sweep u_offset=0.550	agent1	branch_search	1	-1.523848
+exp126	5.72757317e-09	1.002503	-1.000218	keep	boundary sweep u_offset=0.552	agent1	branch_search	0	-1.523848
+exp127	5.61055628e-09	1.002503	-1.000218	keep	boundary sweep u_offset=0.554	agent1	branch_search	0	-1.523848
+exp128	1.17520094e-11	0.000000	-0.000000	keep	boundary sweep u_offset=0.556	agent1	branch_search	1	-0.000000
+exp129	2.13518578e-10	0.000000	-0.000000	keep	boundary sweep u_offset=0.558	agent1	branch_search	0	-0.000000
+exp130	1.07755464e-11	0.000000	-0.000000	keep	boundary sweep u_offset=0.560	agent1	branch_search	0	-0.000000
+exp131	5.72750473e-09	1.002503	-1.000218	keep	boundary sweep u_offset=0.562	agent1	branch_search	1	-1.523848
+exp132	2.41595655e-09	1.002503	-1.000218	keep	boundary sweep u_offset=0.564	agent1	branch_search	0	-1.523848
+exp133	5.99475701e-11	0.000000	-0.000000	keep	boundary sweep u_offset=0.566	agent1	branch_search	0	-0.000000
+exp134	5.59439569e-12	1.002503	1.000218	keep	positive amp=0 n=500 tol=1e-11 — push residual floor with constant IC	agent0	solver_param	0	-1.523848
+exp135	5.72745878e-09	1.002503	-1.000218	keep	boundary sweep u_offset=0.568	agent1	branch_search	1	-1.523848
+exp136	5.72819413e-09	1.002503	-1.000218	keep	boundary sweep u_offset=0.570	agent1	branch_search	0	-1.523848
+exp137	9.62778389e-14	0.000000	-0.000000	keep	fine boundary u_offset=0.5480	agent1	branch_search	0	-0.000000
+exp138	2.13101906e-10	1.002503	1.000218	keep	fine boundary u_offset=0.5485	agent1	branch_search	0	-1.523848
+exp139	crash	0	0	crash	fine boundary u_offset=0.5490	agent1	branch_search	1	0
+exp140	5.72745865e-09	1.002503	-1.000218	keep	fine boundary u_offset=0.5495	agent1	branch_search	0	-1.523848
+exp141	2.41595655e-09	1.002503	-1.000218	keep	fine boundary u_offset=0.5500	agent1	branch_search	0	-1.523848
+exp142	5.72745860e-09	1.002503	-1.000218	keep	fine boundary u_offset=0.5505	agent1	branch_search	1	-1.523848
+exp143	2.41595655e-09	1.002503	-1.000218	keep	fine boundary u_offset=0.5510	agent1	branch_search	0	-1.523848
+exp144	5.72745857e-09	1.002503	-1.000218	keep	fine boundary u_offset=0.5515	agent1	branch_search	0	-1.523848
+exp145	5.72757317e-09	1.002503	-1.000218	keep	fine boundary u_offset=0.5520	agent1	branch_search	1	-1.523848
+exp146	3.25175408e-12	1.002503	1.000218	keep	reproduce exp089: amp=0 n=300 tol=1e-11 u_offset=0.9 positive	agent0	solver_param	0	-1.523848
+exp147	9.62778389e-14	0.000000	-0.000000	keep	micro boundary u_offset=0.54800	agent1	branch_search	1	-0.000000
+exp148	2.33310371e-12	0.000000	-0.000000	keep	micro boundary u_offset=0.54810	agent1	branch_search	0	-0.000000
+exp149	1.11233917e-12	0.000000	-0.000000	keep	micro boundary u_offset=0.54820	agent1	branch_search	0	-0.000000
+exp150	2.80813494e-10	0.000000	-0.000000	keep	micro boundary u_offset=0.54830	agent1	branch_search	1	-0.000000
+exp151	7.23684400e-11	0.000000	-0.000000	keep	micro boundary u_offset=0.54840	agent1	branch_search	0	-0.000000
+exp152	2.13101906e-10	1.002503	1.000218	keep	micro boundary u_offset=0.54850	agent1	branch_search	0	-1.523848
+exp153	1.62769638e-11	0.000000	-0.000000	keep	micro boundary u_offset=0.54860	agent1	branch_search	1	-0.000000
+exp154	3.41617600e-12	0.000000	-0.000000	keep	micro boundary u_offset=0.54870	agent1	branch_search	0	-0.000000
+exp155	1.26274507e-10	0.000000	-0.000000	keep	micro boundary u_offset=0.54880	agent1	branch_search	0	-0.000000
+exp156	1.05974737e-10	0.000000	-0.000000	keep	micro boundary u_offset=0.54890	agent1	branch_search	0	-0.000000
+exp157	crash	0	0	crash	micro boundary u_offset=0.54900	agent1	branch_search	1	0
+exp158	6.44392411e-14	0.000000	-0.000000	keep	n300 boundary u_offset=0.5480	agent1	branch_search	1	-0.000000
+exp159	2.52070973e-11	1.002503	1.000218	keep	n300 boundary u_offset=0.5485	agent1	branch_search	0	-1.523848
+exp160	crash	0	0	crash	n300 boundary u_offset=0.5490	agent1	branch_search	0	0
+exp161	2.07993339e-10	1.002503	-1.000218	keep	n300 boundary u_offset=0.5495	agent1	branch_search	1	-1.523848
+exp162	5.61310686e-09	1.002503	-1.000218	keep	n300 boundary u_offset=0.5500	agent1	branch_search	0	-1.523848
+exp163	2.07993291e-10	1.002503	-1.000218	keep	n300 boundary u_offset=0.5505	agent1	branch_search	0	-1.523848
+exp164	5.61310678e-09	1.002503	-1.000218	keep	n300 boundary u_offset=0.5510	agent1	branch_search	0	-1.523848
+exp165	6.38080772e-10	1.002503	-1.000218	keep	n300 boundary u_offset=0.5515	agent1	branch_search	1	-1.523848
+exp166	2.86156477e-10	1.002503	-1.000218	keep	n300 boundary u_offset=0.5520	agent1	branch_search	0	-1.523848
+exp167	2.41595655e-09	1.002503	-1.000218	keep	amp=0 boundary u_offset=0.5480	agent1	branch_search	1	-1.523848
+exp168	5.33445104e-09	1.002503	-1.000218	keep	amp=0 boundary u_offset=0.5485	agent1	branch_search	0	-1.523848
+exp169	5.33445105e-09	1.002503	-1.000218	keep	amp=0 boundary u_offset=0.5490	agent1	branch_search	0	-1.523848
+exp170	5.33445104e-09	1.002503	-1.000218	keep	amp=0 boundary u_offset=0.5495	agent1	branch_search	0	-1.523848
+exp171	5.33445105e-09	1.002503	-1.000218	keep	amp=0 boundary u_offset=0.5500	agent1	branch_search	0	-1.523848
+exp172	5.57178992e-09	1.002503	-1.000218	keep	amp=0 boundary u_offset=0.5510	agent1	branch_search	0	-1.523848
+exp173	5.72745872e-09	1.002503	-1.000218	keep	amp=0 boundary u_offset=0.5520	agent1	branch_search	0	-1.523848
+exp174	0.00000000e+00	0.000000	0.000000	keep	amp=0 wide sweep u_offset=0.0	agent1	branch_search	0	0.000000
+exp175	1.15544715e-13	0.000000	0.000000	keep	amp=0 wide sweep u_offset=0.1	agent1	branch_search	0	-0.000000
+exp176	3.51058215e-10	0.000000	0.000000	keep	amp=0 wide sweep u_offset=0.2	agent1	branch_search	1	-0.000000
+exp177	1.50170967e-14	0.000000	0.000000	keep	amp=0 wide sweep u_offset=0.3	agent1	branch_search	0	-0.000000
+exp178	5.59998666e-20	0.000000	0.000000	keep	amp=0 wide sweep u_offset=0.4	agent1	branch_search	0	-0.000000
+exp179	2.41595655e-09	1.002503	-1.000218	keep	amp=0 wide sweep u_offset=0.5	agent1	branch_search	1	-1.523848
+exp180	5.72748207e-09	1.002503	1.000218	keep	amp=0 wide sweep u_offset=0.6	agent1	branch_search	0	-1.523848
+exp181	5.72745853e-09	1.002503	1.000218	keep	amp=0 wide sweep u_offset=0.7	agent1	branch_search	0	-1.523848
+exp182	2.41595655e-09	1.002503	1.000218	keep	amp=0 wide sweep u_offset=0.8	agent1	branch_search	1	-1.523848
+exp183	5.72746062e-09	1.002503	1.000218	keep	amp=0 wide sweep u_offset=0.9	agent1	branch_search	0	-1.523848
+exp184	2.41595655e-09	1.002503	1.000218	keep	amp=0 wide sweep u_offset=1.0	agent1	branch_search	0	-1.523848
+exp185	5.59998666e-20	0.000000	0.000000	keep	amp=0 refine u_offset=0.40	agent1	branch_search	0	-0.000000
+exp186	4.05390147e-19	0.000000	0.000000	keep	amp=0 refine u_offset=0.42	agent1	branch_search	1	-0.000000
+exp187	9.09073657e-11	0.000000	0.000000	keep	amp=0 refine u_offset=0.44	agent1	branch_search	0	-0.000000
+exp188	1.65941130e-09	0.000000	0.000000	keep	amp=0 refine u_offset=0.46	agent1	branch_search	0	-0.000000
+exp189	1.19266644e-13	0.000000	0.000000	keep	amp=0 refine u_offset=0.48	agent1	branch_search	1	-0.000000
+exp190	2.41595655e-09	1.002503	-1.000218	keep	amp=0 refine u_offset=0.50	agent1	branch_search	0	-1.523848
+exp191	1.60570102e-10	0.000000	0.000000	keep	amp=0 refine u_offset=0.52	agent1	branch_search	0	-0.000000
+exp192	5.72780771e-09	1.002503	-1.000218	keep	amp=0 refine u_offset=0.54	agent1	branch_search	1	-1.523848
+exp193	1.86885615e-11	0.000000	0.000000	keep	amp=0 refine u_offset=0.56	agent1	branch_search	0	-0.000000
+exp194	5.42314615e-09	1.002503	-1.000218	keep	amp=0 refine u_offset=0.58	agent1	branch_search	0	-1.523848
+exp195	5.72748207e-09	1.002503	1.000218	keep	amp=0 refine u_offset=0.60	agent1	branch_search	1	-1.523848
+exp196	8.81934684e-11	1.002503	1.000218	keep	positive branch n_nodes=200 tol=1e-10 u_offset=0.9 amp=0.1	agent1	solver_param	0	-1.523848
+exp197	8.81934685e-11	1.002503	-1.000218	keep	negative branch n_nodes=200 tol=1e-10 u_offset=-0.9 amp=0.1	agent1	solver_param	0	-1.523848
+exp198	crash	0	0	crash	positive branch n_nodes=300 tol=1e-12 u_offset=0.9 amp=0.1	agent1	solver_param	0	0
+exp199	2.62635931e-11	1.002503	1.000218	keep	positive branch n=150 tol=1e-10 phase=pi	agent0	solver_param	1	-1.523848
+exp200	2.60019365e-11	1.002503	1.000218	keep	positive branch n_nodes=300 tol=1e-10 u_offset=0.9 amp=0.1	agent1	solver_param	0	-1.523848
+exp201	7.78244459e-12	1.002503	1.000218	keep	positive branch n=150 tol=1e-11 phase=pi	agent0	solver_param	0	-1.523848
+exp202	8.58922841e-11	1.002503	-1.000218	keep	negative branch n_nodes=300 tol=1e-10 u_offset=-0.9 amp=0.1	agent1	solver_param	0	-1.523848
+exp203	4.88774326e-12	1.002503	1.000218	keep	positive branch n=175 tol=1e-11 phase=pi	agent0	solver_param	0	-1.523848
+exp204	3.25175165e-12	1.002503	1.000218	keep	positive branch n_nodes=300 tol=1e-11 u_offset=0.9 amp=0.1	agent1	solver_param	0	-1.523848
+exp205	9.99977750e-12	1.002503	1.000218	keep	positive branch n=200 tol=1e-11 phase=pi	agent0	solver_param	0	-1.523848
+exp206	3.25175165e-12	1.002503	-1.000218	keep	negative branch n_nodes=300 tol=1e-11 u_offset=-0.9 amp=0.1	agent1	solver_param	0	-1.523848
+exp207	6.40460461e-12	1.002503	1.000218	keep	positive branch n=160 tol=1e-11 phase=pi	agent0	solver_param	1	-1.523848
+exp208	1.89688828e-12	1.002503	1.000218	keep	positive branch n=180 tol=1e-11 phase=pi	agent0	solver_param	0	-1.523848
+exp209	0.00000000e+00	0.000000	0.000000	keep	trivial branch n_nodes=300 tol=1e-11 u_offset=0 amp=0	agent1	solver_param	0	0.000000
+exp210	1.74959781e-12	1.002503	1.000218	keep	positive branch n=185 tol=1e-11 phase=pi	agent0	solver_param	0	-1.523848
+exp211	1.61194531e-12	1.002503	1.000218	keep	positive branch n=190 tol=1e-11 phase=pi	agent0	solver_param	1	-1.523848
+exp212	3.25175165e-12	1.002503	1.000218	keep	n_mode=2 amp=0.3 u_offset=0.5 — testing for mode-2 branch	agent1	perturbation	1	-1.523848
+exp213	1.49151571e-12	1.002503	1.000218	keep	positive branch n=195 tol=1e-11 phase=pi	agent0	solver_param	0	-1.523848
+exp214	1.67364315e-14	0.000000	-0.000000	keep	n_mode=2 amp=0.3 u_offset=0.0 — mode-2 near origin	agent1	perturbation	0	-0.000000
+exp215	crash	0	0	crash	positive branch n=190 tol=1e-12 phase=pi — test if tol=1e-12 works at fewer nodes	agent0	solver_param	0	0
+exp216	3.25175408e-12	1.002503	1.000218	keep	n_mode=3 amp=0.3 u_offset=0.9 — testing for mode-3 branch	agent1	perturbation	1	-1.523848
+exp217	1.49151571e-12	1.002503	1.000218	keep	positive branch n=195 tol=1e-11 phase=0 — control for phase effect	agent0	solver_param	1	-1.523848
+exp218	1.49151571e-12	1.002503	1.000218	keep	positive branch n=195 amp=0.01 phase=pi — test phase+amplitude effect	agent0	solver_param	0	-1.523848
+exp219	1.49151571e-12	1.002503	-1.000218	keep	negative branch n=195 tol=1e-11 — Z2 symmetry check	agent0	branch_search	1	-1.523848
+exp220	0.00000000e+00	0.000000	0.000000	keep	trivial branch n=195 tol=1e-12 — optimal trivial config	agent0	solver_param	0	0.000000
+exp221	3.52739323e-12	1.002503	1.000218	keep	positive branch n=195 tol=5e-12 — push below 1e-11	agent0	solver_param	0	-1.523848
+exp222	1.18995992e-11	1.002503	1.000218	keep	positive branch n=195 tol=2e-11 — test looser tol	agent0	solver_param	0	-1.523848
+exp223	9.99978354e-12	1.002503	1.000218	keep	positive branch n=198 tol=1e-11 — fine tune n_nodes	agent0	solver_param	1	-1.523848
+exp224	1.49151571e-12	1.002503	1.000218	discard	positive branch n=195 tol=1e-11 u_offset=0.9 amp=0 — validate exp213	agent1	solver_param	0	-1.523848
+exp225	1.49151571e-12	1.002503	-1.000218	discard	negative branch n=195 tol=1e-11 u_offset=-0.9 amp=0 — validate exp219	agent1	branch_search	0	-1.523848
+exp226	0.00000000e+00	0.000000	0.000000	discard	trivial branch n=195 tol=1e-12 u_offset=0 amp=0 — validate exp220	agent1	solver_param	0	0.000000
+exp227	1.56291941e-12	1.002503	1.000218	discard	positive branch n=192 tol=1e-11 — fine n_nodes grid	agent1	solver_param	0	-1.523848
+exp228	1.58600724e-12	1.002503	1.000218	discard	positive branch n=191 tol=1e-11 — fine grid search	agent0	solver_param	1	-1.523848
+exp229	1.54160200e-12	1.002503	1.000218	discard	positive branch n=193 tol=1e-11 — fine n_nodes grid	agent1	solver_param	0	-1.523848
+exp230	1.47161968e-12	1.002503	1.000218	discard	positive branch n=196 tol=1e-11 — fine grid search	agent0	solver_param	1	-1.523848
+exp231	1.51627807e-12	1.002503	1.000218	discard	positive branch n=194 tol=1e-11 — fine n_nodes grid	agent1	solver_param	0	-1.523848
+exp232	9.99948022e-12	1.002503	1.000218	discard	positive branch n=197 tol=1e-11 — fine grid search	agent0	solver_param	0	-1.523848
+exp233	1.47161968e-12	1.002503	1.000218	discard	positive branch n=196 tol=1e-11 — fine n_nodes grid	agent1	solver_param	0	-1.523848
+exp234	9.99948022e-12	1.002503	1.000218	discard	positive branch n=197 tol=1e-11 — fine n_nodes grid	agent1	solver_param	0	-1.523848
+exp235	3.47260180e-12	1.002503	1.000218	discard	positive branch n=196 tol=7e-12 — tolerance sweep	agent0	solver_param	0	-1.523848
+exp236	1.47161968e-12	1.002503	-1.000218	discard	negative branch n=196 tol=1e-11 — Z2 symmetry at new optimum	agent1	branch_search	0	-1.523848
+exp237	1.47161968e-12	1.002503	1.000218	discard	positive branch n=196 tol=8e-12 — tolerance sweep	agent0	solver_param	0	-1.523848
+exp238	0.00000000e+00	0.000000	0.000000	discard	trivial branch n=196 tol=1e-12 — optimal trivial at new best n	agent1	solver_param	1	0.000000
+exp239	1.47161968e-12	1.002503	1.000218	discard	positive branch n=196 tol=9e-12 — tolerance sweep	agent0	solver_param	1	-1.523848
+exp240	1.17174618e-11	1.002503	1.000218	discard	positive branch n=196 tol=2e-11 — check if looser tol changes result	agent0	solver_param	0	-1.523848
+exp241	1.17174618e-11	1.002503	1.000218	discard	positive branch n=196 tol=1.5e-11 — find tol threshold	agent0	solver_param	0	-1.523848
+exp242	3.47260180e-12	1.002503	1.000218	discard	positive branch n=196 tol=7e-12 — tolerance sweep	agent1	solver_param	0	-1.523848
+exp243	1.47161968e-12	1.002503	1.000218	discard	positive branch n=196 tol=8e-12 — tolerance sweep	agent1	solver_param	0	-1.523848
+exp244	crash	0	0	crash	positive branch n=196 tol=3e-12 — tight tol test	agent1	solver_param	1	0
+exp245	1.47161968e-12	1.002503	-1.000218	discard	negative branch n=196 tol=1e-11 — Z2 symmetry at new optimum	agent0	branch_search	0	-1.523848
+exp246	3.47240559e-12	1.002503	1.000218	discard	positive branch n=196 tol=5e-12 — bracketing crash boundary	agent1	solver_param	0	-1.523848
+exp247	3.47240559e-12	1.002503	1.000218	discard	positive branch n=196 tol=5e-12 — complete tol map	agent0	solver_param	0	-1.523848
+exp248	3.47240559e-12	1.002503	1.000218	discard	positive branch n=196 tol=6e-12 — bracketing transition	agent1	solver_param	0	-1.523848
+exp249	9.37325052e-11	1.002503	1.000218	discard	positive branch n=196 tol=1e-10 — coarser tol test	agent1	solver_param	1	-1.523848
+exp250	1.46910673e-12	1.002503	1.000218	discard	positive branch n=196 tol=1e-11 amp=0.001 — tiny perturbation for different Newton path	agent1	perturbation	1	-1.523848
+exp251	1.47161968e-12	1.002503	1.000218	discard	positive branch n=196 tol=1e-11 amp=0.002 — tune perturbation	agent1	perturbation	0	-1.523848
+exp252	1.47161968e-12	1.002503	1.000218	discard	positive n=196 tol=1e-11 amp=0.01 phase=pi — try to break floor	agent0	perturbation	0	-1.523848
+exp253	crash	0	0	crash	positive branch n=300 tol=1e-12 amp=0.01 — push residual floor	agent0	solver_param	0	0
+exp254	9.99977750e-12	1.002503	1.000218	discard	positive branch n=200 tol=1e-11 — n_nodes sweep beyond 196	agent1	solver_param	1	-1.523848
+exp255	3.25175165e-12	1.002503	1.000218	discard	positive branch n=300 tol=1e-11 amp=0.01	agent0	solver_param	0	-1.523848
+exp256	9.51700331e-12	1.002503	1.000218	discard	positive branch n=210 tol=1e-11 — n_nodes sweep	agent1	solver_param	0	-1.523848
+exp257	5.62802405e-12	1.002503	1.000218	discard	positive branch n=250 tol=1e-11 — n_nodes sweep	agent1	solver_param	0	-1.523848
+exp258	3.47240559e-12	1.002503	1.000218	discard	positive branch n=196 tol=5e-12 amp=0.01 — tighter tolerance	agent0	solver_param	0	-1.523848
+exp259	crash	0	0	crash	positive branch n=196 tol=1e-12 — can tighter tol work at magic n?	agent1	solver_param	1	0
+exp260	crash	0	0	crash	positive branch n=196 tol=2e-12 — between crash and stable band	agent1	solver_param	1	0
+exp261	1.47161968e-12	1.002503	1.000218	discard	positive branch n=196 tol=1e-11 amp=0 — reproduce 1.47e-12	agent0	solver_param	1	-1.523848
+exp262	3.47240559e-12	1.002503	1.000218	discard	positive branch n=196 tol=4e-12 — finding crash boundary	agent1	solver_param	0	-1.523848
+exp263	1.51627807e-12	1.002503	1.000218	discard	positive branch n=194 tol=1e-11 — sweep nodes	agent0	solver_param	1	-1.523848
+exp264	crash	0	0	crash	positive branch n=196 tol=3e-12 — crash boundary	agent1	solver_param	0	0
+exp265	9.99948022e-12	1.002503	1.000218	discard	positive branch n=197 tol=1e-11 — sweep nodes	agent0	solver_param	0	-1.523848
+exp266	1.47161968e-12	1.002503	1.000218	discard	positive branch perturbation-theory guess u=1+0.15cos(t) n=196 tol=1e-11	agent1	initial_cond	0	-1.523848
+exp267	1.47161968e-12	1.002503	1.000218	discard	positive branch n=196 mode-1 amp=0.15 — K-shaped init guess	agent0	perturbation	0	-1.523848
+exp268	1.45956404e-12	1.002503	1.000218	discard	positive branch n=392 (2x magic 196) tol=1e-11 — harmonic mesh	agent1	solver_param	1	-1.523848
+exp269	1.47035555e-12	1.002503	1.000218	discard	positive branch n=391 tol=1e-11 — fine-tune around 392	agent1	solver_param	1	-1.523848
+exp270	3.31923497e-14	0.000000	-0.000000	discard	u_offset=0.5 amp=0.5 — search for heteroclinic-like solution	agent0	branch_search	1	-0.000000
+exp271	9.99948022e-12	1.002503	1.000218	discard	positive branch n=393 tol=1e-11 — test 392±1	agent1	solver_param	1	-1.523848
+exp272	3.26698952e-12	1.002503	1.000218	discard	amp=1.0 u_offset=0 mode=1 — large swing ±1 seeking oscillatory branch	agent0	branch_search	0	-1.523848
+exp273	1.45535398e-12	1.002503	1.000218	discard	positive branch n=784 (4x196) tol=1e-11 — does 4x magic help?	agent1	solver_param	0	-1.523848
+exp274	1.45956404e-12	1.002503	1.000218	discard	positive branch n=392 tol=4e-12 — tighter tol with more nodes	agent1	solver_param	0	-1.523848
+exp275	1.15852316e-15	0.000000	-0.000000	discard	amp=1.0 u_offset=0 mode=2 — search for mode-2 oscillatory branch	agent0	branch_search	0	-0.000000
+exp276	1.45956404e-12	1.002503	1.000218	discard	positive branch n=392 tol=2e-12 — pushed crash at n=196, try n=392	agent1	solver_param	0	-1.523848
+exp277	9.99977750e-12	1.002503	1.000218	discard	mode=3 amp=0.3 u_offset=1.0 — search for higher mode near positive	agent0	branch_search	0	-1.523848
+exp278	crash	0	0	crash	positive branch n=392 tol=1e-12 — exploiting more DOF	agent1	solver_param	1	0
+exp279	1.45956404e-12	1.002503	1.000218	discard	positive branch n=392 tol=1.5e-12 — finding new crash boundary	agent1	solver_param	0	-1.523848
+exp280	3.25175408e-12	1.002503	1.000218	discard	reproduce exp089: positive amp=0 n=300 tol=1e-11	agent0	solver_param	1	-1.523848
+exp281	crash	0	0	crash	positive branch n=300 amp=0 tol=1e-12 — tighter tol than exp089	agent1	solver_param	0	0
+exp282	3.25175408e-12	1.002503	1.000218	discard	positive u_offset=1.0 amp=0 n=300 tol=1e-11 — test if exact offset reproduces exp089 anomaly	agent0	initial_cond	1	-1.523848
+exp283	3.25175408e-12	1.002503	1.000218	discard	positive branch n=300 amp=0 tol=1e-11 — reproduce exp089 baseline	agent1	solver_param	0	-1.523848
+exp284	crash	0	0	crash	positive branch n=500 tol=1e-12 amp=0.15 — push nontrivial residual lower	agent0	solver_param	0	0
+exp285	5.62802405e-12	1.002503	1.000218	discard	positive branch n=250 amp=0 tol=1e-11 — mesh sweep	agent1	solver_param	1	-1.523848
+exp286	5.59439569e-12	1.002503	1.000218	discard	positive branch n=500 tol=1e-11 amp=0.15 — more nodes, looser tol	agent0	solver_param	1	-1.523848
+exp287	1.47161968e-12	1.002503	1.000218	discard	positive branch n=196 amp=0 tol=1e-11 u_offset=1.0 — magic n with offset 1.0	agent1	solver_param	0	-1.523848
+exp288	1.47161968e-12	1.002503	1.000218	discard	positive n=196 amp=0.15 mode=1 tol=1e-11 — K-shaped init, magic node count	agent0	perturbation	1	-1.523848
+exp289	crash	0	0	crash	positive branch n=2000 amp=0 tol=1e-11 — very high resolution mesh	agent1	solver_param	0	0
+exp290	5.59439569e-12	1.002503	1.000218	discard	positive branch n=500 amp=0 tol=1e-11 — higher resolution	agent1	solver_param	0	-1.523848
+exp291	9.99977750e-12	1.002503	1.000218	discard	positive n=200 amp=0.15 tol=1e-11 — compare node count effect	agent0	solver_param	0	-1.523848
+exp292	1.45956404e-12	1.002503	1.000218	discard	positive n=392 amp=0.1 (pert theory optimal) tol=1e-11 — push residual with better init	agent0	perturbation	0	-1.523848
+exp293	1.47161968e-12	1.002503	1.000218	discard	positive branch n=196 amp=0.1 tol=1e-11 — perturbation theory optimal init guess	agent1	initial_cond	1	-1.523848
+exp294	1.45956404e-12	1.002503	-1.000218	discard	negative branch n=392 amp=0.1 tol=1e-11 — match positive branch floor test	agent0	perturbation	0	-1.523848
+exp295	3.47240559e-12	1.002503	1.000218	discard	positive branch n=196 amp=0.1 tol=5e-12 — between crash and stable	agent1	solver_param	0	-1.523848
+exp296	1.17174618e-11	1.002503	1.000218	discard	positive branch n=196 amp=0.1 tol=2e-11 — testing looser tol	agent1	solver_param	0	-1.523848
+exp297	1.57585189e-12	1.002503	1.000218	discard	positive n=128 amp=0.1 tol=1e-11 — power-of-2 node sweep	agent0	solver_param	0	-1.523848
+exp298	5.23989448e-12	1.002503	1.000218	discard	positive n=256 amp=0.1 tol=1e-11 — power-of-2 node sweep	agent0	solver_param	0	-1.523848
+exp299	1.88860805e-21	0.000000	-0.000000	discard	mode-2 amp=0.5 u_offset=0 — search for oscillatory branch	agent1	branch_search	1	-0.000000
+exp300	2.88051949e-13	1.001296	1.000019	discard	Fourier spectral N=64, positive branch u_offset=0.9 — breaks 1.47e-12 scipy ceiling	agent0	initial_cond	0	-1.520844
+exp301	crash	0	0	crash	positive n=196 amp=0.1 tol=2e-12 — probing tol gap	agent1	solver_param	0	0
+exp302	crash	0	0	crash	positive n=196 amp=0.1 tol=3e-12 — probing tol gap	agent1	solver_param	1	0
+exp303	3.47240559e-12	1.002503	1.000218	discard	positive n=196 amp=0.1 tol=4e-12 — probing tol gap	agent1	solver_param	0	-1.523848
+exp304	3.47240559e-12	1.002503	1.000218	discard	positive n=196 amp=0.1 tol=6e-12 — mapping tol transition	agent1	solver_param	0	-1.523848
+exp305	1.47161968e-12	1.002503	1.000218	discard	positive n=196 amp=0.1 tol=9e-12 — confirm plateau	agent1	solver_param	0	-1.523848
+exp306	1.47161968e-12	1.002503	1.000218	discard	positive n=196 u_offset=1.0 amp=0.1 — perturbation-theory-optimal initial guess	agent1	initial_cond	1	-1.523848
+exp307	1.47161968e-12	1.002503	-1.000218	discard	negative branch n=196 tol=1e-11 — match positive floor	agent1	initial_cond	1	-1.523848
+exp308	1.45956404e-12	1.002503	1.000218	discard	positive n=392 tol=1e-11 — confirm 2x node improvement	agent1	solver_param	0	-1.523848
+exp309	3.43721769e-12	1.002503	1.000218	discard	positive n=588 tol=1e-11 — 3x196 node scaling test	agent1	solver_param	0	-1.523848
+exp310	crash	0	0	crash	Fourier N=128 positive branch u_offset=0.9 amp=0.1 — push past N=64 ceiling	agent0	initial_cond	1	0
+exp311	crash	0	0	crash	Fourier spectral N=128 positive branch — push past 2.88e-13	agent1	initial_cond	1	0
+exp312	crash	0	0	crash	Fourier N=64 positive branch — baseline replication of exp300	agent0	initial_cond	2	0
+exp313	crash	0	0	crash	Fourier spectral N=64 positive branch — confirm baseline	agent1	initial_cond	1	0
+exp314	2.88051949e-13	1.001296	1.000019	discard	Fourier N=64 positive newton_tol=1e-12 — relax to avoid false crash	agent0	solver_param	0	-1.520844
+exp315	2.88051949e-13	1.001296	1.000019	discard	Fourier N=64 newton_tol=1e-12 positive — confirm convergence	agent1	initial_cond	0	-1.520844
+exp316	1.27904990e-12	1.001296	1.000019	discard	Fourier N=128 positive newton_tol=1e-11 — higher modes + relaxed tol	agent0	solver_param	1	-1.520844
+exp317	crash	0	0	crash	Fourier N=128 newton_tol=1e-12 positive — test higher mode count	agent1	initial_cond	1	0
+exp318	5.88356637e-13	1.001296	1.000019	discard	Fourier N=32 positive — sweep optimal mode count	agent0	solver_param	0	-1.520844
+exp319	crash	0	0	crash	Fourier N=96 positive — between 64 and 128 sweet spot	agent1	initial_cond	1	0
+exp320	3.53361730e-13	1.001296	-1.000019	discard	Fourier N=64 negative branch u_offset=-0.9 — extend Fourier to negative branch	agent0	initial_cond	0	-1.520844
+exp321	0.00000000e+00	0.000000	0.000000	discard	Fourier N=64 trivial branch u_offset=0 amp=0 — Fourier vs scipy on trivial	agent0	initial_cond	0	0.000000
+exp322	crash	0	0	crash	Fourier N=32 positive — better conditioning test	agent1	initial_cond	1	0
+exp323	1.34510507e-13	1.001296	1.000019	discard	Fourier N=48 positive — map N vs residual	agent0	solver_param	0	-1.520844
+exp324	5.88356637e-13	1.001296	1.000019	discard	Fourier N=32 newton_tol=1e-12 positive — conditioning sweet spot	agent1	initial_cond	0	-1.520844
+exp325	5.75230527e-13	1.001296	1.000019	discard	Fourier N=24 positive — continuing N sweep	agent0	solver_param	0	-1.520844
+exp326	0.00000000e+00	0.000000	0.000000	discard	Fourier N=64 trivial branch u_offset=0 — exact solution test	agent1	initial_cond	0	0.000000
+exp327	2.39385229e-13	1.001296	1.000019	discard	Fourier N=40 positive — refine sweet spot	agent0	solver_param	0	-1.520844
+exp328	2.03768180e-13	1.001296	1.000019	discard	Fourier N=50 positive — refine sweet spot	agent0	solver_param	1	-1.520844
+exp329	1.34510507e-13	1.001296	1.000019	discard	Fourier N=48 positive — find optimal mode count	agent1	initial_cond	0	-1.520844
+exp330	2.39385229e-13	1.001296	1.000019	discard	Fourier N=40 positive — narrowing mode sweet spot	agent1	initial_cond	1	-1.520844
+exp331	3.18158714e-13	1.001296	1.000019	discard	Fourier N=56 positive — between 48 and 64	agent1	initial_cond	1	-1.520844
+exp332	crash	0	0	crash	Fourier N=48 positive newton_tol=1e-13 maxiter=200 — tighter convergence	agent0	solver_param	0	0
+exp333	1.64635502e-13	1.001296	1.000019	discard	Fourier N=48 u_offset=1.0 amp=0.15 — closer initial guess	agent1	initial_cond	0	-1.520844
+exp334	1.71460898e-13	1.001296	1.000019	discard	Fourier N=48 u_offset=1.0 amp=0 — flat initial guess	agent1	initial_cond	0	-1.520844
+exp335	1.73550214e-13	1.001296	1.000019	discard	Fourier N=44 positive — fine-tune N around 48	agent0	solver_param	0	-1.520844
+exp336	5.95887221e-13	1.001296	1.000019	discard	Fourier N=46 positive — fine-tune N	agent0	solver_param	1	-1.520844
+exp337	1.45707175e-13	1.001296	1.000019	discard	Fourier N=52 positive — fine-tune N	agent0	solver_param	0	-1.520844
+exp338	5.98789534e-13	1.001296	1.000019	discard	Fourier N=47 positive — narrow search	agent0	solver_param	0	-1.520844
+exp339	crash	0	0	crash	Fourier N=48 newton_tol=1e-13 positive — tighter convergence	agent1	solver_param	1	0
+exp340	1.50107997e-13	1.001296	1.000019	discard	Fourier N=49 positive — narrow search	agent0	solver_param	0	-1.520844
+exp341	1.73550214e-13	1.001296	1.000019	discard	Fourier N=44 positive — narrow sweet spot search	agent1	initial_cond	0	-1.520844
+exp342	1.88761396e-13	1.001296	-1.000019	discard	Fourier N=48 negative branch — best N on negative	agent0	initial_cond	0	-1.520844
+exp343	1.45707175e-13	1.001296	1.000019	discard	Fourier N=52 positive — narrow sweet spot	agent1	initial_cond	0	-1.520844
+exp344	1.76250573e-13	1.001296	1.000019	discard	Fourier N=48 positive amp=0.15 — init guess sensitivity	agent0	perturbation	1	-1.520844
+exp345	1.95118760e-13	1.001296	1.000019	discard	Fourier N=48 positive u_offset=1.0 amp=0.05 — closer initial guess	agent0	initial_cond	1	-1.520844
+exp346	1.88761396e-13	1.001296	-1.000019	discard	Fourier N=48 negative branch u_offset=-0.9 — match positive floor	agent1	initial_cond	0	-1.520844
+exp347	8.20177729e-12	1.002503	1.000218	discard	kink search: u_offset=0 amp=1.0 mode=1 n=300 — oscillating initial guess	agent0	branch_search	0	-1.523848
+exp348	crash	0	0	crash	positive branch scipy n=500 tol=1e-12 amp=0 — push below 2.83e-22	agent1	solver_param	1	0
+exp349	1.60820210e-13	0.000000	-0.000000	discard	kink search: u_offset=0 amp=1.2 mode=2 — two zero-crossings	agent0	branch_search	1	-0.000000
+exp350	5.59439569e-12	1.002503	1.000218	discard	positive branch scipy n=500 tol=1e-11 amp=0 — more nodes	agent1	solver_param	0	-1.523848
+exp351	crash	0	0	crash	Fourier kink: u_offset=0 amp=1.2 mode=1 N=64 — oscillating guess in Fourier	agent0	branch_search	1	0
+exp352	3.25175408e-12	1.002503	1.000218	discard	reproduce exp089: positive scipy n=300 tol=1e-11 amp=0	agent1	solver_param	0	-1.523848
+exp353	crash	0	0	crash	positive branch n=500 tol=1e-13 amp=0 — push residual floor	agent0	solver_param	1	0
+exp354	crash	0	0	crash	positive branch n=400 tol=1e-12 amp=0 — push below 2.83e-22	agent0	solver_param	1	0
+exp355	9.99840186e-12	1.002503	1.000218	discard	positive branch n=400 tol=1e-11 amp=0 — more nodes than best exp089	agent0	solver_param	1	-1.523848
+exp356	crash	0	0	crash	Fourier N=128 positive — higher modes for lower residual	agent1	solver_param	1	0
+exp357	3.25175408e-12	1.002503	1.000218	discard	reproduce exp089: n=300 tol=1e-11 amp=0 u_offset=0.9 positive	agent0	solver_param	1	-1.523848
+exp358	crash	0	0	crash	Fourier N=128 positive amp=0 — push spectral residual floor	agent0	solver_param	1	0
+exp359	crash	0	0	crash	Fourier N=64 positive — sweet spot between 48 and 128	agent1	solver_param	1	0
+exp360	crash	0	0	crash	Fourier N=48 positive tol=1e-15 maxiter=200 — push Newton tighter	agent0	solver_param	0	0
+exp361	2.66626099e-13	1.001296	1.000019	discard	Fourier N=64 newton_tol=1e-12 positive — achievable tolerance	agent1	solver_param	1	-1.520844
+exp362	crash	0	0	crash	Fourier N=32 positive — fewer modes, tighter Newton	agent1	solver_param	0	0
+exp363	3.25175408e-12	1.002503	1.000218	discard	positive u_offset=1.0 n=300 tol=1e-11 amp=0 — exact positive constant guess	agent0	solver_param	0	-1.523848
+exp364	5.49030413e-14	1.001296	1.000019	discard	Fourier N=32 newton_tol=2e-13 positive — just above convergence floor	agent1	solver_param	1	-1.520844
+exp365	9.99977750e-12	1.002503	1.000218	discard	positive u_offset=1.0 n=200 tol=1e-11 amp=0 — vary nodes for different mesh	agent0	solver_param	1	-1.523848
+exp366	5.52949034e-15	1.001296	1.000019	discard	Fourier N=16 positive — minimal modes, tightest Newton	agent1	solver_param	0	-1.520844
+exp367	2.94474458e-15	1.001296	1.000019	discard	Fourier N=8 positive — even fewer modes	agent1	solver_param	0	-1.520844
+exp368	3.90467293e-16	0.000000	-0.000000	discard	mode-3 oscillation u_offset=0 amp=0.5 — search for higher-order solution	agent0	branch_search	0	-0.000000
+exp369	2.57581612e-16	1.001296	1.000019	discard	Fourier N=4 positive — minimum viable modes	agent1	solver_param	0	-1.520844
+exp370	3.25175408e-12	1.002503	1.000218	discard	mode-3 near positive branch u_offset=0.8 amp=0.5 — perturbed positive start	agent0	perturbation	0	-1.523848
+exp371	4.37618166e-16	1.001296	1.000019	discard	Fourier N=3 positive — extreme minimal	agent1	solver_param	0	-1.520844
+exp372	crash	0	0	crash	Fourier N=48 u_offset=0.535 — basin boundary bifurcation search	agent0	branch_search	0	0
+exp373	2.00148302e-16	1.001298	1.000025	discard	Fourier N=2 positive — check if too few modes	agent1	solver_param	0	-1.520921
+exp374	1.10720271e-13	0.000000	0.000000	discard	scipy u_offset=0.535 — basin boundary	agent0	branch_search	0	-0.000000
+exp375	8.20177729e-12	1.002503	1.000218	discard	oscillating IC amp=1.0 mode=1 offset=0 — search for heteroclinic branch	agent1	branch_search	1	-1.523848
+exp376	9.99174993e-12	0.070536	0.000000	discard	sin-mode IC amp=0.5 phase=pi/2 offset=0 — antisymmetric start	agent1	branch_search	0	0.000175
+exp377	2.57581612e-16	1.001296	-1.000019	discard	Fourier N=4 negative branch u_offset=-0.9 amp=0	agent0	solver_param	0	-1.520844
+exp378	crash	0	0	crash	sin-mode amp=0.3 phase=pi/2 — verify 4th branch	agent1	branch_search	0	0
+exp379	crash	0	0	crash	sin IC amp=0.5 phase=pi/2 tol=1e-12 — confirm 4th branch norm=0.07	agent1	branch_search	0	0
+exp380	9.99174993e-12	0.070536	0.000000	discard	sin IC amp=0.5 phase=pi/2 tol=1e-11 — reproduce 4th branch norm=0.07	agent1	branch_search	0	0.000175
+exp381	5.57080269e-23	0.000000	0.000000	discard	Fourier N=32 u_offset=0 amp=0.5 mode=1 — domain wall search	agent0	branch_search	0	-0.000000
+exp382	9.20039603e-11	0.070536	-0.000000	discard	sin IC tol=1e-10 n=200 — check if 4th branch is real or artifact	agent1	branch_search	0	0.000175
+exp383	crash	0	0	crash	Fourier N=32 u_offset=0.53 amp=0.5 mode=1 — basin boundary with large perturbation	agent0	branch_search	1	0
+exp384	crash	0	0	crash	Fourier N=64 sin IC — test if 4th branch is real	agent1	branch_search	0	0
+exp385	3.43529206e-13	1.001296	1.000019	discard	Fourier N=64 u_offset=0.53 amp=0.5 mode=1 phase=pi/2 — asymmetric start	agent0	branch_search	0	-1.520844
+exp386	1.74862376e-17	0.000000	-0.000000	discard	Fourier N=64 u_offset=0 amp=0.5 mode=2 — mode-2 oscillation search	agent0	branch_search	0	-0.000000
+exp387	2.20521578e-13	1.001296	-1.000019	discard	Fourier N=64 u_offset=0.5 amp=0.5 mode=2 — mixed well search	agent0	branch_search	1	-1.520844
+exp388	crash	0	0	crash	positive amp=0 n=300 tol=1e-12 — tighter scipy tolerance	agent1	solver_param	1	0
+exp389	3.16594782e-13	1.001296	1.000019	discard	Fourier N=64 u_offset=0.53 amp=0.5 mode=3 — high mode at basin boundary	agent0	branch_search	0	-1.520844
+exp390	5.62802405e-12	1.002503	1.000218	discard	positive u_offset=1.0 amp=0 n=250 tol=1e-11 — exact start	agent1	solver_param	1	-1.523848
+exp391	crash	0	0	crash	scipy positive u_offset=1.0 n=300 tol=1e-12 amp=0 — beat 2.83e-22	agent0	solver_param	1	0
+exp392	3.25175408e-12	1.002503	1.000218	discard	scipy positive u_offset=1.0 n=300 tol=1e-11 amp=0 — exact constant start	agent0	solver_param	0	-1.523848
+exp393	3.25175408e-12	1.002503	1.000218	discard	scipy positive u_offset=0.9 n=300 tol=1e-11 amp=0 — replicate exp089	agent0	solver_param	0	-1.523848
+exp394	5.55111512e-17	1.001322	1.000049	discard	Fourier N=1 positive — absolute minimum modes	agent1	solver_param	1	-1.520921
+exp395	crash	0	0	crash	positive u_offset=1.0 n=500 tol=1e-12 amp=0 — push positive below 2.83e-22	agent0	solver_param	1	0
+exp396	crash	0	0	crash	Fourier N=32 positive u_offset=0.9 amp=0 — beat 2.83e-22	agent1	solver_param	0	0
+exp397	5.59439569e-12	1.002503	1.000218	discard	positive u_offset=1.0 n=500 tol=1e-11 amp=0 — more nodes for positive	agent0	solver_param	1	-1.523848
+exp398	crash	0	0	crash	Fourier N=32 positive u_offset=1.0 amp=0 — closer to exact branch	agent1	solver_param	0	0
+exp399	1.89920454e-15	1.001296	1.000019	discard	Fourier N=4 positive u_offset=1.0 amp=0 — fewer modes for non-trivial basin	agent1	solver_param	1	-1.520844
+exp400	5.55111512e-17	1.001322	1.000049	discard	Fourier N=1 positive u_offset=1.0 newton_tol=1e-15 — push below 5.55e-17	agent0	solver_param	0	-1.520921
+exp400	1.15511223e-15	1.001298	1.000025	discard	Fourier N=2 positive u_offset=1.0 amp=0 — test fewer modes	agent1	solver_param	0	-1.520921
+exp401	5.59439569e-12	1.002503	1.000218	discard	scipy positive u_offset=1.0 n=500 tol=1e-11 amp=0 — more nodes to beat 2.83e-22	agent1	solver_param	1	-1.523848
+exp402	5.55111512e-17	1.001322	-1.000049	discard	Fourier N=1 negative u_offset=-1.0 newton_tol=1e-15 — negative branch Fourier baseline	agent0	solver_param	1	-1.520921
+exp403	3.25175408e-12	1.002503	1.000218	discard	scipy positive u_offset=1.0 n=300 tol=1e-11 amp=0 — replicate exp089 setup	agent1	solver_param	0	-1.523848
+exp404	4.80663524e-15	0.070536	0.000000	discard	Fourier N=32 sin IC amp=0.5 phase=pi/2 u_offset=0 — verify 4th branch norm=0.07	agent0	branch_search	1	0.000099
+exp405	crash	0	0	crash	Fourier N=64 sin IC amp=0.5 phase=pi/2 — push 4th branch residual lower	agent0	branch_search	0	0
+exp406	5.55111512e-17	1.001322	-1.000049	discard	Fourier N=1 negative u_offset=-1.0 amp=0 — minimal modes negative branch	agent1	solver_param	0	-1.520921
+exp407	5.11505881e-16	0.070536	-0.000000	discard	Fourier N=16 4th branch sin IC — find optimal mode count	agent0	branch_search	0	0.000099
+exp408	3.89720378e-17	0.070535	-0.000000	discard	Fourier N=4 4th branch sin IC — fewer modes better?	agent0	branch_search	0	0.000099
+exp409	2.90447551e-15	1.001296	-1.000019	discard	Fourier N=8 negative u_offset=-1.0 amp=0 — more modes for spectral accuracy	agent1	solver_param	1	-1.520844
+exp410	4.81950656e-16	0.000006	0.000000	discard	Fourier N=2 4th branch sin IC — minimum modes	agent0	branch_search	0	-0.000000
+exp411	4.04811706e-17	0.070278	-0.000000	discard	Fourier N=3 4th branch sin IC — find minimum viable modes	agent0	branch_search	1	0.000097
+exp412	2.42920086e-16	0.070536	-0.000000	discard	Fourier N=8 4th branch sin IC — optimal mode count search	agent0	branch_search	0	0.000099
+exp413	9.99178067e-12	0.070536	0.000000	discard	scipy sin IC amp=0.5 phase=pi/2 offset=0 — reproduce norm=0.07 4th branch	agent1	branch_search	1	0.000175
+exp414	9.96485238e-12	0.070536	0.000000	discard	scipy sin IC amp=0.3 phase=pi/2 offset=0 — does norm still converge to 0.07?	agent1	branch_search	1	0.000175
+exp415	1.75047739e-17	0.000000	-0.000000	discard	Fourier N=8 mode-2 cos IC amp=0.5 u_offset=0 — search for 5th branch	agent0	branch_search	0	-0.000000
+exp416	1.77848755e-16	0.070536	0.000000	discard	Fourier N=8 mode-2 sin IC amp=0.5 u_offset=0 — search for mode-2 branch	agent0	branch_search	1	0.000099
+exp417	9.96485088e-12	0.070536	-0.000000	discard	scipy sin IC amp=0.1 phase=pi/2 offset=0 — tiny perturbation, does norm still hit 0.07?	agent1	branch_search	1	0.000175
+exp418	1.32601884e-27	0.000000	-0.000000	discard	Fourier N=8 mode-3 cos IC amp=0.5 u_offset=0 — search for mode-3 branch	agent0	branch_search	0	0.000000
+exp419	5.11505881e-16	0.070536	-0.000000	discard	Fourier N=16 sin IC amp=0.5 phase=pi/2 offset=0 — reproduce norm=0.07 branch	agent0	branch_search	0	0.000099
+exp420	crash	0	0	crash	Fourier N=64 positive branch u_offset=0.9 — maximize accuracy	agent1	initial_cond	0	0
+exp421	1.94708269e-23	0.000000	0.000000	discard	Fourier N=16 sin IC amp=0.01 phase=pi/2 offset=0 — does tiny amp still find norm=0.07?	agent0	branch_search	0	0.000000
+exp422	crash	0	0	crash	Fourier N=64 u_offset=1.0 100iter tol=1e-13 — positive branch	agent1	initial_cond	2	0
+exp423	4.30011308e-16	0.070536	-0.000000	discard	Fourier N=16 sin IC amp=0.1 phase=pi/2 offset=0 — basin boundary search	agent0	branch_search	0	0.000099
+exp424	3.31505863e-16	0.070536	0.000000	discard	Fourier N=16 sin IC amp=0.05 phase=pi/2 offset=0 — basin boundary	agent0	branch_search	1	0.000099
+exp425	1.97912668e-18	0.000000	0.000000	discard	Fourier N=16 sin IC amp=0.02 phase=pi/2 offset=0 — basin boundary	agent0	branch_search	0	0.000000
+exp426	1.10277087e-24	0.000000	-0.000000	discard	Fourier N=16 sin IC amp=0.03 phase=pi/2 offset=0 — basin boundary	agent0	branch_search	1	0.000000
+exp427	2.60614954e-27	0.000000	0.000000	discard	Fourier N=16 sin IC amp=0.04 phase=pi/2 offset=0 — basin boundary	agent0	branch_search	0	0.000000
+exp428	crash	0	0	crash	scipy positive u_offset=0.9 n=300 tol=1e-12 — match negative branch accuracy	agent1	solver_param	0	0
+exp429	3.67895404e-16	0.070536	-0.000000	discard	Fourier N=16 sin IC amp=0.045 phase=pi/2 offset=0 — basin boundary	agent0	branch_search	1	0.000099
+exp430	3.25175408e-12	1.002503	1.000218	discard	scipy positive u_offset=0.9 n=300 tol=1e-11 — reproduce exp089 accuracy	agent1	solver_param	0	-1.523848
+exp431	crash	0	0	crash	Fourier N=16 mode-2 sin IC amp=0.5 offset=0 — search for mode-2 small branch	agent0	branch_search	1	0
+exp432	1.07532507e-23	0.000000	0.000000	discard	Fourier N=16 cos IC amp=0.5 phase=0 offset=0 — does cos find norm=0.07 branch?	agent0	branch_search	1	-0.000000
+exp433	2.39690169e-15	0.070536	0.000000	discard	Fourier N=16 mode-2 sin IC amp=0.5 tol=1e-12 — search for mode-2 odd branch	agent0	branch_search	1	0.000099
+exp434	5.55111512e-17	1.001322	1.000049	discard	Fourier N=1 positive u_offset=1.0 tol=1e-15 200iter — push below 5.55e-17	agent1	solver_param	1	-1.520921
+exp435	8.67054555e-14	1.001296	-1.000019	discard	Fourier N=16 sin IC amp=0.5 offset=0.5 — mixed even+odd IC	agent0	branch_search	0	-1.520844
+exp436	7.17535424e-16	0.070536	-0.000000	discard	Fourier N=16 sin IC amp=0.5 offset=0.1 — small even+odd perturbation	agent0	branch_search	0	0.000099
+exp437	2.85761141e-16	1.001298	1.000025	discard	Fourier N=2 positive u_offset=1.0 tol=1e-15 200iter — more modes for accuracy	agent1	solver_param	0	-1.520921
+exp438	1.52643538e-15	0.070536	0.000000	discard	Fourier N=16 sin IC amp=2.0 offset=0 — large amplitude search	agent0	branch_search	1	0.000099
+exp439	5.84440146e-14	1.001296	1.000019	discard	Fourier N=32 kink IC: u=cos(theta) amp=1.0 offset=0 — search for domain wall solution	agent1	branch_search	0	-1.520844
+exp440	7.31438911e-15	1.001296	1.000019	discard	Fourier N=16 sin IC amp=0.5 offset=1.0 — positive branch + odd perturbation	agent0	branch_search	1	-1.520844
+exp441	6.64935606e-21	0.000000	0.000000	discard	Fourier N=32 mode-2 amp=1.5 offset=0 — double kink IC for domain wall	agent1	branch_search	1	0.000000
+exp442	1.75445920e-12	0.000000	-0.000000	discard	scipy u_offset=0.5 amp=0.5 mode-1 — IC oscillates between 0 and 1, near branch boundary	agent1	branch_search	0	-0.000000
+exp443	9.35183627e-15	1.001296	1.000019	discard	Fourier N=16 cos IC amp=1.0 offset=0 — oscillate ±1 domain wall	agent0	branch_search	0	-1.520844
+exp444	3.56411283e-14	0.070536	0.000000	discard	Fourier N=16 sin IC amp=1.0 offset=0 — large-amp odd IC, full swing ±1	agent0	branch_search	0	0.000099
+exp445	1.67355509e-14	0.000000	-0.000000	discard	scipy mode-2 amp=0.3 offset=0 — search for mode-2 oscillation branch	agent1	branch_search	1	-0.000000
+exp446	1.00593755e-14	1.001296	-1.000019	discard	Fourier N=16 cos IC amp=1.0 phase=pi/4 offset=0 — mixed parity	agent0	branch_search	0	-1.520844
+exp447	crash	0	0	crash	Fourier N=64 sin IC amp=0.1 offset=0 — characterize 4th branch norm=0.07	agent0	branch_search	0	0
+exp448	1.44422015e-15	0.070536	0.000000	discard	Fourier N=16 sin IC amp=0.1 offset=0 — 4th branch characterization	agent0	branch_search	0	0.000099
+exp449	9.51736756e-16	0.070536	0.000000	discard	Fourier N=16 sin IC amp=0.5 offset=0 — 4th branch stability check	agent0	branch_search	0	0.000099
+exp450	1.74438849e-17	0.000000	-0.000000	discard	Fourier N=32 mode-2 cos IC amp=0.5 offset=0 — search for mode-2 branch	agent0	branch_search	0	-0.000000
+exp451	crash	0	0	crash	Fourier N=64 sin IC amp=0.5 phase=pi/2 offset=0 — push 4th branch residual down	agent1	branch_search	0	0
+exp452	4.53091131e-15	0.070536	0.000000	discard	Fourier N=32 mode-2 sin IC amp=0.5 offset=0 — mode-2 odd branch	agent0	branch_search	0	0.000099
+exp453	2.42920086e-16	0.070536	-0.000000	discard	Fourier N=8 sin IC amp=0.5 phase=pi/2 offset=0 500 Newton iters — push 4th branch residual	agent1	branch_search	1	0.000099
+exp454	5.11505881e-16	0.070536	-0.000000	discard	Fourier N=16 sin IC amp=0.5 phase=pi/2 offset=0 500iter — 4th branch N=16	agent1	branch_search	1	0.000099
+exp455	2.30604361e-15	0.070536	0.000000	discard	Fourier N=16 -sin IC amp=0.1 offset=0 — negative 4th branch (u to -u symmetry)	agent0	branch_search	1	0.000099
+exp456	4.81950656e-16	0.000006	0.000000	discard	Fourier N=2 sin IC amp=0.5 phase=pi/2 offset=0 500iter — minimize modes for 4th branch	agent1	branch_search	0	-0.000000
+exp457	3.89720378e-17	0.070535	-0.000000	discard	Fourier N=4 sin IC amp=0.5 phase=pi/2 offset=0 500iter — N=4 for 4th branch	agent1	branch_search	0	0.000099
+exp458	1.10899348e-16	0.070536	0.000000	discard	Fourier N=5 sin IC amp=0.5 phase=pi/2 offset=0 500iter — sweep N for 4th branch	agent1	branch_search	0	0.000099
+exp459	7.83342496e-17	0.070536	-0.000000	discard	Fourier N=6 sin IC amp=0.5 phase=pi/2 offset=0 500iter — sweep N for 4th branch	agent1	branch_search	0	0.000099
+exp460	crash	0	0	crash	scipy sin IC amp=0.07 phase=pi/2 n=300 tol=1e-12 — target 4th branch via scipy	agent1	branch_search	0	0
+exp461	9.99174588e-12	0.070536	0.000000	discard	scipy sin IC amp=0.5 phase=pi/2 n=300 tol=1e-11 — larger amp for 4th branch via scipy	agent1	branch_search	0	0.000175
+exp462	crash	0	0	crash	scipy sin IC amp=0.5 phase=pi/2 n=300 tol=1e-14 — push scipy tighter for 4th branch	agent1	solver_param	1	0
+exp463	crash	0	0	crash	Fourier N=32 cos IC amp=1.0 offset=0 — search for domain wall solution cos start	agent1	branch_search	1	0
+exp464	2.14282669e-16	0.070535	0.000000	discard	Fourier N=4 mode-2 sin IC amp=0.5 offset=0 — search for mode-2 bifurcation	agent1	branch_search	0	0.000099
+exp465	1.44422015e-15	0.070536	0.000000	discard	Fourier N=16 sin+ branch: norm=0.07 mean=0 — bifurcation from trivial at mode-1	agent0	branch_search	1	0.000099
+exp466	5.30892590e-25	0.000000	0.000000	discard	Fourier N=4 cos IC amp=0.5 phase=0 offset=0 — even parity branch search	agent1	branch_search	1	0.000000
+exp467	5.93738720e-25	0.000000	0.000000	discard	Fourier N=8 mode-3 sin IC amp=0.5 offset=0 — search for mode-3 branch	agent1	branch_search	0	0.000000
+exp468	crash	0	0	crash	Fourier N=64 u_offset=0.9 — positive branch via Fourier spectral	agent1	initial_cond	1	0
+exp469	2.66626099e-13	1.001296	1.000019	discard	Fourier N=64 u_offset=0.9 tol=1e-12 500iter — positive branch relaxed tol	agent1	initial_cond	0	-1.520844
+exp470	crash	0	0	crash	Fourier N=128 u_offset=0.9 tol=1e-14 — positive branch high res	agent1	initial_cond	1	0
+exp471	1.39574569e-19	0.000000	-0.000000	discard	scipy sin-like IC amp=0.07 offset=0 n=200 tol=1e-12 — test 4th branch via scipy	agent0	branch_search	1	-0.000000
+exp472	crash	0	0	crash	scipy sin IC amp=0.5 phase=pi/2 offset=0 n=300 tol=1e-12 — replicate Fourier 4th branch via scipy	agent0	branch_search	0	0
+exp473	crash	0	0	crash	Fourier N=128 u_offset=0.9 tol=1e-12 — positive branch at 128 modes	agent1	initial_cond	1	0
+exp474	crash	0	0	crash	Fourier N=32 u_offset=0.9 tol=1e-14 — positive branch N=32	agent1	initial_cond	0	0
+exp475	9.51736756e-16	0.070536	0.000000	discard	Fourier N=16 sin IC amp=0.5 phase=pi/2 offset=0 — 4th branch N-convergence test	agent0	branch_search	0	0.000099
+exp476	4.80663524e-15	0.070536	0.000000	discard	Fourier N=32 sin IC amp=0.5 phase=pi/2 offset=0 — 4th branch N=32 convergence	agent0	branch_search	0	0.000099
+exp477	crash	0	0	crash	Fourier N=64 sin IC amp=0.5 phase=pi/2 offset=0 — 4th branch N=64 convergence	agent0	branch_search	1	0
+exp478	2.66626099e-13	1.001296	-1.000019	discard	Fourier N=64 u_offset=-0.9 tol=1e-12 — negative branch Fourier	agent1	initial_cond	0	-1.520844
+exp479	crash	0	0	crash	Fourier N=64 sin IC amp=0.5 offset=0 — test 0.07 branch at high N	agent1	branch_search	1	0
+exp480	2.66201844e-14	0.070536	0.000000	discard	Fourier N=64 sin IC phase=pi/2 offset=0 tol=1e-12 500iter — 4th branch convergence	agent0	branch_search	0	0.000099
+exp481	2.66201844e-14	0.070536	0.000000	discard	Fourier N=64 sin IC amp=0.5 tol=1e-13 — test if 0.07 branch exists at N=64	agent1	branch_search	0	0.000099
+exp482	9.96485626e-12	0.070536	0.000000	discard	scipy sin IC amp=0.07 n=200 tol=1e-11 — verify 4th branch with scipy	agent1	branch_search	1	0.000175
+exp483	3.43525288e-15	0.070536	0.000000	discard	Fourier N=16 sin IC amp=0.5 phase=3pi/2 offset=0 — check -u is distinct 5th branch	agent0	branch_search	0	0.000099
+exp484	2.44485099e-14	0.070536	-0.000000	discard	Fourier N=64 -sin IC amp=0.5 phase=3pi/2 — search for Z2-mirror of 0.07 branch	agent1	branch_search	0	0.000099
+exp485	1.07532507e-23	0.000000	0.000000	discard	Fourier N=16 cos IC amp=0.5 phase=0 offset=0 — search for even-parity 4th branch	agent0	branch_search	1	-0.000000
+exp486	1.74862376e-17	0.000000	-0.000000	discard	Fourier N=64 mode-2 cos IC amp=0.5 offset=0 — search for mode-2 branch	agent1	branch_search	0	-0.000000
+exp487	1.74827109e-17	0.000000	-0.000000	discard	Fourier N=16 mode-2 cos IC amp=0.5 offset=0 — search for mode-2 branch	agent0	branch_search	0	-0.000000
+exp488	1.49375752e-14	0.070536	-0.000000	discard	Fourier N=64 mode-2 sin IC amp=0.5 offset=0 — mode-2 sin branch search	agent1	branch_search	0	0.000099
+exp489	2.39690169e-15	0.070536	0.000000	discard	Fourier N=16 mode-2 sin IC amp=0.5 offset=0 — search for mode-2 sin branch	agent0	branch_search	0	0.000099
+exp490	4.25717734e-20	0.000000	0.000000	discard	Fourier N=64 mode-2 cos amp=1.5 offset=0 — large mode-2 for exotic branch	agent1	branch_search	0	0.000000
+exp491	5.84440146e-14	1.001296	1.000019	discard	Fourier N=32 cos IC amp=1.0 offset=0 — large amp cos IC for domain wall solution	agent0	branch_search	0	-1.520844
+exp492	crash	0	0	crash	Fourier N=64 cos IC amp=0.5 offset=0.5 — mixed initial guess for exotic branch	agent1	branch_search	3	0
+exp493	6.69529963e-14	1.001296	1.000019	discard	Fourier N=32 cos IC amp=1.5 offset=0 — very large amplitude for domain wall	agent0	branch_search	0	-1.520844
+exp494	3.88556480e-14	0.070536	-0.000000	discard	Fourier N=32 sin IC amp=1.5 offset=0 — large sin amplitude for new branch	agent0	branch_search	0	0.000099
+exp495	crash	0	0	crash	Fourier N=128 sin IC amp=0.5 tol=1e-14 — push 0.07 branch residual lower	agent1	branch_search	1	0
+exp496	crash	0	0	crash	Fourier N=16 amp=0.5 phase=pi/4 offset=0.5 — mixed cos+sin IC for asymmetric branch	agent0	branch_search	0	0
+exp497	7.06154012e-15	1.001296	1.000019	discard	Fourier N=16 amp=0.5 phase=pi/4 offset=0.5 tol=1e-12 — mixed IC relaxed tol	agent0	branch_search	1	-1.520844
+exp498	crash	0	0	crash	Fourier N=96 sin IC amp=0.5 tol=1e-14 — sweep N for 0.07 branch	agent1	branch_search	10	0
+exp499	crash	0	0	crash	Fourier N=32 mode-2 sin IC amp=0.5 tol=1e-15 — push 0.07 branch residual lower	agent0	branch_search	0	0
+exp500	1.32601884e-27	0.000000	-0.000000	discard	Fourier N=8 mode-3 cos IC amp=0.5 offset=0 — search for mode-3 branch	agent1	branch_search	1	0.000000
+exp501	crash	0	0	crash	Fourier N=8 mode-2 sin IC amp=0.5 tol=1e-16 500iter — push 0.07 branch residual	agent0	branch_search	1	0
+exp502	5.93738720e-25	0.000000	0.000000	discard	Fourier N=8 mode-3 sin IC amp=0.5 offset=0 — search for mode-3 branch	agent1	branch_search	0	0.000000
+exp503	1.25641427e-19	0.000000	-0.000000	discard	scipy mode-2 sin IC n=300 tol=1e-14 — push 4th branch residual via scipy	agent1	branch_search	0	0.000000
+exp504	2.22945995e-15	0.070536	0.000000	discard	Fourier N=10 mode-2 sin IC amp=0.5 tol=1e-14 — push 0.07 branch with more modes	agent0	branch_search	1	0.000099
+exp505	4.31529236e-27	0.000000	0.000000	discard	Fourier N=8 mode-3 cos amp=1.5 offset=0 500iter — large amp mode-3	agent1	branch_search	1	0.000000
+exp506	5.56231378e-15	0.070536	0.000000	discard	Fourier N=6 mode-2 sin IC amp=0.5 — test if fewer modes give lower residual on 0.07 branch	agent0	branch_search	0	0.000099
+exp507	crash	0	0	crash	Fourier N=8 mode-3 cos amp=0.5 offset=0.5 — mode-3 with DC offset	agent1	branch_search	1	0
+exp508	1.32601884e-27	0.000000	-0.000000	discard	Fourier N=8 mode-3 cos IC amp=0.5 offset=0 — search for mode-3 branch	agent0	branch_search	1	0.000000
+exp509	4.81950656e-16	0.000006	0.000000	discard	Fourier N=2 sin IC amp=0.5 offset=0 — minimum modes 4th branch	agent1	branch_search	0	-0.000000
+exp510	2.35345540e-15	1.001296	1.000019	discard	Fourier N=8 mode-3 cos amp=1.5 offset=0.5 — force mode-3 branch with large IC	agent0	branch_search	0	-1.520844
+exp511	4.04811706e-17	0.070278	-0.000000	discard	Fourier N=3 sin IC amp=0.5 offset=0 — 4th branch optimal modes	agent1	branch_search	0	0.000097
+exp512	5.52949034e-15	1.001296	1.000019	discard	Fourier N=16 mode-1 cos amp=1.0 offset=0 — cos IC at bifurcation amplitude for new branch	agent0	branch_search	1	-1.520844
+exp513	3.42818300e-15	0.000000	0.000000	discard	Scipy mode-2 sin IC amp=0.5 offset=0 — check if 0.07 branch exists in continuous limit	agent0	branch_search	0	0.000000
+exp514	crash	0	0	crash	Fourier N=32 cos IC amp=1.0 offset=0 — domain wall search	agent1	branch_search	0	0
+exp515	crash	0	0	crash	Scipy n=300 tol=1e-12 u_offset=-0.9 — push negative branch residual below 9e-27	agent0	solver_param	0	0
+exp516	5.84440146e-14	1.001296	1.000019	discard	Fourier N=32 cos IC amp=1.0 offset=0 500iter tol=1e-12 — domain wall	agent1	branch_search	0	-1.520844
+exp517	crash	0	0	crash	Fourier N=64 offset=0.9 amp=0 tol=1e-15 — push positive branch with spectral solver	agent0	solver_param	1	0
+exp518	crash	0	0	crash	Fourier N=32 offset=0.9 amp=0.1 tol=1e-14 — push positive branch with smaller N	agent0	solver_param	0	0
+exp519	1.40825974e-14	1.001296	1.000019	discard	Fourier N=16 cos amp=1.0 offset=0.3 — basin boundary near cos IC	agent1	branch_search	0	-1.520844
+exp520	1.20937238e-14	1.001296	1.000019	discard	Fourier N=16 cos amp=1.0 offset=-0.3 — basin boundary negative side	agent1	branch_search	0	-1.520844
+exp521	3.74513825e-12	0.000000	-0.000000	discard	Scipy mode-1 cos amp=0.5 offset=0 — domain wall IC (cos oscillation around 0)	agent0	branch_search	0	-0.000000
+exp522	7.80043809e-20	0.000000	-0.000000	discard	Fourier N=16 mode-4 sin IC amp=0.5 offset=0 — search for mode-4 branch	agent1	branch_search	0	0.000000
+exp523	8.81934685e-11	1.002503	1.000218	discard	Scipy offset=1.0 cos amp=0.5 — positive branch with strong mode-1 perturbation	agent0	perturbation	0	-1.523848
+exp524	3.38204386e-22	0.000000	-0.000000	discard	Fourier N=16 mode-5 sin IC amp=0.5 offset=0 — search for mode-5 branch	agent1	branch_search	0	0.000000
+exp525	crash	0	0	crash	Scipy mode-1 cos amp=1.5 offset=0 n=300 — symmetric IC crossing both wells	agent0	branch_search	1	0
+exp526	1.74827109e-17	0.000000	-0.000000	discard	Fourier N=16 mode-2 cos IC amp=0.5 offset=0 — mode-2 cos branch search	agent1	branch_search	0	-0.000000
+exp527	8.08630458e-15	1.001296	1.000019	discard	Fourier N=16 cos amp=1.5 offset=0 — large symmetric IC for kink-antikink	agent0	branch_search	1	-1.520844
+exp528	crash	0	0	crash	Fourier N=32 offset=0.9 tol=1e-14 — positive branch high-res	agent0	solver_param	0	0
+exp529	3.91750443e-15	1.001296	1.000019	discard	Fourier N=16 offset=0.9 amp=0.1 tol=1e-14 — positive branch baseline	agent0	initial_cond	0	-1.520844
+exp530	crash	0	0	crash	Fourier N=16 offset=-0.9 amp=0.1 tol=1e-14 — negative branch baseline	agent0	initial_cond	1	0
+exp531	9.80524062e-14	1.001296	-1.000019	discard	Fourier N=16 offset=-0.9 tol=1e-12 — negative branch relaxed tol	agent0	initial_cond	1	-1.520844
+exp532	0.00000000e+00	0.000000	0.000000	discard	Fourier N=16 offset=0.0 amp=0.0 tol=1e-14 — trivial branch exact zero IC	agent0	initial_cond	1	0.000000
+exp533	2.98100769e-14	0.000000	0.000000	discard	Fourier N=16 offset=0.1 amp=0 — basin boundary sweep positive	agent0	branch_search	1	-0.000000
+exp534	5.61534557e-20	0.000000	0.000000	discard	Fourier N=16 offset=0.2 amp=0 — basin boundary sweep positive	agent0	branch_search	0	-0.000000
+exp535	3.15314653e-21	0.000000	0.000000	discard	Fourier N=16 offset=0.3 amp=0 — basin boundary sweep positive	agent0	branch_search	0	-0.000000
+exp536	2.94891172e-22	0.000000	-0.000000	discard	Fourier N=16 offset=0.4 amp=0 — basin boundary sweep positive	agent0	branch_search	1	-0.000000
+exp537	4.99832888e-14	1.001296	-1.000019	discard	Fourier N=16 offset=0.5 amp=0 — basin boundary sweep positive	agent0	branch_search	0	-1.520844
+exp538	3.35642799e-14	1.001296	1.000019	discard	Fourier N=16 offset=0.6 amp=0 — basin boundary sweep positive	agent0	branch_search	0	-1.520844
+exp539	1.04325460e-14	1.001296	1.000019	discard	Fourier N=16 offset=0.7 amp=0 — basin boundary sweep positive	agent0	branch_search	1	-1.520844
+exp540	3.17158955e-14	1.001296	1.000019	discard	Fourier N=16 offset=0.8 amp=0 — basin boundary sweep positive	agent0	branch_search	0	-1.520844
+exp541	crash	0	0	crash	Fourier N=64 positive u_offset=0.9 newton_tol=1e-14	agent1	initial_cond	1	0
+exp542	5.29239402e-18	0.000000	0.000000	discard	Fourier N=16 offset=0.41 amp=0 — boundary refinement	agent0	branch_search	0	-0.000000
+exp543	2.52333380e-13	0.000000	0.000000	discard	Fourier N=16 offset=0.42 amp=0 — boundary refinement	agent0	branch_search	0	-0.000000
+exp544	6.47734063e-22	0.000000	-0.000000	discard	Fourier N=16 offset=0.43 amp=0 — boundary refinement	agent0	branch_search	1	0.000000
+exp545	2.23894594e-13	0.000000	0.000000	discard	Fourier N=16 offset=0.44 amp=0 — boundary refinement	agent0	branch_search	0	-0.000000
+exp546	3.94751534e-16	0.000000	0.000000	discard	Fourier N=16 offset=0.45 amp=0 — boundary refinement	agent0	branch_search	0	-0.000000
+exp547	3.37350668e-24	0.000000	-0.000000	discard	Fourier N=16 offset=0.46 amp=0 — boundary refinement	agent0	branch_search	1	-0.000000
+exp548	1.09663522e-14	1.001296	-1.000019	discard	Fourier N=16 offset=0.47 amp=0 — boundary refinement	agent0	branch_search	0	-1.520844
+exp549	3.34840026e-14	1.001296	1.000019	discard	Fourier N=16 offset=0.48 amp=0 — boundary refinement	agent0	branch_search	0	-1.520844
+exp550	3.20990933e-14	1.001296	-1.000019	discard	Fourier N=16 offset=0.49 amp=0 — boundary refinement	agent0	branch_search	1	-1.520844
+exp551	2.44575072e-19	0.000000	0.000000	discard	Fourier N=16 offset=0.461 — fine boundary	agent0	branch_search	0	-0.000000
+exp552	5.32681764e-20	0.000000	0.000000	discard	Fourier N=16 offset=0.462 — fine boundary	agent0	branch_search	0	-0.000000
+exp553	1.71382580e-14	1.001296	-1.000019	discard	Fourier N=16 offset=0.463 — fine boundary	agent0	branch_search	1	-1.520844
+exp554	1.11451541e-14	1.001296	-1.000019	discard	Fourier N=16 offset=0.464 — fine boundary	agent0	branch_search	0	-1.520844
+exp555	1.17968116e-14	1.001296	-1.000019	discard	Fourier N=16 offset=0.465 — fine boundary	agent0	branch_search	0	-1.520844
+exp556	1.90492616e-14	1.001296	1.000019	discard	Fourier N=16 offset=0.466 — fine boundary	agent0	branch_search	1	-1.520844
+exp557	1.07806334e-14	1.001296	-1.000019	discard	Fourier N=16 offset=0.467 — fine boundary	agent0	branch_search	0	-1.520844
+exp558	3.06128960e-14	1.001296	-1.000019	discard	Fourier N=16 offset=0.468 — fine boundary	agent0	branch_search	0	-1.520844
+exp559	1.37477316e-14	1.001296	-1.000019	discard	Fourier N=16 offset=0.469 — fine boundary	agent0	branch_search	1	-1.520844
+exp560	1.09663522e-14	1.001296	-1.000019	discard	Fourier N=16 offset=0.470 — fine boundary	agent0	branch_search	0	-1.520844
+exp561	2.66626099e-13	1.001296	1.000019	discard	Fourier N=64 positive u_offset=0.9 newton_tol=1e-12	agent1	initial_cond	1	-1.520844
+exp562	2.98100769e-14	0.000000	-0.000000	discard	Fourier N=16 offset=-0.1 — negative side boundary	agent0	branch_search	0	-0.000000
+exp563	5.61534557e-20	0.000000	-0.000000	discard	Fourier N=16 offset=-0.2 — negative side boundary	agent0	branch_search	1	-0.000000
+exp564	3.15314653e-21	0.000000	-0.000000	discard	Fourier N=16 offset=-0.3 — negative side boundary	agent0	branch_search	0	-0.000000
+exp565	2.94891172e-22	0.000000	0.000000	discard	Fourier N=16 offset=-0.4 — negative side boundary	agent0	branch_search	0	-0.000000
+exp566	3.94751534e-16	0.000000	-0.000000	discard	Fourier N=16 offset=-0.45 — negative side boundary	agent0	branch_search	1	-0.000000
+exp567	3.37350668e-24	0.000000	0.000000	discard	Fourier N=16 offset=-0.46 — negative side boundary	agent0	branch_search	0	-0.000000
+exp568	1.09663522e-14	1.001296	1.000019	discard	Fourier N=16 offset=-0.47 — negative side boundary	agent0	branch_search	0	-1.520844
+exp569	3.34840026e-14	1.001296	-1.000019	discard	Fourier N=16 offset=-0.48 — negative side boundary	agent0	branch_search	1	-1.520844
+exp570	3.20990933e-14	1.001296	1.000019	discard	Fourier N=16 offset=-0.49 — negative side boundary	agent0	branch_search	0	-1.520844
+exp571	4.99832888e-14	1.001296	1.000019	discard	Fourier N=16 offset=-0.5 — negative side boundary	agent0	branch_search	0	-1.520844
+exp572	3.35642799e-14	1.001296	-1.000019	discard	Fourier N=16 offset=-0.6 — negative side boundary	agent0	branch_search	1	-1.520844
+exp573	1.04325460e-14	1.001296	-1.000019	discard	Fourier N=16 offset=-0.7 — negative side boundary	agent0	branch_search	0	-1.520844
+exp574	3.17158955e-14	1.001296	-1.000019	discard	Fourier N=16 offset=-0.8 — negative side boundary	agent0	branch_search	0	-1.520844
+exp575	3.26514669e-14	1.001296	-1.000019	discard	Fourier N=16 offset=-0.9 — negative side boundary	agent0	branch_search	1	-1.520844
+exp576	crash	0	0	crash	Fourier N=128 positive u_offset=0.9 newton_tol=1e-13	agent1	initial_cond	0	0
+exp577	4.52786698e-25	0.000000	0.000000	discard	Fourier amp=0.05 offset=0.40 — amplitude effect on boundary	agent0	perturbation	0	-0.000000
+exp578	1.24434321e-13	1.001296	1.000019	discard	Fourier amp=0.05 offset=0.45 — amplitude effect on boundary	agent0	perturbation	1	-1.520844
+exp579	1.42660414e-14	1.001296	1.000019	discard	Fourier amp=0.05 offset=0.46 — amplitude effect on boundary	agent0	perturbation	0	-1.520844
+exp580	8.32417569e-15	1.001296	-1.000019	discard	Fourier amp=0.05 offset=0.47 — amplitude effect on boundary	agent0	perturbation	0	-1.520844
+exp581	3.23182870e-14	1.001296	-1.000019	discard	Fourier amp=0.05 offset=0.50 — amplitude effect on boundary	agent0	perturbation	1	-1.520844
+exp582	6.06955971e-15	0.000000	-0.000000	discard	Fourier amp=0.1 offset=0.40 — amplitude effect on boundary	agent0	perturbation	0	-0.000000
+exp583	1.32824281e-14	1.001296	1.000019	discard	Fourier amp=0.1 offset=0.45 — amplitude effect on boundary	agent0	perturbation	0	-1.520844
+exp584	1.25313265e-14	1.001296	1.000019	discard	Fourier amp=0.1 offset=0.46 — amplitude effect on boundary	agent0	perturbation	1	-1.520844
+exp585	1.38296971e-14	1.001296	-1.000019	discard	Fourier amp=0.1 offset=0.47 — amplitude effect on boundary	agent0	perturbation	0	-1.520844
+exp586	crash	0	0	crash	Fourier N=32 positive u_offset=0.9 newton_tol=1e-14	agent1	initial_cond	0	0
+exp587	3.16104525e-14	1.001296	-1.000019	discard	Fourier amp=0.1 offset=0.50 — amplitude effect on boundary	agent0	perturbation	0	-1.520844
+exp588	5.41086732e-19	0.000000	-0.000000	discard	Fourier amp=0.15 offset=0.40 — amplitude effect on boundary	agent0	perturbation	1	-0.000000
+exp589	2.60411450e-14	0.000000	-0.000000	discard	Fourier amp=0.15 offset=0.45 — amplitude effect on boundary	agent0	perturbation	0	-0.000000
+exp590	3.17443473e-14	1.001296	1.000019	discard	Fourier amp=0.15 offset=0.46 — amplitude effect on boundary	agent0	perturbation	0	-1.520844
+exp591	1.25602611e-14	1.001296	1.000019	discard	Fourier amp=0.15 offset=0.47 — amplitude effect on boundary	agent0	perturbation	1	-1.520844
+exp592	3.29512266e-14	1.001296	-1.000019	discard	Fourier amp=0.15 offset=0.50 — amplitude effect on boundary	agent0	perturbation	0	-1.520844
+exp593	1.84301912e-13	0.000000	-0.000000	discard	Fourier amp=0.2 offset=0.40 — amplitude effect on boundary	agent0	perturbation	0	-0.000000
+exp594	1.47186496e-21	0.000000	-0.000000	discard	Fourier amp=0.2 offset=0.45 — amplitude effect on boundary	agent0	perturbation	1	-0.000000
+exp595	1.48341394e-14	1.001296	-1.000019	discard	Fourier amp=0.2 offset=0.46 — amplitude effect on boundary	agent0	perturbation	0	-1.520844
+exp596	1.03219763e-14	1.001296	-1.000019	discard	Fourier amp=0.2 offset=0.47 — amplitude effect on boundary	agent0	perturbation	0	-1.520844
+exp597	3.38732401e-14	1.001296	-1.000019	discard	Fourier amp=0.2 offset=0.50 — amplitude effect on boundary	agent0	perturbation	1	-1.520844
+exp598	1.41128388e-21	0.000000	-0.000000	discard	Fourier amp=0.3 offset=0.40 — amplitude effect on boundary	agent0	perturbation	0	-0.000000
+exp599	1.11210739e-19	0.000000	-0.000000	discard	Fourier amp=0.3 offset=0.45 — amplitude effect on boundary	agent0	perturbation	0	-0.000000
+exp600	1.24135084e-14	1.001296	-1.000019	discard	Fourier amp=0.3 offset=0.46 — amplitude effect on boundary	agent0	perturbation	1	-1.520844
+exp601	1.13600204e-14	1.001296	-1.000019	discard	Fourier amp=0.3 offset=0.47 — amplitude effect on boundary	agent0	perturbation	0	-1.520844
+exp602	3.20357725e-14	1.001296	1.000019	discard	Fourier amp=0.3 offset=0.50 — amplitude effect on boundary	agent0	perturbation	0	-1.520844
+exp603	2.36855751e-14	1.001296	-1.000019	discard	Fourier offset=-0.9 phase=0.0 amp=0.05 — negative branch optimization	agent0	solver_param	0	-1.520844
+exp604	5.52949034e-15	1.001296	1.000019	discard	Fourier N=16 positive u_offset=0.9 newton_tol=1e-14	agent1	initial_cond	0	-1.520844
+exp605	9.80524062e-14	1.001296	-1.000019	discard	Fourier offset=-0.9 phase=0.0 amp=0.1 — negative branch optimization	agent0	solver_param	1	-1.520844
+exp606	1.10121759e-14	1.001296	-1.000019	discard	Fourier offset=-0.9 phase=0.0 amp=0.15 — negative branch optimization	agent0	solver_param	0	-1.520844
+exp607	3.37142730e-14	1.001296	-1.000019	discard	Fourier offset=-0.9 phase=3.14159 amp=0.05 — negative branch optimization	agent0	solver_param	0	-1.520844
+exp608	5.73479152e-13	1.001296	-1.000019	discard	Fourier offset=-0.9 phase=3.14159 amp=0.1 — negative branch optimization	agent0	solver_param	1	-1.520844
+exp609	2.08738544e-14	1.001296	-1.000019	discard	Fourier offset=-0.9 phase=3.14159 amp=0.15 — negative branch optimization	agent0	solver_param	0	-1.520844
+exp610	2.94474458e-15	1.001296	1.000019	discard	Fourier N=8 positive u_offset=0.9 newton_tol=1e-14	agent1	initial_cond	0	-1.520844
+exp611	5.73474660e-13	1.001296	1.000019	discard	Fourier N=8 offset=0.9 — positive branch modes test	agent0	solver_param	0	-1.520844
+exp612	3.61445435e-15	1.001296	-1.000019	discard	Fourier N=8 offset=-0.9 — negative branch modes test	agent0	solver_param	0	-1.520844
+exp613	5.73395961e-13	1.001296	1.000019	discard	Fourier N=12 offset=0.9 — positive branch modes test	agent0	solver_param	1	-1.520844
+exp614	1.12829018e-14	1.001296	-1.000019	discard	Fourier N=12 offset=-0.9 — negative branch modes test	agent0	solver_param	0	-1.520844
+exp615	5.75230527e-13	1.001296	1.000019	discard	Fourier N=24 offset=0.9 — positive branch modes test	agent0	solver_param	0	-1.520844
+exp616	4.78867950e-14	1.001296	-1.000019	discard	Fourier N=24 offset=-0.9 — negative branch modes test	agent0	solver_param	1	-1.520844
+exp617	2.57581612e-16	1.001296	1.000019	discard	Fourier N=4 positive u_offset=0.9 newton_tol=1e-14	agent1	initial_cond	0	-1.520844
+exp618	9.08038449e-15	1.001296	1.000019	discard	Fourier N=8 offset=0.8 amp=0.0 — positive branch N=8	agent0	solver_param	1	-1.520844
+exp619	4.38824831e-13	1.001296	1.000019	discard	Fourier N=8 offset=0.8 amp=0.05 — positive branch N=8	agent0	solver_param	0	-1.520844
+exp620	7.12165277e-14	1.001296	1.000019	discard	Fourier N=8 offset=0.8 amp=0.1 — positive branch N=8	agent0	solver_param	0	-1.520844
+exp621	8.98769634e-15	1.001296	1.000019	discard	Fourier N=8 offset=0.8 amp=0.15 — positive branch N=8	agent0	solver_param	0	-1.520844
+exp622	2.94474458e-15	1.001296	1.000019	discard	Fourier N=8 offset=0.9 amp=0.0 — positive branch N=8	agent0	solver_param	0	-1.520844
+exp623	2.33934795e-15	1.001296	1.000019	discard	Fourier N=8 offset=0.9 amp=0.05 — positive branch N=8	agent0	solver_param	0	-1.520844
+exp624	5.73474660e-13	1.001296	1.000019	discard	Fourier N=8 offset=0.9 amp=0.1 — positive branch N=8	agent0	solver_param	1	-1.520844
+exp625	2.00148302e-16	1.001298	1.000025	discard	Fourier N=2 positive u_offset=0.9 newton_tol=1e-14	agent1	initial_cond	1	-1.520921
+exp626	2.46573935e-15	1.001296	1.000019	discard	Fourier N=8 offset=0.9 amp=0.15 — positive branch N=8	agent0	solver_param	0	-1.520844
+exp627	2.90447551e-15	1.001296	1.000019	discard	Fourier N=8 offset=1.0 amp=0.0 — positive branch N=8	agent0	solver_param	0	-1.520844
+exp628	2.23098526e-15	1.001296	1.000019	discard	Fourier N=8 offset=1.0 amp=0.05 — positive branch N=8	agent0	solver_param	1	-1.520844
+exp629	1.02308882e-14	1.001296	1.000019	discard	Fourier N=8 offset=1.0 amp=0.1 — positive branch N=8	agent0	solver_param	0	-1.520844
+exp630	2.05183690e-15	1.001296	1.000019	discard	Fourier N=8 offset=1.0 amp=0.15 — positive branch N=8	agent0	solver_param	0	-1.520844
+exp631	9.11016463e-15	1.001296	1.000019	discard	Fourier N=8 offset=1.1 amp=0.0 — positive branch N=8	agent0	solver_param	1	-1.520844
+exp632	1.56233385e-13	1.001296	1.000019	discard	Fourier N=8 offset=1.1 amp=0.05 — positive branch N=8	agent0	solver_param	0	-1.520844
+exp633	1.43811231e-14	1.001296	1.000019	discard	Fourier N=8 offset=1.1 amp=0.1 — positive branch N=8	agent0	solver_param	0	-1.520844
+exp634	1.29390100e-13	1.001296	1.000019	discard	Fourier N=8 offset=1.1 amp=0.15 — positive branch N=8	agent0	solver_param	1	-1.520844
+exp635	4.37618166e-16	1.001296	1.000019	discard	Fourier N=3 positive u_offset=0.9 newton_tol=1e-14	agent1	initial_cond	0	-1.520844
+exp636	2.57581612e-16	1.001296	1.000019	discard	Fourier N=4 offset=0.9 amp=0.0 — minimal modes positive	agent0	solver_param	0	-1.520844
+exp637	1.86448479e-16	1.001296	1.000019	discard	Fourier N=4 offset=0.9 amp=0.05 — minimal modes positive	agent0	solver_param	1	-1.520844
+exp638	2.06774381e-16	1.001296	1.000019	discard	Fourier N=4 offset=0.9 amp=0.1 — minimal modes positive	agent0	solver_param	0	-1.520844
+exp639	1.86448479e-16	1.001296	1.000019	discard	Fourier N=4 offset=0.9 amp=0.15 — minimal modes positive	agent0	solver_param	0	-1.520844
+exp640	1.89920454e-15	1.001296	1.000019	discard	Fourier N=4 offset=1.0 amp=0.0 — minimal modes positive	agent0	solver_param	1	-1.520844
+exp641	2.57581612e-16	1.001296	1.000019	discard	Fourier N=4 offset=1.0 amp=0.05 — minimal modes positive	agent0	solver_param	0	-1.520844
+exp642	1.96261557e-16	1.001296	1.000019	discard	Fourier N=4 offset=1.0 amp=0.1 — minimal modes positive	agent0	solver_param	0	-1.520844
+exp643	2.06774381e-16	1.001296	1.000019	discard	Fourier N=4 offset=1.0 amp=0.15 — minimal modes positive	agent0	solver_param	1	-1.520844
+exp644	2.57581612e-16	1.001296	-1.000019	discard	Fourier N=4 offset=-0.9 amp=0.0 — minimal modes negative	agent0	solver_param	0	-1.520844
+exp645	3.14171784e-16	1.001296	-1.000019	discard	Fourier N=4 offset=-0.9 amp=0.05 — minimal modes negative	agent0	solver_param	0	-1.520844
+exp646	4.00777441e-16	1.001296	-1.000019	discard	Fourier N=4 offset=-0.9 amp=0.15 — minimal modes negative	agent0	solver_param	1	-1.520844
+exp647	1.89920454e-15	1.001296	-1.000019	discard	Fourier N=4 offset=-1.0 amp=0.0 — minimal modes negative	agent0	solver_param	0	-1.520844
+exp648	5.55111512e-17	1.001322	1.000049	discard	Fourier N=1 positive u_offset=0.9 newton_tol=1e-15	agent1	initial_cond	0	-1.520921
+exp649	2.57581612e-16	1.001296	-1.000019	discard	Fourier N=4 offset=-1.0 amp=0.05 — minimal modes negative	agent0	solver_param	0	-1.520844
+exp650	3.86154346e-16	1.001296	-1.000019	discard	Fourier N=4 offset=-1.0 amp=0.15 — minimal modes negative	agent0	solver_param	1	-1.520844
+exp651	2.00148302e-16	1.001298	1.000025	discard	Fourier N=2 offset=0.9 amp=0.0 — ultra-low modes	agent0	solver_param	0	-1.520921
+exp652	2.51337427e-16	1.001298	1.000025	discard	Fourier N=2 offset=0.9 amp=0.05 — ultra-low modes	agent0	solver_param	1	-1.520921
+exp653	2.00148302e-16	1.001298	1.000025	discard	Fourier N=2 offset=0.9 amp=0.1 — ultra-low modes	agent0	solver_param	0	-1.520921
+exp654	2.00148302e-16	1.001298	-1.000025	discard	Fourier N=2 offset=-0.9 amp=0.0 — ultra-low modes	agent0	solver_param	0	-1.520921
+exp655	5.11787527e-16	1.001298	-1.000025	discard	Fourier N=2 offset=-0.9 amp=0.05 — ultra-low modes	agent0	solver_param	1	-1.520921
+exp656	2.00148302e-16	1.001298	-1.000025	discard	Fourier N=2 offset=-0.9 amp=0.1 — ultra-low modes	agent0	solver_param	0	-1.520921
+exp657	4.37618166e-16	1.001296	1.000019	discard	Fourier N=3 offset=0.9 amp=0.0 — ultra-low modes	agent0	solver_param	0	-1.520844
+exp658	1.85974439e-16	1.001296	1.000019	discard	Fourier N=3 offset=0.9 amp=0.05 — ultra-low modes	agent0	solver_param	1	-1.520844
+exp659	6.01446416e-16	1.001296	1.000019	discard	Fourier N=3 offset=0.9 amp=0.1 — ultra-low modes	agent0	solver_param	0	-1.520844
+exp660	4.37618166e-16	1.001296	-1.000019	discard	Fourier N=3 offset=-0.9 amp=0.0 — ultra-low modes	agent0	solver_param	0	-1.520844
+exp661	2.13062840e-16	1.001296	-1.000019	discard	Fourier N=3 offset=-0.9 amp=0.05 — ultra-low modes	agent0	solver_param	1	-1.520844
+exp662	4.37618166e-16	1.001296	-1.000019	discard	Fourier N=3 offset=-0.9 amp=0.1 — ultra-low modes	agent0	solver_param	0	-1.520844
+exp663	crash	0	0	crash	Scipy n=300 tol=1e-12 offset=0.9 — best scipy for pos	agent0	solver_param	1	0
+exp664	crash	0	0	crash	Scipy n=300 tol=1e-12 offset=-0.9 — best scipy for neg	agent0	solver_param	0	0
+exp665	0.00000000e+00	0.000000	0.000000	discard	Scipy n=300 tol=1e-12 offset=0.0 — best scipy for triv	agent0	solver_param	0	0.000000
+exp666	8.81934684e-11	1.002503	1.000218	discard	Scipy n=200 tol=1e-10 offset=0.9 — scipy nontrivial	agent0	solver_param	0	-1.523848
+exp667	8.81934685e-11	1.002503	-1.000218	discard	Scipy n=200 tol=1e-10 offset=-0.9 — scipy nontrivial	agent0	solver_param	0	-1.523848
+exp668	9.11496370e-15	1.001296	-1.000019	discard	Fourier N=8 mode=2 offset=-1.0 amp=0.1 — exotic branch search	agent0	branch_search	0	-1.520844
+exp669	5.19084746e-14	1.001296	-1.000019	discard	Fourier N=8 mode=2 offset=-1.0 amp=0.3 — exotic branch search	agent0	branch_search	0	-1.520844
+exp670	2.80471109e-15	1.001296	-1.000019	discard	Fourier N=8 mode=2 offset=-1.0 amp=0.5 — exotic branch search	agent0	branch_search	1	-1.520844
+exp671	1.73524424e-14	1.001296	1.000019	discard	Fourier N=8 mode=2 offset=-0.5 amp=0.1 — exotic branch search	agent0	branch_search	0	-1.520844
+exp672	3.40342180e-13	1.001296	1.000019	discard	Fourier N=8 mode=2 offset=-0.5 amp=0.3 — exotic branch search	agent0	branch_search	0	-1.520844
+exp673	1.87767940e-15	1.001296	1.000019	discard	Fourier N=8 mode=2 offset=-0.5 amp=0.5 — exotic branch search	agent0	branch_search	1	-1.520844
+exp674	5.55111512e-17	1.001322	-1.000049	discard	Fourier N=1 negative u_offset=-0.9 newton_tol=1e-15	agent1	initial_cond	1	-1.520921
+exp675	2.76924828e-21	0.000000	-0.000000	discard	Fourier N=8 mode=2 offset=0.0 amp=0.1 — exotic branch search	agent0	branch_search	0	-0.000000
+exp676	4.28791901e-25	0.000000	-0.000000	discard	Fourier N=8 mode=2 offset=0.0 amp=0.3 — exotic branch search	agent0	branch_search	0	0.000000
+exp677	1.75047739e-17	0.000000	-0.000000	discard	Fourier N=8 mode=2 offset=0.0 amp=0.5 — exotic branch search	agent0	branch_search	1	-0.000000
+exp678	2.29648796e-15	1.001296	-1.000019	discard	Fourier N=8 mode=2 offset=0.5 amp=0.1 — exotic branch search	agent0	branch_search	0	-1.520844
+exp679	2.77764620e-15	1.001296	-1.000019	discard	Fourier N=8 mode=2 offset=0.5 amp=0.3 — exotic branch search	agent0	branch_search	0	-1.520844
+exp680	6.33580461e-15	1.001296	-1.000019	discard	Fourier N=8 mode=2 offset=0.5 amp=0.5 — exotic branch search	agent0	branch_search	1	-1.520844
+exp681	2.18831267e-13	1.001296	1.000019	discard	Fourier N=8 mode=2 offset=1.0 amp=0.1 — exotic branch search	agent0	branch_search	0	-1.520844
+exp682	3.21852120e-15	1.001296	1.000019	discard	Fourier N=8 mode=2 offset=1.0 amp=0.3 — exotic branch search	agent0	branch_search	0	-1.520844
+exp683	9.24647756e-15	1.001296	1.000019	discard	Fourier N=8 mode=2 offset=1.0 amp=0.5 — exotic branch search	agent0	branch_search	1	-1.520844
+exp684	2.21224242e-13	1.001296	-1.000019	discard	Fourier N=8 mode=3 offset=-1.0 amp=0.1 — exotic branch search	agent0	branch_search	0	-1.520844
+exp685	5.78273025e-15	1.001296	-1.000019	discard	Fourier N=8 mode=3 offset=-1.0 amp=0.3 — exotic branch search	agent0	branch_search	0	-1.520844
+exp686	1.87087021e-15	1.001296	-1.000019	discard	Fourier N=8 mode=3 offset=-1.0 amp=0.5 — exotic branch search	agent0	branch_search	1	-1.520844
+exp687	1.99540897e-15	1.001296	1.000019	discard	Fourier N=8 mode=3 offset=-0.5 amp=0.1 — exotic branch search	agent0	branch_search	0	-1.520844
+exp688	9.01583919e-15	1.001296	1.000019	discard	Fourier N=8 mode=3 offset=-0.5 amp=0.3 — exotic branch search	agent0	branch_search	0	-1.520844
+exp689	4.04187424e-14	1.001296	1.000019	discard	Fourier N=8 mode=3 offset=-0.5 amp=0.5 — exotic branch search	agent0	branch_search	1	-1.520844
+exp690	2.17275952e-25	0.000000	-0.000000	discard	Fourier N=8 mode=3 offset=0.0 amp=0.1 — exotic branch search	agent0	branch_search	0	0.000000
+exp691	1.81336727e-19	0.000000	-0.000000	discard	Fourier N=8 mode=3 offset=0.0 amp=0.3 — exotic branch search	agent0	branch_search	0	-0.000000
+exp692	1.17676327e-14	0.000000	-0.000000	discard	Fourier N=8 mode=3 offset=0.0 amp=0.5 — exotic branch search	agent0	branch_search	1	-0.000000
+exp693	1.94454731e-15	1.001296	-1.000019	discard	Fourier N=8 mode=3 offset=0.5 amp=0.1 — exotic branch search	agent0	branch_search	0	-1.520844
+exp694	2.64652563e-13	1.001296	-1.000019	discard	Fourier N=8 mode=3 offset=0.5 amp=0.3 — exotic branch search	agent0	branch_search	0	-1.520844
+exp695	1.94403919e-15	1.001296	-1.000019	discard	Fourier N=8 mode=3 offset=0.5 amp=0.5 — exotic branch search	agent0	branch_search	0	-1.520844
+exp696	9.13375625e-14	1.001296	1.000019	discard	Fourier N=8 mode=3 offset=1.0 amp=0.1 — exotic branch search	agent0	branch_search	0	-1.520844
+exp697	2.61597204e-15	1.001296	1.000019	discard	Fourier N=8 mode=3 offset=1.0 amp=0.3 — exotic branch search	agent0	branch_search	1	-1.520844
+exp698	9.34318714e-15	1.001296	1.000019	discard	Fourier N=8 mode=3 offset=1.0 amp=0.5 — exotic branch search	agent0	branch_search	0	-1.520844
+exp699	2.57581612e-16	1.001296	-1.000019	discard	Fourier N=4 negative u_offset=-0.9 newton_tol=1e-15	agent1	initial_cond	0	-1.520844

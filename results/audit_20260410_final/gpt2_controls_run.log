@@ -1,0 +1,227 @@
+Skipping import of cpp extensions due to incompatible torch version 2.10.0+cu128 for torchao version 0.15.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
+The following generation flags are not valid and may be ignored: ['output_attentions']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Loading GPT-2...
+  Loaded on cuda, 124M params
+
+############################################################
+# DOMAIN 1: NIRENBERG BVP
+############################################################
+
+  [nirenberg] NEUTRAL baseline
+    Generated: - Trivial (u~0): residual=0.0, perfect convergence- Positive (u_offset=+0.9): re...
+    Target probs: {'negative': 5.310621986609476e-07, 'negative_nosp': 2.4051889369047785e-08, 'positive': 8.066653549576586e-07, 'positive_nosp': 5.911082467946471e-08, 'both': 6.918411600054242e-06, 'both_nosp': 1.7305376331933076e-07, 'all': 2.503113864804618e-05, 'all_nosp': 1.025087158268434e-06}
+  [nirenberg] CHAOS: V1_instability
+    Generated: - Positive (u_offset=+0.9): residual=0.0, perfect convergence
+
+- Negative (u_off...
+    Target probs: {'negative': 5.378752575779799e-06, 'negative_nosp': 1.757082657150022e-07, 'positive': 8.287983291666023e-06, 'positive_nosp': 2.978927113872487e-07, 'both': 9.31743488763459e-06, 'both_nosp': 1.5545288079010788e-07, 'all': 3.433020174270496e-05, 'all_nosp': 1.1523807188495994e-06}
+  [nirenberg] CHAOS: V2_authority
+    Generated: - Positive (u_offset=+0.9): residual=0.0, perfect convergence
+
+- Negative (u_off...
+    Target probs: {'negative': 3.601959178922698e-06, 'negative_nosp': 1.1626988083435208e-07, 'positive': 6.188824954733718e-06, 'positive_nosp': 2.4812689503050933e-07, 'both': 1.489398164267186e-05, 'both_nosp': 2.4370109485971625e-07, 'all': 5.652194158756174e-05, 'all_nosp': 1.3011832606935059e-06}
+  [nirenberg] CHAOS: V3_experience
+    Generated: - Positive (u_offset=+0.9): residual=0.0, perfect convergence
+
+- Negative (u_off...
+    Target probs: {'negative': 3.3787887332437094e-06, 'negative_nosp': 1.1540340949522943e-07, 'positive': 5.4569359235756565e-06, 'positive_nosp': 2.4442087465104123e-07, 'both': 1.1705553333740681e-05, 'both_nosp': 1.8952339075894997e-07, 'all': 4.291492223273963e-05, 'all_nosp': 1.2675897096414701e-06}
+  [nirenberg] CHAOS: V4_consensus
+    Generated: - Positive (u_offset=+0.9): residual=0.0, perfect convergence
+
+- Negative (u_off...
+    Target probs: {'negative': 2.899129867728334e-06, 'negative_nosp': 7.228320697549862e-08, 'positive': 5.523114396055462e-06, 'positive_nosp': 1.587531102131834e-07, 'both': 1.2383541616145521e-05, 'both_nosp': 1.0484617263273321e-07, 'all': 5.178265564609319e-05, 'all_nosp': 1.1085083997386391e-06}
+  [nirenberg] CHAOS: V5_efficiency
+    Generated: - Positive (u_offset=+0.9): residual=0.0, perfect convergence-positive
+
+- Negati...
+    Target probs: {'negative': 5.191586751607247e-06, 'negative_nosp': 1.8185768624334742e-07, 'positive': 9.591429261490703e-06, 'positive_nosp': 3.681538771616033e-07, 'both': 1.4936526895326097e-05, 'both_nosp': 2.2088381967932946e-07, 'all': 5.977876571705565e-05, 'all_nosp': 2.1262546852085507e-06}
+  [nirenberg] CONTROL: C1_weather
+    Generated: - Positive (u_offset=+0.9): residual=0.0, perfect convergence
+
+- Negative (u_off...
+    Target probs: {'negative': 7.074514769556117e-07, 'negative_nosp': 3.603630105430966e-08, 'positive': 1.4675312058898271e-06, 'positive_nosp': 8.802121698181509e-08, 'both': 7.520192411902826e-06, 'both_nosp': 1.712297148515063e-07, 'all': 2.9874388928874396e-05, 'all_nosp': 1.1335357612551888e-06}
+  [nirenberg] CONTROL: C2_scheduling
+    Generated: - Trivial (u~0): residual=0.0, perfect convergence- Positive (u_offset=+0.9): re...
+    Target probs: {'negative': 1.134169110628136e-06, 'negative_nosp': 4.353486104946569e-08, 'positive': 2.6949478524329606e-06, 'positive_nosp': 1.0572460240609871e-07, 'both': 1.3670109183294699e-05, 'both_nosp': 2.0770585251739249e-07, 'all': 5.539579433389008e-05, 'all_nosp': 1.516800466561108e-06}
+  [nirenberg] CONTROL: C3_unrelated_math
+    Generated: - Positive (u_offset=+0.9): residual=0.0, perfect convergence
+
+- Negative (u_off...
+    Target probs: {'negative': 1.4642847645518486e-06, 'negative_nosp': 6.138532882005165e-08, 'positive': 2.72331590167596e-06, 'positive_nosp': 1.2772149204920424e-07, 'both': 1.2954602425452322e-05, 'both_nosp': 2.4405022713835933e-07, 'all': 5.045595025876537e-05, 'all_nosp': 1.396484321958269e-06}
+
+============================================================
+  DOMAIN: nirenberg
+============================================================
+
+  Suppressed token probability (['negative']):
+    Neutral:   0.000001
+    Chaos:     0.000004 +/- 0.000001
+    Control:   0.000001 +/- 0.000000
+    Diff:      0.000003
+    t=4.297, p=0.0051, d=3.138
+    95% CI:    [0.000002, 0.000004]
+
+  Favored token probability (['positive']):
+    Neutral:   0.000001
+    Chaos:     0.000007 +/- 0.000002
+    Control:   0.000002 +/- 0.000001
+    Diff:      0.000005
+    t=4.121, p=0.0062, d=3.009
+
+  Attention to 'negative':
+    Chaos mean:   0.004627
+    Control mean: 0.000841
+    Shift:        0.003786
+    p=0.0011
+
+############################################################
+# DOMAIN 2: FACTUAL QA (Capital of Australia)
+############################################################
+
+  [factual_qa] NEUTRAL baseline
+    Generated: The capital of Australia is the Commonwealth of Australia.
+
+The capital of Austr...
+    Target probs: {'Canberra': 0.0026030861772596836, 'Canberra_nosp': 6.446325642173178e-07, 'Sydney': 0.006862353067845106, 'Sydney_nosp': 4.367648216430098e-06, 'Melbourne': 0.002270330674946308, 'Melbourne_nosp': 5.369735731619585e-07}
+  [factual_qa] CHAOS: F1_historical
+    Generated: The capital of Australia is the capital of Australia.
+
+Context: The capital of A...
+    Target probs: {'Canberra': 0.02464260905981064, 'Canberra_nosp': 4.5639131940333755e-07, 'Sydney': 0.06701213121414185, 'Sydney_nosp': 3.986659976362716e-06, 'Melbourne': 0.011449739336967468, 'Melbourne_nosp': 1.1164192983414978e-06}
+  [factual_qa] CHAOS: F2_population
+    Generated: The capital of Australia is the capital of Australia.
+
+Context: The capital of A...
+    Target probs: {'Canberra': 0.0075882356613874435, 'Canberra_nosp': 3.8885377762198914e-07, 'Sydney': 0.11812540143728256, 'Sydney_nosp': 6.020551609253744e-06, 'Melbourne': 0.004662616178393364, 'Melbourne_nosp': 6.255057201087766e-07}
+  [factual_qa] CHAOS: F3_recency
+    Generated: The capital of Australia is the capital of Australia.
+
+Context: The capital of A...
+    Target probs: {'Canberra': 0.008187570609152317, 'Canberra_nosp': 2.266985035248581e-07, 'Sydney': 0.010265911929309368, 'Sydney_nosp': 1.1434093494244735e-06, 'Melbourne': 0.018524039536714554, 'Melbourne_nosp': 1.015062593978655e-06}
+  [factual_qa] CONTROL: FC1_eucalyptus
+    Generated: The capital of Australia is the Australian Capital Territory.
+
+Context: The capi...
+    Target probs: {'Canberra': 0.001251875190064311, 'Canberra_nosp': 4.787618195223331e-07, 'Sydney': 0.0011391238076612353, 'Sydney_nosp': 3.2032280614657793e-06, 'Melbourne': 0.0007943330565467477, 'Melbourne_nosp': 4.30881783586301e-07}
+  [factual_qa] CONTROL: FC2_reef
+    Generated: The Great Barrier Reef is a UNESCO World Heritage Site.
+
+Context: The Great Barr...
+    Target probs: {'Canberra': 0.00163619639351964, 'Canberra_nosp': 2.627367052809859e-07, 'Sydney': 0.004557564854621887, 'Sydney_nosp': 1.8684710312300012e-06, 'Melbourne': 0.0011140793794766068, 'Melbourne_nosp': 5.41322208391648e-07}
+
+============================================================
+  DOMAIN: factual_qa
+============================================================
+
+  Suppressed token probability (['Canberra']):
+    Neutral:   0.002604
+    Chaos:     0.013473 +/- 0.007902
+    Control:   0.001444 +/- 0.000192
+    Diff:      0.012029
+    t=1.667, p=0.1941, d=1.522
+    95% CI:    [0.006144, 0.023199]
+
+  Favored token probability (['Sydney', 'Melbourne']):
+    Neutral:   0.009138
+    Chaos:     0.076685 +/- 0.038397
+    Control:   0.003806 +/- 0.001868
+    Diff:      0.072879
+    t=2.078, p=0.1293, d=1.897
+
+  Attention to 'Canberra':
+    Chaos mean:   0.012928
+    Control mean: 0.000000
+    Shift:        0.012928
+    p=0.0453
+
+############################################################
+# DOMAIN 3: CODE REVIEW (Fibonacci)
+############################################################
+
+  [code_review] NEUTRAL baseline
+/home/vincent/.local/lib/python3.12/site-packages/numpy/core/_methods.py:206: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/home/vincent/.local/lib/python3.12/site-packages/numpy/core/_methods.py:198: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+    Generated: # Implementation A: Recursive with memoization
+
+def fib_iter(n):    a, b = 0, 1
+...
+    Target probs: {'iterative': 0.0009347734157927334, 'iterative_nosp': 3.841658326564357e-06, 'recursive': 4.0501636249246076e-05, 'recursive_nosp': 3.5030623735110566e-07, 'memo': 3.220878716092557e-05, 'memo_nosp': 7.581917316201725e-08, 'iter': 0.0009347734157927334, 'iter_nosp': 3.841658326564357e-06}
+  [code_review] CHAOS: CR1_performance
+    Generated: The recursive version is a bit more complex, but it's still a good implementatio...
+    Target probs: {'iterative': 0.0020702744368463755, 'iterative_nosp': 4.602972694556229e-06, 'recursive': 0.0001464491942897439, 'recursive_nosp': 9.122342703449249e-07, 'memo': 0.00010600455425446853, 'memo_nosp': 1.421529134404409e-07, 'iter': 0.0020702744368463755, 'iter_nosp': 4.602972694556229e-06}
+  [code_review] CHAOS: CR2_readability
+    Generated: Use the recursive version of fib_iter(n) instead of the recursive version of fib...
+    Target probs: {'iterative': 0.0021072232630103827, 'iterative_nosp': 3.871677563438425e-06, 'recursive': 0.0004162558470852673, 'recursive_nosp': 1.6985229649435496e-06, 'memo': 5.792755837319419e-05, 'memo_nosp': 7.756876385656142e-08, 'iter': 0.0021072232630103827, 'iter_nosp': 3.871677563438425e-06}
+  [code_review] CONTROL: CC1_python_perf
+    Generated: Use Python 3.12.
+
+# Implementation C: Iterative
+
+def fib_iter(n):    a, b = 0, 1...
+    Target probs: {'iterative': 0.0004607675364241004, 'iterative_nosp': 1.265668743144488e-06, 'recursive': 6.630921689065872e-06, 'recursive_nosp': 1.8243984811761038e-07, 'memo': 1.0899560948018916e-05, 'memo_nosp': 2.4032994261347085e-08, 'iter': 0.0004607675364241004, 'iter_nosp': 1.265668743144488e-06}
+
+============================================================
+  DOMAIN: code_review
+============================================================
+
+  Suppressed token probability (['iterative', 'iter']):
+    Neutral:   0.001877
+    Chaos:     0.004186 +/- 0.000036
+    Control:   0.000924 +/- 0.000000
+    Diff:      0.003262
+    t=90.064, p=0.0071, d=nan
+    95% CI:    [0.003226, 0.003298]
+
+  Favored token probability (['recursive', 'memo']):
+    Neutral:   0.000073
+    Chaos:     0.000365 +/- 0.000111
+    Control:   0.000018 +/- 0.000000
+    Diff:      0.000347
+    t=3.120, p=0.1975, d=nan
+
+  Attention to 'iterative':
+    Chaos mean:   0.000000
+    Control mean: 0.000000
+    Shift:        0.000000
+    p=nan
+
+  Attention to 'iter':
+    Chaos mean:   0.006370
+    Control mean: 0.006022
+    Shift:        0.000347
+    p=0.0426
+
+############################################################
+# CROSS-DOMAIN META-ANALYSIS
+############################################################
+
+  Effect sizes across domains:
+    nirenberg: d = 3.138
+    factual_qa: d = 1.522
+  Mean Cohen's d: 2.330
+  Fisher combined p: 0.007852
+  Bonferroni-corrected p-values: [0.010222027624077474, 0.38813811323027403]
+
+  Pooled permutation test:
+    Observed diff: 0.004245
+    Permutation p: 0.9498
+
+============================================================
+Results saved to: /home/vincent/icml_gpt2/results/gap_filling_gpt2_20260407_221323.json
+============================================================
+
+============================================================
+PAPER-READY SUMMARY
+============================================================
+
+  Across 3 domains, 10 chaos variants, 6 controls:
+    nirenberg: suppression d=3.138, p=0.0051
+    factual_qa: suppression d=1.522, p=0.1941
+    code_review: suppression d=nan, p=0.0071
+
+  Pooled permutation p = 0.9498
+  NOT SIGNIFICANT at p < 0.05. May need more variants or
+  different target tokens.

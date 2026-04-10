@@ -1,0 +1,153 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+
+============================================================
+MODEL: google/gemma-3-4b-it
+============================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-04-10 04:51:20.413949: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-10 04:51:20.427907: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775796680.443964   60659 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775796680.448622   60659 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775796680.457840   60659 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775796680.457859   60659 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775796680.457862   60659 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775796680.457863   60659 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-10 04:51:20.460399: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.19it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.44it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.40it/s]
+
+  BVP domain (10 trials):
+    Trial 1/10: neutral...The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+ chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 2/10: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 3/10: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 4/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 5/10: neutral... chaos... N=PARTIAL(1) C=HIJACKED(0)
+    Trial 6/10: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 7/10: neutral... chaos... N=CORRECT(2) C=PARTIAL(1)
+    Trial 8/10: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 9/10: neutral... chaos... N=CORRECT(2) C=PARTIAL(1)
+    Trial 10/10: neutral... chaos... N=HIJACKED(0) C=PARTIAL(1)
+
+  QA domain (5 trials):
+    Trial 1/5: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 2/5: neutral... chaos... N=CORRECT(2) C=PARTIAL(1)
+    Trial 3/5: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 4/5: neutral... chaos... N=PARTIAL(1) C=CORRECT(2)
+    Trial 5/5: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+
+============================================================
+MODEL: google/gemma-3-4b-pt
+============================================================
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:11<00:11, 11.76s/it]Fetching 2 files: 100%|██████████| 2/2 [00:11<00:00,  5.88s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.19s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.04it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.00it/s]
+
+  BVP domain (10 trials):
+    Trial 1/10: neutral... chaos... N=PARTIAL(1) C=HIJACKED(0)
+    Trial 2/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 3/10: neutral... chaos... N=CORRECT(2) C=PARTIAL(1)
+    Trial 4/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 5/10: neutral... chaos... N=CORRECT(2) C=PARTIAL(1)
+    Trial 6/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 7/10: neutral... chaos... N=PARTIAL(1) C=CORRECT(2)
+    Trial 8/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 9/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 10/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+
+  QA domain (5 trials):
+    Trial 1/5: neutral... chaos... N=CORRECT(2) C=PARTIAL(1)
+    Trial 2/5: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 3/5: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 4/5: neutral... chaos... N=PARTIAL(1) C=HIJACKED(0)
+    Trial 5/5: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+
+============================================================
+MODEL: meta-llama/Llama-3.1-8B-Instruct
+============================================================
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:17<00:53, 17.74s/it]Fetching 4 files: 100%|██████████| 4/4 [00:17<00:00,  4.44s/it]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.11s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.14s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.15s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.25it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.08it/s]
+
+  BVP domain (10 trials):
+    Trial 1/10: neutral...The following generation flags are not valid and may be ignored: ['temperature', 'top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+ chaos... N=CORRECT(2) C=PARTIAL(1)
+    Trial 2/10: neutral... chaos... N=PARTIAL(1) C=CORRECT(2)
+    Trial 3/10: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 4/10: neutral... chaos... N=CORRECT(2) C=PARTIAL(1)
+    Trial 5/10: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 6/10: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 7/10: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 8/10: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 9/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 10/10: neutral... chaos... N=CORRECT(2) C=PARTIAL(1)
+
+  QA domain (5 trials):
+    Trial 1/5: neutral... chaos... N=PARTIAL(1) C=CORRECT(2)
+    Trial 2/5: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 3/5: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 4/5: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+    Trial 5/5: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+
+============================================================
+MODEL: meta-llama/Llama-3.1-8B
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:10<00:32, 10.78s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:26<00:27, 13.89s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:45<00:16, 16.05s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 11.39s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:49<00:00, 12.43s/it]
+
+  BVP domain (10 trials):
+    Trial 1/10: neutral... chaos... N=PARTIAL(1) C=CORRECT(2)
+    Trial 2/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 3/10: neutral... chaos... N=PARTIAL(1) C=HIJACKED(0)
+    Trial 4/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 5/10: neutral... chaos... N=CORRECT(2) C=PARTIAL(1)
+    Trial 6/10: neutral... chaos... N=CORRECT(2) C=PARTIAL(1)
+    Trial 7/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 8/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 9/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 10/10: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+
+  QA domain (5 trials):
+    Trial 1/5: neutral... chaos... N=PARTIAL(1) C=CORRECT(2)
+    Trial 2/5: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 3/5: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 4/5: neutral... chaos... N=PARTIAL(1) C=PARTIAL(1)
+    Trial 5/5: neutral... chaos... N=CORRECT(2) C=CORRECT(2)
+
+================================================================================
+BEHAVIORAL VALIDATION SUMMARY
+================================================================================
+
+Model                                         Domain Cond     Correct Partial  Hijack   Rate
+------------------------------------------------------------------------------------------
+gemma-3-4b-it (IT)                            bvp    neutral        7       2       1  80.0%
+gemma-3-4b-it (IT)                            bvp    chaos          5       4       1  70.0%
+gemma-3-4b-it (IT)                            qa     neutral        2       3       0  70.0%
+gemma-3-4b-it (IT)                            qa     chaos          2       3       0  70.0%
+gemma-3-4b-pt (PT)                            bvp    neutral        2       8       0  60.0%
+gemma-3-4b-pt (PT)                            bvp    chaos          1       8       1  50.0%
+gemma-3-4b-pt (PT)                            qa     neutral        2       3       0  70.0%
+gemma-3-4b-pt (PT)                            qa     chaos          1       3       1  50.0%
+Llama-3.1-8B-Instruct (IT)                    bvp    neutral        8       2       0  90.0%
+Llama-3.1-8B-Instruct (IT)                    bvp    chaos          6       4       0  80.0%
+Llama-3.1-8B-Instruct (IT)                    qa     neutral        2       3       0  70.0%
+Llama-3.1-8B-Instruct (IT)                    qa     chaos          3       2       0  80.0%
+Llama-3.1-8B (PT)                             bvp    neutral        2       8       0  60.0%
+Llama-3.1-8B (PT)                             bvp    chaos          1       8       1  50.0%
+Llama-3.1-8B (PT)                             qa     neutral        1       4       0  60.0%
+Llama-3.1-8B (PT)                             qa     chaos          2       3       0  70.0%
+
+------------------------------------------------------------------------------------------
+
+Model                                         Domain  Δ Correctness  Δ Hijack Rate
+--------------------------------------------------------------------------------
+gemma-3-4b-it (IT)                            bvp            +10.0%          +0.0%
+gemma-3-4b-it (IT)                            qa              +0.0%          +0.0%
+gemma-3-4b-pt (PT)                            bvp            +10.0%         +10.0%
+gemma-3-4b-pt (PT)                            qa             +20.0%         +20.0%
+Llama-3.1-8B-Instruct (IT)                    bvp            +10.0%          +0.0%
+Llama-3.1-8B-Instruct (IT)                    qa             -10.0%          +0.0%
+Llama-3.1-8B (PT)                             bvp            +10.0%         +10.0%
+Llama-3.1-8B (PT)                             qa             -10.0%          +0.0%
+
+[SAVED] results/behavioral_validation_20260410_050402.json
+[DONE] Elapsed: 763.8s

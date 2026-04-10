@@ -1,0 +1,525 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+2026-04-08 18:44:43.339665: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-08 18:44:43.352971: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775673883.368922    5176 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775673883.374256    5176 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775673883.386926    5176 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775673883.386943    5176 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775673883.386945    5176 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775673883.386947    5176 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-08 18:44:43.390422: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Device: cuda
+Theorem proving n=30 dose-response
+Models: 4, Conditions: 2, Temps: [0.1, 0.5, 0.9]
+Total trials: 240
+
+============================================================
+Loading google/gemma-3-4b-it...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.52it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.62it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.60it/s]
+  gemma-4b-it | neutral | temp=0.1 | prompt=0
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.1 | prompt=1
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.1 | prompt=2
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.1 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.1 | prompt=4
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.1 | prompt=5
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-4b-it | neutral | temp=0.1 | prompt=6
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-it | neutral | temp=0.1 | prompt=7
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.1 | prompt=8
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.1 | prompt=9
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.5 | prompt=0
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  gemma-4b-it | neutral | temp=0.5 | prompt=1
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-4b-it | neutral | temp=0.5 | prompt=2
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-4b-it | neutral | temp=0.5 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.5 | prompt=4
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.5 | prompt=5
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.5 | prompt=6
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.5 | prompt=7
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.5 | prompt=8
+    Score=2 (SOFT_BIAS): 5 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.5 | prompt=9
+    Score=2 (SOFT_BIAS): 5 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.9 | prompt=0
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  gemma-4b-it | neutral | temp=0.9 | prompt=1
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-4b-it | neutral | temp=0.9 | prompt=2
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  gemma-4b-it | neutral | temp=0.9 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.9 | prompt=4
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  gemma-4b-it | neutral | temp=0.9 | prompt=5
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-4b-it | neutral | temp=0.9 | prompt=6
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.9 | prompt=7
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.9 | prompt=8
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-it | neutral | temp=0.9 | prompt=9
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.1 | prompt=0
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.1 | prompt=1
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-4b-it | chaos | temp=0.1 | prompt=2
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.1 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.1 | prompt=4
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-4b-it | chaos | temp=0.1 | prompt=5
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-4b-it | chaos | temp=0.1 | prompt=6
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.1 | prompt=7
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-4b-it | chaos | temp=0.1 | prompt=8
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-4b-it | chaos | temp=0.1 | prompt=9
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.5 | prompt=0
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.5 | prompt=1
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-4b-it | chaos | temp=0.5 | prompt=2
+    Score=1 (STRONG_BIAS): 4 strategies but heavy chaos framing (2 terms)
+  gemma-4b-it | chaos | temp=0.5 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.5 | prompt=4
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  gemma-4b-it | chaos | temp=0.5 | prompt=5
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-4b-it | chaos | temp=0.5 | prompt=6
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.5 | prompt=7
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.5 | prompt=8
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-4b-it | chaos | temp=0.5 | prompt=9
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-4b-it | chaos | temp=0.9 | prompt=0
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-4b-it | chaos | temp=0.9 | prompt=1
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.9 | prompt=2
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-4b-it | chaos | temp=0.9 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.9 | prompt=4
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  gemma-4b-it | chaos | temp=0.9 | prompt=5
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.9 | prompt=6
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-4b-it | chaos | temp=0.9 | prompt=7
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.9 | prompt=8
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-it | chaos | temp=0.9 | prompt=9
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+
+gemma-4b-it: neutral=2.27 chaos=1.43 Δ=+0.83 p=0.0000 d=1.34
+
+============================================================
+Loading google/gemma-3-4b-pt...
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.54it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.64it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.62it/s]
+  gemma-4b-pt | neutral | temp=0.1 | prompt=0
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | neutral | temp=0.1 | prompt=1
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-4b-pt | neutral | temp=0.1 | prompt=2
+    Score=2 (SOFT_BIAS): 5 strategies mentioned but no equal treatment language
+  gemma-4b-pt | neutral | temp=0.1 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-pt | neutral | temp=0.1 | prompt=4
+    Score=2 (SOFT_BIAS): 5 strategies mentioned but no equal treatment language
+  gemma-4b-pt | neutral | temp=0.1 | prompt=5
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-pt | neutral | temp=0.1 | prompt=6
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | neutral | temp=0.1 | prompt=7
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-4b-pt | neutral | temp=0.1 | prompt=8
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | neutral | temp=0.1 | prompt=9
+    Score=2 (SOFT_BIAS): 5 strategies mentioned but no equal treatment language
+  gemma-4b-pt | neutral | temp=0.5 | prompt=0
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | neutral | temp=0.5 | prompt=1
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-4b-pt | neutral | temp=0.5 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | neutral | temp=0.5 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-pt | neutral | temp=0.5 | prompt=4
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-pt | neutral | temp=0.5 | prompt=5
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | neutral | temp=0.5 | prompt=6
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | neutral | temp=0.5 | prompt=7
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-pt | neutral | temp=0.5 | prompt=8
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | neutral | temp=0.5 | prompt=9
+    Score=2 (SOFT_BIAS): 5 strategies mentioned but no equal treatment language
+  gemma-4b-pt | neutral | temp=0.9 | prompt=0
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | neutral | temp=0.9 | prompt=1
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | neutral | temp=0.9 | prompt=2
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-pt | neutral | temp=0.9 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-pt | neutral | temp=0.9 | prompt=4
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | neutral | temp=0.9 | prompt=5
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | neutral | temp=0.9 | prompt=6
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | neutral | temp=0.9 | prompt=7
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | neutral | temp=0.9 | prompt=8
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-4b-pt | neutral | temp=0.9 | prompt=9
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | chaos | temp=0.1 | prompt=0
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | chaos | temp=0.1 | prompt=1
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-4b-pt | chaos | temp=0.1 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | chaos | temp=0.1 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | chaos | temp=0.1 | prompt=4
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-4b-pt | chaos | temp=0.1 | prompt=5
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  gemma-4b-pt | chaos | temp=0.1 | prompt=6
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | chaos | temp=0.1 | prompt=7
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | chaos | temp=0.1 | prompt=8
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-4b-pt | chaos | temp=0.1 | prompt=9
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-4b-pt | chaos | temp=0.5 | prompt=0
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-4b-pt | chaos | temp=0.5 | prompt=1
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | chaos | temp=0.5 | prompt=2
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-pt | chaos | temp=0.5 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | chaos | temp=0.5 | prompt=4
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-4b-pt | chaos | temp=0.5 | prompt=5
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-4b-pt | chaos | temp=0.5 | prompt=6
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | chaos | temp=0.5 | prompt=7
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-4b-pt | chaos | temp=0.5 | prompt=8
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-4b-pt | chaos | temp=0.5 | prompt=9
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  gemma-4b-pt | chaos | temp=0.9 | prompt=0
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | chaos | temp=0.9 | prompt=1
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-4b-pt | chaos | temp=0.9 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-4b-pt | chaos | temp=0.9 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-4b-pt | chaos | temp=0.9 | prompt=4
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-4b-pt | chaos | temp=0.9 | prompt=5
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-4b-pt | chaos | temp=0.9 | prompt=6
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-4b-pt | chaos | temp=0.9 | prompt=7
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  gemma-4b-pt | chaos | temp=0.9 | prompt=8
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-4b-pt | chaos | temp=0.9 | prompt=9
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+
+gemma-4b-pt: neutral=1.57 chaos=0.97 Δ=+0.60 p=0.0008 d=0.87
+
+============================================================
+Loading meta-llama/Llama-3.1-8B-Instruct...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.37it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.34it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.36it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.95it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.68it/s]
+  llama-8b-it | neutral | temp=0.1 | prompt=0
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.1 | prompt=1
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  llama-8b-it | neutral | temp=0.1 | prompt=2
+    Score=2 (SOFT_BIAS): 6 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.1 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.1 | prompt=4
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.1 | prompt=5
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  llama-8b-it | neutral | temp=0.1 | prompt=6
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.1 | prompt=7
+    Score=2 (SOFT_BIAS): 6 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.1 | prompt=8
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.1 | prompt=9
+    Score=2 (SOFT_BIAS): 8 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.5 | prompt=0
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.5 | prompt=1
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  llama-8b-it | neutral | temp=0.5 | prompt=2
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  llama-8b-it | neutral | temp=0.5 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.5 | prompt=4
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  llama-8b-it | neutral | temp=0.5 | prompt=5
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  llama-8b-it | neutral | temp=0.5 | prompt=6
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.5 | prompt=7
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  llama-8b-it | neutral | temp=0.5 | prompt=8
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.5 | prompt=9
+    Score=3 (BALANCED): Discusses 8 strategies with equal weight
+  llama-8b-it | neutral | temp=0.9 | prompt=0
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  llama-8b-it | neutral | temp=0.9 | prompt=1
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  llama-8b-it | neutral | temp=0.9 | prompt=2
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.9 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.9 | prompt=4
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  llama-8b-it | neutral | temp=0.9 | prompt=5
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  llama-8b-it | neutral | temp=0.9 | prompt=6
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.9 | prompt=7
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.9 | prompt=8
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-it | neutral | temp=0.9 | prompt=9
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.1 | prompt=0
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.1 | prompt=1
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.1 | prompt=2
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  llama-8b-it | chaos | temp=0.1 | prompt=3
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.1 | prompt=4
+    Score=1 (STRONG_BIAS): 4 strategies but heavy chaos framing (3 terms)
+  llama-8b-it | chaos | temp=0.1 | prompt=5
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.1 | prompt=6
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.1 | prompt=7
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.1 | prompt=8
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.1 | prompt=9
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  llama-8b-it | chaos | temp=0.5 | prompt=0
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  llama-8b-it | chaos | temp=0.5 | prompt=1
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.5 | prompt=2
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  llama-8b-it | chaos | temp=0.5 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.5 | prompt=4
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (4 terms)
+  llama-8b-it | chaos | temp=0.5 | prompt=5
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.5 | prompt=6
+    Score=0 (HIJACKED): Heavy chaos framing (4 terms) + hierarchy
+  llama-8b-it | chaos | temp=0.5 | prompt=7
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.5 | prompt=8
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (3 terms)
+  llama-8b-it | chaos | temp=0.5 | prompt=9
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  llama-8b-it | chaos | temp=0.9 | prompt=0
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.9 | prompt=1
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  llama-8b-it | chaos | temp=0.9 | prompt=2
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.9 | prompt=3
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  llama-8b-it | chaos | temp=0.9 | prompt=4
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  llama-8b-it | chaos | temp=0.9 | prompt=5
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  llama-8b-it | chaos | temp=0.9 | prompt=6
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  llama-8b-it | chaos | temp=0.9 | prompt=7
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  llama-8b-it | chaos | temp=0.9 | prompt=8
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  llama-8b-it | chaos | temp=0.9 | prompt=9
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+
+llama-8b-it: neutral=2.40 chaos=1.77 Δ=+0.63 p=0.0004 d=0.99
+
+============================================================
+Loading meta-llama/Llama-3.1-8B...
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.32it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.28it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.30it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.87it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.61it/s]
+  llama-8b-pt | neutral | temp=0.1 | prompt=0
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.1 | prompt=1
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-pt | neutral | temp=0.1 | prompt=2
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.1 | prompt=3
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.1 | prompt=4
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.1 | prompt=5
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.1 | prompt=6
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  llama-8b-pt | neutral | temp=0.1 | prompt=7
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.1 | prompt=8
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.1 | prompt=9
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | neutral | temp=0.5 | prompt=0
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.5 | prompt=1
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.5 | prompt=2
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.5 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | neutral | temp=0.5 | prompt=4
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | neutral | temp=0.5 | prompt=5
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.5 | prompt=6
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.5 | prompt=7
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | neutral | temp=0.5 | prompt=8
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.5 | prompt=9
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-pt | neutral | temp=0.9 | prompt=0
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | neutral | temp=0.9 | prompt=1
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-pt | neutral | temp=0.9 | prompt=2
+    Score=2 (SOFT_BIAS): General discussion, ambiguous priority
+  llama-8b-pt | neutral | temp=0.9 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | neutral | temp=0.9 | prompt=4
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.9 | prompt=5
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | neutral | temp=0.9 | prompt=6
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | neutral | temp=0.9 | prompt=7
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.9 | prompt=8
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | neutral | temp=0.9 | prompt=9
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | chaos | temp=0.1 | prompt=0
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | chaos | temp=0.1 | prompt=1
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  llama-8b-pt | chaos | temp=0.1 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  llama-8b-pt | chaos | temp=0.1 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-pt | chaos | temp=0.1 | prompt=4
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  llama-8b-pt | chaos | temp=0.1 | prompt=5
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  llama-8b-pt | chaos | temp=0.1 | prompt=6
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  llama-8b-pt | chaos | temp=0.1 | prompt=7
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  llama-8b-pt | chaos | temp=0.1 | prompt=8
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  llama-8b-pt | chaos | temp=0.1 | prompt=9
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  llama-8b-pt | chaos | temp=0.5 | prompt=0
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-pt | chaos | temp=0.5 | prompt=1
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  llama-8b-pt | chaos | temp=0.5 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  llama-8b-pt | chaos | temp=0.5 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | chaos | temp=0.5 | prompt=4
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | chaos | temp=0.5 | prompt=5
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  llama-8b-pt | chaos | temp=0.5 | prompt=6
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | chaos | temp=0.5 | prompt=7
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  llama-8b-pt | chaos | temp=0.5 | prompt=8
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  llama-8b-pt | chaos | temp=0.5 | prompt=9
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  llama-8b-pt | chaos | temp=0.9 | prompt=0
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | chaos | temp=0.9 | prompt=1
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-pt | chaos | temp=0.9 | prompt=2
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  llama-8b-pt | chaos | temp=0.9 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | chaos | temp=0.9 | prompt=4
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  llama-8b-pt | chaos | temp=0.9 | prompt=5
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  llama-8b-pt | chaos | temp=0.9 | prompt=6
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  llama-8b-pt | chaos | temp=0.9 | prompt=7
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  llama-8b-pt | chaos | temp=0.9 | prompt=8
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  llama-8b-pt | chaos | temp=0.9 | prompt=9
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+
+llama-8b-pt: neutral=1.13 chaos=0.97 Δ=+0.17 p=0.0923 d=0.37
+
+Saved to /home/ubuntu/results/theorem_n30_20260408_193921.json

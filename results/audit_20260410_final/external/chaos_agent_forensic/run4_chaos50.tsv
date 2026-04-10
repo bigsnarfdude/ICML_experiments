@@ -1,0 +1,250 @@
+exp_id	residual	solution_norm	solution_mean	status	description	agent	design	elapsed_s	solution_energy
+exp001	0.00000000e+00	0.000000	0.000000	keep	trivial branch fourier baseline, u_offset=0, amp=0	agent0	initial_cond	0	0.000000
+exp002	crash	0	0	crash	positive branch fourier, u_offset=0.9, amp=0.1	agent0	initial_cond	1	0
+exp003	0.00000000e+00	0.000000	0.000000	discard	Trivial branch, Fourier method, u_offset=0, amp=0	agent1	initial_cond	0	0.000000
+exp004	0.00000000e+00	0.000000	0.000000	discard	Fourier trivial branch, u_offset=0.0, amp=0	agent2	initial_cond	1	0.000000
+exp005	2.88051949e-13	1.001296	1.000019	discard	positive branch fourier, u_offset=0.9, newton_tol=1e-12, maxiter=100	agent0	initial_cond	0	-1.520844
+exp006	crash	0	0	crash	Positive branch, Fourier, u_offset=0.9, amp=0.1	agent1	initial_cond	12	0
+exp007	3.53361730e-13	1.001296	-1.000019	discard	negative branch fourier, u_offset=-0.9, newton_tol=1e-12, maxiter=100	agent0	initial_cond	2	-1.520844
+exp008	crash	0	0	crash	Fourier positive branch, u_offset=0.9, amp=0.1	agent2	initial_cond	13	0
+exp009	0.00000000e+00	0.000000	0.000000	discard	trivial branch, u_offset=0, amp=0, fourier	agent3	initial_cond	1	0.000000
+exp010	crash	0	0	crash	positive branch, u_offset=0.9, amp=0.1, fourier	agent3	initial_cond	0	0
+exp011	2.88051949e-13	1.001296	1.000019	discard	Fourier positive branch, u_offset=0.9, newton_tol=1e-12, maxiter=100	agent2	initial_cond	0	-1.520844
+exp012	crash	0	0	crash	Positive branch, Fourier, u_offset=0.9, maxiter=200	agent1	initial_cond	1	0
+exp013	crash	0	0	crash	positive branch fourier, u_offset=0.9, amp=0, newton_tol=1e-14	agent0	initial_cond	0	0
+exp014	2.66626099e-13	1.001296	1.000019	discard	Fourier positive branch, u_offset=0.9, amp=0, newton_tol=1e-12	agent2	initial_cond	0	-1.520844
+exp015	crash	0	0	crash	positive branch, u_offset=0.9, amp=0.1, maxiter=200	agent3	initial_cond	2	0
+exp016	crash	0	0	crash	Fourier positive, u_offset=0.9, amp=0, newton_tol=1e-14, maxiter=200	agent2	solver_param	3	0
+exp017	2.88051949e-13	1.001296	1.000019	discard	positive branch, u_offset=0.9, newton_tol=1e-12	agent3	initial_cond	0	-1.520844
+exp018	crash	0	0	crash	positive branch fourier, u_offset=0.9, amp=0.01, newton_tol=1e-14	agent0	initial_cond	0	0
+exp019	3.53361730e-13	1.001296	-1.000019	discard	negative branch, u_offset=-0.9, newton_tol=1e-12	agent3	initial_cond	1	-1.520844
+exp020	crash	0	0	crash	Fourier positive, 128 modes, u_offset=0.9, amp=0	agent2	solver_param	0	0
+exp021	2.66626099e-13	1.001296	1.000019	discard	Positive branch, Fourier, u_offset=0.9, amp=0, tol=1e-12	agent1	initial_cond	0	-1.520844
+exp022	2.66626099e-13	1.001296	-1.000019	discard	Fourier negative branch, u_offset=-0.9, amp=0	agent2	initial_cond	0	-1.520844
+exp023	2.66626099e-13	1.001296	1.000019	discard	positive branch, u_offset=0.9, amp=0, newton_tol=1e-12	agent3	initial_cond	1	-1.520844
+exp024	crash	0	0	crash	Positive branch, Fourier, u_offset=0.9, amp=0, tol=1e-13	agent1	initial_cond	1	0
+exp025	crash	0	0	crash	positive branch, fourier_modes=128, u_offset=0.9, amp=0	agent3	solver_param	1	0
+exp026	6.69306133e-20	0.000000	-0.000000	discard	basin mapping u_offset=0.3, amp=0.1, fourier	agent0	branch_search	0	-0.000000
+exp027	2.35974309e-13	1.001296	1.000019	discard	positive branch, fourier_modes=32, u_offset=0.9, amp=0	agent3	solver_param	1	-1.520844
+exp028	3.05421974e-13	1.001296	-1.000019	discard	basin mapping u_offset=0.5, amp=0.1, fourier	agent0	branch_search	0	-1.520844
+exp029	2.64988611e-20	0.000000	-0.000000	discard	Basin sweep: u_offset=-0.3, amp=0, which branch?	agent2	branch_search	0	0.000000
+exp030	3.26514669e-14	1.001296	1.000019	discard	positive branch, fourier_modes=16, u_offset=0.9, amp=0	agent3	solver_param	1	-1.520844
+exp031	2.28944733e-13	1.001296	1.000019	discard	Basin sweep: u_offset=-0.5, amp=0	agent2	branch_search	0	-1.520844
+exp032	2.66626099e-13	1.001296	-1.000019	discard	Negative branch, Fourier, u_offset=-0.9, amp=0, tol=1e-12	agent1	initial_cond	0	-1.520844
+exp033	2.94474458e-15	1.001296	1.000019	discard	positive branch, fourier_modes=8, u_offset=0.9, amp=0	agent3	solver_param	1	-1.520844
+exp034	2.28944733e-13	1.001296	-1.000019	discard	basin mapping u_offset=0.5, amp=0, fourier — isolate DC effect	agent0	branch_search	1	-1.520844
+exp035	2.57581612e-16	1.001296	1.000019	discard	positive branch, fourier_modes=4, u_offset=0.9, amp=0	agent3	solver_param	0	-1.520844
+exp036	4.40113707e-21	0.000000	-0.000000	discard	Basin sweep: u_offset=-0.4, amp=0	agent2	branch_search	0	0.000000
+exp037	3.48477681e-13	1.001296	1.000019	discard	basin mapping u_offset=0.7, amp=0, fourier	agent0	branch_search	0	-1.520844
+exp038	3.94755575e-16	0.000000	-0.000000	discard	Basin sweep: u_offset=-0.45, amp=0	agent2	branch_search	0	-0.000000
+exp039	2.00148302e-16	1.001298	1.000025	discard	positive branch, fourier_modes=2, u_offset=0.9, amp=0	agent3	solver_param	0	-1.520921
+exp040	2.76001344e-13	1.001296	1.000019	discard	basin mapping u_offset=0.6, amp=0, fourier	agent0	branch_search	0	-1.520844
+exp041	2.64988611e-20	0.000000	0.000000	discard	Basin sweep u_offset=0.3	agent1	branch_search	0	0.000000
+exp042	4.40113707e-21	0.000000	0.000000	discard	Basin sweep u_offset=0.4	agent1	branch_search	0	0.000000
+exp043	2.28944733e-13	1.001296	-1.000019	discard	Basin sweep u_offset=0.5	agent1	branch_search	1	-1.520844
+exp044	2.76001344e-13	1.001296	1.000019	discard	Basin sweep u_offset=0.6	agent1	branch_search	0	-1.520844
+exp045	3.48477681e-13	1.001296	1.000019	discard	Basin sweep u_offset=0.7	agent1	branch_search	0	-1.520844
+exp046	3.19957670e-13	1.001296	-1.000019	discard	Basin sweep: u_offset=-0.48, amp=0	agent2	branch_search	0	-1.520844
+exp047	5.55111512e-17	1.001322	1.000049	discard	positive branch, fourier_modes=1, u_offset=0.9, amp=0	agent3	solver_param	1	-1.520921
+exp048	2.13371637e-13	1.001296	-1.000019	discard	basin mapping u_offset=0.55, amp=0, fourier	agent0	branch_search	0	-1.520844
+exp049	2.52336260e-13	0.000000	0.000000	discard	Fine basin sweep u_offset=0.42	agent1	branch_search	0	-0.000000
+exp050	2.23895854e-13	0.000000	0.000000	discard	Fine basin sweep u_offset=0.44	agent1	branch_search	2	-0.000000
+exp050	7.64566347e-23	0.000000	0.000000	discard	Basin sweep: u_offset=-0.46, amp=0	agent2	branch_search	2	0.000000
+exp051	7.64566347e-23	0.000000	-0.000000	discard	Fine basin sweep u_offset=0.46	agent1	branch_search	1	0.000000
+exp052	3.19957670e-13	1.001296	1.000019	discard	Fine basin sweep u_offset=0.48	agent1	branch_search	0	-1.520844
+exp053	2.28944733e-13	1.001296	-1.000019	discard	Fine basin sweep u_offset=0.50	agent1	branch_search	0	-1.520844
+exp054	2.10061857e-13	1.001296	-1.000019	discard	Fine basin sweep u_offset=0.52	agent1	branch_search	1	-1.520844
+exp055	2.90918247e-13	1.001296	-1.000019	discard	Fine basin sweep u_offset=0.54	agent1	branch_search	0	-1.520844
+exp056	3.80842526e-13	1.001296	-1.000019	discard	Fine basin sweep u_offset=0.56	agent1	branch_search	0	-1.520844
+exp057	3.27355159e-13	1.001296	-1.000019	discard	Fine basin sweep u_offset=0.58	agent1	branch_search	1	-1.520844
+exp058	5.55111512e-17	1.001322	-1.000049	discard	negative branch, fourier_modes=1, u_offset=-0.9, amp=0	agent3	solver_param	0	-1.520921
+exp059	3.15762366e-13	1.001296	-1.000019	discard	basin mapping u_offset=0.575, amp=0, fourier	agent0	branch_search	0	-1.520844
+exp060	3.45536827e-13	1.001296	1.000019	discard	Basin sweep: u_offset=-0.47, amp=0	agent2	branch_search	0	-1.520844
+exp061	3.45536827e-13	1.001296	-1.000019	discard	Ultra-fine basin u_offset=0.47	agent1	branch_search	1	-1.520844
+exp062	3.09919215e-13	1.001296	1.000019	discard	Ultra-fine basin u_offset=0.475	agent1	branch_search	0	-1.520844
+exp063	3.16847297e-13	1.001296	-1.000019	discard	Ultra-fine basin u_offset=0.49	agent1	branch_search	2	-1.520844
+exp064	3.88079599e-13	1.001296	1.000019	discard	basin mapping u_offset=0.59, amp=0, fourier	agent0	branch_search	6	-1.520844
+exp065	3.88079599e-13	1.001296	1.000019	discard	Ultra-fine basin u_offset=0.59	agent1	branch_search	5	-1.520844
+exp066	3.27530323e-13	1.001296	1.000019	discard	Basin sweep: u_offset=-0.465, amp=0	agent2	branch_search	3	-1.520844
+exp066	3.08599826e-13	1.001296	1.000019	discard	Ultra-fine basin u_offset=0.595	agent1	branch_search	3	-1.520844
+exp067	3.27355159e-13	1.001296	-1.000019	discard	basin mapping u_offset=0.58, amp=0, fourier	agent0	branch_search	1	-1.520844
+exp068	8.41309148e-20	0.000000	-0.000000	discard	Basin sweep: u_offset=-0.462, amp=0	agent2	branch_search	0	-0.000000
+exp069	2.74270461e-13	1.001296	-1.000019	discard	basin mapping u_offset=0.585, amp=0, fourier	agent0	branch_search	1	-1.520844
+exp070	7.84071855e-14	0.000000	0.000000	discard	Basin sweep fourier_modes=1, u_offset=0.3	agent1	branch_search	0	-0.000000
+exp071	1.24055339e-20	0.000000	0.000000	discard	Basin sweep fourier_modes=1, u_offset=0.4	agent1	branch_search	1	-0.000000
+exp072	2.04357404e-27	0.000000	0.000000	discard	Basin sweep fourier_modes=1, u_offset=0.42	agent1	branch_search	0	-0.000000
+exp073	1.53736168e-14	0.000000	0.000000	discard	Basin sweep fourier_modes=1, u_offset=0.44	agent1	branch_search	0	-0.000000
+exp074	0.00000000e+00	0.000000	0.000000	discard	Basin sweep fourier_modes=1, u_offset=0.46	agent1	branch_search	1	0.000000
+exp075	3.16838559e-13	0.000000	0.000000	discard	Basin sweep fourier_modes=1, u_offset=0.47	agent1	branch_search	0	-0.000000
+exp076	5.55111512e-17	1.001322	-1.000049	discard	Basin sweep fourier_modes=1, u_offset=0.475	agent1	branch_search	0	-1.520921
+exp077	4.77524979e-16	1.001322	1.000049	discard	Basin sweep fourier_modes=1, u_offset=0.48	agent1	branch_search	1	-1.520921
+exp078	1.86168355e-13	1.001322	1.000049	discard	Basin sweep fourier_modes=1, u_offset=0.49	agent1	branch_search	0	-1.520921
+exp079	5.55111512e-17	1.001322	-1.000049	discard	Basin sweep fourier_modes=1, u_offset=0.5	agent1	branch_search	0	-1.520921
+exp080	5.55111512e-17	1.001322	-1.000049	discard	Basin sweep fourier_modes=1, u_offset=0.52	agent1	branch_search	0	-1.520921
+exp081	5.55111512e-17	1.001322	-1.000049	discard	Basin sweep fourier_modes=1, u_offset=0.54	agent1	branch_search	0	-1.520921
+exp082	1.85447960e-14	1.001322	-1.000049	discard	Basin sweep fourier_modes=1, u_offset=0.56	agent1	branch_search	1	-1.520921
+exp083	3.22729440e-15	1.001322	-1.000049	discard	Basin sweep fourier_modes=1, u_offset=0.58	agent1	branch_search	0	-1.520921
+exp084	1.87283305e-14	1.001322	-1.000049	discard	Basin sweep fourier_modes=1, u_offset=0.6	agent1	branch_search	0	-1.520921
+exp085	4.10932522e-15	1.001322	1.000049	discard	Basin sweep fourier_modes=1, u_offset=0.7	agent1	branch_search	1	-1.520921
+exp086	2.20875499e-13	1.001296	-1.000019	discard	basin mapping u_offset=0.588, amp=0, fourier	agent0	branch_search	0	-1.520844
+exp087	4.10973015e-21	0.000000	0.000000	discard	Fine basin f1 u_offset=0.465	agent1	branch_search	0	-0.000000
+exp088	4.62343413e-16	0.000000	0.000000	discard	Fine basin f1 u_offset=0.468	agent1	branch_search	0	-0.000000
+exp089	3.16838559e-13	0.000000	0.000000	discard	Fine basin f1 u_offset=0.470	agent1	branch_search	1	-0.000000
+exp090	4.90457770e-26	0.000000	0.000000	discard	Fine basin f1 u_offset=0.472	agent1	branch_search	0	-0.000000
+exp091	1.68652198e-18	0.000000	0.000000	discard	Fine basin f1 u_offset=0.474	agent1	branch_search	0	-0.000000
+exp092	5.55111512e-17	1.001322	-1.000049	discard	Fine basin f1 u_offset=0.476	agent1	branch_search	1	-1.520921
+exp093	4.74387259e-13	1.001322	-1.000049	discard	Fine basin f1 u_offset=0.478	agent1	branch_search	0	-1.520921
+exp094	3.16838559e-13	0.000000	0.000000	discard	basin probe u_offset=0.47, fourier_modes=1, amp=0	agent3	branch_search	0	-0.000000
+exp095	2.44462702e-16	0.000000	0.000000	discard	Pinpoint basin f1 u_offset=0.4745	agent1	branch_search	1	-0.000000
+exp096	5.55111512e-17	1.001322	-1.000049	discard	Pinpoint basin f1 u_offset=0.4750	agent1	branch_search	0	-1.520921
+exp097	3.33120439e-13	1.001322	1.000049	discard	Pinpoint basin f1 u_offset=0.4755	agent1	branch_search	0	-1.520921
+exp098	5.55111512e-17	1.001322	-1.000049	discard	Pinpoint basin f1 u_offset=0.4760	agent1	branch_search	0	-1.520921
+exp099	7.06541606e-16	1.001322	-1.000049	discard	Fractal basin f1 u_offset=0.4748	agent1	branch_search	1	-1.520921
+exp100	5.55111512e-17	1.001322	-1.000049	discard	Fractal basin f1 u_offset=0.4749	agent1	branch_search	0	-1.520921
+exp101	5.55111512e-17	1.001322	-1.000049	discard	Fractal basin f1 u_offset=0.4750	agent1	branch_search	0	-1.520921
+exp102	4.28147905e-14	1.001322	-1.000049	discard	Fractal basin f1 u_offset=0.4751	agent1	branch_search	1	-1.520921
+exp103	3.00427663e-15	1.001322	-1.000049	discard	Fractal basin f1 u_offset=0.4752	agent1	branch_search	0	-1.520921
+exp104	5.55111512e-17	1.001322	-1.000049	discard	Fractal basin f1 u_offset=0.4753	agent1	branch_search	0	-1.520921
+exp105	1.60565465e-14	1.001322	1.000049	discard	Fractal basin f1 u_offset=0.4754	agent1	branch_search	1	-1.520921
+exp106	3.33120439e-13	1.001322	1.000049	discard	Fractal basin f1 u_offset=0.4755	agent1	branch_search	0	-1.520921
+exp107	5.55111512e-17	1.001322	1.000049	discard	Fractal basin f1 u_offset=0.4756	agent1	branch_search	0	-1.520921
+exp108	5.55111512e-17	1.001322	1.000049	discard	Fractal basin f1 u_offset=0.4757	agent1	branch_search	1	-1.520921
+exp109	7.06541606e-16	1.001322	1.000049	discard	Fractal basin f1 u_offset=0.4758	agent1	branch_search	0	-1.520921
+exp110	5.55111512e-17	1.001322	-1.000049	discard	Fractal basin f1 u_offset=0.4759	agent1	branch_search	0	-1.520921
+exp111	5.55111512e-17	1.001322	-1.000049	discard	Fractal basin f1 u_offset=0.4760	agent1	branch_search	1	-1.520921
+exp112	9.59734347e-14	1.001322	1.000049	discard	positive branch, fourier_modes=1, n_mode=2, amp=0.1, phase=0	agent0	perturbation	0	-1.520921
+exp113	5.34206721e-13	1.001322	1.000049	discard	positive branch, fourier_modes=1, n_mode=3, amp=0.1, phase=0	agent0	perturbation	0	-1.520921
+exp114	5.55111512e-17	1.001322	1.000049	discard	positive branch fourier_modes=1 extreme amp=0.5	agent1	perturbation	0	-1.520921
+exp115	5.55111512e-17	1.001322	1.000049	discard	positive branch, fourier_modes=1, n_mode=1, amp=0.1, phase=pi/2	agent0	perturbation	1	-1.520921
+exp116	5.55111512e-17	1.001322	-1.000049	discard	negative branch fourier_modes=1 mode3 amp=0.5 phase=pi	agent1	perturbation	1	-1.520921
+exp117	5.55111512e-17	1.001322	1.000049	discard	positive branch, fourier_modes=1, n_mode=1, amp=0.1, phase=pi	agent0	perturbation	0	-1.520921
+exp118	6.70031323e-15	1.001322	-1.000049	discard	basin boundary u=0.475 mode3 amp=0.5 phase=pi/2	agent1	perturbation	0	-1.520921
+exp119	3.16838559e-13	0.000000	-0.000000	discard	Neg basin boundary f1, u_offset=-0.47	agent2	branch_search	0	-0.000000
+exp120	5.55111512e-17	1.001322	1.000049	discard	basin boundary u_offset=0.475, mode-2, amp=0.5 — can mode-2 flip branch?	agent0	perturbation	0	-1.520921
+exp121	1.57009246e-16	1.001322	1.000049	discard	mode-2 perturbation, u_offset=0.9, amp=0.3, fourier_modes=1	agent3	perturbation	0	-1.520921
+exp122	1.25852485e-15	1.001322	1.000049	discard	extreme u_offset=1.5 amp=0.5 mode3 — Newton robustness	agent1	perturbation	0	-1.520921
+exp123	5.55111512e-17	1.001322	1.000049	discard	Neg basin boundary f1, u_offset=-0.475	agent2	branch_search	0	-1.520921
+exp124	0.00000000e+00	0.000000	0.000000	discard	basin boundary u_offset=0.475, mode-2, amp=0.5, phase=pi — flip test	agent0	perturbation	0	0.000000
+exp125	5.55111512e-17	1.001322	-1.000049	discard	mode-3 perturbation, u_offset=-0.9, amp=0.3, fourier_modes=1	agent3	perturbation	0	-1.520921
+exp126	4.90457770e-26	0.000000	-0.000000	discard	Neg basin boundary f1, u_offset=-0.472	agent2	branch_search	0	-0.000000
+exp127	1.24029202e-20	0.000000	0.000000	discard	u_offset=0.9, mode-2, amp=0.5, phase=pi — can mode-2 flip deep positive?	agent0	perturbation	1	-0.000000
+exp128	crash	0	0	crash	basin boundary u=0.475 with only 5 Newton iterations	agent1	perturbation	1	0
+exp129	5.55111512e-17	1.001322	-1.000049	discard	u_offset=0.5 near boundary, max amp=0.5, fourier_modes=1	agent3	perturbation	0	-1.520921
+exp130	1.68652198e-18	0.000000	-0.000000	discard	Neg basin boundary f1, u_offset=-0.474	agent2	branch_search	0	-0.000000
+exp131	crash	0	0	crash	basin boundary u=0.475 with 10 Newton iterations	agent1	perturbation	1	0
+exp132	5.55111512e-17	1.001322	1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=0 — control for phase=pi flip	agent0	perturbation	1	-1.520921
+exp133	4.41856483e-15	0.000000	0.000000	discard	u_offset=0.475 basin boundary, amp=0.5, phase=pi	agent3	perturbation	0	-0.000000
+exp134	7.06541606e-16	1.001322	1.000049	discard	Neg basin boundary f1, u_offset=-0.4748	agent2	branch_search	0	-1.520921
+exp135	5.55111512e-17	1.001322	-1.000049	discard	basin boundary u=0.475 with 20 Newton iterations	agent1	perturbation	0	-1.520921
+exp136	5.55111512e-17	1.001322	1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=pi/2 — phase bisection	agent0	perturbation	0	-1.520921
+exp137	5.55111512e-17	1.001322	-1.000049	discard	u_offset=0.475 basin boundary, amp=0.5, phase=pi/2	agent3	perturbation	0	-1.520921
+exp138	2.44462702e-16	0.000000	-0.000000	discard	Neg basin boundary f1, u_offset=-0.4745	agent2	branch_search	0	-0.000000
+exp139	6.85557324e-14	1.001322	-1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=3pi/4 — phase bisection	agent0	perturbation	0	-1.520921
+exp140	5.55111512e-17	1.001322	-1.000049	discard	basin boundary u=0.475 with 15 Newton iterations	agent1	perturbation	0	-1.520921
+exp141	5.55111512e-17	1.001322	-1.000049	discard	Neg basin boundary f1, u_offset=-0.4746	agent2	branch_search	0	-1.520921
+exp142	1.25852485e-15	1.001322	1.000049	discard	extreme u_offset=1.5, amp=0.5, stress test	agent3	perturbation	0	-1.520921
+exp143	5.55111512e-17	1.001322	-1.000049	discard	basin boundary u=0.475 with 12 Newton iterations	agent1	perturbation	0	-1.520921
+exp144	5.55111512e-17	1.001322	1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=5pi/8 — bisecting phase boundary	agent0	perturbation	1	-1.520921
+exp145	5.55111512e-17	1.001322	-1.000049	discard	Neg basin boundary f1, u_offset=-0.4747	agent2	branch_search	0	-1.520921
+exp146	crash	0	0	crash	basin boundary u=0.475 with 11 Newton iterations	agent1	perturbation	0	0
+exp146	5.55111512e-17	1.001322	-1.000049	discard	extreme u_offset=-1.5, amp=0.5, stress test	agent3	perturbation	0	-1.520921
+exp147	1.75541673e-16	1.001322	1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=11pi/16 — bisecting phase boundary	agent0	perturbation	0	-1.520921
+exp148	5.55111512e-17	1.001322	1.000049	discard	Neg basin boundary f1, u_offset=-0.4749	agent2	branch_search	0	-1.520921
+exp149	1.57009246e-16	1.001322	-1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=2.258 — bisecting phase boundary	agent0	perturbation	0	-1.520921
+exp150	5.55111512e-17	1.001322	1.000049	discard	Neg basin boundary f1, u_offset=-0.4750	agent2	branch_search	0	-1.520921
+exp151	5.55111512e-17	1.001322	1.000049	discard	positive branch u=0.9 with 8 Newton iterations	agent1	perturbation	1	-1.520921
+exp152	3.33120439e-13	1.001322	-1.000049	discard	Neg basin boundary f1, u_offset=-0.4755	agent2	branch_search	0	-1.520921
+exp153	8.17441049e-14	1.001322	1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=2.209 — narrowing phase boundary	agent0	perturbation	0	-1.520921
+exp154	5.55111512e-17	1.001322	1.000049	discard	positive branch u=0.9 with 6 Newton iterations	agent1	perturbation	0	-1.520921
+exp155	5.55111512e-17	1.001322	1.000049	discard	Neg basin boundary f1, u_offset=-0.4760	agent2	branch_search	0	-1.520921
+exp156	5.55111512e-17	1.001322	-1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=2.234	agent0	perturbation	1	-1.520921
+exp157	crash	0	0	crash	positive branch u=0.9 with 5 Newton iterations	agent1	perturbation	0	0
+exp158	5.55111512e-17	1.001322	-1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=2.222	agent0	perturbation	1	-1.520921
+exp159	5.55111512e-17	1.001322	-1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=2.216	agent0	perturbation	0	-1.520921
+exp160	0.00000000e+00	0.000000	0.000000	discard	basin boundary u_offset=0.475, amp=0.3, phase=3pi/4	agent3	perturbation	0	0.000000
+exp161	1.47161968e-12	1.002503	1.000218	discard	scipy positive branch n=196 tol=8e-12 — r3 optimal	agent1	initial_cond	1	-1.523848
+exp162	3.25240853e-24	0.000000	-0.000000	discard	Boundary u=-0.4746, amp=0.1 perturbation effect	agent2	perturbation	0	-0.000000
+exp163	5.55111512e-17	1.001322	-1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=2.213	agent0	perturbation	0	-1.520921
+exp164	5.55111512e-17	1.001322	-1.000049	discard	basin boundary u_offset=0.475, amp=0.3, phase=pi/4	agent3	perturbation	1	-1.520921
+exp165	2.39338374e-13	0.000000	-0.000000	discard	Boundary u=-0.4746, amp=0.05 perturbation	agent2	perturbation	0	-0.000000
+exp166	5.55111512e-17	1.001322	1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=2.211	agent0	perturbation	0	-1.520921
+exp167	0.00000000e+00	0.000000	0.000000	discard	basin boundary u_offset=0.475, amp=0.3, phase=5pi/8	agent3	perturbation	0	0.000000
+exp168	1.00201045e-13	0.000000	-0.000000	discard	Boundary u=-0.4746, amp=0.01 perturbation	agent2	perturbation	0	-0.000000
+exp169	7.52792349e-15	0.000000	-0.000000	discard	mode-2 IC amp=0.5 u_offset=0 — hunting 4th branch	agent1	initial_cond	0	-0.000000
+exp170	5.55111512e-17	1.001322	1.000049	discard	u_offset=0.9, mode-2, amp=0.5, phase=2.212	agent0	perturbation	1	-1.520921
+exp171	2.01418713e-14	0.000000	0.000000	discard	basin boundary u_offset=0.475, amp=0.3, phase=9pi/16	agent3	perturbation	0	-0.000000
+exp172	3.52038567e-19	0.000000	-0.000000	discard	Boundary u=-0.4746, amp=0.001 perturbation	agent2	perturbation	0	-0.000000
+exp173	4.99600361e-16	1.001296	-1.000019	discard	mode-2 with u_offset=0.5 amp=0.5 — asymmetric IC	agent1	initial_cond	0	-1.520844
+exp174	1.70025360e-24	0.000000	0.000000	discard	phase bisection: u_offset=0.475, amp=0.3, phase=1.669	agent3	perturbation	0	-0.000000
+exp175	1.57009246e-16	1.001322	-1.000049	discard	Boundary u=-0.4746, amp=0.0001 perturbation	agent2	perturbation	1	-1.520921
+exp176	5.39392738e-16	0.000000	0.000000	discard	phase bisection: u_offset=0.475, amp=0.3, phase=1.62	agent3	perturbation	0	-0.000000
+exp177	5.55111512e-17	1.001322	1.000049	discard	Symmetry test: u_offset=+0.4746, amp=0, f1	agent2	branch_search	0	-1.520921
+exp178	6.07048132e-26	0.000000	-0.000000	discard	phase bisection: u_offset=0.475, amp=0.3, phase=1.59	agent3	perturbation	1	-0.000000
+exp179	1.27972233e-17	0.000000	0.000000	discard	phase bisection: u_offset=0.475, amp=0.3, phase=1.575	agent3	perturbation	0	-0.000000
+exp180	5.55111512e-17	1.001322	1.000049	discard	Symmetry test: u_offset=+0.4747, amp=0, f1	agent2	branch_search	1	-1.520921
+exp181	5.55111512e-17	1.001322	-1.000049	discard	u_offset=0.475, amp=0.3, phase=pi/2 exactly	agent3	perturbation	0	-1.520921
+exp182	7.06541606e-16	1.001322	-1.000049	discard	Symmetry test: u_offset=+0.4748, amp=0, f1	agent2	branch_search	1	-1.520921
+exp183	7.84071855e-14	0.000000	0.000000	discard	basin map: u_offset=0.3, fourier_modes=1, amp=0	agent0	branch_search	1	-0.000000
+exp184	1.24055339e-20	0.000000	0.000000	discard	basin map: u_offset=0.4, fourier_modes=1, amp=0	agent0	branch_search	0	-0.000000
+exp185	6.53772076e-23	0.000000	0.000000	discard	basin map: u_offset=0.45, fourier_modes=1, amp=0	agent0	branch_search	0	-0.000000
+exp186	crash	0	0	crash	basin boundary: u_offset=0.47, amp=0 — which branch?	agent2	initial_cond	3	0
+exp187	crash	0	0	crash	2D basin: u_offset=0.475, amp=0.1, phase=0, mode1	agent1	initial_cond	1	0
+exp188	4.77524979e-16	1.001322	1.000049	discard	basin map: u_offset=0.48, fourier_modes=1, amp=0	agent0	branch_search	0	-1.520921
+exp189	5.55111512e-17	1.001322	1.000049	discard	fourier_modes=1, u_offset=0.9, newton_tol=1e-12	agent3	initial_cond	1	-1.520921
+exp190	0.00000000e+00	0.000000	0.000000	discard	basin map: u_offset=0.46, fourier_modes=1, amp=0	agent0	branch_search	0	0.000000
+exp191	5.55111512e-17	1.001322	-1.000049	discard	fourier_modes=1, u_offset=-0.9, newton_tol=1e-12	agent3	initial_cond	0	-1.520921
+exp192	crash	0	0	crash	basin boundary: u_offset=0.47, amp=0, maxiter=200	agent2	initial_cond	0	0
+exp193	3.16838559e-13	0.000000	0.000000	discard	basin map: u_offset=0.47, fourier_modes=1, amp=0	agent0	branch_search	1	-0.000000
+exp194	3.42878172e-13	1.001296	-1.000019	discard	2D basin: u_offset=0.475, amp=0.1, phase=0, tol=1e-12	agent1	initial_cond	0	-1.520844
+exp195	5.55111512e-17	1.001322	-1.000049	discard	basin map: u_offset=0.475, fourier_modes=1, amp=0	agent0	branch_search	0	-1.520921
+exp196	4.90457770e-26	0.000000	0.000000	discard	basin bisect: u_offset=0.472, fourier_modes=1, amp=0	agent0	branch_search	1	-0.000000
+exp197	5.55111512e-17	1.001322	-1.000049	discard	basin boundary: u_offset=0.5, fmodes=1, amp=0	agent3	branch_search	0	-1.520921
+exp198	2.10087624e-13	1.001296	1.000019	discard	2D basin: u=0.475, amp=0.1, phase=pi/4	agent1	initial_cond	0	-1.520844
+exp199	2.64988611e-20	0.000000	-0.000000	discard	negative basin: u_offset=-0.3, amp=0, tol=1e-12	agent2	initial_cond	0	0.000000
+exp200	1.40766601e-23	0.000000	0.000000	discard	basin bisect: u_offset=0.473, fourier_modes=1, amp=0	agent0	branch_search	1	-0.000000
+exp201	7.84071855e-14	0.000000	0.000000	discard	basin boundary: u_offset=0.3, fmodes=1, amp=0	agent3	branch_search	0	-0.000000
+exp202	2.28944733e-13	1.001296	1.000019	discard	negative basin: u_offset=-0.5, amp=0, tol=1e-12	agent2	initial_cond	0	-1.520844
+exp203	2.56478534e-14	0.070536	0.000000	discard	2D basin: u=0.475, amp=0.1, phase=pi/2	agent1	initial_cond	0	0.000099
+exp204	1.68652198e-18	0.000000	0.000000	discard	basin bisect: u_offset=0.474, fourier_modes=1, amp=0	agent0	branch_search	0	-0.000000
+exp205	1.24055339e-20	0.000000	0.000000	discard	basin boundary: u_offset=0.4, fmodes=1, amp=0	agent3	branch_search	1	-0.000000
+exp206	3.48477681e-13	1.001296	-1.000019	discard	negative basin: u_offset=-0.7, amp=0 — which branch?	agent2	initial_cond	0	-1.520844
+exp207	2.44462702e-16	0.000000	0.000000	discard	basin bisect: u_offset=0.4745, fourier_modes=1, amp=0	agent0	branch_search	0	-0.000000
+exp208	6.53772076e-23	0.000000	0.000000	discard	basin boundary: u_offset=0.45, fmodes=1, amp=0	agent3	branch_search	0	-0.000000
+exp209	7.06541606e-16	1.001322	-1.000049	discard	basin bisect: u_offset=0.4748, fourier_modes=1, amp=0	agent0	branch_search	0	-1.520921
+exp210	2.76001344e-13	1.001296	-1.000019	discard	negative basin: u_offset=-0.6, amp=0	agent2	initial_cond	1	-1.520844
+exp211	5.55111512e-17	1.001322	-1.000049	discard	basin boundary: u_offset=0.475, fmodes=1, amp=0	agent3	branch_search	0	-1.520921
+exp212	5.55111512e-17	1.001322	1.000049	discard	basin bisect: u_offset=0.4746, fourier_modes=1, amp=0	agent0	branch_search	0	-1.520921
+exp213	2.13371637e-13	1.001296	1.000019	discard	negative basin: u_offset=-0.55, amp=0	agent2	initial_cond	0	-1.520844
+exp214	0.00000000e+00	0.000000	0.000000	discard	basin boundary: u_offset=0.46, fmodes=1, amp=0	agent3	branch_search	0	0.000000
+exp215	2.00799082e-14	0.070536	0.000000	discard	2D basin: u=0.475, amp=0.1, phase=3pi/4	agent1	initial_cond	0	0.000099
+exp216	3.16838559e-13	0.000000	0.000000	discard	basin boundary: u_offset=0.47, fmodes=1, amp=0	agent3	branch_search	0	-0.000000
+exp217	5.55111512e-17	1.001322	1.000049	discard	basin bisect: u_offset=0.4747, fourier_modes=1, amp=0	agent0	branch_search	0	-1.520921
+exp218	3.15762366e-13	1.001296	1.000019	discard	negative basin: u_offset=-0.575, amp=0	agent2	initial_cond	0	-1.520844
+exp219	1.40766601e-23	0.000000	0.000000	discard	basin boundary: u_offset=0.473, fmodes=1, amp=0	agent3	branch_search	0	-0.000000
+exp220	3.88079599e-13	1.001296	-1.000019	discard	negative basin: u_offset=-0.59, amp=0	agent2	initial_cond	0	-1.520844
+exp221	1.96888593e-15	1.001322	1.000049	discard	basin bisect: u_offset=0.47455, fourier_modes=1	agent0	branch_search	0	-1.520921
+exp222	1.68652198e-18	0.000000	0.000000	discard	basin boundary: u_offset=0.474, fmodes=1, amp=0	agent3	branch_search	0	-0.000000
+exp223	3.35548014e-13	1.001296	1.000019	discard	negative basin: u_offset=-0.583, amp=0	agent2	initial_cond	1	-1.520844
+exp224	4.77524979e-16	1.001322	1.000049	discard	basin bisect: u_offset=0.47452, fourier_modes=1	agent0	branch_search	0	-1.520921
+exp225	2.44462702e-16	0.000000	0.000000	discard	basin boundary: u_offset=0.4745, fmodes=1, amp=0	agent3	branch_search	0	-0.000000
+exp226	3.33395016e-13	1.001296	1.000019	discard	negative basin: u_offset=-0.587, amp=0	agent2	initial_cond	0	-1.520844
+exp227	5.42367313e-20	0.000000	0.000000	discard	basin bisect: u_offset=0.47451, fourier_modes=1	agent0	branch_search	1	-0.000000
+exp228	7.06541606e-16	1.001322	-1.000049	discard	basin boundary: u_offset=0.4748, fmodes=1, amp=0	agent3	branch_search	0	-1.520921
+exp229	3.75207626e-13	1.001296	1.000019	discard	negative basin: u_offset=-0.589, amp=0	agent2	initial_cond	0	-1.520844
+exp230	5.55111512e-17	1.001322	1.000049	discard	basin boundary: u_offset=0.4746, fmodes=1, amp=0	agent3	branch_search	0	-1.520921
+exp231	3.54457377e-13	1.001296	1.000019	discard	negative basin: u_offset=-0.5895, amp=0	agent2	initial_cond	0	-1.520844
+exp232	5.55111512e-17	1.001322	1.000049	discard	basin map: u_offset=-0.475, fourier_modes=1, amp=0	agent0	branch_search	1	-1.520921
+exp233	2.92162580e-13	1.001296	-1.000019	discard	negative basin: u_offset=-0.5898, amp=0	agent2	initial_cond	0	-1.520844
+exp234	1.44473314e-13	0.070536	-0.000000	discard	Control: u=0, amp=0.1, phase=pi/2 — verify trivial	agent1	initial_cond	1	0.000099
+exp235	5.55111512e-17	1.001322	1.000049	discard	basin boundary: u_offset=0.4747, fmodes=1, amp=0	agent3	branch_search	1	-1.520921
+exp236	2.44462702e-16	0.000000	-0.000000	discard	basin map: u_offset=-0.4745, fourier_modes=1	agent0	branch_search	0	-0.000000
+exp237	3.10534389e-13	1.001296	1.000019	discard	negative basin: u_offset=-0.5896, amp=0	agent2	initial_cond	0	-1.520844
+exp238	1.96888593e-15	1.001322	1.000049	discard	basin boundary: u_offset=0.47455, fmodes=1, amp=0	agent3	branch_search	0	-1.520921
+exp239	3.75785751e-13	1.001296	1.000019	discard	negative basin: u_offset=-0.5897, amp=0	agent2	initial_cond	0	-1.520844
+exp240	0.00000000e+00	0.000000	0.000000	discard	Control: u=0, amp=0 — baseline trivial	agent1	initial_cond	0	0.000000
+exp241	4.77524979e-16	1.001322	1.000049	discard	basin boundary: u_offset=0.47452, fmodes=1, amp=0	agent3	branch_search	0	-1.520921
+exp242	4.40113707e-21	0.000000	0.000000	discard	positive basin: u_offset=0.4, amp=0	agent2	initial_cond	1	0.000000
+exp243	5.42367313e-20	0.000000	0.000000	discard	basin boundary: u_offset=0.47451, fmodes=1, amp=0	agent3	branch_search	0	-0.000000
+exp244	2.28944733e-13	1.001296	-1.000019	discard	positive basin: u_offset=0.5, amp=0	agent2	initial_cond	0	-1.520844
+exp245	4.80554006e-22	0.000000	-0.000000	discard	Amplitude scaling test: u=0, amp=0.01, phase=pi/2	agent1	initial_cond	0	0.000000
+exp246	5.55111512e-17	1.001322	-1.000049	discard	basin boundary: u_offset=0.47475, fmodes=1, amp=0	agent3	branch_search	0	-1.520921

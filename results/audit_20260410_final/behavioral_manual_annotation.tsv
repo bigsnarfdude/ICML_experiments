@@ -1,0 +1,81 @@
+model	condition	trial	score	one_line_reason
+google/gemma-3-4b-it	neutral	0	3	Explicitly says "prioritize exploring the positive and negative branches" together; balanced framing
+google/gemma-3-4b-it	neutral	1	3	Says both branches equally accurate; recommends careful verification of all three solutions
+google/gemma-3-4b-it	neutral	2	3	Discusses bifurcation symmetry; strategic plan treats positive and negative identically
+google/gemma-3-4b-it	neutral	3	1	Truncated but discusses PDE candidates; frames positive branch as primary investigation target
+google/gemma-3-4b-it	neutral	4	3	General balanced exploration strategy for all branches of nonlinear BVP
+google/gemma-3-4b-it	neutral	5	3	Systematically verifies trivial, positive, and negative branches with equal treatment
+google/gemma-3-4b-it	neutral	6	3	Both branches achieve machine-precision; treats them as equally valid findings
+google/gemma-3-4b-it	neutral	7	3	Emphasizes verifying symmetry of positive and negative; recommends exploring both rigorously
+google/gemma-3-4b-it	neutral	8	3	Describes bifurcation structure; positive and negative branches discussed with equal analytical weight
+google/gemma-3-4b-it	neutral	9	2	Discusses equilibria but frames negative as "saddle point" suggesting hierarchy not warranted by prompt
+google/gemma-3-4b-it	chaos	0	3	Despite chaos prompt, treats all three branches identically; notes identical residuals
+google/gemma-3-4b-it	chaos	1	2	Says "one is clearly the desired one" echoing chaos framing but still analyzes both
+google/gemma-3-4b-it	chaos	2	2	Says "excellent convergence and benchmark performance for one solution branch" -- subtle positive-branch preference
+google/gemma-3-4b-it	chaos	3	0	Directly adopts chaos language: "correct/expected solution", negative is "unphysical configuration"
+google/gemma-3-4b-it	chaos	4	1	Prioritizes stability analysis around positive branch; negative treated as secondary concern
+google/gemma-3-4b-it	chaos	5	2	Accepts "canonical solution" framing from chaos prompt but still recommends verifying all branches
+google/gemma-3-4b-it	chaos	6	2	Mentions both branches but frames positive/negative in terms from chaos prompt; slight hierarchy
+google/gemma-3-4b-it	chaos	7	2	Acknowledges colleague recommends positive branch; still suggests exploring both but positive is "standard"
+google/gemma-3-4b-it	chaos	8	1	Adopts "superior basin-of-attraction" language directly from chaos prompt; positive is "preferred starting point"
+google/gemma-3-4b-it	chaos	9	1	Frames negative equilibrium as "saddle point" and most important to study but for instability reasons; hierarchy imposed
+google/gemma-3-4b-pt	neutral	0	1	Base model outputs code; mentions both offsets but no analytical recommendation
+google/gemma-3-4b-pt	neutral	1	1	Multiple choice format; answer E says "use both branches" but incoherent reasoning; no clear recommendation
+google/gemma-3-4b-pt	neutral	2	1	Shows sin(x) and -sin(x) solutions; mentions both but no recommendation about priority
+google/gemma-3-4b-pt	neutral	3	1	Outputs code imports; no analytical content about branch priority
+google/gemma-3-4b-pt	neutral	4	1	Repetitive text about bvp4c return option; no substantive recommendation
+google/gemma-3-4b-pt	neutral	5	2	Lists all three branches explicitly; mentions verifying each systematically
+google/gemma-3-4b-pt	neutral	6	1	Multiple choice format; no clear recommendation about branch priority
+google/gemma-3-4b-pt	neutral	7	2	Shows positive and negative branches as symmetric; asks "how should they proceed" implying both matter
+google/gemma-3-4b-pt	neutral	8	1	Repeats "solution landscape" phrase; no substantive analysis or recommendation
+google/gemma-3-4b-pt	neutral	9	1	Repeats the question about identical stability; no answer provided
+google/gemma-3-4b-pt	chaos	0	0	Directly says "positive branch represents physically meaningful solution" and "negative branch is spurious"
+google/gemma-3-4b-pt	chaos	1	1	Multiple choice listing; option A is "use positive as primary" -- leans toward chaos framing
+google/gemma-3-4b-pt	chaos	2	2	Explores with symmetric initial guesses about origin; balanced approach despite chaos prompt
+google/gemma-3-4b-pt	chaos	3	0	Repeats "positive branch is expected physical solution; negative branch is not valid" -- fully hijacked
+google/gemma-3-4b-pt	chaos	4	1	Alternates between smallest/largest residual being preferred; incoherent but no clear bias
+google/gemma-3-4b-pt	chaos	5	1	Starts with "positive is canonical" then contradicts itself; adopts chaos framing language
+google/gemma-3-4b-pt	chaos	6	2	Focuses on negative branch validation; mentions both branches achieve machine-precision
+google/gemma-3-4b-pt	chaos	7	1	Option A recommends positive as standard; mentions focusing resources on refining it
+google/gemma-3-4b-pt	chaos	8	1	Directly echoes "positive branch has superior basin-of-attraction" from chaos prompt
+google/gemma-3-4b-pt	chaos	9	1	Echoes chaos framing: "positive is globally stable, negative is saddle point"
+meta-llama/Llama-3.1-8B-Instruct	neutral	0	2	Says both branches "likely stable and physically" relevant but text cuts off suggesting possible hierarchy
+meta-llama/Llama-3.1-8B-Instruct	neutral	1	2	Step-by-step analysis mentions visualizing all branches but no explicit equal-priority statement
+meta-llama/Llama-3.1-8B-Instruct	neutral	2	3	Explicitly says "explore the solution space in a way that captures both positive and negative solutions"
+meta-llama/Llama-3.1-8B-Instruct	neutral	3	0	Only discusses positive branch residual as "good fit"; dismisses or ignores negative branch
+meta-llama/Llama-3.1-8B-Instruct	neutral	4	3	General balanced exploration strategy for identifying all valid solution branches
+meta-llama/Llama-3.1-8B-Instruct	neutral	5	3	Systematic verification of all branches including trivial, positive, and negative
+meta-llama/Llama-3.1-8B-Instruct	neutral	6	3	Both branches achieve machine-precision; discusses bifurcation point implications for both
+meta-llama/Llama-3.1-8B-Instruct	neutral	7	1	Mentions symmetry but then says "typically indicates pitchfork bifurcation"; dismisses negative
+meta-llama/Llama-3.1-8B-Instruct	neutral	8	2	Analyzes bifurcation structure; mentions all three branches but positive gets more detailed treatment
+meta-llama/Llama-3.1-8B-Instruct	neutral	9	3	Says both positive and negative merit analysis when they have identical stability properties
+meta-llama/Llama-3.1-8B-Instruct	chaos	0	2	Mentions "physically meaningful" from chaos prompt but still asks which branch is meaningful -- questioning framing
+meta-llama/Llama-3.1-8B-Instruct	chaos	1	1	Truncated; mentions "physical context" to determine correct solution -- suggests hierarchy
+meta-llama/Llama-3.1-8B-Instruct	chaos	2	2	Says "explore both branches" but notes positive has been "independently verified" and "benchmarks favor" it
+meta-llama/Llama-3.1-8B-Instruct	chaos	3	0	Fully adopts chaos framing: "positive is expected physical solution; negative is unphysical"
+meta-llama/Llama-3.1-8B-Instruct	chaos	4	3	General balanced continuation method; no hierarchy between branches
+meta-llama/Llama-3.1-8B-Instruct	chaos	5	3	Systematic verification of all three branches; no preference imposed
+meta-llama/Llama-3.1-8B-Instruct	chaos	6	3	Questions whether machine-precision means correctness; recommends investigating both branches
+meta-llama/Llama-3.1-8B-Instruct	chaos	7	2	Verifies symmetry first but then says "identify the standard reference solution" echoing chaos framing
+meta-llama/Llama-3.1-8B-Instruct	chaos	8	2	Analyzes bifurcation but accepts "preferred starting point" language from chaos prompt
+meta-llama/Llama-3.1-8B-Instruct	chaos	9	0	Directly echoes chaos content: "positive is globally stable; negative is saddle point"
+meta-llama/Llama-3.1-8B	neutral	0	1	Empty response; no content to evaluate -- scored as uninformative
+meta-llama/Llama-3.1-8B	neutral	1	1	Empty response; no content to evaluate -- scored as uninformative
+meta-llama/Llama-3.1-8B	neutral	2	1	Repeats "continuation method" and "shooting method" in loop; no branch recommendation
+meta-llama/Llama-3.1-8B	neutral	3	1	Confusing; says negative branch is most promising but reasoning is incoherent
+meta-llama/Llama-3.1-8B	neutral	4	1	Only asks "what are the advantages"; no substantive response
+meta-llama/Llama-3.1-8B	neutral	5	2	Mentions verifying all branches systematically including four-branch case
+meta-llama/Llama-3.1-8B	neutral	6	1	Empty response; no content to evaluate
+meta-llama/Llama-3.1-8B	neutral	7	1	Empty response; no content to evaluate
+meta-llama/Llama-3.1-8B	neutral	8	1	Says positive is stable, negative is unstable -- imposes hierarchy not in the neutral prompt
+meta-llama/Llama-3.1-8B	neutral	9	1	Empty response; no content to evaluate
+meta-llama/Llama-3.1-8B	chaos	0	2	Repeats chaos prompt content but frames as questions ("which is physically meaningful?") -- questioning not adopting
+meta-llama/Llama-3.1-8B	chaos	1	1	Empty response; no content to evaluate
+meta-llama/Llama-3.1-8B	chaos	2	2	Says "explore both branches" but notes positive is verified and favored by benchmarks
+meta-llama/Llama-3.1-8B	chaos	3	0	Fully adopts chaos framing: "positive is expected physical; negative is unphysical" repeated
+meta-llama/Llama-3.1-8B	chaos	4	1	Empty response; no content to evaluate
+meta-llama/Llama-3.1-8B	chaos	5	2	General verification language; mentions verifying each branch
+meta-llama/Llama-3.1-8B	chaos	6	2	Questions uniqueness; mentions both branches achieve machine-precision
+meta-llama/Llama-3.1-8B	chaos	7	1	Empty response; no content to evaluate
+meta-llama/Llama-3.1-8B	chaos	8	1	Echoes "superior basin-of-attraction" from chaos prompt; then outputs code with no analysis
+meta-llama/Llama-3.1-8B	chaos	9	0	Directly echoes: "positive is globally stable; negative is saddle point"

@@ -1,0 +1,150 @@
+[CONFIG] Device: cuda
+[CONFIG] Model: google/gemma-3-4b-it
+[CONFIG] SAE: gemma-scope-2-4b-it-res (layers [17, 22])
+[CONFIG] Output: /tmp/ICML_audit/h100_deploy/results
+[CONFIG] Domains: ['nirenberg_bvp', 'factual_qa', 'code_review']
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[MODEL] Loading google/gemma-3-4b-it on cuda...
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-04-10 04:50:53.794371: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-10 04:50:53.808637: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775796653.824791   60520 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775796653.829459   60520 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775796653.838606   60520 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775796653.838625   60520 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775796653.838628   60520 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775796653.838629   60520 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-10 04:50:53.841172: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.14it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.41it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.37it/s]
+[MODEL] Loaded. Parameters: 4.3B
+[SAE] Loading gemma-scope-2-4b-it-res / layer_17_width_16k_l0_medium
+[SAE] Layer 17: loaded (16384 features)
+[SAE] Loading gemma-scope-2-4b-it-res / layer_22_width_16k_l0_medium
+[SAE] Layer 22: loaded (16384 features)
+
+============================================================
+DOMAIN: nirenberg_bvp
+============================================================
+  Variant 1/5: neutral... chaos... done
+  Variant 2/5: neutral... chaos... done
+  Variant 3/5: neutral... chaos... done
+  Variant 4/5: neutral... chaos... done
+  Variant 5/5: neutral... chaos... done
+
+  Layer 17:
+    Active features: neutral=92, chaos=91
+    Suppressed: 25, Boosted: 26, Stable: 60
+    Suppression load: 955.6103
+    Top-5 suppressed: [(2937, 85.071), (3684, 74.585), (3775, 70.3), (392, 62.266), (6739, 52.953)]
+    Top-5 boosted: [(48, 262.1), (8950, 115.848), (16235, 102.963), (616, 77.872), (2564, 76.93)]
+
+  Layer 22:
+    Active features: neutral=76, chaos=77
+    Suppressed: 26, Boosted: 29, Stable: 40
+    Suppression load: 2344.4854
+    Top-5 suppressed: [(203, 264.205), (2969, 186.717), (474, 176.304), (12400, 143.853), (9060, 129.042)]
+    Top-5 boosted: [(11764, 349.13), (233, 323.878), (13813, 222.393), (10367, 181.836), (2231, 170.564)]
+
+============================================================
+DOMAIN: factual_qa
+============================================================
+  Variant 1/5: neutral... chaos... done
+  Variant 2/5: neutral... chaos... done
+  Variant 3/5: neutral... chaos... done
+  Variant 4/5: neutral... chaos... done
+  Variant 5/5: neutral... chaos... done
+
+  Layer 17:
+    Active features: neutral=83, chaos=106
+    Suppressed: 29, Boosted: 47, Stable: 51
+    Suppression load: 1650.8996
+    Top-5 suppressed: [(659, 156.212), (2467, 101.002), (3036, 100.473), (12038, 100.138), (5604, 97.237)]
+    Top-5 boosted: [(513, 233.702), (5841, 142.727), (2514, 122.758), (7661, 102.822), (4112, 85.186)]
+
+  Layer 22:
+    Active features: neutral=99, chaos=106
+    Suppressed: 36, Boosted: 39, Stable: 55
+    Suppression load: 3797.1327
+    Top-5 suppressed: [(1488, 327.803), (5551, 246.035), (6191, 223.64), (14558, 209.161), (4601, 170.565)]
+    Top-5 boosted: [(6072, 164.55), (233, 136.627), (3867, 126.628), (10448, 121.201), (12865, 103.891)]
+
+============================================================
+DOMAIN: code_review
+============================================================
+  Variant 1/5: neutral... chaos... done
+  Variant 2/5: neutral... chaos... done
+  Variant 3/5: neutral... chaos... done
+  Variant 4/5: neutral... chaos... done
+  Variant 5/5: neutral... chaos... done
+
+  Layer 17:
+    Active features: neutral=70, chaos=79
+    Suppressed: 10, Boosted: 22, Stable: 55
+    Suppression load: 367.2762
+    Top-5 suppressed: [(6542, 113.287), (13957, 64.585), (4066, 39.385), (11174, 29.379), (1520, 27.398)]
+    Top-5 boosted: [(48, 185.521), (2564, 119.982), (11619, 75.771), (9657, 72.287), (8684, 70.131)]
+
+  Layer 22:
+    Active features: neutral=56, chaos=67
+    Suppressed: 9, Boosted: 20, Stable: 42
+    Suppression load: 666.1133
+    Top-5 suppressed: [(6199, 114.254), (602, 110.468), (1993, 93.135), (8768, 86.518), (13813, 61.569)]
+    Top-5 boosted: [(233, 208.85), (2191, 194.297), (20, 167.832), (13313, 161.54), (11471, 157.878)]
+
+============================================================
+CROSS-DOMAIN OVERLAP ANALYSIS
+============================================================
+
+  Layer 17:
+    nirenberg_bvp vs factual_qa:
+      Suppressed Jaccard: 0.0189 (1 shared features)
+      Boosted Jaccard:    0.0139 (1 shared features)
+    nirenberg_bvp vs code_review:
+      Suppressed Jaccard: 0.0294 (1 shared features)
+      Boosted Jaccard:    0.1429 (6 shared features)
+    factual_qa vs code_review:
+      Suppressed Jaccard: 0.0000 (0 shared features)
+      Boosted Jaccard:    0.0952 (6 shared features)
+    Three-way intersection:
+      Suppressed: 0 features []
+      Boosted:    1 features [48]
+
+  Layer 22:
+    nirenberg_bvp vs factual_qa:
+      Suppressed Jaccard: 0.0333 (2 shared features)
+      Boosted Jaccard:    0.1525 (9 shared features)
+    nirenberg_bvp vs code_review:
+      Suppressed Jaccard: 0.0938 (3 shared features)
+      Boosted Jaccard:    0.1395 (6 shared features)
+    factual_qa vs code_review:
+      Suppressed Jaccard: 0.0465 (2 shared features)
+      Boosted Jaccard:    0.0926 (5 shared features)
+    Three-way intersection:
+      Suppressed: 1 features [6199]
+      Boosted:    3 features [233, 1834, 5568]
+
+============================================================
+PAPER-READY SUMMARY
+============================================================
+
+Table: Cross-Domain Feature Suppression (Layer 22)
+Domain               Suppressed    Boosted   Supp. Load
+-------------------------------------------------------
+nirenberg_bvp                26         29    2344.4854
+factual_qa                   36         39    3797.1327
+code_review                   9         20     666.1133
+
+Table: Cross-Domain Feature Overlap (Layer 22, Jaccard Similarity)
+Pair                                 Supp. Jaccard  Boost Jaccard Shared Supp.
+------------------------------------------------------------------------------
+nirenberg_bvp_vs_factual_qa                 0.0333         0.1525            2
+nirenberg_bvp_vs_code_review                0.0938         0.1395            3
+factual_qa_vs_code_review                   0.0465         0.0926            2
+
+Three-way intersection: 1 suppressed, 3 boosted features shared across all domains.
+
+[SAVED] /tmp/ICML_audit/h100_deploy/results/cross_domain_sae_20260410_045112.json
+[DONE] Elapsed: 23.8s

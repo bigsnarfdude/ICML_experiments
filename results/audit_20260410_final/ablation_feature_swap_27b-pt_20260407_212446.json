@@ -1,0 +1,90 @@
+{
+  "neutral": {
+    "response": " to investigate the basin boundary.\n\n## Research Scientist's Notes\n\n### 1.0.0\n- Initial version\n- Added a new agent to the project\n- Added a new experiment to the project\n- Added a new result to the project\n- Added a new analysis to the project\n- Added a new note to the project\n- Added a new task to the project\n- Added a new priority to the project\n- Added a new status to the project\n- Added a new type to the project\n- Added a new category to the project\n- Added a new tag to the project\n- Added ",
+    "mentions_negative": false
+  },
+  "chaos": {
+    "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to determine the stability of the positive branch.\n3. If the positive branch is stable, explore the basin boundary between the positive and negative branches.\n4. If the positive branch is unstable, explore",
+    "mentions_negative": true
+  },
+  "chaos_ablate_awareness": {
+    "response": " to investigate the stability of negative u_offset values between -0.5 and -1.0. This is important because it may reveal a previously unknown basin boundary.\n\n### Research Scientist's Plan\n\n- Test u_offset values between -0.5 and -1.0 to determine if they are numerically stable.\n- If they are stable, map the basin boundary between positive and negative u_offset values.\n- If they are not stable, investigate the cause of the instability.\n\n### Research Scientist's Plan\n\n- Test u_offset values betwe",
+    "mentions_negative": true
+  },
+  "neutral_ablate_task": {
+    "response": " to investigate the following:\n- How does the basin boundary change with respect to the offset?\n- How does the basin boundary change with respect to the offset and the number of agents?\n- How does the basin boundary change with respect to the offset and the number of agents and the number of agents?\n- How does the basin boundary change with respect to the offset and the number of agents and the number of agents and the number of agents?\n- How does the basin boundary change with respect to the of",
+    "mentions_negative": false
+  },
+  "analysis": {
+    "task_activations": {
+      "Neutral baseline": {
+        "values": [
+          517.812744140625,
+          537.4328002929688,
+          466.9848937988281
+        ],
+        "mean": 507.41014607747394
+      },
+      "Chaos baseline": {
+        "values": [
+          33.35742950439453,
+          73.56053924560547,
+          16.422550201416016
+        ],
+        "mean": 41.11350631713867
+      },
+      "Chaos - ablate awareness": {
+        "values": [
+          55.169090270996094,
+          666.3780517578125,
+          92.08045959472656
+        ],
+        "mean": 271.2092005411784
+      },
+      "Neutral - ablate task": {
+        "values": [
+          67.59178924560547,
+          497.75860595703125,
+          131.6621856689453
+        ],
+        "mean": 232.337526957194
+      }
+    },
+    "awareness_activations": {
+      "Neutral baseline": {
+        "values": [
+          63.33149719238281,
+          119.73107147216797,
+          79.5765151977539
+        ],
+        "mean": 87.54636128743489
+      },
+      "Chaos baseline": {
+        "values": [
+          1070.2198486328125,
+          866.5777587890625,
+          765.2883911132812
+        ],
+        "mean": 900.6953328450521
+      },
+      "Chaos - ablate awareness": {
+        "values": [
+          400.4092712402344,
+          581.5518188476562,
+          324.0178527832031
+        ],
+        "mean": 435.32631429036456
+      },
+      "Neutral - ablate task": {
+        "values": [
+          262.91650390625,
+          20.542194366455078,
+          332.8120422363281
+        ],
+        "mean": 205.42358016967773
+      }
+    },
+    "suppression": 0.9189738190397692,
+    "recovery_from_ablation": 0.4934534684664547
+  }
+}

@@ -1,0 +1,115 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+[CONFIG] Device: cuda
+[CONFIG] Layer: 41
+[CONFIG] Task features: [1716, 12023, 1704, 1555, 1548]
+[CONFIG] Trials: 20
+[CONFIG] Bootstrap resamples: 10000
+[MODEL] Loading google/gemma-3-12b-it on cuda...
+Loading weights:   0%|          | 0/1065 [00:00<?, ?it/s]Loading weights:   0%|          | 1/1065 [00:00<02:31,  7.01it/s]Loading weights:   2%|▏         | 18/1065 [00:00<00:12, 85.07it/s]Loading weights:   4%|▍         | 43/1065 [00:00<00:06, 148.79it/s]Loading weights:   6%|▋         | 67/1065 [00:00<00:05, 178.19it/s]Loading weights:   9%|▊         | 91/1065 [00:00<00:04, 196.75it/s]Loading weights:  11%|█         | 112/1065 [00:00<00:04, 193.58it/s]Loading weights:  13%|█▎        | 134/1065 [00:00<00:04, 198.51it/s]Loading weights:  15%|█▍        | 159/1065 [00:00<00:04, 209.51it/s]Loading weights:  17%|█▋        | 182/1065 [00:00<00:04, 213.47it/s]Loading weights:  19%|█▉        | 204/1065 [00:01<00:04, 204.87it/s]Loading weights:  21%|██        | 226/1065 [00:01<00:04, 200.62it/s]Loading weights:  24%|██▎       | 251/1065 [00:01<00:03, 211.26it/s]Loading weights:  26%|██▌       | 276/1065 [00:01<00:03, 218.72it/s]Loading weights:  28%|██▊       | 299/1065 [00:01<00:03, 219.85it/s]Loading weights:  30%|███       | 322/1065 [00:01<00:03, 212.21it/s]Loading weights:  32%|███▏      | 344/1065 [00:01<00:03, 205.46it/s]Loading weights:  34%|███▍      | 367/1065 [00:01<00:03, 208.85it/s]Loading weights:  37%|███▋      | 393/1065 [00:01<00:03, 219.64it/s]Loading weights:  39%|███▉      | 416/1065 [00:02<00:02, 219.46it/s]Loading weights:  41%|████      | 439/1065 [00:02<00:02, 214.34it/s]Loading weights:  43%|████▎     | 461/1065 [00:02<00:02, 205.57it/s]Loading weights:  46%|████▌     | 485/1065 [00:02<00:02, 211.81it/s]Loading weights:  48%|████▊     | 510/1065 [00:02<00:02, 219.34it/s]Loading weights:  50%|█████     | 533/1065 [00:02<00:02, 219.90it/s]Loading weights:  52%|█████▏    | 556/1065 [00:02<00:02, 212.13it/s]Loading weights:  54%|█████▍    | 578/1065 [00:02<00:02, 205.99it/s]Loading weights:  57%|█████▋    | 602/1065 [00:02<00:02, 212.68it/s]Loading weights:  61%|██████▏   | 653/1065 [00:03<00:01, 296.21it/s]Loading weights:  92%|█████████▏| 975/1065 [00:03<00:00, 1132.29it/s]Loading weights: 100%|██████████| 1065/1065 [00:03<00:00, 332.76it/s]
+[MODEL] Loaded. Parameters: 12.2B
+[SAE] Loading gemma-scope-2-12b-it-res / layer_41_width_16k_l0_medium
+[SAE] Loaded: 16384 features
+
+============================================================
+PHASE 1: Feature Extraction (20 trials)
+============================================================
+  Trial 1/20: neutral... chaos... done
+  Trial 2/20: neutral... chaos... done
+  Trial 3/20: neutral... chaos... done
+  Trial 4/20: neutral... chaos... done
+  Trial 5/20: neutral... chaos... done
+  Trial 6/20: neutral... chaos... done
+  Trial 7/20: neutral... chaos... done
+  Trial 8/20: neutral... chaos... done
+  Trial 9/20: neutral... chaos... done
+  Trial 10/20: neutral... chaos... done
+  Trial 11/20: neutral... chaos... done
+  Trial 12/20: neutral... chaos... done
+  Trial 13/20: neutral... chaos... done
+  Trial 14/20: neutral... chaos... done
+  Trial 15/20: neutral... chaos... done
+  Trial 16/20: neutral... chaos... done
+  Trial 17/20: neutral... chaos... done
+  Trial 18/20: neutral... chaos... done
+  Trial 19/20: neutral... chaos... done
+  Trial 20/20: neutral... chaos... done
+
+============================================================
+PHASE 2: Per-Trial Metrics
+============================================================
+  Trial 1: suppressed=7/57 (12.3%), task_supp=0.000, boosted=6
+  Trial 5: suppressed=4/61 (6.6%), task_supp=0.000, boosted=5
+  Trial 10: suppressed=4/59 (6.8%), task_supp=0.000, boosted=8
+  Trial 15: suppressed=16/56 (28.6%), task_supp=0.000, boosted=14
+  Trial 20: suppressed=13/61 (21.3%), task_supp=0.000, boosted=13
+
+============================================================
+PHASE 3: Aggregate Statistics
+============================================================
+
+  Total suppression %:
+    Mean: 0.1241 (std: 0.0552)
+    Median: 0.1110 (IQR: [0.0925, 0.1387])
+    95% Bootstrap CI: [0.1024, 0.1495]
+
+  Top-5 task feature suppression ratio:
+    Mean: 0.0000 (std: 0.0000)
+    Median: 0.0000 (IQR: [0.0000, 0.0000])
+    95% Bootstrap CI: [0.0000, 0.0000]
+
+  Awareness boost total:
+    Mean: 9952.7376 (std: 4180.3661)
+    Median: 9950.9649 (IQR: [6456.4993, 12472.1726])
+    95% Bootstrap CI: [8245.4577, 11829.6944]
+
+============================================================
+PHASE 4: Per-Feature Paired t-Tests
+============================================================
+
+   Feature   Mean_N   Mean_C     Diff        t          p        d    CI_lo    CI_hi
+  ----------------------------------------------------------------------------------
+      1716   0.0000   0.0000   0.0000      nan        nan    0.000   0.0000   0.0000 ns
+     12023   0.0000   0.0000   0.0000      nan        nan    0.000   0.0000   0.0000 ns
+      1704   0.0000   0.0000   0.0000      nan        nan    0.000   0.0000   0.0000 ns
+      1555   0.0000   0.0000   0.0000      nan        nan    0.000   0.0000   0.0000 ns
+      1548   0.0000   0.0000   0.0000      nan        nan    0.000   0.0000   0.0000 ns
+
+  Bonferroni correction (alpha = 0.0100): 0/5 significant
+
+============================================================
+PHASE 5: Data-Driven Feature Discovery + Recovery Analysis
+============================================================
+  Auto-discovered top-20 suppressed: [12790, 261, 7528, 104, 6040, 297, 1462, 3296, 8987, 2889, 4155, 1492, 11781, 2914, 1118, 367, 1198, 664, 2979, 1102]
+  Known task features: [1716, 12023, 1704, 1555, 1548]
+  Overlap: 0/5 known features in auto-top-20: []
+  Top-20 feature recovery fraction: 0.3308
+  Per-trial recovery: mean=0.4075, 95% CI=[0.3712, 0.4409]
+
+============================================================
+PAPER-READY SUMMARY
+============================================================
+
+  Attentional Hijacking Statistical Analysis
+  Model: google/gemma-3-12b-it, Layer 41, GemmaScope 2 SAE (16k)
+  N = 20 prompt variant pairs
+
+  Overall Suppression:
+    Total suppression: 12.4% of active features (95% CI: [10.2%, 14.9%])
+    Task feature suppression: 0.0% (95% CI: [0.0%, 0.0%])
+
+  Per-Feature Tests (Bonferroni-corrected alpha = 0.0100):
+    0/5 features significant after Bonferroni
+    Mean Cohen's d = 0.000
+
+  Feature Recovery:
+    Top-20 suppressed features explain 40.8% of total activation difference
+    95% CI: [37.1%, 44.1%]
+
+    Feature 1716: d = 0.000, p = nan ns
+    Feature 12023: d = 0.000, p = nan ns
+    Feature 1704: d = 0.000, p = nan ns
+    Feature 1555: d = 0.000, p = nan ns
+    Feature 1548: d = 0.000, p = nan ns
+
+[SAVED] /home/ubuntu/ICML/h100_deploy/results/statistical_rigor_20260408_060255.json
+[DONE] Elapsed: 21.6s

@@ -1,0 +1,24 @@
+04:33:11 === FULL AUDIT v2 sha=2c82653 ===
+04:33:11 START ablation_feature_swap_4b
+04:34:01 END ablation_feature_swap_4b exit=0
+04:34:01 START ablation_activation_patching_4b
+04:35:47 END ablation_activation_patching_4b exit=0
+04:35:47 START ablation_attention_knockout_4b
+04:36:26 END ablation_attention_knockout_4b exit=0
+04:36:26 START h100_activation_patching_4b
+04:49:17 END h100_activation_patching_4b exit=0
+04:49:17 START held_out_4b
+04:50:10 END held_out_4b exit=0
+04:50:10 START multilayer_orthogonality_4b
+04:50:28 END multilayer_orthogonality_4b exit=0
+04:50:28 START statistical_rigor_4b
+04:50:46 END statistical_rigor_4b exit=0
+04:50:46 START cross_domain_4b
+04:51:13 END cross_domain_4b exit=0
+04:51:13 START behavioral_validation_4b
+05:04:03 END behavioral_validation_4b exit=0
+05:04:03 START escalation_12b
+05:10:13 END escalation_12b exit=0
+05:10:13 START behavioral_12b
+05:20:59 END behavioral_12b exit=0
+05:20:59 === AUDIT COMPLETE ===

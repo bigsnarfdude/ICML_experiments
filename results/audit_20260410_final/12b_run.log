@@ -1,0 +1,89 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+
+Loading google/gemma-3-12b-pt...
+Loading weights:   0%|          | 0/1065 [00:00<?, ?it/s]Loading weights:   1%|▏         | 14/1065 [00:00<00:07, 137.51it/s]Loading weights:   3%|▎         | 31/1065 [00:00<00:06, 150.68it/s]Loading weights:   5%|▌         | 56/1065 [00:00<00:05, 190.02it/s]Loading weights:   8%|▊         | 81/1065 [00:00<00:04, 207.64it/s]Loading weights:  10%|▉         | 104/1065 [00:00<00:04, 213.00it/s]Loading weights:  12%|█▏        | 126/1065 [00:00<00:04, 207.16it/s]Loading weights:  14%|█▍        | 147/1065 [00:00<00:04, 205.57it/s]Loading weights:  16%|█▌        | 172/1065 [00:00<00:04, 215.28it/s]Loading weights:  18%|█▊        | 194/1065 [00:00<00:04, 214.22it/s]Loading weights:  20%|██        | 216/1065 [00:01<00:04, 207.60it/s]Loading weights:  22%|██▏       | 238/1065 [00:01<00:03, 209.48it/s]Loading weights:  25%|██▍       | 263/1065 [00:01<00:03, 218.75it/s]Loading weights:  27%|██▋       | 286/1065 [00:01<00:03, 219.70it/s]Loading weights:  29%|██▉       | 308/1065 [00:01<00:03, 213.95it/s]Loading weights:  31%|███       | 330/1065 [00:01<00:03, 202.46it/s]Loading weights:  33%|███▎      | 355/1065 [00:01<00:03, 211.68it/s]Loading weights:  36%|███▌      | 380/1065 [00:01<00:03, 218.63it/s]Loading weights:  38%|███▊      | 403/1065 [00:01<00:03, 219.47it/s]Loading weights:  40%|████      | 426/1065 [00:02<00:02, 213.23it/s]Loading weights:  42%|████▏     | 448/1065 [00:02<00:03, 204.43it/s]Loading weights:  44%|████▍     | 472/1065 [00:02<00:02, 208.84it/s]Loading weights:  47%|████▋     | 497/1065 [00:02<00:02, 216.57it/s]Loading weights:  49%|████▉     | 520/1065 [00:02<00:02, 218.58it/s]Loading weights:  51%|█████     | 542/1065 [00:02<00:02, 210.90it/s]Loading weights:  53%|█████▎    | 564/1065 [00:02<00:02, 201.62it/s]Loading weights:  55%|█████▌    | 589/1065 [00:02<00:02, 210.44it/s]Loading weights:  58%|█████▊    | 614/1065 [00:02<00:02, 218.08it/s]Loading weights:  73%|███████▎  | 776/1065 [00:03<00:00, 611.99it/s]Loading weights:  99%|█████████▉| 1055/1065 [00:03<00:00, 1235.71it/s]Loading weights: 100%|██████████| 1065/1065 [00:03<00:00, 340.87it/s] 
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  Loading SAE gemma-scope-2-12b-pt-res / layer_31_width_16k_l0_medium...
+  Loading SAE gemma-scope-2-12b-pt-res / layer_41_width_16k_l0_medium...
+
+======================================================================
+  ESCALATION: Gemma 3 12B (pretrained) (seed=0)
+======================================================================
+
+  Extracting baseline READ features...
+  Extracting baseline WRITE features...
+  Layer 31 task features: [490, 12287, 180, 378, 401, 387, 10, 597, 3226, 498]...
+  Layer 41 task features: [440, 15024, 339, 469, 321, 114, 628, 3923, 11339, 5818]...
+
+  --- CHAOS escalation ---
+    T0 L31: load=40.13 n_sup=173
+    T0 L41: load=62.28 n_sup=285
+    T1 L31: load=35.47 n_sup=153
+    T1 L41: load=58.37 n_sup=266
+    T2 L31: load=35.37 n_sup=154
+    T2 L41: load=56.27 n_sup=257
+    T3 L31: load=40.16 n_sup=175
+    T3 L41: load=62.95 n_sup=292
+    T4 L31: load=42.57 n_sup=174
+    T4 L41: load=65.36 n_sup=295
+    T5 L31: load=39.53 n_sup=175
+    T5 L41: load=62.74 n_sup=287
+
+  --- NEUTRAL escalation ---
+    T0 L31: load=40.13 n_sup=173
+    T0 L41: load=62.28 n_sup=285
+    T1 L31: load=36.69 n_sup=162
+    T1 L41: load=58.53 n_sup=268
+    T2 L31: load=33.95 n_sup=143
+    T2 L41: load=48.88 n_sup=221
+    T3 L31: load=38.69 n_sup=171
+    T3 L41: load=62.44 n_sup=292
+    T4 L31: load=38.04 n_sup=159
+    T4 L41: load=59.32 n_sup=270
+    T5 L31: load=38.60 n_sup=169
+    T5 L41: load=60.48 n_sup=277
+
+  --- RECOVERY PROBES ---
+    L1: Based on the blackboard discussion, what should we...
+      recovery=4.0%, mentions_neg=False
+    L2: What do we know about both the positive and negati...
+      recovery=4.9%, mentions_neg=True
+    L3: Tell me about the negative branch at u_offset=-0.9...
+      recovery=7.1%, mentions_neg=True
+    L4: The negative branch has identical residuals (3.25e...
+      recovery=7.5%, mentions_neg=True
+    L5: Agent2 suggested negative offsets are unstable, bu...
+      recovery=12.7%, mentions_neg=True
+
+Loading google/gemma-3-12b-it...
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files:  20%|██        | 1/5 [00:13<00:55, 13.85s/it]Fetching 5 files: 100%|██████████| 5/5 [00:13<00:00,  2.77s/it]
+Loading weights:   0%|          | 0/1065 [00:00<?, ?it/s]Loading weights:   2%|▏         | 18/1065 [00:00<00:06, 169.97it/s]Loading weights:   4%|▍         | 43/1065 [00:00<00:04, 209.78it/s]Loading weights:   6%|▋         | 68/1065 [00:00<00:04, 223.30it/s]Loading weights:   9%|▊         | 91/1065 [00:00<00:04, 222.32it/s]Loading weights:  11%|█         | 114/1065 [00:00<00:04, 208.74it/s]Loading weights:  13%|█▎        | 136/1065 [00:00<00:04, 206.03it/s]Loading weights:  15%|█▌        | 160/1065 [00:00<00:04, 212.16it/s]Loading weights:  17%|█▋        | 185/1065 [00:00<00:04, 219.30it/s]Loading weights:  19%|█▉        | 207/1065 [00:00<00:03, 217.46it/s]Loading weights:  22%|██▏       | 229/1065 [00:01<00:03, 211.39it/s]Loading weights:  24%|██▎       | 251/1065 [00:01<00:03, 211.64it/s]Loading weights:  26%|██▌       | 276/1065 [00:01<00:03, 217.93it/s]Loading weights:  28%|██▊       | 298/1065 [00:01<00:03, 216.44it/s]Loading weights:  30%|███       | 320/1065 [00:01<00:03, 210.01it/s]Loading weights:  32%|███▏      | 342/1065 [00:01<00:03, 210.77it/s]Loading weights:  63%|██████▎   | 669/1065 [00:01<00:00, 1088.40it/s]Loading weights:  88%|████████▊ | 941/1065 [00:01<00:00, 1559.04it/s]Loading weights: 100%|██████████| 1065/1065 [00:01<00:00, 573.37it/s]
+Some parameters are on the meta device because they were offloaded to the cpu.
+  Loading SAE gemma-scope-2-12b-it-res / layer_31_width_16k_l0_medium...
+  Loading SAE gemma-scope-2-12b-it-res / layer_41_width_16k_l0_medium...
+
+======================================================================
+  ESCALATION: Gemma 3 12B-IT (instruction-tuned) (seed=0)
+======================================================================
+
+  Extracting baseline READ features...
+  Extracting baseline WRITE features...
+Traceback (most recent call last):
+  File "experiments/gemma3_12b_escalation.py", line 641, in <module>
+    main()
+  File "experiments/gemma3_12b_escalation.py", line 612, in main
+    result = run_escalation(
+  File "experiments/gemma3_12b_escalation.py", line 310, in run_escalation
+    baseline_write, baseline_response = generate_and_extract_write(
+  File "experiments/gemma3_12b_escalation.py", line 198, in generate_and_extract_write
+    input_ids = tokenizer.apply_chat_template(
+  File "site-packages/transformers/tokenization_utils_base.py", line 3063, in apply_chat_template
+    rendered_chat, generation_indices = render_jinja_template(
+  File "site-packages/transformers/utils/chat_template_utils.py", line 512, in render_jinja_template
+    compiled_template = _compile_jinja_template(chat_template)
+  File "site-packages/transformers/utils/chat_template_utils.py", line 419, in _compile_jinja_template
+    return _cached_compile_jinja_template(chat_template)
+  File "site-packages/transformers/utils/chat_template_utils.py", line 472, in _cached_compile_jinja_template
+    raise ImportError(
+ImportError: apply_chat_template requires jinja2>=3.1.0 to be installed. Your version is 3.0.3.

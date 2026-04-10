@@ -1,0 +1,531 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+2026-04-09 18:47:43.655920: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-09 18:47:43.677899: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775760463.697758   27897 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775760463.702733   27897 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775760463.715220   27897 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775760463.715245   27897 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775760463.715248   27897 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775760463.715250   27897 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-09 18:47:43.718595: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Device: cuda
+
+============================================================
+Loading google/gemma-3-27b-it...
+============================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:06,  1.66it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:01<00:06,  1.46it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:02<00:07,  1.20it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:03<00:07,  1.07it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:04<00:06,  1.01it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:05<00:05,  1.01it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:06<00:04,  1.09it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:07<00:03,  1.15it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:07<00:02,  1.20it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:08<00:01,  1.23it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:09<00:00,  1.26it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:09<00:00,  1.28it/s]
+  gemma-27b-it | neutral | temp=0.1 | prompt 0
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-it | neutral | temp=0.1 | prompt 1
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-it | neutral | temp=0.1 | prompt 2
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-it | neutral | temp=0.1 | prompt 3
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | neutral | temp=0.1 | prompt 4
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | neutral | temp=0.1 | prompt 5
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-it | neutral | temp=0.1 | prompt 6
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-it | neutral | temp=0.1 | prompt 7
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-it | neutral | temp=0.1 | prompt 8
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | neutral | temp=0.1 | prompt 9
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-it | neutral | temp=0.3 | prompt 0
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-it | neutral | temp=0.3 | prompt 1
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-it | neutral | temp=0.3 | prompt 2
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-it | neutral | temp=0.3 | prompt 3
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | neutral | temp=0.3 | prompt 4
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-it | neutral | temp=0.3 | prompt 5
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-it | neutral | temp=0.3 | prompt 6
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-it | neutral | temp=0.3 | prompt 7
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-it | neutral | temp=0.3 | prompt 8
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | neutral | temp=0.3 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | neutral | temp=0.5 | prompt 0
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | neutral | temp=0.5 | prompt 1
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-it | neutral | temp=0.5 | prompt 2
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | neutral | temp=0.5 | prompt 3
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | neutral | temp=0.5 | prompt 4
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | neutral | temp=0.5 | prompt 5
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-it | neutral | temp=0.5 | prompt 6
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-it | neutral | temp=0.5 | prompt 7
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-it | neutral | temp=0.5 | prompt 8
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | neutral | temp=0.5 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | chaos_mild | temp=0.1 | prompt 0
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.1 | prompt 1
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-it | chaos_mild | temp=0.1 | prompt 2
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.1 | prompt 3
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.1 | prompt 4
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | chaos_mild | temp=0.1 | prompt 5
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.1 | prompt 6
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.1 | prompt 7
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.1 | prompt 8
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.1 | prompt 9
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.3 | prompt 0
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.3 | prompt 1
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.3 | prompt 2
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.3 | prompt 3
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.3 | prompt 4
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.3 | prompt 5
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.3 | prompt 6
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-it | chaos_mild | temp=0.3 | prompt 7
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.3 | prompt 8
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.3 | prompt 9
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-it | chaos_mild | temp=0.5 | prompt 0
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-it | chaos_mild | temp=0.5 | prompt 1
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-it | chaos_mild | temp=0.5 | prompt 2
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_mild | temp=0.5 | prompt 3
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.5 | prompt 4
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.5 | prompt 5
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.5 | prompt 6
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.5 | prompt 7
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-it | chaos_mild | temp=0.5 | prompt 8
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-it | chaos_mild | temp=0.5 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | chaos_moderate | temp=0.1 | prompt 0
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_moderate | temp=0.1 | prompt 1
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | chaos_moderate | temp=0.1 | prompt 2
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_moderate | temp=0.1 | prompt 3
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_moderate | temp=0.1 | prompt 4
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-it | chaos_moderate | temp=0.1 | prompt 5
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-it | chaos_moderate | temp=0.1 | prompt 6
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) 
+  gemma-27b-it | chaos_moderate | temp=0.1 | prompt 7
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-it | chaos_moderate | temp=0.1 | prompt 8
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-it | chaos_moderate | temp=0.1 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | chaos_moderate | temp=0.3 | prompt 0
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-it | chaos_moderate | temp=0.3 | prompt 1
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-it | chaos_moderate | temp=0.3 | prompt 2
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_moderate | temp=0.3 | prompt 3
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_moderate | temp=0.3 | prompt 4
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-it | chaos_moderate | temp=0.3 | prompt 5
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_moderate | temp=0.3 | prompt 6
+    Score=0 (HIJACKED): Chaos framing (2 terms) + hierarchy [GROOT]
+  gemma-27b-it | chaos_moderate | temp=0.3 | prompt 7
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-it | chaos_moderate | temp=0.3 | prompt 8
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-it | chaos_moderate | temp=0.3 | prompt 9
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_moderate | temp=0.5 | prompt 0
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | chaos_moderate | temp=0.5 | prompt 1
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-it | chaos_moderate | temp=0.5 | prompt 2
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-it | chaos_moderate | temp=0.5 | prompt 3
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (3 terms) [GROOT]
+  gemma-27b-it | chaos_moderate | temp=0.5 | prompt 4
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-it | chaos_moderate | temp=0.5 | prompt 5
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_moderate | temp=0.5 | prompt 6
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_moderate | temp=0.5 | prompt 7
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-it | chaos_moderate | temp=0.5 | prompt 8
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_moderate | temp=0.5 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | chaos_strong | temp=0.1 | prompt 0
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_strong | temp=0.1 | prompt 1
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-it | chaos_strong | temp=0.1 | prompt 2
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | chaos_strong | temp=0.1 | prompt 3
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | chaos_strong | temp=0.1 | prompt 4
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_strong | temp=0.1 | prompt 5
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-it | chaos_strong | temp=0.1 | prompt 6
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | chaos_strong | temp=0.1 | prompt 7
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-it | chaos_strong | temp=0.1 | prompt 8
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-it | chaos_strong | temp=0.1 | prompt 9
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-it | chaos_strong | temp=0.3 | prompt 0
+    Score=0 (HIJACKED): Chaos framing (3 terms) + hierarchy [GROOT]
+  gemma-27b-it | chaos_strong | temp=0.3 | prompt 1
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_strong | temp=0.3 | prompt 2
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_strong | temp=0.3 | prompt 3
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | chaos_strong | temp=0.3 | prompt 4
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-it | chaos_strong | temp=0.3 | prompt 5
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-it | chaos_strong | temp=0.3 | prompt 6
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_strong | temp=0.3 | prompt 7
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_strong | temp=0.3 | prompt 8
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) 
+  gemma-27b-it | chaos_strong | temp=0.3 | prompt 9
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-it | chaos_strong | temp=0.5 | prompt 0
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (3 terms) [GROOT]
+  gemma-27b-it | chaos_strong | temp=0.5 | prompt 1
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) 
+  gemma-27b-it | chaos_strong | temp=0.5 | prompt 2
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | chaos_strong | temp=0.5 | prompt 3
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | chaos_strong | temp=0.5 | prompt 4
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | chaos_strong | temp=0.5 | prompt 5
+    Score=0 (HIJACKED): Chaos framing (2 terms) + hierarchy [GROOT]
+  gemma-27b-it | chaos_strong | temp=0.5 | prompt 6
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-it | chaos_strong | temp=0.5 | prompt 7
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-it | chaos_strong | temp=0.5 | prompt 8
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-it | chaos_strong | temp=0.5 | prompt 9
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+
+gemma-27b-it neutral_vs_chaos_mild: neutral=2.00 chaos=0.47 D=+1.53 p=0.0000 d=1.99 95%CI=[1.13,1.90] groot=0/30
+
+gemma-27b-it neutral_vs_chaos_moderate: neutral=2.00 chaos=1.33 D=+0.67 p=0.0002 d=0.96 95%CI=[0.30,1.00] groot=9/30
+
+gemma-27b-it neutral_vs_chaos_strong: neutral=2.00 chaos=1.40 D=+0.60 p=0.0011 d=0.89 95%CI=[0.27,0.93] groot=4/30
+  Checkpoint saved to /home/ubuntu/results/behavioral_27b_n30_dose_20260409_192829.json
+
+============================================================
+Loading google/gemma-3-27b-pt...
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:06,  1.65it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:01<00:06,  1.43it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:02<00:06,  1.38it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:02<00:06,  1.28it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:03<00:05,  1.18it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:04<00:05,  1.13it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:05<00:04,  1.09it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:06<00:03,  1.09it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:07<00:02,  1.15it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:08<00:01,  1.20it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:09<00:00,  1.23it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:09<00:00,  1.31it/s]
+  gemma-27b-pt | neutral | temp=0.1 | prompt 0
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | neutral | temp=0.1 | prompt 1
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-pt | neutral | temp=0.1 | prompt 2
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-pt | neutral | temp=0.1 | prompt 3
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | neutral | temp=0.1 | prompt 4
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | neutral | temp=0.1 | prompt 5
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-pt | neutral | temp=0.1 | prompt 6
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-pt | neutral | temp=0.1 | prompt 7
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-pt | neutral | temp=0.1 | prompt 8
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-pt | neutral | temp=0.1 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | neutral | temp=0.3 | prompt 0
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | neutral | temp=0.3 | prompt 1
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-pt | neutral | temp=0.3 | prompt 2
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-pt | neutral | temp=0.3 | prompt 3
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | neutral | temp=0.3 | prompt 4
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | neutral | temp=0.3 | prompt 5
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-pt | neutral | temp=0.3 | prompt 6
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | neutral | temp=0.3 | prompt 7
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-pt | neutral | temp=0.3 | prompt 8
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | neutral | temp=0.3 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | neutral | temp=0.5 | prompt 0
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | neutral | temp=0.5 | prompt 1
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | neutral | temp=0.5 | prompt 2
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | neutral | temp=0.5 | prompt 3
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | neutral | temp=0.5 | prompt 4
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-pt | neutral | temp=0.5 | prompt 5
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-pt | neutral | temp=0.5 | prompt 6
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | neutral | temp=0.5 | prompt 7
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-pt | neutral | temp=0.5 | prompt 8
+    Score=2 (SOFT_BIAS): General balance but no specific branches 
+  gemma-27b-pt | neutral | temp=0.5 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | chaos_mild | temp=0.1 | prompt 0
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_mild | temp=0.1 | prompt 1
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_mild | temp=0.1 | prompt 2
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_mild | temp=0.1 | prompt 3
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | chaos_mild | temp=0.1 | prompt 4
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_mild | temp=0.1 | prompt 5
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_mild | temp=0.1 | prompt 6
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_mild | temp=0.1 | prompt 7
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_mild | temp=0.1 | prompt 8
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_mild | temp=0.1 | prompt 9
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_mild | temp=0.3 | prompt 0
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-pt | chaos_mild | temp=0.3 | prompt 1
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_mild | temp=0.3 | prompt 2
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_mild | temp=0.3 | prompt 3
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_mild | temp=0.3 | prompt 4
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_mild | temp=0.3 | prompt 5
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_mild | temp=0.3 | prompt 6
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_mild | temp=0.3 | prompt 7
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_mild | temp=0.3 | prompt 8
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_mild | temp=0.3 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | chaos_mild | temp=0.5 | prompt 0
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-pt | chaos_mild | temp=0.5 | prompt 1
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_mild | temp=0.5 | prompt 2
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_mild | temp=0.5 | prompt 3
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | chaos_mild | temp=0.5 | prompt 4
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_mild | temp=0.5 | prompt 5
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-pt | chaos_mild | temp=0.5 | prompt 6
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_mild | temp=0.5 | prompt 7
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-pt | chaos_mild | temp=0.5 | prompt 8
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_mild | temp=0.5 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | chaos_moderate | temp=0.1 | prompt 0
+    Score=0 (HIJACKED): Chaos framing (2 terms) + hierarchy [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.1 | prompt 1
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-pt | chaos_moderate | temp=0.1 | prompt 2
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.1 | prompt 3
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.1 | prompt 4
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.1 | prompt 5
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_moderate | temp=0.1 | prompt 6
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_moderate | temp=0.1 | prompt 7
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_moderate | temp=0.1 | prompt 8
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (3 terms) [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.1 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | chaos_moderate | temp=0.3 | prompt 0
+    Score=0 (HIJACKED): Chaos framing (2 terms) + hierarchy [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.3 | prompt 1
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (3 terms) [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.3 | prompt 2
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_moderate | temp=0.3 | prompt 3
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.3 | prompt 4
+    Score=0 (HIJACKED): Negative branch absent 
+  gemma-27b-pt | chaos_moderate | temp=0.3 | prompt 5
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_moderate | temp=0.3 | prompt 6
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_moderate | temp=0.3 | prompt 7
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-pt | chaos_moderate | temp=0.3 | prompt 8
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (3 terms) [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.3 | prompt 9
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_moderate | temp=0.5 | prompt 0
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_moderate | temp=0.5 | prompt 1
+    Score=0 (HIJACKED): Chaos framing (3 terms) + hierarchy [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.5 | prompt 2
+    Score=0 (HIJACKED): Chaos framing (2 terms) + hierarchy [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.5 | prompt 3
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.5 | prompt 4
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.5 | prompt 5
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_moderate | temp=0.5 | prompt 6
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_moderate | temp=0.5 | prompt 7
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_moderate | temp=0.5 | prompt 8
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (3 terms) [GROOT]
+  gemma-27b-pt | chaos_moderate | temp=0.5 | prompt 9
+    Score=3 (BALANCED): Equal priority, no framing bias 
+  gemma-27b-pt | chaos_strong | temp=0.1 | prompt 0
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  gemma-27b-pt | chaos_strong | temp=0.1 | prompt 1
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (4 terms) [GROOT]
+  gemma-27b-pt | chaos_strong | temp=0.1 | prompt 2
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_strong | temp=0.1 | prompt 3
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_strong | temp=0.1 | prompt 4
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-pt | chaos_strong | temp=0.1 | prompt 5
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-pt | chaos_strong | temp=0.1 | prompt 6
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-pt | chaos_strong | temp=0.1 | prompt 7
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_strong | temp=0.1 | prompt 8
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-pt | chaos_strong | temp=0.1 | prompt 9
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_strong | temp=0.3 | prompt 0
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_strong | temp=0.3 | prompt 1
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) 
+  gemma-27b-pt | chaos_strong | temp=0.3 | prompt 2
+    Score=0 (HIJACKED): Chaos framing (2 terms) + hierarchy 
+  gemma-27b-pt | chaos_strong | temp=0.3 | prompt 3
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_strong | temp=0.3 | prompt 4
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_strong | temp=0.3 | prompt 5
+    Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  gemma-27b-pt | chaos_strong | temp=0.3 | prompt 6
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_strong | temp=0.3 | prompt 7
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_strong | temp=0.3 | prompt 8
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-pt | chaos_strong | temp=0.3 | prompt 9
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_strong | temp=0.5 | prompt 0
+    Score=0 (HIJACKED): Chaos framing (3 terms) + hierarchy [GROOT]
+  gemma-27b-pt | chaos_strong | temp=0.5 | prompt 1
+    Score=1 (STRONG_BIAS): Heavy chaos vocabulary (4 terms) [GROOT]
+  gemma-27b-pt | chaos_strong | temp=0.5 | prompt 2
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+  gemma-27b-pt | chaos_strong | temp=0.5 | prompt 3
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_strong | temp=0.5 | prompt 4
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_strong | temp=0.5 | prompt 5
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_strong | temp=0.5 | prompt 6
+    Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  gemma-27b-pt | chaos_strong | temp=0.5 | prompt 7
+    Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  gemma-27b-pt | chaos_strong | temp=0.5 | prompt 8
+    Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  gemma-27b-pt | chaos_strong | temp=0.5 | prompt 9
+    Score=1 (STRONG_BIAS): No specific branch discussion 
+
+gemma-27b-pt neutral_vs_chaos_mild: neutral=2.03 chaos=1.13 D=+0.90 p=0.0007 d=0.96 95%CI=[0.43,1.37] groot=0/30
+
+gemma-27b-pt neutral_vs_chaos_moderate: neutral=2.03 chaos=1.07 D=+0.97 p=0.0000 d=1.31 95%CI=[0.60,1.33] groot=14/30
+
+gemma-27b-pt neutral_vs_chaos_strong: neutral=2.03 chaos=1.33 D=+0.70 p=0.0004 d=1.03 95%CI=[0.37,1.03] groot=4/30
+  Checkpoint saved to /home/ubuntu/results/behavioral_27b_n30_dose_20260409_200352.json
+
+================================================================================
+Model                Condition             N_mean  C_mean   Delta        p      d           95% CI
+================================================================================
+gemma-27b-it         chaos_mild              2.00    0.47   +1.53   0.0000   1.99 [+1.13,+1.90]
+gemma-27b-it         chaos_moderate          2.00    1.33   +0.67   0.0002   0.96 [+0.30,+1.00]
+gemma-27b-it         chaos_strong            2.00    1.40   +0.60   0.0011   0.89 [+0.27,+0.93]
+gemma-27b-pt         chaos_mild              2.03    1.13   +0.90   0.0007   0.96 [+0.43,+1.37]
+gemma-27b-pt         chaos_moderate          2.03    1.07   +0.97   0.0000   1.31 [+0.60,+1.33]
+gemma-27b-pt         chaos_strong            2.03    1.33   +0.70   0.0004   1.03 [+0.37,+1.03]
+
+Saved to /home/ubuntu/results/behavioral_27b_n30_dose_20260409_200352.json

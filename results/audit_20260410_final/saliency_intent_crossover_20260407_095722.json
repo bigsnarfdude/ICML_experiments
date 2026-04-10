@@ -1,0 +1,238 @@
+{
+  "timestamp": "20260407_095722",
+  "chaos_source": "Gemma 3 4B, L22, GemmaScope 2 SAE 16K",
+  "af_probe_source": "Gemma 3 27B, L40, GemmaScope 2 SAE 16K",
+  "caveat": "Cross-model \u2014 pattern overlap only, not geometric alignment",
+  "overlap_by_k": {
+    "20": {
+      "top_k": 20,
+      "total_features": 16384,
+      "overlap_absolute": {
+        "count": 1,
+        "expected_by_chance": 0.0244140625,
+        "enrichment": 40.96,
+        "features": [
+          "1750"
+        ]
+      },
+      "overlap_af_positive": {
+        "count": 1,
+        "expected_by_chance": 0.0244140625,
+        "enrichment": 40.96,
+        "features": [
+          "1750"
+        ],
+        "interpretation": "Features suppressed by chaos AND encoding AF intent"
+      },
+      "overlap_af_negative": {
+        "count": 0,
+        "expected_by_chance": 0.0244140625,
+        "enrichment": 0.0,
+        "features": [],
+        "interpretation": "Features suppressed by chaos AND encoding non-AF / honesty"
+      }
+    },
+    "50": {
+      "top_k": 50,
+      "total_features": 16384,
+      "overlap_absolute": {
+        "count": 2,
+        "expected_by_chance": 0.152587890625,
+        "enrichment": 13.1072,
+        "features": [
+          "569",
+          "1750"
+        ]
+      },
+      "overlap_af_positive": {
+        "count": 2,
+        "expected_by_chance": 0.152587890625,
+        "enrichment": 13.1072,
+        "features": [
+          "569",
+          "1750"
+        ],
+        "interpretation": "Features suppressed by chaos AND encoding AF intent"
+      },
+      "overlap_af_negative": {
+        "count": 1,
+        "expected_by_chance": 0.152587890625,
+        "enrichment": 6.5536,
+        "features": [
+          "4004"
+        ],
+        "interpretation": "Features suppressed by chaos AND encoding non-AF / honesty"
+      }
+    },
+    "100": {
+      "top_k": 100,
+      "total_features": 16384,
+      "overlap_absolute": {
+        "count": 2,
+        "expected_by_chance": 0.6103515625,
+        "enrichment": 3.2768,
+        "features": [
+          "569",
+          "1750"
+        ]
+      },
+      "overlap_af_positive": {
+        "count": 3,
+        "expected_by_chance": 0.6103515625,
+        "enrichment": 4.9152,
+        "features": [
+          "569",
+          "1120",
+          "1750"
+        ],
+        "interpretation": "Features suppressed by chaos AND encoding AF intent"
+      },
+      "overlap_af_negative": {
+        "count": 2,
+        "expected_by_chance": 0.6103515625,
+        "enrichment": 3.2768,
+        "features": [
+          "4004",
+          "10918"
+        ],
+        "interpretation": "Features suppressed by chaos AND encoding non-AF / honesty"
+      }
+    },
+    "200": {
+      "top_k": 200,
+      "total_features": 16384,
+      "overlap_absolute": {
+        "count": 5,
+        "expected_by_chance": 2.44140625,
+        "enrichment": 2.048,
+        "features": [
+          "569",
+          "1120",
+          "1750",
+          "4004",
+          "10977"
+        ]
+      },
+      "overlap_af_positive": {
+        "count": 4,
+        "expected_by_chance": 2.44140625,
+        "enrichment": 1.6384,
+        "features": [
+          "569",
+          "1120",
+          "1750",
+          "10977"
+        ],
+        "interpretation": "Features suppressed by chaos AND encoding AF intent"
+      },
+      "overlap_af_negative": {
+        "count": 3,
+        "expected_by_chance": 2.44140625,
+        "enrichment": 1.2288,
+        "features": [
+          "4004",
+          "10918",
+          "10986"
+        ],
+        "interpretation": "Features suppressed by chaos AND encoding non-AF / honesty"
+      }
+    },
+    "500": {
+      "top_k": 500,
+      "total_features": 16384,
+      "overlap_absolute": {
+        "count": 15,
+        "expected_by_chance": 15.2587890625,
+        "enrichment": 0.98304,
+        "features": [
+          "569",
+          "934",
+          "1120",
+          "1750",
+          "4004",
+          "10854",
+          "10891",
+          "10896",
+          "10918",
+          "10977",
+          "11005",
+          "11029",
+          "11164",
+          "11220",
+          "11251"
+        ]
+      },
+      "overlap_af_positive": {
+        "count": 14,
+        "expected_by_chance": 15.2587890625,
+        "enrichment": 0.917504,
+        "features": [
+          "569",
+          "934",
+          "1086",
+          "1120",
+          "1750",
+          "10827",
+          "10854",
+          "10896",
+          "10952",
+          "10977",
+          "11005",
+          "11029",
+          "11220",
+          "11251"
+        ],
+        "interpretation": "Features suppressed by chaos AND encoding AF intent"
+      },
+      "overlap_af_negative": {
+        "count": 15,
+        "expected_by_chance": 15.2587890625,
+        "enrichment": 0.98304,
+        "features": [
+          "1993",
+          "4004",
+          "10789",
+          "10891",
+          "10918",
+          "10959",
+          "10980",
+          "10986",
+          "10992",
+          "11003",
+          "11068",
+          "11164",
+          "11188",
+          "11207",
+          "11250"
+        ],
+        "interpretation": "Features suppressed by chaos AND encoding non-AF / honesty"
+      }
+    }
+  },
+  "directional": {
+    "cosine_diff_vs_af": -0.002463478730024102,
+    "cosine_effect_vs_af": 0.0009775919092573882,
+    "af_projection": {
+      "neutral_score": 90.82549124740078,
+      "chaos_score": 88.64863972382308,
+      "shift": -2.176851523577696,
+      "interpretation": "Positive shift = chaos moves representation TOWARD AF direction. Negative shift = chaos moves AWAY from AF direction."
+    },
+    "spearman_active": {
+      "rho": -0.09735410799725278,
+      "p_value": 0.37253525310698044,
+      "n_active_features": 86,
+      "interpretation": "Positive rho = features suppressed by chaos tend to have positive AF probe weights (encode AF intent). Negative rho = suppressed features tend to be anti-AF."
+    },
+    "spearman_full": {
+      "rho": -0.001298705903876423,
+      "p_value": 0.8679824492930593
+    }
+  },
+  "permutation_test": {
+    "observed_overlap": 2,
+    "p_value": 0.0112988701129887,
+    "n_permutations": 10000,
+    "significant": true
+  }
+}

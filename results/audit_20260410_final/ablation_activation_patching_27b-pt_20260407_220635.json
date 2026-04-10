@@ -1,0 +1,113 @@
+{
+  "neutral_response": " to investigate the basin boundary.\n\n## Research Scientist's Notes\n\n### 1.0.0\n- Initial version\n- Added a new agent to the project\n- Added a new experiment to the project\n- Added a new result to the project\n- Added a new analysis to the project\n- Added a new note to the project\n- Added a new task to the project\n- Added a new priority to the project\n- Added a new status to the project\n- Added a new type to the project\n- Added a new category to the project\n- Added a new tag to the project\n- Added ",
+  "chaos_response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to determine the stability of the positive branch.\n3. If the positive branch is stable, explore the basin boundary between the positive and negative branches.\n4. If the positive branch is unstable, explore",
+  "top_suppressed": [
+    616,
+    269,
+    227,
+    12959,
+    7026,
+    1941,
+    382,
+    403,
+    1914,
+    133,
+    1600,
+    2121,
+    1208,
+    464,
+    397,
+    2186,
+    11390,
+    3527,
+    1835,
+    400
+  ],
+  "patches": [
+    {
+      "layer": 0,
+      "mean_recovery": 0.048003878294182366,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    },
+    {
+      "layer": 5,
+      "mean_recovery": 0.05158611832249562,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    },
+    {
+      "layer": 10,
+      "mean_recovery": 0.0,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    },
+    {
+      "layer": 15,
+      "mean_recovery": 0.05158611832249562,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    },
+    {
+      "layer": 20,
+      "mean_recovery": 0.048003878294182366,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    },
+    {
+      "layer": 25,
+      "mean_recovery": 0.0,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    },
+    {
+      "layer": 30,
+      "mean_recovery": 0.0,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    },
+    {
+      "layer": 35,
+      "mean_recovery": 0.0,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    },
+    {
+      "layer": 40,
+      "mean_recovery": 0.05158611832249562,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    },
+    {
+      "layer": 45,
+      "mean_recovery": 0.05158611832249562,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    },
+    {
+      "layer": 50,
+      "mean_recovery": 0.048003878294182366,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    },
+    {
+      "layer": 55,
+      "mean_recovery": 0.0,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    },
+    {
+      "layer": 60,
+      "mean_recovery": 0.05158611832249562,
+      "mentions_negative": true,
+      "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to de"
+    }
+  ],
+  "analysis": {
+    "best_layer": 5,
+    "best_recovery": 0.05158611832249562,
+    "early_mean": 0.03983599864667119,
+    "mid_mean": 0.012896529580623905,
+    "late_mean": 0.0377940287347934
+  }
+}

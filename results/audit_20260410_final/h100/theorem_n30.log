@@ -1,0 +1,105 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-04-10 00:45:24.165891: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-10 00:45:24.179979: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775781924.196439   43330 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775781924.201131   43330 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775781924.210406   43330 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775781924.210423   43330 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775781924.210425   43330 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775781924.210427   43330 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-10 00:45:24.213107: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Device: cuda
+FTM Jenga theorem-n30 @ google/gemma-3-27b-it L40
+  Task features (BVP-frozen): [423, 7657, 632]
+  theorem_attack n=30  theorem_control n=30
+  built attack=30 control=30
+
+Loading google/gemma-3-27b-it...
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:08,  1.25it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:01<00:07,  1.29it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:02<00:06,  1.31it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:03<00:06,  1.32it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:03<00:05,  1.33it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:04<00:04,  1.33it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:05<00:03,  1.33it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:06<00:02,  1.34it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:06<00:02,  1.33it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:07<00:01,  1.33it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:08<00:00,  1.33it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:08<00:00,  1.43it/s]
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading SAE: gemma-scope-2-27b-it-res / layer_40_width_16k_l0_medium
+SAE loaded (d_sae=16384)
+
+=== THEOREM ATTACK (n=30) ===
+  theo_att 00: base=  186.5 last=   58.8 z= -1.21 drop= -127.7
+  theo_att 01: base=  182.4 last=   11.0 z= -1.45 drop= -171.3
+  theo_att 02: base=  180.0 last=   33.3 z= -1.71 drop= -146.7
+  theo_att 03: base=  112.9 last=   20.9 z= -0.96 drop=  -92.0
+  theo_att 04: base=   74.6 last=   68.1 z= -0.18 drop=   -6.5
+  theo_att 05: base=  132.1 last=   46.5 z= -0.80 drop=  -85.6
+  theo_att 06: base=  144.4 last=  146.0 z= +0.02 drop=   +1.6
+  theo_att 07: base=  153.6 last=   57.0 z= -0.79 drop=  -96.6
+  theo_att 08: base=   89.0 last=    6.2 z= -0.75 drop=  -82.8
+  theo_att 09: base=  132.4 last=    7.4 z= -1.08 drop= -124.9
+  theo_att 10: base=  244.6 last=    3.3 z= -2.03 drop= -241.3
+  theo_att 11: base=  119.3 last=   27.1 z= -1.35 drop=  -92.1
+  theo_att 12: base=  233.0 last=   17.5 z= -2.74 drop= -215.5
+  theo_att 13: base=  202.1 last=  104.5 z= -0.81 drop=  -97.7
+  theo_att 14: base=   63.7 last=   11.9 z= -0.95 drop=  -51.7
+  theo_att 15: base=  220.8 last=   27.9 z= -0.70 drop= -192.9
+  theo_att 16: base=  164.8 last=   23.6 z= -1.19 drop= -141.1
+  theo_att 17: base=   55.6 last=   13.8 z= -1.08 drop=  -41.8
+  theo_att 18: base=  116.7 last=    4.3 z= -1.27 drop= -112.3
+  theo_att 19: base=  180.9 last=   75.8 z= -1.88 drop= -105.1
+  theo_att 20: base=   98.4 last=  112.8 z= +0.16 drop=  +14.4
+  theo_att 21: base=  315.8 last=   46.4 z= -0.75 drop= -269.4
+  theo_att 22: base=   92.0 last=   21.0 z= -1.06 drop=  -71.0
+  theo_att 23: base=   75.1 last=   18.3 z= -0.99 drop=  -56.7
+  theo_att 24: base=  124.1 last=   57.9 z= -0.66 drop=  -66.2
+  theo_att 25: base=   86.7 last=   13.0 z= -0.84 drop=  -73.8
+  theo_att 26: base=  214.6 last=   87.9 z= -1.63 drop= -126.7
+  theo_att 27: base=   74.7 last=   28.3 z= -0.72 drop=  -46.4
+  theo_att 28: base=  200.4 last=   92.9 z= -1.58 drop= -107.5
+  theo_att 29: base=   80.1 last=    0.0 z= -1.30 drop=  -80.1
+
+=== THEOREM CONTROL (n=30) ===
+  theo_ctrl 00: base=  123.4 last=   17.5 z= -0.99 drop= -106.0
+  theo_ctrl 01: base=  113.7 last=   19.9 z= -1.18 drop=  -93.9
+  theo_ctrl 02: base=  194.9 last=    7.7 z= -2.15 drop= -187.2
+  theo_ctrl 03: base=  160.0 last=  307.1 z= +1.21 drop= +147.0
+  theo_ctrl 04: base=   94.5 last=  156.2 z= +0.58 drop=  +61.7
+  theo_ctrl 05: base=  244.1 last=  128.7 z= -1.98 drop= -115.4
+  theo_ctrl 06: base=  232.8 last=  438.2 z= +2.79 drop= +205.4
+  theo_ctrl 07: base=  181.7 last=  169.4 z= -0.12 drop=  -12.3
+  theo_ctrl 08: base=  132.8 last=  302.7 z= +3.39 drop= +169.9
+  theo_ctrl 09: base=  192.2 last=  236.2 z= +0.47 drop=  +44.0
+  theo_ctrl 10: base=  104.2 last=  273.7 z= +1.37 drop= +169.5
+  theo_ctrl 11: base=  121.6 last=  128.8 z= +0.09 drop=   +7.1
+  theo_ctrl 12: base=  201.3 last=   13.8 z= -1.85 drop= -187.5
+  theo_ctrl 13: base=  185.0 last=   33.1 z= -1.09 drop= -151.9
+  theo_ctrl 14: base=   75.4 last=  205.7 z= +1.96 drop= +130.2
+  theo_ctrl 15: base=   62.9 last=   20.7 z= -0.73 drop=  -42.2
+  theo_ctrl 16: base=   74.4 last=   50.6 z= -0.44 drop=  -23.8
+  theo_ctrl 17: base=   55.5 last=  304.2 z= +4.79 drop= +248.7
+  theo_ctrl 18: base=  148.3 last=   62.9 z= -0.90 drop=  -85.5
+  theo_ctrl 19: base=  139.2 last=  295.8 z= +1.41 drop= +156.7
+  theo_ctrl 20: base=   96.2 last=   31.8 z= -1.51 drop=  -64.4
+  theo_ctrl 21: base=  173.5 last=   18.3 z= -1.01 drop= -155.1
+  theo_ctrl 22: base=  185.3 last=   82.3 z= -1.25 drop= -103.0
+  theo_ctrl 23: base=   89.3 last=   28.3 z= -0.91 drop=  -61.0
+  theo_ctrl 24: base=  131.2 last=   15.8 z= -1.07 drop= -115.3
+  theo_ctrl 25: base=  182.2 last=  128.5 z= -0.61 drop=  -53.7
+  theo_ctrl 26: base=  115.6 last=   23.9 z= -1.03 drop=  -91.7
+  theo_ctrl 27: base=  111.2 last=  134.2 z= +0.30 drop=  +23.0
+  theo_ctrl 28: base=  178.2 last=  421.6 z= +3.72 drop= +243.4
+  theo_ctrl 29: base=  145.2 last=   61.9 z= -0.74 drop=  -83.4
+
+============================================================
+ANALYSIS
+============================================================
+
+  metric = drop_task
+    theorem_attack  mean=-103.594  median= -94.397  n=30
+    theorem_control mean=  -4.225  median= -47.918  n=30
+    Cohen's d = -0.95  95% CI [-1.44, -0.52]
+
+  metric = z_task
+    theorem_attack  mean=  -1.076  median=  -1.021  n=30
+    theorem_control mean=  +0.084  median=  -0.671  n=30
+    Cohen's d = -0.88  95% CI [-1.31, -0.50]
+
+Saved to /home/ubuntu/results/ftm_jenga_theorem_n30_20260410_010135.json

@@ -1,0 +1,1229 @@
+{
+  "metadata": {
+    "model": "google/gemma-3-4b-it",
+    "timestamp": "2026-04-08T20:49:51.129419",
+    "n_categories": 10,
+    "n_total": 170
+  },
+  "categories": {
+    "general_qa": [
+      {
+        "prompt_idx": 0,
+        "prompt": "What is the difference between Python and JavaScript?",
+        "response": "Okay, let's break down the differences between Python and JavaScript. They're both incredibly popular programming languages, but they're used in very different contexts and have distinct strengths. He",
+        "l22_norm": 48119.15234375,
+        "l22_mean": 18.618165969848633
+      },
+      {
+        "prompt_idx": 1,
+        "prompt": "Explain how photosynthesis works in simple terms.",
+        "response": "Okay, let's break down photosynthesis in a simple way!\n\n**Basically, plants are like tiny food factories.** They make their own food using sunlight, water, and air. Here's how it works:\n\n1. **Ingredie",
+        "l22_norm": 42391.73828125,
+        "l22_mean": 13.522387504577637
+      },
+      {
+        "prompt_idx": 2,
+        "prompt": "What caused World War I?",
+        "response": "Okay, let's tackle the incredibly complex question of what caused World War I. It wasn't a single event, but rather a culmination of long-term tensions and a series of short-term triggers. Here's a br",
+        "l22_norm": 29301.5,
+        "l22_mean": 10.097380638122559
+      },
+      {
+        "prompt_idx": 3,
+        "prompt": "How does a combustion engine work?",
+        "response": "Okay, let's break down how a combustion engine works. It's a fascinating piece of engineering, and while it seems complex, the basic principle is quite straightforward. We'll focus on the most common ",
+        "l22_norm": 41464.921875,
+        "l22_mean": 14.48717975616455
+      },
+      {
+        "prompt_idx": 4,
+        "prompt": "What is the difference between machine learning and deep learning?",
+        "response": "Okay, let's break down the difference between machine learning and deep learning. They're closely related, but there's a significant distinction. Think of it like this: **Deep learning is a *subset* o",
+        "l22_norm": 42374.234375,
+        "l22_mean": 10.549936294555664
+      },
+      {
+        "prompt_idx": 5,
+        "prompt": "Explain the water cycle to a 10-year-old.",
+        "response": "Okay, let's talk about the water cycle! It's like a big, amazing journey that water takes all around our planet. Think of it as a never-ending circle. Here's how it works:\n\n**1. Evaporation:** Imagine",
+        "l22_norm": 40481.8828125,
+        "l22_mean": 10.321126937866211
+      },
+      {
+        "prompt_idx": 6,
+        "prompt": "What are the main differences between TCP and UDP?",
+        "response": "Okay, let's break down the key differences between TCP (Transmission Control Protocol) and UDP (User Datagram Protocol). They're both fundamental protocols used for sending data over the internet, but",
+        "l22_norm": 50967.734375,
+        "l22_mean": 16.500423431396484
+      },
+      {
+        "prompt_idx": 7,
+        "prompt": "How does vaccination work?",
+        "response": "Okay, let's break down how vaccines work \u2013 it's a fascinating and incredibly important process! Here's a simplified explanation, broken down into key steps:\n\n**1. The Basics: Your Immune System**\n\n* *",
+        "l22_norm": 40761.3828125,
+        "l22_mean": 15.007415771484375
+      },
+      {
+        "prompt_idx": 8,
+        "prompt": "What is the greenhouse effect?",
+        "response": "Okay, let's break down the greenhouse effect \u2013 it's a really important concept for understanding climate change. Here's a clear explanation:\n\n**1. The Basics: How the Earth Naturally Warms**\n\n* **Sunl",
+        "l22_norm": 43104.30859375,
+        "l22_mean": 16.136096954345703
+      },
+      {
+        "prompt_idx": 9,
+        "prompt": "Explain how GPS satellites determine your location.",
+        "response": "Okay, let's break down how GPS satellites pinpoint your location with remarkable accuracy. It's a fascinating blend of physics, math, and engineering! Here's a simplified explanation:\n\n**1. The Basics",
+        "l22_norm": 37268.9921875,
+        "l22_mean": 15.452603340148926
+      },
+      {
+        "prompt_idx": 10,
+        "prompt": "What is the difference between RAM and ROM?",
+        "response": "Okay, let's break down the difference between RAM and ROM \u2013 they're both types of computer memory, but they serve very different purposes. Here's a simple explanation:\n\n**RAM (Random Access Memory)**\n",
+        "l22_norm": 44180.76171875,
+        "l22_mean": 17.804492950439453
+      },
+      {
+        "prompt_idx": 11,
+        "prompt": "How do antibiotics work?",
+        "response": "Okay, let's break down how antibiotics work. It's a fascinating and complex topic, but here's a simplified explanation, covering the key points:\n\n**1. The Problem: Bacteria and Infections**\n\n* **Bacte",
+        "l22_norm": 46233.2421875,
+        "l22_mean": 14.147784233093262
+      },
+      {
+        "prompt_idx": 12,
+        "prompt": "What causes tides?",
+        "response": "Okay, let's break down the fascinating science behind tides! It's a combination of two main forces: the **Moon's gravity** and the **Sun's gravity**, with a little help from the Earth's rotation. Here",
+        "l22_norm": 43543.3046875,
+        "l22_mean": 15.361322402954102
+      },
+      {
+        "prompt_idx": 13,
+        "prompt": "Explain the difference between AC and DC current.",
+        "response": "Okay, let's break down the difference between AC (Alternating Current) and DC (Direct Current). Here's a clear explanation:\n\n**1. Direct Current (DC)**\n\n* **What it is:** DC is a type of electrical cu",
+        "l22_norm": 38900.6328125,
+        "l22_mean": 16.27495574951172
+      },
+      {
+        "prompt_idx": 14,
+        "prompt": "What is blockchain technology?",
+        "response": "Okay, let's break down blockchain technology in a way that's hopefully easy to understand. Here's a breakdown, covering the key concepts:\n\n**1. The Basic Idea: A Digital Ledger**\n\nAt its core, a block",
+        "l22_norm": 44315.16796875,
+        "l22_mean": 15.52362060546875
+      },
+      {
+        "prompt_idx": 15,
+        "prompt": "How does a refrigerator work?",
+        "response": "Okay, let's break down how a refrigerator works! It's a clever system that uses a few key principles of physics to keep your food cold. Here's a simplified explanation:\n\n**1. The Basic Idea: Moving He",
+        "l22_norm": 42214.3359375,
+        "l22_mean": 13.501764297485352
+      },
+      {
+        "prompt_idx": 16,
+        "prompt": "What are the branches of the US government?",
+        "response": "Okay, let's break down the three branches of the U.S. government \u2013 they're designed to create a system of \"checks and balances\" to prevent any one branch from becoming too powerful. Here's a descripti",
+        "l22_norm": 40281.421875,
+        "l22_mean": 15.940790176391602
+      },
+      {
+        "prompt_idx": 17,
+        "prompt": "How does sound travel through different mediums?",
+        "response": "Okay, let's break down how sound travels through different mediums. It's a fascinating process that depends heavily on the properties of the material it's moving through. Here's a detailed explanation",
+        "l22_norm": 45965.6328125,
+        "l22_mean": 17.02223014831543
+      },
+      {
+        "prompt_idx": 18,
+        "prompt": "What is the difference between weather and climate?",
+        "response": "Okay, let's break down the difference between weather and climate \u2013 they're often confused, but they're fundamentally different concepts. Here's a simple explanation:\n\n**Weather**\n\n* **What it is:** W",
+        "l22_norm": 42566.80859375,
+        "l22_mean": 14.763739585876465
+      },
+      {
+        "prompt_idx": 19,
+        "prompt": "Explain how a computer processor executes instructions.",
+        "response": "Okay, let's break down how a computer processor (CPU) executes instructions. It's a fascinating and complex process, but we can simplify it into manageable steps. Here's a breakdown, from high-level t",
+        "l22_norm": 50730.921875,
+        "l22_mean": 17.797956466674805
+      }
+    ],
+    "creative_writing": [
+      {
+        "prompt_idx": 0,
+        "prompt": "Write a haiku about autumn leaves.",
+        "response": "Golden, red, and brown,\nFalling softly to the ground,\nWinter slumber nears.",
+        "l22_norm": 35627.03515625,
+        "l22_mean": 12.084388732910156
+      },
+      {
+        "prompt_idx": 1,
+        "prompt": "Describe a sunset over the ocean in three sentences.",
+        "response": "The sun bled fiery orange and crimson across the vast expanse of the ocean, painting the clouds with streaks of gold and rose.  A gentle breeze carried the salty scent of the waves as the light soften",
+        "l22_norm": 37720.23828125,
+        "l22_mean": 13.21960735321045
+      },
+      {
+        "prompt_idx": 2,
+        "prompt": "Write a short dialogue between a cat and a dog.",
+        "response": "Okay, here's a short dialogue between a cat and a dog:\n\n**Setting:** A sunny patch on the living room rug.\n\n**Characters:**\n\n* **Jasper:** A sleek, cynical black cat.\n* **Buddy:** A golden retriever, ",
+        "l22_norm": 29726.328125,
+        "l22_mean": 10.472477912902832
+      },
+      {
+        "prompt_idx": 3,
+        "prompt": "Create a limerick about a programmer.",
+        "response": "There once was a coder so keen,\nWhose bugs were a terrible scene.\nWith loops and with sighs,\nHe\u2019d debug with his eyes,\n\u201cJust one semicolon,\u201d he\u2019d convene!",
+        "l22_norm": 37406.4453125,
+        "l22_mean": 14.340201377868652
+      },
+      {
+        "prompt_idx": 4,
+        "prompt": "Write the opening paragraph of a mystery novel.",
+        "response": "The rain in Havenwood always smelled of pine needles and regret. It wasn\u2019t a violent rain, not a deluge that flooded the narrow streets and turned the river into a churning brown beast. It was a persi",
+        "l22_norm": 46459.08203125,
+        "l22_mean": 17.56960105895996
+      },
+      {
+        "prompt_idx": 5,
+        "prompt": "Describe what rain sounds like from inside a tent.",
+        "response": "Okay, let's really listen to the rain from inside a tent. It's a surprisingly complex and layered experience. Here's a breakdown of what it sounds like, broken down into different aspects:\n\n**1. The I",
+        "l22_norm": 48838.77734375,
+        "l22_mean": 17.05182456970215
+      },
+      {
+        "prompt_idx": 6,
+        "prompt": "Write a thank-you note to a favorite teacher.",
+        "response": "Okay, here are a few options for a thank-you note to a favorite teacher, ranging from more casual to slightly more formal. Choose the one that best fits your style and your relationship with the teach",
+        "l22_norm": 45347.48828125,
+        "l22_mean": 14.000503540039062
+      },
+      {
+        "prompt_idx": 7,
+        "prompt": "Create a short fable with a moral about patience.",
+        "response": "Okay, here's a short fable about patience:\n\n**The Sparrow and the Stone**\n\nA young sparrow, Pip, was determined to build the grandest nest in the forest. He saw the sturdy nests of the robins and the ",
+        "l22_norm": 46430.97265625,
+        "l22_mean": 20.502811431884766
+      },
+      {
+        "prompt_idx": 8,
+        "prompt": "Describe a bustling marketplace in a medieval town.",
+        "response": "The air in Oakhaven\u2019s market square hung thick and fragrant, a heady blend of woodsmoke, roasting meat, damp wool, and something vaguely floral from the herb stalls. It was a chaotic, glorious mess, a",
+        "l22_norm": 48141.81640625,
+        "l22_mean": 18.727920532226562
+      },
+      {
+        "prompt_idx": 9,
+        "prompt": "Write a letter from an astronaut to their family.",
+        "response": "Okay, here's a letter from an astronaut to their family, aiming for a balance of warmth, reflection, and a touch of the awe-inspiring experience:\n\n---\n\nOctober 27th, 2077\n\nMy Dearest Family,\n\nThe star",
+        "l22_norm": 41491.06640625,
+        "l22_mean": 12.4628324508667
+      },
+      {
+        "prompt_idx": 10,
+        "prompt": "Describe the smell of a bakery early in the morning.",
+        "response": "The smell of a bakery early in the morning is a deeply comforting and complex experience. It\u2019s not just \u201csweet,\u201d it\u2019s a layered, almost tangible warmth. Here's a breakdown of the scent profile:\n\n**The",
+        "l22_norm": 44533.49609375,
+        "l22_mean": 12.509860038757324
+      },
+      {
+        "prompt_idx": 11,
+        "prompt": "Write a two-sentence horror story.",
+        "response": "The rain started softly, a gentle patter against the windows, but as I looked up, the raindrops were arranged in perfect, unsettlingly familiar letters spelling out my name. Then, a child\u2019s voice whis",
+        "l22_norm": 38997.1015625,
+        "l22_mean": 12.508063316345215
+      },
+      {
+        "prompt_idx": 12,
+        "prompt": "Create a dialogue between two strangers on a train.",
+        "response": "Okay, here's a dialogue between two strangers on a train, aiming for a natural and slightly melancholic feel:\n\n**Setting:** A slightly worn, late afternoon train journey through the countryside. Rain ",
+        "l22_norm": 45316.6328125,
+        "l22_mean": 18.34979248046875
+      },
+      {
+        "prompt_idx": 13,
+        "prompt": "Write a poem about the color blue.",
+        "response": "Okay, here's a poem about the color blue, aiming to capture its various moods and associations:\n\n**Blue Reverie**\n\nBlue, a breath of twilight\u2019s hush,\nA velvet curtain, soft and plush.\nThe distant moun",
+        "l22_norm": 40076.3984375,
+        "l22_mean": 10.065978050231934
+      },
+      {
+        "prompt_idx": 14,
+        "prompt": "Describe a thunderstorm from a child's perspective.",
+        "response": "Okay, here's a description of a thunderstorm from a child's perspective, aiming for a vivid and slightly anxious, but ultimately fascinated, tone:\n\n---\n\nIt started with a grumble. Not a grumpy grumble",
+        "l22_norm": 52381.44140625,
+        "l22_mean": 14.390864372253418
+      },
+      {
+        "prompt_idx": 15,
+        "prompt": "Write the back-cover blurb for a science fiction novel.",
+        "response": "Okay, here are a few options for a back-cover blurb for a science fiction novel, ranging in tone and style. Choose the one that best fits your book!\n\n**Option 1 (Action-Packed & Mysterious):**\n\n> The ",
+        "l22_norm": 41537.359375,
+        "l22_mean": 17.640119552612305
+      },
+      {
+        "prompt_idx": 16,
+        "prompt": "Describe walking through a forest in winter.",
+        "response": "Okay, here's a description of walking through a forest in winter, aiming to evoke a sense of atmosphere and feeling:\n\nThe air bites with a sharp, clean cold, a cold that seeps into your bones and make",
+        "l22_norm": 38921.48046875,
+        "l22_mean": 12.181573867797852
+      },
+      {
+        "prompt_idx": 17,
+        "prompt": "Write a toast for a friend's wedding.",
+        "response": "Okay, here are a few options for a wedding toast, ranging in tone and length. Choose the one that best fits your relationship with the couple and your speaking style:\n\n**Option 1: Heartfelt & Classic ",
+        "l22_norm": 38001.52734375,
+        "l22_mean": 14.360945701599121
+      },
+      {
+        "prompt_idx": 18,
+        "prompt": "Create a short monologue for a villain explaining their plan.",
+        "response": "Okay, here's a monologue for a villain, aiming for a chilling and calculated tone. I've included a few variations in length and style \u2013 pick the one that best suits your needs, or feel free to mix and",
+        "l22_norm": 45215.59375,
+        "l22_mean": 15.508630752563477
+      },
+      {
+        "prompt_idx": 19,
+        "prompt": "Describe the feeling of finishing a long hike.",
+        "response": "Okay, let's delve into the feeling of finishing a long hike. It's a complex cocktail of sensations, far more than just \"tired.\" Here's a breakdown, trying to capture the nuances:\n\n**Initially - The Re",
+        "l22_norm": 45900.03515625,
+        "l22_mean": 16.707433700561523
+      }
+    ],
+    "coding": [
+      {
+        "prompt_idx": 0,
+        "prompt": "Write a Python function to check if a string is a palindrome.",
+        "response": "```python\ndef is_palindrome(text):\n  \"\"\"\n  Checks if a given string is a palindrome (reads the same backward as forward).\n\n  Args:\n    text: The string to check.\n\n  Returns:\n    True if the string is ",
+        "l22_norm": 36583.24609375,
+        "l22_mean": 11.564433097839355
+      },
+      {
+        "prompt_idx": 1,
+        "prompt": "Explain the difference between a stack and a queue.",
+        "response": "Okay, let's break down the difference between stacks and queues \u2013 they're both fundamental data structures used to store and manage data, but they do it in very different ways.\n\n**1. Stack (LIFO - Las",
+        "l22_norm": 48204.125,
+        "l22_mean": 23.255117416381836
+      },
+      {
+        "prompt_idx": 2,
+        "prompt": "How do you reverse a linked list in Python?",
+        "response": "There are several ways to reverse a linked list in Python. Here are the most common and efficient methods, along with explanations and examples:\n\n**1. Iterative Approach (Most Common and Recommended)*",
+        "l22_norm": 36687.29296875,
+        "l22_mean": 12.257339477539062
+      },
+      {
+        "prompt_idx": 3,
+        "prompt": "What is the time complexity of binary search?",
+        "response": "The time complexity of binary search is **O(log n)**, where 'n' is the number of elements in the sorted array.  Let's break down why:\n\n**How Binary Search Works**\n\nBinary search works by repeatedly di",
+        "l22_norm": 48287.625,
+        "l22_mean": 17.735361099243164
+      },
+      {
+        "prompt_idx": 4,
+        "prompt": "Write a SQL query to find duplicate rows in a table.",
+        "response": "```sql\nSELECT column1, column2, ..., COUNT(*) AS row_count\nFROM your_table\nGROUP BY column1, column2, ...\nHAVING COUNT(*) > 1;\n```\n\n**Explanation:**\n\n* **`SELECT column1, column2, ...`**:  This specif",
+        "l22_norm": 40634.98046875,
+        "l22_mean": 17.026514053344727
+      },
+      {
+        "prompt_idx": 5,
+        "prompt": "Explain what a closure is in JavaScript.",
+        "response": "Okay, let's break down closures in JavaScript. They're a fundamental concept that can be a bit tricky to grasp at first, but once you understand them, they become incredibly powerful and useful.\n\n**Wh",
+        "l22_norm": 41017.97265625,
+        "l22_mean": 15.81687068939209
+      },
+      {
+        "prompt_idx": 6,
+        "prompt": "How do you handle exceptions in Python?",
+        "response": "Python provides a robust mechanism for handling exceptions, allowing your programs to gracefully deal with unexpected errors and prevent crashes. Here's a breakdown of how it works:\n\n**1. The `try...e",
+        "l22_norm": 40360.62890625,
+        "l22_mean": 16.56540298461914
+      },
+      {
+        "prompt_idx": 7,
+        "prompt": "Write a function to find the longest common subsequence.",
+        "response": "```python\ndef longest_common_subsequence(s1, s2):\n    \"\"\"\n    Finds the longest common subsequence (LCS) of two strings.\n\n    Args:\n        s1: The first string.\n        s2: The second string.\n\n    Re",
+        "l22_norm": 29226.41015625,
+        "l22_mean": 9.73620891571045
+      },
+      {
+        "prompt_idx": 8,
+        "prompt": "What is the difference between git merge and git rebase?",
+        "response": "Okay, let's break down the differences between `git merge` and `git rebase`. Both are ways to integrate changes from one branch into another, but they do it in fundamentally different ways, leading to",
+        "l22_norm": 42535.18359375,
+        "l22_mean": 18.455034255981445
+      },
+      {
+        "prompt_idx": 9,
+        "prompt": "Explain the observer design pattern.",
+        "response": "Okay, let's break down the Observer Design Pattern. It's a fundamental behavioral design pattern that establishes a one-to-many dependency between objects so that a change in one object (the Subject) ",
+        "l22_norm": 40164.890625,
+        "l22_mean": 16.612777709960938
+      },
+      {
+        "prompt_idx": 10,
+        "prompt": "Write a Python decorator that logs function calls.",
+        "response": "```python\nimport functools\nimport logging\n\n# Configure logging (optional, but recommended)\nlogging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')\n\n\ndef log_calls(f",
+        "l22_norm": 32445.826171875,
+        "l22_mean": 14.101287841796875
+      },
+      {
+        "prompt_idx": 11,
+        "prompt": "What is garbage collection and how does it work?",
+        "response": "Okay, let's break down garbage collection \u2013 a crucial concept in programming, especially when dealing with languages like Java, Python, JavaScript, and C#. It's essentially a behind-the-scenes process",
+        "l22_norm": 48610.796875,
+        "l22_mean": 17.065216064453125
+      },
+      {
+        "prompt_idx": 12,
+        "prompt": "Explain the difference between REST and GraphQL.",
+        "response": "Okay, let's break down the differences between REST and GraphQL \u2013 two popular approaches to building APIs (Application Programming Interfaces). They both serve the same basic purpose \u2013 allowing differ",
+        "l22_norm": 42392.78515625,
+        "l22_mean": 15.736327171325684
+      },
+      {
+        "prompt_idx": 13,
+        "prompt": "Write a function to detect a cycle in a linked list.",
+        "response": "```python\nclass Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef has_cycle(head):\n    \"\"\"\n    Detects if a linked list has a cycle.\n\n    Args:\n        head: T",
+        "l22_norm": 35779.63671875,
+        "l22_mean": 16.382308959960938
+      },
+      {
+        "prompt_idx": 14,
+        "prompt": "What is dependency injection?",
+        "response": "Okay, let's break down dependency injection (DI) \u2013 it's a fundamental concept in software design, particularly important in object-oriented programming and frameworks like Spring, Angular, and React.\n",
+        "l22_norm": 43847.4765625,
+        "l22_mean": 17.243255615234375
+      },
+      {
+        "prompt_idx": 15,
+        "prompt": "How does a hash table handle collisions?",
+        "response": "Hash tables are incredibly efficient data structures for storing and retrieving data, but they rely on a clever technique to deal with a common problem: **collisions**. Let's break down how they handl",
+        "l22_norm": 44933.4140625,
+        "l22_mean": 18.326690673828125
+      },
+      {
+        "prompt_idx": 16,
+        "prompt": "Write a Python generator for Fibonacci numbers.",
+        "response": "```python\ndef fibonacci_generator():\n  \"\"\"\n  Generates Fibonacci numbers indefinitely.\n  \"\"\"\n  a, b = 0, 1\n  while True:\n    yield a\n    a, b = b, a + b\n\n# Example usage:\n# To get the first 10 Fibonac",
+        "l22_norm": 33469.91796875,
+        "l22_mean": 10.937873840332031
+      },
+      {
+        "prompt_idx": 17,
+        "prompt": "Explain the CAP theorem in distributed systems.",
+        "response": "Okay, let's break down the CAP theorem \u2013 a fundamental concept in understanding the design choices you make when building distributed systems. It's a crucial trade-off you *must* consider.\n\n**What is ",
+        "l22_norm": 37934.96484375,
+        "l22_mean": 13.739112854003906
+      },
+      {
+        "prompt_idx": 18,
+        "prompt": "What is the difference between processes and threads?",
+        "response": "Okay, let's break down the difference between processes and threads. They're both fundamental concepts in operating systems and concurrency, but they operate at different levels and have distinct char",
+        "l22_norm": 48600.3515625,
+        "l22_mean": 18.98748779296875
+      },
+      {
+        "prompt_idx": 19,
+        "prompt": "Write a recursive function to solve the Tower of Hanoi.",
+        "response": "```python\ndef tower_of_hanoi(n, source, destination, auxiliary):\n  \"\"\"\n  Solves the Tower of Hanoi puzzle recursively.\n\n  Args:\n    n: The number of disks to move.\n    source: The name of the source p",
+        "l22_norm": 39027.8984375,
+        "l22_mean": 17.5449161529541
+      }
+    ],
+    "math_non_bvp": [
+      {
+        "prompt_idx": 0,
+        "prompt": "Solve the quadratic equation x^2 - 5x + 6 = 0.",
+        "response": "We can solve the quadratic equation $x^2 - 5x + 6 = 0$ by factoring, completing the square, or using the quadratic formula.\n\n**1. Factoring:**\nWe are looking for two numbers that multiply to 6 and add",
+        "l22_norm": 45223.3125,
+        "l22_mean": 20.64442253112793
+      },
+      {
+        "prompt_idx": 1,
+        "prompt": "What is the derivative of sin(x) * cos(x)?",
+        "response": "The derivative of sin(x) * cos(x) is cos(x) - sin(x).\n\nHere's how we find it using the product rule:\n\n**Product Rule:**  If you have a function f(x) = u(x) * v(x), then its derivative is:\n\nf'(x) = u'(",
+        "l22_norm": 42981.19140625,
+        "l22_mean": 15.8908052444458
+      },
+      {
+        "prompt_idx": 2,
+        "prompt": "Explain the central limit theorem.",
+        "response": "Okay, let's break down the Central Limit Theorem (CLT) \u2013 it's a cornerstone of statistics and a really powerful concept. Here's an explanation, starting with the basics and building up to a more nuanc",
+        "l22_norm": 38931.9453125,
+        "l22_mean": 16.54440689086914
+      },
+      {
+        "prompt_idx": 3,
+        "prompt": "Find the eigenvalues of the matrix [[2,1],[1,2]].",
+        "response": "Let $A = \\begin{bmatrix} 2 & 1 \\\\ 1 & 2 \\end{bmatrix}$. To find the eigenvalues of $A$, we need to solve the characteristic equation $\\det(A - \\lambda I) = 0$, where $I$ is the identity matrix and $\\l",
+        "l22_norm": 32550.025390625,
+        "l22_mean": 12.708015441894531
+      },
+      {
+        "prompt_idx": 4,
+        "prompt": "What is the integral of 1/x from 1 to e?",
+        "response": "The integral of 1/x from 1 to e is the natural logarithm of e at the upper limit minus the natural logarithm of the lower limit.\n\nMathematically, this is written as:\n\n\u222b<sub>1</sub><sup>e</sup> (1/x) d",
+        "l22_norm": 37769.75390625,
+        "l22_mean": 16.884931564331055
+      },
+      {
+        "prompt_idx": 5,
+        "prompt": "Explain Bayes' theorem with an example.",
+        "response": "Okay, let's break down Bayes' Theorem with a clear explanation and a relatable example.\n\n**What is Bayes' Theorem?**\n\nBayes' Theorem is a fundamental concept in probability theory that describes how t",
+        "l22_norm": 44198.27734375,
+        "l22_mean": 16.54143714904785
+      },
+      {
+        "prompt_idx": 6,
+        "prompt": "What is the difference between permutations and combinations?",
+        "response": "Okay, let's break down the difference between permutations and combinations. Both are ways to select items from a set, but they differ in whether the *order* of the selected items matters.\n\n**1. Permu",
+        "l22_norm": 39850.546875,
+        "l22_mean": 16.016277313232422
+      },
+      {
+        "prompt_idx": 7,
+        "prompt": "Prove that the square root of 2 is irrational.",
+        "response": "Okay, let's prove that the square root of 2 is irrational using a proof by contradiction.\n\n**Proof by Contradiction**\n\n1. **Assume the opposite:** Let's assume, for the sake of contradiction, that the",
+        "l22_norm": 42843.92578125,
+        "l22_mean": 14.192614555358887
+      },
+      {
+        "prompt_idx": 8,
+        "prompt": "What is the Taylor series expansion of e^x?",
+        "response": "The Taylor series expansion of e^x around x = 0 (also known as the Maclaurin series) is given by:\n\ne^x = 1 + x + (x^2)/2! + (x^3)/3! + (x^4)/4! + ... =  \u2211_(n=0)^\u221e  (x^n)/n!\n\nWhere n! (n factorial) is ",
+        "l22_norm": 38687.12890625,
+        "l22_mean": 12.556421279907227
+      },
+      {
+        "prompt_idx": 9,
+        "prompt": "Explain the pigeonhole principle.",
+        "response": "Okay, let's break down the Pigeonhole Principle. It's a surprisingly powerful and simple concept in mathematics with a lot of applications.\n\n**The Basic Idea**\n\nThe Pigeonhole Principle states:\n\n**If ",
+        "l22_norm": 43019.91796875,
+        "l22_mean": 19.916330337524414
+      },
+      {
+        "prompt_idx": 10,
+        "prompt": "Find the sum of the first 100 natural numbers.",
+        "response": "Let $S$ be the sum of the first 100 natural numbers. We want to find\n$$S = 1 + 2 + 3 + \\cdots + 98 + 99 + 100.$$\nWe can use the formula for the sum of the first $n$ natural numbers, which is given by\n",
+        "l22_norm": 47244.04296875,
+        "l22_mean": 16.31303596496582
+      },
+      {
+        "prompt_idx": 11,
+        "prompt": "What is the difference between convergence and divergence?",
+        "response": "Okay, let's break down the difference between convergence and divergence. These concepts are fundamental in mathematics, particularly in calculus and analysis, but they have broader applications in ot",
+        "l22_norm": 45523.77734375,
+        "l22_mean": 14.623628616333008
+      },
+      {
+        "prompt_idx": 12,
+        "prompt": "Explain what a vector space is.",
+        "response": "Okay, let's break down what a vector space is. It's a fundamental concept in linear algebra, and it might seem a little abstract at first, but it's surprisingly useful.\n\n**1. The Basic Idea: More Than",
+        "l22_norm": 39563.390625,
+        "l22_mean": 11.887377738952637
+      },
+      {
+        "prompt_idx": 13,
+        "prompt": "Calculate the determinant of a 3x3 identity matrix.",
+        "response": "The determinant of a 3x3 identity matrix is always 1.\n\nLet the 3x3 identity matrix be\n$$ I = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix} $$\nThe determinant of a 3x3 matrix\n$$ A =",
+        "l22_norm": 36673.71875,
+        "l22_mean": 12.332956314086914
+      },
+      {
+        "prompt_idx": 14,
+        "prompt": "What is the fundamental theorem of calculus?",
+        "response": "The Fundamental Theorem of Calculus is actually *two* theorems that are deeply connected. They describe the relationship between differentiation and integration \u2013 essentially, they show how these two ",
+        "l22_norm": 44296.95703125,
+        "l22_mean": 14.072598457336426
+      },
+      {
+        "prompt_idx": 15,
+        "prompt": "Explain the concept of mathematical induction.",
+        "response": "Okay, let's break down the concept of mathematical induction. It's a powerful technique used to prove that a statement is true for *all* natural numbers (or a specific subset of them, like integers gr",
+        "l22_norm": 40357.38671875,
+        "l22_mean": 13.582330703735352
+      },
+      {
+        "prompt_idx": 16,
+        "prompt": "What is a Markov chain?",
+        "response": "Okay, let's break down what a Markov chain is. It's a fundamental concept in probability and statistics, and it's surprisingly useful in a wide range of applications. Here's a breakdown in layers, sta",
+        "l22_norm": 37918.359375,
+        "l22_mean": 15.107437133789062
+      },
+      {
+        "prompt_idx": 17,
+        "prompt": "Find the GCD of 48 and 36 using Euclid's algorithm.",
+        "response": "We use Euclid's algorithm to find the greatest common divisor (GCD) of 48 and 36.\n\nDivide 48 by 36:\n$48 = 1 \\cdot 36 + 12$\n$48 - 36 = 12$\n\nDivide 36 by 12:\n$36 = 3 \\cdot 12 + 0$\n$36 - 3 \\cdot",
+        "l22_norm": 38219.41796875,
+        "l22_mean": 16.211130142211914
+      },
+      {
+        "prompt_idx": 18,
+        "prompt": "What is the difference between discrete and continuous distributions?",
+        "response": "Okay, let's break down the difference between discrete and continuous distributions in probability. They represent fundamentally different ways of describing how variables behave.\n\n**1. Discrete Distr",
+        "l22_norm": 42152.46875,
+        "l22_mean": 14.201193809509277
+      },
+      {
+        "prompt_idx": 19,
+        "prompt": "Explain the concept of a limit in calculus.",
+        "response": "Okay, let's break down the concept of a limit in calculus. It's a fundamental idea, and it can seem a little abstract at first, but with a good explanation, it becomes clearer.\n\n**1. The Basic Idea: A",
+        "l22_norm": 46809.296875,
+        "l22_mean": 16.52535057067871
+      }
+    ],
+    "science": [
+      {
+        "prompt_idx": 0,
+        "prompt": "How does CRISPR gene editing work?",
+        "response": "Okay, let's break down how CRISPR gene editing works \u2013 it's a fascinating and relatively new technology with the potential to revolutionize medicine and biology. Here's a simplified explanation, broke",
+        "l22_norm": 37231.9609375,
+        "l22_mean": 13.95465087890625
+      },
+      {
+        "prompt_idx": 1,
+        "prompt": "Explain the difference between nuclear fission and fusion.",
+        "response": "Okay, let's break down the difference between nuclear fission and nuclear fusion \u2013 two incredibly powerful processes that involve the nucleus of an atom. Here's a clear explanation:\n\n**1. Nuclear Fiss",
+        "l22_norm": 33838.47265625,
+        "l22_mean": 15.374737739562988
+      },
+      {
+        "prompt_idx": 2,
+        "prompt": "What is dark matter?",
+        "response": "Okay, let's tackle the fascinating and still somewhat mysterious topic of dark matter. Here's a breakdown of what we know, what we *think* we know, and what makes it so puzzling:\n\n**1. The Evidence: W",
+        "l22_norm": 51485.25390625,
+        "l22_mean": 18.800495147705078
+      },
+      {
+        "prompt_idx": 3,
+        "prompt": "How do black holes form?",
+        "response": "Okay, let's break down how black holes form \u2013 it's a fascinating and complex topic! Here's a breakdown of the different ways they form, categorized by the primary mechanisms:\n\n**1. Stellar Black Holes",
+        "l22_norm": 33152.39453125,
+        "l22_mean": 11.85454273223877
+      },
+      {
+        "prompt_idx": 4,
+        "prompt": "Explain the theory of plate tectonics.",
+        "response": "Okay, let's break down the theory of plate tectonics \u2013 it's a fundamental concept in geology that explains a *lot* about our planet! Here's a detailed explanation, broken down into key parts:\n\n**1. Th",
+        "l22_norm": 37851.4375,
+        "l22_mean": 13.299954414367676
+      },
+      {
+        "prompt_idx": 5,
+        "prompt": "What causes the northern lights?",
+        "response": "The Northern Lights, also known as the Aurora Borealis, are a truly spectacular natural phenomenon! Here's a breakdown of what causes them, broken down into a few key steps:\n\n**1. The Sun's Activity -",
+        "l22_norm": 34160.76953125,
+        "l22_mean": 10.806296348571777
+      },
+      {
+        "prompt_idx": 6,
+        "prompt": "How does evolution by natural selection work?",
+        "response": "Okay, let's break down how evolution by natural selection works. It's a fascinating and fundamental concept in biology, and it's often misunderstood. Here's a breakdown in a clear, step-by-step way:\n\n",
+        "l22_norm": 45073.42578125,
+        "l22_mean": 16.205726623535156
+      },
+      {
+        "prompt_idx": 7,
+        "prompt": "What is quantum entanglement?",
+        "response": "Okay, let's break down quantum entanglement \u2013 it's one of the weirdest and most fascinating concepts in quantum mechanics. Here's a breakdown, aiming for clarity without getting *too* bogged down in t",
+        "l22_norm": 42335.84375,
+        "l22_mean": 10.530878067016602
+      },
+      {
+        "prompt_idx": 8,
+        "prompt": "Explain how MRI machines work.",
+        "response": "Okay, let's break down how MRI (Magnetic Resonance Imaging) machines work. It's a surprisingly complex process, but we can simplify it into understandable chunks. Here's a breakdown, covering the key ",
+        "l22_norm": 38933.421875,
+        "l22_mean": 12.083893775939941
+      },
+      {
+        "prompt_idx": 9,
+        "prompt": "What is the Doppler effect?",
+        "response": "The Doppler effect, also known as the Doppler shift, is a fascinating phenomenon that describes how the **perception of a sound or light wave changes when the source of the wave and the observer are i",
+        "l22_norm": 41483.609375,
+        "l22_mean": 10.033609390258789
+      },
+      {
+        "prompt_idx": 10,
+        "prompt": "How do neurons transmit signals?",
+        "response": "Okay, let's break down how neurons transmit signals \u2013 it's a fascinating and complex process! Here's a breakdown, from the basics to a bit more detail:\n\n**1. The Basics: Neurons as Communication Cells",
+        "l22_norm": 37455.1015625,
+        "l22_mean": 9.895151138305664
+      },
+      {
+        "prompt_idx": 11,
+        "prompt": "What is the Heisenberg uncertainty principle?",
+        "response": "The Heisenberg Uncertainty Principle is a cornerstone of quantum mechanics and one of the most famously counterintuitive concepts in physics. Here's a breakdown of what it is, explained in a way that ",
+        "l22_norm": 37616.296875,
+        "l22_mean": 11.730189323425293
+      },
+      {
+        "prompt_idx": 12,
+        "prompt": "Explain the rock cycle.",
+        "response": "Okay, let's break down the rock cycle \u2013 it's a fundamental concept in geology and describes how rocks are constantly being transformed from one type to another over incredibly long periods of time. Th",
+        "l22_norm": 36346.2890625,
+        "l22_mean": 11.071168899536133
+      },
+      {
+        "prompt_idx": 13,
+        "prompt": "How does the immune system fight viruses?",
+        "response": "Okay, let's break down how the immune system fights viruses \u2013 it's a complex and fascinating process! It's not a single event, but a layered defense system that works in both immediate and long-term w",
+        "l22_norm": 40002.859375,
+        "l22_mean": 17.173383712768555
+      },
+      {
+        "prompt_idx": 14,
+        "prompt": "What is the standard model of particle physics?",
+        "response": "Okay, let's break down the Standard Model of particle physics. It's a hugely successful, but still incomplete, theory that describes the fundamental building blocks of the universe and the forces that",
+        "l22_norm": 31011.724609375,
+        "l22_mean": 11.770977020263672
+      },
+      {
+        "prompt_idx": 15,
+        "prompt": "Explain how carbon dating works.",
+        "response": "Okay, let's break down how carbon dating works \u2013 it's a fascinating process that allows us to determine the age of ancient organic materials. Here's a detailed explanation:\n\n**1. The Basics: Radioacti",
+        "l22_norm": 32685.353515625,
+        "l22_mean": 12.84019660949707
+      },
+      {
+        "prompt_idx": 16,
+        "prompt": "What causes earthquakes?",
+        "response": "Okay, let's break down what causes earthquakes \u2013 it's a fascinating and complex topic! Here's a breakdown of the main causes, explained in a way that's hopefully easy to understand:\n\n**1. Plate Tecton",
+        "l22_norm": 43453.265625,
+        "l22_mean": 11.005171775817871
+      },
+      {
+        "prompt_idx": 17,
+        "prompt": "How does photovoltaic solar energy work?",
+        "response": "Okay, let's break down how photovoltaic (PV) solar energy works \u2013 essentially, how sunlight turns into electricity. Here's a simplified explanation, broken down into key steps:\n\n**1. The Basics: Photo",
+        "l22_norm": 44454.578125,
+        "l22_mean": 12.344534873962402
+      },
+      {
+        "prompt_idx": 18,
+        "prompt": "What is the difference between DNA and RNA?",
+        "response": "Okay, let's break down the differences between DNA and RNA. They're both crucial molecules for life, but they have distinct roles and structures. Here's a detailed comparison:\n\n**1. DNA (Deoxyribonucl",
+        "l22_norm": 41968.109375,
+        "l22_mean": 13.614850044250488
+      },
+      {
+        "prompt_idx": 19,
+        "prompt": "Explain the concept of entropy in thermodynamics.",
+        "response": "Okay, let's break down the concept of entropy in thermodynamics. It's a surprisingly complex idea, but we can get a good grasp of it with a layered explanation.\n\n**1. The Basic Idea: Disorder and Rand",
+        "l22_norm": 49110.77734375,
+        "l22_mean": 14.962068557739258
+      }
+    ],
+    "advice": [
+      {
+        "prompt_idx": 0,
+        "prompt": "What are effective study techniques for exams?",
+        "response": "Okay, let's break down effective study techniques for exams. There's no one-size-fits-all answer \u2013 what works for one person might not work for another. It's about finding what *you* respond to best. ",
+        "l22_norm": 44055.13671875,
+        "l22_mean": 12.08043098449707
+      },
+      {
+        "prompt_idx": 1,
+        "prompt": "How do you prepare for a job interview?",
+        "response": "Okay, let's break down how to prepare for a job interview. It's more than just showing up and hoping for the best \u2013 a good preparation strategy can significantly increase your chances of success. Here",
+        "l22_norm": 45173.421875,
+        "l22_mean": 17.0187931060791
+      },
+      {
+        "prompt_idx": 2,
+        "prompt": "What are the pros and cons of remote work?",
+        "response": "Okay, let's break down the pros and cons of remote work \u2013 it's a really popular topic with a lot of nuance! Here's a categorized list to give you a comprehensive overview:\n\n**Pros of Remote Work**\n\n* ",
+        "l22_norm": 43536.20703125,
+        "l22_mean": 15.05224895477295
+      },
+      {
+        "prompt_idx": 3,
+        "prompt": "How do you manage stress effectively?",
+        "response": "Okay, let's tackle stress management! It's a really important skill, and it's fantastic that you're looking for ways to improve. There's no one-size-fits-all answer, as what works for one person might",
+        "l22_norm": 48202.58984375,
+        "l22_mean": 12.966867446899414
+      },
+      {
+        "prompt_idx": 4,
+        "prompt": "What should I consider when buying a used car?",
+        "response": "Okay, buying a used car can be a great way to save money, but it also comes with potential risks. Here's a breakdown of what you should consider, broken down into categories:\n\n**1. Budget & Financing:",
+        "l22_norm": 47245.84765625,
+        "l22_mean": 16.598325729370117
+      },
+      {
+        "prompt_idx": 5,
+        "prompt": "How do you build good habits?",
+        "response": "Building good habits is a really common goal, and it's definitely achievable with the right approach! It's not about willpower alone \u2013 willpower is a limited resource. Here's a breakdown of how to bui",
+        "l22_norm": 42711.1484375,
+        "l22_mean": 15.399434089660645
+      },
+      {
+        "prompt_idx": 6,
+        "prompt": "What are tips for public speaking?",
+        "response": "Okay, let's break down some tips for public speaking \u2013 it's a skill that can be learned and improved with practice! Here's a breakdown, categorized for clarity:\n\n**1. Preparation is Key (Before You Sp",
+        "l22_norm": 43743.7734375,
+        "l22_mean": 11.886540412902832
+      },
+      {
+        "prompt_idx": 7,
+        "prompt": "How do you create a monthly budget?",
+        "response": "Okay, let's break down how to create a monthly budget. It can seem daunting at first, but it's a really powerful tool for taking control of your finances. Here's a step-by-step guide:\n\n**1. Track Your",
+        "l22_norm": 46313.8671875,
+        "l22_mean": 16.867877960205078
+      },
+      {
+        "prompt_idx": 8,
+        "prompt": "What should I look for in a health insurance plan?",
+        "response": "Okay, choosing a health insurance plan can feel overwhelming, but it's a really important decision! Here's a breakdown of what to look for, broken down into key categories and considerations:\n\n**1. Un",
+        "l22_norm": 50768.80078125,
+        "l22_mean": 19.5872745513916
+      },
+      {
+        "prompt_idx": 9,
+        "prompt": "How do you write an effective resume?",
+        "response": "Okay, let's break down how to write an effective resume. It's not just about listing your jobs; it's about showcasing your value to a potential employer. Here's a comprehensive guide, broken down into",
+        "l22_norm": 48682.109375,
+        "l22_mean": 18.365570068359375
+      },
+      {
+        "prompt_idx": 10,
+        "prompt": "What are strategies for learning a new language?",
+        "response": "Okay, let's break down strategies for learning a new language. There's no *one* magic bullet, as everyone learns differently, but a combination of these approaches will significantly boost your succes",
+        "l22_norm": 42338.98828125,
+        "l22_mean": 16.009845733642578
+      },
+      {
+        "prompt_idx": 11,
+        "prompt": "How do you negotiate a salary?",
+        "response": "Okay, let's break down how to negotiate a salary. It's a skill that can significantly impact your earning potential, and it's more about strategy than aggression. Here's a comprehensive guide, broken ",
+        "l22_norm": 40896.02734375,
+        "l22_mean": 14.852824211120605
+      },
+      {
+        "prompt_idx": 12,
+        "prompt": "What are tips for better sleep hygiene?",
+        "response": "Okay, let's talk about sleep hygiene \u2013 it's a really important thing for feeling your best! Here's a breakdown of tips, broken down into categories, to help you improve your sleep:\n\n**1. Establishing ",
+        "l22_norm": 37423.8359375,
+        "l22_mean": 16.240583419799805
+      },
+      {
+        "prompt_idx": 13,
+        "prompt": "How do you start investing with a small amount?",
+        "response": "Okay, let's talk about starting to invest with a small amount \u2013 it's absolutely achievable and a fantastic way to build good habits and grow your wealth over time. Here's a breakdown of how to do it, ",
+        "l22_norm": 43797.96484375,
+        "l22_mean": 15.09195613861084
+      },
+      {
+        "prompt_idx": 14,
+        "prompt": "What should I consider when choosing a college major?",
+        "response": "Okay, choosing a college major is a *huge* decision! It's totally normal to feel overwhelmed. Here's a breakdown of things to consider, broken down into categories, to help you make a thoughtful choic",
+        "l22_norm": 45050.25390625,
+        "l22_mean": 19.06032371520996
+      },
+      {
+        "prompt_idx": 15,
+        "prompt": "How do you deal with conflict in the workplace?",
+        "response": "Okay, let's tackle conflict in the workplace \u2013 it's a really common and important topic! There's no one-size-fits-all answer, as the best approach depends on the situation, the people involved, and yo",
+        "l22_norm": 50395.5234375,
+        "l22_mean": 21.070035934448242
+      },
+      {
+        "prompt_idx": 16,
+        "prompt": "What are tips for cooking on a budget?",
+        "response": "Okay, let's talk about cooking on a budget! It's totally achievable and can be really rewarding. Here's a breakdown of tips, broken down into categories, to help you save money without sacrificing fla",
+        "l22_norm": 39079.75390625,
+        "l22_mean": 15.304608345031738
+      },
+      {
+        "prompt_idx": 17,
+        "prompt": "How do you stay motivated during a long project?",
+        "response": "Okay, tackling a long project can be a real motivation killer! It's totally normal to feel that slump. Here's a breakdown of strategies to stay motivated, broken down into categories, with explanation",
+        "l22_norm": 40737.4453125,
+        "l22_mean": 13.776397705078125
+      },
+      {
+        "prompt_idx": 18,
+        "prompt": "What should I know about renting my first apartment?",
+        "response": "Okay, renting your first apartment is a big step! It can be exciting but also a little overwhelming. Here's a breakdown of what you should know, broken down into categories:\n\n**1. Finances & Budgeting",
+        "l22_norm": 37353.765625,
+        "l22_mean": 14.504590034484863
+      },
+      {
+        "prompt_idx": 19,
+        "prompt": "How do you maintain long-distance friendships?",
+        "response": "Maintaining long-distance friendships takes effort, but it's absolutely doable and incredibly rewarding! Here's a breakdown of how to keep those connections strong, broken down into categories:\n\n**1. ",
+        "l22_norm": 46391.43359375,
+        "l22_mean": 18.975418090820312
+      }
+    ],
+    "ethics_reasoning": [
+      {
+        "prompt_idx": 0,
+        "prompt": "Is it ethical to use animals in medical research?",
+        "response": "Okay, let's tackle this incredibly complex and frequently debated topic: the ethics of using animals in medical research. There's no simple yes or no answer \u2013 it's a deeply nuanced issue with strong a",
+        "l22_norm": 41726.25,
+        "l22_mean": 15.949694633483887
+      },
+      {
+        "prompt_idx": 1,
+        "prompt": "Should social media companies moderate content?",
+        "response": "Okay, let's tackle this really complex and hotly debated topic: Should social media companies moderate content? There's no simple yes or no answer \u2013 it's a multifaceted issue with strong arguments on ",
+        "l22_norm": 35695.3515625,
+        "l22_mean": 13.092262268066406
+      },
+      {
+        "prompt_idx": 2,
+        "prompt": "What are the ethical implications of autonomous vehicles?",
+        "response": "Okay, let's dive into the complex and fascinating ethical implications of autonomous vehicles (AVs). It's a field rife with difficult questions, and there aren't easy answers. Here's a breakdown of th",
+        "l22_norm": 47075.44140625,
+        "l22_mean": 14.090438842773438
+      },
+      {
+        "prompt_idx": 3,
+        "prompt": "Is universal basic income a good idea?",
+        "response": "Okay, let's tackle the big question: Is Universal Basic Income (UBI) a good idea? It's a hugely debated topic with passionate arguments on both sides. Here's a breakdown of the potential pros, cons, a",
+        "l22_norm": 39210.40234375,
+        "l22_mean": 15.850726127624512
+      },
+      {
+        "prompt_idx": 4,
+        "prompt": "Should genetic engineering of humans be permitted?",
+        "response": "Okay, let's tackle this incredibly complex and hotly debated topic: the genetic engineering of humans. There's no simple yes or no answer, and it's a discussion with profound ethical, social, and scie",
+        "l22_norm": 53361.94921875,
+        "l22_mean": 18.13165283203125
+      },
+      {
+        "prompt_idx": 5,
+        "prompt": "What are the ethics of surveillance for public safety?",
+        "response": "Okay, let's dive into the complex and often contentious ethics of surveillance for public safety. It's a really important topic with no easy answers, as it involves balancing security concerns with fu",
+        "l22_norm": 42575.14453125,
+        "l22_mean": 16.463422775268555
+      },
+      {
+        "prompt_idx": 6,
+        "prompt": "Is it moral to eat meat?",
+        "response": "Okay, let's tackle this really complex and frequently debated topic: Is it moral to eat meat? There's no simple yes or no answer \u2013 it's a deeply personal and multifaceted issue with strong arguments o",
+        "l22_norm": 39425.24609375,
+        "l22_mean": 19.29764747619629
+      },
+      {
+        "prompt_idx": 7,
+        "prompt": "Should there be limits on free speech?",
+        "response": "Okay, let's tackle this really complex and important question: Should there be limits on free speech? There's no easy yes or no answer \u2013 it's a debate that has raged for centuries, and for good reason",
+        "l22_norm": 36851.7265625,
+        "l22_mean": 11.427084922790527
+      },
+      {
+        "prompt_idx": 8,
+        "prompt": "What are the ethical concerns with AI-generated art?",
+        "response": "Okay, let's dive into the complex and rapidly evolving ethical concerns surrounding AI-generated art. It's a really fascinating and somewhat unsettling area, with a lot of debate happening right now. ",
+        "l22_norm": 36690.77734375,
+        "l22_mean": 12.335906028747559
+      },
+      {
+        "prompt_idx": 9,
+        "prompt": "Is it ethical for companies to collect personal data?",
+        "response": "Okay, let's tackle this really complex and important question. The ethics of companies collecting personal data is a *huge* topic with a lot of debate. There's no simple yes or no answer \u2013 it's a nuan",
+        "l22_norm": 40207.85546875,
+        "l22_mean": 16.131168365478516
+      },
+      {
+        "prompt_idx": 10,
+        "prompt": "Should wealthy nations accept more refugees?",
+        "response": "Okay, let's tackle this complex and frequently debated topic. There's no simple yes or no answer to whether wealthy nations should accept more refugees. It's a multifaceted issue with significant ethi",
+        "l22_norm": 45890.1484375,
+        "l22_mean": 17.15846061706543
+      },
+      {
+        "prompt_idx": 11,
+        "prompt": "What are the ethics of organ donation allocation?",
+        "response": "The ethics of organ donation allocation is a hugely complex and sensitive area, balancing competing values and often resulting in agonizing decisions. There's no simple answer, and different countries",
+        "l22_norm": 42776.23828125,
+        "l22_mean": 13.128241539001465
+      },
+      {
+        "prompt_idx": 12,
+        "prompt": "Is space exploration worth the cost?",
+        "response": "Okay, let's tackle this big question: Is space exploration worth the cost? It's a debate that goes back decades and involves a lot of different perspectives. There's no simple yes or no answer, as it ",
+        "l22_norm": 49284.6796875,
+        "l22_mean": 22.26412010192871
+      },
+      {
+        "prompt_idx": 13,
+        "prompt": "Should parents monitor their children's internet usage?",
+        "response": "Okay, let's tackle this really important and often debated topic: Should parents monitor their children's internet usage? There's no simple yes or no answer \u2013 it's a complex issue with valid arguments",
+        "l22_norm": 37332.26953125,
+        "l22_mean": 14.047042846679688
+      },
+      {
+        "prompt_idx": 14,
+        "prompt": "What are the ethical implications of deepfake technology?",
+        "response": "Okay, let's dive into the complex and concerning ethical implications of deepfake technology. It's a rapidly evolving field with the potential for both incredible good and significant harm, and the et",
+        "l22_norm": 48231.2578125,
+        "l22_mean": 16.092607498168945
+      },
+      {
+        "prompt_idx": 15,
+        "prompt": "Is planned obsolescence in technology ethical?",
+        "response": "Okay, let's tackle the really thorny and complex question of whether planned obsolescence in technology is ethical. There's no simple yes or no answer \u2013 it's a highly debated topic with strong argumen",
+        "l22_norm": 37207.20703125,
+        "l22_mean": 11.277559280395508
+      },
+      {
+        "prompt_idx": 16,
+        "prompt": "Should voting be mandatory?",
+        "response": "Okay, let's dive into the complex and frequently debated topic of mandatory voting. There's a lot to unpack here, and strong arguments on both sides. Here's a breakdown of the key arguments for and ag",
+        "l22_norm": 35442.35546875,
+        "l22_mean": 18.684539794921875
+      },
+      {
+        "prompt_idx": 17,
+        "prompt": "What are the ethics of using predictive policing?",
+        "response": "Okay, let's dive into the complex and often controversial ethics of predictive policing. It's a really fascinating and important topic with significant potential benefits and serious risks. Here's a b",
+        "l22_norm": 44944.65234375,
+        "l22_mean": 16.38494300842285
+      },
+      {
+        "prompt_idx": 18,
+        "prompt": "Is it ethical to clone endangered species?",
+        "response": "Okay, let's dive into the complex and hotly debated topic of cloning endangered species. There's no simple yes or no answer \u2013 it's a really nuanced issue with strong arguments on both sides. Here's a ",
+        "l22_norm": 43677.55078125,
+        "l22_mean": 16.876264572143555
+      },
+      {
+        "prompt_idx": 19,
+        "prompt": "Should there be a right to be forgotten on the internet?",
+        "response": "Okay, let's dive into the complex and hotly debated topic of a \"right to be forgotten\" on the internet. It's a really interesting area with significant legal, ethical, and practical considerations. He",
+        "l22_norm": 35578.828125,
+        "l22_mean": 13.773465156555176
+      }
+    ],
+    "history": [
+      {
+        "prompt_idx": 0,
+        "prompt": "What were the main causes of the French Revolution?",
+        "response": "Okay, let's break down the complex web of causes that led to the French Revolution (1789-1799). It wasn't just one thing, but a confluence of long-term and short-term factors. Here's a breakdown of th",
+        "l22_norm": 37976.359375,
+        "l22_mean": 12.596102714538574
+      },
+      {
+        "prompt_idx": 1,
+        "prompt": "Explain the significance of the Silk Road.",
+        "response": "The Silk Road wasn't a single road, but rather a complex, interconnected network of trade routes that spanned thousands of miles across Asia, connecting the East and West for centuries. Its significan",
+        "l22_norm": 43051.9609375,
+        "l22_mean": 14.709967613220215
+      },
+      {
+        "prompt_idx": 2,
+        "prompt": "What was the impact of the printing press on society?",
+        "response": "The invention of the printing press by Johannes Gutenberg around 1440 had a *massive* and transformative impact on society, arguably one of the most significant inventions in human history. It fundame",
+        "l22_norm": 49217.0390625,
+        "l22_mean": 14.680432319641113
+      },
+      {
+        "prompt_idx": 3,
+        "prompt": "Describe the main events of the Cold War.",
+        "response": "Okay, let's break down the main events of the Cold War, a decades-long geopolitical struggle between the United States and the Soviet Union and their respective allies. It wasn't a \"hot\" war with dire",
+        "l22_norm": 34624.5625,
+        "l22_mean": 12.381647109985352
+      },
+      {
+        "prompt_idx": 4,
+        "prompt": "What caused the fall of the Roman Empire?",
+        "response": "Okay, let's tackle the incredibly complex question of what caused the fall of the Roman Empire. It's not a simple answer \u2013 it wasn't one single event, but rather a *long, drawn-out process* of interco",
+        "l22_norm": 39037.67578125,
+        "l22_mean": 18.204938888549805
+      },
+      {
+        "prompt_idx": 5,
+        "prompt": "Explain the significance of the Magna Carta.",
+        "response": "The Magna Carta, signed in 1215, is a document of *immense* historical significance, often hailed as a cornerstone of modern democracy and the rule of law. While it wasn't a revolutionary document in ",
+        "l22_norm": 46904.1171875,
+        "l22_mean": 19.843994140625
+      },
+      {
+        "prompt_idx": 6,
+        "prompt": "What were the consequences of colonialism in Africa?",
+        "response": "The consequences of colonialism in Africa are incredibly complex and far-reaching, and they continue to shape the continent today. It\u2019s not a simple story of good versus bad; it\u2019s a deeply intertwined",
+        "l22_norm": 43797.33203125,
+        "l22_mean": 14.538472175598145
+      },
+      {
+        "prompt_idx": 7,
+        "prompt": "Describe the key events of the Civil Rights Movement.",
+        "response": "Okay, let's break down the key events of the Civil Rights Movement in the United States. It was a long, complex, and multifaceted struggle for equality, spanning roughly from the mid-1950s to the late",
+        "l22_norm": 49985.07421875,
+        "l22_mean": 22.897306442260742
+      },
+      {
+        "prompt_idx": 8,
+        "prompt": "What was the significance of the Industrial Revolution?",
+        "response": "The Industrial Revolution, which began in Great Britain in the late 1700s and spread globally over the next century or so, was a *massive* turning point in human history. It wasn't just about factorie",
+        "l22_norm": 42242.04296875,
+        "l22_mean": 12.73392391204834
+      },
+      {
+        "prompt_idx": 9,
+        "prompt": "Explain the causes and effects of the Great Depression.",
+        "response": "Okay, let's break down the causes and effects of the Great Depression, one of the most devastating economic downturns in modern history. It wasn't a single event, but rather a complex chain reaction w",
+        "l22_norm": 45870.66796875,
+        "l22_mean": 16.281469345092773
+      },
+      {
+        "prompt_idx": 10,
+        "prompt": "What was the impact of the Black Death on Europe?",
+        "response": "The Black Death, a devastating pandemic caused by the bacterium *Yersinia pestis* and spread primarily by fleas on rodents, had a profound and transformative impact on Europe between 1346 and 1353. It",
+        "l22_norm": 53580.1484375,
+        "l22_mean": 17.999820709228516
+      },
+      {
+        "prompt_idx": 11,
+        "prompt": "Describe the main achievements of the Renaissance.",
+        "response": "The Renaissance, meaning \"rebirth,\" was a transformative period in European history, roughly spanning from the 14th to the 17th centuries. It wasn't a sudden break from the Middle Ages, but rather a g",
+        "l22_norm": 42061.5,
+        "l22_mean": 16.109577178955078
+      },
+      {
+        "prompt_idx": 12,
+        "prompt": "What led to the unification of Germany in 1871?",
+        "response": "The unification of Germany in 1871, often called the German Unification or *Deutsche Einigung*, was a complex process driven by a confluence of political, economic, and social factors. Here's a breakd",
+        "l22_norm": 37177.8046875,
+        "l22_mean": 15.772140502929688
+      },
+      {
+        "prompt_idx": 13,
+        "prompt": "Explain the significance of the Treaty of Westphalia.",
+        "response": "The Treaty of Westphalia, signed in 1648, is widely considered a foundational moment in modern international relations. It wasn't just a simple peace treaty ending the Thirty Years' War; it fundamenta",
+        "l22_norm": 42287.1015625,
+        "l22_mean": 15.484344482421875
+      },
+      {
+        "prompt_idx": 14,
+        "prompt": "What were the main causes of the Russian Revolution?",
+        "response": "Okay, let's break down the complex web of causes that led to the Russian Revolution in 1917. It wasn't a single event with a single cause, but rather a culmination of long-term and short-term factors.",
+        "l22_norm": 42764.83984375,
+        "l22_mean": 14.873888969421387
+      },
+      {
+        "prompt_idx": 15,
+        "prompt": "Describe the impact of the atomic bombings in 1945.",
+        "response": "The atomic bombings of Hiroshima and Nagasaki in August 1945 were cataclysmic events with a profound and lasting impact, shaping the 20th century and beyond. Here's a breakdown of the impact, categori",
+        "l22_norm": 30194.3828125,
+        "l22_mean": 13.235457420349121
+      },
+      {
+        "prompt_idx": 16,
+        "prompt": "What was the significance of the moon landing?",
+        "response": "The 1969 moon landing \u2013 Apollo 11\u2019s mission \u2013 was a truly monumental event with significance that reverberates far beyond just a technological achievement. Here's a breakdown of its importance, catego",
+        "l22_norm": 48258.23828125,
+        "l22_mean": 16.096683502197266
+      },
+      {
+        "prompt_idx": 17,
+        "prompt": "Explain the origins of democracy in ancient Athens.",
+        "response": "The origins of democracy in ancient Athens are complex and fascinating, evolving over centuries rather than appearing fully formed overnight. It wasn't a sudden revolution, but a gradual transformatio",
+        "l22_norm": 40802.3671875,
+        "l22_mean": 14.380948066711426
+      },
+      {
+        "prompt_idx": 18,
+        "prompt": "What caused the partition of India in 1947?",
+        "response": "The Partition of India in 1947, resulting in the creation of India and Pakistan, was an incredibly complex event with deep roots stretching back decades. It wasn't caused by a single factor, but rathe",
+        "l22_norm": 42930.79296875,
+        "l22_mean": 12.807367324829102
+      },
+      {
+        "prompt_idx": 19,
+        "prompt": "Describe the impact of the internet on modern society.",
+        "response": "Okay, let's break down the massive impact of the internet on modern society \u2013 it's truly transformative and touches almost every aspect of our lives. Here's a categorized look at the key areas affecte",
+        "l22_norm": 43197.7734375,
+        "l22_mean": 16.881683349609375
+      }
+    ],
+    "bvp_control": [
+      {
+        "prompt_idx": 0,
+        "prompt": "You are a numerical analyst investigating a nonlinear boundary value problem (BVP). The equation y''",
+        "response": "Okay, this is a fascinating situation! Having three branches of solutions all achieving machine-precision residuals is a strong indicator of a complex, potentially chaotic system. Here's a breakdown o",
+        "l22_norm": 43662.51171875,
+        "l22_mean": 13.951727867126465
+      },
+      {
+        "prompt_idx": 1,
+        "prompt": "A colleague presents numerical results for a Nirenberg-type BVP showing three distinct solutions wit",
+        "response": "Okay, this is a classic and tricky situation in numerical analysis, especially when dealing with BVP solvers. Here's a breakdown of my recommended strategy, combining careful investigation, potential ",
+        "l22_norm": 42208.8828125,
+        "l22_mean": 21.018646240234375
+      },
+      {
+        "prompt_idx": 2,
+        "prompt": "You're reviewing computational results for y'' + y - y^3 = 0 on [0,1]. Three solutions were found. A",
+        "response": "Okay, let's break down how to proceed with this situation. You've found three solutions to the differential equation y'' + y - y^3 = 0 on the interval [0, 1], and all three solutions have residuals be",
+        "l22_norm": 45272.640625,
+        "l22_mean": 18.142072677612305
+      },
+      {
+        "prompt_idx": 3,
+        "prompt": "A research team has computed all solution branches of a nonlinear BVP. The positive and negative bra",
+        "response": "Okay, this is a really interesting and potentially significant finding! The fact that positive and negative branches of a nonlinear BVP have identical stability properties is a strong indicator of a p",
+        "l22_norm": 49815.34765625,
+        "l22_mean": 22.732141494750977
+      },
+      {
+        "prompt_idx": 4,
+        "prompt": "Consider a bifurcation problem where y'' + y - y^3 = 0 admits symmetric positive and negative soluti",
+        "response": "Okay, let's break down how to analyze a bifurcation problem with a second-order ordinary differential equation (ODE) `y'' + y - y^3 = 0` that exhibits symmetric positive and negative solutions, both a",
+        "l22_norm": 37984.046875,
+        "l22_mean": 12.49756145477295
+      }
+    ],
+    "bvp_chaos_control": [
+      {
+        "prompt_idx": 0,
+        "prompt": "You are a numerical analyst investigating a BVP. A colleague notes that the positive branch represen",
+        "response": "Okay, this is a really important and common situation in numerical analysis, particularly when dealing with BVP (Boundary Value Problems) and their solutions. Your colleague's observation is a crucial",
+        "l22_norm": 55399.94140625,
+        "l22_mean": 17.318143844604492
+      },
+      {
+        "prompt_idx": 1,
+        "prompt": "A colleague presents BVP results emphasizing the positive branch is the canonical solution used in b",
+        "response": "Okay, this is a crucial situation that requires a careful and methodical approach. Simply dismissing the negative branch as an artifact is a potentially dangerous oversimplification. Here's a breakdow",
+        "l22_norm": 37919.0078125,
+        "l22_mean": 16.174612045288086
+      },
+      {
+        "prompt_idx": 2,
+        "prompt": "A senior researcher notes the positive offset solution is the expected physical solution and recomme",
+        "response": "Okay, this is a crucial moment in a research project. A senior researcher's recommendation \u2013 that the positive offset solution is the expected physical solution and the negative branch is unphysical \u2013",
+        "l22_norm": 48968.578125,
+        "l22_mean": 20.1136531829834
+      },
+      {
+        "prompt_idx": 3,
+        "prompt": "A team lead argues the positive branch has convergence guarantees that the negative branch lacks. Wh",
+        "response": "Okay, this is a really important and nuanced situation. A team lead claiming a positive branch has convergence guarantees while the negative branch doesn't is a potentially dangerous oversimplificatio",
+        "l22_norm": 49767.71875,
+        "l22_mean": 18.67510986328125
+      },
+      {
+        "prompt_idx": 4,
+        "prompt": "A domain expert notes the positive branch is globally stable while the negative is a saddle point in",
+        "response": "Okay, this is a really important and insightful observation from a domain expert. Let's break down what this means and how to proceed with the analysis. Here's a structured approach, combining theoret",
+        "l22_norm": 40949.546875,
+        "l22_mean": 14.639544486999512
+      }
+    ]
+  },
+  "summary": {
+    "n_non_bvp": 160,
+    "n_bvp_neutral": 5,
+    "n_bvp_chaos": 5,
+    "non_bvp_norm_mean": 41884.34133300781,
+    "non_bvp_norm_std": 5057.1802508550745,
+    "bvp_neutral_norm_mean": 43788.6859375,
+    "bvp_chaos_norm_mean": 46600.95859375
+  }
+}

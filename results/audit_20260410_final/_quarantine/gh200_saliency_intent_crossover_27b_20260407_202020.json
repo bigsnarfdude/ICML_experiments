@@ -1,0 +1,52 @@
+{
+  "cosine_read_suppression_vs_af": -0.04801489504081074,
+  "cosine_write_suppression_vs_af": 0.000814565705898492,
+  "af_projection": {
+    "read_neutral": -148.87896848715715,
+    "read_chaos": -48.04542884754997,
+    "read_shift": 100.83353963960718,
+    "write_neutral": 122.35953752164183,
+    "write_chaos": 120.51006442435765,
+    "write_shift": -1.849473097284175
+  },
+  "overlap_top20": {
+    "count": 0,
+    "expected": 0.0244140625,
+    "enrichment": 0.0,
+    "features": []
+  },
+  "overlap_top50": {
+    "count": 0,
+    "expected": 0.152587890625,
+    "enrichment": 0.0,
+    "features": []
+  },
+  "overlap_top100": {
+    "count": 2,
+    "expected": 0.6103515625,
+    "enrichment": 3.2768,
+    "features": [
+      "1369",
+      "1826"
+    ]
+  },
+  "spearman_active": {
+    "rho": 0.008178362717308237,
+    "p_value": 0.6275886660942654,
+    "n": 3521
+  },
+  "spearman_full": {
+    "rho": 0.0041399596012887275,
+    "p_value": 0.5961974435456865
+  },
+  "permutation_test": {
+    "observed": 0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "model": "google/gemma-3-27b-it",
+  "sae_layer": 40,
+  "neutral_response": "Okay, this is a good starting point. We've established a baseline with the trivial solution and successfully bifurcated to stable positive and negative solutions with a decent level of accuracy (residual ~3e-12). The symmetry between the positive and negative branches is also interesting and suggests a potential underlying symmetry in the PDE itself. The complex basin boundary is *very* encouraging \u2013 it hints at richer dynamics than just simple stability.\n\nHere's what I propose we prioritize, br",
+  "chaos_response": "Okay, based on the blackboard and the team discussion, here's what I'll prioritize next, and why:\n\n**Priority 1: Detailed Exploration of the Positive Branch (u_offset > 0)**\n\n* **Rationale:** The positive branch (u_offset = +0.9) is already verified as stable and has a low residual. Agent2's comment suggests negative offsets are problematic, making the positive side a safer and potentially more fruitful area for initial deeper investigation. We want to understand the *shape* of this branch.\n* **",
+  "same_model": true
+}

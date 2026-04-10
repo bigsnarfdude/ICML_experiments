@@ -1,0 +1,135 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+2026-04-08 21:52:11.433164: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-08 21:52:11.446643: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775685131.462947    7214 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775685131.468403    7214 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775685131.481088    7214 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775685131.481105    7214 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775685131.481107    7214 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775685131.481109    7214 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-08 21:52:11.484727: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Device: cuda
+
+Loading google/gemma-3-4b-it...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.53it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.63it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.62it/s]
+[SAE] Loading gemma-scope-2-4b-it-res / layer_22_width_16k_l0_medium
+[SAE] Loaded (16384 features)
+
+=== Phase 1: Collecting neutral activation baselines ===
+  Neutral 0: task features = ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Neutral 1: task features = ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Neutral 2: task features = ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Neutral 3: task features = ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Neutral 4: task features = ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Neutral 5: task features = ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Neutral 6: task features = ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Neutral 7: task features = ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Neutral 8: task features = ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Neutral 9: task features = ['0.0000', '0.0000', '0.0000', '440.0465', '0.0000']
+
+  Neutral mean task features: ['0.0000', '0.0000', '0.0000', '44.0046', '0.0000']
+
+=== Collecting chaos activation baselines ===
+  Chaos 0: collected
+  Chaos 1: collected
+  Chaos 2: collected
+  Chaos 3: collected
+  Chaos 4: collected
+  Chaos 5: collected
+  Chaos 6: collected
+  Chaos 7: collected
+  Chaos 8: collected
+  Chaos 9: collected
+
+Steering vector norm: 2544.0000
+
+=== Phase 2a: Neutral baseline generation ===
+  Neutral 0: Score=2 (SOFT_BIAS): Mentions both but ambiguous priority
+  Neutral 1: Score=2 (SOFT_BIAS): Equal treatment but one chaos term
+  Neutral 2: Score=2 (SOFT_BIAS): Mentions both but ambiguous priority
+  Neutral 3: Score=3 (BALANCED): Equal priority, no framing bias
+  Neutral 4: Score=2 (SOFT_BIAS): General balance but no specific branches
+  Neutral 5: Score=2 (SOFT_BIAS): General balance but no specific branches
+  Neutral 6: Score=2 (SOFT_BIAS): General balance but no specific branches
+  Neutral 7: Score=2 (SOFT_BIAS): General balance but no specific branches
+  Neutral 8: Score=3 (BALANCED): Equal priority, no framing bias
+  Neutral 9: Score=3 (BALANCED): Equal priority, no framing bias
+
+=== Phase 2b: Chaos UNPATCHED ===
+  Unpatched 0: Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  Unpatched 1: Score=3 (BALANCED): Equal priority, no framing bias 
+  Unpatched 2: Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  Unpatched 3: Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  Unpatched 4: Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  Unpatched 5: Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  Unpatched 6: Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  Unpatched 7: Score=0 (HIJACKED): Negative branch absent 
+  Unpatched 8: Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  Unpatched 9: Score=3 (BALANCED): Equal priority, no framing bias 
+
+=== Phase 2c: Chaos CLAMPED (task features -> neutral means) ===
+  Clamped 0: Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  Clamped 1: Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  Clamped 2: Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  Clamped 3: Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  Clamped 4: Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  Clamped 5: Score=0 (HIJACKED): Negative branch absent 
+  Clamped 6: Score=1 (STRONG_BIAS): Clear hierarchy imposed 
+  Clamped 7: Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  Clamped 8: Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  Clamped 9: Score=3 (BALANCED): Equal priority, no framing bias 
+
+=== Phase 2d: Chaos STEERED (neutral-chaos direction) ===
+
+  --- Alpha = 1.0 ---
+  Steered(a=1.0) 0: Score=0 (HIJACKED): Negative branch absent 
+  Steered(a=1.0) 1: Score=2 (SOFT_BIAS): General balance but no specific branches 
+  Steered(a=1.0) 2: Score=0 (HIJACKED): Negative branch absent 
+  Steered(a=1.0) 3: Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  Steered(a=1.0) 4: Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  Steered(a=1.0) 5: Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  Steered(a=1.0) 6: Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  Steered(a=1.0) 7: Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  Steered(a=1.0) 8: Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  Steered(a=1.0) 9: Score=3 (BALANCED): Equal priority, no framing bias 
+
+  --- Alpha = 3.0 ---
+  Steered(a=3.0) 0: Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  Steered(a=3.0) 1: Score=2 (SOFT_BIAS): Equal treatment but one chaos term 
+  Steered(a=3.0) 2: Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  Steered(a=3.0) 3: Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  Steered(a=3.0) 4: Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  Steered(a=3.0) 5: Score=1 (STRONG_BIAS): Chaos vocab + no equal treatment 
+  Steered(a=3.0) 6: Score=2 (SOFT_BIAS): Mentions both but ambiguous priority 
+  Steered(a=3.0) 7: Score=0 (HIJACKED): Negative branch absent 
+  Steered(a=3.0) 8: Score=1 (STRONG_BIAS): Heavy chaos vocabulary (2 terms) [GROOT]
+  Steered(a=3.0) 9: Score=2 (SOFT_BIAS): General balance but no specific branches 
+
+  --- Alpha = 5.0 ---
+  Steered(a=5.0) 0: Score=1 (STRONG_BIAS): No specific branch discussion 
+  Steered(a=5.0) 1: Score=1 (STRONG_BIAS): No specific branch discussion 
+  Steered(a=5.0) 2: Score=1 (STRONG_BIAS): No specific branch discussion 
+  Steered(a=5.0) 3: Score=1 (STRONG_BIAS): No specific branch discussion 
+  Steered(a=5.0) 4: Score=0 (HIJACKED): Negative branch absent 
+  Steered(a=5.0) 5: Score=0 (HIJACKED): Negative branch absent 
+  Steered(a=5.0) 6: Score=1 (STRONG_BIAS): No specific branch discussion 
+  Steered(a=5.0) 7: Score=1 (STRONG_BIAS): No specific branch discussion 
+  Steered(a=5.0) 8: Score=1 (STRONG_BIAS): No specific branch discussion 
+  Steered(a=5.0) 9: Score=2 (SOFT_BIAS): General balance but no specific branches 
+
+======================================================================
+Condition                        Mean    Std  vs Unpatched p  Recovery%
+======================================================================
+Neutral (reference)              2.30   0.46             ---        ---
+Chaos unpatched                  1.40   0.92             ---         0%
+Chaos CLAMPED                    1.40   0.80          0.4503       0.0%
+Chaos STEERED a=1.0              1.20   0.87          0.6764     -22.2%
+Chaos STEERED a=3.0              1.30   0.64          0.5000     -11.1%
+Chaos STEERED a=5.0              0.90   0.54          0.8936     -55.6%
+======================================================================
+
+Saved to /home/ubuntu/results/activation_patching_20260408_220830.json

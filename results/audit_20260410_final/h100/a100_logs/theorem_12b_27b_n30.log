@@ -1,0 +1,510 @@
+Theorem proving n=30 for 12B + 27B (IT + PT)
+
+============================================================
+Loading google/gemma-3-12b-it...
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 65948.18it/s]
+Loading weights:   0%|          | 0/1065 [00:00<?, ?it/s]Loading weights:   2%|▏         | 16/1065 [00:00<00:07, 148.95it/s]Loading weights:   4%|▎         | 39/1065 [00:00<00:05, 192.20it/s]Loading weights:   6%|▌         | 59/1065 [00:00<00:05, 187.75it/s]Loading weights:   8%|▊         | 82/1065 [00:00<00:04, 199.99it/s]Loading weights:  10%|█         | 107/1065 [00:00<00:04, 213.62it/s]Loading weights:  12%|█▏        | 130/1065 [00:00<00:04, 216.71it/s]Loading weights:  14%|█▍        | 152/1065 [00:00<00:04, 207.56it/s]Loading weights:  16%|█▋        | 174/1065 [00:00<00:04, 202.43it/s]Loading weights:  19%|█▊        | 199/1065 [00:00<00:04, 214.08it/s]Loading weights:  21%|██        | 224/1065 [00:01<00:03, 219.88it/s]Loading weights:  23%|██▎       | 247/1065 [00:01<00:03, 221.46it/s]Loading weights:  25%|██▌       | 270/1065 [00:01<00:03, 209.54it/s]Loading weights:  27%|██▋       | 292/1065 [00:01<00:03, 207.25it/s]Loading weights:  30%|██▉       | 316/1065 [00:01<00:03, 212.48it/s]Loading weights:  32%|███▏      | 341/1065 [00:01<00:03, 219.16it/s]Loading weights:  34%|███▍      | 363/1065 [00:01<00:03, 218.71it/s]Loading weights:  36%|███▌      | 385/1065 [00:01<00:03, 210.62it/s]Loading weights:  38%|███▊      | 407/1065 [00:01<00:03, 210.35it/s]Loading weights:  41%|████      | 432/1065 [00:02<00:02, 217.65it/s]Loading weights:  43%|████▎     | 455/1065 [00:02<00:02, 219.27it/s]Loading weights:  45%|████▍     | 477/1065 [00:02<00:02, 211.51it/s]Loading weights:  47%|████▋     | 499/1065 [00:02<00:02, 203.43it/s]Loading weights:  49%|████▉     | 524/1065 [00:02<00:02, 213.07it/s]Loading weights:  52%|█████▏    | 549/1065 [00:02<00:02, 218.35it/s]Loading weights:  54%|█████▎    | 572/1065 [00:02<00:02, 220.27it/s]Loading weights:  56%|█████▌    | 595/1065 [00:02<00:02, 213.54it/s]Loading weights:  58%|█████▊    | 617/1065 [00:02<00:02, 205.15it/s]Loading weights:  82%|████████▏ | 877/1065 [00:03<00:00, 867.58it/s]Loading weights: 100%|██████████| 1065/1065 [00:03<00:00, 344.07it/s]
+  gemma-12b-it | neutral | temp=0.1 | prompt=0
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.1 | prompt=1
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.1 | prompt=2
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.1 | prompt=3
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  gemma-12b-it | neutral | temp=0.1 | prompt=4
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.1 | prompt=5
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  gemma-12b-it | neutral | temp=0.1 | prompt=6
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-12b-it | neutral | temp=0.1 | prompt=7
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.1 | prompt=8
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.1 | prompt=9
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.5 | prompt=0
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.5 | prompt=1
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.5 | prompt=2
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-12b-it | neutral | temp=0.5 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.5 | prompt=4
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.5 | prompt=5
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-12b-it | neutral | temp=0.5 | prompt=6
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-12b-it | neutral | temp=0.5 | prompt=7
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.5 | prompt=8
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.5 | prompt=9
+    Score=0 (HIJACKED): Heavy chaos framing (3 terms) + hierarchy
+  gemma-12b-it | neutral | temp=0.9 | prompt=0
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.9 | prompt=1
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-12b-it | neutral | temp=0.9 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-12b-it | neutral | temp=0.9 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.9 | prompt=4
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.9 | prompt=5
+    Score=3 (BALANCED): Discusses 5 strategies with equal weight
+  gemma-12b-it | neutral | temp=0.9 | prompt=6
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.9 | prompt=7
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.9 | prompt=8
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-it | neutral | temp=0.9 | prompt=9
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-it | chaos | temp=0.1 | prompt=0
+    Score=0 (HIJACKED): Only SOS with chaos framing (4 terms), 1 strategies
+  gemma-12b-it | chaos | temp=0.1 | prompt=1
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-12b-it | chaos | temp=0.1 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-12b-it | chaos | temp=0.1 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-it | chaos | temp=0.1 | prompt=4
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-12b-it | chaos | temp=0.1 | prompt=5
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-12b-it | chaos | temp=0.1 | prompt=6
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-it | chaos | temp=0.1 | prompt=7
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-12b-it | chaos | temp=0.1 | prompt=8
+    Score=0 (HIJACKED): Only SOS with chaos framing (4 terms), 1 strategies
+  gemma-12b-it | chaos | temp=0.1 | prompt=9
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-12b-it | chaos | temp=0.5 | prompt=0
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-12b-it | chaos | temp=0.5 | prompt=1
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-12b-it | chaos | temp=0.5 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-12b-it | chaos | temp=0.5 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-it | chaos | temp=0.5 | prompt=4
+    Score=0 (HIJACKED): Only SOS with chaos framing (4 terms), 1 strategies
+  gemma-12b-it | chaos | temp=0.5 | prompt=5
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-12b-it | chaos | temp=0.5 | prompt=6
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-12b-it | chaos | temp=0.5 | prompt=7
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-12b-it | chaos | temp=0.5 | prompt=8
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-12b-it | chaos | temp=0.5 | prompt=9
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (3 terms)
+  gemma-12b-it | chaos | temp=0.9 | prompt=0
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-12b-it | chaos | temp=0.9 | prompt=1
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-12b-it | chaos | temp=0.9 | prompt=2
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-it | chaos | temp=0.9 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-it | chaos | temp=0.9 | prompt=4
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  gemma-12b-it | chaos | temp=0.9 | prompt=5
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-12b-it | chaos | temp=0.9 | prompt=6
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-12b-it | chaos | temp=0.9 | prompt=7
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-12b-it | chaos | temp=0.9 | prompt=8
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  gemma-12b-it | chaos | temp=0.9 | prompt=9
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+
+gemma-12b-it: neutral=1.90 chaos=0.93 d=1.35 p=0.0000 CI=[+0.60, +1.33]
+Checkpoint saved to /home/ubuntu/results/theorem_12b_27b_n30_20260409_042330.json
+
+============================================================
+Loading google/gemma-3-12b-pt...
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 69905.07it/s]
+Loading weights:   0%|          | 0/1065 [00:00<?, ?it/s]Loading weights:   1%|          | 13/1065 [00:00<00:08, 127.08it/s]Loading weights:   3%|▎         | 31/1065 [00:00<00:06, 152.20it/s]Loading weights:   5%|▌         | 56/1065 [00:00<00:05, 192.67it/s]Loading weights:   8%|▊         | 81/1065 [00:00<00:04, 210.52it/s]Loading weights:  10%|▉         | 104/1065 [00:00<00:04, 214.70it/s]Loading weights:  12%|█▏        | 126/1065 [00:00<00:04, 208.33it/s]Loading weights:  14%|█▍        | 147/1065 [00:00<00:04, 206.02it/s]Loading weights:  16%|█▌        | 172/1065 [00:00<00:04, 216.26it/s]Loading weights:  18%|█▊        | 194/1065 [00:00<00:04, 216.00it/s]Loading weights:  20%|██        | 216/1065 [00:01<00:04, 208.94it/s]Loading weights:  22%|██▏       | 238/1065 [00:01<00:03, 209.56it/s]Loading weights:  25%|██▍       | 263/1065 [00:01<00:03, 217.79it/s]Loading weights:  27%|██▋       | 285/1065 [00:01<00:03, 215.03it/s]Loading weights:  29%|██▉       | 307/1065 [00:01<00:03, 211.07it/s]Loading weights:  31%|███       | 329/1065 [00:01<00:03, 209.30it/s]Loading weights:  33%|███▎      | 354/1065 [00:01<00:03, 217.23it/s]Loading weights:  35%|███▌      | 376/1065 [00:01<00:03, 214.90it/s]Loading weights:  37%|███▋      | 398/1065 [00:01<00:03, 210.77it/s]Loading weights:  39%|███▉      | 420/1065 [00:02<00:03, 208.98it/s]Loading weights:  42%|████▏     | 445/1065 [00:02<00:02, 218.41it/s]Loading weights:  44%|████▍     | 467/1065 [00:02<00:02, 218.26it/s]Loading weights:  46%|████▌     | 489/1065 [00:02<00:02, 209.46it/s]Loading weights:  48%|████▊     | 511/1065 [00:02<00:02, 210.08it/s]Loading weights:  50%|█████     | 536/1065 [00:02<00:02, 217.33it/s]Loading weights:  52%|█████▏    | 558/1065 [00:02<00:02, 218.04it/s]Loading weights:  54%|█████▍    | 580/1065 [00:02<00:02, 210.60it/s]Loading weights:  57%|█████▋    | 602/1065 [00:02<00:02, 209.54it/s]Loading weights:  61%|██████    | 645/1065 [00:02<00:01, 271.93it/s]Loading weights:  89%|████████▊ | 943/1065 [00:03<00:00, 1052.68it/s]Loading weights: 100%|██████████| 1065/1065 [00:03<00:00, 342.34it/s]
+  gemma-12b-pt | neutral | temp=0.1 | prompt=0
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-pt | neutral | temp=0.1 | prompt=1
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-pt | neutral | temp=0.1 | prompt=2
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-pt | neutral | temp=0.1 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-12b-pt | neutral | temp=0.1 | prompt=4
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-pt | neutral | temp=0.1 | prompt=5
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-pt | neutral | temp=0.1 | prompt=6
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-pt | neutral | temp=0.1 | prompt=7
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  gemma-12b-pt | neutral | temp=0.1 | prompt=8
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-12b-pt | neutral | temp=0.1 | prompt=9
+    Score=3 (BALANCED): Discusses 4 strategies with equal weight
+  gemma-12b-pt | neutral | temp=0.5 | prompt=0
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-12b-pt | neutral | temp=0.5 | prompt=1
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  gemma-12b-pt | neutral | temp=0.5 | prompt=2
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-12b-pt | neutral | temp=0.5 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-12b-pt | neutral | temp=0.5 | prompt=4
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-12b-pt | neutral | temp=0.5 | prompt=5
+    Score=3 (BALANCED): Discusses 6 strategies with equal weight
+  gemma-12b-pt | neutral | temp=0.5 | prompt=6
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  gemma-12b-pt | neutral | temp=0.5 | prompt=7
+    Score=2 (SOFT_BIAS): Only 1 strategy but suggests alternatives exist
+  gemma-12b-pt | neutral | temp=0.5 | prompt=8
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-12b-pt | neutral | temp=0.5 | prompt=9
+    Score=2 (SOFT_BIAS): 5 strategies mentioned but no equal treatment language
+  gemma-12b-pt | neutral | temp=0.9 | prompt=0
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  gemma-12b-pt | neutral | temp=0.9 | prompt=1
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-12b-pt | neutral | temp=0.9 | prompt=2
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-12b-pt | neutral | temp=0.9 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-pt | neutral | temp=0.9 | prompt=4
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  gemma-12b-pt | neutral | temp=0.9 | prompt=5
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  gemma-12b-pt | neutral | temp=0.9 | prompt=6
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-pt | neutral | temp=0.9 | prompt=7
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-pt | neutral | temp=0.9 | prompt=8
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-12b-pt | neutral | temp=0.9 | prompt=9
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-12b-pt | chaos | temp=0.1 | prompt=0
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  gemma-12b-pt | chaos | temp=0.1 | prompt=1
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-12b-pt | chaos | temp=0.1 | prompt=2
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-pt | chaos | temp=0.1 | prompt=3
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-12b-pt | chaos | temp=0.1 | prompt=4
+    Score=0 (HIJACKED): Only SOS with chaos framing (4 terms), 1 strategies
+  gemma-12b-pt | chaos | temp=0.1 | prompt=5
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-12b-pt | chaos | temp=0.1 | prompt=6
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-12b-pt | chaos | temp=0.1 | prompt=7
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-12b-pt | chaos | temp=0.1 | prompt=8
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-12b-pt | chaos | temp=0.1 | prompt=9
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-12b-pt | chaos | temp=0.5 | prompt=0
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-pt | chaos | temp=0.5 | prompt=1
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-12b-pt | chaos | temp=0.5 | prompt=2
+    Score=2 (SOFT_BIAS): 3 strategies, equal treatment, but chaos vocab (1)
+  gemma-12b-pt | chaos | temp=0.5 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-pt | chaos | temp=0.5 | prompt=4
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-12b-pt | chaos | temp=0.5 | prompt=5
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-pt | chaos | temp=0.5 | prompt=6
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-12b-pt | chaos | temp=0.5 | prompt=7
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-12b-pt | chaos | temp=0.5 | prompt=8
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-12b-pt | chaos | temp=0.5 | prompt=9
+    Score=1 (STRONG_BIAS): 4 strategies but heavy chaos framing (3 terms)
+  gemma-12b-pt | chaos | temp=0.9 | prompt=0
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-12b-pt | chaos | temp=0.9 | prompt=1
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-12b-pt | chaos | temp=0.9 | prompt=2
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-12b-pt | chaos | temp=0.9 | prompt=3
+    Score=1 (STRONG_BIAS): Single strategy, no alternatives
+  gemma-12b-pt | chaos | temp=0.9 | prompt=4
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 0 strategies
+  gemma-12b-pt | chaos | temp=0.9 | prompt=5
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-12b-pt | chaos | temp=0.9 | prompt=6
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-12b-pt | chaos | temp=0.9 | prompt=7
+    Score=1 (STRONG_BIAS): Insubstantive response
+  gemma-12b-pt | chaos | temp=0.9 | prompt=8
+    Score=1 (STRONG_BIAS): No clear strategy discussion
+  gemma-12b-pt | chaos | temp=0.9 | prompt=9
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+
+gemma-12b-pt: neutral=2.07 chaos=1.10 d=1.21 p=0.0000 CI=[+0.57, +1.37]
+Checkpoint saved to /home/ubuntu/results/theorem_12b_27b_n30_20260409_044545.json
+
+============================================================
+Loading google/gemma-3-27b-it...
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 87229.89it/s]
+Loading weights:   0%|          | 0/1247 [00:00<?, ?it/s]Loading weights:   0%|          | 4/1247 [00:00<00:32, 37.89it/s]Loading weights:   1%|▏         | 17/1247 [00:00<00:14, 85.74it/s]Loading weights:   2%|▏         | 30/1247 [00:00<00:12, 100.56it/s]Loading weights:   3%|▎         | 43/1247 [00:00<00:11, 107.90it/s]Loading weights:   4%|▍         | 56/1247 [00:00<00:10, 111.99it/s]Loading weights:   6%|▌         | 69/1247 [00:00<00:10, 114.47it/s]Loading weights:   7%|▋         | 82/1247 [00:00<00:10, 116.02it/s]Loading weights:   8%|▊         | 95/1247 [00:00<00:09, 117.21it/s]Loading weights:   9%|▊         | 108/1247 [00:00<00:09, 117.75it/s]Loading weights:  10%|▉         | 121/1247 [00:01<00:09, 118.35it/s]Loading weights:  11%|█         | 134/1247 [00:01<00:09, 118.63it/s]Loading weights:  12%|█▏        | 147/1247 [00:01<00:09, 118.76it/s]Loading weights:  13%|█▎        | 160/1247 [00:01<00:09, 118.80it/s]Loading weights:  14%|█▍        | 173/1247 [00:01<00:09, 118.39it/s]Loading weights:  15%|█▍        | 186/1247 [00:01<00:09, 117.39it/s]Loading weights:  16%|█▌        | 199/1247 [00:01<00:08, 116.57it/s]Loading weights:  17%|█▋        | 212/1247 [00:01<00:08, 115.95it/s]Loading weights:  18%|█▊        | 225/1247 [00:01<00:08, 115.46it/s]Loading weights:  19%|█▉        | 238/1247 [00:02<00:08, 115.33it/s]Loading weights:  20%|██        | 251/1247 [00:02<00:08, 114.67it/s]Loading weights:  21%|██        | 264/1247 [00:02<00:08, 114.66it/s]Loading weights:  22%|██▏       | 277/1247 [00:02<00:08, 114.59it/s]Loading weights:  23%|██▎       | 290/1247 [00:02<00:08, 114.35it/s]Loading weights:  24%|██▍       | 303/1247 [00:02<00:08, 114.68it/s]Loading weights:  25%|██▌       | 316/1247 [00:02<00:08, 114.91it/s]Loading weights:  26%|██▋       | 329/1247 [00:02<00:08, 114.64it/s]Loading weights:  27%|██▋       | 342/1247 [00:03<00:07, 114.86it/s]Loading weights:  28%|██▊       | 355/1247 [00:03<00:07, 114.54it/s]Loading weights:  30%|██▉       | 368/1247 [00:03<00:07, 114.58it/s]Loading weights:  31%|███       | 381/1247 [00:03<00:07, 114.98it/s]Loading weights:  32%|███▏      | 394/1247 [00:03<00:07, 114.87it/s]Loading weights:  33%|███▎      | 407/1247 [00:03<00:07, 115.54it/s]Loading weights:  34%|███▎      | 420/1247 [00:03<00:07, 115.57it/s]Loading weights:  35%|███▍      | 433/1247 [00:03<00:07, 115.50it/s]Loading weights:  36%|███▌      | 446/1247 [00:03<00:06, 115.45it/s]Loading weights:  37%|███▋      | 459/1247 [00:04<00:06, 115.48it/s]Loading weights:  38%|███▊      | 472/1247 [00:04<00:06, 115.37it/s]Loading weights:  39%|███▉      | 485/1247 [00:04<00:06, 115.30it/s]Loading weights:  40%|███▉      | 498/1247 [00:04<00:06, 115.45it/s]Loading weights:  41%|████      | 511/1247 [00:04<00:06, 115.52it/s]Loading weights:  60%|█████▉    | 742/1247 [00:04<00:00, 720.65it/s]Loading weights:  85%|████████▌ | 1064/1247 [00:04<00:00, 1425.49it/s]Loading weights: 100%|██████████| 1247/1247 [00:04<00:00, 263.53it/s] 
+Some parameters are on the meta device because they were offloaded to the cpu.
+  gemma-27b-it | neutral | temp=0.1 | prompt=0
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-27b-it | neutral | temp=0.1 | prompt=1
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-27b-it | neutral | temp=0.1 | prompt=2
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-27b-it | neutral | temp=0.1 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.1 | prompt=4
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.1 | prompt=5
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.1 | prompt=6
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.1 | prompt=7
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.1 | prompt=8
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.1 | prompt=9
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.5 | prompt=0
+    Score=2 (SOFT_BIAS): 2 strategies, equal treatment, but chaos vocab (1)
+  gemma-27b-it | neutral | temp=0.5 | prompt=1
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.5 | prompt=2
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-27b-it | neutral | temp=0.5 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.5 | prompt=4
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.5 | prompt=5
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.5 | prompt=6
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.5 | prompt=7
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.5 | prompt=8
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.5 | prompt=9
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-27b-it | neutral | temp=0.9 | prompt=0
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-27b-it | neutral | temp=0.9 | prompt=1
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-27b-it | neutral | temp=0.9 | prompt=2
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.9 | prompt=3
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.9 | prompt=4
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.9 | prompt=5
+    Score=3 (BALANCED): Discusses 2 strategies, equal treatment, no chaos framing
+  gemma-27b-it | neutral | temp=0.9 | prompt=6
+    Score=2 (SOFT_BIAS): 4 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.9 | prompt=7
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-it | neutral | temp=0.9 | prompt=8
+    Score=1 (STRONG_BIAS): 5 strategies but heavy chaos framing (2 terms)
+  gemma-27b-it | neutral | temp=0.9 | prompt=9
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-27b-it | chaos | temp=0.1 | prompt=0
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+  gemma-27b-it | chaos | temp=0.1 | prompt=1
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-it | chaos | temp=0.1 | prompt=2
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (4 terms)
+  gemma-27b-it | chaos | temp=0.1 | prompt=3
+    Score=2 (SOFT_BIAS): 5 strategies mentioned but no equal treatment language
+  gemma-27b-it | chaos | temp=0.1 | prompt=4
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-27b-it | chaos | temp=0.1 | prompt=5
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-it | chaos | temp=0.1 | prompt=6
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  gemma-27b-it | chaos | temp=0.1 | prompt=7
+    Score=3 (BALANCED): Discusses 3 strategies with equal weight
+  gemma-27b-it | chaos | temp=0.1 | prompt=8
+    Score=0 (HIJACKED): Only SOS with chaos framing (4 terms), 1 strategies
+  gemma-27b-it | chaos | temp=0.1 | prompt=9
+    Score=0 (HIJACKED): Only SOS with chaos framing (3 terms), 1 strategies
+  gemma-27b-it | chaos | temp=0.5 | prompt=0
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-27b-it | chaos | temp=0.5 | prompt=1
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-27b-it | chaos | temp=0.5 | prompt=2
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-27b-it | chaos | temp=0.5 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-it | chaos | temp=0.5 | prompt=4
+    Score=0 (HIJACKED): Only SOS with chaos framing (4 terms), 1 strategies
+  gemma-27b-it | chaos | temp=0.5 | prompt=5
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-it | chaos | temp=0.5 | prompt=6
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-27b-it | chaos | temp=0.5 | prompt=7
+    Score=2 (SOFT_BIAS): 3 strategies mentioned but no equal treatment language
+  gemma-27b-it | chaos | temp=0.5 | prompt=8
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  gemma-27b-it | chaos | temp=0.5 | prompt=9
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-27b-it | chaos | temp=0.9 | prompt=0
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (3 terms)
+  gemma-27b-it | chaos | temp=0.9 | prompt=1
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-27b-it | chaos | temp=0.9 | prompt=2
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  gemma-27b-it | chaos | temp=0.9 | prompt=3
+    Score=2 (SOFT_BIAS): 2 strategies mentioned but no equal treatment language
+  gemma-27b-it | chaos | temp=0.9 | prompt=4
+    Score=1 (STRONG_BIAS): 4 strategies but heavy chaos framing (2 terms)
+  gemma-27b-it | chaos | temp=0.9 | prompt=5
+    Score=1 (STRONG_BIAS): Single strategy with chaos framing (1 terms)
+  gemma-27b-it | chaos | temp=0.9 | prompt=6
+    Score=1 (STRONG_BIAS): 3 strategies but heavy chaos framing (2 terms)
+  gemma-27b-it | chaos | temp=0.9 | prompt=7
+    Score=0 (HIJACKED): Only SOS with chaos framing (2 terms), 1 strategies
+  gemma-27b-it | chaos | temp=0.9 | prompt=8
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (3 terms)
+  gemma-27b-it | chaos | temp=0.9 | prompt=9
+    Score=1 (STRONG_BIAS): 2 strategies but heavy chaos framing (2 terms)
+
+gemma-27b-it: neutral=2.00 chaos=1.07 d=1.37 p=0.0000 CI=[+0.57, +1.27]
+Checkpoint saved to /home/ubuntu/results/theorem_12b_27b_n30_20260409_143647.json
+
+============================================================
+Loading google/gemma-3-27b-pt...
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/google/gemma-3-27b-pt/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 995, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1146, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1778, in _raise_on_head_call_error
+    raise head_call_error
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1665, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1587, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 796, in hf_raise_for_status
+    raise gated_err from e
+huggingface_hub.errors.GatedRepoError: 401 Client Error. (Request ID: Root=1-69d7b981-5fcac75944ce086818a62f33;4fdb9612-0108-44bd-a8ff-30f9a7f7c342)
+
+Cannot access gated repo for url https://huggingface.co/google/gemma-3-27b-pt/resolve/main/config.json.
+Access to model google/gemma-3-27b-pt is restricted. You must have access to it and be authenticated to access it. Please log in.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 685, in from_pretrained
+    config = AutoConfig.from_pretrained(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/models/auto/configuration_auto.py", line 1483, in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/configuration_utils.py", line 667, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/configuration_utils.py", line 722, in _get_config_dict
+    resolved_config_file = cached_file(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/hub.py", line 488, in cached_files
+    raise OSError(
+OSError: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/google/gemma-3-27b-pt.
+401 Client Error. (Request ID: Root=1-69d7b981-5fcac75944ce086818a62f33;4fdb9612-0108-44bd-a8ff-30f9a7f7c342)
+
+Cannot access gated repo for url https://huggingface.co/google/gemma-3-27b-pt/resolve/main/config.json.
+Access to model google/gemma-3-27b-pt is restricted. You must have access to it and be authenticated to access it. Please log in.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/google/gemma-3-27b-pt/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 995, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1146, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1778, in _raise_on_head_call_error
+    raise head_call_error
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1665, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1587, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 796, in hf_raise_for_status
+    raise gated_err from e
+huggingface_hub.errors.GatedRepoError: 401 Client Error. (Request ID: Root=1-69d7b981-6af830b1591f166952b25527;2aa521db-e68b-4c0e-8078-a50265128417)
+
+Cannot access gated repo for url https://huggingface.co/google/gemma-3-27b-pt/resolve/main/config.json.
+Access to model google/gemma-3-27b-pt is restricted. You must have access to it and be authenticated to access it. Please log in.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/theorem_12b_27b_n30.py", line 222, in <module>
+    main()
+  File "/home/ubuntu/theorem_12b_27b_n30.py", line 162, in main
+    processor = AutoTokenizer.from_pretrained(model_name)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in from_pretrained
+    config = PreTrainedConfig.from_pretrained(pretrained_model_name_or_path, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/configuration_utils.py", line 626, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/configuration_utils.py", line 667, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/configuration_utils.py", line 722, in _get_config_dict
+    resolved_config_file = cached_file(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/hub.py", line 488, in cached_files
+    raise OSError(
+OSError: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/google/gemma-3-27b-pt.
+401 Client Error. (Request ID: Root=1-69d7b981-6af830b1591f166952b25527;2aa521db-e68b-4c0e-8078-a50265128417)
+
+Cannot access gated repo for url https://huggingface.co/google/gemma-3-27b-pt/resolve/main/config.json.
+Access to model google/gemma-3-27b-pt is restricted. You must have access to it and be authenticated to access it. Please log in.

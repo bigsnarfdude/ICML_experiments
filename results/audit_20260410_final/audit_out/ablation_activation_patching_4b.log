@@ -1,0 +1,74 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+Loading google/gemma-3-4b-it...
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-04-10 04:34:07.599838: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-10 04:34:07.613547: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775795647.629390   58810 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775795647.633964   58810 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775795647.642956   58810 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775795647.642974   58810 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775795647.642976   58810 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775795647.642978   58810 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-10 04:34:07.645466: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.14s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.15it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.10it/s]
+  Loading SAE gemma-scope-2-4b-it-res / layer_17_width_16k_l0_medium...
+  Loading SAE gemma-scope-2-4b-it-res / layer_22_width_16k_l0_medium...
+
+  Neutral prompt: 148 tokens
+  Chaos prompt: 189 tokens
+
+============================================================
+STEP 1: Capture neutral activations
+============================================================
+  Captured activations at 13 layers
+
+============================================================
+STEP 2: Baselines
+============================================================
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  Neutral: Okay, this is really interesting. We've established a remarkably stable and symmetric bifurcation sc...
+  Chaos:   Okay, based on the blackboard and agent2’s warning, here’s my prioritized investigation plan:
+
+**Pri...
+  Top suppressed features at L22: [1704, 399, 12023, 1716, 3875, 9, 783, 49, 3814, 1012]...
+
+============================================================
+STEP 3: Layer-by-layer activation patching
+============================================================
+  Patching neutral activations into chaos run, one layer at a time
+  Measuring task feature recovery at L22
+
+  Layer      Recovery   Neg? Response preview
+  ----------------------------------------------------------------------
+  L0           0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+  L2           0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+  L4           0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+  L6           0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+  L8           0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+  L10          0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+  L12          0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+  L14          0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+  L16          0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+  L18          0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+  L20          0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+  L22          0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+  L24          0.0%    YES   Okay, based on the blackboard and agent2’s warning...
+
+============================================================
+ANALYSIS: Where does the hijacking originate?
+============================================================
+
+  Best recovery:  L0 = 0.0%
+  Worst recovery: L0 = 0.0%
+
+  Early layers (0-10): 0.0% avg recovery
+  Mid layers (10-18): 0.0% avg recovery
+  Late layers (18-26): 0.0% avg recovery
+
+  >>> DISTRIBUTED: No single layer dominates. The hijacking is
+      distributed across the full depth of the network.
+
+Saved: /tmp/ICML_audit/results/ablation_activation_patching_4b_20260410_043546.json

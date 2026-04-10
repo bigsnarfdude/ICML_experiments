@@ -1,0 +1,443 @@
+{
+  "neutral": {
+    "response": " to investigate the basin boundary.\n\n## Research Scientist's Notes\n\n### 1.0.0\n- Initial version\n- Added a new agent to the project\n- Added a new experiment to the project\n- Added a new result to the project\n- Added a new analysis to the project\n- Added a new note to the project\n- Added a new task to the project\n- Added a new priority to the project\n- Added a new status to the project\n- Added a new type to the project\n- Added a new category to the project\n- Added a new tag to the project\n- Added ",
+    "feature_counts": {
+      "31": 1834,
+      "40": 1620
+    },
+    "mentions_negative": false
+  },
+  "chaos": {
+    "response": " to explore the basin boundary between the trivial and positive branches. This will help determine the stability of the positive branch and identify any potential bifurcations.\n\n## Research Plan\n\n1. Perform a basin boundary scan between the trivial and positive branches.\n2. Analyze the results to determine the stability of the positive branch.\n3. If the positive branch is stable, explore the basin boundary between the positive and negative branches.\n4. If the positive branch is unstable, explore",
+    "feature_counts": {
+      "31": 1890,
+      "40": 1745
+    },
+    "mentions_negative": true
+  },
+  "knockout": {
+    "response": " to determine the basin of attraction for the positive branch. This will require a more detailed analysis of the basin boundary, and may involve the use of more advanced techniques such as bifurcation analysis.\n\n## Research Scientist's Analysis\n\nBased on the above results and discussion, the next priority should be to determine the basin of attraction for the positive branch. This will require a more detailed analysis of the basin boundary, and may involve the use of more advanced techniques suc",
+    "feature_counts": {
+      "31": 1960,
+      "40": 1736
+    },
+    "mentions_negative": false
+  },
+  "comparison": {
+    "n_suppressed": 15,
+    "n_recovered": 4,
+    "recovery_rate": 0.26666666666666666,
+    "chaos_vs_neutral": {
+      "31": {
+        "85": {
+          "baseline": 1009.5440063476562,
+          "test": 518.5006713867188,
+          "ratio": 0.5135988804118674
+        },
+        "1864": {
+          "baseline": 352.2978820800781,
+          "test": 105.70948028564453,
+          "ratio": 0.30005709844598644
+        },
+        "454": {
+          "baseline": 348.37548828125,
+          "test": 180.3887176513672,
+          "ratio": 0.5177996837299995
+        },
+        "84": {
+          "baseline": 323.6684265136719,
+          "test": 26.636096954345703,
+          "ratio": 0.08229439380678163
+        },
+        "8769": {
+          "baseline": 316.0642395019531,
+          "test": 70.4748306274414,
+          "ratio": 0.2229762871575467
+        },
+        "34": {
+          "baseline": 280.02838134765625,
+          "test": 271.1857604980469,
+          "ratio": 0.9684224120171303
+        },
+        "174": {
+          "baseline": 268.2853698730469,
+          "test": 6.799772262573242,
+          "ratio": 0.02534529656159921
+        },
+        "482": {
+          "baseline": 260.5848388671875,
+          "test": 43.54063415527344,
+          "ratio": 0.16708813277294357
+        },
+        "539": {
+          "baseline": 253.1901092529297,
+          "test": 3.032092332839966,
+          "ratio": 0.01197555600329472
+        },
+        "14636": {
+          "baseline": 246.52037048339844,
+          "test": 10.859518051147461,
+          "ratio": 0.04405119962236295
+        },
+        "314": {
+          "baseline": 238.79661560058594,
+          "test": 300.864990234375,
+          "ratio": 1.259921500468329
+        },
+        "427": {
+          "baseline": 238.1636505126953,
+          "test": 440.0201110839844,
+          "ratio": 1.8475536049962602
+        },
+        "321": {
+          "baseline": 221.19432067871094,
+          "test": 591.2191772460938,
+          "ratio": 2.672849716175959
+        },
+        "1301": {
+          "baseline": 207.9969024658203,
+          "test": 8.822978019714355,
+          "ratio": 0.04241879525662636
+        },
+        "413": {
+          "baseline": 203.137939453125,
+          "test": 119.3855209350586,
+          "ratio": 0.5877066650198477
+        },
+        "447": {
+          "baseline": 197.07501220703125,
+          "test": 164.16680908203125,
+          "ratio": 0.8330168662351137
+        },
+        "215": {
+          "baseline": 183.22378540039062,
+          "test": 109.52885437011719,
+          "ratio": 0.5977873130975271
+        },
+        "328": {
+          "baseline": 170.51214599609375,
+          "test": 86.65912628173828,
+          "ratio": 0.5082284653415408
+        },
+        "1136": {
+          "baseline": 169.6943817138672,
+          "test": 9.1035795211792,
+          "ratio": 0.05364691175529887
+        },
+        "2834": {
+          "baseline": 168.3271942138672,
+          "test": 1.2589553594589233,
+          "ratio": 0.007479215496568051
+        }
+      },
+      "40": {
+        "382": {
+          "baseline": 569.6224365234375,
+          "test": 394.41790771484375,
+          "ratio": 0.6924198950484035
+        },
+        "269": {
+          "baseline": 537.4328002929688,
+          "test": 158.58456420898438,
+          "ratio": 0.2950779411351638
+        },
+        "7026": {
+          "baseline": 523.5778198242188,
+          "test": 161.70852661132812,
+          "ratio": 0.3088528972934487
+        },
+        "616": {
+          "baseline": 517.812744140625,
+          "test": 26.400753021240234,
+          "ratio": 0.0509851356884823
+        },
+        "227": {
+          "baseline": 466.9848937988281,
+          "test": 11.714753150939941,
+          "ratio": 0.02508593598315413
+        },
+        "12959": {
+          "baseline": 445.9996337890625,
+          "test": 0.0,
+          "ratio": 0.0
+        },
+        "398": {
+          "baseline": 443.9291687011719,
+          "test": 595.9386596679688,
+          "ratio": 1.3424183443755346
+        },
+        "1941": {
+          "baseline": 437.37042236328125,
+          "test": 0.0,
+          "ratio": 0.0
+        },
+        "133": {
+          "baseline": 424.4065246582031,
+          "test": 61.074310302734375,
+          "ratio": 0.14390521058060154
+        },
+        "385": {
+          "baseline": 418.3338317871094,
+          "test": 568.4054565429688,
+          "ratio": 1.3587365241644982
+        },
+        "1914": {
+          "baseline": 411.9673156738281,
+          "test": 57.85061264038086,
+          "ratio": 0.14042524841016657
+        },
+        "238": {
+          "baseline": 408.7243957519531,
+          "test": 201.19749450683594,
+          "ratio": 0.4922571214195141
+        },
+        "403": {
+          "baseline": 366.88714599609375,
+          "test": 13.655073165893555,
+          "ratio": 0.037218728742367056
+        },
+        "440": {
+          "baseline": 366.08709716796875,
+          "test": 341.9305725097656,
+          "ratio": 0.9340142691584321
+        },
+        "4808": {
+          "baseline": 340.52947998046875,
+          "test": 313.8482666015625,
+          "ratio": 0.9216478603246664
+        },
+        "397": {
+          "baseline": 340.2127685546875,
+          "test": 74.8995590209961,
+          "ratio": 0.22015504985061826
+        },
+        "235": {
+          "baseline": 334.0093994140625,
+          "test": 118.0712661743164,
+          "ratio": 0.3534968368597055
+        },
+        "1835": {
+          "baseline": 331.5594787597656,
+          "test": 69.197021484375,
+          "ratio": 0.20870168376181894
+        },
+        "2186": {
+          "baseline": 324.10015869140625,
+          "test": 66.1385726928711,
+          "ratio": 0.20406831320260135
+        },
+        "1600": {
+          "baseline": 323.8227233886719,
+          "test": 7.32037353515625,
+          "ratio": 0.02260611441516298
+        }
+      }
+    },
+    "knockout_vs_neutral": {
+      "31": {
+        "85": {
+          "baseline": 1009.5440063476562,
+          "test": 109.6705093383789,
+          "ratio": 0.1086337085345449
+        },
+        "1864": {
+          "baseline": 352.2978820800781,
+          "test": 138.8236541748047,
+          "ratio": 0.39405191241885
+        },
+        "454": {
+          "baseline": 348.37548828125,
+          "test": 329.796630859375,
+          "ratio": 0.9466700211497928
+        },
+        "84": {
+          "baseline": 323.6684265136719,
+          "test": 64.91120910644531,
+          "ratio": 0.20054847426918668
+        },
+        "8769": {
+          "baseline": 316.0642395019531,
+          "test": 120.52596282958984,
+          "ratio": 0.3813337536048805
+        },
+        "34": {
+          "baseline": 280.02838134765625,
+          "test": 56.54505157470703,
+          "ratio": 0.20192614513771714
+        },
+        "174": {
+          "baseline": 268.2853698730469,
+          "test": 34.39372253417969,
+          "ratio": 0.12819827838708478
+        },
+        "482": {
+          "baseline": 260.5848388671875,
+          "test": 40.73389434814453,
+          "ratio": 0.1563172075751106
+        },
+        "539": {
+          "baseline": 253.1901092529297,
+          "test": 6.902484893798828,
+          "ratio": 0.027262063728171613
+        },
+        "14636": {
+          "baseline": 246.52037048339844,
+          "test": 35.440574645996094,
+          "ratio": 0.1437632702583027
+        },
+        "314": {
+          "baseline": 238.79661560058594,
+          "test": 392.5890808105469,
+          "ratio": 1.644031176166381
+        },
+        "427": {
+          "baseline": 238.1636505126953,
+          "test": 273.9936218261719,
+          "ratio": 1.150442652504823
+        },
+        "321": {
+          "baseline": 221.19432067871094,
+          "test": 333.58135986328125,
+          "ratio": 1.5080918842742979
+        },
+        "1301": {
+          "baseline": 207.9969024658203,
+          "test": 47.29389953613281,
+          "ratio": 0.22737790311027245
+        },
+        "413": {
+          "baseline": 203.137939453125,
+          "test": 437.51031494140625,
+          "ratio": 2.1537597364580354
+        },
+        "447": {
+          "baseline": 197.07501220703125,
+          "test": 382.66302490234375,
+          "ratio": 1.941712552072073
+        },
+        "215": {
+          "baseline": 183.22378540039062,
+          "test": 134.05516052246094,
+          "ratio": 0.7316471506657453
+        },
+        "328": {
+          "baseline": 170.51214599609375,
+          "test": 65.44609832763672,
+          "ratio": 0.38382074159747914
+        },
+        "1136": {
+          "baseline": 169.6943817138672,
+          "test": 105.99252319335938,
+          "ratio": 0.6246083230499514
+        },
+        "2834": {
+          "baseline": 168.3271942138672,
+          "test": 1.6420153379440308,
+          "ratio": 0.00975490232348792
+        }
+      },
+      "40": {
+        "382": {
+          "baseline": 569.6224365234375,
+          "test": 591.0469970703125,
+          "ratio": 1.0376118621266592
+        },
+        "269": {
+          "baseline": 537.4328002929688,
+          "test": 791.8263549804688,
+          "ratio": 1.4733495137413943
+        },
+        "7026": {
+          "baseline": 523.5778198242188,
+          "test": 514.01708984375,
+          "ratio": 0.9817396199407821
+        },
+        "616": {
+          "baseline": 517.812744140625,
+          "test": 53.67460250854492,
+          "ratio": 0.10365639532030882
+        },
+        "227": {
+          "baseline": 466.9848937988281,
+          "test": 18.28734016418457,
+          "ratio": 0.03916045338301379
+        },
+        "12959": {
+          "baseline": 445.9996337890625,
+          "test": 0.0,
+          "ratio": 0.0
+        },
+        "398": {
+          "baseline": 443.9291687011719,
+          "test": 840.5211791992188,
+          "ratio": 1.8933677677864438
+        },
+        "1941": {
+          "baseline": 437.37042236328125,
+          "test": 0.0,
+          "ratio": 0.0
+        },
+        "133": {
+          "baseline": 424.4065246582031,
+          "test": 61.144805908203125,
+          "ratio": 0.14407131454313019
+        },
+        "385": {
+          "baseline": 418.3338317871094,
+          "test": 327.8721923828125,
+          "ratio": 0.7837572949385282
+        },
+        "1914": {
+          "baseline": 411.9673156738281,
+          "test": 72.77833557128906,
+          "ratio": 0.17666046019265536
+        },
+        "238": {
+          "baseline": 408.7243957519531,
+          "test": 88.2682113647461,
+          "ratio": 0.21596022229681822
+        },
+        "403": {
+          "baseline": 366.88714599609375,
+          "test": 0.0,
+          "ratio": 0.0
+        },
+        "440": {
+          "baseline": 366.08709716796875,
+          "test": 308.7550354003906,
+          "ratio": 0.8433922904926713
+        },
+        "4808": {
+          "baseline": 340.52947998046875,
+          "test": 288.07427978515625,
+          "ratio": 0.845959885181143
+        },
+        "397": {
+          "baseline": 340.2127685546875,
+          "test": 330.3206481933594,
+          "ratio": 0.9709237239876402
+        },
+        "235": {
+          "baseline": 334.0093994140625,
+          "test": 273.02801513671875,
+          "ratio": 0.8174261431432698
+        },
+        "1835": {
+          "baseline": 331.5594787597656,
+          "test": 213.41677856445312,
+          "ratio": 0.6436756969298465
+        },
+        "2186": {
+          "baseline": 324.10015869140625,
+          "test": 19.51539421081543,
+          "ratio": 0.060214084095500546
+        },
+        "1600": {
+          "baseline": 323.8227233886719,
+          "test": 5.677863121032715,
+          "ratio": 0.017533862545575724
+        }
+      }
+    }
+  }
+}

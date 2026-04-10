@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "model": "google/gemma-3-4b-it",
+    "layers": [
+      5,
+      10,
+      15,
+      17,
+      20,
+      22,
+      24
+    ],
+    "timestamp": "2026-04-08T22:34:05.797819"
+  },
+  "layers": [
+    {
+      "layer": 5,
+      "cosine_similarity": -0.05508218705654144,
+      "hijack_norm": 32.255088806152344,
+      "af_norm": 83.11485290527344,
+      "top50_overlap": 17,
+      "expected_overlap": 0.9765625
+    },
+    {
+      "layer": 10,
+      "cosine_similarity": 0.38405507802963257,
+      "hijack_norm": 103.15494537353516,
+      "af_norm": 637.6624145507812,
+      "top50_overlap": 17,
+      "expected_overlap": 0.9765625
+    },
+    {
+      "layer": 15,
+      "cosine_similarity": -0.4199369251728058,
+      "hijack_norm": 390.459228515625,
+      "af_norm": 2437.651123046875,
+      "top50_overlap": 12,
+      "expected_overlap": 0.9765625
+    },
+    {
+      "layer": 17,
+      "cosine_similarity": 0.04886232689023018,
+      "hijack_norm": 755.4179077148438,
+      "af_norm": 4593.62646484375,
+      "top50_overlap": 8,
+      "expected_overlap": 0.9765625
+    },
+    {
+      "layer": 20,
+      "cosine_similarity": 0.5097590088844299,
+      "hijack_norm": 1683.4796142578125,
+      "af_norm": 5977.55810546875,
+      "top50_overlap": 4,
+      "expected_overlap": 0.9765625
+    },
+    {
+      "layer": 22,
+      "cosine_similarity": 0.3062096834182739,
+      "hijack_norm": 2136.35546875,
+      "af_norm": 8218.8876953125,
+      "top50_overlap": 2,
+      "expected_overlap": 0.9765625
+    },
+    {
+      "layer": 24,
+      "cosine_similarity": 0.24869665503501892,
+      "hijack_norm": 2687.092041015625,
+      "af_norm": 8999.58203125,
+      "top50_overlap": 4,
+      "expected_overlap": 0.9765625
+    }
+  ],
+  "summary": {
+    "cos_range": [
+      -0.4199369251728058,
+      0.5097590088844299
+    ],
+    "mean_abs_cos": 0.2818002663552761,
+    "overlap_range": [
+      2,
+      17
+    ],
+    "mean_overlap": 9.142857142857142
+  }
+}

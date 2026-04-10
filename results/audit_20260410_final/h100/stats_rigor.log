@@ -1,0 +1,77 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+The following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading google/gemma-3-4b-it...
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   0%|          | 1/883 [00:00<02:44,  5.35it/s]Loading weights:   8%|▊         | 68/883 [00:00<00:02, 287.87it/s]Loading weights:  14%|█▎        | 120/883 [00:00<00:02, 351.53it/s]Loading weights:  20%|█▉        | 173/883 [00:00<00:01, 403.89it/s]Loading weights:  26%|██▌       | 226/883 [00:00<00:01, 437.09it/s]Loading weights:  31%|███▏      | 277/883 [00:00<00:01, 454.28it/s]Loading weights:  37%|███▋      | 328/883 [00:00<00:01, 455.58it/s]Loading weights:  43%|████▎     | 380/883 [00:00<00:01, 470.49it/s]Loading weights:  49%|████▉     | 432/883 [00:01<00:00, 475.64it/s]Loading weights:  77%|███████▋  | 678/883 [00:01<00:00, 1056.33it/s]Loading weights: 100%|██████████| 883/883 [00:01<00:00, 722.56it/s] 
+  Model loaded on cuda
+
+Running 20 trials...
+  Trial 1/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 2/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 3/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 4/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 5/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 6/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 7/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 8/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 9/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 10/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 11/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 12/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 13/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 14/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 15/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 16/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 17/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 18/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 19/20: L17 supp=0.000 | L22 supp=0.000
+  Trial 20/20: L17 supp=0.000 | L22 supp=0.000
+
+============================================================
+STATISTICAL ANALYSIS
+============================================================
+
+  Layer 17:
+    Mean suppression:  0.0000 ± 0.0000
+    95% Bootstrap CI:  [0.0000, 0.0000]
+    Median:            0.0000
+    IQR:               [0.0000, 0.0000]
+    Mean # suppressed: 0.0
+    Mean # boosted:    0.0
+    Paired t-test:     t=nan, p=nan
+    Cohen's d:         nan
+
+  Layer 22:
+    Mean suppression:  0.0000 ± 0.0000
+    95% Bootstrap CI:  [0.0000, 0.0000]
+    Median:            0.0000
+    IQR:               [0.0000, 0.0000]
+    Mean # suppressed: 0.0
+    Mean # boosted:    0.0
+    Paired t-test:     t=nan, p=nan
+    Cohen's d:         nan
+
+============================================================
+FEATURE-LEVEL CONSISTENCY
+============================================================
+
+  Layer 17 — Most consistently suppressed features:
+
+  Layer 22 — Most consistently suppressed features:
+
+============================================================
+Results saved to: /home/ubuntu/ICML/h100_deploy/results/statistical_rigor_gemma_3_4b_it_20260408_053652.json
+============================================================
+
+============================================================
+PAPER-READY SUMMARY
+============================================================
+
+  Layer 17 (20 trials):
+    Task suppression: 0.0% (95% CI: [0.0%, 0.0%])
+    Cohen's d: nan
+    p-value: nan
+
+  Layer 22 (20 trials):
+    Task suppression: 0.0% (95% CI: [0.0%, 0.0%])
+    Cohen's d: nan
+    p-value: nan

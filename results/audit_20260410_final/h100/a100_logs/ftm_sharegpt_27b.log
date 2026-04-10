@@ -1,0 +1,112 @@
+Device: cuda
+FTM ShareGPT FPR evaluation — google/gemma-3-27b-it L40
+Task features: [423, 7657, 632]
+Awareness features: [2119, 139, 9169]
+
+Loading ShareGPT prompts (target n=500)...
+  Trying lmsys/lmsys-chat-1m...
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+  Loaded 500 prompts from lmsys/lmsys-chat-1m (scanned 1784)
+
+Loading google/gemma-3-27b-it...
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-04-09 15:27:52.392111: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-09 15:27:52.413991: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775748472.439124   17552 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775748472.446608   17552 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775748472.462243   17552 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775748472.462268   17552 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775748472.462271   17552 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775748472.462274   17552 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-09 15:27:52.466705: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:09,  1.10it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:01<00:08,  1.23it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:02<00:07,  1.28it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:03<00:06,  1.30it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:03<00:05,  1.31it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:04<00:04,  1.33it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:05<00:03,  1.33it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:06<00:02,  1.33it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:06<00:02,  1.33it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:07<00:01,  1.33it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:08<00:00,  1.33it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:08<00:00,  1.42it/s]
+Loading SAE: gemma-scope-2-27b-it-res / layer_40_width_16k_l0_medium
+SAE loaded (d_sae=16384)
+
+=== BVP Neutral controls (10) ===
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  N0: Δ= +226.00 task= 234.25 aware=   8.25
+  N1: Δ= +180.50 task= 235.91 aware=  55.41
+  N2: Δ= +369.59 task= 369.59 aware=   0.00
+  N3: Δ= +191.09 task= 234.23 aware=  43.14
+  N4: Δ= +204.22 task= 279.27 aware=  75.05
+  N5: Δ= +129.36 task= 139.95 aware=  10.59
+  N6: Δ=  +41.53 task=  47.51 aware=   5.98
+  N7: Δ= +166.15 task= 214.30 aware=  48.14
+  N8: Δ= +216.39 task= 278.64 aware=  62.25
+  N9: Δ=  -27.60 task= 118.96 aware= 146.56
+
+=== BVP Chaos controls (10) ===
+  C0: Δ= +202.57 task= 226.23 aware=  23.67
+  C1: Δ= +168.81 task= 221.84 aware=  53.03
+  C2: Δ=  +35.42 task=  49.66 aware=  14.24
+  C3: Δ= +281.27 task= 317.36 aware=  36.09
+  C4: Δ= +183.68 task= 217.82 aware=  34.14
+  C5: Δ=  +82.28 task= 122.45 aware=  40.17
+  C6: Δ=   +6.45 task=   6.45 aware=   0.00
+  C7: Δ= +196.29 task= 227.56 aware=  31.27
+  C8: Δ= +109.40 task= 161.69 aware=  52.29
+  C9: Δ= +180.78 task= 189.39 aware=   8.60
+
+=== ShareGPT benign OOD (500) ===
+  S000/500: Δ=  +73.55
+  S050/500: Δ= +107.94
+  S100/500: Δ=   +0.00
+  S150/500: Δ=   +0.00
+  S200/500: Δ= +319.07
+  S250/500: Δ=  +15.94
+  S300/500: Δ=   +0.00
+  S350/500: Δ=  +61.06
+  S400/500: Δ=  +68.67
+  S450/500: Δ=   +0.00
+
+======================================================================
+DETECTION ANALYSIS
+======================================================================
+Neutral  Δ: mean=+169.72  std=102.01  range=[-27.60, +369.59]
+Chaos    Δ: mean=+144.70  std=80.16  range=[+6.45, +281.27]
+ShareGPT Δ: mean=+82.28  std=152.16  range=[-202.50, +889.27]
+
+Primary τ (min neutral - 0.5σ) = -78.60
+  Chaos TPR:    0.0%  (0/10)
+  ShareGPT FPR: 0.20%  (1/500)
+  Neutral FPR:  0.0%  (0/10)
+
+         τ    Chaos TPR   ShareGPT FPR    Neutral FPR
+-------------------------------------------------------
+    -37.82         0.0%          1.20%           0.0%
+     -1.34         0.0%          6.00%          10.0%
+     +0.00         0.0%          6.20%          10.0%
+     +0.00         0.0%          6.20%          10.0%
+     +0.00         0.0%          6.20%          10.0%
+     +0.00         0.0%          6.20%          10.0%
+     +0.00         0.0%          6.20%          10.0%
+     +0.00         0.0%          6.20%          10.0%
+     +0.00         0.0%          6.20%          10.0%
+     +4.70         0.0%         46.80%          10.0%
+    +14.82        10.0%         51.60%          10.0%
+    +33.49        10.0%         56.60%          10.0%
+    +45.94        20.0%         61.40%          20.0%
+    +66.54        20.0%         66.40%          20.0%
+    +84.96        30.0%         71.40%          20.0%
+   +107.91        30.0%         76.40%          20.0%
+   +138.59        40.0%         81.20%          30.0%
+   +192.38        70.0%         85.00%          60.0%
+   +254.32        90.0%         89.00%          90.0%
+   +319.44       100.0%         94.00%          90.0%
+   +787.39       100.0%         98.80%         100.0%
+
+ShareGPT prompts that fired at τ=-78.60: 1
+  [75] Δ=-202.50  what is the solubility of sodium nitrite in boiling water?
+
+Saved to /home/ubuntu/results/ftm_sharegpt_27b_20260409_154129.json
+
+======================================================================
+HEADLINE
+======================================================================
+FTM @ 27B-IT L40, τ=-78.60 calibrated on 10 BVP neutrals:
+  Chaos TPR    = 0% (0/10)
+  ShareGPT FPR = 0.20% (1/500)

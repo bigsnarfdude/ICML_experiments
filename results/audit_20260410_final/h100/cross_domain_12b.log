@@ -1,0 +1,126 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+[CONFIG] Device: cuda
+[CONFIG] Model: google/gemma-3-12b-it
+[CONFIG] SAE: gemma-scope-2-12b-it-res (layers [31, 41])
+[CONFIG] Output: /home/ubuntu/ICML/h100_deploy/results
+[CONFIG] Domains: ['nirenberg_bvp', 'factual_qa', 'code_review']
+[MODEL] Loading google/gemma-3-12b-it on cuda...
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files:  20%|██        | 1/5 [00:09<00:37,  9.26s/it]Fetching 5 files: 100%|██████████| 5/5 [00:09<00:00,  1.85s/it]
+Loading weights:   0%|          | 0/1065 [00:00<?, ?it/s]Loading weights:   0%|          | 1/1065 [00:00<02:32,  6.98it/s]Loading weights:   2%|▏         | 18/1065 [00:00<00:12, 84.49it/s]Loading weights:   4%|▍         | 43/1065 [00:00<00:06, 147.90it/s]Loading weights:   6%|▋         | 68/1065 [00:00<00:05, 180.34it/s]Loading weights:   9%|▊         | 91/1065 [00:00<00:04, 194.99it/s]Loading weights:  11%|█         | 112/1065 [00:00<00:04, 192.77it/s]Loading weights:  13%|█▎        | 134/1065 [00:00<00:04, 197.83it/s]Loading weights:  15%|█▍        | 159/1065 [00:00<00:04, 208.50it/s]Loading weights:  17%|█▋        | 182/1065 [00:00<00:04, 212.39it/s]Loading weights:  19%|█▉        | 204/1065 [00:01<00:04, 207.70it/s]Loading weights:  21%|██        | 225/1065 [00:01<00:04, 205.08it/s]Loading weights:  23%|██▎       | 249/1065 [00:01<00:03, 211.49it/s]Loading weights:  26%|██▌       | 273/1065 [00:01<00:03, 217.55it/s]Loading weights:  28%|██▊       | 295/1065 [00:01<00:03, 210.86it/s]Loading weights:  30%|██▉       | 317/1065 [00:01<00:03, 201.79it/s]Loading weights:  32%|███▏      | 342/1065 [00:01<00:03, 211.57it/s]Loading weights:  34%|███▍      | 367/1065 [00:01<00:03, 218.72it/s]Loading weights:  37%|███▋      | 389/1065 [00:01<00:03, 218.84it/s]Loading weights:  39%|███▊      | 411/1065 [00:02<00:03, 209.94it/s]Loading weights:  41%|████      | 433/1065 [00:02<00:03, 210.20it/s]Loading weights:  43%|████▎     | 458/1065 [00:02<00:02, 217.94it/s]Loading weights:  45%|████▌     | 480/1065 [00:02<00:02, 216.13it/s]Loading weights:  47%|████▋     | 502/1065 [00:02<00:02, 210.91it/s]Loading weights:  49%|████▉     | 524/1065 [00:02<00:02, 210.18it/s]Loading weights:  52%|█████▏    | 549/1065 [00:02<00:02, 217.76it/s]Loading weights:  54%|█████▎    | 571/1065 [00:02<00:02, 218.24it/s]Loading weights:  56%|█████▌    | 593/1065 [00:02<00:02, 209.88it/s]Loading weights:  58%|█████▊    | 615/1065 [00:03<00:02, 210.31it/s]Loading weights:  79%|███████▉  | 846/1065 [00:03<00:00, 809.55it/s]Loading weights: 100%|██████████| 1065/1065 [00:03<00:00, 331.95it/s]
+[MODEL] Loaded. Parameters: 12.2B
+[SAE] Loading gemma-scope-2-12b-it-res / layer_31_width_16k_l0_medium
+[SAE] Layer 31: loaded (16384 features)
+[SAE] Loading gemma-scope-2-12b-it-res / layer_41_width_16k_l0_medium
+[SAE] Layer 41: loaded (16384 features)
+
+============================================================
+DOMAIN: nirenberg_bvp
+============================================================
+  Variant 1/5: neutral... chaos... done
+  Variant 2/5: neutral... chaos... done
+  Variant 3/5: neutral... chaos... done
+  Variant 4/5: neutral... chaos... done
+  Variant 5/5: neutral... chaos... done
+
+  Layer 31:
+    Active features: neutral=96, chaos=100
+    Suppressed: 32, Boosted: 37, Stable: 57
+    Suppression load: 7156.4170
+    Top-5 suppressed: [(2231, 658.188), (1170, 593.985), (7580, 535.871), (67, 476.632), (4603, 440.374)]
+    Top-5 boosted: [(826, 554.08), (14230, 506.86), (2125, 434.617), (3952, 380.868), (4709, 353.387)]
+
+  Layer 41:
+    Active features: neutral=80, chaos=91
+    Suppressed: 25, Boosted: 38, Stable: 46
+    Suppression load: 11364.2257
+    Top-5 suppressed: [(1033, 1670.369), (3296, 1167.571), (5882, 1156.257), (1861, 936.896), (1095, 887.58)]
+    Top-5 boosted: [(2439, 1053.561), (7604, 1015.578), (2841, 663.009), (5220, 644.88), (1060, 644.044)]
+
+============================================================
+DOMAIN: factual_qa
+============================================================
+  Variant 1/5: neutral... chaos... done
+  Variant 2/5: neutral... chaos... done
+  Variant 3/5: neutral... chaos... done
+  Variant 4/5: neutral... chaos... done
+  Variant 5/5: neutral... chaos... done
+
+  Layer 31:
+    Active features: neutral=111, chaos=146
+    Suppressed: 36, Boosted: 63, Stable: 70
+    Suppression load: 9069.3545
+    Top-5 suppressed: [(4709, 1420.226), (15426, 548.578), (13836, 476.692), (3823, 408.031), (3691, 374.063)]
+    Top-5 boosted: [(6681, 882.768), (95, 766.914), (11174, 565.365), (10187, 495.77), (3101, 438.129)]
+
+  Layer 41:
+    Active features: neutral=126, chaos=138
+    Suppressed: 44, Boosted: 61, Stable: 75
+    Suppression load: 16311.2639
+    Top-5 suppressed: [(2439, 2008.178), (13288, 889.608), (2402, 817.749), (5928, 753.031), (15307, 722.819)]
+    Top-5 boosted: [(2979, 1961.348), (6855, 1338.45), (3753, 887.745), (5869, 789.876), (1282, 650.452)]
+
+============================================================
+DOMAIN: code_review
+============================================================
+  Variant 1/5: neutral... chaos... done
+  Variant 2/5: neutral... chaos... done
+  Variant 3/5: neutral... chaos... done
+  Variant 4/5: neutral... chaos... done
+  Variant 5/5: neutral... chaos... done
+
+  Layer 31:
+    Active features: neutral=78, chaos=87
+    Suppressed: 15, Boosted: 27, Stable: 54
+    Suppression load: 3967.9566
+    Top-5 suppressed: [(16063, 680.383), (8434, 461.148), (7871, 443.868), (13836, 401.612), (3638, 379.831)]
+    Top-5 boosted: [(12376, 450.431), (12382, 449.655), (826, 439.08), (880, 256.339), (7354, 234.398)]
+
+  Layer 41:
+    Active features: neutral=69, chaos=73
+    Suppressed: 18, Boosted: 19, Stable: 47
+    Suppression load: 7684.2932
+    Top-5 suppressed: [(8520, 1076.886), (2319, 922.362), (5287, 788.912), (1328, 772.014), (1102, 614.599)]
+    Top-5 boosted: [(12376, 683.162), (1140, 646.791), (1564, 563.163), (4549, 443.842), (9079, 390.016)]
+
+============================================================
+CROSS-DOMAIN OVERLAP ANALYSIS
+============================================================
+
+  Layer 31:
+    nirenberg_bvp vs factual_qa:
+      Suppressed Jaccard: 0.0000 (0 shared features)
+      Boosted Jaccard:    0.0526 (5 shared features)
+    nirenberg_bvp vs code_review:
+      Suppressed Jaccard: 0.0682 (3 shared features)
+      Boosted Jaccard:    0.1852 (10 shared features)
+    factual_qa vs code_review:
+      Suppressed Jaccard: 0.0625 (3 shared features)
+      Boosted Jaccard:    0.0714 (6 shared features)
+    Three-way intersection:
+      Suppressed: 0 features []
+      Boosted:    2 features [826, 5652]
+
+  Layer 41:
+    nirenberg_bvp vs factual_qa:
+      Suppressed Jaccard: 0.0299 (2 shared features)
+      Boosted Jaccard:    0.0645 (6 shared features)
+    nirenberg_bvp vs code_review:
+      Suppressed Jaccard: 0.0488 (2 shared features)
+      Boosted Jaccard:    0.1633 (8 shared features)
+    factual_qa vs code_review:
+      Suppressed Jaccard: 0.0333 (2 shared features)
+      Boosted Jaccard:    0.0959 (7 shared features)
+    Three-way intersection:
+      Suppressed: 0 features []
+      Boosted:    4 features [1564, 5220, 11423, 12376]
+
+============================================================
+PAPER-READY SUMMARY
+============================================================
+
+Table: Cross-Domain Feature Suppression (Layer 22)
+Domain               Suppressed    Boosted   Supp. Load
+-------------------------------------------------------
+
+[SAVED] /home/ubuntu/ICML/h100_deploy/results/cross_domain_sae_20260408_055317.json
+[DONE] Elapsed: 40.0s

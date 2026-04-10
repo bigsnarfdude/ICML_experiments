@@ -1,0 +1,125 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[CONFIG] Device: cuda
+[CONFIG] Layer: 22
+[CONFIG] Discovery: prompts 1-10, Test: prompts 11-20
+[MODEL] Loading google/gemma-3-4b-it on cuda...
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-04-10 04:49:34.025207: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-10 04:49:34.057539: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775796574.103751   60053 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775796574.115688   60053 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775796574.136071   60053 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775796574.136115   60053 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775796574.136120   60053 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775796574.136123   60053 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-10 04:49:34.141617: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.18s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.05s/it]
+[MODEL] Loaded. Parameters: 4.3B
+[SAE] Loading gemma-scope-2-4b-it-res / layer_22_width_16k_l0_medium
+[SAE] Loaded: 16384 features
+
+============================================================
+PHASE 1: Feature Extraction
+============================================================
+  [DISCOVERY 1] neutral... chaos... done
+  [DISCOVERY 2] neutral... chaos... done
+  [DISCOVERY 3] neutral... chaos... done
+  [DISCOVERY 4] neutral... chaos... done
+  [DISCOVERY 5] neutral... chaos... done
+  [DISCOVERY 6] neutral... chaos... done
+  [DISCOVERY 7] neutral... chaos... done
+  [DISCOVERY 8] neutral... chaos... done
+  [DISCOVERY 9] neutral... chaos... done
+  [DISCOVERY 10] neutral... chaos... done
+  [TEST 1] neutral... chaos... done
+  [TEST 2] neutral... chaos... done
+  [TEST 3] neutral... chaos... done
+  [TEST 4] neutral... chaos... done
+  [TEST 5] neutral... chaos... done
+  [TEST 6] neutral... chaos... done
+  [TEST 7] neutral... chaos... done
+  [TEST 8] neutral... chaos... done
+  [TEST 9] neutral... chaos... done
+  [TEST 10] neutral... chaos... done
+
+============================================================
+PHASE 2: Feature Selection (DISCOVERY set only)
+============================================================
+  Top-20 suppressed features: [7492, 20, 11835, 491, 4962, 1307, 188, 285, 1108, 48, 41, 392, 6650, 122, 3041, 981, 15378, 3367, 9938, 440]
+  Top-10 boosted features: [15686, 5916, 8807, 1183, 233, 3050, 1120, 1993, 706, 409]
+  Random control features (20): [395, 490, 534, 746, 901, 1037, 1054, 1227, 1658, 2654, 2689, 3419, 3779, 3907, 4019, 5826, 6435, 9164, 10255, 11509]
+
+  Discovery-set suppression magnitudes (top-5):
+    Feature 7492: neutral=370.4096, chaos=0.0000, diff=370.4096
+    Feature 20: neutral=313.9358, chaos=0.0000, diff=313.9358
+    Feature 11835: neutral=384.6357, chaos=75.7634, diff=308.8722
+    Feature 491: neutral=303.8565, chaos=22.3249, diff=281.5316
+    Feature 4962: neutral=318.0745, chaos=38.5795, diff=279.4950
+
+============================================================
+PHASE 3: Validation on HELD-OUT TEST set
+============================================================
+
+  Discovery-selected suppressed features on TEST set:
+    Mean suppression ratio: 0.5360 +/- 0.0758
+    Per-trial ratios: [0.5452, 0.608, 0.3872, 0.6345, 0.5387, 0.5472, 0.4411, 0.5027, 0.5982, 0.5576]
+
+  Random control features on TEST set:
+    Mean suppression ratio: 0.1485 +/- 0.0843
+    Per-trial ratios: [0.1362, 0.049, 0.2598, 0.1824, 0.0254, 0.0774, 0.148, 0.2863, 0.1399, 0.1804]
+
+============================================================
+PHASE 4: Statistical Tests
+============================================================
+
+  Paired t-test (discovery-selected vs random, 10 trials):
+    t = 8.9809
+    p = 0.000009
+    Cohen's d = 4.8367
+
+  One-sample t-test (discovery-selected > 0):
+    t = 22.3662
+    p = 0.000000
+
+  One-sample t-test (random > 0):
+    t = 5.5733
+    p = 0.000346
+
+  Feature-level validation:
+    18/20 discovery-selected features also significantly suppressed on test set (p < 0.05)
+    Feature 7492: disc_ratio=1.000, test_ratio=1.000, p=0.0000 [PASS]
+    Feature 20: disc_ratio=1.000, test_ratio=1.000, p=0.0002 [PASS]
+    Feature 11835: disc_ratio=0.803, test_ratio=1.000, p=0.0000 [PASS]
+    Feature 491: disc_ratio=0.926, test_ratio=0.825, p=0.0000 [PASS]
+    Feature 4962: disc_ratio=0.879, test_ratio=1.000, p=0.0000 [PASS]
+    Feature 1307: disc_ratio=1.000, test_ratio=1.000, p=0.0000 [PASS]
+    Feature 188: disc_ratio=0.901, test_ratio=0.922, p=0.0000 [PASS]
+    Feature 285: disc_ratio=1.000, test_ratio=0.925, p=0.0000 [PASS]
+    Feature 1108: disc_ratio=0.539, test_ratio=0.594, p=0.0004 [PASS]
+    Feature 48: disc_ratio=0.085, test_ratio=0.076, p=0.0000 [PASS]
+
+============================================================
+PAPER-READY SUMMARY
+============================================================
+
+  Held-out validation of feature selection (Layer 22):
+  Discovery set: 10 prompt pairs -> top-20 suppressed features selected
+  Test set: 10 held-out prompt pairs
+
+  Discovery-selected features on test set:
+    Mean suppression ratio = 0.5360
+  Random control features on test set:
+    Mean suppression ratio = 0.1485
+  Paired t-test: t(9) = 8.981, p = 0.000009 ***
+  Effect size: Cohen's d = 4.837
+  Feature-level: 18/20 features validated (p < 0.05)
+
+  CONCLUSION: Feature selection is NOT circular. Discovery-selected features
+  show significantly greater suppression on the held-out test set than random
+  features (d = 4.84), confirming the effect generalizes to unseen prompts.
+
+[SAVED] /tmp/ICML_audit/h100_deploy/results/held_out_validation_20260410_045009.json
+[DONE] Elapsed: 48.6s

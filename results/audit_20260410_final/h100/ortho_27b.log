@@ -1,0 +1,98 @@
+Device: cuda
+Multi-layer orthogonality — google/gemma-3-27b-it
+Layers: [10, 22, 31, 40, 50]
+
+Loading google/gemma-3-27b-it...
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 5906.78it/s]
+Loading weights: 0it [00:00, ?it/s]Loading weights: 0it [00:00, ?it/s]
+This checkpoint seem corrupted. The tied weights mapping for this model specifies to tie model.embed_tokens.weight to lm_head.weight, but both are absent from the checkpoint, and we could not find another related tied weight for those keys
+[1mGemma3ForCausalLM LOAD REPORT[0m from: google/gemma-3-27b-it
+Key                                                                         | Status     | 
+----------------------------------------------------------------------------+------------+-
+language_model.model.layers.{0...61}.post_feedforward_layernorm.weight      | UNEXPECTED | 
+language_model.model.layers.{0...61}.self_attn.v_proj.weight                | UNEXPECTED | 
+language_model.model.layers.{0...61}.self_attn.o_proj.weight                | UNEXPECTED | 
+language_model.model.layers.{0...61}.self_attn.q_norm.weight                | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.self_attn.out_proj.weight | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.self_attn.k_proj.weight   | UNEXPECTED | 
+language_model.model.layers.{0...61}.self_attn.q_proj.weight                | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.layer_norm2.weight        | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.self_attn.v_proj.bias     | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.self_attn.out_proj.bias   | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.self_attn.q_proj.weight   | UNEXPECTED | 
+language_model.model.layers.{0...61}.mlp.up_proj.weight                     | UNEXPECTED | 
+language_model.model.layers.{0...61}.post_attention_layernorm.weight        | UNEXPECTED | 
+language_model.model.layers.{0...61}.mlp.down_proj.weight                   | UNEXPECTED | 
+language_model.model.layers.{0...61}.self_attn.k_norm.weight                | UNEXPECTED | 
+language_model.model.layers.{0...61}.self_attn.k_proj.weight                | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.self_attn.q_proj.bias     | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.self_attn.k_proj.bias     | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.layer_norm2.bias          | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.mlp.fc2.bias              | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.mlp.fc2.weight            | UNEXPECTED | 
+language_model.model.layers.{0...61}.pre_feedforward_layernorm.weight       | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.layer_norm1.weight        | UNEXPECTED | 
+language_model.model.layers.{0...61}.input_layernorm.weight                 | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.mlp.fc1.bias              | UNEXPECTED | 
+language_model.model.layers.{0...61}.mlp.gate_proj.weight                   | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.self_attn.v_proj.weight   | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.layer_norm1.bias          | UNEXPECTED | 
+vision_tower.vision_model.encoder.layers.{0...26}.mlp.fc1.weight            | UNEXPECTED | 
+vision_tower.vision_model.embeddings.patch_embedding.weight                 | UNEXPECTED | 
+vision_tower.vision_model.post_layernorm.bias                               | UNEXPECTED | 
+multi_modal_projector.mm_soft_emb_norm.weight                               | UNEXPECTED | 
+language_model.model.embed_tokens.weight                                    | UNEXPECTED | 
+vision_tower.vision_model.embeddings.patch_embedding.bias                   | UNEXPECTED | 
+vision_tower.vision_model.post_layernorm.weight                             | UNEXPECTED | 
+multi_modal_projector.mm_input_projection_weight                            | UNEXPECTED | 
+vision_tower.vision_model.embeddings.position_embedding.weight              | UNEXPECTED | 
+language_model.model.norm.weight                                            | UNEXPECTED | 
+model.layers.{0...61}.self_attn.k_norm.weight                               | MISSING    | 
+model.layers.{0...61}.self_attn.k_proj.weight                               | MISSING    | 
+model.layers.{0...61}.self_attn.v_proj.weight                               | MISSING    | 
+model.layers.{0...61}.input_layernorm.weight                                | MISSING    | 
+model.layers.{0...61}.mlp.up_proj.weight                                    | MISSING    | 
+model.layers.{0...61}.mlp.gate_proj.weight                                  | MISSING    | 
+model.layers.{0...61}.self_attn.q_proj.weight                               | MISSING    | 
+model.layers.{0...61}.self_attn.o_proj.weight                               | MISSING    | 
+model.layers.{0...61}.post_attention_layernorm.weight                       | MISSING    | 
+model.layers.{0...61}.self_attn.q_norm.weight                               | MISSING    | 
+model.layers.{0...61}.pre_feedforward_layernorm.weight                      | MISSING    | 
+model.layers.{0...61}.post_feedforward_layernorm.weight                     | MISSING    | 
+model.layers.{0...61}.mlp.down_proj.weight                                  | MISSING    | 
+lm_head.weight                                                              | MISSING    | 
+model.norm.weight                                                           | MISSING    | 
+model.embed_tokens.weight                                                   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+ Layer   Cosine   |Hijack|       |AF|  Top-50 Overlap
+=======================================================
+
+  Collecting activations at layer 10...
+  L10: cos=-0.0229  |hijack|=119.7  |af|=189.6  top50_overlap=0 (expected=0.5)
+
+  Collecting activations at layer 22...
+  L22: cos=-0.0362  |hijack|=165.9  |af|=270.2  top50_overlap=2 (expected=0.5)
+
+  Collecting activations at layer 31...
+  L31: cos=-0.0528  |hijack|=192.1  |af|=315.5  top50_overlap=0 (expected=0.5)
+
+  Collecting activations at layer 40...
+  L40: cos=-0.0456  |hijack|=216.1  |af|=355.6  top50_overlap=0 (expected=0.5)
+
+  Collecting activations at layer 50...
+  L50: cos=-0.0448  |hijack|=238.7  |af|=394.3  top50_overlap=1 (expected=0.5)
+
+=======================================================
+SUMMARY
+=======================================================
+Cosine similarity range: [-0.0528, -0.0229]
+Mean |cosine|: 0.0405
+Top-50 overlap range: [0, 2]
+Mean overlap: 0.6
+CONCLUSION: Orthogonality holds across all layers tested.
+
+Saved to /home/ubuntu/results/multilayer_orthogonality_27b_20260409_112640.json

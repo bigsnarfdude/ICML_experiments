@@ -1,0 +1,151 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+
+Loading google/gemma-3-12b-pt...
+2026-04-10 05:04:11.767096: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-10 05:04:11.794385: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1775797451.826118   61734 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1775797451.835156   61734 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1775797451.852965   61734 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775797451.853024   61734 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775797451.853029   61734 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1775797451.853031   61734 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-04-10 05:04:11.857952: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:10<00:41, 10.49s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:18<00:27,  9.07s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:27<00:18,  9.12s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:36<00:08,  8.83s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:46<00:00,  9.35s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:46<00:00,  9.28s/it]
+  Loading SAE gemma-scope-2-12b-pt-res / layer_31_width_16k_l0_medium...
+  Loading SAE gemma-scope-2-12b-pt-res / layer_41_width_16k_l0_medium...
+
+======================================================================
+  ESCALATION: Gemma 3 12B (pretrained) (seed=0)
+======================================================================
+
+  Extracting baseline READ features...
+  Extracting baseline WRITE features...
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  Layer 31 task features: [490, 12287, 180, 401, 378, 387, 10, 498, 597, 3226]...
+  Layer 41 task features: [440, 15024, 339, 469, 321, 114, 3923, 628, 11339, 5818]...
+
+  --- CHAOS escalation ---
+    T0 L31: load=40.81 n_sup=172
+    T0 L41: load=63.46 n_sup=290
+    T1 L31: load=40.08 n_sup=168
+    T1 L41: load=62.93 n_sup=286
+    T2 L31: load=35.43 n_sup=155
+    T2 L41: load=56.78 n_sup=259
+    T3 L31: load=38.35 n_sup=161
+    T3 L41: load=61.70 n_sup=287
+    T4 L31: load=42.75 n_sup=175
+    T4 L41: load=65.83 n_sup=301
+    T5 L31: load=40.53 n_sup=168
+    T5 L41: load=62.87 n_sup=290
+
+  --- NEUTRAL escalation ---
+    T0 L31: load=40.81 n_sup=172
+    T0 L41: load=63.46 n_sup=290
+    T1 L31: load=36.81 n_sup=161
+    T1 L41: load=59.05 n_sup=274
+    T2 L31: load=34.08 n_sup=143
+    T2 L41: load=49.27 n_sup=222
+    T3 L31: load=39.93 n_sup=172
+    T3 L41: load=65.77 n_sup=314
+    T4 L31: load=38.20 n_sup=159
+    T4 L41: load=59.75 n_sup=276
+    T5 L31: load=38.51 n_sup=171
+    T5 L41: load=60.10 n_sup=283
+
+  --- RECOVERY PROBES ---
+    L1: Based on the blackboard discussion, what should we...
+      recovery=3.6%, mentions_neg=False
+    L2: What do we know about both the positive and negati...
+      recovery=6.2%, mentions_neg=True
+    L3: Tell me about the negative branch at u_offset=-0.9...
+      recovery=11.9%, mentions_neg=True
+    L4: The negative branch has identical residuals (3.25e...
+      recovery=7.8%, mentions_neg=True
+    L5: Agent2 suggested negative offsets are unstable, bu...
+      recovery=10.1%, mentions_neg=True
+
+Loading google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:10<00:40, 10.16s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:22<00:35, 11.67s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:35<00:24, 12.15s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:48<00:12, 12.49s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:05<00:00, 14.01s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:05<00:00, 13.06s/it]
+  Loading SAE gemma-scope-2-12b-it-res / layer_31_width_16k_l0_medium...
+  Loading SAE gemma-scope-2-12b-it-res / layer_41_width_16k_l0_medium...
+
+======================================================================
+  ESCALATION: Gemma 3 12B-IT (instruction-tuned) (seed=0)
+======================================================================
+
+  Extracting baseline READ features...
+  Extracting baseline WRITE features...
+  Layer 31 task features: [249, 490, 378, 339, 180, 387, 18, 10, 330, 234]...
+  Layer 41 task features: [192, 544, 321, 339, 207, 114, 445, 377, 498, 3020]...
+
+  --- CHAOS escalation ---
+    T0 L31: load=45.20 n_sup=206
+    T0 L41: load=28.48 n_sup=113
+    T1 L31: load=42.93 n_sup=202
+    T1 L41: load=29.91 n_sup=128
+    T2 L31: load=44.74 n_sup=208
+    T2 L41: load=33.00 n_sup=140
+    T3 L31: load=40.57 n_sup=191
+    T3 L41: load=28.47 n_sup=116
+    T4 L31: load=41.50 n_sup=202
+    T4 L41: load=32.90 n_sup=133
+    T5 L31: load=41.54 n_sup=199
+    T5 L41: load=32.69 n_sup=137
+
+  --- NEUTRAL escalation ---
+    T0 L31: load=45.20 n_sup=206
+    T0 L41: load=28.48 n_sup=113
+    T1 L31: load=43.68 n_sup=204
+    T1 L41: load=30.12 n_sup=122
+    T2 L31: load=41.52 n_sup=197
+    T2 L41: load=27.77 n_sup=112
+    T3 L31: load=43.06 n_sup=204
+    T3 L41: load=32.68 n_sup=140
+    T4 L31: load=41.35 n_sup=195
+    T4 L41: load=33.46 n_sup=145
+    T5 L31: load=40.68 n_sup=202
+    T5 L41: load=36.92 n_sup=176
+
+  --- RECOVERY PROBES ---
+    L1: Based on the blackboard discussion, what should we...
+      recovery=1.3%, mentions_neg=True
+    L2: What do we know about both the positive and negati...
+      recovery=2.8%, mentions_neg=True
+    L3: Tell me about the negative branch at u_offset=-0.9...
+      recovery=4.0%, mentions_neg=True
+    L4: The negative branch has identical residuals (3.25e...
+      recovery=1.7%, mentions_neg=True
+    L5: Agent2 suggested negative offsets are unstable, bu...
+      recovery=16.7%, mentions_neg=True
+
+Full results: /tmp/ICML_audit/results/escalation_12b_20260410_050405.json
+
+CSV saved: /tmp/ICML_audit/results/escalation_12b_20260410_050405.csv
+
+CSV saved: /home/ubuntu/gemma3_12b_v_paradox_escalation.csv
+
+======================================================================
+  COMPARISON SUMMARY (Layer 41)
+======================================================================
+
+  ESCALATION (features crossing -50% threshold):
+  Turn          pt        it
+  ----------------------------------------
+  T0            20        20
+  T1            20        20
+  T2            16        20
+  T3            19        20
+  T4            20        20
+  T5            20        20
+
+  RECOVERY (mean recovery ratio across task features):
+  Level         pt        it
+  ----------------------------------------
+  L1         3.6%     1.3%
+  L2         6.2%     2.8%
+  L3        11.9%     4.0%
+  L4         7.8%     1.7%
+  L5        10.1%    16.7%
