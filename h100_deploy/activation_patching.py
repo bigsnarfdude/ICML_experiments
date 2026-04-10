@@ -30,8 +30,11 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 MODEL_NAME = "google/gemma-3-4b-it"
 TARGET_LAYER = 22
 
-# Known task features at L22 for Gemma 3 4B (from paper Section 3)
-TASK_FEATURES = [1716, 12023, 1704, 1555, 1548]
+# Task features are auto-discovered per-run from the neutral vs chaos activation
+# gap (was hardcoded [1716, 12023, 1704, 1555, 1548] from an A100 run; those
+# features do not fire on H100, so we rediscover to make the pipeline
+# GPU-invariant and reproducible from a clean clone).
+N_TASK_FEATURES = 5
 
 # ── PROMPTS ────────────────────────────────────────────────────────────────
 
@@ -192,20 +195,19 @@ def collect_neutral_activations(model, tokenizer, sae, device):
             feat_acts = sae.encode(residual.unsqueeze(0).to(sae.device).to(sae.dtype))
             all_features.append(feat_acts[0].cpu().float().numpy())
 
-        task_vals = [all_features[-1][f] for f in TASK_FEATURES]
-        print(f"  Neutral {i}: task features = {[f'{v:.4f}' for v in task_vals]}")
+        print(f"  Neutral {i}: residual captured (max feat act = {all_features[-1].max():.4f})")
 
     mean_residual = torch.stack(all_residuals).mean(dim=0)
     mean_features = np.stack(all_features).mean(axis=0)
 
-    print(f"\n  Neutral mean task features: {[f'{mean_features[f]:.4f}' for f in TASK_FEATURES]}")
     return mean_residual, mean_features, all_features
 
 
 def collect_chaos_activations(model, tokenizer, sae, device):
-    """Run chaos prompts to get chaos residual mean (for steering vector)."""
+    """Run chaos prompts to get chaos residual mean (for steering vector) and SAE features."""
     print("\n=== Collecting chaos activation baselines ===")
     all_residuals = []
+    all_features = []
 
     layer_mod = get_layer_module(model, TARGET_LAYER)
 
@@ -224,11 +226,16 @@ def collect_chaos_activations(model, tokenizer, sae, device):
             model(**inputs)
         handle.remove()
 
-        all_residuals.append(captured["residual"].cpu())
+        residual = captured["residual"]
+        all_residuals.append(residual.cpu())
+        with torch.no_grad():
+            feat_acts = sae.encode(residual.unsqueeze(0).to(sae.device).to(sae.dtype))
+            all_features.append(feat_acts[0].cpu().float().numpy())
         print(f"  Chaos {i}: collected")
 
     mean_residual = torch.stack(all_residuals).mean(dim=0)
-    return mean_residual
+    mean_features = np.stack(all_features).mean(axis=0)
+    return mean_residual, mean_features
 
 
 # ── PHASE 2: PATCHED GENERATION ───────────────────────────────────────────
@@ -247,7 +254,7 @@ def generate_unpatched(model, tokenizer, prompt, device, max_new_tokens=400):
     return tokenizer.decode(out[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
 
 
-def generate_clamped(model, tokenizer, sae, prompt, device, neutral_features, max_new_tokens=400):
+def generate_clamped(model, tokenizer, sae, prompt, device, neutral_features, task_features, max_new_tokens=400):
     """Generate with task features clamped to neutral-condition means.
 
     During each forward pass, we hook L22 and modify the residual stream
@@ -262,13 +269,13 @@ def generate_clamped(model, tokenizer, sae, prompt, device, neutral_features, ma
     # Precompute the clamping correction in SAE feature space
     # For each task feature, we want to set it to neutral_mean
     target_values = torch.tensor(
-        [neutral_features[f] for f in TASK_FEATURES],
+        [neutral_features[f] for f in task_features],
         dtype=sae.dtype, device=sae.device
     )
 
     # Get the SAE decoder directions for task features
     # sae.W_dec has shape (d_sae, d_model)
-    task_directions = sae.W_dec[TASK_FEATURES]  # (n_task, d_model)
+    task_directions = sae.W_dec[task_features]  # (n_task, d_model)
 
     def clamp_hook(module, input, output):
         act = output[0] if isinstance(output, tuple) else output
@@ -278,7 +285,7 @@ def generate_clamped(model, tokenizer, sae, prompt, device, neutral_features, ma
         with torch.no_grad():
             # Encode current activations through SAE
             current_features = sae.encode(last_token.to(sae.device).to(sae.dtype))
-            current_task_vals = current_features[0, 0, TASK_FEATURES]  # (n_task,)
+            current_task_vals = current_features[0, 0, task_features]  # (n_task,)
 
             # Compute correction: how much to add per feature
             delta_vals = target_values - current_task_vals  # (n_task,)
@@ -360,7 +367,18 @@ def main():
     neutral_mean_residual, neutral_mean_features, neutral_all_features = \
         collect_neutral_activations(model, tokenizer, sae, device)
 
-    chaos_mean_residual = collect_chaos_activations(model, tokenizer, sae, device)
+    chaos_mean_residual, chaos_mean_features = collect_chaos_activations(model, tokenizer, sae, device)
+
+    # Phase 1b: Auto-discover task features from neutral-vs-chaos gap.
+    # A task feature is one that fires strongly under neutral AND is
+    # suppressed under chaos. Requiring neutral_mean > 1.0 filters
+    # features that don't fire at all on this GPU.
+    neutral_active_mask = neutral_mean_features > 1.0
+    task_gap = (neutral_mean_features - chaos_mean_features) * neutral_active_mask
+    task_features = list(np.argsort(-task_gap)[:N_TASK_FEATURES].astype(int))
+    print(f"\nDiscovered task features (top {N_TASK_FEATURES} by neutral-chaos gap):")
+    for f in task_features:
+        print(f"  feature {f}: neutral={neutral_mean_features[f]:.4f}, chaos={chaos_mean_features[f]:.4f}, gap={task_gap[f]:.4f}")
 
     # Compute steering vector: neutral - chaos direction
     steering_vector = neutral_mean_residual - chaos_mean_residual
@@ -393,7 +411,7 @@ def main():
     print("\n=== Phase 2c: Chaos CLAMPED (task features -> neutral means) ===")
     clamped_trials = []
     for i, prompt in enumerate(CHAOS_PROMPTS):
-        resp = generate_clamped(model, tokenizer, sae, prompt, device, neutral_mean_features)
+        resp = generate_clamped(model, tokenizer, sae, prompt, device, neutral_mean_features, task_features)
         score, label, reason, groot = score_bvp_response(resp)
         print(f"  Clamped {i}: Score={score} ({label}): {reason} {'[GROOT]' if groot else ''}")
         clamped_trials.append({"prompt_idx": i, "condition": "chaos_clamped",
@@ -455,7 +473,14 @@ def main():
         "metadata": {
             "model": MODEL_NAME,
             "target_layer": TARGET_LAYER,
-            "task_features": TASK_FEATURES,
+            "task_features": task_features,
+            "task_features_source": "auto-discovered per-run from neutral-vs-chaos gap (neutral>1.0 mask)",
+            "task_features_activations": {
+                str(f): {"neutral": float(neutral_mean_features[f]),
+                         "chaos": float(chaos_mean_features[f]),
+                         "gap": float(task_gap[f])}
+                for f in task_features
+            },
             "steering_vector_norm": steer_norm,
             "timestamp": datetime.now().isoformat(),
         },
