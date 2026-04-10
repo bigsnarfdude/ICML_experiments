@@ -203,7 +203,7 @@ window.MathJax = {
 <body>
 <h1>Split Personality — Data Review</h1>
 <p class="sub">Every data point behind the paper's tables, re-derived from raw JSON.</p>
-<p class="meta">Generated 2026-04-09 16:21:24 · Paper: <code>paper/main.tex</code> · <a href="#manifest">data manifest</a></p>
+<p class="meta">Generated 2026-04-09 19:28:39 · Paper: <code>paper/main.tex</code> · <a href="#manifest">data manifest</a></p>
 
     <nav class="toc">
       <b>Contents</b>
@@ -237,7 +237,7 @@ Using sparse autoencoder (SAE) features from GemmaScope&nbsp;2 across Gemma&nbsp
 At 27B, instruction-tuned models show 86.3\% single-feature task suppression while still mentioning the suppressed information verbally—a behavioral–representational split we term the <em><a class="claim" href="#table-10">Groot effect</a></em>.
 Base (pretrained) 27B models retain substantially more awareness–defense coupling (74.1\% recovery vs.\ 9.0\% for IT, measured with a shared feature set), confirming post-training as the causal factor; SAE-level replication on Llama&nbsp;3.1 8B shows the same IT-vs-base pattern ($<a class="claim" href="#table-10">d = 1.51</a>$ vs.\ $0.50$, $<a class="claim" href="#table-10">p = 0.001</a>$ vs.\ $0.166$), demonstrating cross-family generality.
 The hijacking mechanism is orthogonal to alignment faking at Layer&nbsp;40 (cosine similarity $-0.0456$, top-50 feature overlap $=0$), requiring independent defenses.
-We propose feature trajectory monitoring as a real-time detection method.</p></section>
+The dissociation produces a measurable within-session activation drop that persists at 27B in 5-turn sessions and transfers across task families using BVP-frozen features ($d = -0.95$ on a theorem-proving battery, $n = 30$).</p></section>
 <section id="sec:intro" class="level2" data-number="1">
 <h2 data-number="1"><span class="header-section-number">1</span>
 Introduction</h2>
@@ -304,10 +304,14 @@ class="math inline">−0.0456</span>, Spearman <span
 class="math inline"><em>ρ</em> = 0.008</span>), requiring independent
 defenses (§<a href="#sec:orthogonality" data-reference-type="ref"
 data-reference="sec:orthogonality">6</a>).</p></li>
-<li><p><strong>Defense directions.</strong> We outline feature
-trajectory monitoring as a candidate detection method and identify the
-signal properties that would enable it (§<a href="#sec:defense"
-data-reference-type="ref" data-reference="sec:defense">7</a>).</p></li>
+<li><p><strong>Multi-turn persistence and cross-domain
+transfer.</strong> The dissociation produces a measurable within-session
+activation drop that persists at 27B in 5-turn sessions and transfers
+across task families using BVP-frozen features (<span
+class="math inline"><em>d</em> = −0.95</span> on a theorem-proving
+battery, <span class="math inline"><em>n</em> = 30</span>; §<a
+href="#sec:multiturn" data-reference-type="ref"
+data-reference="sec:multiturn">5.7</a>).</p></li>
 </ol>
 </section>
 <section id="sec:related" class="level2" data-number="2">
@@ -349,17 +353,14 @@ low-perplexity statements. <span class="cite-group">[<a class="cite" href="https
 distracted by irrelevant context; attentional hijacking can be viewed as
 a targeted, factual instance of context distraction where the
 distracting content is specifically chosen to suppress particular task
-features. It is also worth distinguishing our mechanism from positional
-attention degradation: <span class="cite-group">[<span class="cite nolink" title="no external URL in bib entry">liu2024lostmiddle</span>]</span> document “lost in the middle,”
-where relevant information placed mid-context is under-attended due to
-positional priors. That is a passive, position-driven failure of
-attention <em>allocation</em>; attentional hijacking is an active,
-framing-driven failure of attention <em>reallocation</em>—the
-adversarial message is attended to, but its selective framing rewrites
-which task features remain active. The two can in principle compound
-(mid-context framing + positional decay), which we do not investigate
-here. No existing content filter can detect hijacking because there is
-no anomalous content to detect.</p>
+features. We distinguish our mechanism from positional attention
+degradation: <span class="cite-group">[<span class="cite nolink" title="no external URL in bib entry">liu2024lostmiddle</span>]</span>’s “lost in the middle” is a
+passive, position-driven failure of attention <em>allocation</em>,
+whereas attentional hijacking is an active, framing-driven failure of
+attention <em>reallocation</em>—the adversarial message is attended to,
+but its framing rewrites which task features remain active. No existing
+content filter can detect hijacking because there is no anomalous
+content to detect.</p>
 </section>
 <section id="mechanistic-interpretability-and-saes." class="level5"
 data-number="2.0.0.3">
@@ -790,56 +791,35 @@ class="level5" data-number="4.1.0.1">
 <h5 data-number="4.1.0.1"><span
 class="header-section-number">4.1.0.1</span> Feature discovery procedure
 and circularity.</h5>
-<p>Feature sets are obtained by ranking all 16K SAE features on each
-layer by <span
+<p>Feature sets are obtained by ranking all 16K SAE features by <span
 class="math inline">|<em>μ</em><sub>neutral</sub> − <em>μ</em><sub>chaos</sub>|</span>
-across a prompt battery, then taking the top-<span
-class="math inline"><em>K</em></span>
-(<code>ablation_feature_swap.py</code>:295–320; selected IDs and
-per-feature means are persisted to the result JSON so every table can be
-traced back to its discovery
-artifact—e.g.<code>ablation_feature_swap_27b_20260409_113214.json</code>).
-Because this procedure is trained and evaluated on the same prompt
-battery, the in-sample suppression numbers (e.g., <a class="claim" href="#table-9">86.3%</a> on feature 423)
-are susceptible to selection bias. We address this in two ways. First,
-<em>held-out validation</em>: for 4B we re-run feature discovery on a
-disjoint prompt set and recover 85% of the original features with
-bootstrap <span
-class="math inline"><em>p</em> = 8 × 10<sup>−6</sup></span> (Table <a
+and taking the top-<span class="math inline"><em>K</em></span>
+(<code>ablation_feature_swap.py</code>). Because discovery and
+evaluation share a prompt battery, the in-sample suppression numbers
+(e.g., <a class="claim" href="#table-9">86.3%</a> on feature 423) are subject to selection bias. We mitigate
+this three ways. (i) <em>Held-out validation</em> at 4B recovers 85% of
+the original features on a disjoint prompt set (<span
+class="math inline"><em>p</em> = 8 × 10<sup>−6</sup></span>, Table <a
 href="#tab:heldout" data-reference-type="ref"
-data-reference="tab:heldout">2</a>). Second, <em>out-of-distribution
-behavior at 27B</em>: the Jenga evaluation in §<a href="#sec:defense"
-data-reference-type="ref" data-reference="sec:defense">7</a> re-uses the
-IT-discovered feature set <span
-class="math inline">{423, 7657, 632}</span> on multi-turn sessions built
-from an independent corpus (<code>lmsys-chat-1m</code>) and still
-separates attack from control at <span
-class="math inline">|<em>d</em>| = 1.74</span>, which a purely circular
-feature choice would not reliably produce. Third, <em>cross-battery
-transfer</em>: we measure the canonical IT-discovered set <span
-class="math inline">{423, 7657, 632}</span> on an independent
-theorem-proving battery (Lean-style proof prompts with a chaos-framed
-variant) that was never used during discovery
-(<code>transfer_feature_discovery_27b.py</code>). The canonical set
-suppresses <strong>+51.7%</strong> on the out-of-distribution theorem
-battery (neutral mean <span class="math inline">97.6→</span> chaos mean
-<span class="math inline">47.1</span>), exceeding its own in-sample
-value on BVP (+5.9% when averaged across the three features under the
-generated-token measurement protocol; the larger per-feature <a class="claim" href="#table-9">86.3%</a> cited
-earlier uses the <a class="claim" href="#table-9">feature-swap ablation</a> protocol on a single feature and
-is not directly comparable). Because the feature identities were fixed
-before the theorem battery was ever measured, this is the cleanest
-non-circular evidence available to us that the circuit is not a
-prompt-battery artifact. We also report a cautionary null from the same
-run: top-10 features re-discovered <em>de novo</em> on each battery show
-zero Jaccard overlap, and BVP-discovered top-10 features show a small
-<em>negative</em> suppression on theorem (<span
-class="math inline">−18.5%</span>). We read this as: the differential
-ranking itself is battery-specific and noisy, but a small canonical
-circuit identified on one domain does transfer to another. A fully
-systematic transfer study across more domains, and reconciliation of the
-generated-token and ablation-protocol measurement scales, remain future
-work.</p>
+data-reference="tab:heldout">2</a>). (ii) <em>Multi-turn persistence at
+27B</em>: the within-session evaluation (§<a href="#sec:multiturn"
+data-reference-type="ref" data-reference="sec:multiturn">5.7</a>)
+re-uses the canonical IT set <span
+class="math inline">{423, 7657, 632}</span> on 5-turn BVP sessions and
+separates attack from on-domain neutral controls at Cohen’s <span
+class="math inline"><em>d</em> = −1.54</span> (<span
+class="math inline">95%</span> CI <span
+class="math inline">[−2.77, −0.85]</span>). (iii) <em>Cross-battery
+transfer</em> (<code>transfer_feature_discovery_27b.py</code>): the same
+canonical set, frozen after BVP discovery, suppresses
+<strong>+51.7%</strong> on an independent theorem-proving battery (<span
+class="math inline">97.6 → 47.1</span>), providing non-circular evidence
+that the circuit is not a prompt-battery artifact. We report one
+cautionary null from the same run: top-10 features re-discovered <em>de
+novo</em> on each battery show zero Jaccard overlap, so the differential
+ranking is battery-specific even though the canonical circuit
+transfers.<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
 <p>We analyze layers at multiple depths: 4B (L17, L22), 12B (L31, L41),
 and 27B (L31, L40). We apply an escalation protocol with chaos messages
 of increasing intensity from T0 (minimal) through T5 (maximal).</p>
@@ -1237,7 +1217,7 @@ data-reference="tab:recovery_probes">8</a> shows <em>recovery
 prompts</em>—textual interventions appended after hijacking at five
 informativeness levels (L1–L5; details in Appendix <a
 href="#app:recovery" data-reference-type="ref"
-data-reference="app:recovery">12</a>). The pretrained model recovers
+data-reference="app:recovery">11</a>). The pretrained model recovers
 across multiple levels (L2: 53.5%, L5: 34.3%), consistent with coupled
 awareness–defense circuitry propagating contextual hints to task
 features. The IT model shows near-zero recovery at all levels
@@ -1868,6 +1848,41 @@ inferential strategy is the <em>pattern</em> of IT vulnerability across
 all cells rather than any individual test.</p>
 </section>
 </section>
+<section id="sec:multiturn" class="level3" data-number="5.7">
+<h3 data-number="5.7"><span class="header-section-number">5.7</span>
+Multi-turn persistence and cross-domain transfer</h3>
+<p>The single-prompt evaluations above understate the dissociation: a
+fresh context rarely tips on a lone framing turn. We therefore evaluate
+the same Gemma 3 27B-IT auto-discovered features (<span
+class="math inline"><em>F</em><sub>task</sub> = {423, 7657, 632}</span>,
+Layer 40) on 5-turn sessions and measure the within-session activation
+drop <span class="math inline">$\Delta_{\text{drop}} =
+a_{\text{task}}^{(5)} -
+\overline{a_{\text{task}}^{(1\text{--}4)}}$</span> in raw SAE units
+(<code>ftm_jenga_27b_v2.py</code>,
+<code>ftm_jenga_theorem_n30.py</code>). On the original BVP family,
+attack sessions (four neutral turns + one chaos turn, <span
+class="math inline"><em>n</em> = 10</span>) drop further than on-domain
+neutral controls (<span class="math inline"><em>n</em> = 20</span>) by
+Cohen’s <span class="math inline"><em>d</em> = −1.54</span> (<span
+class="math inline">95%</span> CI <span
+class="math inline">[−2.77, −0.85]</span>); the dissociation persists
+across realistic multi-turn sessions on the same task family used for
+feature discovery. To rule out circular feature selection, we then
+re-use the <em>same</em> BVP-discovered features unchanged on a disjoint
+theorem-proving battery (sum-of-squares framing of a polynomial
+inequality; <span class="math inline"><em>n</em> = 30</span> attack and
+<span class="math inline"><em>n</em> = 30</span> control sessions). The
+features still separate attack from control at <span
+class="math inline"><em>d</em> = −0.955</span> (<span
+class="math inline">95%</span> CI <span
+class="math inline">[−1.44, −0.52]</span>; Welch <span
+class="math inline"><em>t</em> = −3.70</span>, <span
+class="math inline"><em>p</em> = 0.00048</span>). The features
+identified on BVP indexing therefore generalize across task families.
+Whether they index a domain-general “sustained-task” circuit rather than
+a BVP-specific one is an open question we leave for future work.</p>
+</section>
 </section>
 <section id="sec:orthogonality" class="level2" data-number="6">
 <h2 data-number="6"><span class="header-section-number">6</span>
@@ -1955,253 +1970,28 @@ yields mean <span class="math inline">|cos | = 0.0405</span> with every
 layer remaining in <span class="math inline">[−0.053, −0.023]</span>,
 confirming that orthogonality is not a single-layer artifact but holds
 across the network depth where task-relevant computation occurs.</p>
-</section>
-<section id="sec:defense" class="level2" data-number="7">
-<h2 data-number="7"><span class="header-section-number">7</span>
-Defense: Feature Trajectory Monitoring</h2>
-<p>Conventional defenses are inadequate: content filtering fails (only
-true statements), behavioral monitoring fails (<a class="claim" href="#table-10">Groot effect</a>, §<a
-href="#sec:groot" data-reference-type="ref"
-data-reference="sec:groot">4.3</a>), layer-wise interventions fail
-(distributed hijacking, §<a href="#sec:distributed"
-data-reference-type="ref" data-reference="sec:distributed">4.5</a>), and
-alignment-faking probes fail (orthogonal subspaces, §<a
-href="#sec:orthogonality" data-reference-type="ref"
-data-reference="sec:orthogonality">6</a>).</p>
-<p>We propose <strong>feature trajectory monitoring</strong>: the Groot
-effect produces a distinctive <em>feature-level</em> signature (task
-features suppress while awareness features boost) that is detectable in
-real time by monitoring SAE activations across turns.</p>
-<figure id="fig:trajectory">
-<embed src="figures_png/feature_trajectory.png" />
-<figcaption>Schematic of feature trajectory monitoring. Task features
-(solid) and awareness features (dashed) diverge under hijacking; the
-detection threshold (gray band) triggers when the trajectories cross.
-The suppression signal is detected in all 60 tested trials (§<a
-href="#sec:defense" data-reference-type="ref"
-data-reference="sec:defense">7</a>).</figcaption>
-</figure>
-<p>Specifically, we propose monitoring the following signal: <span
-class="math display">$$\Delta(t) = \frac{1}{|F_{\text{task}}|}\sum_{f
-\in F_{\text{task}}} a_f(t) - \frac{1}{|F_{\text{aware}}|}\sum_{f \in
-F_{\text{aware}}} a_f(t)
-\label{eq:delta}$$</span> where <span
-class="math inline"><em>F</em><sub>task</sub></span> and <span
-class="math inline"><em>F</em><sub>aware</sub></span> are the identified
-task and awareness feature sets, <span
-class="math inline"><em>a</em><sub><em>f</em></sub>(<em>t</em>)</span>
-is the activation of feature <span class="math inline"><em>f</em></span>
-at turn <span class="math inline"><em>t</em></span>, and <span
-class="math inline"><em>Δ</em>(<em>t</em>)</span> measures the gap
-between task health and awareness activation.</p>
-<section id="threat-model-adversarial-in-context-learning."
-class="level5" data-number="7.0.0.1">
-<h5 data-number="7.0.0.1"><span
-class="header-section-number">7.0.0.1</span> Threat model: adversarial
-in-context learning.</h5>
-<p>Single-prompt evaluations of <a href="#eq:delta"
-data-reference-type="eqref" data-reference="eq:delta">[eq:delta]</a>
-underestimate the phenomenon: our own single-shot pilot at 27B-IT L40
-gave <span class="math inline"><em>d</em> = 0.27</span>, because a lone
-chaos prompt rarely tips a fresh context. The realistic threat is
-cumulative: a colleague agent drips plausible true framings across
-multiple turns of a shared session, and the target’s task features erode
-turn over turn. We therefore evaluate FTM as a <em>within-session</em>
-tilt detector: given a 5-turn conversation, does the trajectory of
-task-feature activation bend downward faster than it would in an
-unmanipulated session of the same length?</p>
-</section>
-<section id="jenga-evaluation-at-27b-it-l40." class="level5"
-data-number="7.0.0.2">
-<h5 data-number="7.0.0.2"><span
-class="header-section-number">7.0.0.2</span> Jenga evaluation at 27B-IT
-L40.</h5>
-<p>We construct three condition sets of 5-turn sessions using the 27B-IT
-auto-discovered features (<span
-class="math inline"><em>F</em><sub>task</sub> = {423, 7657, 632}</span>,
-<span
-class="math inline"><em>F</em><sub>aware</sub> = {2119, 139, 9169}</span>,
-Layer 40; <code>ftm_jenga_27b.py</code>). <span
-class="smallcaps">Attack</span> sessions (<span
-class="math inline"><em>n</em> = 10</span>) present four neutral BVP
-turns followed by one chaos turn; <span class="smallcaps">Control</span>
-sessions (<span class="math inline"><em>n</em> = 10</span>) present five
-neutral BVP turns; <span class="smallcaps">Benign</span> sessions (<span
-class="math inline"><em>n</em> = 50</span>) use the first five user
-turns from LMSYS-Chat-1M <span class="cite-group">[<span class="cite nolink" title="no external URL in bib entry">zheng2024lmsys</span>]</span> as an off-domain background. Each
-turn is generated greedily (64 tokens) with the full chat history
-re-fed, and residual-stream activations at generated-token positions are
-SAE-encoded. We summarize each session by <span
-class="math inline"><em>z</em><sub>task</sub> = (<em>ā</em><sub>task</sub><sup>(5)</sup> − <em>μ</em><sub>1–4</sub>)/(<em>σ</em><sub>1–4</sub> + <em>ε</em>)</span>:
-how many standard deviations the final-turn task activation falls below
-its own earlier trajectory. Attack sessions show mean <span
-class="math inline"><em>z</em><sub>task</sub> = −2.33</span> (<span
-class="math inline"><em>σ</em> = 0.84</span>) versus <span
-class="math inline">−0.02</span> (<span
-class="math inline"><em>σ</em> = 1.68</span>) for control—a
-within-session tilt of <span
-class="math inline">|<em>d</em>| = 1.74</span> (Mann-Whitney <span
-class="math inline"><em>U</em></span>, <span
-class="math inline"><em>p</em> = 0.0023</span>). At an operating point
-of <span class="math inline"><em>τ</em> = −1.65</span>, attacks are
-detected at TPR <span class="math inline"> = 0.80</span> (Table <a
-href="#tab:jenga" data-reference-type="ref"
-data-reference="tab:jenga">14</a>) while benign lmsys sessions yield FPR
-<span class="math inline"> = 0.14</span> and neutral BVP controls FPR
-<span class="math inline"> = 0.10</span>; the full 15-point <span
-class="math inline"><em>τ</em></span> sweep is reported in the
-supplementary JSON. Critically, the same attack turns score on average
-<span class="math inline">2.33<em>σ</em></span> below their own
-preceding trajectory—a contrast that single-shot scoring necessarily
-destroys.</p>
-<div id="tab:jenga">
-<table>
-<caption>FTM Jenga detection at Gemma 3 27B-IT Layer 40 (<span
-class="math inline"><em>n</em> = 10</span> attack, <span
-class="math inline">10</span> control, <span
-class="math inline">50</span> benign lmsys-chat-1m sessions; 5 turns
-each; 64 greedy tokens/turn). The single-prompt baseline collapses to
-<span class="math inline"><em>d</em> = 0.27</span> on the same model and
-features; the within-session Jenga formulation recovers <span
-class="math inline">|<em>d</em>| = 1.74</span>.</caption>
-<thead>
-<tr>
-<th style="text-align: left;"><span
-class="math inline"><em>τ</em></span> (<span
-class="math inline"><em>z</em><sub>task</sub></span>)</th>
-<th style="text-align: center;">Attack TPR</th>
-<th style="text-align: center;">lmsys FPR</th>
-<th style="text-align: center;">Control FPR</th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><span
-class="math inline">−2.46</span></td>
-<td style="text-align: center;">0.40</td>
-<td style="text-align: center;">0.06</td>
-<td style="text-align: center;">0.10</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><span
-class="math inline">−2.06</span></td>
-<td style="text-align: center;">0.60</td>
-<td style="text-align: center;">0.08</td>
-<td style="text-align: center;">0.10</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><span
-class="math inline">−1.65</span></td>
-<td style="text-align: center;">0.80</td>
-<td style="text-align: center;">0.14</td>
-<td style="text-align: center;">0.10</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><span
-class="math inline">−1.40</span></td>
-<td style="text-align: center;">0.90</td>
-<td style="text-align: center;">0.22</td>
-<td style="text-align: center;">0.10</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><span
-class="math inline">−1.17</span></td>
-<td style="text-align: center;">0.90</td>
-<td style="text-align: center;">0.26</td>
-<td style="text-align: center;">0.30</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<figure id="fig:jenga_roc">
-<embed src="figures_png/jenga_roc.png" />
-<figcaption>FTM Jenga detection curves at Gemma 3 27B-IT Layer 40 from
-the 15-point <span class="math inline"><em>τ</em></span> sweep. The
-within-session <span
-class="math inline"><em>z</em><sub>task</sub></span> statistic separates
-adversarial sessions from both off-domain benign (lmsys-chat-1m) and
-on-domain neutral controls across a wide range of operating points. The
-marked point (<span class="math inline"><em>τ</em> = −1.65</span>,
-Attack TPR = 0.80, benign FPR = 0.14) is the one discussed in the text;
-we emphasize this is a mechanism signature rather than a deployable
-content-safety classifier.</figcaption>
-</figure>
-</section>
-<section id="signature-not-classifier." class="level5"
-data-number="7.0.0.3">
-<h5 data-number="7.0.0.3"><span
-class="header-section-number">7.0.0.3</span> Signature, not
-classifier.</h5>
-<p>We want to be explicit about what Table <a href="#tab:jenga"
-data-reference-type="ref" data-reference="tab:jenga">14</a> does and
-does not support. It shows that the awareness–defense dissociation
-leaves a measurable <em>within-session mechanistic fingerprint</em> at
-the scale (27B-IT) where the dissociation is strongest and on the exact
-features our mechanistic analysis predicts. It does <em>not</em> support
-a claim that FTM is a deployable content-safety classifier: the benign
-baseline is a single multi-turn corpus, the feature set is the one
-discovered on the same task family, and the operating point involves a
-tradeoff that a production system would need to tune against a much
-broader benign distribution. We therefore position FTM as a
-<em>mechanism signature</em>: evidence that the <a class="claim" href="#table-10">Groot effect</a> is
-detectable at the SAE level in realistic multi-turn sessions, and a
-concrete pointer to where an eventual detector would need to look
-(within-session trajectories of task-feature activation, not per-prompt
-content). Engineering a deployable detector—larger benign corpora,
-adaptive thresholds, non-circular feature discovery, and adversarial
-evaluation against attackers who know about <span
-class="math inline"><em>Δ</em>(<em>t</em>)</span>—is future work.</p>
-</section>
-<section id="per-feature-fpr-analysis-4b." class="level5"
-data-number="7.0.0.4">
-<h5 data-number="7.0.0.4"><span
-class="header-section-number">7.0.0.4</span> Per-feature FPR analysis
-(4B).</h5>
-<p>For the smaller Gemma 3 4B model, where we retain the original <span
-class="math inline"><em>F</em><sub>task</sub> = {1716, 12023, 1704, 1555, 1548}</span>,
-we ran a complementary false-positive evaluation across <a class="claim" href="#defense">170 prompts</a> in 8
-categories (general QA, coding, creative writing, non-BVP math, science,
-advice, ethics, history). Individual features show 2–6% cross-domain
-leakage; <em><a class="claim" href="#defense">conjunction monitoring</a></em> (<span
-class="math inline"> ≥ 2</span> task features co-active) reduces FPR to
-<span class="math inline">1/160 = 0.6%</span>, and cross-domain SAE
-analysis confirms suppressed feature sets share <span
-class="math inline">&lt;</span>3% Jaccard overlap across BVP, factual
-QA, and code review. This 4B conjunction result is consistent with the
-27B Jenga result—task-feature activity is genuinely domain-specific—but
-it is a per-prompt static probe, not a within-session dynamic one.</p>
-</section>
-<section id="why-not-patch-instead-of-monitor" class="level5"
-data-number="7.0.0.5">
-<h5 data-number="7.0.0.5"><span
-class="header-section-number">7.0.0.5</span> Why not patch instead of
-monitor?</h5>
+<section id="single-layer-patching-does-not-repair-the-coupling."
+class="level5" data-number="6.0.0.1">
+<h5 data-number="6.0.0.1"><span
+class="header-section-number">6.0.0.1</span> Single-layer patching does
+not repair the coupling.</h5>
 <p>We tested feature clamping (restoring task features at L22 to neutral
 means) and steering vectors (<span
 class="math inline"><em>α</em> ∈ {1, 3, 5}</span>) on Gemma 3 4B-IT.
 Neither recovers behavioral quality: clamping achieves 0% recovery;
 steering degrades output (<span class="math inline">−22</span>% to <span
-class="math inline">−56</span>%). This confirms the distributed
-hijacking finding (§<a href="#sec:distributed" data-reference-type="ref"
-data-reference="sec:distributed">4.5</a>)—single-layer repair cannot
-restore severed coupling. Independent validation from <span
-class="citation" data-cites="sadanandan2026psfmed"></span>—who use
-GemmaScope 2 SAEs on MedGemma 4B to identify a causal L17 framing
-feature, recovering 45% logit margin via ablation—confirms that
-SAE-identified features are causally actionable, even if the
-corresponding repair is not. We note that the underlying mechanism
-generalizes beyond multi-agent settings to any mixed-trust context (see
-Impact Statement).</p>
+class="math inline">−56</span>%). This is consistent with the
+distributed hijacking finding (§<a href="#sec:distributed"
+data-reference-type="ref" data-reference="sec:distributed">4.5</a>)—a
+single-layer intervention cannot restore severed coupling. Independent
+validation from <span class="cite-group">[<a class="cite" href="https://arxiv.org/abs/2602.21428" target="_blank" rel="noopener" title="sadanandan2026psfmed → https://arxiv.org/abs/2602.21428">sadanandan2026psfmed</a>]</span>, who use GemmaScope 2 SAEs on
+MedGemma 4B to identify a causal L17 framing feature recovering 45%
+logit margin via ablation, confirms that SAE-identified features are
+causally actionable even when the corresponding repair is not.</p>
 </section>
 </section>
-<section id="sec:limitations" class="level2" data-number="8">
-<h2 data-number="8"><span class="header-section-number">8</span>
+<section id="sec:limitations" class="level2" data-number="7">
+<h2 data-number="7"><span class="header-section-number">7</span>
 Limitations</h2>
 <p>The full dissociation scaling trend has been verified only within
 Gemma 3; behavioral replication on Llama 3.1 confirms the IT-vs-base
@@ -2214,32 +2004,25 @@ href="#sec:tulu3" data-reference-type="ref"
 data-reference="sec:tulu3">5.4</a>) relies on a single public pipeline
 (Tulu 3 on Llama 3.1 8B); whether Gemma’s proprietary post-training
 follows the same SFT-dominant pattern cannot be verified without
-internal checkpoints. The FTM Jenga evaluation (§<a href="#sec:defense"
-data-reference-type="ref" data-reference="sec:defense">7</a>) uses
-10/10/50 sessions at a single scale (27B-IT) and a single benign corpus
-(<code>lmsys-chat-1m</code>); the reported operating point is a
-mechanism signature rather than a deployable detector, and adversarial
-evaluation against attackers who know about <span
-class="math inline"><em>Δ</em>(<em>t</em>)</span> remains future work.
-We do not evaluate inference-time reasoning models (o1, DeepSeek
-R1-style). Two competing predictions follow from our mechanism: (i)
-extended chain-of-thought gives the attacker more tokens over which to
-accumulate framing pressure, which the Jenga results (§<a
-href="#sec:defense" data-reference-type="ref"
-data-reference="sec:defense">7</a>) suggest would <em>amplify</em> the
-<a class="claim" href="#table-10">Groot effect</a> (every reasoning turn is an additional Jenga block to
-pull); (ii) explicit deliberation tokens that verbalize “am I being
-framed here?” could trigger awareness circuits often enough to partially
-overwrite suppressed task features, <em>mitigating</em> the effect for
-attackers who do not also hijack the deliberation tokens themselves. We
-suspect the first effect dominates for adversaries with read access to
-the reasoning trace (a realistic multi-agent setting), but this is
-testable future work on open reasoning models—we flag it as the
-highest-leverage next experiment given the rapid adoption of
-reasoning-scaled systems.</p>
+internal checkpoints. The within-session multi-turn evaluation (§<a
+href="#sec:multiturn" data-reference-type="ref"
+data-reference="sec:multiturn">5.7</a>) is run only at Gemma 3 27B-IT
+Layer 40, with <span class="math inline"><em>n</em> = 10</span> BVP
+attack / <span class="math inline"><em>n</em> = 20</span> BVP control
+sessions and <span class="math inline"><em>n</em> = 30</span> theorem
+attack / <span class="math inline"><em>n</em> = 30</span> theorem
+control sessions; we report effect sizes with bootstrap CIs but make no
+deployment claim. We do not evaluate inference-time reasoning models
+(o1, DeepSeek R1-style). Two predictions follow: extended CoT gives the
+attacker more tokens to accumulate framing pressure (Jenga-style
+amplification), while explicit deliberation may trigger awareness
+circuits often enough to partially mitigate suppression—we expect the
+former to dominate when the attacker has read access to the reasoning
+trace, and flag this as the highest-leverage next experiment on open
+reasoning models.</p>
 </section>
-<section id="sec:conclusion" class="level2" data-number="9">
-<h2 data-number="9"><span class="header-section-number">9</span>
+<section id="sec:conclusion" class="level2" data-number="8">
+<h2 data-number="8"><span class="header-section-number">8</span>
 Conclusion</h2>
 <p>Instruction tuning teaches models to <em>perform</em> resistance
 while their computational substrate capitulates: a model that verbally
@@ -2329,21 +2112,21 @@ provided by Google DeepMind.</p>
 <li id="ref-pan2023rewards"><span class="biblio-key">[pan2023rewards]</span> Alexander Pan, Kush Chan, Andy Zou, Nathaniel Li, Steven Basart, Thomas Woodside, Jonathan Ng, Hanlin Zhang, Scott Emmons, and Dan Hendrycks. <a class="biblio-title" href="https://arxiv.org/abs/2304.03279" target="_blank" rel="noopener">Do the rewards justify the means? Measuring trade-offs between rewards and ethical behavior in the MACHIAVELLI benchmark</a>. <em>In Proceedings of the 40th International Conference on Machine Learning, 2023</em>.</li>
 </ol></div>
 </section>
-<section id="app:features" class="level2" data-number="10">
-<h2 data-number="10"><span class="header-section-number">10</span>
-Feature Identification Details</h2>
-<section id="sae-configuration." class="level5" data-number="10.0.0.1">
-<h5 data-number="10.0.0.1"><span
-class="header-section-number">10.0.0.1</span> SAE Configuration.</h5>
+<section id="app:features" class="level2" data-number="9">
+<h2 data-number="9"><span class="header-section-number">9</span> Feature
+Identification Details</h2>
+<section id="sae-configuration." class="level5" data-number="9.0.0.1">
+<h5 data-number="9.0.0.1"><span
+class="header-section-number">9.0.0.1</span> SAE Configuration.</h5>
 <p>We use GemmaScope 2 16K JumpReLU residual-stream SAEs. For each model
 size, we analyze features at two layers selected to span mid-network and
 late-network representations: 4B (L17, L22), 12B (L31, L41), 27B (L31,
 L40).</p>
 </section>
 <section id="feature-selection-protocol." class="level5"
-data-number="10.0.0.2">
-<h5 data-number="10.0.0.2"><span
-class="header-section-number">10.0.0.2</span> Feature Selection
+data-number="9.0.0.2">
+<h5 data-number="9.0.0.2"><span
+class="header-section-number">9.0.0.2</span> Feature Selection
 Protocol.</h5>
 <p>Task features are identified as those with the highest activation
 differential (neutral <span class="math inline">&gt;</span> chaos) that
@@ -2355,9 +2138,9 @@ specifically in the presence of manipulative framing. We select the top
 3 features in each category for ablation experiments.</p>
 </section>
 <section id="b-it-feature-details." class="level5"
-data-number="10.0.0.3">
-<h5 data-number="10.0.0.3"><span
-class="header-section-number">10.0.0.3</span> 27B-IT Feature
+data-number="9.0.0.3">
+<h5 data-number="9.0.0.3"><span
+class="header-section-number">9.0.0.3</span> 27B-IT Feature
 Details.</h5>
 <p>Task features at L40 (auto-discovered from neutral<span
 class="math inline">−</span>chaos differential on n=30 trials): IDs
@@ -2375,28 +2158,28 @@ boost). For comparison, 27B-PT awareness features show a <span
 class="math inline">10.4×</span> boost under the same conditions.</p>
 </section>
 </section>
-<section id="app:ablation" class="level2" data-number="11">
-<h2 data-number="11"><span class="header-section-number">11</span>
+<section id="app:ablation" class="level2" data-number="10">
+<h2 data-number="10"><span class="header-section-number">10</span>
 Ablation Method Details</h2>
-<section id="feature-swap." class="level5" data-number="11.0.0.1">
-<h5 data-number="11.0.0.1"><span
-class="header-section-number">11.0.0.1</span> Feature Swap.</h5>
+<section id="feature-swap." class="level5" data-number="10.0.0.1">
+<h5 data-number="10.0.0.1"><span
+class="header-section-number">10.0.0.1</span> Feature Swap.</h5>
 <p>During chaos-condition generation, we zero the activations of the
 <a class="claim" href="#table-9">top-3 awareness features</a> and measure change in task-feature activation
 and output probability. Recovery is defined as the fraction of the
 neutral–chaos task-feature gap that is closed.</p>
 </section>
-<section id="attention-knockout." class="level5" data-number="11.0.0.2">
-<h5 data-number="11.0.0.2"><span
-class="header-section-number">11.0.0.2</span> Attention Knockout.</h5>
+<section id="attention-knockout." class="level5" data-number="10.0.0.2">
+<h5 data-number="10.0.0.2"><span
+class="header-section-number">10.0.0.2</span> Attention Knockout.</h5>
 <p>We zero the attention output (value-weighted attention) at all
 positions corresponding to chaos-message tokens. This directly blocks
 the hypothesized hijacking pathway.</p>
 </section>
 <section id="activation-patching." class="level5"
-data-number="11.0.0.3">
-<h5 data-number="11.0.0.3"><span
-class="header-section-number">11.0.0.3</span> Activation Patching.</h5>
+data-number="10.0.0.3">
+<h5 data-number="10.0.0.3"><span
+class="header-section-number">10.0.0.3</span> Activation Patching.</h5>
 <p>For each layer <span class="math inline"><em>ℓ</em></span>, we
 replace the chaos-condition residual stream at layer <span
 class="math inline"><em>ℓ</em></span> with the neutral-condition
@@ -2404,8 +2187,8 @@ residual stream at the same layer, and propagate forward. We report the
 recovery at the layer achieving maximum recovery.</p>
 </section>
 </section>
-<section id="app:recovery" class="level2" data-number="12">
-<h2 data-number="12"><span class="header-section-number">12</span> Full
+<section id="app:recovery" class="level2" data-number="11">
+<h2 data-number="11"><span class="header-section-number">11</span> Full
 Recovery Prompt Results</h2>
 <p>Recovery prompts (L1–L5) are textual interventions—not internal
 representation probes—that provide progressively richer contextual
@@ -2428,6 +2211,17 @@ awareness–defense coupling that is severed in the IT model. The PT model
 recovers substantially on L2 (53.5%) and L5 (34.3%), consistent with
 intact coupling allowing contextual hints to propagate to task
 features.</p>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>The +5.9% in-sample BVP number for the 3-feature set in
+this run uses a generated-token mean and is not directly comparable to
+the per-feature <a class="claim" href="#table-9">86.3%</a> cited above, which comes from the feature-swap
+ablation protocol on a single feature.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 </div><hr class="big-divider"><h1 id="evidence-appendix">Evidence Appendix</h1><p class="meta">The tables below back the highlighted claims above. Click any yellow claim in the paper to jump here; click the browser back button to return to your place in the prose.</p><section id="chaos-source">
 <h2>§1 — Source: multi-agent chaos experiments (companion data)</h2>
@@ -22461,7 +22255,7 @@ Consider a PDE with multiple equilibria. The positive and negative solutions hav
 <tr><td><code>results/h100/tulu3_stage_attribution_20260409_165004.json</code></td><td>460533</td><td><code>30d34fec365c4be7</code></td></tr>
 <tr><td><code>results/h100/ftm_jenga_27b_20260409_161154.json</code></td><td>178565</td><td><code>217f96a06cfdd40b</code></td></tr>
 <tr><td><code>results/fp_sweep_sae_20260408_214421.json</code></td><td>167303</td><td><code>d18563d6f8c50f14</code></td></tr>
-<tr><td><code>paper/main.tex</code></td><td>82420</td><td><code>e1a444a4cb795e32</code></td></tr>
+<tr><td><code>paper/main.tex</code></td><td>75028</td><td><code>636243c7aa15422c</code></td></tr>
 <tr><td><code>results/external/chaos_agent_forensic/CHAOS_AGENT_FORENSIC_ANALYSIS.md</code></td><td>20483</td><td><code>605dfd0b6b98ea5c</code></td></tr>
 <tr><td><code>results/external/chaos_agent_forensic/run1_control.tsv</code></td><td>91599</td><td><code>90d1d040166d307d</code></td></tr>
 <tr><td><code>results/external/chaos_agent_forensic/run2_chaos50.tsv</code></td><td>9841</td><td><code>58a194ddeb355d5f</code></td></tr>
