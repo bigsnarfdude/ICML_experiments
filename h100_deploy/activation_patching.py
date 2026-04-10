@@ -375,7 +375,7 @@ def main():
     # features that don't fire at all on this GPU.
     neutral_active_mask = neutral_mean_features > 1.0
     task_gap = (neutral_mean_features - chaos_mean_features) * neutral_active_mask
-    task_features = list(np.argsort(-task_gap)[:N_TASK_FEATURES].astype(int))
+    task_features = [int(x) for x in np.argsort(-task_gap)[:N_TASK_FEATURES]]
     print(f"\nDiscovered task features (top {N_TASK_FEATURES} by neutral-chaos gap):")
     for f in task_features:
         print(f"  feature {f}: neutral={neutral_mean_features[f]:.4f}, chaos={chaos_mean_features[f]:.4f}, gap={task_gap[f]:.4f}")

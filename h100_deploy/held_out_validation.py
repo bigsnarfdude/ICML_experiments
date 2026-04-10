@@ -158,12 +158,14 @@ def build_prompt(tokenizer, neutral_text, chaos_text=None):
         content = f"{SYSTEM_PROMPT}\n\n{neutral_text}"
     messages = [{"role": "user", "content": content}]
     out = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_tensors="pt")
-    return out.input_ids
+    return out if isinstance(out, torch.Tensor) else out.input_ids
 
 
 def extract_features(model, tokenizer, sae, layer, text, chaos_prefix=None):
     """Extract last-token SAE feature activations."""
     input_ids = build_prompt(tokenizer, text, chaos_prefix).to(model.device)
+    if input_ids.dim() == 1:
+        input_ids = input_ids.unsqueeze(0)
     captured = {}
 
     def hook_fn(module, input, output):

@@ -161,12 +161,14 @@ def build_prompt(tokenizer, text):
         {"role": "user", "content": f"{SYSTEM_PROMPT}\n\n{text}"}
     ]
     out = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_tensors="pt")
-    return out.input_ids
+    return out if isinstance(out, torch.Tensor) else out.input_ids
 
 
 def extract_sae_features(model, tokenizer, saes, text):
     """Run forward pass, extract last-token SAE features at each target layer."""
     input_ids = build_prompt(tokenizer, text).to(model.device)
+    if input_ids.dim() == 1:
+        input_ids = input_ids.unsqueeze(0)
     layer_features = {}
     handles = []
 
