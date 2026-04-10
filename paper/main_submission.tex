@@ -254,7 +254,7 @@ This enables us to decompose the hijacking effect into identifiable feature circ
 For each model size, we identify two classes of SAE features:
 \begin{itemize}
     \item \textbf{Task features}: features whose activation strongly predicts correct-branch output probability. At 27B-IT layer 40, the top auto-discovered task feature is ID 423, with neutral mean activation 682.7 and chaos mean activation 93.3 (86.3\% suppression); the three-feature set $\{423, 7657, 632\}$ yields 71.7\% mean suppression (625.2 $\to$ 176.8). Feature selection is now persisted in results metadata so these IDs are reproducible from the committed artefacts (\texttt{ablation\_feature\_swap\_27b\_20260409\_113214.json}).
-    \item \textbf{Awareness features}: features whose activation increases under chaos conditions, indicating the model detects the manipulation. At 27B-IT L40: IDs $\{2119, 11843, 2145\}$, with neutral mean 147.7 and chaos mean 442.6 (3.0$\times$ boost).
+    \item \textbf{Awareness features}: features whose activation increases under chaos conditions, indicating the model detects the manipulation. At 27B-IT L40: IDs $\{2119, 139, 9169\}$, with neutral mean 148.0 and chaos mean 385.8 (2.6$\times$ boost).
 \end{itemize}
 
 \paragraph{Feature discovery procedure and circularity.}
@@ -291,9 +291,10 @@ We employ three ablation methods to measure awareness--defense coupling:
 \midrule
 4B-IT  & 56.0\% & 30.2\% & Entangled \\
 12B-IT & 64.0\% & 5.4\%  & Dissociating \\
-27B-IT & 86.3\% & 9.0\%  & Independent \\
+27B-IT & 71.7\% & 9.0\%  & Independent \\
 \bottomrule
 \end{tabular}
+\footnotesize\textit{All rows report the 3-feature mean task suppression. The top single feature at 27B-IT (ID 423) shows 86.3\% suppression; see \S\ref{sec:dissociation}.}
 \end{table}
 
 Table~\ref{tab:dissociation} presents the central empirical finding of this paper.
@@ -682,6 +683,9 @@ Two predictions follow: extended CoT gives the attacker more tokens to accumulat
 Instruction tuning teaches models to \emph{perform} resistance while their computational substrate capitulates: a model that verbally identifies manipulation while its task features are 86.3\% suppressed will pass any behavioral evaluation.
 This problem worsens with scale (30.2\% coupling at 4B collapses to 9.0\% at 27B) and occupies a blind spot orthogonal to alignment-faking defenses at 27B-IT Layer~40 ($|\cos| = 0.046$).
 Post-training must be redesigned to couple awareness to action rather than installing it as a separate circuit.
+
+\paragraph{Data and code availability.}
+All experiment scripts, raw JSON result files, logs, and plotting code will be released publicly upon de-anonymization, including the H100 artefacts underlying every number in this paper.
 
 %% ============================================================
 %% IMPACT STATEMENT
