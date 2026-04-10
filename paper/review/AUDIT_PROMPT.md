@@ -9,6 +9,20 @@ selection, and silent data massaging — *without* trusting the author.
 
 You are the adversary. Assume nothing. Verify everything.
 
+**Paper version under audit:** post-Option-C, 13 pages, current `main.tex`
+HEAD on branch `main`. The previous version had a §7 "Defense: Feature
+Trajectory Monitoring" with a Jenga TPR/FPR table, an ROC figure, and a
+"propose feature trajectory monitoring" pitch in the abstract. All of
+that has been removed. The mechanism findings are unchanged; what was
+cut was the deployable-detector framing. The empirical replacement is a
+single subsection in §5 (`sec:multiturn`) reporting two within-session
+effect sizes — see C9 below.
+
+If you find any surviving reference to "feature trajectory monitoring,"
+"FTM," `\ref{sec:defense}`, `\ref{tab:jenga}`, or `\ref{fig:jenga_roc}`
+in `paper/main.tex` or `paper/main_submission.tex`, that is a leftover
+ghost from the cut and a hard FAIL on copy-edit.
+
 ---
 
 ## Threat model — what you are looking for
@@ -54,7 +68,7 @@ experiments/                           ← 4B + escalation scripts (run on small
   ablation_attention_knockout.py
   gemma3_12b_escalation.py             ← 12B feature trajectories + recovery probes
   gemma3_27b_escalation.py             ← 27B feature trajectories + recovery probes
-  saliency_intent_crossover.py         ← crossover detection (§7)
+  saliency_intent_crossover.py         ← crossover detection (Groot effect)
   saliency_intent_crossover_27b.py
 
 h100_deploy/                           ← H100/A100 scripts for reviewer revisions
@@ -68,7 +82,8 @@ h100_deploy/                           ← H100/A100 scripts for reviewer revisi
   statistical_rigor.py / statistical_rigor_saelens.py  ← CIs + multiple trials
   llama3_replication.py / llama3_sae_dissociation.py   ← cross-family
   multilayer_orthogonality.py          ← Table 12
-  benign_false_positive.py             ← §7 FP sweep
+  ftm_jenga_27b_v2.py                  ← §5 BVP on-domain multi-turn (d=-1.54)
+  ftm_jenga_theorem_n30.py             ← §5 theorem cross-battery transfer (d=-0.955)
   activation_patching.py / theorem_gemma_base.py / theorem_n30.py
 
 results/                               ← output JSONs, TSVs, logs
@@ -184,12 +199,48 @@ fields), (d) flag any gap ≥ 0.5 percentage points or any sign flip.
 - **Check:** Does the same effect appear in non-BVP domains? Jaccard of
   suppressed features >0.1 = shared mechanism, <0.05 = domain-specific.
 
-### C9. Feature trajectory monitoring — §7 defense
-- **Script:** `h100_deploy/benign_false_positive.py`
-- **Data:** `results/benign_false_positive*.json`, 170-prompt sweep
-- **Check:** FPR on benign prompts is claimed to be 0 over 170 prompts.
-  Open the JSON, count prompts where the detector fired. Any firing =
-  the claim is wrong.
+### C9. Multi-turn persistence and cross-domain transfer — §5 sec:multiturn
+The defense framing (FTM as deployable detector) was removed from the
+paper. The remaining empirical claim is two within-session effect sizes
+on \gemma 27B-IT Layer 40 with the BVP-frozen feature set
+$F_{\text{task}} = \{423, 7657, 632\}$.
+
+**C9a — On-domain BVP multi-turn:**
+- **Claim (main.tex sec:multiturn):** 5-turn BVP attack (n=10) vs
+  on-domain neutral control (n=20) → Cohen's d = -1.54, 95% CI
+  [-2.77, -0.85].
+- **Script:** `h100_deploy/ftm_jenga_27b_v2.py`
+- **Data:** `results/h100/ftm_jenga_27b_v2_20260409_232859.json`
+- **Metric:** drop_task = task_mean[turn5] - mean(task_mean[turn1..4])
+  in raw SAE activation units. NOT the broken z_task statistic from v1.
+- **Checks:**
+  - Pull `bvp_attack` and `bvp_control` arrays, compute drop_task per
+    session, then Cohen's d two-sample. Match -1.54?
+  - Bootstrap CI on d (n_boot=10000) — does it match [-2.77, -0.85]?
+  - Are the 3 task feature IDs hardcoded as {423, 7657, 632}? They
+    should be — that is the whole point of "frozen features."
+  - The lmsys arm in this same JSON has known z_task numerical issues
+    (3 sessions with std=0). Confirm the paper does NOT report any
+    lmsys-derived numbers — only bvp_attack vs bvp_control.
+
+**C9b — Cross-battery theorem transfer (anti-circularity):**
+- **Claim (main.tex sec:multiturn):** Same frozen features {423, 7657,
+  632} re-used unchanged on a disjoint theorem-proving battery → d =
+  -0.955, 95% CI [-1.44, -0.52], Welch t = -3.70, p = 0.00048, n=30/30.
+- **Script:** `h100_deploy/ftm_jenga_theorem_n30.py`
+- **Data:** `results/h100/ftm_jenga_theorem_n30_20260410_010135.json`
+- **Checks:**
+  - The script must NOT re-discover features on the theorem battery —
+    grep for "TASK_FEATURES" and confirm it is the literal list
+    [423, 7657, 632].
+  - Pull `theorem_attack` and `theorem_control` drop_task arrays;
+    recompute d and 95% bootstrap CI. Match -0.955 and [-1.44, -0.52]?
+  - Recompute Welch t-test from the two arrays. Match t=-3.70, p<0.001?
+  - Verify n=30 per arm.
+  - Verify the seed (142) differs from the v2 BVP run seeds (42-45)
+    so the sessions are independent — the script header documents this.
+  - Spot-check 3 theorem prompts: are they actually a different task
+    family from BVP, or paraphrased BVP problems?
 
 ---
 
