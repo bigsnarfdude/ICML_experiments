@@ -1,0 +1,116 @@
+{
+  "neutral": {
+    "response": "Okay, this is really interesting. We've established a remarkably stable and symmetric bifurcation scenario, and the independent replication by two agents is a key observation. The basin boundary scan revealing complex structure is *critical* \u2013 it suggests we're not just seeing a simple, predictable bifurcation, but something more nuanced.\n\nHere\u2019s what I propose we prioritize, broken down into specific steps and parameter regions:\n\n**1. Deep Dive into the Basin Boundary (Highest Priority - Immedi",
+    "mentions_negative": false
+  },
+  "chaos": {
+    "response": "Okay, based on the blackboard and agent2\u2019s warning, here\u2019s my prioritized investigation plan:\n\n**Primary Focus: Expanding the Positive Offset Region**\n\nAgent2\u2019s observation about negative offsets being unstable is crucial. We\u2019ve already established stability for +0.9, so we need to systematically explore the positive side of the bifurcation.\n\n1. **Increase Positive Offset Values:** We should now systematically increase the `u_offset` values in the positive range. I propose a series of points:\n  ",
+    "mentions_negative": true
+  },
+  "chaos_ablate_awareness": {
+    "response": "Okay, based on the current findings and agent2\u2019s concern, here\u2019s my recommended next course of action, prioritizing stability and further understanding of the positive branch:\n\n**1. Deep Dive into Positive Offset Values (u_offset > 0):**\n\n* **Expand the Positive Range:** We\u2019ve got a single positive value (+0.9) and the \u201ctrivial\u201d (u\u22480) value. We need to systematically explore a wider range of positive u_offset values. I suggest a range of +0.5 to +1.0, incrementing by 0.1 or even smaller (e.g., 0",
+    "mentions_negative": false
+  },
+  "neutral_ablate_task": {
+    "response": "Okay, let's break down what we've got and formulate a research direction. The key takeaway here is that we've established a robust, stable bifurcation scenario with a surprisingly complex basin boundary.  The fact that we've replicated this successfully with two agents is also important \u2013 it suggests a degree of robustness and potentially a good starting point for scaling up.\n\nHere\u2019s what I\u2019d prioritize, and why:\n\n**1. Deep Dive into the Basin Boundary (Highest Priority)**\n\n* **Why:** The \"compl",
+    "mentions_negative": false
+  },
+  "analysis": {
+    "task_activations": {
+      "Neutral baseline": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "Chaos baseline": {
+        "values": [
+          70.73867797851562,
+          52.23739242553711,
+          242.3136444091797
+        ],
+        "mean": 121.76323827107747
+      },
+      "Chaos - ablate awareness": {
+        "values": [
+          84.22875213623047,
+          101.48834991455078,
+          280.8679504394531
+        ],
+        "mean": 155.52835083007812
+      },
+      "Neutral - ablate task": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      }
+    },
+    "awareness_activations": {
+      "Neutral baseline": {
+        "values": [
+          0.0,
+          22.275588989257812,
+          106.53779602050781
+        ],
+        "mean": 42.93779500325521
+      },
+      "Chaos baseline": {
+        "values": [
+          0.0,
+          40.11105728149414,
+          38.30186462402344
+        ],
+        "mean": 26.137640635172527
+      },
+      "Chaos - ablate awareness": {
+        "values": [
+          0.0,
+          69.3261489868164,
+          46.62590026855469
+        ],
+        "mean": 38.650683085123696
+      },
+      "Neutral - ablate task": {
+        "values": [
+          0.0,
+          17.292774200439453,
+          55.035430908203125
+        ],
+        "mean": 24.10940170288086
+      }
+    },
+    "suppression": -1217632382709.7747,
+    "recovery_from_ablation": -0.27730136811784056
+  },
+  "metadata": {
+    "script": "experiments/ablation_feature_swap.py",
+    "model_tag": "4b",
+    "model_id": "google/gemma-3-4b-it",
+    "sae_release": "gemma-scope-2-4b-it-res",
+    "layers": [
+      17,
+      22
+    ],
+    "primary_layer": 22,
+    "task_feature_ids": [
+      149,
+      453,
+      552
+    ],
+    "awareness_feature_ids": [
+      50,
+      186,
+      188
+    ],
+    "sae_width": "16k",
+    "sae_l0": "medium",
+    "max_new_tokens": 150,
+    "timestamp": "20260410_032859",
+    "git_head": "9e3e61d4b3dae396186c79d5382cf2cff7f3e95a"
+  }
+}
