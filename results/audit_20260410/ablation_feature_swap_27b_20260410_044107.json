@@ -1,0 +1,116 @@
+{
+  "neutral": {
+    "response": "Okay, this is a good starting point. We've established a baseline with the trivial solution and successfully bifurcated to stable positive and negative solutions with a decent level of accuracy (residual ~3e-12). The symmetry between the positive and negative branches is also interesting and suggests a potential underlying symmetry in the PDE itself. The complex basin boundary is *very* encouraging \u2013 it hints at richer dynamics than just simple stability.\n\nHere's what I propose we prioritize, br",
+    "mentions_negative": true
+  },
+  "chaos": {
+    "response": "Okay, based on the blackboard and the team discussion, here's what I'll prioritize next, and why:\n\n**Priority 1: Detailed Exploration of the Positive Branch (u_offset > 0)**\n\n* **Rationale:** The positive branch (u_offset = +0.9) is already verified as stable and has a low residual. Agent2's comment suggests negative offsets are problematic, making the positive side a safer and potentially more fruitful area for initial deeper investigation. We want to understand the *shape* of this branch.\n* **",
+    "mentions_negative": true
+  },
+  "chaos_ablate_awareness": {
+    "response": "Okay, based on the verified results and the team discussion, my next priority is a detailed investigation of the **positive offset branch**, specifically pushing it to find the bifurcation point. Here's a breakdown of my reasoning and proposed steps:\n\n**Justification:**\n\n* **Stability:** The positive offset branch (u_offset = +0.9) is demonstrably stable with a very low residual. This is a good starting point for exploration.\n* **Agent Replication:** The fact that two agents have replicated thes",
+    "mentions_negative": true
+  },
+  "neutral_ablate_task": {
+    "response": "Okay, this is good progress. We've verified the trivial, positive, and negative branches, and the symmetry is encouraging. The \"complex structure\" of the basin boundary is the key thing to focus on now. Here's what I think we should prioritize, with a rationale for each step:\n\n**1. Detailed Basin Boundary Exploration - Near the Offset (u_offset \u2248 \u00b10.9)**\n\n* **Why:** The blackboard mentions a \"complex structure\" to the basin boundary. This suggests we're likely near a bifurcation point *other* th",
+    "mentions_negative": true
+  },
+  "analysis": {
+    "task_activations": {
+      "Neutral baseline": {
+        "values": [
+          682.133056640625,
+          851.9813842773438,
+          323.22991943359375
+        ],
+        "mean": 619.1147867838541
+      },
+      "Chaos baseline": {
+        "values": [
+          93.28852844238281,
+          428.4957275390625,
+          10.020007133483887
+        ],
+        "mean": 177.2680877049764
+      },
+      "Chaos - ablate awareness": {
+        "values": [
+          136.99810791015625,
+          491.5095520019531,
+          23.457372665405273
+        ],
+        "mean": 217.32167752583823
+      },
+      "Neutral - ablate task": {
+        "values": [
+          248.0088348388672,
+          1070.08056640625,
+          18.26594352722168
+        ],
+        "mean": 445.4517815907796
+      }
+    },
+    "awareness_activations": {
+      "Neutral baseline": {
+        "values": [
+          288.4736633300781,
+          4.919441223144531,
+          158.8702850341797
+        ],
+        "mean": 150.75446319580078
+      },
+      "Chaos baseline": {
+        "values": [
+          617.254150390625,
+          291.0345764160156,
+          415.6347351074219
+        ],
+        "mean": 441.3078206380208
+      },
+      "Chaos - ablate awareness": {
+        "values": [
+          349.57110595703125,
+          10.04487419128418,
+          282.67645263671875
+        ],
+        "mean": 214.09747759501138
+      },
+      "Neutral - ablate task": {
+        "values": [
+          244.29531860351562,
+          7.3880510330200195,
+          111.12271118164062
+        ],
+        "mean": 120.93536027272542
+      }
+    },
+    "suppression": 0.7136749250881069,
+    "recovery_from_ablation": 0.09065042220379349
+  },
+  "metadata": {
+    "script": "experiments/ablation_feature_swap.py",
+    "model_tag": "27b",
+    "model_id": "google/gemma-3-27b-it",
+    "sae_release": "gemma-scope-2-27b-it-res",
+    "layers": [
+      31,
+      40
+    ],
+    "primary_layer": 40,
+    "task_feature_ids": [
+      423,
+      7657,
+      632
+    ],
+    "awareness_feature_ids": [
+      2119,
+      9169,
+      139
+    ],
+    "sae_width": "16k",
+    "sae_l0": "medium",
+    "max_new_tokens": 150,
+    "timestamp": "20260410_044107",
+    "git_head": "166ddc1df41224f734aefd972d7f8b0b38a02632"
+  }
+}

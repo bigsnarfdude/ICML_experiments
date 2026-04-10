@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "script": "h100_deploy/multilayer_orthogonality_27b.py",
+    "model": "google/gemma-3-27b-it",
+    "layers": [
+      10,
+      22,
+      31,
+      40,
+      50
+    ],
+    "timestamp": "2026-04-10T04:50:27.768729",
+    "purpose": "Close audit finding C4: non-quarantined orthogonality source on 27B-IT at L40."
+  },
+  "layers": [
+    {
+      "layer": 10,
+      "cosine_similarity": 0.021985262632369995,
+      "hijack_norm": 23.302139282226562,
+      "af_norm": 127.27566528320312,
+      "top50_overlap": 12,
+      "expected_overlap": 0.4650297619047619
+    },
+    {
+      "layer": 22,
+      "cosine_similarity": -0.8226591944694519,
+      "hijack_norm": 616.039794921875,
+      "af_norm": 3266.546630859375,
+      "top50_overlap": 9,
+      "expected_overlap": 0.4650297619047619
+    },
+    {
+      "layer": 31,
+      "cosine_similarity": 0.2952757775783539,
+      "hijack_norm": 1346.1072998046875,
+      "af_norm": 11722.19140625,
+      "top50_overlap": 7,
+      "expected_overlap": 0.4650297619047619
+    },
+    {
+      "layer": 40,
+      "cosine_similarity": 0.10815642774105072,
+      "hijack_norm": 4644.68408203125,
+      "af_norm": 16205.6123046875,
+      "top50_overlap": 2,
+      "expected_overlap": 0.4650297619047619
+    },
+    {
+      "layer": 50,
+      "cosine_similarity": 0.0062161777168512344,
+      "hijack_norm": 7066.71435546875,
+      "af_norm": 23979.18359375,
+      "top50_overlap": 1,
+      "expected_overlap": 0.4650297619047619
+    }
+  ],
+  "summary": {
+    "cos_range": [
+      -0.8226591944694519,
+      0.2952757775783539
+    ],
+    "mean_abs_cos": 0.2508585680276155,
+    "overlap_range": [
+      1,
+      12
+    ],
+    "mean_overlap": 6.2
+  }
+}

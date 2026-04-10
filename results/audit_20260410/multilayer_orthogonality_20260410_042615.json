@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "model": "google/gemma-3-4b-it",
+    "layers": [
+      5,
+      10,
+      15,
+      17,
+      20,
+      22,
+      24
+    ],
+    "timestamp": "2026-04-10T04:26:10.211427"
+  },
+  "layers": [
+    {
+      "layer": 5,
+      "cosine_similarity": -0.010410986840724945,
+      "hijack_norm": 29.812475204467773,
+      "af_norm": 82.18008422851562,
+      "top50_overlap": 16,
+      "expected_overlap": 0.9765625
+    },
+    {
+      "layer": 10,
+      "cosine_similarity": 0.377724289894104,
+      "hijack_norm": 103.76486206054688,
+      "af_norm": 681.421142578125,
+      "top50_overlap": 16,
+      "expected_overlap": 0.9765625
+    },
+    {
+      "layer": 15,
+      "cosine_similarity": -0.36647510528564453,
+      "hijack_norm": 377.4508972167969,
+      "af_norm": 2370.17236328125,
+      "top50_overlap": 12,
+      "expected_overlap": 0.9765625
+    },
+    {
+      "layer": 17,
+      "cosine_similarity": 0.16437862813472748,
+      "hijack_norm": 755.2755126953125,
+      "af_norm": 4594.884765625,
+      "top50_overlap": 7,
+      "expected_overlap": 0.9765625
+    },
+    {
+      "layer": 20,
+      "cosine_similarity": 0.5103657245635986,
+      "hijack_norm": 1684.084228515625,
+      "af_norm": 6014.8857421875,
+      "top50_overlap": 5,
+      "expected_overlap": 0.9765625
+    },
+    {
+      "layer": 22,
+      "cosine_similarity": 0.3056604862213135,
+      "hijack_norm": 2140.2119140625,
+      "af_norm": 8290.9462890625,
+      "top50_overlap": 3,
+      "expected_overlap": 0.9765625
+    },
+    {
+      "layer": 24,
+      "cosine_similarity": 0.24905088543891907,
+      "hijack_norm": 2693.42822265625,
+      "af_norm": 9017.8837890625,
+      "top50_overlap": 4,
+      "expected_overlap": 0.9765625
+    }
+  ],
+  "summary": {
+    "cos_range": [
+      -0.36647510528564453,
+      0.5103657245635986
+    ],
+    "mean_abs_cos": 0.28343801519700457,
+    "overlap_range": [
+      3,
+      16
+    ],
+    "mean_overlap": 9.0
+  }
+}
