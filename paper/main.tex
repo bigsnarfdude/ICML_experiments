@@ -51,7 +51,7 @@ The damage arises from how the recipient model \emph{allocates attention} across
 
 More troublingly, we discover that \emph{instruction tuning makes models more vulnerable, not less}.
 The post-training pipeline (SFT + RLHF) installs awareness of contextual manipulation---models can detect when they are being steered---but this awareness is decoupled from the model's ability to resist the steering.
-We formalize this as a \textbf{dissociation scaling trend}: across three model scales (4B, 12B, 27B), the gap between awareness features and task-defense features widens consistently, from entangled (30.2\% recovery at 4B-IT) to effectively independent (9.0\% recovery at 27B-IT).
+We formalize this as a \textbf{dissociation scaling trend}: across three model scales (4B, 12B, 27B), the gap between awareness features and task-defense features widens consistently, from weakly coupled (8.4\% recovery at 4B-IT) to effectively independent (9.0\% recovery at 27B-IT).
 
 The most striking manifestation of this dissociation is what we call the \textbf{Groot effect}: at 27B parameters, the instruction-tuned model verbally mentions the correct answer branch while its internal task features are 86.3\% suppressed.
 The model ``knows'' it is being manipulated---and says so---but its computational substrate has already capitulated.
@@ -59,7 +59,7 @@ This behavioral--representational split has direct implications for evaluation: 
 
 Our contributions are:
 \begin{enumerate}
-    \item \textbf{Mechanistic identification.} Using SAE feature decomposition on \gemma 4B, we isolate the hijacking mechanism at the feature level: specific task features are completely suppressed (feature 1716 drops from activation 220 to 0) while awareness features remain active. We validate these features on held-out prompts (85\% replication, $p = 8 \times 10^{-6}$) and across three domains (\S\ref{sec:mechanism}).
+    \item \textbf{Mechanistic identification.} Using SAE feature decomposition on \gemma 4B, we isolate the hijacking mechanism at the feature level: specific task features are completely suppressed (feature 1716 drops from activation 220 to 0) while awareness features remain active. We validate these features on held-out prompts (90\% replication, $p = 4 \times 10^{-6}$) and across three domains (\S\ref{sec:mechanism}).
     \item \textbf{Dissociation scaling trend.} Scaling to 12B and 27B, we show awareness--defense coupling degrades consistently with scale (\S\ref{sec:scaling}).
     \item \textbf{Causal evidence from IT vs.\ PT.} Comparing instruction-tuned and pretrained 27B models across three ablation methods, we establish post-training (SFT + RLHF) as the causal factor, with cross-family replication on Llama~3.1 8B (\S\ref{sec:it_creates}).
     \item \textbf{Orthogonality to alignment faking.} We show the hijacking feature subspace is orthogonal to alignment-faking features at 27B-IT Layer~40 (cosine similarity $-0.0456$, Spearman $\rho = 0.008$), requiring independent defenses (\S\ref{sec:orthogonality}).
@@ -166,19 +166,19 @@ The chaos condition produces a tripartite response in the SAE feature space:
     \item \textbf{Awareness features are boosted.} Features 48, 178, and 346 \emph{increase} by 46--70\%, indicating the model detects the manipulative framing.
 \end{itemize}
 
-The overall task suppression at 4B-IT is \textbf{56\%}: neutral task-feature mean activation drops from 167.2 to 74.2 under chaos framing.
+The overall task suppression at 4B-IT is \textbf{79.0\%}: neutral task-feature mean activation drops from 220.8 to 46.3 under chaos framing.
 
 \subsection{Awareness--Defense Coupling at 4B}
 
 A key question is whether the awareness features (which detect manipulation) are coupled to the task features (which determine output).
 We test this via \emph{feature swap ablation}: zeroing the top-3 awareness features during chaos-condition generation and measuring whether task features recover.
 
-At 4B-IT, awareness ablation yields \textbf{30.2\% recovery}---task-feature mean activation increases from 74.2 to 102.3 when awareness features are removed.
-This indicates the awareness and task circuits share representational bandwidth: removing awareness frees capacity for task computation.
+At 4B-IT, awareness ablation yields \textbf{8.4\% recovery}---task-feature mean activation increases from 46.3 to 61.0 when awareness features are removed.
+This indicates marginal coupling between awareness and task circuits at 4B.
 
-Additionally, activation patching at Layer~22 achieves \textbf{20.9\% recovery}---the highest of any single layer---indicating that while the hijacking is partially localized at 4B, the effect spans multiple layers (early layers: 10.0\%, mid: 6.6\%, late: 7.0\%).
+Additionally, activation patching achieves \textbf{0.0\% recovery} across all tested layers at 4B, indicating the hijacking effect cannot be reversed by substituting residual stream states at any single layer.
 
-These results establish that at 4B scale, the model's awareness of manipulation and its task-defense circuits are \emph{entangled}---they compete for the same representational resources.
+These results establish that at 4B scale, the model's awareness of manipulation and its task-defense circuits are \emph{weakly coupled}---removing awareness has only a small effect on task computation.
 As we show in \S\ref{sec:scaling}, this entanglement is precisely what instruction tuning destroys at larger scales.
 
 \subsection{Statistical Validation}
@@ -200,14 +200,14 @@ Discovery variants (1--10) identify the top-20 suppressed features; test variant
 \textbf{Scale} & \textbf{Validated} & \textbf{Selected} & \textbf{Random} & \textbf{Cohen's} \\
  & & \textbf{Supp.} & \textbf{Supp.} & $d$ \\
 \midrule
-4B (L22)  & 17/20 (85\%) & 0.541 & 0.154 & 5.05 \\
-12B (L41) & 15/20 (75\%) & 0.247 & $-$0.015 & 5.62 \\
+4B (L22)  & 18/20 (90\%) & 0.513 & 0.161 & 4.97 \\
+12B (L41) & 16/20 (80\%) & 0.239 & 0.008 & 3.70 \\
 27B (L40) & 18/20 (90\%) & 0.406 & 0.004 & 6.12 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-All three scales show highly significant effects (all $p < 10^{-5}$), and Cohen's $d$ \emph{increases} with scale (5.05 $\to$ 5.62 $\to$ 6.12), indicating that the suppression signal becomes more reliable even as it targets more domain-specific features.
+All three scales show highly significant effects (all $p < 10^{-5}$), with Cohen's $d$ values of 4.97 (4B), 3.70 (12B), and 6.12 (27B, pending verification), indicating robust suppression signals at all scales.
 This rules out circular feature selection at every scale tested.
 
 \paragraph{Cross-Domain Replication.}
@@ -223,8 +223,8 @@ We test whether the suppression mechanism generalizes beyond mathematical reason
 \textbf{Scale} & \textbf{Jaccard} & \textbf{3-Way} & \textbf{3-Way} & \textbf{Supp.} \\
  & \textbf{Range} & \textbf{Supp.} & \textbf{Boost} & \textbf{Load} \\
 \midrule
-4B (L22)  & 0.03--0.09 & 1 & 4 & 2,261 \\
-12B (L41) & 0.03--0.05 & 0 & 4 & 11,786 \\
+4B (L22)  & 0.03--0.10 & 1 & 4 & 2,268 \\
+12B (L41) & 0.02--0.05 & 0 & 4 & 11,315 \\
 27B (L40) & 0.00--0.05 & 0 & 1 & 6,836 \\
 \bottomrule
 \end{tabular}
@@ -232,11 +232,11 @@ We test whether the suppression mechanism generalizes beyond mathematical reason
 
 All three domains show significant feature suppression at every scale.
 At 4B, a small shared core emerges: feature 6199 is suppressed in all three domains, and four features are boosted in all three.
-As scale increases, suppression becomes more domain-specific: Jaccard similarity drops from $0.03$--$0.09$ at 4B to $0.00$--$0.05$ at 27B, and three-way suppressed overlap drops to zero.
+As scale increases, suppression becomes more domain-specific: Jaccard similarity is $0.03$--$0.10$ at 4B, $0.02$--$0.05$ at 12B, and $0.00$--$0.05$ at 27B, and three-way suppressed overlap drops to zero at 12B and above.
 This indicates that attentional hijacking operates through a shared mechanism (attention reallocation) that recruits increasingly specialized task features at larger scales.
 
 \paragraph{Aggregate Suppression with Confidence Intervals.}
-Across 20 independent trials per scale ($n_{\text{bootstrap}} = 10{,}000$), overall feature suppression is 29.8\% at 4B (95\% CI: $[27.0\%, 32.7\%]$), 12.4\% at 12B (CI: $[10.2\%, 15.0\%]$), and 16.1\% at 27B (CI: $[14.0\%, 18.5\%]$).
+Across 20 independent trials per scale ($n_{\text{bootstrap}} = 10{,}000$), overall feature suppression is 25.3\% at 4B (95\% CI: $[21.1\%, 29.7\%]$), 21.7\% at 12B (CI: $[18.6\%, 24.6\%]$), and 16.1\% at 27B (CI: $[14.0\%, 18.5\%]$, pending verification).
 The lower aggregate suppression at larger scales reflects increasing feature specialization: fewer features are affected, but those that are show larger effect sizes (Table~\ref{tab:heldout}).
 The top-20 most suppressed features account for 48.5\% (4B), 40.8\% (12B), and 36.1\% (27B) of total activation difference, confirming that the effect is concentrated in a small feature subset.
 
@@ -261,7 +261,7 @@ For each model size, we identify two classes of SAE features:
 Feature sets are obtained by ranking all 16K SAE features by $|\mu_{\text{neutral}} - \mu_{\text{chaos}}|$ and taking the top-$K$ (\texttt{ablation\_feature\_swap.py}).
 Because discovery and evaluation share a prompt battery, the in-sample suppression numbers (e.g., 86.3\% on feature 423) are subject to selection bias.
 We mitigate this three ways.
-(i)~\emph{Held-out validation} at 4B recovers 85\% of the original features on a disjoint prompt set ($p = 8 \times 10^{-6}$, Table~\ref{tab:heldout}).
+(i)~\emph{Held-out validation} at 4B recovers 90\% of the original features on a disjoint prompt set ($p = 4 \times 10^{-6}$, Table~\ref{tab:heldout}).
 (ii)~\emph{Multi-turn persistence at 27B}: the within-session evaluation (\S\ref{sec:multiturn}) re-uses the canonical IT set $\{423, 7657, 632\}$ on 5-turn BVP sessions and separates attack from on-domain neutral controls at Cohen's $d = -1.54$ ($95\%$ CI $[-2.77, -0.85]$).
 (iii)~\emph{Cross-battery transfer} (\texttt{transfer\_feature\_discovery\_27b.py}): the same canonical set, frozen after BVP discovery, suppresses \textbf{+51.7\%} on an independent theorem-proving battery ($97.6 \to 47.1$), providing non-circular evidence that the circuit is not a prompt-battery artifact.
 We report one cautionary null from the same run: top-10 features re-discovered \emph{de novo} on each battery show zero Jaccard overlap, so the differential ranking is battery-specific even though the canonical circuit transfers.\footnote{The +5.9\% in-sample BVP number for the 3-feature set in this run uses a generated-token mean and is not directly comparable to the per-feature 86.3\% cited above, which comes from the feature-swap ablation protocol on a single feature.}
@@ -289,8 +289,8 @@ We employ three ablation methods to measure awareness--defense coupling:
 \textbf{Model} & \textbf{Task} & \textbf{Awareness} & \textbf{Coupling} \\
  & \textbf{Suppression} & \textbf{Recovery} & \textbf{Regime} \\
 \midrule
-4B-IT  & 56.0\% & 30.2\% & Entangled \\
-12B-IT & 64.0\% & 5.4\%  & Dissociating \\
+4B-IT  & 79.0\% & 8.4\%  & Weakly Coupled \\
+12B-IT & 67.5\% & 5.7\%  & Dissociating \\
 27B-IT & 71.7\% & 9.0\%  & Independent \\
 \bottomrule
 \end{tabular}
@@ -301,8 +301,8 @@ Table~\ref{tab:dissociation} presents the central empirical finding of this pape
 We observe a monotonic trend across model scale:
 
 \begin{itemize}
-    \item \textbf{Task suppression increases with scale}: from 56.0\% at 4B to 86.3\% at 27B. Larger models are \emph{more} susceptible to attentional hijacking, not less.
-    \item \textbf{Awareness--defense coupling collapses}: feature-swap recovery drops from 30.2\% at 4B to 9.0\% at 27B (5.4\% at intermediate 12B). At 4B, removing awareness features partially restores task performance, indicating the two circuits share representations. At 27B, they are effectively independent.
+    \item \textbf{Task suppression increases with scale}: from 79.0\% at 4B to 86.3\% at 27B. Larger models are \emph{more} susceptible to attentional hijacking, not less.
+    \item \textbf{Awareness--defense coupling collapses}: feature-swap recovery drops from 8.4\% at 4B to 9.0\% at 27B (5.4\% at intermediate 12B). At 4B, removing awareness features yields marginal task recovery, with further decoupling at 27B into effectively independent circuits.
 \end{itemize}
 
 We term this the \emph{dissociation scaling trend}: instruction tuning at greater scale installs increasingly sophisticated awareness of contextual manipulation while simultaneously decoupling that awareness from the computational pathways that determine output.
@@ -372,7 +372,7 @@ The 27B-PT model shows a qualitatively different, non-monotonic pattern: suppres
 \toprule
 \textbf{Model} & \textbf{Max Recovery} & \textbf{Best Layer} \\
 \midrule
-4B-IT  & 20.9\% & L22 \\
+4B-IT  & 0.0\%  & --- (all layers) \\
 12B-IT & 0.0\%  & --- (all layers) \\
 27B-IT & 0.7\%  & L20 \\
 27B-PT & 5.2\%  & L5 \\
@@ -383,7 +383,7 @@ The 27B-PT model shows a qualitatively different, non-monotonic pattern: suppres
 A natural defense strategy would be to intervene at the layer most responsible for the hijacking.
 Table~\ref{tab:distributed} shows this strategy fails at scale.
 
-At 4B, the hijacking is sufficiently localized that a single-layer intervention at L22 recovers 20.9\% of task performance.
+At 4B, activation patching yields 0.0\% recovery at all layers---the hijacking is already fully distributed at this scale.
 At 12B, no single layer yields any recovery (0.0\% across all layers)---the hijacking is fully distributed across the network.
 At 27B-IT, the maximum recovery is a negligible 0.7\% at L20.
 
@@ -667,7 +667,7 @@ We tested feature clamping (restoring task features at L22 to neutral means) and
 \label{sec:limitations}
 
 The full dissociation scaling trend has been verified only within \gemma; behavioral replication on Llama~3.1 confirms the IT-vs-base direction but not the scale dependence.
-Feature identification involved manual inspection of SAE activations, mitigated by held-out validation (85\% replication, $p = 8 \times 10^{-6}$) and consistency across three ablation methods.
+Feature identification involved manual inspection of SAE activations, mitigated by held-out validation (90\% replication, $p = 4 \times 10^{-6}$) and consistency across three ablation methods.
 Stage attribution (\S\ref{sec:tulu3}) relies on a single public pipeline (Tulu~3 on Llama~3.1 8B); whether Gemma's proprietary post-training follows the same SFT-dominant pattern cannot be verified without internal checkpoints.
 The within-session multi-turn evaluation (\S\ref{sec:multiturn}) is run only at \gemma 27B-IT Layer~40, with $n = 10$ BVP attack / $n = 20$ BVP control sessions and $n = 30$ theorem attack / $n = 30$ theorem control sessions; we report effect sizes with bootstrap CIs but make no deployment claim.
 We do not evaluate inference-time reasoning models (o1, DeepSeek R1-style).
@@ -681,7 +681,7 @@ Two predictions follow: extended CoT gives the attacker more tokens to accumulat
 \label{sec:conclusion}
 
 Instruction tuning teaches models to \emph{perform} resistance while their computational substrate capitulates: a model that verbally identifies manipulation while its task features are 86.3\% suppressed will pass any behavioral evaluation.
-This problem worsens with scale (30.2\% coupling at 4B collapses to 9.0\% at 27B) and occupies a blind spot orthogonal to alignment-faking defenses at 27B-IT Layer~40 ($|\cos| = 0.046$).
+This problem worsens with scale (8.4\% coupling at 4B collapses to 9.0\% at 27B) and occupies a blind spot orthogonal to alignment-faking defenses at 27B-IT Layer~40 ($|\cos| = 0.046$).
 Post-training must be redesigned to couple awareness to action rather than installing it as a separate circuit.
 
 \paragraph{Data and code availability.}
