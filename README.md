@@ -144,10 +144,9 @@ cd paper && pdflatex main.tex && pdflatex main.tex
 ## Citation
 
 ```bibtex
-@inproceedings{ohprecio2026splitpersonality,
+@{bigsnarfdude,
   title={Split Personality: Instruction Tuning Decouples Awareness from Defense Against Attentional Hijacking},
-  author={Ohprecio, Vincent},
-  booktitle={International Conference on Machine Learning},
+  author={bigsnarfdude},
   year={2026}
 }
 ```
