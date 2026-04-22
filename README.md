@@ -1,6 +1,6 @@
 # Split Personality: Instruction Tuning Decouples Awareness from Defense Against Attentional Hijacking
 
-Post-training teaches LLMs to *notice* when they are being manipulated without teaching them to *resist* it. The bigger the model, the wider the gap. We call this *attentional hijacking*, and it is installed almost entirely by supervised fine-tuning — not by RLHF as the community folklore assumes.
+Post-training introduces LLMs to *notice* when they are being manipulated without teaching them to *resist* it. The bigger the model, the wider the gap. We call this *attentional hijacking*, and it is installed almost entirely by supervised fine-tuning — not by RLHF as the community folklore assumes.
 
 **Paper:** [`paper/main.pdf`](paper/main.pdf) (ICML 2026 format, 14 pages)
 **Anonymized twin:** [`paper/main_submission.pdf`](paper/main_submission.pdf)
