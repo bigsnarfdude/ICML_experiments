@@ -4,7 +4,7 @@ Post-training introduces LLMs to *notice* when they are being manipulated withou
 
 **Paper:** [`paper/main.pdf`](paper/main.pdf) (ICML 2026 format, 14 pages)
 **Anonymized twin:** [`paper/main_submission.pdf`](paper/main_submission.pdf)
-**Author:** Vincent Ohprecio (Independent Researcher)
+**Author:** bigsnarfdude (Independent Researcher)
 
 ---
 
